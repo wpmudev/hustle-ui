@@ -1,0 +1,21 @@
+<head>
+
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+	<title>{{ site.title }}{% if page.title %} | {{ page.title }}{% endif %}</title>
+	
+	<meta name="description" content="{{ page.excerpt | default: site.description | strip_html | normalize_whitespace | truncate: 160 | escape }}" />
+	{% if site.keywords %}<meta name="keywords" content="{{ site.keywords }}" />{% endif %}
+	{% if site.author %}<meta name="author" content="{{ site.author }}" />{% endif %}
+
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+	<link rel="shortcut icon" type="image/icon" href="/favicon.ico?v=2" />
+    
+	<link rel="stylesheet" href="{{ '/assets/css/showcase.min.css' | relative_url }}" />
+	<link rel="stylesheet" href="{{ '/assets/css/hustle-ui.min.css' | relative_url }}" />
+
+	{% feed_meta %}
+
+</head>

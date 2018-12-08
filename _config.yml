@@ -20,8 +20,12 @@ plugins:
 exclude:
   - Gemfile
   - Gemfile.lock
+  - package.json
+  - package-lock.json
+  - Gulpfile.js
   - node_modules
   - vendor/bundle/
   - vendor/cache/
   - vendor/gems/
   - vendor/ruby/
+  - README.md

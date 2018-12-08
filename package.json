@@ -1,0 +1,39 @@
+{
+	"name": "hustle-ui",
+	"version": "4.0.0",
+	"private": true,
+	"author": "WPMU DEV",
+	"homepage": "https://wpmudev.github.io/hustle-ui",
+	"repository": {
+		"type": "git",
+		"url": "git@github.com:wpmudev/hustle-ui.git"
+	},
+	"eslintConfig": {
+		"extends": "wordpress"
+	},
+	"devDependencies": {
+		"browser-sync": "^2.26.3",
+		"child_process": "^1.0.2",
+		"es6-promise": "^4.2.5",
+		"eslint-config-wordpress": "^2.0.0",
+		"fs": "0.0.1-security",
+		"gh-pages": "^2.0.1",
+		"gulp": "^3.9.1",
+		"gulp-autoprefixer": "^6.0.0",
+		"gulp-clean-css": "^4.0.0",
+		"gulp-concat": "^2.6.1",
+		"gulp-eslint": "^5.0.0",
+		"gulp-rename": "^1.4.0",
+		"gulp-replace": "^1.0.0",
+		"gulp-sass": "^4.0.2",
+		"gulp-uglify-es": "^1.0.4",
+		"gulp-util": "^3.0.8",
+		"gulp-watch": "^5.0.1",
+		"pump": "^3.0.0"
+	},
+	"eslintIgnore": [],
+	"scripts": {
+		"start": "gulp start",
+		"deploy": "gh-pages -d public && gh-pages -d library"
+	}
+}

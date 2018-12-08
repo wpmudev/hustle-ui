@@ -36,16 +36,18 @@ var browserslist = [
 // Paths
 var paths = {
 	site: '_site/',
+	includes: '_includes/',
+	layouts: '_layouts',
 	assets: 'assets/',
-	showcase: '_assets-showcase/',
-	hustle: '_assets-hustle/',
+	showcase: '_assets/showcase/',
+	hustle: '_assets/hustle/',
 	library: '_library/'
 };
 
 var hustle = {
 	scss: paths.hustle + 'scss/',
 	js: paths.hustle + 'js/'
-}
+};
 
 var showcase = {
 	scss: paths.showcase + 'scss/',
@@ -55,7 +57,7 @@ var showcase = {
 var assets = {
 	css: paths.assets + 'css/',
 	js: paths.assets + 'js/'
-}
+};
 
 // ==================================================
 // Github Pages
@@ -82,7 +84,9 @@ ghpages.publish( 'library', {
 // List of files to watch
 
 const SiteRoot = [
-	paths.site + '**'
+	paths.site + '**/**/**',
+	paths.includes + '**',
+	paths.layouts + '**'
 ];
 
 const HustleJS = [
@@ -90,7 +94,7 @@ const HustleJS = [
 ];
 
 const HustleScss = [
-	hustle.scss + '*.scss'
+	hustle.scss + '**/**/*.scss'
 ];
 
 const ShowcaseJs = [
@@ -178,23 +182,6 @@ gulp.task( 'showcase:scripts', function( cb ) {
 	], cb );
 });
 
-// Task: Watch for changes across project
-gulp.task( 'watch', function() {
-
-	// Watch for hustle styles changes
-	gulp.watch( HustleScss, [ 'hustle:styles' ]);
-
-	// Watch for hustle js changes
-	gulp.watch( HustleJS, [ 'hustle:scripts' ]);
-
-	// Watch for showcase styles changes
-	gulp.watch( ShowcaseScss, [ 'showcase:styles' ]);
-
-	// Watch for showcase js changes
-	gulp.watch( ShowcaseJs, [ 'showcase:scripts' ]);
-
-});
-
 // Task: Build hustle files
 gulp.task( 'build:hustle', [
 	'hustle:styles',
@@ -217,7 +204,7 @@ gulp.task( 'build:jekyll', function() {
 		'--drafts'
 	]);
 
-	var jekyllLogger = function( buffer ) {
+	function jekyllLogger( buffer ) {
 
 		buffer.toString()
 			.split( /\n/ )
@@ -225,15 +212,32 @@ gulp.task( 'build:jekyll', function() {
 				gutil.log( 'Jekyll: ' + message );
 			})
 			;
-	}
+	};
 
 	jekyll.stdout.on( 'data', jekyllLogger );
 	jekyll.stderr.on( 'data', jekyllLogger );
 
 });
 
+// Task: Watch for changes across project
+gulp.task( 'watch', function() {
+
+	// Watch for hustle styles changes
+	gulp.watch( HustleScss, [ 'hustle:styles' ]);
+
+	// Watch for hustle js changes
+	gulp.watch( HustleJS, [ 'hustle:scripts' ]);
+
+	// Watch for showcase styles changes
+	gulp.watch( ShowcaseScss, [ 'showcase:styles' ]);
+
+	// Watch for showcase js changes
+	gulp.watch( ShowcaseJs, [ 'showcase:scripts' ]);
+
+});
+
 // Task: Initialize the server
-gulp.task( 'browser-sync', function() {
+gulp.task( 'server', function() {
 
 	browserSync.init({
 		files: [ SiteRoot ],
@@ -249,6 +253,6 @@ gulp.task( 'start', [
 	'build:hustle',
 	'build:showcase',
 	'build:jekyll',
-	'browser-sync',
+	'server',
 	'watch'
 ]);

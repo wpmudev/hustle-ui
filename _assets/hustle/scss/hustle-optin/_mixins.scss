@@ -1,0 +1,29 @@
+@mixin body-class($wrap: null, $onlyWrap: false) {
+
+	@if ( $wrap == null ) {
+
+		.hustle-optin {
+			@content;
+		}
+	}
+
+	@else {
+
+		@if ( $onlyWrap == false ) {
+
+			.hustle-#{$wrap} {
+
+				.hustle-optin {
+					@content;
+				}
+			}
+		}
+
+		@else {
+
+			.hustle-#{$wrap} {
+				@content;
+			}
+		}
+	}
+}

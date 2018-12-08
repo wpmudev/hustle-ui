@@ -1,25 +1,5 @@
 // =============================================
-// 1. BODY CLASS
-@mixin hustle-class($type: null) {
-
-	@if ( $type == null ) {
-
-		.hustle-info,
-		.hustle-optin {
-			@content;
-		}
-	}
-
-	@else {
-
-		.hustle-#{$type} {
-			@content;
-		}
-	}
-}
-
-// =============================================
-// 2. BREAKPOINTS
+// 1. BREAKPOINTS
 @mixin media($bp-type, $bp-name-1, $bp-name-2: null) {
 
 	@if ($bp-type == min-width) {
@@ -58,7 +38,7 @@
 }
 
 // =============================================
-// 3. BROWSER SUPPORT
+// 2. BROWSER SUPPORT
 @mixin support($support-type) {
 
 	@if $support-type == ie {

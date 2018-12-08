@@ -1,0 +1,83 @@
+// =============================================
+// 1. BODY CLASS
+@mixin hustle-class($type: null) {
+
+	@if ( $type == null ) {
+
+		.hustle-info,
+		.hustle-optin {
+			@content;
+		}
+	}
+
+	@else {
+
+		.hustle-#{$type} {
+			@content;
+		}
+	}
+}
+
+// =============================================
+// 2. BREAKPOINTS
+@mixin media($bp-type, $bp-name-1, $bp-name-2: null) {
+
+	@if ($bp-type == min-width) {
+
+		$min-breakpoint-width: map-get($fui-breakpoints, $bp-name-1);
+
+		@media (min-width: $min-breakpoint-width) {
+			@content;
+		}
+	}
+
+	@else if ($bp-type == max-width) {
+
+		$max-breakpoint-width: #{map-get($fui-breakpoints, $bp-name-1) - 1px};
+
+		@media (max-width: $max-breakpoint-width) {
+			@content;
+		}
+	}
+
+	@else if ($bp-type == between) {
+		
+		$min-breakpoint-width: map-get($fui-breakpoints, $bp-name-1);
+		$max-breakpoint-width: #{map-get($fui-breakpoints, $bp-name-1) - 1px};
+
+		@media (min-width: $min-breakpoint-width) and (max-width: $max-breakpoint-width) {
+			@content;
+		}
+	}
+
+	@else {
+
+		@warn "Unfortunately, no type could be retrieved from `#{$bp-type}`. "
+		+ "Use either `min-width`, `max-width`, or `between`.";
+	}
+}
+
+// =============================================
+// 3. BROWSER SUPPORT
+@mixin support($support-type) {
+
+	@if $support-type == ie {
+
+		@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+			@content;
+		}
+	}
+
+	@else if $support-type == edge {
+
+		@supports (-ms-ime-align: auto) {
+			@content;
+		}
+	}
+
+	@else {
+
+		@warn "Unfortunately, no type could be retrieved from `#{$support-type}`. "
+		+ "Use either `ie` or `edge`.";
+	}
+}

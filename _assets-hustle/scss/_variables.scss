@@ -1,0 +1,41 @@
+// =============================================
+// VARIABLES MENU
+//
+// 1. BASIC VARIABLES
+// 2. BREAKPOINTS
+// 3. CLOSE BUTTON
+// 4. FORMS
+// =============================================
+
+// =============================================
+// 1. BASIC VARIABLES
+
+$hui-dialog-width:       800px;
+
+$hui-gutter:             20px;
+$hui-gutter-sm:          10px;
+
+$hui-font:               "Open Sans", Arial, sans-serif;
+
+$hui-transition--ease:   0.2s ease;
+$hui-transition--linear: 0.2s linear;
+
+$hui-image-size: 320px;
+$hui-image-size-sm: 150px;
+
+// =============================================
+// 2. BREAKPOINTS
+
+$fui-breakpoints: (
+	sm: 783px,
+	md: 961px,
+	lg: 1201px
+) !default;
+
+// =============================================
+// 3. CLOSE BUTTON
+$hui-close--size: 30px;
+$hui-close--icon: 16px;
+
+// =============================================
+// 4. FORMS

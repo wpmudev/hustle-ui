@@ -1,0 +1,37 @@
+@include hustle-class(optin) {
+	width: 100%;
+	display: block;
+
+	.hustle-optin-header {
+		display: block;
+	}
+
+	.hustle-optin-body {
+
+		.hustle-success {
+			display: none;
+
+			[class*="hustle-icon-"] {
+				display: block;
+				margin: 0 auto;
+			}
+	
+			.hustle-success-content {
+				display: block;
+	
+				@include media(max-width, sm) {
+					margin-top: $hui-gutter-sm;
+				}
+	
+				@include media(min-width, sm) {
+					margin-top: $hui-gutter;
+				}
+			}
+		}
+	}
+
+	.hustle-optin-footer {
+		display: block;
+		text-align: center;
+	}
+}

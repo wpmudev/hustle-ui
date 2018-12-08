@@ -1,0 +1,39 @@
+@include hustle-class(optin) {
+
+	&.hustle-design--default {
+
+		.hustle-layout {
+			display: block;
+
+			.hustle-layout-content {
+
+				// POSITION: Left
+				&.hustle-image--left {
+
+					.hustle-image {
+
+						@include media(min-width, sm) {
+							max-width: $hui-image-size;
+							flex: 0 0 $hui-image-size;
+						}
+					}
+
+					@include media(min-width, sm) {
+						display: flex;
+					}
+				}
+			}
+
+			.hustle-layout-form {
+
+				@include media(max-width, sm) {
+					padding: $hui-gutter-sm;
+				}
+
+				@include media(min-width, sm) {
+					padding: $hui-gutter;
+				}
+			}
+		}
+	}
+}

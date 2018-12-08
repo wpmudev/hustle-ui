@@ -1,0 +1,6 @@
+@include body-class() {
+	width: 100%;
+	max-width: $page-size;
+	margin: 0 auto;
+	padding: $gutter;
+}

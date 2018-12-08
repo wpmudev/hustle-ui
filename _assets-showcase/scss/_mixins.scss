@@ -1,0 +1,6 @@
+@mixin body-class() {
+
+	#showcase {
+		@content;
+	}
+}

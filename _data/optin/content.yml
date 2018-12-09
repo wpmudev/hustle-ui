@@ -1,0 +1,24 @@
+# Opt-in Title
+title: Malesuada Parturient Tellus
+
+# Opt-in Subtitle
+subtitle:
+  Duis mollis, est non commodo luctus, nisi erat porttitor ligula,
+  eget lacinia odio sem nec elit.
+
+# Opt-in Content
+content:
+  Cras mattis consectetur purus sit amet fermentum. Curabitur blandit
+  tempus porttitor. Etiam porta sem malesuada magna mollis euismod.
+  Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum
+  nibh, ut fermentum massa justo sit amet risus. Maecenas sed diam eget
+  risus varius blandit sit amet non magna.
+
+# Opt-in Image
+image: pizza.png
+
+# Call To Action
+cta: Call To Action
+
+# Never See Link
+nsa: true

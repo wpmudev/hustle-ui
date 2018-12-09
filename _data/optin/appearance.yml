@@ -1,0 +1,34 @@
+# ==================================================
+# Layout
+layout: default
+
+# ==================================================
+# Feature Image
+
+# Image position
+display: left
+
+# Image size
+fitting: none
+
+# Image position
+position-x: left
+position-y: top
+
+# Visibility on mobile
+mobile: visible
+
+# ==================================================
+# Form Design
+
+# Form fields style
+style: flat
+
+# Form fields icon
+icon: none
+
+# Form fields proximity
+proximity: joined
+
+# Form button style
+button: flat

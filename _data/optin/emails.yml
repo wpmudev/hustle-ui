@@ -1,0 +1,15 @@
+fields:
+  - type: name
+    required: false
+    label: John Smith
+
+  - type: email
+    required: true
+    label: johnsmith@email.com
+
+submit: Submit
+
+gdpr:
+  From time to time we would like to send you offers and information we
+  think you would be interested in. If you do not want to receive these,
+  please untick the box.

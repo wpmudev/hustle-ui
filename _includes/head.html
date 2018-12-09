@@ -11,10 +11,15 @@
 
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 
-	<link rel="shortcut icon" type="image/icon" href="/favicon.ico?v=2" />
+	<link rel="shortcut icon" type="image/icon" href="{{ '/assets/images/favicon.png' | relative_url }}" />
     
 	<link rel="stylesheet" href="{{ '/assets/css/showcase.min.css' | relative_url }}" />
+
 	<link rel="stylesheet" href="{{ '/assets/css/hustle-optin.min.css' | relative_url }}" />
+	<link rel="stylesheet" href="{{ '/assets/css/hustle-info.min.css' | relative_url }}" />
+	<link rel="stylesheet" href="{{ '/assets/css/hustle-social.min.css' | relative_url }}" />
+
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600" rel="stylesheet" />
 
 	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
@@ -22,5 +27,7 @@
 	<script type="text/javascript" src="assets/js/showcase.min.js"></script>
 
 	{% feed_meta %}
+
+	<script src='https://www.google.com/recaptcha/api.js?render=6LcZnX8UAAAAALXhFBU5z_tThKTXNjxKIvOLPbF7'></script>
 
 </head>

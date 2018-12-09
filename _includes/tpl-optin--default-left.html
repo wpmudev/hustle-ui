@@ -1,4 +1,4 @@
-<div class="hustle-optin hustle-design--default">
+<div class="hustle-optin hustle-design--{{ site.optin-design }}">
 
 	<div class="hustle-optin-header">
 
@@ -17,43 +17,77 @@
 		<!-- Layout -->
 		<div class="hustle-layout">
 
-			<div class="hustle-layout-content">
+			<div class="hustle-layout-body">
 
-				<div class="hustle-image">
+				{% if
+					site.data.optin.content.image != blank or
+					site.data.optin.content.title != blank or
+					site.data.optin.content.subtitle != blank or
+					site.data.optin.content.content != blank or
+					site.data.optin.content.cta != blank
+				%}
+				<div class="hustle-layout-content">
 
-					<img
-						src="https://www.ngenespanol.com/wp-content/uploads/2018/08/%C2%BFEs-m%C3%A1s-sano-desayunar-pizza-o-cereal.png"
-					/>
+					{% if site.data.optin.content.image != blank %}
+					<div class="hustle-image" aria-hidden="true">
 
-				</div>
-
-				<div class="hustle-content">
-
-					<div class="hustle-group-title">
-
-						<h1 class="hustle-title">Malesuada Parturient Tellus</h1>
-
-						<h2 class="hustle-subtitle">Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</h2>
+						<img
+							src="{{site.url}}/assets/images/{{ site.data.optin.content.image }}"
+							class=""
+						/>
 
 					</div>
+					{% endif %}
 
-					<p>Cras mattis consectetur purus sit amet fermentum. Curabitur blandit tempus porttitor. Etiam porta sem malesuada magna mollis euismod. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
+					{% if
+						site.data.optin.content.title != blank or
+						site.data.optin.content.subtitle != blank or
+						site.data.optin.content.content != blank or
+						site.data.optin.content.cta != blank
+					%}
+					<div class="hustle-content">
 
-					<button class="hustle-button">Call To Action</button>
+						{% if site.data.optin.content.title != blank and site.data.optin.content.subtitle != blank %}
+						<div class="hustle-group-title">
+
+							{% if site.data.optin.content.title != blank %}
+							<h1 class="hustle-title">{{ site.data.optin.content.title }}</h1>
+							{% endif %}
+
+							{% if site.data.optin.content.subtitle != blank %}
+							<h2 class="hustle-subtitle">{{ site.data.optin.content.subtitle }}</h2>
+							{% endif %}
+
+						</div>
+						{% endif %}
+
+						{% if site.data.optin.content.content != blank %}
+						<p>{{ site.data.optin.content.content }}</p>
+						{% endif %}
+
+						{% if site.data.optin.content.cta != blank %}
+						<button id="show-success-message" class="hustle-button">{{ site.data.optin.content.cta }}</button>
+						{% endif %}
+
+					</div>
+					{% endif %}
 
 				</div>
+				{% endif %}
+
+				{% include tpl-optin--form.html %}
 
 			</div>
 
-			<form class="hustle-layout-form"></form>
+			{% if site.data.optin.content.nsa == true %}
+				<div class="hustle-layout-footer">
+
+					<p><a href="/">Never see this message again</a></p>
+
+				</div>
+			{% endif %}
 
 		</div>
-
-	</div>
-
-	<div class="hustle-optin-footer">
-
-		<p><a href="/">Never see this message again</a></p>
 
 	</div>
 

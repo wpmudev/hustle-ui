@@ -1,4 +1,4 @@
-@mixin body-class($wrap: null, $onlyWrap: false) {
+@mixin body-class($wrap: null, $wrapped: true) {
 
 	@if ( $wrap == null ) {
 
@@ -9,7 +9,7 @@
 
 	@else {
 
-		@if ( $onlyWrap == false ) {
+		@if ( $wrapped == true ) {
 
 			.hustle-#{$wrap} {
 

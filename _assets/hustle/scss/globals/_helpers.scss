@@ -1,3 +1,33 @@
+// =============================================
+// VARIABLES MENU
+//
+// 1. RESET TEXT
+// 2. TRUNCATE TEXT
+// 3. SCREEN READER TEXT
+// =============================================
+
+// =============================================
+// 1. RESET TEXT
+%hui-text-reset {
+	font-variant-ligatures: none;
+	-webkit-font-variant-ligatures: none;
+	text-rendering: optimizeLegibility;
+	-moz-osx-font-smoothing: grayscale;
+	font-smoothing: antialiased;
+	-webkit-font-smoothing: antialiased;
+	text-shadow: rgba(0, 0, 0, .01) 0 0 1px;
+}
+
+// =============================================
+// 2. TRUNCATE TEXT
+%hui-text-truncate {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+// =============================================
+// 3. SCREEN READER TEXT
 %hui-screen-reader {
 	border: 0;
 	clip: rect(1px, 1px, 1px, 1px);

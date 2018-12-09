@@ -1,0 +1,40 @@
+<form class="hustle-layout-form">
+
+	<div class="hustle-form">
+
+		<div class="hustle-form-fields">
+
+			{% include tpl-optin--fields.html %}
+
+			<button class="hustle-button">Submit</button>
+
+		</div>
+
+		{% include tpl-optin--mailchimp.html %}
+
+	</div>
+
+	{% if site.data.optin.emails.gdpr != blank %}
+	<div class="hustle-gdpr">
+
+		<label for="gdpr-approval" class="hustle-checkbox">
+
+			<input
+				type="checkbox"
+				id="gdpr-approval"
+			/>
+
+			<span aria-hidden="true"></span>
+
+		</label>
+
+		<div for="gdpr-approval" class="hustle-checkbox-text">
+
+			<p>{{ site.data.optin.emails.gdpr }}</p>
+
+		</div>
+
+	</div>
+	{% endif %}
+
+</form>

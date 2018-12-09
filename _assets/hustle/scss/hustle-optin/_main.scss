@@ -1,6 +1,11 @@
-@include hustle-class(optin) {
+@include body-class() {
 	width: 100%;
 	display: block;
+
+	* {
+		box-sizing: border-box;
+		@extend %hui-text-reset;
+	}
 
 	.hustle-optin-header {
 		display: block;

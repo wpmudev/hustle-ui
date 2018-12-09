@@ -1,0 +1,48 @@
+{% for field in site.data.optin.emails.fields %}
+
+	{% if field.type contains "name" %}
+		{% assign type = "text" %}
+	{% elsif field.type contains "address" %}
+		{% assign type = "text" %}
+	{% elsif field.type contains "phone" %}
+		{% assign type = "number" %}
+	{% elsif field.type contains "website" %}
+		{% assign type = "url" %}
+	{% elsif field.type contains "datepicker" %}
+		{% assign type = "text" %}
+	{% elsif field.type contains "timepicker" %}
+		{% assign type = "text" %}
+	{% else %}
+		{% assign type = field.type %}
+	{% endif %}
+
+	{% if site.data.optin.appearance.icon contains "static" %}
+		{% assign icon-class = " hustle-field-icon--static" %}
+	{% elsif site.data.optin.appearance.icon contains "animated" %}
+		{% assign icon-class = " hustle-field-icon--animated" %}
+	{% else %}
+		{% assign icon-class = "" %}
+	{% endif %}
+
+	<label
+		for="hustle-form--field-{{ field.type }}"
+		class="hustle-field{{ icon-class }}"
+	>
+
+		<input
+			type="{{ type }}"
+			id="hustle-form--field-{{ field.type }}"
+		/>
+
+		{% if
+			site.data.optin.appearance.icon contains "static" or
+			site.data.optin.appearance.icon contains "animated"
+		%}
+		<i class="hustle-icon-{{ type }}" aria-hidden="true"></i>
+		{% endif %}
+
+		<span>{{ field.label }}</span>
+
+	</label>
+
+{% endfor %}

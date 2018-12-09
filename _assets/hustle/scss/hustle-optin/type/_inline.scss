@@ -1,0 +1,19 @@
+@include body-class(inline, false) {
+	display: block;
+	margin: $hui-gutter 0;
+
+	&:first-child {
+		margin-top: 0;
+	}
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+}
+
+@include body-class(inline, true) {
+
+	.hustle-optin-header {
+		display: none;
+	}
+}

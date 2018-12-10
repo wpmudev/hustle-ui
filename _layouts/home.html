@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="{{ site.lang | default: page.lang | default: 'en' }}">
 
-    {% include head.html %}
+    {% include global/head.html %}
 
     <body id="showcase">
 
-		{% include header.html %}
+		{% include global/header.html %}
 
 		<section>
 
@@ -19,13 +19,13 @@
 				MODULE TYPE: Embed / Widget / Shortcode
 				MODULE MODE: Opt-in
 			-->
-			{% include tpl-optin--inline.html %}
+			{% include hustle-optin/types/inline.html %}
 
 			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed odio dui. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Curabitur blandit tempus porttitor. Donec ullamcorper nulla non metus auctor fringilla. Donec ullamcorper nulla non metus auctor fringilla. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
 
 		</section>
 
-		{% include footer.html %}
+		{% include global/footer.html %}
 
 	</body>
 

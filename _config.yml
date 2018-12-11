@@ -11,17 +11,6 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 
 # ==================================================
-# Opt-in
-
-# Appearance
-optin-design: default
-optin-position: left
-
-optin-image-size: none
-optin-image-position-x: center
-optin-image-position-y: center
-
-# ==================================================
 # Build settings
 markdown: kramdown
 plugins:

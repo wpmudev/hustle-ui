@@ -1,0 +1,170 @@
+%hui-image-fit-fill {
+
+	img {
+		width: 100%;
+		height: 100%;
+		display: block;
+		position: absolute;
+		object-fit: fill;
+		-ms-interpolation-mode: bicubic;
+	}
+}
+
+%hui-image-fit-contain {
+
+	img {
+		width: 100%;
+		height: 100%;
+		display: block;
+		position: absolute;
+		object-fit: contain;
+		-ms-interpolation-mode: bicubic;
+
+		@include support(ie) {
+			width: auto;
+			max-width: 100%;
+			height: auto;
+			max-height: 100%;
+		}
+	}
+}
+
+%hui-image-fit-cover {
+
+	img {
+		width: 100%;
+		height: 100%;
+		display: block;
+		position: absolute;
+		object-fit: cover;
+		-ms-interpolation-mode: bicubic;
+
+		@include support(ie) {
+			height: auto;
+		}
+	}
+}
+
+%hui-image-fit-full {
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+
+	img {
+		width: auto;
+		max-width: 100%;
+		height: auto;
+		display: block;
+		flex: 0 1 auto;
+		margin: 0 auto;
+	}
+}
+
+@include body-class() {
+
+	.hustle-image {
+		position: relative;
+
+		// IMAGE Position
+		&.hustle-image-fit--cover img,
+		&.hustle-image-fit--contain img {
+
+			&.hustle-image-position--lefttop {
+				object-position: left top;
+
+				@include support(ie) {
+					top: 0;
+					left: 0;
+				}
+			}
+
+			&.hustle-image-position--leftcenter {
+				object-position: left center;
+
+				@include support(ie) {
+					top: 50%;
+					transform: translate(0,-50%);
+				}
+			}
+
+			&.hustle-image-position--leftbottom {
+				object-position: left bottom;
+
+				@include support(ie) {
+					bottom: 0;
+				}
+			}
+
+			&.hustle-image-position--centertop {
+				object-position: center top;
+
+				@include support(ie) {
+					left: 50%;
+					transform: translate(-50%,0);
+				}
+			}
+
+			&.hustle-image-position--centercenter {
+				object-position: center;
+
+				@include support(ie) {
+					top: 50%;
+					left: 50%;
+					transform: translate(-50%,-50%);
+				}
+			}
+
+			&.hustle-image-position--centerbottom {
+				object-position: center bottom;
+
+				@include support(ie) {
+					left: 50%;
+					bottom: 0;
+					transform: translate(-50%,0);
+				}
+			}
+
+			&.hustle-image-position--righttop {
+				object-position: right top;
+
+				@include support(ie) {
+					top: 0;
+					right: 0;
+				}
+			}
+
+			&.hustle-image-position--rightcenter {
+				object-position: right center;
+
+				@include support(ie) {
+					right: 0;
+					top: 50%;
+					transform: translate(0,-50%);
+				}
+			}
+
+			&.hustle-image-position--rightbottom {
+				object-position: right bottom;
+
+				@include support(ie) {
+					right: 0;
+					bottom: 0;
+				}
+			}
+
+			@include support(ie) {
+
+				&.hustle-image-position--centercustom {
+					left: 50%;
+					transform: translate(-50%,0);
+				}
+
+				&.hustle-image-position--customcenter {
+					top: 50%;
+					transform: translate(0,-50%);
+				}
+			}
+		}
+	}
+}

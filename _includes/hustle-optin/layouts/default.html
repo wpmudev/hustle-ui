@@ -1,4 +1,4 @@
-<div class="hustle-optin hustle-design--{{ site.optin-design }}">
+<div class="hustle-optin hustle-optin--{{ site.optin-design }}">
 
 	<div class="hustle-optin-header">
 
@@ -26,14 +26,17 @@
 					site.data.optin.content.content != blank or
 					site.data.optin.content.cta != blank
 				%}
-				<div class="hustle-layout-content">
+				<div class="hustle-layout-content hustle-image-display--{{ site.data.optin.appearance.display }}">
 
 					{% if site.data.optin.content.image != blank %}
-					<div class="hustle-image" aria-hidden="true">
+					<div
+						class="hustle-image hustle-image-fit--{{ site.data.optin.appearance.fitting }}"
+						aria-hidden="true"
+					>
 
 						<img
 							src="{{site.url}}/assets/images/{{ site.data.optin.content.image }}"
-							class=""
+							class="hustle-image-position--{{ site.data.optin.appearance.position-x }}{{ site.data.optin.appearance.position-y }}"
 						/>
 
 					</div>

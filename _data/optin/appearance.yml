@@ -9,7 +9,7 @@ layout: default
 display: left
 
 # Image size
-fitting: none
+fitting: contain
 
 # Image position
 position-x: left

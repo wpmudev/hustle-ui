@@ -1,0 +1,102 @@
+@include layout-class(default) {
+
+	.hustle-content {
+
+		@include media(max-width, md) {
+			padding: $hui-gutter-sm;
+		}
+
+		@include media(min-width, md) {
+			padding: $hui-gutter;
+		}
+	}
+
+	// IMAGE DISPLAY: Left
+	.hustle-image-display--left,
+	.hustle-image-display--right {
+
+		.hustle-image-fit {
+
+			&--fill,
+			&--cover,
+			&--contain {
+				height: $hui-image-size-sm;
+				overflow: hidden;
+			}
+
+			&--fill {
+				@extend %hui-image-fit-fill;
+			}
+
+			&--contain {
+				@extend %hui-image-fit-contain;
+			}
+
+			&--cover {
+				@extend %hui-image-fit-cover;
+			}
+
+			&--none {
+				@extend %hui-image-fit-full;
+			}
+		}
+	}
+
+	&:not(.hustle-size--small) {
+
+		// IMAGE DISPLAY: Left
+		.hustle-image-display--left,
+		.hustle-image-display--right {
+
+			.hustle-image-fit {
+
+				&--fill,
+				&--cover,
+				&--contain {
+
+					&:only-child {
+						
+						@include media(min-width, sm) {
+							max-width: unset;
+							height: $hui-image-size;
+							flex: 1;
+						}
+					}
+
+					@include media(min-width, sm) {
+						max-width: $hui-image-size;
+						height: auto;
+						flex: 0 0 $hui-image-size;
+					}
+				}
+
+				&--none {
+
+					&:only-child {
+						
+						@include media(min-width, sm) {
+							max-width: unset;
+							flex: 1;
+						}
+					}
+
+					@include media(min-width, sm) {
+						max-width: 50%;
+						flex: 0 0 auto;
+					}
+				}
+			}
+
+			.hustle-content {
+
+				@include media(min-width, sm) {
+					flex: 1;
+				}
+			}
+
+			@include media(min-width, sm) {
+				display: flex;
+			}
+		}
+	}
+}

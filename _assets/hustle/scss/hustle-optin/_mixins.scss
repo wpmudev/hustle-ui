@@ -27,3 +27,29 @@
 		}
 	}
 }
+
+@mixin layout-class($theme: null) {
+
+	@if ( $theme == null ) {
+
+		.hustle-optin {
+
+			.hustle-layout {
+				@content;
+			}
+		}
+	}
+
+	@else {
+
+		.hustle-optin {
+
+			&.hustle-optin--#{$theme} {
+
+				.hustle-layout {
+					@content;
+				}
+			}
+		}
+	}
+}

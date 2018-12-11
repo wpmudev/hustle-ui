@@ -12,8 +12,8 @@ display: left
 fitting: contain
 
 # Image position
-position-x: left
-position-y: top
+position-x: center
+position-y: center
 
 # Visibility on mobile
 mobile: visible

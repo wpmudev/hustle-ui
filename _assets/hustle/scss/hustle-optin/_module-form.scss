@@ -1,0 +1,165 @@
+@include body-class() {
+
+	.hustle-form {
+
+		.hustle-field {
+			display: flex;
+			align-items: center;
+			position: relative;
+			margin: 0;
+			padding: 0;
+			border: 0;
+			text-align: left;
+
+			input,
+			.hustle-field-placeholder {
+				font: 400 13px/18px $hui-font;
+			}
+
+			input {
+				width: 100%;
+				height: $hui-input--height;
+				display: block;
+				padding: #{($hui-input--height - 18px) / 2} $hui-input--padding;
+				border-radius: 0;
+				background-image: unset;
+				transition: $hui-transition--ease;
+
+				&,
+				&:hover,
+				&:focus {
+					outline: none;
+					box-shadow: none;
+				}
+
+				&:focus {
+
+					+ .hustle-field-placeholder {
+
+						span {
+							opacity: 0;
+							transform: translateX(50px);
+							transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
+						}
+					}
+				}
+			}
+
+			.hustle-field-placeholder {
+				width: 100%;
+				user-select: none;
+				pointer-events: none;
+				position: absolute;
+				display: flex;
+				padding: 0 $hui-input--padding;
+
+				[class*="hustle-icon-"] {
+					display: block;
+				}
+
+				span {
+					display: block;
+					flex: 1 1 auto;
+					@extend %hui-text-truncate;
+					transition: $hui-transition--ease;
+				}
+			}
+
+			// STATUS: Error
+			&.hustle-status--error {}
+
+			// STATUS: Filled
+			&.hustle-status--filled {
+
+				.hustle-field-placeholder {
+					opacity: 0;
+				}
+			}
+		}
+
+		.hustle-button {
+			width: 100%;
+		}
+
+		.hustle-form-fields {
+			display: block;
+
+			&.hustle-proximity-joined {
+
+				.hustle-field {
+
+					&:not(:last-child) {
+						margin-bottom: $hui-joined;
+					}
+				}
+			}
+
+			&.hustle-proximity-separated {
+
+				.hustle-field {
+
+					&:not(:last-child) {
+						margin-bottom: $hui-separated;
+					}
+				}
+			}
+		}
+	}
+
+	&:not(.hustle-size--small) {
+
+		.hustle-form {
+
+			.hustle-field {
+
+				@include media(min-width, sm) {
+					flex: 1;
+				}
+			}
+
+			.hustle-button {
+
+				@include media(min-width, sm) {
+					width: auto;
+					flex: 0 0 auto;
+				}
+			}
+
+			.hustle-form-fields {
+
+				&.hustle-proximity-joined {
+
+					.hustle-field {
+	
+						&:not(:last-child) {
+
+							@include media(min-width, sm) {
+								margin-right: $hui-joined;
+								margin-bottom: 0;
+							}
+						}
+					}
+				}
+	
+				&.hustle-proximity-separated {
+	
+					.hustle-field {
+	
+						&:not(:last-child) {
+
+							@include media(min-width, sm) {
+								margin-right: $hui-separated;
+								margin-bottom: 0;
+							}
+						}
+					}
+				}
+
+				@include media(min-width, sm) {
+					display: flex;
+					align-items: center;
+				}
+			}
+		}
+	}
+}

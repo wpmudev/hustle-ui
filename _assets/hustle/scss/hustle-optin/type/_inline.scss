@@ -1,23 +1,16 @@
-@include body-class(inline, false) {
-	display: block;
-	margin: $hui-gutter 0;
+.hustle-inline {
 
-	&:first-child {
-		margin-top: 0;
-	}
+	@include body-class() {
 
-	&:last-child {
-		margin-bottom: 0;
-	}
-}
+		.hustle-optin-header {
+			display: none;
+		}
 
-@include body-class(inline, true) {
+		.hustle-layout {
 
-	.hustle-optin-header {
-		display: none;
-	}
-
-	.hustle-layout-footer {
-		display: none;
+			.hustle-layout-footer {
+				display: none;
+			}
+		}
 	}
 }

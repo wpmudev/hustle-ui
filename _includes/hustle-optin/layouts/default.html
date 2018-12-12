@@ -1,4 +1,17 @@
-<div class="hustle-optin hustle-optin--{{ site.optin-design }}">
+{% if site.data.optin.appearance.layout != default %}
+	{% if
+		site.data.optin.appearance.display == above or
+		site.data.optin.appearance.display == below
+	%}
+		{% assign position = "left" %}
+	{% else %}
+		{% assign position = site.data.optin.appearance.display %}
+	{% endif %}
+{% else %}
+	{% assign position = site.data.optin.appearance.display %}
+{% endif %}
+
+<div class="hustle-optin hustle-optin--{{ site.data.optin.appearance.layout }}">
 
 	<div class="hustle-optin-header">
 
@@ -26,54 +39,11 @@
 					site.data.optin.content.content != blank or
 					site.data.optin.content.cta != blank
 				%}
-				<div class="hustle-layout-content hustle-image-display--{{ site.data.optin.appearance.display }}">
+				<div class="hustle-layout-content hustle-layout-position--{{ position }}">
 
-					{% if site.data.optin.content.image != blank %}
-					<div
-						class="hustle-image hustle-image-fit--{{ site.data.optin.appearance.fitting }}"
-						aria-hidden="true"
-					>
+					{% include hustle-optin/elements/image.html %}
 
-						<img
-							src="{{site.url}}/assets/images/{{ site.data.optin.content.image }}"
-							class="hustle-image-position--{{ site.data.optin.appearance.position-x }}{{ site.data.optin.appearance.position-y }}"
-						/>
-
-					</div>
-					{% endif %}
-
-					{% if
-						site.data.optin.content.title != blank or
-						site.data.optin.content.subtitle != blank or
-						site.data.optin.content.content != blank or
-						site.data.optin.content.cta != blank
-					%}
-					<div class="hustle-content">
-
-						{% if site.data.optin.content.title != blank and site.data.optin.content.subtitle != blank %}
-						<div class="hustle-group-title">
-
-							{% if site.data.optin.content.title != blank %}
-							<h1 class="hustle-title">{{ site.data.optin.content.title }}</h1>
-							{% endif %}
-
-							{% if site.data.optin.content.subtitle != blank %}
-							<h2 class="hustle-subtitle">{{ site.data.optin.content.subtitle }}</h2>
-							{% endif %}
-
-						</div>
-						{% endif %}
-
-						{% if site.data.optin.content.content != blank %}
-						<p>{{ site.data.optin.content.content }}</p>
-						{% endif %}
-
-						{% if site.data.optin.content.cta != blank %}
-						<button id="show-success-message" class="hustle-button">{{ site.data.optin.content.cta }}</button>
-						{% endif %}
-
-					</div>
-					{% endif %}
+					{% include hustle-optin/elements/content.html %}
 
 				</div>
 				{% endif %}

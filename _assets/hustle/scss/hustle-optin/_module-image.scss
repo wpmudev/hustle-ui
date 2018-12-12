@@ -66,6 +66,10 @@
 	.hustle-image {
 		position: relative;
 
+		img {
+			display: block;
+		}
+
 		// IMAGE Position
 		&.hustle-image-fit--cover img,
 		&.hustle-image-fit--contain img {

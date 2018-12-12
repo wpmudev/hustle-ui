@@ -61,3 +61,25 @@
 		+ "Use either `ie` or `edge`.";
 	}
 }
+
+// =============================================
+// 3. GET AN ICON
+@mixin icon($position: before, $icon: false, $styles: true) {
+
+	@if $position == both {
+		$position: 'before, &:after';
+	}
+
+	&:#{$position} {
+
+		@if $icon {
+			content: "#{map-get($icons, $icon)}";
+		}
+
+		@if $styles {
+			@extend %hui-icons;
+		}
+
+		@content;
+	}
+}

@@ -4,6 +4,9 @@
 // 1. BASIC VARIABLES
 // 2. BREAKPOINTS
 // 3. CLOSE BUTTON
+// 4. REGULAR BUTTON
+// 5. FORM INPUT
+// 6. FORM SPACING
 // =============================================
 
 // =============================================
@@ -25,7 +28,7 @@ $hui-image-size-sm: 150px;
 // =============================================
 // 2. BREAKPOINTS
 
-$fui-breakpoints: (
+$hui-breakpoints: (
 	sm: 783px,
 	md: 961px,
 	lg: 1201px
@@ -35,3 +38,18 @@ $fui-breakpoints: (
 // 3. CLOSE BUTTON
 $hui-close--size: 30px;
 $hui-close--icon: 16px;
+
+// =============================================
+// 4. REGULAR BUTTON
+$hui-button--width: 100px;
+$hui-button--height: 36px;
+
+// =============================================
+// 5. FORM INPUT
+$hui-input--height:  36px;
+$hui-input--padding: 10px;
+
+// =============================================
+// 6. FORM SPACING
+$hui-joined: 1px;
+$hui-separated: 10px;

@@ -40,3 +40,21 @@
 	width: 1px;
 	word-wrap: normal !important;
 }
+
+// =============================================
+// 4. GET ICONS
+%hui-icons {
+	speak: none;
+	display: inline-block;
+	color: inherit;
+	font-family: $hui-font--icon !important;
+	font-size: 1em;
+	line-height: 1;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	text-rendering: auto;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}

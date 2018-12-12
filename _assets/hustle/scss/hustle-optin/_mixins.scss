@@ -1,6 +1,6 @@
-@mixin body-class($wrap: null, $wrapped: true) {
+@mixin body-class($layout: null) {
 
-	@if ( $wrap == null ) {
+	@if ( $layout == null ) {
 
 		.hustle-optin {
 			@content;
@@ -9,46 +9,10 @@
 
 	@else {
 
-		@if ( $wrapped == true ) {
-
-			.hustle-#{$wrap} {
-
-				.hustle-optin {
-					@content;
-				}
-			}
-		}
-
-		@else {
-
-			.hustle-#{$wrap} {
-				@content;
-			}
-		}
-	}
-}
-
-@mixin layout-class($theme: null) {
-
-	@if ( $theme == null ) {
-
 		.hustle-optin {
 
-			.hustle-layout {
+			&.hustle-optin--#{$layout} {
 				@content;
-			}
-		}
-	}
-
-	@else {
-
-		.hustle-optin {
-
-			&.hustle-optin--#{$theme} {
-
-				.hustle-layout {
-					@content;
-				}
 			}
 		}
 	}

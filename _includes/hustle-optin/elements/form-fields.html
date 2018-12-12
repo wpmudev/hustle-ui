@@ -34,14 +34,18 @@
 			id="hustle-form--field-{{ field.type }}"
 		/>
 
-		{% if
-			site.data.optin.appearance.icon contains "static" or
-			site.data.optin.appearance.icon contains "animated"
-		%}
-		<i class="hustle-icon-{{ type }}" aria-hidden="true"></i>
-		{% endif %}
+		<span class="hustle-field-placeholder">
 
-		<span>{{ field.label }}</span>
+			{% if
+				site.data.optin.appearance.icon contains "static" or
+				site.data.optin.appearance.icon contains "animated"
+			%}
+			<i class="hustle-icon-{{ type }}" aria-hidden="true"></i>
+			{% endif %}
+
+			<span>{{ field.label }}</span>
+
+		</span>
 
 	</label>
 

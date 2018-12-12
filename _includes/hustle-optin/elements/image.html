@@ -1,0 +1,13 @@
+{% if site.data.optin.content.image != blank %}
+<div
+	class="hustle-image hustle-image-fit--{{ site.data.optin.appearance.fitting }}"
+	aria-hidden="true"
+>
+
+	<img
+		src="{{site.url}}/assets/images/{{ site.data.optin.content.image }}"
+		class="hustle-image-position--{{ site.data.optin.appearance.position-x }}{{ site.data.optin.appearance.position-y }}"
+	/>
+
+</div>
+{% endif %}

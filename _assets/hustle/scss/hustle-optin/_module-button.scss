@@ -1,0 +1,14 @@
+@include body-class() {
+
+	.hustle-button {
+		width: auto;
+		min-width: $hui-button--width;
+		min-height: $hui-button--height;
+		margin: 0;
+		padding: #{($hui-input--height - 18px) / 2} 16px;
+		cursor: pointer;
+		font: bold 13px/18px $hui-font;
+		letter-spacing: 0.5px;
+		text-align: center;
+	}
+}

@@ -1,0 +1,38 @@
+{% if
+	site.data.optin.content.title != blank or
+	site.data.optin.content.subtitle != blank or
+	site.data.optin.content.content != blank or
+	site.data.optin.content.cta != blank
+%}
+<div class="hustle-content">
+
+	<div class="hustle-content-wrap">
+
+		{% if site.data.optin.content.title != blank and site.data.optin.content.subtitle != blank %}
+		<div class="hustle-group-title">
+
+			{% if site.data.optin.content.title != blank %}
+			<h1 class="hustle-title">{{ site.data.optin.content.title }}</h1>
+			{% endif %}
+
+			{% if site.data.optin.content.subtitle != blank %}
+			<h2 class="hustle-subtitle">{{ site.data.optin.content.subtitle }}</h2>
+			{% endif %}
+
+		</div>
+		{% endif %}
+
+		{% if site.data.optin.content.content != blank %}
+		<div class="hustle-group-content">
+			<p>{{ site.data.optin.content.content }}</p>
+		</div>
+		{% endif %}
+
+		{% if site.data.optin.content.cta != blank %}
+		<button id="show-success-message" class="hustle-button">{{ site.data.optin.content.cta }}</button>
+		{% endif %}
+
+	</div>
+
+</div>
+{% endif %}

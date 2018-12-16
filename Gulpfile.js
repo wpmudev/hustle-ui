@@ -1,67 +1,65 @@
 // ==================================================
-// Call Supported Packages
-
-var fs          = require( 'fs' ),
-	pump        = require( 'pump' ),
-	child       = require( 'child_process' ),
-	browserSync = require( 'browser-sync' ).create(),
-	ghpages     = require( 'gh-pages' )
-	;
-
-var gulp         = require( 'gulp' ),
-	watch        = require( 'gulp-watch' ),
-	sass         = require( 'gulp-sass' ),
-	autoprefixer = require( 'gulp-autoprefixer' ),
-	cleanCSS     = require( 'gulp-clean-css' ),
-	eslint       = require( 'gulp-eslint' ),
-	uglify       = require( 'gulp-uglify-es' ).default,
-	concat       = require( 'gulp-concat' ),
-	rename       = require( 'gulp-rename' ),
-	replace      = require( 'gulp-replace' ),
-	gutil        = require( 'gulp-util' )
-	;
+// Supported Packages
+const fs = require( 'fs' );
+const pump = require( 'pump' );
+const ghpages = require( 'gh-pages' );
+const gulp = require( 'gulp' );
+const watch = require( 'gulp-watch' );
+const sass = require( 'gulp-sass' );
+const autoprefixer = require( 'gulp-autoprefixer' );
+const cleanCSS = require( 'gulp-clean-css' );
+const eslint = require( 'gulp-eslint' );
+const uglify = require( 'gulp-uglify-es' ).default;
+const concat = require( 'gulp-concat' );
+const rename = require( 'gulp-rename' );
 
 // ==================================================
-// Get package.json file
-var pckg = JSON.parse( fs.readFileSync( './package.json' ) );
+// Get Package File
+const pckg = JSON.parse( fs.readFileSync( './package.json' ) );
 
 // ==================================================
-// Browsers
-var browserslist = [
+// List of Browsers
+const browsersList = [
 	'last 2 version',
 	'> 1%'
 ];
 
 // ==================================================
 // Paths
-var paths = {
-	site: '_site/',
-	includes: '_includes/',
-	layouts: '_layouts',
-	assets: 'assets/',
-	showcase: '_assets/showcase/',
-	hustle: '_assets/hustle/',
-	library: '_library/'
+
+const paths = {
+	lib: 'library/',
+	libDist: 'library/public/',
+	assets: 'src/assets/',
+	assetsDist: 'public/assets/'
 };
 
-var hustle = {
-	scss: paths.hustle + 'scss/',
-	js: paths.hustle + 'js/'
+const libProd = {
+	js: paths.lib + 'js/',
+	scss: paths.lib + 'scss/'
 };
 
-var showcase = {
-	scss: paths.showcase + 'scss/',
-	js: paths.hustle + 'js/'
+const libPublic = {
+	js: paths.libDist + 'js/',
+	css: paths.libDist + 'css/',
+	fonts: paths.libDist + 'fonts/'
 };
 
-var assets = {
-	css: paths.assets + 'css/',
-	js: paths.assets + 'js/'
+const assets = {
+	js: paths.assets + 'js/',
+	scss: paths.assets + 'scss/'
+};
+
+const deploy = {
+	js: paths.assetsDist + 'js/',
+	css: paths.assetsDist + 'css/',
+	fonts: paths.libDist + 'fonts/'
 };
 
 // ==================================================
-// Github Pages
+// Publish to Github
 
+// Showcase
 // Publish files to `gh-pages` branch on Github
 ghpages.publish( 'public', {
 	branch: 'gh-pages',
@@ -71,6 +69,7 @@ ghpages.publish( 'public', {
 	}
 });
 
+// Library
 // Publish files to `master` branch on Github
 ghpages.publish( 'library', {
 	branch: 'master',
@@ -81,36 +80,33 @@ ghpages.publish( 'library', {
 });
 
 // ==================================================
-// List of files to watch
+// Files
 
-const SiteRoot = [
-	paths.site + '**/**/**',
-	paths.includes + '**',
-	paths.layouts + '**'
-];
-
-const HustleJS = [
-	hustle.js + '*.js'
-];
-
+// Hustle styles
 const HustleScss = [
-	hustle.scss + '**/**/*.scss'
+	libProd.scss + '**/*.scss'
 ];
 
-const ShowcaseJs = [
-	hustle.js + '*.js',
-	showcase.js + '*.js'
+// Hustle scripts
+const HustleJs = [
+	libProd.js + '*.js'
 ];
 
+// Showcase styles
 const ShowcaseScss = [
-	hustle.scss + '*.scss',
-	showcase.scss + '*.scss'
+	assets.scss + '*.scss',
+	libProd.scss + '**/*.scss'
+];
+
+// Showcase scripts
+const ShowcaseJs = [
+	assets.js + '*.js'
 ];
 
 // ==================================================
 // Tasks
 
-// TASK: Build hustle styles
+// Build Hustle styles
 gulp.task( 'hustle:styles', function() {
 
 	gulp.src( HustleScss )
@@ -118,21 +114,20 @@ gulp.task( 'hustle:styles', function() {
 			sass({ outputStyle: 'compressed' })
 			.on( 'error', sass.logError )
 		)
-		.pipe( autoprefixer( browserslist ) )
+		.pipe( autoprefixer( browsersList ) )
 		.pipe( cleanCSS() )
 		.pipe( rename({
 			suffix: '.min'
 		}) )
-		.pipe( gulp.dest( paths.library ) )
-		.pipe( browserSync.stream() )
+		.pipe( gulp.dest( libPublic.css ) )
 		;
 });
 
-// TASK: Build hustle scripts
+// Build Hustle scripts
 gulp.task( 'hustle:scripts', function( cb ) {
 
 	pump([
-		gulp.src( HustleJS ),
+		gulp.src( HustleJs ),
 		eslint(),
 		eslint.format(),
 		eslint.failAfterError(),
@@ -141,12 +136,12 @@ gulp.task( 'hustle:scripts', function( cb ) {
 		rename({
 			suffix: '.min'
 		}),
-		gulp.dest( paths.library ),
-		browserSync.stream()
+		gulp.dest( deploy.js ),
+		gulp.dest( libPublic.js )
 	], cb );
 });
 
-// TASK: Build showcase styles
+// Build showcase styles
 gulp.task( 'showcase:styles', function() {
 
 	gulp.src( ShowcaseScss )
@@ -154,17 +149,16 @@ gulp.task( 'showcase:styles', function() {
 			sass({ outputStyle: 'compressed' })
 			.on( 'error', sass.logError )
 		)
-		.pipe( autoprefixer( browserslist ) )
+		.pipe( autoprefixer( browsersList ) )
 		.pipe( cleanCSS() )
 		.pipe( rename({
 			suffix: '.min'
 		}) )
-		.pipe( gulp.dest( assets.css ) )
-		.pipe( browserSync.stream() )
+		.pipe( gulp.dest( deploy.css ) )
 		;
 });
 
-// TASK: Build hustle scripts
+// Build showcase scripts
 gulp.task( 'showcase:scripts', function( cb ) {
 
 	pump([
@@ -177,82 +171,46 @@ gulp.task( 'showcase:scripts', function( cb ) {
 		rename({
 			suffix: '.min'
 		}),
-		gulp.dest( assets.js ),
-		browserSync.stream()
+		gulp.dest( deploy.js )
 	], cb );
 });
 
-// Task: Build hustle files
+// Build Hustle UI assets
 gulp.task( 'build:hustle', [
 	'hustle:styles',
 	'hustle:scripts'
 ]);
 
-// Task: Build showcase files
+// Build showcase assets
 gulp.task( 'build:showcase', [
 	'showcase:styles',
 	'showcase:scripts'
 ]);
 
-// Task: Build Jekyll
-gulp.task( 'build:jekyll', function() {
+// ==================================================
+// Watch
 
-	var jekyll = child.spawn( 'jekyll', [
-		'build',
-		'--watch',
-		'--incremental',
-		'--drafts'
-	]);
-
-	function jekyllLogger( buffer ) {
-
-		buffer.toString()
-			.split( /\n/ )
-			.forEach( function( message ) {
-				gutil.log( 'Jekyll: ' + message );
-			})
-			;
-	};
-
-	jekyll.stdout.on( 'data', jekyllLogger );
-	jekyll.stderr.on( 'data', jekyllLogger );
-
-});
-
-// Task: Watch for changes across project
 gulp.task( 'watch', function() {
 
-	// Watch for hustle styles changes
+	// Watch Hustle styles
 	gulp.watch( HustleScss, [ 'hustle:styles' ]);
 
-	// Watch for hustle js changes
-	gulp.watch( HustleJS, [ 'hustle:scripts' ]);
+	// Watch Hustle scripts
+	gulp.watch( HustleJs, [ 'hustle:scripts' ]);
 
-	// Watch for showcase styles changes
+	// Watch showcase styles
 	gulp.watch( ShowcaseScss, [ 'showcase:styles' ]);
 
-	// Watch for showcase js changes
+	// Watch showcase scripts
 	gulp.watch( ShowcaseJs, [ 'showcase:scripts' ]);
 
 });
 
-// Task: Initialize the server
-gulp.task( 'server', function() {
+// ==================================================
+// Development
 
-	browserSync.init({
-		files: [ SiteRoot ],
-		port: 4000,
-		server: {
-			baseDir: paths.site
-		}
-	});
-});
-
-// Task: Run development environment
-gulp.task( 'start', [
+gulp.task( 'development', [
 	'build:hustle',
 	'build:showcase',
-	'build:jekyll',
-	'server',
 	'watch'
 ]);

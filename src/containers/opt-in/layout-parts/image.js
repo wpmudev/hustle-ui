@@ -3,8 +3,17 @@ import React, { Component } from 'react';
 export default class LayoutImage extends Component {
 	render() {
 		const fitting = this.props.fitting ? this.props.fitting : 'none';
-		const positionX = this.props.positionX ? this.props.positionX : 'left';
-		const positionY = this.props.positionY ? this.props.positionY : 'top';
+		const positionX = this.props.imagePosX ? this.props.imagePosX : 'left';
+		const positionY = this.props.imagePosY ? this.props.imagePosY : 'top';
+		let imagePosition = 'hustle-image-position--' + positionX + positionY;
+
+		if ( 'fill' === this.props.fitting ) {
+			imagePosition = '';
+		}
+
+		if ( 'none' === this.props.fitting ) {
+			imagePosition = '';
+		}
 
 		if ( '' !== this.props.image ) {
 
@@ -15,9 +24,9 @@ export default class LayoutImage extends Component {
 				>
 
 					<img
-						src="https://www.ngenespanol.com/wp-content/uploads/2018/08/%C2%BFEs-m%C3%A1s-sano-desayunar-pizza-o-cereal.png"
+						src={ `assets/images/${ this.props.image }` }
 						alt="Sample Image"
-						className={ `hustle-image-position--${ positionX }-${ positionY }` }
+						className={ imagePosition }
 						aria-hidden="true"
 					/>
 

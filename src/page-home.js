@@ -9,17 +9,65 @@ export default class Home extends Component {
 
 				<section>
 
-					<SampleEmbed mode="optin" />
+					<h1>Embedded Opt-in</h1>
 
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed odio dui. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Curabitur blandit tempus porttitor. Donec ullamcorper nulla non metus auctor fringilla. Donec ullamcorper nulla non metus auctor fringilla. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+					<h2>Sample #1</h2>
 
-					<p>Nullam quis risus eget urna mollis ornare vel eu leo. Maecenas faucibus mollis interdum. Aenean lacinia bibendum nulla sed consectetur. Donec sed odio dui. Sed posuere consectetur est at lobortis. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Etiam porta sem malesuada magna mollis euismod.</p>
+					<ul>
+						<li><strong>Image Display:</strong> Left</li>
+						<li><strong>Image Fitting:</strong> None</li>
+					</ul>
 
-					<p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Nulla vitae elit libero, a pharetra augue. Curabitur blandit tempus porttitor.</p>
+					<SampleEmbed
+						mode="optin"
+						imageDisplay="left"
+						imageFitting="none"
+					/>
 
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed odio dui. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Curabitur blandit tempus porttitor. Donec ullamcorper nulla non metus auctor fringilla. Donec ullamcorper nulla non metus auctor fringilla. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+					<hr />
 
-					<SampleEmbed mode="optin" />
+					<h2>Sample #2</h2>
+
+					<ul>
+						<li><strong>Image Display:</strong> Right</li>
+						<li><strong>Image Fitting:</strong> None</li>
+					</ul>
+
+					<SampleEmbed
+						mode="optin"
+						imageDisplay="right"
+						imageFitting="none"
+					/>
+
+					<hr />
+
+					<h2>Sample #3</h2>
+
+					<ul>
+						<li><strong>Image Display:</strong> Above</li>
+						<li><strong>Image Fitting:</strong> None</li>
+					</ul>
+
+					<SampleEmbed
+						mode="optin"
+						imageDisplay="above"
+						imageFitting="none"
+					/>
+
+					<hr />
+
+					<h2>Sample #4</h2>
+
+					<ul>
+						<li><strong>Image Display:</strong> Below</li>
+						<li><strong>Image Fitting:</strong> None</li>
+					</ul>
+
+					<SampleEmbed
+						mode="optin"
+						imageDisplay="below"
+						imageFitting="none"
+					/>
 
 				</section>
 

@@ -15,10 +15,13 @@ export default class SampleEmbed extends Component {
 			icon: 'animated',
 			proximity: 'joined',
 			title: 'Malesuada Parturient Tellus',
+			ctaButton: 'Call To Action',
 			image: 'horizontal.png',
+			fitting: 'cover',
 			position: 'left',
-			positionX: 'left',
-			positionY: 'top',
+			imagePosX: 'center',
+			imagePosY: 'center',
+			nsaLink: 'true',
 			subtitle: (
 				'Duis mollis, est non commodo luctus, nisi erat porttitor ligula, ' +
 				'eget lacinia odio sem nec elit.'
@@ -55,21 +58,30 @@ export default class SampleEmbed extends Component {
 					type={ optin.type }
 					layout={ optin.layout }
 					image={ optin.image }
+					fitting={ optin.fitting }
 					position={ optin.position }
-					positionX={ optin.positionX }
-					positionY={ optin.positionY }
+					imagePosX={ optin.imagePosX }
+					imagePosY={ optin.imagePosY }
 					title={ optin.title }
 					subtitle={ optin.subtitle }
+					ctaButton={ optin.ctaButton }
 					contentLayout={ optin.content }
 					fieldsIcon={ optin.icon }
 					fieldsProximity={ optin.proximity }
 					contentSuccess={ optin.success }
+					nsaLink={ optin.nsaLink }
 				>
 					<Input
-						property={ optin.id }
+						property={ `${ optin.id }-fname` }
 						type="name"
 						icon={ optin.icon }
-						label="John Smith"
+						label="E.g. John"
+					/>
+					<Input
+						property={ `${ optin.id }-lname` }
+						type="name"
+						icon={ optin.icon }
+						label="E.g. Smith"
 					/>
 				</Optin>
 			);

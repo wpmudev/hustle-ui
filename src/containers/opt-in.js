@@ -15,6 +15,15 @@ export default class Optin extends Component {
 			}
 		);
 
+		let nsaLink = 'false';
+
+		if (
+			'popup' === this.props.type ||
+			'slidein' === this.props.type
+		) {
+			nsaLink = this.props.nsaLink ? this.props.nsaLink : 'false';
+		}
+
 		let moduleLayout = '';
 
 		if ( 'default' === this.props.layout ) {
@@ -25,10 +34,12 @@ export default class Optin extends Component {
 					title={ this.props.title ? this.props.title : '' }
 					subtitle={ this.props.subtitle ? this.props.subtitle : '' }
 					content={ this.props.contentLayout ? this.props.contentLayout : '' }
+					ctaButton={ this.props.ctaButton ? this.props.ctaButton : '' }
 					image={ this.props.image ? this.props.image : '' }
+					fitting={ this.props.fitting ? this.props.fitting : 'none' }
 					position={ this.props.position ? this.props.position : 'left' }
-					positionX={ this.props.positionX ? this.props.positionX : 'left' }
-					positionY={ this.props.positionY ? this.props.positionY : 'top' }
+					imagePosX={ this.props.imagePosX ? this.props.imagePosX : 'left' }
+					imagePosY={ this.props.imagePosY ? this.props.imagePosY : 'top' }
 					fieldsIcon={ this.props.fieldsIcon ? this.props.fieldsIcon : '' }
 					fieldsProximity={ this.props.fieldsProximity ? this.props.fieldsProximity : 'joined' }
 					nsaLink={ this.props.nsaLink ? this.props.nsaLink : 'false' }

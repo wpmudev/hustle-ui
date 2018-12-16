@@ -72,16 +72,10 @@ export default class SampleEmbed extends Component {
 					nsaLink={ optin.nsaLink }
 				>
 					<Input
-						property={ `${ optin.id }-fname` }
+						property={ `${ optin.id }` }
 						type="name"
 						icon={ optin.icon }
-						label="E.g. John"
-					/>
-					<Input
-						property={ `${ optin.id }-lname` }
-						type="name"
-						icon={ optin.icon }
-						label="E.g. Smith"
+						label="John Smith"
 					/>
 				</Optin>
 			);

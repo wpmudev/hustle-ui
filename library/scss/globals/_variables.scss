@@ -25,7 +25,7 @@ $hui-gutter:             20px;
 $hui-gutter-sm:          10px;
 
 $hui-font:               "Open Sans", Arial, sans-serif;
-$hui-font--icon:         "hustle-icons-fonts";
+$hui-font--icon:         "hustle-icons-font";
 
 $hui-transition--ease:   0.2s ease;
 $hui-transition--linear: 0.2s linear;
@@ -85,6 +85,12 @@ $hui-button--height: 36px;
 // 6. FORM INPUT
 $hui-input--height:  36px;
 $hui-input--padding: 10px;
+
+$hui-input--icon-width: 20px;
+$hui-input--icon-size:  14px;
+
+$hui-input--font-size: 13px;
+$hui-input--line-height: 18px;
 
 // =============================================
 // 7. FORM SPACING

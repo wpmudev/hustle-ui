@@ -4,7 +4,6 @@
 		font-family: $hui-font--icon;
 		src: url(if($hui-assets-helper, twbs-font-path('#{$hui-font-path}#{$hui-font--icon}.eot'), '#{$hui-font-path}#{$hui-font--icon}.eot'));
 		src: url(if($hui-assets-helper, twbs-font-path('#{$hui-font-path}#{$hui-font--icon}.eot?#iefix'), '#{$hui-font-path}#{$hui-font--icon}.eot?#iefix')) format('embedded-opentype'),
-			 url(if($hui-assets-helper, twbs-font-path('#{$hui-font-path}#{$hui-font--icon}.woff2'), '#{$hui-font-path}#{$hui-font--icon}.woff2')) format('woff2'),
 			 url(if($hui-assets-helper, twbs-font-path('#{$hui-font-path}#{$hui-font--icon}.woff'), '#{$hui-font-path}#{$hui-font--icon}.woff')) format('woff'),
 			 url(if($hui-assets-helper, twbs-font-path('#{$hui-font-path}#{$hui-font--icon}.ttf'), '#{$hui-font-path}#{$hui-font--icon}.ttf')) format('truetype'),
 			 url(if($hui-assets-helper, twbs-font-path('#{$hui-font-path}#{$hui-font--icon}.svg'), '#{$hui-font-path}#{$hui-font--icon}.svg#')) format('svg');

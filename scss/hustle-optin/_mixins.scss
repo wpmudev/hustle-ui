@@ -1,0 +1,19 @@
+@mixin body-class($layout: null) {
+
+	@if ( $layout == null ) {
+
+		.hustle-optin {
+			@content;
+		}
+	}
+
+	@else {
+
+		.hustle-optin {
+
+			&.hustle-optin--#{$layout} {
+				@content;
+			}
+		}
+	}
+}

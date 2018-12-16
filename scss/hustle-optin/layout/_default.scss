@@ -1,0 +1,127 @@
+@include body-class(default) {
+
+	// SIZE: Global
+	.hustle-layout {
+
+		// ELEMENT: Opt-in Content
+		.hustle-layout-content {
+
+			.hustle-image {
+
+				&.hustle-image-fit--fill {
+					@extend %hui-image-fit-fill;
+				}
+	
+				&.hustle-image-fit--contain {
+					@extend %hui-image-fit-contain;
+				}
+	
+				&.hustle-image-fit--cover {
+					@extend %hui-image-fit-cover;
+				}
+	
+				&.hustle-image-fit--none {
+					@extend %hui-image-fit-full;
+				}
+			}
+
+			// POSITION: Horizontal Sides
+			// Image can be displayed at left or right of the content
+			&.hustle-layout-position--left,
+			&.hustle-layout-position--right {
+
+				.hustle-image {
+
+					&.hustle-image-fit--fill,
+					&.hustle-image-fit--cover,
+					&.hustle-image-fit--contain {
+						height: $hui-image-size-sm;
+						overflow: hidden;
+					}
+				}
+			}
+
+			// POSITION: Vertical Sides
+			// Image can be displayed at left or right of the content
+			&.hustle-layout-position--above,
+			&.hustle-layout-position--below {
+
+				.hustle-image {
+
+					&.hustle-image-fit--fill,
+					&.hustle-image-fit--cover,
+					&.hustle-image-fit--contain {
+						height: $hui-image-size-sm;
+						overflow: hidden;
+					}
+				}
+			}
+		}
+
+		// ELEMENT: Opt-in Form
+		.hustle-layout-form {}
+	}
+
+	// SIZE: Normal
+	&:not(.hustle-size--small) {
+
+		.hustle-layout {
+
+			// ELEMENT: Opt-in Content
+			.hustle-layout-content {
+
+				// POSITION: Horizontal Sides
+				// Image can be displayed at left or right of the content
+				&.hustle-layout-position--left,
+				&.hustle-layout-position--right {
+
+					.hustle-image {
+
+						&.hustle-image-fit--fill,
+						&.hustle-image-fit--cover,
+						&.hustle-image-fit--contain {
+
+							&:only-child {
+							
+								@include media(min-width, sm) {
+									max-width: unset;
+									height: $hui-image-size;
+									flex: 1;
+								}
+							}
+
+							@include media(min-width, sm) {
+								max-width: $hui-image-size;
+								height: auto;
+								flex: 0 0 $hui-image-size;
+							}
+						}
+
+						&.hustle-image-fit--none {
+
+							&:only-child {
+							
+								@include media(min-width, sm) {
+									max-width: unset;
+									flex: 1;
+								}
+							}
+
+							@include media(min-width, sm) {
+								max-width: 50%;
+								flex: 0 0 auto;
+							}
+						}
+					}
+
+					@include media(min-width, sm) {
+						display: flex;
+					}
+				}
+			}
+	
+			// ELEMENT: Opt-in Form
+			.hustle-layout-form {}
+		}
+	}
+}

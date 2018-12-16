@@ -1,0 +1,98 @@
+$hui-assets-helper: false !default;
+
+// =============================================
+// VARIABLES MENU
+//
+// 1. BASIC VARIABLES
+// 2. BREAKPOINTS
+// 3. LIST OF ICONS
+// 4. CLOSE BUTTON
+// 5. REGULAR BUTTON
+// 6. FORM INPUT
+// 7. FORM SPACING
+// =============================================
+
+// =============================================
+// 1. BASIC VARIABLES
+
+$hui-version:            '4.0.0'      !default;
+$hui-font-path:          '../fonts/'  !default;
+$hui-image-path:         '../images/' !default;
+
+$hui-dialog-width:       800px;
+
+$hui-gutter:             20px;
+$hui-gutter-sm:          10px;
+
+$hui-font:               "Open Sans", Arial, sans-serif;
+$hui-font--icon:         "hustle-icons-font";
+
+$hui-transition--ease:   0.2s ease;
+$hui-transition--linear: 0.2s linear;
+
+$hui-image-size: 320px;
+$hui-image-size-sm: 150px;
+
+// =============================================
+// 2. BREAKPOINTS
+
+$hui-breakpoints: (
+	sm: 783px,
+	md: 961px,
+	lg: 1201px
+) !default;
+
+// =============================================
+// 3. LIST OF ICONS
+
+$icons: (
+	address:          "\61",
+	check:            "\62",
+	chevron-down:     "\63",
+	datepicker:       "\64",
+	email:            "\65",
+	name:             "\66",
+	number:           "\67",
+	phone:            "\68",
+	social-facebook:  "\69",
+	social-google:    "\6a",
+	social-houzz:     "\6b",
+	social-instagram: "\6c",
+	social-linkedin:  "\6d",
+	social-pinterest: "\6e",
+	social-reddit:    "\6f",
+	social-telegram:  "\70",
+	social-twitch:    "\71",
+	social-twitter:   "\72",
+	social-vkontakte: "\73",
+	social-youtube:   "\74",
+	text:             "\75",
+	timepicker:       "\76",
+	website:          "\77"
+) !default;
+
+// =============================================
+// 4. CLOSE BUTTON
+$hui-close--size: 30px;
+$hui-close--icon: 16px;
+
+// =============================================
+// 5. REGULAR BUTTON
+$hui-button--width: 100px;
+$hui-button--height: 36px;
+
+// =============================================
+// 6. FORM INPUT
+$hui-input--height:  36px;
+$hui-input--padding: 10px;
+
+$hui-input--icon-width: 20px;
+$hui-input--icon-size:  14px;
+
+$hui-input--font-size: 13px;
+$hui-input--line-height: 18px;
+
+// =============================================
+// 7. FORM SPACING
+$hui-joined: 1px;
+$hui-separated: 10px;

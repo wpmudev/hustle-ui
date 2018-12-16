@@ -1,0 +1,16 @@
+.hustle-inline {
+
+	@include body-class() {
+
+		.hustle-optin-header {
+			display: none;
+		}
+
+		.hustle-layout {
+
+			.hustle-layout-footer {
+				display: none;
+			}
+		}
+	}
+}

@@ -1,0 +1,100 @@
+@include body-class() {
+
+	.hustle-form {
+
+		.hustle-field {
+			display: flex;
+			align-items: center;
+			position: relative;
+			margin: 0;
+			padding: 0;
+			border: 0;
+			text-align: left;
+		}
+
+		.hustle-button {
+			width: 100%;
+		}
+
+		.hustle-form-fields {
+			display: block;
+
+			&.hustle-proximity-joined {
+
+				.hustle-field {
+
+					&:not(:last-child) {
+						margin-bottom: $hui-joined;
+					}
+				}
+			}
+
+			&.hustle-proximity-separated {
+
+				.hustle-field {
+
+					&:not(:last-child) {
+						margin-bottom: $hui-separated;
+					}
+				}
+			}
+		}
+	}
+
+	&:not(.hustle-size--small) {
+
+		.hustle-form {
+
+			.hustle-field {
+
+				@include media(min-width, sm) {
+					flex: 1;
+				}
+			}
+
+			.hustle-button {
+
+				@include media(min-width, sm) {
+					width: auto;
+					flex: 0 0 auto;
+				}
+			}
+
+			.hustle-form-fields {
+
+				&.hustle-proximity-joined {
+
+					.hustle-field {
+	
+						&:not(:last-child) {
+
+							@include media(min-width, sm) {
+								margin-right: $hui-joined;
+								margin-bottom: 0;
+							}
+						}
+					}
+				}
+	
+				&.hustle-proximity-separated {
+	
+					.hustle-field {
+	
+						&:not(:last-child) {
+
+							@include media(min-width, sm) {
+								margin-right: $hui-separated;
+								margin-bottom: 0;
+							}
+						}
+					}
+				}
+
+				@include media(min-width, sm) {
+					display: flex;
+					align-items: center;
+				}
+			}
+		}
+	}
+}

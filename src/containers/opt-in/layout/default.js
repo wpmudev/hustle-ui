@@ -14,8 +14,15 @@ export default class LayoutDefault extends Component {
 			}
 		);
 
+		let imagePosition = '';
+
+		if ( '' !== this.props.image ) {
+			imagePosition = this.props.position ?
+				'hustle-layout-position--' + this.props.position :
+				'hustle-layout-position--left';
+		}
+
 		let layoutContent = '';
-		const imagePosition = this.props.position ? this.props.position : 'left';
 
 		if (
 			'' !== this.props.image ||
@@ -25,18 +32,20 @@ export default class LayoutDefault extends Component {
 			'' !== this.props.ctaButton
 		) {
 			layoutContent = (
-				<div className={ `hustle-layout-content hustle-layout-position--${ imagePosition }` }>
+				<div className={ `hustle-layout-content ${ imagePosition }` }>
 
 					<LayoutImage
 						image={ this.props.image ? this.props.image : '' }
+						fitting={ this.props.fitting ? this.props.fitting : 'none' }
 						position={ this.props.position ? this.props.position : 'left' }
-						positionX={ this.props.positionX ? this.props.positionX : 'left' }
-						positionY={ this.props.positionY ? this.props.positionY : 'top' }
+						imagePosX={ this.props.imagePosX ? this.props.imagePosX : 'left' }
+						imagePosY={ this.props.imagePosY ? this.props.imagePosY : 'top' }
 					/>
 
 					<LayoutContent
 						title={ this.props.title ? this.props.title : '' }
 						subtitle={ this.props.subtitle ? this.props.subtitle : '' }
+						ctaButton={ this.props.ctaButton ? this.props.ctaButton : '' }
 						content={ this.props.content ? this.props.content : '' }
 					/>
 

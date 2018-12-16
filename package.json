@@ -3,18 +3,24 @@
 	"version": "4.0.0",
 	"private": true,
 	"author": "WPMU DEV",
-	"homepage": "https://wpmudev.github.io/hustle-ui",
+	"contributors": [
+		{
+			"name": "Leighton Sapir",
+			"email": "leigh@incsub.com",
+			"url": "https://iamleigh.com/"
+		}
+	],
+	"homepage": "https://wpmudev.github.io/hustle-ui/",
 	"repository": {
 		"type": "git",
 		"url": "git@github.com:wpmudev/hustle-ui.git"
 	},
-	"eslintConfig": {
-		"extends": "wordpress"
+	"dependencies": {
+		"react": "^16.6.3",
+		"react-dom": "^16.6.3",
+		"react-scripts": "^2.1.1"
 	},
 	"devDependencies": {
-		"browser-sync": "^2.26.3",
-		"child_process": "^1.0.2",
-		"es6-promise": "^4.2.5",
 		"eslint-config-wordpress": "^2.0.0",
 		"fs": "0.0.1-security",
 		"gh-pages": "^2.0.1",
@@ -24,16 +30,31 @@
 		"gulp-concat": "^2.6.1",
 		"gulp-eslint": "^5.0.0",
 		"gulp-rename": "^1.4.0",
-		"gulp-replace": "^1.0.0",
 		"gulp-sass": "^4.0.2",
 		"gulp-uglify-es": "^1.0.4",
-		"gulp-util": "^3.0.8",
 		"gulp-watch": "^5.0.1",
 		"pump": "^3.0.0"
 	},
+	"eslintConfig": {
+		"extends": [
+			"react-app",
+			"wordpress"
+		]
+	},
 	"eslintIgnore": [],
+	"browserslist": [
+		">0.2%",
+		"not dead",
+		"not ie <= 11",
+		"not op_mini all"
+	],
 	"scripts": {
-		"start": "gulp start",
-		"deploy": "gh-pages -d public && gh-pages -d library"
+		"start:react": "react-scripts start",
+		"start:assets": "gulp development",
+		"build": "react-scripts build",
+		"test": "react-scripts test",
+		"predeploy": "npm run build",
+		"deploy": "gh-pages -d build",
+		"eject": "react-scripts eject"
 	}
 }

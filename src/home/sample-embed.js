@@ -12,7 +12,7 @@ export default class SampleEmbed extends Component {
 			id: 'sample-embed',
 			type: 'embedded',
 			layout: 'default',
-			icon: 'none',
+			icon: 'animated',
 			proximity: 'joined',
 			title: 'Malesuada Parturient Tellus',
 			image: 'horizontal.png',

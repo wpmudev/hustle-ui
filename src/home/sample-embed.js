@@ -27,9 +27,9 @@ export default class SampleEmbed extends Component {
 					'non magna.'
 				)}</p>
 			),
-			position: 'below',
+			position: this.props.imageDisplay ? this.props.imageDisplay : 'left',
 			image: 'horizontal.png',
-			fitting: 'cover',
+			fitting: this.props.imageFitting ? this.props.imageFitting : 'none',
 			imagePosX: 'center',
 			imagePosY: 'center',
 			icon: 'static',

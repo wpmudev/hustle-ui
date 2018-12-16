@@ -1,0 +1,65 @@
+.hustle-optin {
+
+	.hustle-layout {
+
+		&-body {
+			background-color: #38454E;
+
+			.hustle-image {
+				background-color: #35414A;
+			}
+
+			.hustle-content {
+
+				.hustle-title {
+					color: #FFFFFF;
+				}
+
+				.hustle-subtitle {
+					color: #FFFFFF;
+				}
+
+				.hustle-button {
+					border-width: 0;
+					border-style: none;
+					border-color: rgba(0,0,0,0);
+					background-color: rgba(56,197,181,1);
+					color: rgba(255,255,255,1);
+				}
+			}
+		}
+
+		&-form {
+			background-color: #5D7380;
+
+			.hustle-form-fields {
+
+				.hustle-field {
+
+					.hustle-input {
+						border-width: 0;
+						border-style: none;
+						border-color: rgba(0,0,0,0);
+						background-color: rgba(255,255,255,1);
+					}
+
+					.hustle-input-label span {
+						color: rgba(170,170,170,1);
+					}
+
+					.hustle-input-label [class*="hustle-icon-"] {
+						color: rgba(170,170,170,1);
+					}
+				}
+
+				.hustle-button {
+					border-width: 0;
+					border-style: none;
+					border-color: rgba(0,0,0,0);
+					background-color: rgba(56,197,181,1);
+					color: rgba(255,255,255,1);
+				}
+			}
+		}
+	}
+}

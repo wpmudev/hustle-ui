@@ -12,20 +12,12 @@ export default class SampleEmbed extends Component {
 			id: 'sample-embed',
 			type: 'embedded',
 			layout: 'default',
-			icon: 'animated',
-			proximity: 'joined',
 			title: 'Malesuada Parturient Tellus',
-			ctaButton: 'Call To Action',
-			image: 'horizontal.png',
-			fitting: 'cover',
-			position: 'left',
-			imagePosX: 'center',
-			imagePosY: 'center',
-			nsaLink: 'true',
 			subtitle: (
 				'Duis mollis, est non commodo luctus, nisi erat porttitor ligula, ' +
 				'eget lacinia odio sem nec elit.'
 			),
+			ctaButton: 'Call To Action',
 			content: (
 				<p>{(
 					'Cras mattis consectetur purus sit amet fermentum. Curabitur blandit tempus ' +
@@ -35,6 +27,14 @@ export default class SampleEmbed extends Component {
 					'non magna.'
 				)}</p>
 			),
+			position: 'below',
+			image: 'horizontal.png',
+			fitting: 'cover',
+			imagePosX: 'center',
+			imagePosY: 'center',
+			icon: 'static',
+			proximity: 'joined',
+			nsaLink: 'true',
 			success: (
 				<p>{(
 					'Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Cras ' +

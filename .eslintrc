@@ -2,7 +2,10 @@
 	"env": {
 		"es6": true
 	},
-	"extends": "wordpress",
+	"extends": [
+		"react-app",
+		"wordpress"
+	],
 	"parserOptions": {
 		"sourceType": "module",
 		"ecmaVersion": 2018

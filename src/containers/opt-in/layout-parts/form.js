@@ -16,7 +16,7 @@ export default class LayoutForm extends Component {
 			'static' === this.props.fieldsIcon ||
 			'animated' === this.props.fieldsIcon
 		) {
-			icon = this.props.icon;
+			icon = this.props.fieldsIcon;
 		}
 
 		return (

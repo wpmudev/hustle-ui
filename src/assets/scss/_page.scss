@@ -1,6 +1,24 @@
-@include body-class() {
-	width: 100%;
-	max-width: $page-size;
-	margin: 0 auto;
-	padding: $gutter;
+@include body-class(true) {
+
+	&.showcase-wrap {
+		display: block;
+		position: relative;
+		margin: 0;
+
+		.showcase-content {
+			width: 100%;
+			max-width: $page-size;
+			display: block;
+			margin: 0 auto;
+			padding: $gutter 0;
+		}
+
+		@include media(max-width, md) {
+			padding: 0 $sui-gutter-md;
+		}
+
+		@include media(min-width, md) {
+			padding: 0 $sui-gutter;
+		}
+	}
 }

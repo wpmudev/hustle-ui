@@ -1,8 +1,13 @@
-@import "mixins";
+// ============================================================
+// Shared UI
+// Import original shared-ui styles.
+@import "../../../node_modules/@wpmudev/shared-ui/scss/shared-ui";
+
 @import "helpers";
 @import "variables";
 @import "reset";
 @import "accessibility";
 @import "page";
+@import "navigation";
 
 @import "custom-optin";

@@ -14,12 +14,12 @@ export default class LayoutContent extends Component {
 				<div className="hustle-group-title">
 
 					{ ( '' !== this.props.title ) ?
-						( <h1 className="hustle-title">{ this.props.title }</h1> ) :
+						( <span className="hustle-title">{ this.props.title }</span> ) :
 						''
 					}
 
 					{ ( '' !== this.props.subtitle ) ?
-						( <h2 className="hustle-subtitle">{ this.props.subtitle }</h2> ) :
+						( <span className="hustle-subtitle">{ this.props.subtitle }</span> ) :
 						''
 					}
 

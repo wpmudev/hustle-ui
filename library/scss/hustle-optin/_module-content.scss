@@ -18,7 +18,8 @@
 				}
 
 				// ELEMENT: Opt-in Title
-				h1.hustle-title {
+				.hustle-title {
+					display: block;
 					margin: 0;
 					font: 700 20px/27px $hui-font;
 					letter-spacing: 0;
@@ -30,7 +31,8 @@
 				}
 
 				// ELEMENT: Opt-in Subtitle
-				h2.hustle-subtitle {
+				.hustle-subtitle {
+					display: block;
 					margin: 0;
 					font: 700 14px/18px $hui-font;
 					letter-spacing: 0;

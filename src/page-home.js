@@ -1,77 +1,29 @@
 import React, { Component } from 'react';
 
-import SampleEmbed from './home/sample-embed';
+import SampleOptinEmbed from './containers/samples/optin-embed';
 
-export default class Home extends Component {
+export default class PageHome extends Component {
 	render() {
 		return (
-			<React.Fragment>
+			<div className="showcase-content">
 
-				<section>
+				<h1>Hustle UI</h1>
 
-					<h1>Embedded Opt-in</h1>
+				<p>Cras mattis consectetur purus sit amet fermentum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
 
-					<h2>Sample #1</h2>
+				<p>Nullam quis risus eget urna mollis ornare vel eu leo. Donec sed odio dui. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean lacinia bibendum nulla sed consectetur. Donec sed odio dui.</p>
 
-					<ul>
-						<li><strong>Image Display:</strong> Left</li>
-						<li><strong>Image Fitting:</strong> None</li>
-					</ul>
+				<p>Sed posuere consectetur est at lobortis. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Nulla vitae elit libero, a pharetra augue. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.</p>
 
-					<SampleEmbed
-						mode="optin"
-						imageDisplay="left"
-						imageFitting="none"
-					/>
+				<SampleOptinEmbed />
 
-					<hr />
+				<p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Nullam id dolor id nibh ultricies vehicula ut id elit. Cras mattis consectetur purus sit amet fermentum. Nullam quis risus eget urna mollis ornare vel eu leo.</p>
 
-					<h2>Sample #2</h2>
+				<p>Vestibulum id ligula porta felis euismod semper. Donec id elit non mi porta gravida at eget metus. Nulla vitae elit libero, a pharetra augue. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</p>
 
-					<ul>
-						<li><strong>Image Display:</strong> Right</li>
-						<li><strong>Image Fitting:</strong> None</li>
-					</ul>
+				<p>Donec sed odio dui. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vitae elit libero, a pharetra augue. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</p>
 
-					<SampleEmbed
-						mode="optin"
-						imageDisplay="right"
-						imageFitting="none"
-					/>
-
-					<hr />
-
-					<h2>Sample #3</h2>
-
-					<ul>
-						<li><strong>Image Display:</strong> Above</li>
-						<li><strong>Image Fitting:</strong> None</li>
-					</ul>
-
-					<SampleEmbed
-						mode="optin"
-						imageDisplay="above"
-						imageFitting="none"
-					/>
-
-					<hr />
-
-					<h2>Sample #4</h2>
-
-					<ul>
-						<li><strong>Image Display:</strong> Below</li>
-						<li><strong>Image Fitting:</strong> None</li>
-					</ul>
-
-					<SampleEmbed
-						mode="optin"
-						imageDisplay="below"
-						imageFitting="none"
-					/>
-
-				</section>
-
-			</React.Fragment>
+			</div>
 		);
 	}
 }

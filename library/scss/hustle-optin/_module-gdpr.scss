@@ -1,0 +1,17 @@
+@include body-class() {
+
+	.hustle-layout-form {
+
+		.hustle-gdpr {
+			display: inline-flex;
+
+			@include media(max-width, sm) {
+				margin-top: $hui-gutter-sm;
+			}
+
+			@include media(min-width, sm) {
+				margin-top: $hui-gutter;
+			}
+		}
+	}
+}

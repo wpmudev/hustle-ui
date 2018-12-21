@@ -67,6 +67,18 @@
 					color: rgba(255,255,255,1);
 				}
 			}
+
+			.hustle-gdpr {
+
+				span[aria-hidden] {
+					background-color: #FFFFFF;
+					color: #38C5B5;
+				}
+
+				span:not([aria-hidden]) {
+					color: #FFFFFF;
+				}
+			}
 		}
 	}
 }

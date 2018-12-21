@@ -14,7 +14,7 @@
 	}
 }
 
-.hustle-ui {
+@include global-class() {
 
 	[class*="hustle-icon-"] {
 		@include icon(both);

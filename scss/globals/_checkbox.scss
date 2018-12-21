@@ -1,0 +1,50 @@
+@include global-class() {
+
+	.hustle-checkbox {
+		display: flex;
+
+		input {
+			@extend %hui-screen-reader;
+
+			&:checked {
+
+				+ span[aria-hidden] {
+
+					&:before {
+						@include opacity(1);
+					}
+				}
+			}
+		}
+
+		span[aria-hidden] {
+			width: $hui-checkbox--size;
+			height: $hui-checkbox--size;
+			cursor: pointer;
+			display: flex;
+			flex: 0 0 $hui-checkbox--size;
+			align-items: center;
+			justify-content: center;
+			margin: 0;
+			padding: 0;
+			border-width: $hui-checkbox--border-width;
+			border-style: $hui-checkbox--border-style;
+			border-color: transparent;
+			transition: $hui-transition--ease;
+
+			@include icon(before, check) {
+				@include opacity(0);
+				display: block;
+				margin: 0 auto;
+				font-size: $hui-checkbox--icon-size;
+			}
+		}
+
+		span:not([aria-hidden]) {
+			flex: 1 1 auto;
+			margin: 0 0 0 5px;
+			font-size: $hui-checkbox--font-size;
+			line-height: $hui-checkbox--line-height;
+		}
+	}
+}

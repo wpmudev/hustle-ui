@@ -3,6 +3,8 @@ import React, { Component } from 'react';
 import Tabs from './components/tabs';
 import TabDefault from './page-optins/tab-default';
 import TabCompact from './page-optins/tab-compact';
+import TabFocusOptin from './page-optins/tab-focus-optin';
+import TabFocusContent from './page-optins/tab-focus-content';
 
 export default class PageOptin extends Component {
 	render() {
@@ -26,19 +28,15 @@ export default class PageOptin extends Component {
 							label="Compact"
 						/>
 
-						<div
+						<TabFocusOptin
 							value="focus-optin"
 							label="Opt-in Focus"
-						>
-							Opt-in focus opt-in embedded
-						</div>
+						/>
 
-						<div
+						<TabFocusContent
 							value="focus-content"
 							label="Content Focus"
-						>
-							Content focus opt-in embedded
-						</div>
+						/>
 
 					</Tabs>
 

@@ -14,11 +14,11 @@
 		}
 
 		@include media(max-width, md) {
-			padding: 0 $sui-gutter-md;
+			padding: 0 $sui-gutter-md $sui-gutter-md;
 		}
 
 		@include media(min-width, md) {
-			padding: 0 $sui-gutter;
+			padding: 0 $sui-gutter $sui-gutter;
 		}
 	}
 }

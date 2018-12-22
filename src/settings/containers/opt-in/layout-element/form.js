@@ -6,10 +6,15 @@ import Checkbox from '../../../components/checkbox';
 
 export default class LayoutForm extends Component {
 	render() {
+		let extraClass = '';
 		let fieldsIcon = 'none';
 		let fieldsProximity = ' hustle-proximity-joined';
 		let gdprLabel = '';
 		let renderGdpr = '';
+
+		if ( this.props.fieldsInline && 'true' === this.props.fieldsInline ) {
+			extraClass = ' hustle-form-inline';
+		}
 
 		if (
 			'static' === this.props.icon ||
@@ -44,7 +49,7 @@ export default class LayoutForm extends Component {
 		return (
 			<form className="hustle-layout-form">
 
-				<div className="hustle-form">
+				<div className={ `hustle-form${ extraClass }` }>
 
 					<div className={ `hustle-form-fields${ fieldsProximity }` }>
 

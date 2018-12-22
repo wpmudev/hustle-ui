@@ -1,0 +1,69 @@
+@include body-class(focus-optin) {
+
+	// SIZE: Global
+	.hustle-layout {
+
+		// ELEMENT: Content
+		.hustle-layout-content {
+
+			.hustle-image {
+
+				&.hustle-image-fit--fill,
+				&.hustle-image-fit--cover,
+				&.hustle-image-fit--contain {
+					height: $hui-image-size-sm;
+					overflow: hidden;
+				}
+
+				&.hustle-image-fit--fill {
+					@extend %hui-image-fit-fill;
+				}
+
+				&.hustle-image-fit--contain {
+					@extend %hui-image-fit-contain;
+				}
+
+				&.hustle-image-fit--cover {
+					@extend %hui-image-fit-cover;
+				}
+
+				&.hustle-image-fit--none {
+					@extend %hui-image-fit-full;
+				}
+			}
+		}
+	}
+
+	// SIZE: Normal
+	&:not(.hustle-size--small) {
+
+		.hustle-layout {
+
+			.hustle-layout-body {
+
+				// ELEMENT: Content
+				.hustle-layout-content {
+
+					@include media(min-width, sm) {
+						flex: 1;
+					}
+				}
+
+				// ELEMENT: Form
+				.hustle-layout-form {
+
+					@include media(min-width, sm) {
+						display: flex;
+						flex: 0 0 $hui-image-size;
+						flex-direction: column;
+						justify-content: center;
+					}
+				}
+
+				@include media(min-width, sm) {
+					display: flex;
+				}
+			}
+		}
+	}
+}

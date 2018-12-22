@@ -3,6 +3,7 @@
 	.hustle-layout-form {
 
 		.hustle-gdpr {
+			display: inline-flex;
 
 			@include media(max-width, sm) {
 				margin-top: $hui-gutter-sm;

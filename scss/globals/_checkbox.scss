@@ -36,13 +36,15 @@
 				@include opacity(0);
 				display: block;
 				margin: 0 auto;
+				color: inherit;
 				font-size: $hui-checkbox--icon-size;
+				line-height: #{$hui-checkbox--icon-size - 1px};
 			}
 		}
 
 		span:not([aria-hidden]) {
 			flex: 1 1 auto;
-			margin: 0 0 0 5px;
+			margin: 0 0 0 10px;
 			font-size: $hui-checkbox--font-size;
 			line-height: $hui-checkbox--line-height;
 		}

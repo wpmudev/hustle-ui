@@ -1,29 +1,18 @@
 import React, { Component } from 'react';
 
-import Tabs from '../components/tabs';
-import SampleOptinEmbed from '../containers/samples/optin-embed';
+import ImagePosition from './tab-compact/image-position';
+import ImageFitting from './tab-compact/image-fitting';
 
 export default class TabCompact extends Component {
 	render() {
 		return (
-			<Tabs
-				default="left"
-				sideClass="false"
-			>
+			<React.Fragment>
 
-				<SampleOptinEmbed
-					value="left"
-					label="Image Left"
-					layout="compact"
-				/>
+				<ImagePosition />
 
-				<SampleOptinEmbed
-					value="right"
-					label="Image Right"
-					layout="compact"
-				/>
+				<ImageFitting />
 
-			</Tabs>
+			</React.Fragment>
 		);
 	}
 }

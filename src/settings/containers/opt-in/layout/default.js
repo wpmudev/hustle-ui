@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 
-import NeverSeeLink from '../never-see-link';
 import LayoutForm from '../layout-element/form';
 import LayoutContent from '../layout-element/content';
 import LayoutImage from '../layout-element/image';
+import NeverSeeLink from '../never-see-link';
 
 export default class LayoutDefault extends Component {
 	render() {
@@ -75,6 +75,7 @@ export default class LayoutDefault extends Component {
 						icon={ this.props.fieldsIcon ? this.props.fieldsIcon : '' }
 						proximity={ this.props.fieldsProximity ? this.props.fieldsProximity : '' }
 						fieldsGdpr={ this.props.fieldsGdpr ? this.props.fieldsGdpr : '' }
+						fieldsInline="true"
 					>
 
 						{ formFields }

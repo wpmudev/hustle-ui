@@ -88,7 +88,23 @@ export default class Optin extends Component {
 			renderLayout = (
 				<LayoutCompact
 					moduleId={ moduleId }
-				/>
+					type={ moduleType }
+					title={ moduleTitle }
+					subtitle={ moduleSubtitle }
+					content={ moduleContent }
+					ctaButton={ moduleCtaButton }
+					image={ moduleImage }
+					imageFit={ moduleImageFit }
+					imagePosX={ moduleImagePosX }
+					imagePosY={ moduleImagePosY }
+					imagePosition={ moduleImagePosition }
+					fieldsIcon={ moduleFieldsIcon }
+					fieldsProximity={ moduleFieldsProxymity }
+					fieldsGdpr={ moduleFieldsGdpr }
+					neverSeeLink={ neverSeeLink }
+				>
+					{ formFields }
+				</LayoutCompact>
 			);
 		}
 
@@ -96,7 +112,23 @@ export default class Optin extends Component {
 			renderLayout = (
 				<LayoutFocusOptin
 					moduleId={ moduleId }
-				/>
+					type={ moduleType }
+					title={ moduleTitle }
+					subtitle={ moduleSubtitle }
+					content={ moduleContent }
+					ctaButton={ moduleCtaButton }
+					image={ moduleImage }
+					imageFit={ moduleImageFit }
+					imagePosX={ moduleImagePosX }
+					imagePosY={ moduleImagePosY }
+					imagePosition={ moduleImagePosition }
+					fieldsIcon={ moduleFieldsIcon }
+					fieldsProximity={ moduleFieldsProxymity }
+					fieldsGdpr={ moduleFieldsGdpr }
+					neverSeeLink={ neverSeeLink }
+				>
+					{ formFields }
+				</LayoutFocusOptin>
 			);
 		}
 
@@ -104,7 +136,23 @@ export default class Optin extends Component {
 			renderLayout = (
 				<LayoutFocusContent
 					moduleId={ moduleId }
-				/>
+					type={ moduleType }
+					title={ moduleTitle }
+					subtitle={ moduleSubtitle }
+					content={ moduleContent }
+					ctaButton={ moduleCtaButton }
+					image={ moduleImage }
+					imageFit={ moduleImageFit }
+					imagePosX={ moduleImagePosX }
+					imagePosY={ moduleImagePosY }
+					imagePosition={ moduleImagePosition }
+					fieldsIcon={ moduleFieldsIcon }
+					fieldsProximity={ moduleFieldsProxymity }
+					fieldsGdpr={ moduleFieldsGdpr }
+					neverSeeLink={ neverSeeLink }
+				>
+					{ formFields }
+				</LayoutFocusContent>
 			);
 		}
 

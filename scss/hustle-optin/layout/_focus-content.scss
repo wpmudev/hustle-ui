@@ -57,6 +57,13 @@
 						}
 					}
 
+					&:only-child {
+
+						@include media(min-width, sm) {
+							flex: 1;
+						}
+					}
+
 					@include media(min-width, sm) {
 						display: flex;
 						flex-direction: column;

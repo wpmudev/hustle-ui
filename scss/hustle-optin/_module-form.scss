@@ -43,56 +43,78 @@
 
 	&:not(.hustle-size--small) {
 
-		.hustle-form.hustle-form-inline {
+		.hustle-form {
 
-			.hustle-field {
+			.hustle-form-options {
+
+				.hustle-group-title {
+					display: block;
+					margin: 0 0 20px;
+					font: bold 13px/22px $hui-font;
+				}
+
+				@include media(max-width, sm) {
+					margin-top: $hui-gutter-sm;
+					padding: $hui-gutter-sm;
+				}
 
 				@include media(min-width, sm) {
-					flex: 1;
+					margin-top: $hui-gutter;
+					padding: $hui-gutter;
 				}
 			}
 
-			.hustle-button {
+			&.hustle-form-inline {
 
-				@include media(min-width, sm) {
-					width: auto;
-					flex: 0 0 auto;
-				}
-			}
+				.hustle-field {
 
-			.hustle-form-fields {
-
-				&.hustle-proximity-joined {
-
-					.hustle-field {
-	
-						&:not(:last-child) {
-
-							@include media(min-width, sm) {
-								margin-right: $hui-joined;
-								margin-bottom: 0;
-							}
-						}
+					@include media(min-width, sm) {
+						flex: 1;
 					}
 				}
 	
-				&.hustle-proximity-separated {
+				.hustle-button {
 	
-					.hustle-field {
+					@include media(min-width, sm) {
+						width: auto;
+						flex: 0 0 auto;
+					}
+				}
 	
-						&:not(:last-child) {
-
-							@include media(min-width, sm) {
-								margin-right: $hui-separated;
-								margin-bottom: 0;
+				.hustle-form-fields {
+	
+					&.hustle-proximity-joined {
+	
+						.hustle-field {
+		
+							&:not(:last-child) {
+	
+								@include media(min-width, sm) {
+									margin-right: $hui-joined;
+									margin-bottom: 0;
+								}
 							}
 						}
 					}
-				}
-
-				@include media(min-width, sm) {
-					display: flex;
-					align-items: center;
+		
+					&.hustle-proximity-separated {
+		
+						.hustle-field {
+		
+							&:not(:last-child) {
+	
+								@include media(min-width, sm) {
+									margin-right: $hui-separated;
+									margin-bottom: 0;
+								}
+							}
+						}
+					}
+	
+					@include media(min-width, sm) {
+						display: flex;
+						align-items: center;
+					}
 				}
 			}
 		}

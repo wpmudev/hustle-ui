@@ -1,0 +1,19 @@
+@mixin body-class($layout: null) {
+
+	@if ( $layout == null ) {
+
+		.hustle-info {
+			@content;
+		}
+	}
+
+	@else {
+
+		.hustle-info {
+
+			&.hustle-info--#{$layout} {
+				@content;
+			}
+		}
+	}
+}

@@ -49,4 +49,22 @@
 			line-height: $hui-checkbox--line-height;
 		}
 	}
+
+	.hustle-optin:not(.hustle-size--small) {
+
+		.hustle-checkbox-inline {
+
+			&:last-child {
+
+				@include media(min-width, sm) {
+					margin-right: 0;
+				}
+			}
+
+			@include media(min-width, sm) {
+				display: inline-flex;
+				margin-right: 20px;
+			}
+		}
+	}
 }

@@ -44,8 +44,25 @@
 				// ELEMENT: Content
 				.hustle-layout-content {
 
+					.hustle-image:only-child {
+
+						@include media(min-width, sm) {
+							height: 100%;
+							flex: 1;
+						}
+					}
+
+					.hustle-content {
+
+						@include media(min-width, sm) {
+							flex: 1;
+						}
+					}
+
 					@include media(min-width, sm) {
+						display: flex;
 						flex: 1;
+						flex-direction: column;
 					}
 				}
 

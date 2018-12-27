@@ -1,0 +1,121 @@
+@include body-class() {
+
+	.hustle-layout {
+
+		// ELEMENT: Title
+		.hustle-title {
+			display: block;
+			margin: 0;
+			font: 400 33px/38px $hui-font--alt;
+			letter-spacing: 0;
+			text-transform: none;
+
+			+ .hustle-subtitle {
+				margin-top: $hui-gutter-sm;
+			}
+		}
+
+		// ELEMENT: Subtitle
+		.hustle-subtitle {
+			display: block;
+			margin: 0;
+			font: 700 14px/24px $hui-font;
+			letter-spacing: 0;
+			text-transform: none;
+		}
+
+		// ELEMENT: Content
+		.hustle-group-content {
+
+			&, p {
+				font: 400 14px/20px $hui-font;
+				letter-spacing: 0;
+
+				b, strong {
+					font-weight: 700;
+				}
+			}
+
+			h1, h2, h3, h4, h5, h6, p, ul, ol {
+				margin: 0;
+
+				&:not(:last-child) {
+					margin-bottom: $hui-gutter-sm;
+				}
+			}
+
+			&:not(:first-child) {
+				margin-top: $hui-gutter-sm;
+			}
+
+			&:not(:last-child) {
+				margin-bottom: $hui-gutter-sm;
+			}
+		}
+
+		// ELEMENT: Content Wrapper
+		.hustle-content {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			padding: 0 $hui-gutter-sm;
+
+			.hustle-content-wrap {
+				width: 100%;
+				height: auto;
+				flex: 0 0 auto;
+				padding: $hui-gutter-sm 0;
+			}
+		}
+	}
+
+	// SIZE: Normal
+	&:not(.hustle-size--small) {
+
+		.hustle-layout {
+
+			// ELEMENT: Content
+			.hustle-group-content {
+
+				h1, h2, h3, h4, h5, h6, p, ul, ol {
+	
+					&:not(:last-child) {
+
+						@include media(min-width, sm) {
+							margin-bottom: $hui-gutter;
+						}
+					}
+				}
+
+				&:not(:first-child) {
+
+					@include media(min-width, sm) {
+						margin-top: $hui-gutter;
+					}
+				}
+
+				&:not(:last-child) {
+
+					@include media(min-width, sm) {
+						margin-bottom: $hui-gutter;
+					}
+				}
+			}
+
+			// ELEMENT: Content Wrapper
+			.hustle-content {
+
+				.hustle-content-wrap {
+
+					@include media(min-width, sm) {
+						padding: $hui-gutter 0;
+					}
+				}
+
+				@include media(min-width, sm) {
+					padding: 0 $hui-gutter;
+				}
+			}
+		}
+	}
+}

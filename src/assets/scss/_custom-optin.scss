@@ -68,6 +68,26 @@
 				}
 			}
 
+			.hustle-form-options {
+				background-color: #35414A;
+
+				.hustle-group-title {
+					color: #FFFFFF;
+				}
+
+				.hustle-checkbox {
+
+					span[aria-hidden] {
+						background-color: #FFFFFF;
+						color: #38C5B5;
+					}
+	
+					span:not([aria-hidden]) {
+						color: #FFFFFF;
+					}
+				}
+			}
+
 			.hustle-gdpr {
 
 				span[aria-hidden] {

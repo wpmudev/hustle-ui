@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import Input from '../../../components/input';
 import Button from '../../../components/button';
 import Checkbox from '../../../components/checkbox';
+import OptionsGroup from './options-group';
 
 export default class LayoutForm extends Component {
 	render() {
@@ -11,6 +12,7 @@ export default class LayoutForm extends Component {
 		let fieldsProximity = ' hustle-proximity-joined';
 		let gdprLabel = '';
 		let renderGdpr = '';
+		let renderGroups = '';
 
 		if ( this.props.fieldsInline && 'true' === this.props.fieldsInline ) {
 			extraClass = ' hustle-form-inline';
@@ -42,6 +44,16 @@ export default class LayoutForm extends Component {
 			);
 		}
 
+		if ( this.props.formOptions && '' !== this.props.formOptions ) {
+			renderGroups = (
+				<OptionsGroup
+					moduleId={ this.props.moduleId ? this.props.moduleId : '' }
+					label={ this.props.optionsLabel ? this.props.optionsLabel : '' }
+					formOptions={ this.props.formOptions ? this.props.formOptions : '' }
+				/>
+			);
+		}
+
 		const formFields = React.Children.map( this.props.children, child => {
 			return child;
 		});
@@ -65,6 +77,8 @@ export default class LayoutForm extends Component {
 						<Button label="Submit" />
 
 					</div>
+
+					{ renderGroups }
 
 				</div>
 

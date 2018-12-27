@@ -34,6 +34,8 @@ export default class SampleOptinEmbed extends Component {
 			imageFit: moduleImageFit,
 			imagePosition: moduleImagePosition,
 			fieldsIcon: 'animated',
+			formOptions: 'checkbox',
+			optionsLabel: 'Options Group',
 			gdpr: (
 				'From time to time we would like to send you offers and ' +
 				'information we think you would be interested in. If you ' +
@@ -59,6 +61,8 @@ export default class SampleOptinEmbed extends Component {
 					imageFit={ modulx.imageFit }
 					imagePosition={ modulx.imagePosition }
 					fieldsIcon={ modulx.fieldsIcon }
+					formOptions={ modulx.formOptions }
+					optionsLabel={ modulx.optionsLabel }
 					fieldsGdpr={ modulx.gdpr }
 				>
 					<Input

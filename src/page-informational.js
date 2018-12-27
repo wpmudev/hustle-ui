@@ -1,24 +1,41 @@
 import React, { Component } from 'react';
 
+import Tabs from './components/tabs';
+import TabDefault from './page-informational/tab-default';
+import TabCompact from './page-informational/tab-compact';
+import TabStacked from './page-informational/tab-stacked';
+
 export default class PageInfo extends Component {
 	render() {
 		return (
-			<React.Fragment>
+			<div className="showcase-content">
 
-				<section>
+				<h1 style={{ marginBottom: '30px' }}>Informational Modules</h1>
 
-					<h1>Embedded Informational</h1>
+				<Tabs
+					default="default"
+					sideClass="true"
+					label="Choose Layout"
+				>
 
-					<h2>Sample #1</h2>
+					<TabDefault
+						value="default"
+						label="Default"
+					/>
 
-					<ul>
-						<li><strong>Image Display:</strong> Left</li>
-						<li><strong>Image Fitting:</strong> Contain</li>
-					</ul>
+					<TabCompact
+						value="compact"
+						label="Compact"
+					/>
 
-				</section>
+					<TabStacked
+						value="stacked"
+						label="Stacked"
+					/>
 
-			</React.Fragment>
+				</Tabs>
+
+			</div>
 		);
 	}
 }

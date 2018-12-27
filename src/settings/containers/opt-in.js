@@ -23,6 +23,8 @@ export default class Optin extends Component {
 		const moduleFieldsIcon = this.props.fieldsIcon ? this.props.fieldsIcon : '';
 		const moduleFieldsProxymity = this.props.fieldsProximity ? this.props.fieldsProximity : '';
 		const moduleFieldsGdpr = this.props.fieldsGdpr ? this.props.fieldsGdpr : '';
+		const moduleFormOptions = this.props.formOptions ? this.props.formOptions : '';
+		const moduleOptionsLabel = this.props.optionsLabel ? this.props.optionsLabel : '';
 
 		const formFields = React.Children.map(
 			this.props.children,
@@ -76,6 +78,8 @@ export default class Optin extends Component {
 					imagePosition={ moduleImagePosition }
 					fieldsIcon={ moduleFieldsIcon }
 					fieldsProximity={ moduleFieldsProxymity }
+					formOptions={ moduleFormOptions }
+					optionsLabel={ moduleOptionsLabel }
 					fieldsGdpr={ moduleFieldsGdpr }
 					neverSeeLink={ neverSeeLink }
 				>
@@ -100,6 +104,8 @@ export default class Optin extends Component {
 					imagePosition={ moduleImagePosition }
 					fieldsIcon={ moduleFieldsIcon }
 					fieldsProximity={ moduleFieldsProxymity }
+					formOptions={ moduleFormOptions }
+					optionsLabel={ moduleOptionsLabel }
 					fieldsGdpr={ moduleFieldsGdpr }
 					neverSeeLink={ neverSeeLink }
 				>
@@ -124,6 +130,8 @@ export default class Optin extends Component {
 					imagePosition={ moduleImagePosition }
 					fieldsIcon={ moduleFieldsIcon }
 					fieldsProximity={ moduleFieldsProxymity }
+					formOptions={ moduleFormOptions }
+					optionsLabel={ moduleOptionsLabel }
 					fieldsGdpr={ moduleFieldsGdpr }
 					neverSeeLink={ neverSeeLink }
 				>
@@ -148,6 +156,8 @@ export default class Optin extends Component {
 					imagePosition={ moduleImagePosition }
 					fieldsIcon={ moduleFieldsIcon }
 					fieldsProximity={ moduleFieldsProxymity }
+					formOptions={ moduleFormOptions }
+					optionsLabel={ moduleOptionsLabel }
 					fieldsGdpr={ moduleFieldsGdpr }
 					neverSeeLink={ neverSeeLink }
 				>

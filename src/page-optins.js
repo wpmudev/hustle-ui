@@ -11,34 +11,34 @@ export default class PageOptin extends Component {
 		return (
 			<div className="showcase-content">
 
-					<h1 style={{ marginBottom: '30px' }}>Opt-in Modules</h1>
+				<h1 style={{ marginBottom: '30px' }}>Opt-in Modules</h1>
 
-					<Tabs
-						default="default"
-						sideClass="true"
-					>
+				<Tabs
+					default="default"
+					sideClass="true"
+				>
 
-						<TabDefault
-							value="default"
-							label="Default"
-						/>
+					<TabDefault
+						value="default"
+						label="Default"
+					/>
 
-						<TabCompact
-							value="compact"
-							label="Compact"
-						/>
+					<TabCompact
+						value="compact"
+						label="Compact"
+					/>
 
-						<TabFocusOptin
-							value="focus-optin"
-							label="Opt-in Focus"
-						/>
+					<TabFocusOptin
+						value="focus-optin"
+						label="Opt-in Focus"
+					/>
 
-						<TabFocusContent
-							value="focus-content"
-							label="Content Focus"
-						/>
+					<TabFocusContent
+						value="focus-content"
+						label="Content Focus"
+					/>
 
-					</Tabs>
+				</Tabs>
 
 			</div>
 		);

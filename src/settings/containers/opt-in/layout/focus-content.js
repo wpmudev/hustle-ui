@@ -12,7 +12,6 @@ export default class LayoutFocusContent extends Component {
 		let renderSidebarRight = '';
 
 		const imagePosition = this.props.imagePosition ? this.props.imagePosition : 'left';
-		const imagePosClass = 'hustle-layout-position--' + imagePosition;
 
 		const formFields = React.Children.map(
 			this.props.children,
@@ -36,6 +35,8 @@ export default class LayoutFocusContent extends Component {
 					icon={ this.props.fieldsIcon ? this.props.fieldsIcon : '' }
 					proximity={ this.props.fieldsProximity ? this.props.fieldsProximity : '' }
 					fieldsGdpr={ this.props.fieldsGdpr ? this.props.fieldsGdpr : '' }
+					formOptions={ this.props.formOptions ? this.props.formOptions : '' }
+					optionsLabel={ this.props.optionsLabel ? this.props.optionsLabel : '' }
 				>
 
 					{ formFields }
@@ -76,7 +77,7 @@ export default class LayoutFocusContent extends Component {
 		return (
 			<div className="hustle-layout">
 
-				<div className={ `hustle-layout-body ${ imagePosClass }` }>
+				<div className="hustle-layout-body">
 
 					{ renderSidebarLeft }
 

@@ -69,6 +69,8 @@ export default class LayoutFocusOptin extends Component {
 						icon={ this.props.fieldsIcon ? this.props.fieldsIcon : '' }
 						proximity={ this.props.fieldsProximity ? this.props.fieldsProximity : '' }
 						fieldsGdpr={ this.props.fieldsGdpr ? this.props.fieldsGdpr : '' }
+						formOptions={ this.props.formOptions ? this.props.formOptions : '' }
+						optionsLabel={ this.props.optionsLabel ? this.props.optionsLabel : '' }
 					>
 
 						{ formFields }

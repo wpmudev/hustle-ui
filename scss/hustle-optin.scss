@@ -2,6 +2,7 @@
 @import "globals/mixins";
 @import "globals/variables";
 @import "globals/helpers";
+@import "globals/button";
 @import "globals/checkbox";
 
 @import "globals/module-inline";
@@ -14,7 +15,6 @@
 @import "hustle-optin/module-content";
 @import "hustle-optin/module-image";
 @import "hustle-optin/module-input";
-@import "hustle-optin/module-button";
 @import "hustle-optin/module-form";
 @import "hustle-optin/module-gdpr";
 

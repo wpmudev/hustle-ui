@@ -10,6 +10,8 @@ export default class LayoutForm extends Component {
 		let extraClass = '';
 		let fieldsIcon = 'none';
 		let fieldsProximity = ' hustle-proximity-joined';
+		let recaptcha = false;
+		let renderCaptcha = '';
 		let gdprLabel = '';
 		let renderGdpr = '';
 		let renderGroups = '';
@@ -54,6 +56,24 @@ export default class LayoutForm extends Component {
 			);
 		}
 
+		if ( this.props.recaptcha && 'true' === this.props.recaptcha ) {
+			recaptcha = true;
+		}
+
+		if ( true === recaptcha ) {
+			renderCaptcha = (
+				<div
+					className="g-recaptcha"
+					data-size="normal"
+					data-sitekey="6LcTMoUUAAAAABxzuye_lXVH7mjg5rWdCYBJjQ5r"
+					style={ {
+						transform: 'scale(0.77)',
+						transformOrigin: '0 0'
+					} }
+				/>
+			);
+		}
+
 		const formFields = React.Children.map( this.props.children, child => {
 			return child;
 		});
@@ -83,6 +103,8 @@ export default class LayoutForm extends Component {
 				</div>
 
 				{ renderGdpr }
+
+				{ renderCaptcha }
 
 			</form>
 		);

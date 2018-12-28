@@ -94,7 +94,7 @@ const HustleJs = [
 
 // Showcase styles
 const ShowcaseScss = [
-	assets.scss + '*.scss',
+	assets.scss + '**/*.scss',
 	libProd.scss + '**/*.scss'
 ];
 

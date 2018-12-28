@@ -4,6 +4,7 @@ export default class Module extends Component {
 	render() {
 		let moduleClass = '';
 		let moduleType = '';
+		let modulePalette = ' hustle-palette--gray-slate';
 		let moduleLayout = '';
 
 		const children = React.Children.map(
@@ -17,6 +18,12 @@ export default class Module extends Component {
 			moduleClass = (
 				' hustle-module-' + this.props.moduleId +
 				' hustle-module-id-' + this.props.moduleId
+			);
+		}
+
+		if ( this.props.palette && '' !== this.props.palette ) {
+			modulePalette = (
+				' hustle-palette--' + this.props.palette
 			);
 		}
 
@@ -72,7 +79,7 @@ export default class Module extends Component {
 
 		return (
 			<div
-				className={ `hustle-ui${ moduleType }${ moduleClass }` }
+				className={ `hustle-ui${ moduleType }${ modulePalette }${ moduleClass }` }
 				data-id={ this.props.moduleId }
 			>
 				{ moduleLayout }

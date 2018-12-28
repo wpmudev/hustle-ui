@@ -2,6 +2,7 @@
 
 	.hustle-layout {
 
+		// ELEMENT: Image
 		.hustle-image {
 
 			&.hustle-image-fit--fill,
@@ -26,12 +27,52 @@
 				@extend %hui-image-fit-full;
 			}
 		}
+
+		// ELEMENT: Content
+		.hustle-content {
+
+			// ELEMENT: Group Title
+			.hustle-group-title {
+
+				&:not(:last-child) {
+					margin-bottom: 0;
+					padding-bottom: $hui-gutter-sm;
+					border-bottom: 1px solid rgba(0,0,0,0.16);
+				}
+			}
+
+			// ELEMENT: Group Content
+			.hustle-group-content {
+
+				&:not(:first-child) {
+					margin-top: 0;
+					padding-top: $hui-gutter-sm;
+					border-top: 1px solid rgba(255,255,255,0.08);
+				}
+
+				&:not(:last-child) {
+					padding-bottom: $hui-gutter-sm;
+					border-bottom: 1px solid rgba(0,0,0,0.16);
+					box-shadow: 0 1px 0 0 rgba(255,255,255,0.08);
+				}
+			}
+
+			// ELEMENT: Call To Action
+			.hustle-button {
+				width: 100%;
+
+				+ .hustle-checkbox {
+					margin-top: $hui-gutter-sm;
+				}
+			}
+		}
 	}
 
 	&:not(.hustle-size--small) {
 
 		.hustle-layout {
 
+			// ELEMENT: Image
 			.hustle-image {
 
 				&.hustle-image-fit--fill,
@@ -67,6 +108,54 @@
 					@include media(min-width, sm) {
 						max-width: 50%;
 						flex: 0 0 auto;
+					}
+				}
+			}
+
+			// ELEMENT: Content
+			.hustle-content {
+
+				// ELEMENT: Group Title
+				.hustle-group-title {
+
+					&:not(:last-child) {
+
+						@include media(min-width, sm) {
+							padding-bottom: $hui-gutter;
+						}
+					}
+				}
+
+				// ELEMENT: Group Content
+				.hustle-group-content {
+
+					&:not(:first-child) {
+
+						@include media(min-width, sm) {
+							padding-top: $hui-gutter;
+						}
+					}
+
+					&:not(:last-child) {
+
+						@include media(min-width, sm) {
+							padding-bottom: $hui-gutter;
+						}
+					}
+				}
+
+				// ELEMENT: Call To Action
+				.hustle-button {
+
+					+ .hustle-checkbox {
+
+						@include media(min-width, sm) {
+							margin-top: $hui-gutter;
+						}
+					}
+
+					@include media(min-width, sm) {
+						width: auto;
 					}
 				}
 			}

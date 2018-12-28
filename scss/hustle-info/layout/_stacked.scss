@@ -1,0 +1,147 @@
+@include body-class(stacked) {
+
+	.hustle-layout {
+
+		// ELEMENT: Header
+		.hustle-layout-header {
+			margin-bottom: $hui-gutter-sm;
+		}
+
+		// ELEMENT: Body
+		.hustle-layout-body {
+
+			// ELEMENT: Image
+			.hustle-image {
+
+				&.hustle-image-fit--fill,
+				&.hustle-image-fit--cover,
+				&.hustle-image-fit--contain {
+					height: $hui-image-size-sm;
+				}
+		
+				&.hustle-image-fit--fill {
+					@extend %hui-image-fit-fill;
+				}
+		
+				&.hustle-image-fit--contain {
+					@extend %hui-image-fit-contain;
+				}
+		
+				&.hustle-image-fit--cover {
+					@extend %hui-image-fit-cover;
+				}
+		
+				&.hustle-image-fit--none {
+					@extend %hui-image-fit-full;
+				}
+			}
+
+			// ELEMENT: Group Content
+			.hustle-group-content {
+
+				&:not(:last-child) {
+					padding-bottom: $hui-gutter-sm;
+					border-bottom: 1px solid rgba(0,0,0,0.16);
+					box-shadow: 0 1px 0 0 rgba(255,255,255,0.08);
+				}
+			}
+
+			// ELEMENT: Call To Action
+			.hustle-button {
+				width: 100%;
+
+				+ .hustle-checkbox {
+					margin-top: $hui-gutter-sm;
+				}
+			}
+		}
+	}
+
+	&:not(.hustle-size--small) {
+
+		.hustle-layout {
+
+			// ELEMENT: Header
+			.hustle-layout-header {
+
+				@include media(min-width, sm) {
+					margin-bottom: $hui-gutter;
+				}
+			}
+
+			// ELEMENT: Body
+			.hustle-layout-body {
+
+				// ELEMENT: Image
+				.hustle-image {
+
+					&.hustle-image-fit--fill,
+					&.hustle-image-fit--cover,
+					&.hustle-image-fit--contain {
+	
+						&:only-child {
+	
+							@include media(min-width, sm) {
+								max-width: 100%;
+								height: $hui-image-size;
+								flex: 1;
+							}
+						}
+			
+						@include media(min-width, sm) {
+							max-width: $hui-image-size;
+							height: auto;
+							flex: 0 0 $hui-image-size;
+						}
+					}
+			
+					&.hustle-image-fit--none {
+	
+						&:only-child {
+	
+							@include media(min-width, sm) {
+								max-width: 100%;
+								flex: 1;
+							}
+						}
+			
+						@include media(min-width, sm) {
+							max-width: 50%;
+							flex: 0 0 auto;
+						}
+					}
+				}
+
+				// ELEMENT: Group Content
+				.hustle-group-content {
+
+					&:not(:last-child) {
+
+						@include media(min-width, sm) {
+							padding-bottom: $hui-gutter;
+						}
+					}
+				}
+
+				// ELEMENT: Call To Action
+				.hustle-button {
+
+					+ .hustle-checkbox {
+
+						@include media(min-width, sm) {
+							margin-top: $hui-gutter;
+						}
+					}
+
+					@include media(min-width, sm) {
+						width: auto;
+					}
+				}
+
+				@include media(min-width, sm) {
+					display: flex;
+				}
+			}
+		}
+	}
+}

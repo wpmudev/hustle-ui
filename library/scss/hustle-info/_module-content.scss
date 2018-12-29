@@ -24,35 +24,6 @@
 			text-transform: none;
 		}
 
-		// ELEMENT: Content
-		.hustle-group-content {
-
-			&, p {
-				font: 400 14px/20px $hui-font;
-				letter-spacing: 0;
-
-				b, strong {
-					font-weight: 700;
-				}
-			}
-
-			h1, h2, h3, h4, h5, h6, p, ul, ol {
-				margin: 0;
-
-				&:not(:last-child) {
-					margin-bottom: $hui-gutter-sm;
-				}
-			}
-
-			&:not(:first-child) {
-				margin-top: $hui-gutter-sm;
-			}
-
-			&:not(:last-child) {
-				margin-bottom: $hui-gutter-sm;
-			}
-		}
-
 		// ELEMENT: Content Wrapper
 		.hustle-content {
 			display: flex;
@@ -73,34 +44,6 @@
 	&:not(.hustle-size--small) {
 
 		.hustle-layout {
-
-			// ELEMENT: Content
-			.hustle-group-content {
-
-				h1, h2, h3, h4, h5, h6, p, ul, ol {
-	
-					&:not(:last-child) {
-
-						@include media(min-width, sm) {
-							margin-bottom: $hui-gutter;
-						}
-					}
-				}
-
-				&:not(:first-child) {
-
-					@include media(min-width, sm) {
-						margin-top: $hui-gutter;
-					}
-				}
-
-				&:not(:last-child) {
-
-					@include media(min-width, sm) {
-						margin-bottom: $hui-gutter;
-					}
-				}
-			}
 
 			// ELEMENT: Content Wrapper
 			.hustle-content {

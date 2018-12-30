@@ -50,6 +50,7 @@ export default class LayoutContent extends Component {
 			ctaButton = (
 				<Button
 					label={ this.props.ctaButton }
+					extraClass="hustle-button-cta"
 				/>
 			);
 		}

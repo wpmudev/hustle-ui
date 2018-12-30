@@ -1,6 +1,8 @@
 @include global-class() {
 
-	.hustle-button {
+	.hustle-button,
+	a.hustle-button,
+	button.hustle-button {
 		width: auto;
 		min-width: $hui-button--width;
 		min-height: $hui-button--height;
@@ -11,5 +13,15 @@
 		letter-spacing: 0.5px;
 		text-align: center;
 		transition: $hui-transition--ease;
+
+		&,
+		&:focus,
+		&:hover,
+		&:active,
+		&:visited {
+			outline: none;
+			box-shadow: none;
+			text-decoration: none;
+		}
 	}
 }

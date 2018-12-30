@@ -35,6 +35,7 @@
 		"gulp-sass": "^4.0.2",
 		"gulp-uglify-es": "^1.0.4",
 		"gulp-watch": "^5.0.1",
+		"jquery": "^3.3.1",
 		"pump": "^3.0.0"
 	},
 	"eslintConfig": {
@@ -43,7 +44,9 @@
 			"wordpress"
 		]
 	},
-	"eslintIgnore": [],
+	"eslintIgnore": [
+		"library"
+	],
 	"browserslist": [
 		">0.2%",
 		"not dead",

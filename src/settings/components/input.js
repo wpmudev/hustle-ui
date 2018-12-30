@@ -15,17 +15,17 @@ export default class Input extends Component {
 		});
 
 		if ( 'email' === this.props.type ) {
-			const validEmail = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
-			const validNet = /@.*\./;
+			const validPrefix = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
+			const validSuffix = /@.*\./;
 
-			$( '.hustle-ui .hustle-input' ).on( 'change', function() {
+			$( '.hustle-ui .hustle-input[type=email]' ).on( 'change', function() {
 				const input = $( this );
 				const label = input.parent();
 
-				const isValid = input.val().match( validEmail );
-				const isNet = input.val().match( validNet );
+				const checkPrefix = input.val().match( validPrefix );
+				const checkSuffix = input.val().match( validSuffix );
 
-				if ( ( null === isValid ) || ( null === isNet ) ) {
+				if ( ( null === checkPrefix ) || ( null === checkSuffix ) ) {
 					label.addClass( 'hustle-field-error' );
 				} else {
 					label.removeClass( 'hustle-field-error' );

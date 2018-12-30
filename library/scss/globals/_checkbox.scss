@@ -2,6 +2,7 @@
 
 	.hustle-checkbox {
 		display: flex;
+		vertical-align: middle;
 
 		input {
 			@extend %hui-screen-reader;

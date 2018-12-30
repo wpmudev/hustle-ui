@@ -4,8 +4,8 @@ import Image from '../../../components/image';
 
 export default class LayoutImage extends Component {
 	render() {
-		let imageSource = '';
-		let imageAltText = 'Sample image';
+		let image = '';
+		let text = 'Sample image';
 		let positionX = 'center';
 		let positionY = 'center';
 		let position = 'hustle-image-position--' + positionX + '-' + positionY;
@@ -13,7 +13,7 @@ export default class LayoutImage extends Component {
 		let renderElement = '';
 
 		if ( this.props.image && '' !== this.props.image ) {
-			imageSource = this.props.image;
+			image = this.props.image;
 		}
 
 		if ( this.props.imagePosX && '' !== this.props.imagePosX ) {
@@ -55,7 +55,7 @@ export default class LayoutImage extends Component {
 		}
 
 		if ( this.props.imageText && '' !== this.props.imageText ) {
-			imageAltText = this.props.imageText;
+			text = this.props.imageText;
 		}
 
 		if ( this.props.image && '' !== this.props.image ) {
@@ -66,8 +66,8 @@ export default class LayoutImage extends Component {
 				>
 
 					<Image
-						source={ imageSource }
-						altText={ imageAltText }
+						source={ image }
+						altText={ text }
 						extraClass={ position }
 					/>
 

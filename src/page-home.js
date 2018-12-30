@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 import Module from './settings/containers/module';
 import Optin from './settings/containers/opt-in';
+import Input from './settings/components/input';
 
 export default class PageHome extends Component {
 	render() {
@@ -9,7 +10,7 @@ export default class PageHome extends Component {
 			id: '9',
 			type: 'embedded',
 			layout: 'default',
-			palette: 'gray-slate'
+			palette: 'ectoplasm'
 		};
 
 		const content = {
@@ -54,6 +55,7 @@ export default class PageHome extends Component {
 		const form = {
 			inputIcon: 'static',
 			mailchimp: 'checkbox',
+			mailchimpTitle: 'Options Group',
 			gdpr: (
 				'From time to time we would like to send you offers and ' +
 				'information we think you would be interested in. If you ' +
@@ -92,8 +94,16 @@ export default class PageHome extends Component {
 						imagePosition={ image.position }
 						fieldsIcon={ form.inputIcon }
 						formOptions={ form.mailchimp }
+						optionsLabel={ form.mailchimpTitle }
 						fieldsGdpr={ form.gdpr }
-					/>
+					>
+						<Input
+							type="name"
+							label="John Smith"
+							icon={ form.inputIcon }
+							property={ `hustle-module-${ basic.id }-field-name` }
+						/>
+					</Optin>
 
 				</Module>
 

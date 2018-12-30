@@ -1,0 +1,342 @@
+$palettes: gray-slate coffee;
+
+// ========================================|
+// 1. BASIC                                |
+// ========================================|
+
+// Main background
+$main-background: (
+	gray-slate: #38454E,
+	coffee:     #46403B,
+);
+
+// Image container BG
+$image-container: (
+	gray-slate: #35414A,
+	coffee:     #423D38,
+);
+
+// Form area background
+$form-background: (
+	gray-slate: #5D7380,
+	coffee:     #59524B,
+);
+
+// ========================================|
+// 2. CONTENT                              |
+// ========================================|
+
+// ****************************************
+// 2.1. DEFAULT
+
+// Title color
+$title-color: (
+	gray-slate: #FDFDFD,
+	coffee:     #FDFDFD,
+);
+
+// Subtitle color
+$subtitle-color: (
+	gray-slate: #FDFDFD,
+	coffee:     #FDFDFD,
+);
+
+// Content color
+$content-color: (
+	gray-slate: #ADB5B7,
+	coffee:     #CCC2B7,
+);
+
+// OL counter
+$ol-counter: (
+	gray-slate: #ADB5B7,
+	coffee:     #CCC2B7,
+);
+
+// UL bullets
+$ul-bullets: (
+	gray-slate: #ADB5B7,
+	coffee:     #CCC2B7,
+);
+
+// Blockquote border
+$blockquote-border: (
+	gray-slate: #38C5B5,
+	coffee:     #C6A685,
+);
+
+// Link color
+$link-color-static: (
+	gray-slate: #38C5B5,
+	coffee:     #C6A685,
+);
+
+// ****************************************
+// 2.2. HOVER
+
+// Link color
+$link-color-hover: (
+	gray-slate: #2DA194,
+	coffee:     #A0866B,
+);
+
+// ****************************************
+// 2.3. ACTIVE
+
+// Link color
+$link-color-active: (
+	gray-slate: #2DA194,
+	coffee:     #A0866B,
+);
+
+// ========================================|
+// 3. CALL TO ACTION                       |
+// ========================================|
+
+// ****************************************
+// 3.1. DEFAULT
+
+// Background color
+$cta-background-static: (
+	gray-slate: #38C5B5,
+	coffee:     #C6A685,
+);
+
+// Label color
+$cta-label-static: (
+	gray-slate: #FFFFFF,
+	coffee:     #FFFFFF,
+);
+
+// ****************************************
+// 3.2. HOVER
+
+// Background color
+$cta-background-hover: (
+	gray-slate: #2DA194,
+	coffee:     #A0866B,
+);
+
+// Label color
+$cta-label-hover: (
+	gray-slate: #FFFFFF,
+	coffee:     #FFFFFF,
+);
+
+// ****************************************
+// 3.2. ACTIVE
+
+// Background color
+$cta-background-active: (
+	gray-slate: #2DA194,
+	coffee:     #A0866B,
+);
+
+// Label color
+$cta-label-active: (
+	gray-slate: #FFFFFF,
+	coffee:     #FFFFFF,
+);
+
+// ========================================|
+// 4. INPUTS                               |
+// ========================================|
+
+// ****************************************
+// 4.1. DEFAULT
+
+// Icon color
+$input-icon-static: (
+	gray-slate: #AAAAAA,
+	coffee:     #AAAAAA,
+);
+
+// Background color
+$input-background-static: (
+	gray-slate: #FFFFFF,
+	coffee:     #FFFFFF,
+);
+
+// Text color
+$input-color: (
+	gray-slate: #5D7380,
+	coffee:     #FFFFFF,
+);
+
+// Placeholder
+$input-placeholder: (
+	gray-slate: #AAAAAA,
+	coffee:     #AAAAAA,
+);
+
+// ****************************************
+// 4.2. HOVER
+
+// Icon color
+$input-icon-hover: (
+	gray-slate: #5D7380,
+	coffee:     #AAAAAA,
+);
+
+// Background color
+$input-background-hover: (
+	gray-slate: #FFFFFF,
+	coffee:     #FFFFFF,
+);
+
+// ****************************************
+// 4.3. FOCUS
+
+// Icon color
+$input-icon-focus: (
+	gray-slate: #5D7380,
+	coffee:     #AAAAAA,
+);
+
+// Background color
+$input-background-focus: (
+	gray-slate: #FFFFFF,
+	coffee:     #FFFFFF,
+);
+
+// ****************************************
+// 4.4. ERROR
+
+// Icon color
+$input-icon-error: (
+	gray-slate: #D43858,
+	coffee:     #AAAAAA,
+);
+
+// Background color
+$input-border-error: (
+	gray-slate: #D43858,
+	coffee:     #FFFFFF,
+);
+
+// ========================================|
+// 4. FORM BUTTON                          |
+// ========================================|
+
+// ****************************************
+// 4.1. DEFAULT
+
+// Background color
+$submit-background: (
+	gray-slate: #38C5B5,
+	coffee:     #C6A685,
+);
+
+// Text color
+$submit-label: (
+	gray-slate: #FFFFFF,
+	coffee:     #FFFFFF,
+);
+
+// ****************************************
+// 4.2. HOVER
+
+// ****************************************
+// 4.3. ACTIVE
+
+// ========================================|
+// 5. GDPR FIELD                           |
+// ========================================|
+
+// ****************************************
+// 5.1. DEFAULT
+
+// Checkbox background
+$gdpr-background: (
+	gray-slate: #FFFFFF,
+	coffee:     #FFFFFF,
+);
+
+// Content color
+$gdpr-label: (
+	gray-slate: #FFFFFF,
+	coffee:     #FFFFFF,
+);
+
+// ****************************************
+// 5.2. CHECKED
+
+// Checkbox icon
+$gdpr-icon: (
+	gray-slate: #38C5B5,
+	coffee:     #C6A685,
+);
+
+// ========================================|
+// 6. MAILCHIMP FIELD                      |
+// ========================================|
+
+// Container background
+$groups-background: (
+	gray-slate: #35414A,
+	coffee:     #423D38,
+);
+
+// Title color
+$groups-title: (
+	gray-slate: #FFFFFF,
+	coffee:     #FFFFFF,
+);
+
+// Label color
+$checkbox-label: (
+	gray-slate: #FFFFFF,
+	coffee:     #FFFFFF,
+);
+
+// Radio and checkbox BG
+$checkbox-background: (
+	gray-slate: #FFFFFF,
+	coffee:     #FFFFFF,
+);
+
+// Radio and checkbox icon
+$checkbox-icon: (
+	gray-slate: #38C5B5,
+	coffee:     #C6A685,
+);
+
+// ========================================|
+// 7. ERROR MESSAGE                        |
+// ========================================|
+
+// Background color
+
+// Text color
+
+// ========================================|
+// 8. ADDITIONAL SETTINGS                  |
+// ========================================|
+
+// ****************************************
+// 8.1. DEFAULT
+
+// ****************************************
+// 8.2. HOVER
+
+// ****************************************
+// 8.3. FOCUS
+
+
+
+
+// Others, to arrange
+$cta-border: (
+	gray-slate: rgba(0,0,0,0),
+	coffee:     rgba(0,0,0,0),
+);
+
+$input-border: (
+	gray-slate: rgba(0,0,0,0),
+	coffee:     rgba(0,0,0,0),
+);
+
+$submit-border: (
+	gray-slate: rgba(0,0,0,0),
+	coffee:     rgba(0,0,0,0),
+);

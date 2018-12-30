@@ -49,8 +49,9 @@ export default class LayoutContent extends Component {
 		if ( this.props.ctaButton && '' !== this.props.ctaButton ) {
 			ctaButton = (
 				<Button
-					label={ this.props.ctaButton }
+					href="https://premium.wpmudev.org/"
 					extraClass="hustle-button-cta"
+					label={ this.props.ctaButton }
 				/>
 			);
 		}

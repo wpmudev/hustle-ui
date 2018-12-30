@@ -1,6 +1,20 @@
 import React, { Component } from 'react';
+import $ from 'jquery';
 
 export default class Input extends Component {
+	componentDidMount() {
+		$( '.hustle-ui .hustle-input' ).blur( function() {
+			const input = $( this );
+			const label = input.parent();
+
+			if ( '' === input.val() ) {
+				label.removeClass( 'hustle-status--filled' );
+			} else {
+				label.addClass( 'hustle-status--filled' );
+			}
+		});
+	}
+
 	render() {
 		let type = '';
 		let icon = '';

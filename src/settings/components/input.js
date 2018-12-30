@@ -13,6 +13,25 @@ export default class Input extends Component {
 				label.addClass( 'hustle-status--filled' );
 			}
 		});
+
+		if ( 'email' === this.props.type ) {
+			const validEmail = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
+			const validNet = /@.*\./;
+
+			$( '.hustle-ui .hustle-input' ).on( 'change', function() {
+				const input = $( this );
+				const label = input.parent();
+
+				const isValid = input.val().match( validEmail );
+				const isNet = input.val().match( validNet );
+
+				if ( ( null === isValid ) || ( null === isNet ) ) {
+					label.addClass( 'hustle-field-error' );
+				} else {
+					label.removeClass( 'hustle-field-error' );
+				}
+			});
+		}
 	}
 
 	render() {

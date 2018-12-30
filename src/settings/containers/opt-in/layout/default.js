@@ -7,10 +7,6 @@ import NeverSeeLink from '../never-see-link';
 
 export default class LayoutDefault extends Component {
 	render() {
-		let renderContent = '';
-		let renderLeftImage = '';
-		let renderRightImage = '';
-
 		const imagePosition = this.props.imagePosition ? this.props.imagePosition : 'left';
 		const imagePosClass = 'hustle-layout-position--' + imagePosition;
 
@@ -29,6 +25,10 @@ export default class LayoutDefault extends Component {
 				imagePosY={ this.props.imagePosY ? this.props.imagePosY : 'center' }
 			/>
 		);
+
+		let renderContent = '';
+		let renderLeftImage = '';
+		let renderRightImage = '';
 
 		if ( 'left' === imagePosition || 'above' === imagePosition ) {
 			renderLeftImage = renderImage;

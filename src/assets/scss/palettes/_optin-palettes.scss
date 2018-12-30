@@ -102,6 +102,9 @@
 			.hustle-layout {
 
 				.hustle-button-cta {
+					border-width: 0;
+					border-style: solid;
+					border-color: transparent;
 
 					&,
 					&:visited {
@@ -194,69 +197,134 @@
 		}
 	}
 
+	// ========================================|
+	// 5. RADIO AND CHECKBOX                   |
+	// ========================================|
 	.hustle-palette--#{$palette} {
 
 		.hustle-optin {
 
-			// ELEMENT: Body
-			.hustle-layout-body {
+			.hustle-layout {
 
-				// ELEMENT: Content
-				.hustle-content {
+				.hustle-radio,
+				.hustle-checkbox {
 
-					// ELEMENT: Call To Action
-					.hustle-button {
-						border-width: 0;
-						border-style: none;
-						border-color: map-get($cta-border, $palette);
+					input:checked {
+
+						+ span[aria-hidden] {
+							background-color: map-get($checkbox-background-checked, $palette);
+						}
 					}
-				}
-			}
-
-			// ELEMENT: Checkbox
-			.hustle-checkbox {
-
-				&.hustle-gdpr {
 
 					span[aria-hidden] {
-						background-color: map-get($gdpr-background, $palette);
-						color: map-get($gdpr-icon, $palette);
+						border-width: 2px;
+						border-style: solid;
+						border-color: transparent;
+						background-color: map-get($checkbox-background-static, $palette);
 					}
-		
-					span:not([aria-hidden]) {
-						color: map-get($gdpr-label, $palette);
-					}
-				}
 
-				&:not(.hustle-gdpr) {
-
-					span[aria-hidden] {
-						background-color: map-get($checkbox-background, $palette);
-						color: map-get($checkbox-icon, $palette);
-					}
-		
 					span:not([aria-hidden]) {
 						color: map-get($checkbox-label, $palette);
 					}
+
+					&.hustle-field-error {
+
+						span[aria-hidden] {
+							background-color: map-get($checkbox-background-error, $palette);
+							border-color: map-get($checkbox-border-error, $palette);
+						}
+					}
+				}
+
+				.hustle-radio {
+
+					input:checked {
+
+						+ span[aria-hidden]:before {
+							background-color: map-get($checkbox-icon, $palette);
+						}
+					}
+				}
+
+				.hustle-checkbox {
+
+					input:checked {
+
+						+ span[aria-hidden]:before {
+							color: map-get($checkbox-icon, $palette);
+						}
+					}
 				}
 			}
+		}
+	}
 
-			// ELEMENT: Submit Button
-			.hustle-form-fields .hustle-button {
-				border-width: 0;
-				border-style: none;
-				border-color: map-get($submit-border, $palette);
-				background-color: map-get($submit-background, $palette);
-				color: map-get($submit-label, $palette);
+	// ========================================|
+	// 6. SUBMIT BUTTON                        |
+	// ========================================|
+	.hustle-palette--#{$palette} {
+
+		.hustle-optin {
+
+			.hustle-layout {
+
+				.hustle-button-submit {
+					border-width: 0;
+					border-style: none;
+					border-color: transparent;
+					background-color: map-get($submit-background-static, $palette);
+					color: map-get($submit-label-static, $palette);
+
+					&:hover {
+						background-color: map-get($submit-background-hover, $palette);
+						color: map-get($submit-label-hover, $palette);
+					}
+
+					&:active {
+						background-color: map-get($submit-background-active, $palette);
+						color: map-get($submit-label-active, $palette);
+					}
+				}
 			}
+		}
+	}
 
-			// ELEMENT: Form Group
-			.hustle-form-options {
-				background-color: map-get($groups-background, $palette);
+	// ========================================|
+	// 7. FORM OPTIONS                         |
+	// ========================================|
+	.hustle-palette--#{$palette} {
 
-				// ELEMENT: Title
-				.hustle-group-title {
-					color: map-get($groups-title, $palette);
+		.hustle-optin {
+
+			.hustle-layout {
+
+				.hustle-form-options {
+					background-color: map-get($options-background, $palette);
+
+					.hustle-group-title {
+						color: map-get($options-title, $palette);
+					}
+				}
+			}
+		}
+	}
+
+	// ========================================|
+	// 8. ERROR MESSAGE                        |
+	// ========================================|
+	.hustle-palette--#{$palette} {
+
+		.hustle-optin {
+
+			.hustle-layout {
+
+				.hustle-error-message {
+					background-color: map-get($error-background, $palette);
+					box-shadow: inset 4px 0 0 0 map-get($error-border, $palette);
+
+					p {
+						color: map-get($error-message, $palette);
+					}
 				}
 			}
 		}

@@ -302,7 +302,7 @@
 					background-color: map-get($options-background, $palette);
 
 					.hustle-group-title {
-						color: map-get($options-title, $palette);
+						color: map-get($options-content, $palette);
 					}
 				}
 			}

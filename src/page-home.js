@@ -9,8 +9,8 @@ export default class PageHome extends Component {
 		const basic = {
 			id: '9',
 			type: 'embedded',
-			layout: 'default',
-			palette: 'ectoplasm'
+			layout: 'focus-content',
+			palette: 'gray-slate'
 		};
 
 		const content = {
@@ -20,28 +20,7 @@ export default class PageHome extends Component {
 				'porttitor ligula, eget lacinia odio sem nec elit.'
 			),
 			content: (
-				<React.Fragment>
-					<h1>Heading 1 - <a href="/">Link</a></h1>
-					<h2>Heading 2 - <a href="/">Link</a></h2>
-					<h3>Heading 3 - <a href="/">Link</a></h3>
-					<h4>Heading 4 - <a href="/">Link</a></h4>
-					<h5>Heading 5 - <a href="/">Link</a></h5>
-					<h6>Heading 6 - <a href="/">Link</a></h6>
-					<p>Cras mattis consectetur purus sit amet fermentum. <strong>Curabitur blandit tempus porttitor.</strong> Etiam porta sem malesuada magna mollis euismod. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum <a href="/" target="_blank">massa justo</a> sit amet risus. Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
-					<ul>
-						<li>List one</li>
-						<li>List two</li>
-						<li>List three</li>
-					</ul>
-					<ol>
-						<li>Item one</li>
-						<li>Item two</li>
-						<li>Item three</li>
-					</ol>
-					<blockquote>
-						<p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</p>
-					</blockquote>
-				</React.Fragment>
+				<p>Cras mattis consectetur purus sit amet fermentum. <strong>Curabitur blandit tempus porttitor.</strong> Etiam porta sem malesuada magna mollis euismod. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum <a href="/" target="_blank">massa justo</a> sit amet risus. Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
 			),
 			button: 'Call To Action'
 		};

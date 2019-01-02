@@ -1,4 +1,4 @@
-$palettes: gray-slate coffee ectoplasm blue sunrise;
+$palettes: gray-slate coffee ectoplasm blue sunrise midnight;
 
 // ========================================|
 // 1. BASIC                                |
@@ -11,6 +11,7 @@ $main-background: (
 	ectoplasm:  #403159,
 	blue:       #176387,
 	sunrise:    #B03E34,
+	midnight:   #25282B,
 );
 
 // Image container BG
@@ -20,6 +21,7 @@ $image-container: (
 	ectoplasm:  #3D2F54,
 	blue:       #165E80,
 	sunrise:    #A73B31,
+	midnight:   #232629,
 );
 
 // Form area background
@@ -29,6 +31,7 @@ $form-background: (
 	ectoplasm:  #513E70,
 	blue:       #78B5D1,
 	sunrise:    #CB4B40,
+	midnight:   #363B3F,
 );
 
 // ========================================|
@@ -45,15 +48,17 @@ $title-color: (
 	ectoplasm:  #FFFFFF,
 	blue:       #FFFFFF,
 	sunrise:    #FFFFFF,
+	midnight:   #FFFFFF,
 );
 
 // Subtitle color
 $subtitle-color: (
-	gray-slate: #FDFDFD,
-	coffee:     #FDFDFD,
+	gray-slate: #FFFFFF,
+	coffee:     #FFFFFF,
 	ectoplasm:  #FFFFFF,
 	blue:       #FFFFFF,
 	sunrise:    #FFFFFF,
+	midnight:   #FFFFFF,
 );
 
 // Content color
@@ -63,6 +68,7 @@ $content-color: (
 	ectoplasm:  #ADB5B7,
 	blue:       #FFFFFF,
 	sunrise:    #FFFFFF,
+	midnight:   #ADB5B7,
 );
 
 // OL counter
@@ -72,6 +78,7 @@ $ol-counter: (
 	ectoplasm:  #ADB5B7,
 	blue:       #FFFFFF,
 	sunrise:    #FFFFFF,
+	midnight:   #ADB5B7,
 );
 
 // UL bullets
@@ -81,6 +88,7 @@ $ul-bullets: (
 	ectoplasm:  #ADB5B7,
 	blue:       #FFFFFF,
 	sunrise:    #FFFFFF,
+	midnight:   #ADB5B7,
 );
 
 // Blockquote border
@@ -90,6 +98,7 @@ $blockquote-border: (
 	ectoplasm:  #B9CE33,
 	blue:       #78B5D1,
 	sunrise:    #CBB000,
+	midnight:   #DD4F3D,
 );
 
 // Link color
@@ -99,6 +108,7 @@ $link-color-static: (
 	ectoplasm:  #B9CE33,
 	blue:       #78B5D1,
 	sunrise:    #CBB000,
+	midnight:   #DD4F3D,
 );
 
 // ****************************************
@@ -111,6 +121,7 @@ $link-color-hover: (
 	ectoplasm:  #92A41E,
 	blue:       #4D95B6,
 	sunrise:    #9A8603,
+	midnight:   #C63D2B,
 );
 
 // ****************************************
@@ -123,6 +134,7 @@ $link-color-active: (
 	ectoplasm:  #92A41E,
 	blue:       #4D95B6,
 	sunrise:    #9A8603,
+	midnight:   #C63D2B,
 );
 
 // ========================================|
@@ -139,6 +151,7 @@ $cta-background-static: (
 	ectoplasm:  #B9CE33,
 	blue:       #78B5D1,
 	sunrise:    #CBB000,
+	midnight:   #DD4F3D,
 );
 
 // Label color
@@ -148,6 +161,7 @@ $cta-label-static: (
 	ectoplasm:  #FFFFFF,
 	blue:       #FFFFFF,
 	sunrise:    #FFFFFF,
+	midnight:   #FFFFFF,
 );
 
 // ****************************************
@@ -160,6 +174,7 @@ $cta-background-hover: (
 	ectoplasm:  #92A41E,
 	blue:       #4D95B6,
 	sunrise:    #9A8603,
+	midnight:   #C63D2B,
 );
 
 // Label color
@@ -169,6 +184,7 @@ $cta-label-hover: (
 	ectoplasm:  #FFFFFF,
 	blue:       #FFFFFF,
 	sunrise:    #FFFFFF,
+	midnight:   #FFFFFF,
 );
 
 // ****************************************
@@ -181,6 +197,7 @@ $cta-background-active: (
 	ectoplasm:  #92A41E,
 	blue:       #4D95B6,
 	sunrise:    #9A8603,
+	midnight:   #C63D2B,
 );
 
 // Label color
@@ -190,6 +207,7 @@ $cta-label-active: (
 	ectoplasm:  #FFFFFF,
 	blue:       #FFFFFF,
 	sunrise:    #FFFFFF,
+	midnight:   #FFFFFF,
 );
 
 // ========================================|
@@ -206,6 +224,7 @@ $input-icon-static: (
 	ectoplasm:  #AAAAAA,
 	blue:       #AAAAAA,
 	sunrise:    #AAAAAA,
+	midnight:   #AAAAAA,
 );
 
 // Background color
@@ -214,6 +233,7 @@ $input-background-static: (
 	coffee:     #FFFFFF,
 	ectoplasm:  #FFFFFF,
 	blue:       #FFFFFF,
+	midnight:   #FFFFFF,
 );
 
 // Text color
@@ -223,6 +243,7 @@ $input-color: (
 	ectoplasm:  #513E70,
 	blue:       #4D95B6,
 	sunrise:    #333333,
+	midnight:   #363B3F,
 );
 
 // Placeholder
@@ -232,6 +253,7 @@ $input-placeholder: (
 	ectoplasm:  #AAAAAA,
 	blue:       #AAAAAA,
 	sunrise:    #AAAAAA,
+	midnight:   #AAAAAA,
 );
 
 // ****************************************
@@ -244,6 +266,7 @@ $input-icon-hover: (
 	ectoplasm:  #513E70,
 	blue:       #4D95B6,
 	sunrise:    #CBB000,
+	midnight:   #232629,
 );
 
 // Background color
@@ -253,6 +276,7 @@ $input-background-hover: (
 	ectoplasm:  #FFFFFF,
 	blue:       #FFFFFF,
 	sunrise:    #FFFFFF,
+	midnight:   #FFFFFF,
 );
 
 // ****************************************
@@ -265,6 +289,7 @@ $input-icon-focus: (
 	ectoplasm:  #513E70,
 	blue:       #4D95B6,
 	sunrise:    #CBB000,
+	midnight:   #232629,
 );
 
 // Background color
@@ -274,6 +299,7 @@ $input-background-focus: (
 	ectoplasm:  #FFFFFF,
 	blue:       #FFFFFF,
 	sunrise:    #FFFFFF,
+	midnight:   #FFFFFF,
 );
 
 // ****************************************
@@ -286,6 +312,7 @@ $input-icon-error: (
 	ectoplasm:  #D43858,
 	blue:       #D43858,
 	sunrise:    #333333,
+	midnight:   #DD4F3D,
 );
 
 // Background color
@@ -295,6 +322,7 @@ $input-border-error: (
 	ectoplasm:  #D43858,
 	blue:       #D43858,
 	sunrise:    #333333,
+	midnight:   #DD4F3D,
 );
 
 // ========================================|
@@ -311,6 +339,7 @@ $checkbox-background-static: (
 	ectoplasm:  #FFFFFF,
 	blue:       #FFFFFF,
 	sunrise:    #FFFFFF,
+	midnight:   #FFFFFF,
 );
 
 // Label color
@@ -320,6 +349,7 @@ $checkbox-label: (
 	ectoplasm:  #FFFFFF,
 	blue:       #FFFFFF,
 	sunrise:    #FFFFFF,
+	midnight:   #FFFFFF,
 );
 
 // ****************************************
@@ -332,6 +362,7 @@ $checkbox-background-checked: (
 	ectoplasm:  #FFFFFF,
 	blue:       #FFFFFF,
 	sunrise:    #FFFFFF,
+	midnight:   #FFFFFF,
 );
 
 // Icon color
@@ -341,6 +372,7 @@ $checkbox-icon: (
 	ectoplasm:  #513E70,
 	blue:       #78B5D1,
 	sunrise:    #CBB000,
+	midnight:   #DD4F3D,
 );
 
 // ****************************************
@@ -353,6 +385,7 @@ $checkbox-background-error: (
 	ectoplasm:  #FFFFFF,
 	blue:       #FFFFFF,
 	sunrise:    #FFFFFF,
+	midnight:   #FFFFFF,
 );
 
 // Border color
@@ -362,6 +395,7 @@ $checkbox-border-error: (
 	ectoplasm:  #D43858,
 	blue:       #D43858,
 	sunrise:    #333333,
+	midnight:   #DD4F3D,
 );
 
 // ========================================|
@@ -378,6 +412,7 @@ $submit-background-static: (
 	ectoplasm:  #B9CE33,
 	blue:       #4D95B6,
 	sunrise:    #CBB000,
+	midnight:   #DD4F3D,
 );
 
 // Text color
@@ -387,6 +422,7 @@ $submit-label-static: (
 	ectoplasm:  #FFFFFF,
 	blue:       #FFFFFF,
 	sunrise:    #FFFFFF,
+	midnight:   #FFFFFF,
 );
 
 // ****************************************
@@ -399,6 +435,7 @@ $submit-background-hover: (
 	ectoplasm:  #92A41E,
 	blue:       #165E80,
 	sunrise:    #9A8603,
+	midnight:   #C63D2B,
 );
 
 // Text color
@@ -408,6 +445,7 @@ $submit-label-hover: (
 	ectoplasm:  #FFFFFF,
 	blue:       #FFFFFF,
 	sunrise:    #FFFFFF,
+	midnight:   #FFFFFF,
 );
 
 // ****************************************
@@ -420,6 +458,7 @@ $submit-background-active: (
 	ectoplasm:  #92A41E,
 	blue:       #165E80,
 	sunrise:    #9A8603,
+	midnight:   #C63D2B,
 );
 
 // Text color
@@ -429,6 +468,7 @@ $submit-label-active: (
 	ectoplasm:  #FFFFFF,
 	blue:       #FFFFFF,
 	sunrise:    #FFFFFF,
+	midnight:   #FFFFFF,
 );
 
 // ========================================|
@@ -442,15 +482,17 @@ $options-background: (
 	ectoplasm:  #3D2F54,
 	blue:       #165E80,
 	sunrise:    #A73B31,
+	midnight:   #232629,
 );
 
-// Title color
-$options-title: (
+// Content color
+$options-content: (
 	gray-slate: #FFFFFF,
 	coffee:     #FFFFFF,
 	ectoplasm:  #FFFFFF,
 	blue:       #FFFFFF,
 	sunrise:    #FFFFFF,
+	midnight:   #FFFFFF,
 );
 
 // ========================================|
@@ -464,6 +506,7 @@ $error-background: (
 	ectoplasm:  #FFFFFF,
 	blue:       #FFFFFF,
 	sunrise:    #FFFFFF,
+	midnight:   #FFFFFF,
 );
 
 // Border color
@@ -473,6 +516,7 @@ $error-border: (
 	ectoplasm:  #D43858,
 	blue:       #D43858,
 	sunrise:    #333333,
+	midnight:   #DD4F3D,
 );
 
 // Message color
@@ -482,6 +526,7 @@ $error-message: (
 	ectoplasm:  #D43858,
 	blue:       #D43858,
 	sunrise:    #333333,
+	midnight:   #DD4F3D,
 );
 
 // ========================================|

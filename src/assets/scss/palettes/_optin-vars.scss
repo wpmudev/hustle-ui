@@ -1,4 +1,4 @@
-$palettes: gray-slate coffee ectoplasm;
+$palettes: gray-slate coffee ectoplasm blue;
 
 // ========================================|
 // 1. BASIC                                |
@@ -8,7 +8,8 @@ $palettes: gray-slate coffee ectoplasm;
 $main-background: (
 	gray-slate: #38454E,
 	coffee:     #46403B,
-	ectoplasm:  #403159
+	ectoplasm:  #403159,
+	blue:       #176387,
 );
 
 // Image container BG
@@ -16,6 +17,7 @@ $image-container: (
 	gray-slate: #35414A,
 	coffee:     #423D38,
 	ectoplasm:  #3D2F54,
+	blue:       #165E80,
 );
 
 // Form area background
@@ -23,6 +25,7 @@ $form-background: (
 	gray-slate: #5D7380,
 	coffee:     #59524B,
 	ectoplasm:  #513E70,
+	blue:       #78B5D1,
 );
 
 // ========================================|
@@ -37,6 +40,7 @@ $title-color: (
 	gray-slate: #FFFFFF,
 	coffee:     #FFFFFF,
 	ectoplasm:  #FFFFFF,
+	blue:       #FFFFFF,
 );
 
 // Subtitle color
@@ -44,6 +48,7 @@ $subtitle-color: (
 	gray-slate: #FDFDFD,
 	coffee:     #FDFDFD,
 	ectoplasm:  #FFFFFF,
+	blue:       #FFFFFF,
 );
 
 // Content color
@@ -51,6 +56,7 @@ $content-color: (
 	gray-slate: #ADB5B7,
 	coffee:     #CCC2B7,
 	ectoplasm:  #ADB5B7,
+	blue:       #FFFFFF,
 );
 
 // OL counter
@@ -58,6 +64,7 @@ $ol-counter: (
 	gray-slate: #ADB5B7,
 	coffee:     #CCC2B7,
 	ectoplasm:  #ADB5B7,
+	blue:       #FFFFFF,
 );
 
 // UL bullets
@@ -65,6 +72,7 @@ $ul-bullets: (
 	gray-slate: #ADB5B7,
 	coffee:     #CCC2B7,
 	ectoplasm:  #ADB5B7,
+	blue:       #FFFFFF,
 );
 
 // Blockquote border
@@ -72,6 +80,7 @@ $blockquote-border: (
 	gray-slate: #38C5B5,
 	coffee:     #C6A685,
 	ectoplasm:  #B9CE33,
+	blue:       #78B5D1,
 );
 
 // Link color
@@ -79,6 +88,7 @@ $link-color-static: (
 	gray-slate: #38C5B5,
 	coffee:     #C6A685,
 	ectoplasm:  #B9CE33,
+	blue:       #78B5D1,
 );
 
 // ****************************************
@@ -89,6 +99,7 @@ $link-color-hover: (
 	gray-slate: #2DA194,
 	coffee:     #A0866B,
 	ectoplasm:  #92A41E,
+	blue:       #4D95B6,
 );
 
 // ****************************************
@@ -99,6 +110,7 @@ $link-color-active: (
 	gray-slate: #2DA194,
 	coffee:     #A0866B,
 	ectoplasm:  #92A41E,
+	blue:       #4D95B6,
 );
 
 // ========================================|
@@ -113,6 +125,7 @@ $cta-background-static: (
 	gray-slate: #38C5B5,
 	coffee:     #C6A685,
 	ectoplasm:  #B9CE33,
+	blue:       #78B5D1,
 );
 
 // Label color
@@ -120,6 +133,7 @@ $cta-label-static: (
 	gray-slate: #FFFFFF,
 	coffee:     #FFFFFF,
 	ectoplasm:  #FFFFFF,
+	blue:       #FFFFFF,
 );
 
 // ****************************************
@@ -130,6 +144,7 @@ $cta-background-hover: (
 	gray-slate: #49E2D1,
 	coffee:     #C69767,
 	ectoplasm:  #92A41E,
+	blue:       #4D95B6,
 );
 
 // Label color
@@ -137,6 +152,7 @@ $cta-label-hover: (
 	gray-slate: #FFFFFF,
 	coffee:     #FFFFFF,
 	ectoplasm:  #FFFFFF,
+	blue:       #FFFFFF,
 );
 
 // ****************************************
@@ -147,6 +163,7 @@ $cta-background-active: (
 	gray-slate: #49E2D1,
 	coffee:     #C69767,
 	ectoplasm:  #92A41E,
+	blue:       #4D95B6,
 );
 
 // Label color
@@ -154,6 +171,7 @@ $cta-label-active: (
 	gray-slate: #FFFFFF,
 	coffee:     #FFFFFF,
 	ectoplasm:  #FFFFFF,
+	blue:       #FFFFFF,
 );
 
 // ========================================|
@@ -168,6 +186,7 @@ $input-icon-static: (
 	gray-slate: #AAAAAA,
 	coffee:     #AFA397,
 	ectoplasm:  #AAAAAA,
+	blue:       #AAAAAA,
 );
 
 // Background color
@@ -175,6 +194,7 @@ $input-background-static: (
 	gray-slate: #FFFFFF,
 	coffee:     #FFFFFF,
 	ectoplasm:  #FFFFFF,
+	blue:       #FFFFFF,
 );
 
 // Text color
@@ -182,6 +202,7 @@ $input-color: (
 	gray-slate: #5D7380,
 	coffee:     #59524B,
 	ectoplasm:  #513E70,
+	blue:       #4D95B6,
 );
 
 // Placeholder
@@ -189,6 +210,7 @@ $input-placeholder: (
 	gray-slate: #AAAAAA,
 	coffee:     #AFA397,
 	ectoplasm:  #AAAAAA,
+	blue:       #AAAAAA,
 );
 
 // ****************************************
@@ -199,6 +221,7 @@ $input-icon-hover: (
 	gray-slate: #5D7380,
 	coffee:     #59524B,
 	ectoplasm:  #513E70,
+	blue:       #4D95B6,
 );
 
 // Background color
@@ -206,6 +229,7 @@ $input-background-hover: (
 	gray-slate: #FFFFFF,
 	coffee:     #FFFFFF,
 	ectoplasm:  #FFFFFF,
+	blue:       #FFFFFF,
 );
 
 // ****************************************
@@ -216,6 +240,7 @@ $input-icon-focus: (
 	gray-slate: #5D7380,
 	coffee:     #59524B,
 	ectoplasm:  #513E70,
+	blue:       #4D95B6,
 );
 
 // Background color
@@ -223,6 +248,7 @@ $input-background-focus: (
 	gray-slate: #FFFFFF,
 	coffee:     #FFFFFF,
 	ectoplasm:  #FFFFFF,
+	blue:       #FFFFFF,
 );
 
 // ****************************************
@@ -233,6 +259,7 @@ $input-icon-error: (
 	gray-slate: #D43858,
 	coffee:     #D43858,
 	ectoplasm:  #D43858,
+	blue:       #D43858,
 );
 
 // Background color
@@ -240,6 +267,7 @@ $input-border-error: (
 	gray-slate: #D43858,
 	coffee:     #D43858,
 	ectoplasm:  #D43858,
+	blue:       #D43858,
 );
 
 // ========================================|
@@ -254,6 +282,7 @@ $checkbox-background-static: (
 	gray-slate: #FFFFFF,
 	coffee:     #FFFFFF,
 	ectoplasm:  #FFFFFF,
+	blue:       #FFFFFF,
 );
 
 // Label color
@@ -261,6 +290,7 @@ $checkbox-label: (
 	gray-slate: #FFFFFF,
 	coffee:     #FFFFFF,
 	ectoplasm:  #FFFFFF,
+	blue:       #FFFFFF,
 );
 
 // ****************************************
@@ -271,6 +301,7 @@ $checkbox-background-checked: (
 	gray-slate: #FFFFFF,
 	coffee:     #FFFFFF,
 	ectoplasm:  #FFFFFF,
+	blue:       #FFFFFF,
 );
 
 // Icon color
@@ -278,6 +309,7 @@ $checkbox-icon: (
 	gray-slate: #38C5B5,
 	coffee:     #C6A685,
 	ectoplasm:  #513E70,
+	blue:       #78B5D1,
 );
 
 // ****************************************
@@ -288,6 +320,7 @@ $checkbox-background-error: (
 	gray-slate: #FFFFFF,
 	coffee:     #FFFFFF,
 	ectoplasm:  #FFFFFF,
+	blue:       #FFFFFF,
 );
 
 // Border color
@@ -295,6 +328,7 @@ $checkbox-border-error: (
 	gray-slate: #D43858,
 	coffee:     #D43858,
 	ectoplasm:  #D43858,
+	blue:       #D43858,
 );
 
 // ========================================|
@@ -309,6 +343,7 @@ $submit-background-static: (
 	gray-slate: #38C5B5,
 	coffee:     #C6A685,
 	ectoplasm:  #B9CE33,
+	blue:       #4D95B6,
 );
 
 // Text color
@@ -316,6 +351,7 @@ $submit-label-static: (
 	gray-slate: #FFFFFF,
 	coffee:     #FFFFFF,
 	ectoplasm:  #FFFFFF,
+	blue:       #FFFFFF,
 );
 
 // ****************************************
@@ -326,6 +362,7 @@ $submit-background-hover: (
 	gray-slate: #49E2D1,
 	coffee:     #C69767,
 	ectoplasm:  #92A41E,
+	blue:       #165E80,
 );
 
 // Text color
@@ -333,6 +370,7 @@ $submit-label-hover: (
 	gray-slate: #FFFFFF,
 	coffee:     #FFFFFF,
 	ectoplasm:  #FFFFFF,
+	blue:       #FFFFFF,
 );
 
 // ****************************************
@@ -343,6 +381,7 @@ $submit-background-active: (
 	gray-slate: #49E2D1,
 	coffee:     #C69767,
 	ectoplasm:  #92A41E,
+	blue:       #165E80,
 );
 
 // Text color
@@ -350,6 +389,7 @@ $submit-label-active: (
 	gray-slate: #FFFFFF,
 	coffee:     #FFFFFF,
 	ectoplasm:  #FFFFFF,
+	blue:       #FFFFFF,
 );
 
 // ========================================|
@@ -361,6 +401,7 @@ $options-background: (
 	gray-slate: #35414A,
 	coffee:     #423D38,
 	ectoplasm:  #3D2F54,
+	blue:       #165E80,
 );
 
 // Title color
@@ -368,6 +409,7 @@ $options-title: (
 	gray-slate: #FFFFFF,
 	coffee:     #FFFFFF,
 	ectoplasm:  #FFFFFF,
+	blue:       #FFFFFF,
 );
 
 // ========================================|
@@ -379,6 +421,7 @@ $error-background: (
 	gray-slate: #FFFFFF,
 	coffee:     #FFFFFF,
 	ectoplasm:  #FFFFFF,
+	blue:       #FFFFFF,
 );
 
 // Border color
@@ -386,6 +429,7 @@ $error-border: (
 	gray-slate: #D43858,
 	coffee:     #D43858,
 	ectoplasm:  #D43858,
+	blue:       #D43858,
 );
 
 // Message color
@@ -393,6 +437,7 @@ $error-message: (
 	gray-slate: #D43858,
 	coffee:     #D43858,
 	ectoplasm:  #D43858,
+	blue:       #D43858,
 );
 
 // ========================================|

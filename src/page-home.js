@@ -8,8 +8,8 @@ export default class PageHome extends Component {
 	render() {
 		const basic = {
 			id: '9',
-			type: 'embedded',
-			layout: 'focus-content',
+			type: 'popup',
+			layout: 'default',
 			palette: 'gray-slate'
 		};
 
@@ -75,6 +75,7 @@ export default class PageHome extends Component {
 						formOptions={ form.mailchimp }
 						optionsLabel={ form.mailchimpTitle }
 						fieldsGdpr={ form.gdpr }
+						neverSeeLink="true"
 					>
 						<Input
 							type="name"

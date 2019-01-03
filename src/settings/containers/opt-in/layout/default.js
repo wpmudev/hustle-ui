@@ -88,7 +88,7 @@ export default class LayoutDefault extends Component {
 
 				<NeverSeeLink
 					type={ this.props.type ? this.props.type : '' }
-					NeverSeeLink={ this.props.neverSeeLink ? this.props.neverSeeLink : '' }
+					neverSeeLink={ this.props.neverSeeLink ? this.props.neverSeeLink : '' }
 				/>
 
 			</div>

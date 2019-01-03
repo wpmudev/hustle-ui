@@ -16,7 +16,7 @@ $hui-assets-helper: false !default;
 // 1. BASIC VARIABLES
 
 $hui-version:            '4.0.0'      !default;
-$hui-font-path:          '../fonts/'  !default;
+$hui-font-path:          '../../../../fonts/'  !default;
 $hui-image-path:         '../images/' !default;
 
 $hui-dialog-width:       800px;
@@ -69,7 +69,8 @@ $icons: (
 	social-youtube:   "\74",
 	text:             "\75",
 	timepicker:       "\76",
-	website:          "\77"
+	website:          "\77",
+	close:            "\78",
 ) !default;
 
 // =============================================

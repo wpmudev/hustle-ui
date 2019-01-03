@@ -100,14 +100,14 @@
 				}
 			}
 
-			// STATUS: Error
-			&.hustle-status--error {}
-
 			// STATUS: Filled
 			&.hustle-status--filled {
 
 				.hustle-input-label {
-					opacity: 0;
+
+					span {
+						opacity: 0;
+					}
 				}
 			}
 		}

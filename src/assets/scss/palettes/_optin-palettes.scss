@@ -329,4 +329,18 @@
 			}
 		}
 	}
+
+	// ========================================|
+	// 9. ADDITIONAL SETTINGS                  |
+	// ========================================|
+	.hustle-palette--#{$palette} {
+
+		&.hustle-popup {
+
+			// Pop-up mask
+			.hustle-popup-mask {
+				background-color: map-get($popup-mask, $palette);
+			}
+		}
+	}
 }

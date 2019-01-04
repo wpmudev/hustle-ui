@@ -16,18 +16,18 @@
 		"url": "git@github.com:wpmudev/hustle-ui.git"
 	},
 	"dependencies": {
-		"react": "^16.6.3",
-		"react-dom": "^16.6.3",
-		"react-scripts": "^2.1.1",
+		"react": "^16.7.0",
+		"react-dom": "^16.7.0",
+		"react-scripts": "^2.1.2",
 		"react-router-dom": "^4.3.1"
 	},
 	"devDependencies": {
 		"@wpmudev/shared-ui": "2.3.15",
 		"ajv-keywords": "^3.1.0",
 		"autoprefixer": "^7.2.6",
-		"babel-core": "^6.26.0",
-		"babel-loader": "^7.1.4",
-		"babel-preset-env": "^1.6.1",
+		"babel-core": "^6.26.3",
+		"babel-loader": "^8.0.4",
+		"babel-preset-env": "^1.7.0",
 		"css-loader": "^0.28.11",
 		"es6-promise": "^4.2.4",
 		"eslint-config-wordpress": "^2.0.0",

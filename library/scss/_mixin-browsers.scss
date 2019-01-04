@@ -1,0 +1,22 @@
+@mixin support($support-type) {
+
+	@if $support-type == ie {
+
+		@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+			@content;
+		}
+	}
+
+	@else if $support-type == edge {
+
+		@supports (-ms-ime-align: auto) {
+			@content;
+		}
+	}
+
+	@else {
+
+		@warn "Unfortunately, no type could be retrieved from `#{$support-type}`. "
+		+ "Use either `ie` or `edge`.";
+	}
+}

@@ -1,0 +1,112 @@
+@include hustle-class() {
+
+	.hustle-field {
+
+		.hustle-input,
+		.hustle-input-label {
+			font: 400 #{$hui-input--font-size}/#{$hui-input--line-height} $hui-font;
+		}
+
+		.hustle-input {
+			width: 100%;
+			height: $hui-fields-height;
+			display: block;
+			padding: #{($hui-fields-height - $hui-input--line-height) / 2} $hui-input--padding;
+			border-radius: 0;
+			background-image: unset;
+			transition: $hui-transition--ease;
+
+			&,
+			&:hover,
+			&:focus {
+				outline: none;
+				box-shadow: none;
+			}
+
+			&:focus {
+
+				+ .hustle-input-label {
+
+					span {
+						opacity: 0;
+						transform: translateX($hui-input--icon-width);
+						transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
+					}
+				}
+			}
+		}
+
+		.hustle-input-label {
+			width: 100%;
+			user-select: none;
+			pointer-events: none;
+			position: absolute;
+			display: flex;
+			padding: 0 $hui-input--padding;
+
+			[class*="hustle-icon-"] {
+				width: $hui-input--icon-width;
+				height: $hui-input--icon-width;
+				display: flex;
+				flex: 0 0 $hui-input--icon-width;
+				flex-direction: column;
+				justify-content: center;
+				font-size: $hui-input--icon-size;
+				text-align: center;
+				transition: $hui-transition--ease;
+
+				&:before {
+					display: block;
+				}
+
+				+ span {
+					margin-left: 5px;
+				}
+			}
+
+			span {
+				display: block;
+				flex: 1 1 auto;
+				@extend %hui-text-truncate;
+				transition: $hui-transition--ease;
+			}
+		}
+
+		&.hustle-field-icon--static,
+		&.hustle-field-icon--animated {
+
+			.hustle-input {
+				padding-left: #{$hui-input--padding + $hui-input--icon-width + 5px};
+			}
+		}
+
+		&.hustle-field-icon--animated {
+
+			.hustle-input {
+
+				&:focus {
+
+					+ .hustle-input-label {
+
+						[class*="hustle-icon-"] {
+							opacity: 0;
+							transform: translateX(-#{$hui-input--icon-width});
+							transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
+						}
+					}
+				}
+			}
+		}
+
+		// STATUS: Filled
+		&.hustle-status--filled {
+
+			.hustle-input-label {
+
+				span {
+					opacity: 0;
+				}
+			}
+		}
+	}
+}

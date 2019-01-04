@@ -1,0 +1,35 @@
+@mixin hustle-class($module: null, $layout: null) {
+
+	@if $module == null {
+
+		.hustle-ui {
+			@content;
+		}
+	}
+
+	@else {
+
+		@if $layout == null {
+
+			.hustle-ui {
+
+				.hustle-#{$module} {
+					@content;
+				}
+			}
+		}
+
+		@else {
+
+			.hustle-ui {
+
+				.hustle-#{$module} {
+
+					&.hustle-#{$module}--#{$layout} {
+						@content;
+					}
+				}
+			}
+		}
+	}
+}

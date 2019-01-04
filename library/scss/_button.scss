@@ -1,13 +1,13 @@
-@include global-class() {
+@include hustle-class() {
 
 	.hustle-button,
 	a.hustle-button,
 	button.hustle-button {
 		width: auto;
-		min-width: $hui-button--width;
-		min-height: $hui-button--height;
+		min-width: 100px;
+		min-height: $hui-fields-height;
 		margin: 0;
-		padding: #{($hui-input--height - 18px) / 2} 16px;
+		padding: #{($hui-fields-height - 18px) / 2} 16px;
 		cursor: pointer;
 		font: bold 13px/18px $hui-font;
 		letter-spacing: 0.5px;

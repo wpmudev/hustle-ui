@@ -1,0 +1,6 @@
+@mixin opacity($alpha: 1) {
+	filter: alpha(opacity=$alpha*100);
+	filter: progid:DXImageTransform.Microsoft.Alpha(opacity=#{$alpha*100});
+	opacity: $alpha;
+	-khtml-opacity: $alpha;
+}

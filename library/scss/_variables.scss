@@ -1,11 +1,9 @@
-$hui-assets-helper: false !default;
-
 // =============================================
 // VARIABLES MENU
 //
 // 1. BASIC VARIABLES
 // 2. BREAKPOINTS
-// 3. LIST OF ICONS
+// 3. ICONS LIST
 // 4. CLOSE BUTTON
 // 5. REGULAR BUTTON
 // 6. FORM INPUT
@@ -15,24 +13,29 @@ $hui-assets-helper: false !default;
 // =============================================
 // 1. BASIC VARIABLES
 
-$hui-version:            '4.0.0'      !default;
-$hui-font-path:          '../../../assets/fonts/'  !default;
-$hui-image-path:         '../images/' !default;
+$hui-version:            '4.0.0'                        !default;
+$hui-font-path:          '../fonts/'                    !default;
+$hui-image-path:         '../images/'                   !default;
 
-$hui-dialog-width:       800px;
+$hui-font:               "Open Sans", Arial, sans-serif !default;
+$hui-font--alt:          "Georgia", Times, serif        !default;
+$hui-font--icon:         "hustle-icons-font"            !default;
 
-$hui-gutter:             20px;
-$hui-gutter-sm:          10px;
+$hui-gutter:             20px                           !default;
+$hui-gutter-sm:          10px                           !default;
 
-$hui-font:               "Open Sans", Arial, sans-serif;
-$hui-font--alt:          "Georgia", Times, serif;
-$hui-font--icon:         "hustle-icons-font";
+$hui-spacing:            10px                           !default;
+$hui-spacing-sm:         1px                            !default;
 
-$hui-transition--ease:   0.2s ease;
-$hui-transition--linear: 0.2s linear;
+$hui-transition--ease:   0.2s ease                      !default;
+$hui-transition--linear: 0.2s linear                    !default;
 
-$hui-image-size: 320px;
-$hui-image-size-sm: 150px;
+$hui-dialog-width:       800px                          !default;
+
+$hui-fields-height:      36px                           !default;
+
+$hui-image:              320px                          !default;
+$hui-image-sm:           150px                          !default;
 
 // =============================================
 // 2. BREAKPOINTS
@@ -44,7 +47,7 @@ $hui-breakpoints: (
 ) !default;
 
 // =============================================
-// 3. LIST OF ICONS
+// 3. ICONS LIST
 
 $icons: (
 	address:          "\61",
@@ -79,13 +82,8 @@ $hui-close--size: 30px;
 $hui-close--icon: 16px;
 
 // =============================================
-// 5. REGULAR BUTTON
-$hui-button--width: 100px;
-$hui-button--height: 36px;
-
-// =============================================
 // 6. FORM INPUT
-$hui-input--height:  36px;
+
 $hui-input--padding: 10px;
 
 $hui-input--icon-width: 20px;
@@ -93,11 +91,6 @@ $hui-input--icon-size:  14px;
 
 $hui-input--font-size: 13px;
 $hui-input--line-height: 18px;
-
-// =============================================
-// 7. FORM SPACING
-$hui-joined: 1px;
-$hui-separated: 10px;
 
 // =============================================
 // 8. CHECKBOX

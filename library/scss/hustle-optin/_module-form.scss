@@ -24,7 +24,7 @@
 				.hustle-field {
 
 					&:not(:last-child) {
-						margin-bottom: $hui-joined;
+						margin-bottom: $hui-spacing-sm;
 					}
 				}
 			}
@@ -34,7 +34,7 @@
 				.hustle-field {
 
 					&:not(:last-child) {
-						margin-bottom: $hui-separated;
+						margin-bottom: $hui-spacing;
 					}
 				}
 			}
@@ -90,7 +90,7 @@
 							&:not(:last-child) {
 	
 								@include media(min-width, sm) {
-									margin-right: $hui-joined;
+									margin-right: $hui-spacing-sm;
 									margin-bottom: 0;
 								}
 							}
@@ -104,7 +104,7 @@
 							&:not(:last-child) {
 	
 								@include media(min-width, sm) {
-									margin-right: $hui-separated;
+									margin-right: $hui-spacing;
 									margin-bottom: 0;
 								}
 							}

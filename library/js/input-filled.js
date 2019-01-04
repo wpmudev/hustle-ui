@@ -1,8 +1,5 @@
 ( function( $ ) {
 
-	// Enable strict mode.
-	'use strict';
-
 	// Define global HUI object if it doesn't exist.
 	if ( 'object' !== typeof window.HUI ) {
 		window.HUI = {};
@@ -26,6 +23,8 @@
 		});
 	};
 
-	HUI.filledClass();
+	$( 'body' ).ready( function() {
+		HUI.filledClass();
+	});
 
 }( jQuery ) );

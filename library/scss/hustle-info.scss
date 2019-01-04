@@ -1,22 +1,24 @@
-// GLOBALS
-@import "globals/mixins";
-@import "globals/variables";
-@import "globals/helpers";
-@import "globals/button";
-@import "globals/checkbox";
-@import "globals/module-content";
-@import "globals/module-error";
-@import "globals/module-inline";
+@import "variables";
+@import "helpers";
+@import "mixin-class";
+@import "mixin-breakpoints";
+@import "mixin-browsers";
+@import "mixin-icon";
+@import "mixin-opacity";
 
-// MODULE HELPERS
+@import "button";
+@import "checkbox";
+@import "content";
+@import "image";
+@import "error-message";
+
+@import "module-popup";
+@import "module-inline";
+
 @import "hustle-info/mixins";
 
-// MODULE BASICS
 @import "hustle-info/module";
-@import "hustle-info/module-content";
-@import "hustle-info/module-image";
 
-// MODULE LAYOUT
 @import "hustle-info/layout/default";
 @import "hustle-info/layout/compact";
 @import "hustle-info/layout/stacked";

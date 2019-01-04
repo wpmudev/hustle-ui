@@ -35,7 +35,7 @@
 					&.hustle-image-fit--fill,
 					&.hustle-image-fit--cover,
 					&.hustle-image-fit--contain {
-						height: $hui-image-size-sm;
+						height: $hui-image-sm;
 						overflow: hidden;
 					}
 				}
@@ -51,7 +51,7 @@
 					&.hustle-image-fit--fill,
 					&.hustle-image-fit--cover,
 					&.hustle-image-fit--contain {
-						height: $hui-image-size-sm;
+						height: $hui-image-sm;
 						overflow: hidden;
 					}
 				}
@@ -82,15 +82,15 @@
 							
 								@include media(min-width, sm) {
 									max-width: unset;
-									height: $hui-image-size;
+									height: $hui-image;
 									flex: 1;
 								}
 							}
 
 							@include media(min-width, sm) {
-								max-width: $hui-image-size;
+								max-width: $hui-image;
 								height: auto;
-								flex: 0 0 $hui-image-size;
+								flex: 0 0 $hui-image;
 							}
 						}
 

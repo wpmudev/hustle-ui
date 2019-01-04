@@ -9,7 +9,7 @@
 			&.hustle-image-fit--fill,
 			&.hustle-image-fit--cover,
 			&.hustle-image-fit--contain {
-				height: $hui-image-size-sm;
+				height: $hui-image-sm;
 				overflow: hidden;
 			}
 	
@@ -68,7 +68,7 @@
 						display: flex;
 						flex-direction: column;
 						justify-content: center;
-						flex: 0 0 $hui-image-size;
+						flex: 0 0 $hui-image;
 					}
 				}
 

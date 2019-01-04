@@ -11,7 +11,7 @@
 				&.hustle-image-fit--fill,
 				&.hustle-image-fit--cover,
 				&.hustle-image-fit--contain {
-					height: $hui-image-size-sm;
+					height: $hui-image-sm;
 					overflow: hidden;
 				}
 		
@@ -49,9 +49,9 @@
 					&.hustle-image-fit--contain {
 			
 						@include media(min-width, sm) {
-							max-width: $hui-image-size;
+							max-width: $hui-image;
 							height: auto;
-							flex: 0 0 $hui-image-size;
+							flex: 0 0 $hui-image;
 						}
 					}
 			

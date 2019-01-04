@@ -1,10 +1,14 @@
 // ============================================================
 // Shared UI
-// Import original shared-ui styles.
-@import "../../../node_modules/@wpmudev/shared-ui/scss/shared-ui";
 
-@import "helpers";
+// Import original shared-ui styles.
+@import "../../node_modules/@wpmudev/shared-ui/scss/shared-ui";
+
+// ============================================================
+// Showcase UI
+
 @import "variables";
+@import "helpers";
 @import "reset";
 @import "accessibility";
 @import "page";

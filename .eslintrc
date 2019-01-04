@@ -1,0 +1,7 @@
+{
+	"extends": "react-app",
+	"globals": {
+		"HUI": true,
+		"window": true
+	}
+}

@@ -1,30 +1,31 @@
-// GLOBALS
-@import "globals/mixins";
-@import "globals/variables";
-@import "globals/helpers";
-@import "globals/button";
-@import "globals/checkbox";
-@import "globals/module-content";
-@import "globals/module-error";
-@import "globals/module-inline";
-@import "globals/module-popup";
+@import "variables";
+@import "helpers";
+@import "mixin-class";
+@import "mixin-breakpoints";
+@import "mixin-browsers";
+@import "mixin-icon";
+@import "mixin-opacity";
 
-// MODULE HELPERS
+@import "input";
+@import "button";
+@import "checkbox";
+@import "content";
+@import "image";
+@import "error-message";
+
+@import "module-popup";
+@import "module-inline";
+
 @import "hustle-optin/mixins";
 
-// MODULE BASICS
 @import "hustle-optin/module";
 @import "hustle-optin/module-content";
-@import "hustle-optin/module-image";
-@import "hustle-optin/module-input";
 @import "hustle-optin/module-form";
 @import "hustle-optin/module-gdpr";
 
-// MODULE LAYOUT
+@import "hustle-optin/type/inline";
+
 @import "hustle-optin/layout/default";
 @import "hustle-optin/layout/compact";
 @import "hustle-optin/layout/focus-optin";
 @import "hustle-optin/layout/focus-content";
-
-// MODULE TYPE
-@import "hustle-optin/type/inline";

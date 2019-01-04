@@ -1,21 +1,31 @@
 // ==================================================
 // Supported Packages
-const fs = require( 'fs' );
-const pump = require( 'pump' );
-const ghpages = require( 'gh-pages' );
-const gulp = require( 'gulp' );
-const watch = require( 'gulp-watch' );
-const sass = require( 'gulp-sass' );
+const fs           = require( 'fs' );
+const pump         = require( 'pump' );
+const ghpages      = require( 'gh-pages' );
+const gulp         = require( 'gulp' );
+const watch        = require( 'gulp-watch' );
+const sass         = require( 'gulp-sass' );
+const header       = require( 'gulp-header' );
 const autoprefixer = require( 'gulp-autoprefixer' );
-const cleanCSS = require( 'gulp-clean-css' );
-const eslint = require( 'gulp-eslint' );
-const uglify = require( 'gulp-uglify-es' ).default;
-const concat = require( 'gulp-concat' );
-const rename = require( 'gulp-rename' );
+const cleanCSS     = require( 'gulp-clean-css' );
+const eslint       = require( 'gulp-eslint' );
+const uglify       = require( 'gulp-uglify-es' ).default;
+const concat       = require( 'gulp-concat' );
+const rename       = require( 'gulp-rename' );
 
 // ==================================================
 // Get Package File
 const pckg = JSON.parse( fs.readFileSync( './package.json' ) );
+
+// ==================================================
+// WPMU DEV Banner
+const banner = ['/*!',
+	' * WPMU DEV Hustle UI',
+	' * Copyright 2019 Incsub (https://incsub.com)',
+	' * Licensed under GPL v2 (http://www.gnu.org/licenses/gpl-2.0.html)',
+	' */',
+	''].join('\n');
 
 // ==================================================
 // List of Browsers
@@ -99,10 +109,13 @@ gulp.task( 'hustle:scripts', function( cb ) {
 		eslint.format(),
 		eslint.failAfterError(),
 		concat( 'hustle-ui.js' ),
+		header( banner ),
+		gulp.dest( dist.js ),
 		uglify(),
 		rename({
 			suffix: '.min'
 		}),
+		header( banner ),
 		gulp.dest( dist.js )
 	], cb );
 });

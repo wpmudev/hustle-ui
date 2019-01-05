@@ -1,28 +1,11 @@
 import React, { Component } from 'react';
 
-import $ from 'jquery';
-
 import Input from '../../../components/input';
 import Button from '../../../components/button';
 import Checkbox from '../../../components/checkbox';
 import OptionsGroup from './options-group';
 
 export default class LayoutForm extends Component {
-	componentDidMount() {
-		$( 'body' ).on( 'click', '.hustle-ui .hustle-button-submit', function( event ) {
-			const button = $( this );
-			const form = button.closest( '.hustle-layout-form' );
-			const error = form.find( '.hustle-error-message' );
-
-			if ( form.find( '.hustle-field-error' ).length ) {
-				error.show();
-			}
-
-			event.preventDefault();
-
-		});
-	}
-
 	render() {
 		let extraClass = '';
 		let fieldsIcon = 'none';

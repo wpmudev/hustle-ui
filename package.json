@@ -46,7 +46,11 @@
 		"webpack-cli": "^3.1.0"
 	},
 	"eslintConfig": {
-		"extends": "react-app"
+		"extends": "react-app",
+		"globals": {
+			"window": true,
+			"HUI": true
+		}
 	},
 	"eslintIgnore": [
 		"library"

@@ -7,9 +7,9 @@
 			const input = $( this );
 
 			if ( '' !== input.val() ) {
-				input.parent().addClass( 'hustle-status--filled' );
+				input.parent().addClass( 'hustle-field-filled' );
 			} else {
-				input.parent().removeClass( 'hustle-status--filled' );
+				input.parent().removeClass( 'hustle-field-filled' );
 			}
 
 		});

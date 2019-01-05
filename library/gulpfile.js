@@ -20,12 +20,12 @@ const pckg = JSON.parse( fs.readFileSync( './package.json' ) );
 
 // ==================================================
 // WPMU DEV Banner
-const banner = ['/*!',
+const banner = [ '/*!',
 	' * WPMU DEV Hustle UI',
 	' * Copyright 2019 Incsub (https://incsub.com)',
 	' * Licensed under GPL v2 (http://www.gnu.org/licenses/gpl-2.0.html)',
 	' */',
-	''].join('\n');
+	'' ].join( '\n' );
 
 // ==================================================
 // List of Browsers

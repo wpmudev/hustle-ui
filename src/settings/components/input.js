@@ -38,6 +38,7 @@ export default class Input extends Component {
 		let type = '';
 		let icon = '';
 		let iconClass = '';
+		let requiredClass = '';
 		let placeholder = '';
 		let property = this.props.property;
 
@@ -74,6 +75,10 @@ export default class Input extends Component {
 			iconClass = ` hustle-field-icon--${ this.props.icon }`;
 		}
 
+		if ( this.props.requiredField && 'true' === this.props.requiredField ) {
+			requiredClass = ' hustle-field-required';
+		}
+
 		if (
 			'' !== this.props.label ||
 			'static' === this.props.icon ||
@@ -99,7 +104,7 @@ export default class Input extends Component {
 		return (
 			<label
 				htmlFor={ property }
-				className={ `hustle-field${ iconClass }` }
+				className={ `hustle-field${ iconClass }${ requiredClass }` }
 			>
 
 				<input

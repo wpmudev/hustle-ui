@@ -19,5 +19,35 @@
 				padding: $hui-gutter;
 			}
 		}
+
+		.hustle-layout-footer {
+			text-align: center;
+
+			@include media(max-width, sm) {
+				margin-top: $hui-gutter-sm;
+			}
+
+			@include media(min-width, sm) {
+				margin-top: $hui-gutter;
+			}
+		}
+
+		.hustle-nsa-link {
+			font: 400 14px/20px $hui-font;
+
+			a {
+				font-weight: bold;
+				transition: $hui-transition--ease;
+
+				&,
+				&:hover,
+				&:focus,
+				&:active,
+				&:visited {
+					outline: none;
+					box-shadow: none;
+				}
+			}
+		}
 	}
 }

@@ -1,0 +1,41 @@
+@include hustle-class() {
+
+	.hustle-button-icon {
+		width: 30px;
+		height: 30px;
+		cursor: pointer;
+		display: inline-flex;
+		align-items: center;
+		margin: 0;
+		padding: 0;
+		border: 0;
+		background-color: transparent;
+		background-image: unset;
+		text-align: center;
+		transition: $hui-transition--ease;
+
+		[class*="hustle-icon-"] {
+			display: block;
+			margin: 0 auto;
+			font-size: 16px;
+
+			&:before {
+				display: block;
+			}
+		}
+
+		&,
+		&:hover,
+		&:focus,
+		&:active {
+			outline: none;
+			box-shadow: none;
+		}
+
+		&.hustle-button-close {
+			display: flex;
+			margin-right: 0;
+			margin-left: auto;
+		}
+	}
+}

@@ -3,17 +3,6 @@ import $ from 'jquery';
 
 export default class Input extends Component {
 	componentDidMount() {
-		$( '.hustle-ui .hustle-input' ).blur( function() {
-			const input = $( this );
-			const label = input.parent();
-
-			if ( '' === input.val() ) {
-				label.removeClass( 'hustle-status--filled' );
-			} else {
-				label.addClass( 'hustle-status--filled' );
-			}
-		});
-
 		if ( 'email' === this.props.type ) {
 			const validPrefix = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
 			const validSuffix = /@.*\./;

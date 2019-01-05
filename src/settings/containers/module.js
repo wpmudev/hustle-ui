@@ -50,40 +50,49 @@ export default class Module extends Component {
 
 		if ( 'popup' === this.props.type ) {
 			moduleLayout = (
-				<React.Fragment>
+				<div
+					className={ `hustle-ui${ moduleType }${ modulePalette }${ moduleClass }` }
+					data-id={ this.props.moduleId }
+					data-delay="800"
+					data-intro="bounceInDown"
+					data-outro="bounceOutDown"
+				>
 					<div className={ `hustle-${ this.props.type }-mask` }></div>
 					<div className={ `hustle-${ this.props.type }-content` }>
 						{ children }
 					</div>
-				</React.Fragment>
+				</div>
 			);
 		} else if ( 'slidein' === this.props.type ) {
 			moduleLayout = (
-				<React.Fragment>
+				<div
+					className={ `hustle-ui${ moduleType }${ modulePalette }${ moduleClass }` }
+					data-id={ this.props.moduleId }
+				>
 					<div className={ `hustle-${ this.props.type }-content` }>
 						{ children }
 					</div>
-				</React.Fragment>
+				</div>
 			);
 		} else if (
 			'widget' === this.props.type ||
 			'embedded' === this.props.type ||
 			'shortcode' === this.props.type
 		) {
-			moduleLayout = children;
+			moduleLayout = (
+				<div
+					className={ `hustle-ui${ moduleType }${ modulePalette }${ moduleClass }` }
+					data-id={ this.props.moduleId }
+				>
+					{ children }
+				</div>
+			);
 		} else {
 			moduleLayout = (
 				<p><strong>ERROR:</strong> Hustle module type invalid!</p>
 			);
 		}
 
-		return (
-			<div
-				className={ `hustle-ui${ moduleType }${ modulePalette }${ moduleClass }` }
-				data-id={ this.props.moduleId }
-			>
-				{ moduleLayout }
-			</div>
-		);
+		return moduleLayout;
 	}
 }

@@ -6,6 +6,7 @@
 		width: auto;
 		min-width: 100px;
 		min-height: $hui-fields-height;
+		position: relative;
 		margin: 0;
 		padding: #{($hui-fields-height - 18px) / 2} 16px;
 		cursor: pointer;
@@ -13,6 +14,28 @@
 		letter-spacing: 0.5px;
 		text-align: center;
 		transition: $hui-transition--ease;
+
+		.hustle-button-text {
+			display: block;
+		}
+
+		.hustle-loading-text {
+			display: none;
+			@extend %hui-screen-reader;
+		}
+
+		.hustle-loading-icon {
+			display: none;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+
+			&:before {
+				display: block;
+				animation: spin 1.3s linear infinite;
+			}
+		}
 
 		&,
 		&:focus,
@@ -22,6 +45,24 @@
 			outline: none;
 			box-shadow: none;
 			text-decoration: none;
+		}
+
+		&.hustle-button-onload {
+			pointer-events: none;
+			@include opacity(0.6);
+
+			.hustle-button-text {
+				display: none;
+			}
+
+			.hustle-loading-text {
+				display: block;
+				@include opacity(0);
+			}
+
+			.hustle-loading-icon {
+				display: block;
+			}
 		}
 	}
 }

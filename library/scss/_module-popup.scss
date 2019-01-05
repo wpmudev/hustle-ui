@@ -23,6 +23,26 @@
 		.hustle-popup-content {
 			max-width: 800px;
 			margin: 0 auto;
+
+			&.hustle-animate {
+				opacity: 0;
+				animation-duration: 1s;
+				animation-fill-mode: both;
+				transform-origin: center;
+				transform-style: preserve-3d;
+			}
+
+			// ANIMATION: Bounce In Down
+			&.hustle-animate-in--bounceInDown {
+				opacity: 1;
+				animation-name: bounceInDown;
+			}
+
+			// ANIMATION: Bounce Out Down
+			&.hustle-animate-out--bounceOutDown {
+				opacity: 0;
+				animation-name: bounceOutDown;
+			}
 		}
 	}
 }

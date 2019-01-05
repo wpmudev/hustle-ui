@@ -546,8 +546,38 @@ $popup-mask: (
 	midnight:   rgba(51,51,51,0.9),
 );
 
+// Close button
+$close-color-static: (
+	gray-slate: #38C5B5,
+	coffee:     #C6A685,
+	ectoplasm:  #B9CE33,
+	blue:       #78B5D1,
+	sunrise:    #CBB000,
+	midnight:   #DD4F3D,
+);
+
 // ****************************************
 // 9.2. HOVER
 
+// Close button
+$close-color-hover: (
+	gray-slate: #49E2D1,
+	coffee:     #C69767,
+	ectoplasm:  #92A41E,
+	blue:       #165E80,
+	sunrise:    #9A8603,
+	midnight:   #C63D2B,
+);
+
 // ****************************************
-// 9.3. FOCUS
+// 9.3. ACTIVE
+
+// Close button
+$close-color-active: (
+	gray-slate: #49E2D1,
+	coffee:     #C69767,
+	ectoplasm:  #92A41E,
+	blue:       #165E80,
+	sunrise:    #9A8603,
+	midnight:   #C63D2B,
+);

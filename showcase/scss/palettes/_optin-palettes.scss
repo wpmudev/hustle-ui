@@ -342,5 +342,18 @@
 				background-color: map-get($popup-mask, $palette);
 			}
 		}
+
+		// ELEMENT: Button close
+		.hustle-button-close {
+			color: map-get($close-color-static, $palette);
+
+			&:hover {
+				color: map-get($close-color-hover, $palette);
+			}
+
+			&:active {
+				color: map-get($close-color-active, $palette);
+			}
+		}
 	}
 }

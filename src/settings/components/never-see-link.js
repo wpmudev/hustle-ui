@@ -11,7 +11,7 @@ export default class NeverSeeLink extends Component {
 				renderElement = (
 					<div className="hustle-layout-footer">
 
-						<p><a href="/">Never see this message again</a></p>
+						<p class="hustle-nsa-link"><a href="/">Never see this message again</a></p>
 
 					</div>
 				);

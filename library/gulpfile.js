@@ -46,7 +46,8 @@ const src = {
 const dist = {
 	js: 'dist/js/',
 	css: 'dist/css/',
-	fonts: 'dist/fonts'
+	fonts: 'dist/fonts',
+	files: 'dist/'
 };
 
 // ==================================================
@@ -80,6 +81,12 @@ const HustleFonts = [
 	src.fonts + '*'
 ];
 
+// Hustle files
+const HustleFiles = [
+	'./README.md',
+	'./CHANGELOG.md'
+];
+
 // ==================================================
 // Tasks
 
@@ -92,6 +99,7 @@ gulp.task( 'hustle:styles', function() {
 			.on( 'error', sass.logError )
 		)
 		.pipe( autoprefixer( browsersList ) )
+		.pipe( header( banner ) )
 		.pipe( cleanCSS() )
 		.pipe( rename({
 			suffix: '.min'
@@ -120,6 +128,7 @@ gulp.task( 'hustle:scripts', function( cb ) {
 	], cb );
 });
 
+// Copy Hustle fonts
 gulp.task( 'hustle:fonts', function() {
 
 	gulp.src( HustleFonts )
@@ -127,11 +136,20 @@ gulp.task( 'hustle:fonts', function() {
 		;
 });
 
+// Copy Hustle information files
+gulp.task( 'hustle:files', function() {
+
+	gulp.src( HustleFiles )
+		.pipe( gulp.dest( dist.files ) )
+		;
+});
+
 // Build Hustle UI assets
 gulp.task( 'build', [
 	'hustle:styles',
 	'hustle:scripts',
-	'hustle:fonts'
+	'hustle:fonts',
+	'hustle:files'
 ]);
 
 // ==================================================
@@ -147,6 +165,9 @@ gulp.task( 'watch', function() {
 
 	// Watch Hustle fonts
 	gulp.watch( HustleFonts, [ 'hustle:fonts' ]);
+
+	// Watch Hustle information files
+	gulp.watch( HustleFiles, [ 'hustle:files' ]);
 
 });
 

@@ -1,0 +1,6 @@
+@include hustle-class() {
+
+	.hustle-screen-reader {
+		@extend %hui-screen-reader;
+	}
+}

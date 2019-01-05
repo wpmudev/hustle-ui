@@ -355,5 +355,18 @@
 				color: map-get($close-color-active, $palette);
 			}
 		}
+
+		// ELEMENT: Never See Link
+		.hustle-nsa-link a:not(.sui-button) {
+			color: map-get($nsa-color-static, $palette);
+
+			&:hover {
+				color: map-get($nsa-color-hover, $palette);
+			}
+
+			&:active {
+				color: map-get($nsa-color-active, $palette);
+			}
+		}
 	}
 }

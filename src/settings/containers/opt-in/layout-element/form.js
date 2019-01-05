@@ -106,7 +106,7 @@ export default class LayoutForm extends Component {
 						<Button
 							label="Submit"
 							extraClass="hustle-button-submit"
-							onClick={ this.handleChildClick }
+							onLoad="true"
 						/>
 
 					</div>

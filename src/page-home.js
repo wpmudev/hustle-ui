@@ -82,6 +82,7 @@ export default class PageHome extends Component {
 							label="John Smith"
 							icon={ form.inputIcon }
 							property={ `hustle-module-${ basic.id }-field-name` }
+							requiredField="true"
 						/>
 					</Optin>
 

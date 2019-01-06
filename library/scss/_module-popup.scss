@@ -32,16 +32,78 @@
 				transform-style: preserve-3d;
 			}
 
-			// ANIMATION: Bounce In Down
-			&.hustle-animate-in--bounceInDown {
-				opacity: 1;
-				animation-name: bounceInDown;
+			// ======================================== //
+			// INTRO ANIMATIONS                         //
+			// ======================================== //
+			&.hustle-animate-in {
+
+				// 1. Bounce In
+				&--bounceIn {
+					opacity: 1;
+					animation-name: bounceIn;
+					animation-duration: .75s;
+				}
+
+				// 2. Bounce In Up
+				&--bounceInUp {
+					opacity: 1;
+					animation-name: bounceInUp;
+				}
+
+				// 3. Bounce In Down
+				&--bounceInDown {
+					opacity: 1;
+					animation-name: bounceInDown;
+				}
+
+				// 4. Bounce In Left
+				&--bounceInLeft {
+					opacity: 1;
+					animation-name: bounceInLeft;
+				}
+
+				// 5. Bounce In Right
+				&--bounceInRight {
+					opacity: 1;
+					animation-name: bounceInRight;
+				}
 			}
 
-			// ANIMATION: Bounce Out Down
-			&.hustle-animate-out--bounceOutDown {
-				opacity: 0;
-				animation-name: bounceOutDown;
+			// ======================================== //
+			// OUTRO ANIMATIONS                         //
+			// ======================================== //
+			&.hustle-animate-out {
+
+				// 1. Bounce Out
+				&--bounceOut {
+					opacity: 0;
+					animation-name: bounceOut;
+					animation-duration: .75s;
+				}
+
+				// 2. Bounce Out Up
+				&--bounceOutUp {
+					opacity: 0;
+					animation-name: bounceOutUp;
+				}
+
+				// 3. Bounce Out Down
+				&--bounceOutDown {
+					opacity: 0;
+					animation-name: bounceOutDown;
+				}
+
+				// 4. Bounce Out Left
+				&--bounceOutLeft {
+					opacity: 0;
+					animation-name: bounceOutLeft;
+				}
+
+				// 5. Bounce Out Right
+				&--bounceOutRight {
+					opacity: 0;
+					animation-name: bounceOutRight;
+				}
 			}
 		}
 	}

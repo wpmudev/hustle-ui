@@ -54,7 +54,7 @@ export default class Module extends Component {
 					className={ `hustle-ui${ moduleType }${ modulePalette }${ moduleClass }` }
 					data-id={ this.props.moduleId }
 					data-delay="800"
-					data-intro="bounceInDown"
+					data-intro="bounceInUp"
 					data-outro="bounceOutDown"
 				>
 					<div className={ `hustle-${ this.props.type }-mask` }></div>

@@ -25,7 +25,7 @@
 			margin: 0 auto;
 
 			&.hustle-animate {
-				opacity: 0;
+				@include opacity(0);
 				animation-duration: 1s;
 				animation-fill-mode: both;
 				transform-origin: center;
@@ -67,6 +67,76 @@
 					opacity: 1;
 					animation-name: bounceInRight;
 				}
+
+				// 6. Fade In
+				&--fadeIn {
+					opacity: 1;
+					animation-name: fadeIn;
+					animation-duration: 300ms;
+				}
+
+				// 7. Fade In Up
+				&--fadeInUp {
+					opacity: 1;
+					animation-name: fadeInUp;
+				}
+
+				// 8. Fade In Down
+				&--fadeInDown {
+					opacity: 1;
+					animation-name: fadeInDown;
+				}
+
+				// 9. Fade In Left
+				&--fadeInLeft {
+					opacity: 1;
+					animation-name: fadeInLeft;
+				}
+
+				// 10. Fade In Right
+				&--fadeInRight {
+					opacity: 1;
+					animation-name: fadeInRight;
+				}
+
+				// 11. Fade In Up (Big)
+				&--fadeInUpBig {
+					opacity: 1;
+					animation-name: fadeInUpBig;
+				}
+
+				// 12. Fade In Down (Big)
+				&--fadeInDownBig {
+					opacity: 1;
+					animation-name: fadeInDownBig;
+				}
+
+				// 13. Fade In Left (Big)
+				&--fadeInLeftBig {
+					opacity: 1;
+					animation-name: fadeInLeftBig;
+				}
+
+				// 14. Fade In Right (Big)
+				&--fadeInRightBig {
+					opacity: 1;
+					animation-name: fadeInRightBig;
+				}
+
+				// 15. Lightspeed In
+				&--lightSpeedIn {
+					opacity: 1;
+					animation-name: lightSpeedIn;
+					animation-timing-function: ease-out;
+				}
+
+				// 16. Newspaper In
+				&--newspaperIn {
+					opacity: 1;
+					animation-name: newspaperIn;
+					animation-duration: .5s;
+					animation-timing-function: ease;
+				}
 			}
 
 			// ======================================== //
@@ -76,33 +146,103 @@
 
 				// 1. Bounce Out
 				&--bounceOut {
-					opacity: 0;
+					@include opacity(0);
 					animation-name: bounceOut;
 					animation-duration: .75s;
 				}
 
 				// 2. Bounce Out Up
 				&--bounceOutUp {
-					opacity: 0;
+					@include opacity(0);
 					animation-name: bounceOutUp;
 				}
 
 				// 3. Bounce Out Down
 				&--bounceOutDown {
-					opacity: 0;
+					@include opacity(0);
 					animation-name: bounceOutDown;
 				}
 
 				// 4. Bounce Out Left
 				&--bounceOutLeft {
-					opacity: 0;
+					@include opacity(0);
 					animation-name: bounceOutLeft;
 				}
 
 				// 5. Bounce Out Right
 				&--bounceOutRight {
-					opacity: 0;
+					@include opacity(0);
 					animation-name: bounceOutRight;
+				}
+
+				// 6. Fade Out
+				&--fadeOut {
+					@include opacity(0);
+					animation: fadeOut;
+					animation-duration: 300ms;
+				}
+
+				// 7. Fade Out Up
+				&--fadeOutUp {
+					@include opacity(0);
+					animation-name: fadeOutUp;
+				}
+
+				// 8. Fade Out Down
+				&--fadeOutDown {
+					@include opacity(0);
+					animation-name: fadeOutDown;
+				}
+
+				// 9. Fade Out Left
+				&--fadeOutLeft {
+					@include opacity(0);
+					animation-name: fadeOutLeft;
+				}
+
+				// 10. Fade Out Right
+				&--fadeOutRight {
+					@include opacity(0);
+					animation-name: fadeOutRight;
+				}
+
+				// 11. Fade Out Up (Big)
+				&--fadeOutUpBig {
+					@include opacity(0);
+					animation-name: fadeOutUpBig;
+				}
+
+				// 12. Fade Out Down (Big)
+				&--fadeOutDownBig {
+					@include opacity(0);
+					animation-name: fadeOutDownBig;
+				}
+
+				// 13. Fade Out Left (Big)
+				&--fadeOutLeftBig {
+					@include opacity(0);
+					animation-name: fadeOutLeftBig;
+				}
+
+				// 14. Fade Out Right (Big)
+				&--fadeOutRightBig {
+					@include opacity(0);
+					animation-name: fadeOutRightBig;
+				}
+
+				// 15. Lightspeed Out
+				&--lightSpeedOut {
+					@include opacity(0);
+					animation-name: lightSpeedOut;
+					animation-timing-function: ease-in;
+				}
+
+				// 16. Newspaper Out
+				&--newspaperOut {
+					opacity: 0;
+					animation-name: newspaperOut;
+					animation-duration: .5s;
+					animation-timing-function: ease;
 				}
 			}
 		}

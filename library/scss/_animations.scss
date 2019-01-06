@@ -1,7 +1,15 @@
 @import "animations/spin";
 
 // Intro animations
+@import "animations/bouncein";
+@import "animations/bouncein-up";
 @import "animations/bouncein-down";
+@import "animations/bouncein-left";
+@import "animations/bouncein-right";
 
 // Outro animations
+@import "animations/bounceout";
+@import "animations/bounceout-up";
 @import "animations/bounceout-down";
+@import "animations/bounceout-left";
+@import "animations/bounceout-right";

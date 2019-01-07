@@ -137,6 +137,96 @@
 					animation-duration: .5s;
 					animation-timing-function: ease;
 				}
+
+				// 17. Roll In
+				&--rollIn {
+					opacity: 1;
+					animation-name: rollIn;
+				}
+
+				// 18. Rotate In
+				&--rotateIn {
+					opacity: 1;
+					animation-name: rotateIn;
+				}
+
+				// 19. Rotate In Up Left
+				&--rotateInUpLeft {
+					opacity: 1;
+					animation-name: rotateInUpLeft;
+				}
+
+				// 20. Rotate In Up Right
+				&--rotateInUpRight {
+					opacity: 1;
+					animation-name: rotateInUpRight;
+				}
+
+				// 21. Rotate In Down Left
+				&--rotateInDownLeft {
+					opacity: 1;
+					animation-name: rotateInDownLeft;
+				}
+
+				// 22. Rotate In Down Right
+				&--rotateInDownRight {
+					opacity: 1;
+					animation-name: rotateInDownRight;
+				}
+
+				// 23. Slide In Up
+				&--slideInUp {
+					opacity: 1;
+					animation-name: slideInUp;
+				}
+
+				// 24. Slide In Down
+				&--slideInDown {
+					opacity: 1;
+					animation-name: slideInDown;
+				}
+
+				// 25. Slide In Left
+				&--slideInLeft {
+					opacity: 1;
+					animation-name: slideInLeft;
+				}
+
+				// 26. Slide In Right
+				&--slideInRight {
+					opacity: 1;
+					animation-name: slideInRight;
+				}
+
+				// 27. Zoom In
+				&--zoomIn {
+					opacity: 1;
+					animation-name: zoomIn;
+				}
+
+				// 28. Zoom In Up
+				&--zoomInUp {
+					opacity: 1;
+					animation-name: zoomInUp;
+				}
+
+				// 29. Zoom In Down
+				&--zoomInDown {
+					opacity: 1;
+					animation-name: zoomInDown;
+				}
+
+				// 30. Zoom In Left
+				&--zoomInLeft {
+					opacity: 1;
+					animation-name: zoomInLeft;
+				}
+
+				// 31. Zoom In Right
+				&--zoomInRight {
+					opacity: 1;
+					animation-name: zoomInRight;
+				}
 			}
 
 			// ======================================== //
@@ -243,6 +333,96 @@
 					animation-name: newspaperOut;
 					animation-duration: .5s;
 					animation-timing-function: ease;
+				}
+
+				// 17. Roll Out
+				&--rollOut {
+					opacity: 0;
+					animation-name: rollOut;
+				}
+
+				// 18. Rotate Out
+				&--rotateOut {
+					opacity: 0;
+					animation-name: rotateOut;
+				}
+
+				// 19. Rotate Out Up Left
+				&--rotateOutUpLeft {
+					opacity: 0;
+					animation-name: rotateOutUpLeft;
+				}
+
+				// 20. Rotate Out Up Right
+				&--rotateOutUpRight {
+					opacity: 0;
+					animation-name: rotateOutUpRight;
+				}
+
+				// 21. Rotate Out Down Left
+				&--rotateOutDownLeft {
+					opacity: 0;
+					animation-name: rotateOutDownLeft;
+				}
+
+				// 22. Rotate Out Down Right
+				&--rotateOutDownRight {
+					opacity: 0;
+					animation-name: rotateOutDownRight;
+				}
+
+				// 23. Slide Out Up
+				&--slideOutUp {
+					opacity: 1;
+					animation-name: slideOutUp;
+				}
+
+				// 24. Slide Out Down
+				&--slideOutDown {
+					opacity: 1;
+					animation-name: slideOutDown;
+				}
+
+				// 25. Slide Out Left
+				&--slideOutLeft {
+					opacity: 1;
+					animation-name: slideOutLeft;
+				}
+
+				// 26. Slide Out Right
+				&--slideOutRight {
+					opacity: 1;
+					animation-name: slideOutRight;
+				}
+
+				// 27. Zoom Out
+				&--zoomOut {
+					opacity: 0;
+					animation-name: zoomOut;
+				}
+
+				// 28. Zoom Out Up
+				&--zoomOutUp {
+					opacity: 0;
+					animation-name: zoomOutUp;
+				}
+
+				// 29. Zoom Out Down
+				&--zoomOutDown {
+					opacity: 0;
+					animation-name: zoomOutDown;
+				}
+
+				// 30. Zoom Out Left
+				&--zoomOutLeft {
+					opacity: 0;
+					animation-name: zoomOutLeft;
+				}
+
+				// 31. Zoom Out Right
+				&--zoomOutRight {
+					opacity: 0;
+					animation-name: zoomOutRight;
 				}
 			}
 		}

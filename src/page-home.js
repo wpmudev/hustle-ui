@@ -10,7 +10,10 @@ export default class PageHome extends Component {
 			id: '9',
 			type: 'popup',
 			layout: 'default',
-			palette: 'gray-slate'
+			palette: 'gray-slate',
+			intro: 'fadeInUp',
+			outro: 'zoomOutRight',
+			delay: '800'
 		};
 
 		const content = {
@@ -57,6 +60,9 @@ export default class PageHome extends Component {
 					moduleId={ basic.id }
 					type={ basic.type }
 					palette={ basic.palette }
+					intro={ basic.intro }
+					outro={ basic.outro }
+					delay={ basic.delay }
 				>
 
 					<Optin

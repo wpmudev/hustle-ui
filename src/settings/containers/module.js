@@ -68,6 +68,8 @@ export default class Module extends Component {
 				<div
 					className={ `hustle-ui${ moduleType }${ modulePalette }${ moduleClass }` }
 					data-id={ this.props.moduleId }
+					data-delay={ this.props.delay ? this.props.delay : '0' }
+					data-position={ this.props.position ? this.props.position : 's' }
 				>
 					<div className={ `hustle-${ this.props.type }-content` }>
 						{ children }

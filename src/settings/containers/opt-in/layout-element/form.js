@@ -101,6 +101,7 @@ export default class LayoutForm extends Component {
 							icon={ fieldsIcon }
 							label="johnsmith@email.com"
 							property={ `hustle-module-${ this.props.moduleId }-field-email` }
+							requiredField="true"
 						/>
 
 						<Button

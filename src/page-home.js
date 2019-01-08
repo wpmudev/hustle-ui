@@ -62,7 +62,7 @@ export default class PageHome extends Component {
 					type={ basic.type }
 					palette={ basic.palette }
 					delay={ basic.delay }
-					intro={ basic.intro } // Pop-ups only
+					intro={ basic.intro } // Pop-ups and Inline
 					outro={ basic.outro } // Pop-ups only
 					position={ basic.position } // Slide-ins only
 				>

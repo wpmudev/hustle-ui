@@ -85,8 +85,11 @@ export default class Module extends Component {
 				<div
 					className={ `hustle-ui${ moduleType }${ modulePalette }${ moduleClass }` }
 					data-id={ this.props.moduleId }
+					data-intro={ this.props.intro ? this.props.intro : 'no_animation' }
 				>
-					{ children }
+					<div className={ `hustle-inline-content` }>
+						{ children }
+					</div>
 				</div>
 			);
 		} else {

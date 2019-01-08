@@ -8,12 +8,13 @@ export default class PageHome extends Component {
 	render() {
 		const basic = {
 			id: '9',
-			type: 'popup',
+			type: 'slidein',
 			layout: 'default',
 			palette: 'gray-slate',
-			intro: 'fadeInUp',
-			outro: 'zoomOutRight',
-			delay: '800'
+			delay: '1000',
+			intro: 'fadeInUp', // Pop-ups only
+			outro: 'rollOut', // Pop-ups only
+			position: 'e' // Slide-ins only
 		};
 
 		const content = {
@@ -60,9 +61,10 @@ export default class PageHome extends Component {
 					moduleId={ basic.id }
 					type={ basic.type }
 					palette={ basic.palette }
-					intro={ basic.intro }
-					outro={ basic.outro }
 					delay={ basic.delay }
+					intro={ basic.intro } // Pop-ups only
+					outro={ basic.outro } // Pop-ups only
+					position={ basic.position } // Slide-ins only
 				>
 
 					<Optin

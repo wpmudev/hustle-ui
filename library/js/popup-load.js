@@ -4,8 +4,8 @@
 
 		const popup = $( el );
 		const content = popup.find( '.hustle-popup-content' );
-		const moduleTime = delay;
-		const layoutTime = delay + 200;
+		const moduleTime = delay - 200;
+		const layoutTime = delay;
 
 		if ( ! popup.is( '.hustle-popup' ) ) {
 			return;

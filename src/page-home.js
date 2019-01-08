@@ -8,7 +8,7 @@ export default class PageHome extends Component {
 	render() {
 		const basic = {
 			id: '9',
-			type: 'slidein',
+			type: 'embedded',
 			layout: 'default',
 			palette: 'gray-slate',
 			delay: '1000',

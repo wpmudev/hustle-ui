@@ -57,7 +57,7 @@ export default class Module extends Component {
 					data-intro={ this.props.intro ? this.props.intro : 'no_animation' }
 					data-outro={ this.props.outro ? this.props.outro : 'no_animation' }
 				>
-					<div className={ `hustle-${ this.props.type }-mask` }></div>
+					<div className={ `hustle-${ this.props.type }-mask` } aria-hidden="true"></div>
 					<div className={ `hustle-${ this.props.type }-content` }>
 						{ children }
 					</div>

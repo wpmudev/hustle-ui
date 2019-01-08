@@ -61,11 +61,11 @@
 
 		function init() {
 
-			popup.hide();
+			popup.removeClass( 'hustle-show' );
 			animation();
 
 			setTimeout( function() {
-				popup.show();
+				popup.addClass( 'hustle-show' );
 			}, moduleTime );
 
 			setTimeout( function() {

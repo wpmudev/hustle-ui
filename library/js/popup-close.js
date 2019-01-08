@@ -1,6 +1,6 @@
 ( function( $ ) {
 
-	HUI.popupClose = function( el, delay ) {
+	HUI.popupClose = function( el ) {
 
 		const close = $( el );
 		const popup = close.closest( '.hustle-ui' );
@@ -77,7 +77,7 @@
 				removeIntro();
 
 				setTimeout( function() {
-					popup.hide();
+					popup.removeClass( 'hustle-show' );
 					content.removeClass( 'hustle-animate-out--' + animateOut );
 				}, delay );
 

@@ -40,8 +40,6 @@
 		});
 	};
 
-	$( 'body' ).ready( function() {
-		HUI.buttonSubmit( 800 );
-	});
+	HUI.buttonSubmit( 800 );
 
 }( jQuery ) );

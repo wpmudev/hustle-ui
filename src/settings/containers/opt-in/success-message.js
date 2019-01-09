@@ -6,10 +6,7 @@ export default class SuccessMessage extends Component {
 
 		if ( this.props.successMsg ) {
 			renderElement = (
-				<div
-					className="hustle-success"
-					style={{ display: 'none' }}
-				>
+				<div className="hustle-success">
 
 					<i className="hustle-icon-check" aria-hidden="true" />
 

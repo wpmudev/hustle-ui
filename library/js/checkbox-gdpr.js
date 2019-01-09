@@ -1,6 +1,6 @@
 ( function( $ ) {
 
-	HUI.checkboxGdpr = function( delay ) {
+	HUI.checkboxGdpr = function() {
 
 		$( '.hustle-ui .hustle-gdpr input' ).on( 'change', function( e ) {
 
@@ -13,29 +13,8 @@
 				label.addClass( 'hustle-field-error' );
 			}
 		});
-
-		$( '.hustle-ui .hustle-button-submit' ).on( 'click', function( e ) {
-
-			const button = $( this );
-			const form = button.closest( '.hustle-layout-form' );
-			const gdprLabel = form.find( '.hustle-gdpr' );
-			const gdprInput = gdprLabel.find( 'input' );
-
-			setTimeout( function() {
-
-				if ( gdprInput.is( ':checked' ) ) {
-					gdprLabel.removeClass( 'hustle-field-error' );
-				} else {
-					gdprLabel.addClass( 'hustle-field-error' );
-				}
-
-			}, delay );
-
-			e.preventDefault();
-
-		});
 	};
 
-	HUI.checkboxGdpr( 800 );
+	HUI.checkboxGdpr();
 
 }( jQuery ) );

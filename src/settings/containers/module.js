@@ -56,6 +56,7 @@ export default class Module extends Component {
 					data-delay={ this.props.delay ? this.props.delay : '0' }
 					data-intro={ this.props.intro ? this.props.intro : 'no_animation' }
 					data-outro={ this.props.outro ? this.props.outro : 'no_animation' }
+					data-overlay-close={ this.props.overlayClose ? this.props.overlayClose : '0' }
 				>
 					<div className={ `hustle-${ this.props.type }-mask` } aria-hidden="true"></div>
 					<div className={ `hustle-${ this.props.type }-content` }>

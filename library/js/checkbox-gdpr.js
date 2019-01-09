@@ -36,8 +36,6 @@
 		});
 	};
 
-	$( 'body' ).ready( function() {
-		HUI.checkboxGdpr( 800 );
-	});
+	HUI.checkboxGdpr( 800 );
 
 }( jQuery ) );

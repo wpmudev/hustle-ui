@@ -82,11 +82,11 @@
 
 		function successMessage() {
 
-			layout.slideUp( delay );
+			layout.slideUp( 800 );
 
 			setTimeout( function() {
 				success.slideDown();
-			}, delay );
+			}, 800 );
 		}
 
 		function init() {

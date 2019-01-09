@@ -40,17 +40,19 @@ import '../../library/dist/js/hustle-ui';
 
 		});
 
-		// Submit button
-		HUI.buttonSubmit( 800 );
-
 		// GDPR checkbox
-		HUI.checkboxGdpr( 800 );
+		HUI.checkboxGdpr();
 
 		// Filled input
 		HUI.inputFilled();
 
 		// Required input
-		HUI.inputRequired( 800 );
+		HUI.inputRequired();
+
+		// Submit button
+		$( '.hustle-button-submit' ).each( function() {
+			HUI.buttonSubmit( this, 1000 );
+		});
 
 	});
 

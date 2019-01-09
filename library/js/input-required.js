@@ -46,8 +46,6 @@
 		});
 	};
 
-	$( 'body' ).ready( function() {
-		HUI.inputRequired( 800 );
-	});
+	HUI.inputRequired( 800 );
 
 }( jQuery ) );

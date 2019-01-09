@@ -79,16 +79,12 @@
 		return this;
 	};
 
-	$( 'body' ).ready( function() {
+	$( '.hustle-popup' ).each( function() {
 
-		$( '.hustle-popup' ).each( function() {
+		const popup = $( this );
+		const delay = $( this ).data( 'delay' );
 
-			const popup = $( this );
-			const delay = $( this ).data( 'delay' );
-
-			HUI.popupLoad( popup, delay );
-
-		});
+		HUI.popupLoad( popup, delay );
 
 	});
 

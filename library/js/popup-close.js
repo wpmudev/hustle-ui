@@ -4,6 +4,7 @@
 
 		const close = $( el );
 		const popup = close.closest( '.hustle-ui' );
+		const overlay = popup.find( '.hustle-popup-mask' );
 		const content = popup.find( '.hustle-popup-content' );
 
 		if ( ! close.is( '.hustle-button-close' ) ) {
@@ -44,47 +45,64 @@
 			}
 		}
 
+		function closePopup() {
+
+			const checkOutro = popup.data( 'outro' );
+
+			let delay = 1000;
+			let animateOut = 'no_animation';
+
+			if ( '' !== checkOutro ) {
+				animateOut = checkOutro;
+			}
+
+			if ( 'no_animation' === animateOut ) {
+				delay = 0;
+			}
+
+			if ( 'fadeOut' === animateOut ) {
+				delay = 305;
+			}
+
+			if ( 'newspaperOut' === animateOut ) {
+				delay = 505;
+			}
+
+			if ( 'bounceOut' === animateOut ) {
+				delay = 755;
+			}
+
+			animationOut();
+			removeIntro();
+
+			setTimeout( function() {
+				popup.removeClass( 'hustle-show' );
+				content.removeClass( 'hustle-animate-out--' + animateOut );
+			}, delay );
+		}
+
 		function init() {
 
 			close.on( 'click', function( e ) {
 
-				const checkOutro = popup.data( 'outro' );
-
-				let delay = 1000;
-				let animateOut = 'no_animation';
-
-				if ( '' !== checkOutro ) {
-					animateOut = checkOutro;
-				}
-
-				if ( 'no_animation' === animateOut ) {
-					delay = 0;
-				}
-
-				if ( 'fadeOut' === animateOut ) {
-					delay = 305;
-				}
-
-				if ( 'newspaperOut' === animateOut ) {
-					delay = 505;
-				}
-
-				if ( 'bounceOut' === animateOut ) {
-					delay = 755;
-				}
-
-				animationOut();
-				removeIntro();
-
-				setTimeout( function() {
-					popup.removeClass( 'hustle-show' );
-					content.removeClass( 'hustle-animate-out--' + animateOut );
-				}, delay );
+				closePopup();
 
 				e.preventDefault();
+				e.stopPropagation();
 
 			});
 
+			if ( 1 === popup.data( 'overlay-close' ) ) {
+
+				overlay.on( 'click', function( e ) {
+
+					closePopup();
+
+					e.preventDefault();
+					e.stopPropagation();
+
+				});
+			}
 		}
 
 		init();

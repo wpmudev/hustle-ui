@@ -1,6 +1,6 @@
 ( function( $ ) {
 
-	HUI.inputRequired = function( delay ) {
+	HUI.inputRequired = function() {
 
 		$( '.hustle-ui .hustle-input' ).blur( function() {
 
@@ -17,35 +17,8 @@
 			}
 
 		});
-
-		$( '.hustle-ui .hustle-button-submit' ).on( 'click', function( e ) {
-
-			const button = $( this );
-			const form = button.closest( '.hustle-layout-form' );
-			const input = form.find( '.hustle-input' );
-			const label = input.parent();
-
-			setTimeout( function() {
-
-				label.each( function() {
-
-					if ( $( this ).hasClass( 'hustle-field-required' ) ) {
-
-						if ( '' === $( this ).find( 'input' ).val() ) {
-							$( this ).addClass( 'hustle-field-error' );
-						} else {
-							$( this ).removeClass( 'hustle-field-error' );
-						}
-					}
-				});
-
-			}, delay );
-
-			e.preventDefault();
-
-		});
 	};
 
-	HUI.inputRequired( 800 );
+	HUI.inputRequired();
 
 }( jQuery ) );

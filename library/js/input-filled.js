@@ -15,8 +15,6 @@
 		});
 	};
 
-	$( 'body' ).ready( function() {
-		HUI.inputFilled();
-	});
+	HUI.inputFilled();
 
 }( jQuery ) );

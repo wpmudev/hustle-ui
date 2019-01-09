@@ -3,6 +3,9 @@
 	.hustle-checkbox {
 		display: flex;
 		vertical-align: middle;
+		margin: 0 0 $hui-gutter-sm;
+		padding: 0;
+		border: 0;
 
 		input {
 			@extend %hui-screen-reader;
@@ -52,6 +55,10 @@
 			font-size: $hui-checkbox--font-size;
 			line-height: $hui-checkbox--line-height;
 		}
+
+		&:last-child {
+			margin: 0;
+		}
 	}
 
 	.hustle-optin:not(.hustle-size--small) {
@@ -67,7 +74,8 @@
 
 			@include media(min-width, sm) {
 				display: inline-flex;
-				margin-right: 20px;
+				margin-right: $hui-gutter;
+				margin-bottom: 0;
 			}
 		}
 	}

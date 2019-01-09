@@ -92,15 +92,12 @@
 		return this;
 	};
 
-	$( 'body' ).ready( function() {
+	$( '.hustle-button-close' ).each( function() {
 
-		$( '.hustle-button-close' ).each( function() {
+		const close = $( this );
 
-			const close = $( this );
+		HUI.popupClose( close );
 
-			HUI.popupClose( close );
-
-		});
 	});
 
 }( jQuery ) );

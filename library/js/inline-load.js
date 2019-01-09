@@ -82,11 +82,8 @@
 		return this;
 	};
 
-	$( 'body' ).ready( function() {
-
-		$( '.hustle-inline' ).each( function() {
-			HUI.inlineLoad( this );
-		});
+	$( '.hustle-inline' ).each( function() {
+		HUI.inlineLoad( this );
 	});
 
 }( jQuery ) );

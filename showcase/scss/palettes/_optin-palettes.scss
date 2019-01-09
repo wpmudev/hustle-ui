@@ -26,6 +26,11 @@
 					background-color: map-get($form-background, $palette);
 				}
 			}
+
+			// ELEMENT: Success message background
+			.hustle-success {
+				background-color: map-get($main-background, $palette);
+			}
 		}
 	}
 
@@ -50,6 +55,50 @@
 
 				// ELEMENT: Content color
 				.hustle-group-content {
+
+					&, * {
+						color: map-get($content-color, $palette);
+					}
+
+					// ELEMENT: Link color
+					a {
+
+						&,
+						&:visited {
+							color: map-get($link-color-static, $palette);
+						}
+
+						&:hover {
+							color: map-get($link-color-hover, $palette);
+						}
+
+						&:focus,
+						&:active {
+							color: map-get($link-color-active, $palette);
+						}
+					}
+
+					// ELEMENT: OL counter
+					ol li:before {
+						color: map-get($ol-counter, $palette);
+					}
+
+					// ELEMENT: UL bullets
+					ul li:before {
+						background-color: map-get($ul-bullets, $palette);
+					}
+
+					// ELEMENT: Blockquote border
+					blockquote {
+						border-left-color: map-get($blockquote-border, $palette);
+					}
+				}
+			}
+
+			.hustle-success {
+
+				// ELEMENT: Content color
+				.hustle-success-content {
 
 					&, * {
 						color: map-get($content-color, $palette);
@@ -340,6 +389,14 @@
 			// Pop-up mask
 			.hustle-popup-mask {
 				background-color: map-get($popup-mask, $palette);
+			}
+		}
+
+		// ELEMENT: Success message icon
+		.hustle-success {
+
+			.hustle-icon-check {
+				color: map-get($success-icon, $palette);
 			}
 		}
 

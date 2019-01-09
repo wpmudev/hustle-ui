@@ -1,116 +1,63 @@
 import React, { Component } from 'react';
 
-import Module from './settings/containers/module';
-import Optin from './settings/containers/opt-in';
-import Input from './settings/components/input';
+import OptinEmbedded from './page-home/optin-embedded';
+import OptinSlidein from './page-home/optin-slidein';
+import OptinPopup from './page-home/optin-popup';
 
 export default class PageHome extends Component {
 	render() {
-		const basic = {
-			id: '9',
-			type: 'embedded',
-			layout: 'default',
-			palette: 'gray-slate',
-			delay: '1000',
-			intro: 'fadeInUp', // Pop-ups only
-			outro: 'rollOut', // Pop-ups only
-			position: 'e' // Slide-ins only
-		};
-
-		const content = {
-			title: 'Malesuada Parturient Tellus',
-			subtitle: (
-				'Duis mollis, est non commodo luctus, nisi erat ' +
-				'porttitor ligula, eget lacinia odio sem nec elit.'
-			),
-			content: (
-				<p>Cras mattis consectetur purus sit amet fermentum. <strong>Curabitur blandit tempus porttitor.</strong> Etiam porta sem malesuada magna mollis euismod. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum <a href="/" target="_blank">massa justo</a> sit amet risus. Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
-			),
-			button: 'Call To Action'
-		};
-
-		const image = {
-			source: 'horizontal.png',
-			fitting: 'contain',
-			position: 'left'
-		};
-
-		const form = {
-			inputIcon: 'static',
-			mailchimp: 'checkbox',
-			mailchimpTitle: 'Options Group',
-			gdpr: (
-				'From time to time we would like to send you offers and ' +
-				'information we think you would be interested in. If you ' +
-				'do not want to receive these, please untick the box.'
-			),
-			success: (
-				<p>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Nullam quis risus eget urna mollis ornare vel eu leo.</p>
-			)
-		};
-
 		return (
-			<div className="showcase-content">
+			<React.Fragment>
 
-				<h1>Hustle UI</h1>
+				<div className="showcase-content">
 
-				<p>Cras mattis consectetur purus sit amet fermentum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+					<h1>Hustle UI</h1>
 
-				<p>Nullam quis risus eget urna mollis ornare vel eu leo. Donec sed odio dui. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean lacinia bibendum nulla sed consectetur. Donec sed odio dui.</p>
+					<p>Cras mattis consectetur purus sit amet fermentum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
 
-				<p>Sed posuere consectetur est at lobortis. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Nulla vitae elit libero, a pharetra augue. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.</p>
+					<p>Nullam quis risus eget urna mollis ornare vel eu leo. Donec sed odio dui. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean lacinia bibendum nulla sed consectetur. Donec sed odio dui.</p>
 
-				<p>Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Curabitur blandit tempus porttitor. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Aenean lacinia bibendum nulla sed consectetur. Nulla vitae elit libero, a pharetra augue.</p>
+					<p>Sed posuere consectetur est at lobortis. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Nulla vitae elit libero, a pharetra augue. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.</p>
 
-				<p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Curabitur blandit tempus porttitor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec sed odio dui. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</p>
+					<p>Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Curabitur blandit tempus porttitor. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Aenean lacinia bibendum nulla sed consectetur. Nulla vitae elit libero, a pharetra augue.</p>
 
-				<Module
-					moduleId={ basic.id }
-					type={ basic.type }
-					palette={ basic.palette }
-					delay={ basic.delay }
-					intro={ basic.intro } // Pop-ups and Inline
-					outro={ basic.outro } // Pop-ups only
-					position={ basic.position } // Slide-ins only
-				>
+					<p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Curabitur blandit tempus porttitor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec sed odio dui. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</p>
 
-					<Optin
-						moduleId={ basic.id }
-						type={ basic.type }
-						layout={ basic.layout }
-						palette={ basic.palette }
-						title={ content.title }
-						subtitle={ content.subtitle }
-						content={ content.content }
-						ctaButton={ content.button }
-						image={ image.source }
-						imageFit={ image.fitting }
-						imagePosition={ image.position }
-						fieldsIcon={ form.inputIcon }
-						formOptions={ form.mailchimp }
-						optionsLabel={ form.mailchimpTitle }
-						fieldsGdpr={ form.gdpr }
-						neverSeeLink="true"
-						successMsg={ form.success }
-					>
-						<Input
-							type="name"
-							label="John Smith"
-							icon={ form.inputIcon }
-							property={ `hustle-module-${ basic.id }-field-name` }
-							requiredField="false"
-						/>
-					</Optin>
+					<OptinEmbedded
+						property="10"
+						layout="default"
+						palette="gray-slate"
+						intro="slideInUp"
+						delay="1000"
+					/>
 
-				</Module>
+					<p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Nullam id dolor id nibh ultricies vehicula ut id elit. Cras mattis consectetur purus sit amet fermentum. Nullam quis risus eget urna mollis ornare vel eu leo.</p>
 
-				<p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Nullam id dolor id nibh ultricies vehicula ut id elit. Cras mattis consectetur purus sit amet fermentum. Nullam quis risus eget urna mollis ornare vel eu leo.</p>
+					<p>Vestibulum id ligula porta felis euismod semper. Donec id elit non mi porta gravida at eget metus. Nulla vitae elit libero, a pharetra augue. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</p>
 
-				<p>Vestibulum id ligula porta felis euismod semper. Donec id elit non mi porta gravida at eget metus. Nulla vitae elit libero, a pharetra augue. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</p>
+					<p>Donec sed odio dui. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vitae elit libero, a pharetra augue. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</p>
 
-				<p>Donec sed odio dui. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vitae elit libero, a pharetra augue. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</p>
+				</div>
 
-			</div>
+				<OptinPopup
+					property="11"
+					layout="default"
+					palette="gray-slate"
+					intro="rollIn"
+					outro="slideOutDown"
+					delay="1000"
+					overlayCanClose
+				/>
+
+				<OptinSlidein
+					property="12"
+					layout="default"
+					palette="gray-slate"
+					position="se"
+					delay="1000"
+				/>
+
+			</React.Fragment>
 		);
 	}
 }

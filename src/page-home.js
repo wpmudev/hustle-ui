@@ -43,6 +43,9 @@ export default class PageHome extends Component {
 				'From time to time we would like to send you offers and ' +
 				'information we think you would be interested in. If you ' +
 				'do not want to receive these, please untick the box.'
+			),
+			success: (
+				<p>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Nullam quis risus eget urna mollis ornare vel eu leo.</p>
 			)
 		};
 
@@ -88,6 +91,7 @@ export default class PageHome extends Component {
 						optionsLabel={ form.mailchimpTitle }
 						fieldsGdpr={ form.gdpr }
 						neverSeeLink="true"
+						successMsg={ form.success }
 					>
 						<Input
 							type="name"

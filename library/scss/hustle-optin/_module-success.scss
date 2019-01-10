@@ -1,157 +1,37 @@
-@include body-class() {
+@include hustle-class() {
 
-	.hustle-success {
+	.hustle-optin {
 
-		[class*="hustle-icon-"] {
-			display: block;
-			font-size: 22px;
-			text-align: center;
-
-			@include media(max-width, sm) {
-				margin: 0 0 #{$hui-gutter-sm / 2};
-			}
-
-			@include media(min-width, sm) {
-				margin: 0 0 #{$hui-gutter / 2};
-			}
-		}
-
-		.hustle-success-content {
-
-			&, * {
-				font-family: $hui-font;
-				letter-spacing: 0;
-
-				b, strong {
-					font-weight: 700;
-				}
-
-				a {
-					transition: $hui-transition--ease;
-
-					&,
-					&:focus,
-					&:hover,
-					&:active,
-					&:visited {
-						border: 0;
-						outline: none;
-						box-shadow: none;
-						font-weight: 700;
-						text-decoration: none;
-					}
-				}
-			}
-
-			h1, h2, h3, h4, h5, h6, p, ul, ol, blockquote {
-				margin: 0;
-
-				&:not(:last-child) {
-					margin-bottom: $hui-gutter-sm;
-				}
-			}
-
-			h1, h2, h3, h4, h5, h6 {
-				line-height: 1.4em;
-				font-weight: 700;
-			}
-
-			h1 {
-				font-size: 28px;
-			}
-
-			h2 {
-				font-size: 22px;
-			}
-
-			h3 {
-				font-size: 18px;
-			}
-
-			h4 {
-				font-size: 16px;
-			}
-
-			h5 {
-				font-size: 14px;
-			}
-
-			h6 {
-				font-size: 12px;
-				text-transform: uppercase;
-			}
-
-			&, p {
-				font-size: 14px;
-				line-height: 20px;
-				font-weight: 400;
-			}
-
-			ul, ol {
-				padding: 0;
-				border: 0;
-				list-style: none;
-
-				li {
-					margin: 0 0 5px;
-					padding: 0;
-					border: 0;
-				}
-
-				ul, ol {
-					margin: 0;
-
-					&:not(:last-child) {
-						margin-bottom: #{$hui-gutter-sm / 2};
-					}
-				}
-			}
-
-			ul {
-
-				li {
-
-					&:before {
-						content: " ";
-						width: 4px;
-						height: 4px;
-						position: relative;
-						top: -1px;
-						display: inline-block;
-						vertical-align: middle;
-						margin-right: 5px;
-						border-radius: 8px;
-					}
-				}
-			}
-
-			ol {
-				counter-reset: hui-custom-counter;
-
-				li {
-					counter-increment: hui-custom-counter;
-
-					&:before {
-						content: counter(hui-custom-counter) ".";
-						margin-right: 5px;
-						font-weight: bold;
-					}
-				}
-			}
-
-			blockquote {
-				padding: $hui-gutter-sm 0 $hui-gutter-sm #{$hui-gutter-sm + 4px};
-				border-left-width: 4px;
-				border-left-style: solid;
-			}
-		}
-
-		@include media(max-width, sm) {
+		// SIZE: Small
+		.hustle-success {
 			padding: #{$hui-gutter-sm * 2};
+
+			[class*="hustle-icon-"] {
+				display: block;
+				margin: 0 0 #{$hui-gutter-sm / 2};
+				font-size: 22px;
+				text-align: center;
+			}
 		}
 
-		@include media(min-width, sm) {
-			padding: #{$hui-gutter * 2};
+		// SIZE: Normal
+		&:not(.hustle-size--small) {
+
+			.hustle-success {
+
+				[class*="hustle-icon-"] {
+
+					@include media(min-width, sm) {
+						margin-bottom: #{$hui-gutter / 2};
+					}
+				}
+
+				@include media(min-width, sm) {
+					padding: #{$hui-gutter * 2};
+				}
+			}
 		}
 	}
 }
+
+@include content(optin, success-content);

@@ -30,9 +30,33 @@
 
 		// ELEMENT: Content
 		.hustle-content {
+			padding: 0 $hui-gutter-sm;
+
+			.hustle-content-wrap {
+				padding: $hui-gutter-sm 0;
+			}
 
 			// ELEMENT: Group Title
 			.hustle-group-title {
+
+				.hustle-title,
+				.hustle-subtitle {
+					display: block;
+				}
+
+				.hustle-title {
+					font: 400 33px/38px $hui-font--alt;
+					letter-spacing: 0;
+
+					+ .hustle-subtitle {
+						margin-top: $hui-gutter-sm;
+					}
+				}
+
+				.hustle-subtitle {
+					font: bold 14px/24px $hui-font;
+					letter-spacing: 0;
+				}
 
 				&:not(:last-child) {
 					margin-bottom: 0;
@@ -115,6 +139,13 @@
 			// ELEMENT: Content
 			.hustle-content {
 
+				.hustle-content-wrap {
+
+					@include media(min-width, sm) {
+						padding: $hui-gutter 0;
+					}
+				}
+
 				// ELEMENT: Group Title
 				.hustle-group-title {
 
@@ -157,6 +188,10 @@
 					@include media(min-width, sm) {
 						width: auto;
 					}
+				}
+
+				@include media(min-width, sm) {
+					padding: 0 $hui-gutter;
 				}
 			}
 

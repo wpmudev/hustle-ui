@@ -2,7 +2,6 @@
 // Supported Packages
 const fs           = require( 'fs' );
 const pump         = require( 'pump' );
-const ghpages      = require( 'gh-pages' );
 const gulp         = require( 'gulp' );
 const watch        = require( 'gulp-watch' );
 const sass         = require( 'gulp-sass' );
@@ -49,19 +48,6 @@ const dist = {
 	fonts: 'dist/fonts',
 	files: 'dist/'
 };
-
-// ==================================================
-// Publish to Github
-
-// Library
-// Publish files to `master` branch on Github
-ghpages.publish( 'build', {
-	branch: 'master',
-	user: {
-		name: 'Leighton Sapir',
-		email: 'leigh@incsub.com'
-	}
-});
 
 // ==================================================
 // Files

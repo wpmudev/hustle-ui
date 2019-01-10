@@ -1,9 +1,0 @@
-@include body-class() {
-	width: 100%;
-	display: block;
-
-	&, * {
-		box-sizing: border-box;
-		@extend %hui-text-reset;
-	}
-}

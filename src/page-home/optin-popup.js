@@ -9,6 +9,7 @@ export default class OptinPopup extends Component {
 		const basic = {
 			id: this.props.property ? this.props.property : '0',
 			type: 'popup',
+			mode: 'optin',
 			layout: this.props.layout ? this.props.layout : 'default',
 			palette: this.props.palette ? this.props.palette : 'gray-slate',
 			delay: this.props.delay ? this.props.delay : '0',
@@ -53,6 +54,7 @@ export default class OptinPopup extends Component {
 			<Module
 				moduleId={ basic.id }
 				type={ basic.type }
+				mode={ basic.mode }
 				palette={ basic.palette }
 				delay={ basic.delay }
 				intro={ basic.intro } // Pop-ups only

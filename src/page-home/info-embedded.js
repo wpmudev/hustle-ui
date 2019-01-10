@@ -8,6 +8,7 @@ export default class InfoEmbedded extends Component {
 		const basic = {
 			id: this.props.property ? this.props.property : '0',
 			type: 'embedded',
+			mode: 'info',
 			layout: this.props.layout ? this.props.layout : 'default',
 			palette: this.props.palette ? this.props.palette : 'gray-slate',
 			intro: this.props.intro ? this.props.intro : 'no_animation' // Inline only
@@ -40,6 +41,7 @@ export default class InfoEmbedded extends Component {
 			<Module
 				moduleId={ basic.id }
 				type={ basic.type }
+				mode={ basic.mode }
 				palette={ basic.palette }
 				delay={ basic.delay }
 				intro={ basic.intro } // Inline only

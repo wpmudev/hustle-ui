@@ -6,6 +6,7 @@ export default class Module extends Component {
 		let moduleType = '';
 		let modulePalette = ' hustle-palette--gray-slate';
 		let moduleLayout = '';
+		let moduleMode = this.props.mode ? this.props.mode : 'optin';
 
 		const children = React.Children.map(
 			this.props.children,
@@ -58,7 +59,7 @@ export default class Module extends Component {
 					data-outro={ this.props.outro ? this.props.outro : 'no_animation' }
 					data-overlay-close={ this.props.overlayClose ? this.props.overlayClose : '0' }
 				>
-					<div className={ `hustle-${ this.props.type }-mask` } aria-hidden="true"></div>
+					<div className={ `hustle-${ this.props.type }-mask hustle-${ moduleMode }-mask` } aria-hidden="true"></div>
 					<div className={ `hustle-${ this.props.type }-content` }>
 						{ children }
 					</div>

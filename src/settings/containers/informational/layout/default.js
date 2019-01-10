@@ -82,6 +82,7 @@ export default class LayoutDefault extends Component {
 			moduleCta = (
 				<Button
 					label={ this.props.cta }
+					extraClass="hustle-button-cta"
 				/>
 			);
 		}

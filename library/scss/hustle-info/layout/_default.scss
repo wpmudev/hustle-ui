@@ -23,6 +23,10 @@
 				font: bold 14px/24px $hui-font;
 				letter-spacing: 0;
 			}
+
+			+ div {
+				border-top: 1px solid rgba(0,0,0,0.16);
+			}
 		}
 
 		.hustle-layout-content {
@@ -65,6 +69,7 @@
 
 		.hustle-layout-footer {
 			padding: $hui-gutter-sm;
+			background-color: rgba(0,0,0,0.16);
 
 			.hustle-checkbox {
 

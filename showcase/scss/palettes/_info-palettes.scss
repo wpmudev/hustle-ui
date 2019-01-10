@@ -1,96 +1,207 @@
-.hustle-info {
+@import "palettes/info-vars";
 
-	.hustle-layout {
+@each $palette in $palettes {
 
-		// ELEMENT: GDPR
-		.hustle-checkbox {
+	// ========================================|
+	// 1. BASIC                                |
+	// ========================================|
+	.hustle-palette--#{$palette} {
 
-			span[aria-hidden] {
-				background-color: #FFFFFF;
-				color: #38C5B5;
+		.hustle-info {
+
+			.hustle-layout {
+
+				// ELEMENT: Image container BG
+				.hustle-image {
+					background-color: map-get($image-container, $palette);
+				}
 			}
 
-			span:not([aria-hidden]) {
-				color: #FFFFFF;
+			&.hustle-info--default,
+			&.hustle-info--compact {
+
+				// ELEMENT: Main background
+				.hustle-layout {
+					background-color: map-get($main-background, $palette);
+				}
 			}
-		}
 
-		// ELEMENT: Button
-		.hustle-button {
-			border-width: 0;
-			border-style: none;
-			border-color: rgba(0,0,0,0);
-			background-color: rgba(56,197,181,1);
-			color: rgba(255,255,255,1);
-		}
+			&.hustle-info--stacked {
 
-		// ELEMENT: Header
-		.hustle-layout-header {
-
-			+ .hustle-layout-content {
-				border-top: 1px solid #2E3941;
-			}
-		}
-
-		// ELEMENT: Image
-		.hustle-image {
-			background-color: #2E3941;
-		}
-
-		// ELEMENT: Content
-		.hustle-content {
-
-			.hustle-group-content {
-
-				&, * {
-					color: #ADB5B7;
+				// ELEMENT: Main background
+				.hustle-layout-body {
+					background-color: map-get($main-background, $palette);
 				}
 			}
 		}
-
-		// ELEMENT: Footer
-		.hustle-layout-footer {
-			background-color: #2E3941;
-		}
 	}
 
-	&--default,
-	&--compact {
+	// ========================================|
+	// 2. CONTENT                              |
+	// ========================================|
+	.hustle-palette--#{$palette} {
 
-		.hustle-layout {
-			background-color: #38454E;
+		.hustle-info {
 
-			// ELEMENT: Title
-			.hustle-title {
-				color: #FFFFFF;
-			}
+			.hustle-layout {
 
-			// ELEMENT: Subtitle
-			.hustle-subtitle {
-				color: #FFFFFF;
-			}
-		}
-	}
-
-	&--stacked {
-
-		.hustle-layout {
-
-			.hustle-layout-header {
-
-				// ELEMENT: Title
+				// ELEMENT: Title color
 				.hustle-title {
-					color: #38454E;
+					color: map-get($title-color, $palette);
 				}
 
-				// ELEMENT: Subtitle
+				// ELEMENT: Subtitle color
 				.hustle-subtitle {
-					color: #38454E;
+					color: map-get($subtitle-color, $palette);
+				}
+
+				.hustle-group-content {
+
+					// ELEMENT: Content color
+					&, * {
+						color: map-get($content-color, $palette);
+					}
+
+					// ELEMENT: Link color
+					a {
+
+						&,
+						&:visited {
+							color: map-get($link-color-static, $palette);
+						}
+
+						&:hover {
+							color: map-get($link-color-hover, $palette);
+						}
+
+						&:focus,
+						&:active {
+							color: map-get($link-color-active, $palette);
+						}
+					}
+
+					// ELEMENT: OL counter
+					ol li:before {
+						color: map-get($ol-counter, $palette);
+					}
+
+					// ELEMENT: UL bullets
+					ul li:before {
+						background-color: map-get($ul-bullets, $palette);
+					}
+
+					// ELEMENT: Blockquote border
+					blockquote {
+						border-left-color: map-get($blockquote-border, $palette);
+					}
 				}
 			}
+		}
+	}
 
-			.hustle-layout-body {
-				background-color: #38454E;
+	// ========================================|
+	// 3. CALL TO ACTION                       |
+	// ========================================|
+	.hustle-palette--#{$palette} {
+
+		.hustle-info {
+
+			.hustle-layout {
+
+				.hustle-button-cta {
+					border-width: 0;
+					border-style: solid;
+					border-color: transparent;
+
+					&,
+					&:visited {
+						background-color: map-get($cta-background-static, $palette);
+						color: map-get($cta-label-static, $palette);
+					}
+
+					&:hover {
+						background-color: map-get($cta-background-hover, $palette);
+						color: map-get($cta-label-hover, $palette);
+					}
+
+					&:focus,
+					&:active {
+						background-color: map-get($cta-background-active, $palette);
+						color: map-get($cta-label-active, $palette);
+					}
+				}
+			}
+		}
+	}
+
+	// ========================================|
+	// 4. GDPR CHECKBOX                        |
+	// ========================================|
+	.hustle-palette--#{$palette} {
+
+		.hustle-info {
+
+			.hustle-layout {
+
+				.hustle-checkbox {
+
+					input:checked {
+
+						+ span[aria-hidden] {
+							background-color: map-get($checkbox-background-checked, $palette);
+
+							&:before {
+								color: map-get($checkbox-icon, $palette);
+							}
+						}
+					}
+
+					span[aria-hidden] {
+						border-width: 2px;
+						border-style: solid;
+						border-color: transparent;
+						background-color: map-get($checkbox-background-static, $palette);
+					}
+
+					span:not([aria-hidden]) {
+						color: map-get($checkbox-label, $palette);
+					}
+
+					&.hustle-field-error {
+
+						span[aria-hidden] {
+							background-color: map-get($checkbox-background-error, $palette);
+							border-color: map-get($checkbox-border-error, $palette);
+						}
+					}
+				}
+			}
+		}
+	}
+
+	// ========================================|
+	// 5. ADDITIONAL SETTINGS                  |
+	// ========================================|
+	.hustle-palette--#{$palette} {
+
+		&.hustle-popup {
+
+			// Pop-up mask
+			.hustle-info-mask {
+				background-color: map-get($popup-mask, $palette);
+			}
+		}
+
+		// ELEMENT: Never See Link
+		.hustle-nsa-link a:not(.sui-button) {
+			color: map-get($nsa-color-static, $palette);
+
+			&:hover {
+				color: map-get($nsa-color-hover, $palette);
+			}
+
+			&:active {
+				color: map-get($nsa-color-active, $palette);
 			}
 		}
 	}

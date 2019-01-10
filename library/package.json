@@ -46,6 +46,7 @@
 	],
 	"scripts": {
 		"build": "gulp development",
-		"deploy": "gh-pages -b master -d dist -u 'Leighton Sapir <leigh@incsub.com>'"
+		"cleanup": "rm -rf node_modules/gh-pages/.cache",
+		"deploy": "npm run cleanup && gh-pages -b master -d dist -u 'Leighton Sapir <leigh@incsub.com>'"
 	}
 }

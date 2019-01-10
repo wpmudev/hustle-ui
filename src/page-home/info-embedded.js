@@ -23,18 +23,18 @@ export default class InfoEmbedded extends Component {
 			content: (
 				<p>Cras mattis consectetur purus sit amet fermentum. <strong>Curabitur blandit tempus porttitor.</strong> Etiam porta sem malesuada magna mollis euismod. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum <a href="/" target="_blank">massa justo</a> sit amet risus. Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
 			),
-			button: 'Call To Action'
-		};
-
-		const image = {
-			source: 'horizontal.png',
-			fitting: 'contain',
-			position: 'left',
+			button: 'Call To Action',
 			gdpr: (
 				'From time to time we would like to send you offers and ' +
 				'information we think you would be interested in. If you ' +
 				'do not want to receive these, please untick the box.'
 			)
+		};
+
+		const image = {
+			source: 'horizontal.png',
+			fitting: 'contain',
+			position: 'left'
 		};
 
 		return (

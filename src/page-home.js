@@ -3,6 +3,9 @@ import React, { Component } from 'react';
 import OptinEmbedded from './page-home/optin-embedded';
 import OptinSlidein from './page-home/optin-slidein';
 import OptinPopup from './page-home/optin-popup';
+import InfoPopup from './page-home/info-popup';
+import InfoSlidein from './page-home/info-slidein';
+import InfoEmbedded from './page-home/info-embedded';
 
 export default class PageHome extends Component {
 	render() {
@@ -28,7 +31,13 @@ export default class PageHome extends Component {
 						layout="default"
 						palette="gray-slate"
 						intro="slideInUp"
-						delay="1000"
+					/>
+
+					<InfoEmbedded
+						property="20"
+						layout="default"
+						palette="sunrise"
+						intro="rollIn"
 					/>
 
 					<p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Nullam id dolor id nibh ultricies vehicula ut id elit. Cras mattis consectetur purus sit amet fermentum. Nullam quis risus eget urna mollis ornare vel eu leo.</p>
@@ -41,19 +50,36 @@ export default class PageHome extends Component {
 
 				<OptinPopup
 					property="11"
-					layout="default"
-					palette="gray-slate"
+					layout="compact"
+					palette="ectoplasm"
 					intro="rollIn"
-					outro="slideOutDown"
+					outro="fadeOutDown"
 					delay="1000"
 					overlayCanClose
 				/>
 
 				<OptinSlidein
 					property="12"
-					layout="default"
-					palette="gray-slate"
+					layout="focus-optin"
+					palette="midnight"
 					position="se"
+					delay="1000"
+				/>
+
+				<InfoPopup
+					property="21"
+					layout="stacked"
+					palette="gray-slate"
+					intro="newspaperIn"
+					outro="rollOut"
+					delay="1000"
+				/>
+
+				<InfoSlidein
+					property="22"
+					layout="default"
+					palette="ectoplasm"
+					position="sw"
 					delay="1000"
 				/>
 

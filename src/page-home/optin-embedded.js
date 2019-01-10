@@ -11,7 +11,6 @@ export default class OptinEmbedded extends Component {
 			type: 'embedded',
 			layout: this.props.layout ? this.props.layout : 'default',
 			palette: this.props.palette ? this.props.palette : 'gray-slate',
-			delay: this.props.delay ? this.props.delay : '0',
 			intro: this.props.intro ? this.props.intro : 'no_animation' // Inline only
 		};
 

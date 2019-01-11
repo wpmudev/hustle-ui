@@ -28,7 +28,7 @@ config.output.jsFileName = 'hustle-ui.min.js';
 config.output.imagesDirectory = '../images/';
 config.output.fontsDirectory  = '../fonts/';
 
-var scssConfig = Object.assign( {}, {
+const scssConfig = Object.assign({}, {
 	entry: {
 		'showcase': config.source.suicss,
 		'hustle-ui': config.source.huicss
@@ -101,31 +101,31 @@ var scssConfig = Object.assign( {}, {
 	watchOptions: {
 		poll: 500
 	}
-} );
+});
 
-var jsConfig = Object.assign( {}, {
+const jsConfig = Object.assign({}, {
 	entry: config.source.huijs,
 	output: {
 		filename: config.output.jsFileName,
 		path: path.resolve( __dirname, config.output.dirJs )
 	},
 	module: {
-        rules: [{
+        rules: [ {
 			test: /\.js$/,
 			exclude: /(node_modules|bower_components)/,
 			use: {
 				loader: 'babel-loader',
 				options: {
-					presets: ['env']
+					presets: [ 'env' ]
 				}
 			}
-		}]
+		} ]
 	},
 	devtool: 'source-map',
 	plugins: [
 		new SystemBellPlugin()
 	]
-} );
+});
 
 module.exports = [
 	scssConfig,

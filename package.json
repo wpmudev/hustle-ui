@@ -16,50 +16,40 @@
 		"url": "git@github.com:wpmudev/hustle-ui.git"
 	},
 	"devDependencies": {
-		"@wpmudev/shared-ui": "2.3.15",
-		"ajv-keywords": "^3.1.0",
-		"autoprefixer": "^7.2.6",
-		"babel-core": "^6.26.3",
-		"babel-loader": "^8.0.4",
-		"babel-preset-env": "^1.7.0",
-		"css-loader": "^0.28.11",
-		"es6-promise": "^4.2.4",
+		"@wpmudev/shared-ui": "^2.3.16",
+		"browser-sync": "^2.26.3",
 		"eslint-config-wordpress": "^2.0.0",
-		"extract-text-webpack-plugin": "^4.0.0-beta.0",
-		"file-loader": "^1.1.11",
+		"fs": "0.0.1-security",
 		"gh-pages": "^2.0.1",
-		"jquery": "^3.3.1",
-		"node-sass": "^4.9.0",
-		"path": "^0.12.7",
-		"postcss-loader": "^2.1.2",
-		"resolve-url-loader": "^2.3.0",
-		"sass-loader": "^6.0.7",
-		"style-loader": "^0.20.3",
-		"system-bell-webpack-plugin": "^1.0.0",
-		"webpack": "^4.16.1",
-		"webpack-cli": "^3.1.0"
+		"gulp": "^4.0.0",
+		"gulp-autoprefixer": "^6.0.0",
+		"gulp-clean-css": "^4.0.0",
+		"gulp-concat": "^2.6.1",
+		"gulp-eslint": "^5.0.0",
+		"gulp-header": "^2.0.7",
+		"gulp-rename": "^1.4.0",
+		"gulp-sass": "^4.0.2",
+		"gulp-uglify-es": "^1.0.4",
+		"gulp-watch": "^5.0.1",
+		"pump": "^3.0.0"
 	},
 	"eslintConfig": {
-		"extends": "react-app",
-		"globals": {
-			"window": true,
-			"HUI": true
+		"extends": "wordpress",
+		"parserOptions": {
+			"sourceType": "module",
+			"ecmaVersion": 2018
+		},
+		"env": {
+			"es6": true
 		}
 	},
-	"eslintIgnore": [
-		"library"
-	],
-	"browserslist": [
-		"> 1%",
-		"ie > 9"
-	],
+	"eslintIgnore": [],
 	"scripts": {
-		"start": "react-scripts start",
-		"compile": "webpack -p --progress",
-		"build": "react-scripts build",
-		"test": "react-scripts test",
-		"predeploy": "npm run build",
-		"deploy": "gh-pages -d build",
-		"eject": "react-scripts eject"
+		"start": "gulp development",
+		"hustle": "gulp hustle:build",
+		"showcase": "gulp showcase:build",
+		"cleanup": "rm -rf node_modules/gh-pages/.cache",
+		"deploy:hui": "npm run hustle && npm run cleanup && gh-pages -b master -d ./dist -u 'Leighton Sapir <leigh@incsub.com>'",
+		"deploy:sui": "npm run showcase && npm run cleanup && gh-pages -b gh-pages -d ./public -u 'Leighton Sapir <leigh@incsub.com>'"
 	}
 }

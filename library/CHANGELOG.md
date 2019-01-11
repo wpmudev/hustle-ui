@@ -3,4 +3,11 @@ v4.0.0
 - [New] Opt-in module styles.
 - [New] Informational module styles.
 - [New] Social share module styles.
-- [New] Add filled class to input when is not empty.
+- [New] JS function to add filled class to inputs when are not empty.
+- [New] JS function to add error class on required inputs.
+- [New] JS function to show pop-up modules.
+- [New] JS function to show slide-in modules.
+- [New] JS function to show inline modules.
+- [New] JS function to close pop-up modules on button click.
+- [New] JS function to close pop-up modules on overlay mask click.
+- [New] JS function to close slide-in modules on button click.

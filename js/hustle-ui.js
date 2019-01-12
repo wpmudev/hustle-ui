@@ -1,7 +1,7 @@
 /*!
  * WPMU DEV Hustle UI
  * Copyright 2019 Incsub (https://incsub.com)
- * Licensed under GPL v2 (http://www.gnu.org/licenses/gpl-2.0.html)
+ * Licensed under GPL v3 (http://www.gnu.org/licenses/gpl-3.0.html)
  */
 /* global NodeList, Element, define */
 ( function( global ) {

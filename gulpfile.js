@@ -1,3 +1,5 @@
+'use strict';
+
 // ==================================================
 // Supported Packages
 const fs           = require( 'fs' );
@@ -38,80 +40,82 @@ const browsersList = [
 // Paths & Files
 
 const sui = {
-	source: {
-		main: './node_modules/@wpmudev/dist/',
-		fonts: sui.source.main + 'fonts/'
-	}
+	fonts: './node_modules/@wpmudev/dist/fonts/'
 };
 
 const hustle = {
-	source: {
-		main: './library/',
-		fonts: hustle.source.main + 'fonts/',
-		scripts: hustle.source.main + 'js/',
-		styles: hustle.source.main + 'scss/'
-	},
-	output: {
-		main: './dist/',
-		fonts: hustle.output.main + 'fonts/',
-		scripts: hustle.output.main + 'js/',
-		styles: hustle.output.main + 'css/'
-	},
-	watch: {
-		styles: [
-			hustle.source.styles + '**/*.scss'
-		],
-		scripts: [
-			hustle.source.scripts + '*.js'
-		],
-		fonts: [
-			hustle.source.fonts + '*'
-		],
-		files: [
-			hustle.source.main + 'README.md',
-			hustle.source.main + 'CHANGELOG.md'
-		]
-	}
+	source: {},
+	output: {},
+	watch: {}
 };
 
+hustle.source.main = './library/';
+hustle.source.fonts = './library/fonts/';
+hustle.source.scripts = './library/js/';
+hustle.source.styles = './library/scss/';
+
+hustle.output.main = './dist/';
+hustle.output.fonts = './dist/fonts/';
+hustle.output.scripts = './dist/js/';
+hustle.output.styles = './dist/css/';
+
+hustle.watch.styles = [
+	hustle.source.styles + '**/*.scss'
+];
+
+hustle.watch.scripts = [
+	hustle.source.scripts + '*.js'
+];
+
+hustle.watch.fonts = [
+	hustle.source.fonts + '*'
+];
+
+hustle.watch.files = [
+	hustle.source.main + 'README.md',
+	hustle.source.main + 'CHANGELOG.md'
+];
+
 const showcase = {
-	source: {
-		main: './showcase/',
-		fonts: showcase.source.main + 'fonts/',
-		scripts: showcase.source.main + 'js/',
-		styles: showcase.source.main + 'scss/'
-	},
-	output: {
-		main: './public/',
-		fonts: showcase.output.main + 'assets/fonts/',
-		scripts: showcase.output.main + 'assets/js/',
-		styles: showcase.output.main + 'assets/css/',
-		images: showcase.output.main + 'assets/images/'
-	},
-	watch: {
-		styles: [
-			hustle.source.styles + '**/*.scss',
-			showcase.source.styles + '**/*.scss'
-		],
-		scripts: [
-			showcase.source.scripts + '*.js'
-		],
-		fonts: [
-			hustle.source.fonts + '*',
-			sui.source.fonts + '*'
-		],
-		html: [
-			hustle.output.main + '*.html'
-		]
-	}
+	source: {},
+	output: {},
+	watch: {}
 };
+
+showcase.source.main = './showcase/';
+showcase.source.scripts = './showcase/js/';
+showcase.source.styles = './showcase/scss/';
+
+showcase.output.main = './public/';
+showcase.output.fonts = './public/assets/fonts/';
+showcase.output.scripts = './public/assets/js/';
+showcase.output.styles = './public/assets/css/';
+showcase.output.images = './public/assets/images/';
+
+showcase.watch.styles = [
+	hustle.source.styles + '**/*.scss',
+	showcase.source.styles + '**/*.scss'
+];
+
+showcase.watch.scripts = [
+	showcase.source.scripts + '*.js'
+];
+
+showcase.watch.fonts = [
+	hustle.source.fonts + '*',
+	sui.fonts + '*'
+];
+
+showcase.watch.html = [
+	hustle.output.main + '*.html'
+];
 
 // ==================================================
 // BrowserSync
 gulp.task( 'browser-sync', function() {
 
 	browserSync.init({
-
+		injectChanges: true,
 		server: {
 			baseDir: showcase.output.main
 		}
@@ -197,7 +201,9 @@ gulp.task( 'showcase:styles', function() {
 			suffix: '.min'
 		}) )
 		.pipe( gulp.dest( showcase.output.styles ) )
-		.pipe( browserSync.stream() )
+		.pipe( browserSync.stream({
+			match: '**/*.css'
+		}) )
 		;
 });
 

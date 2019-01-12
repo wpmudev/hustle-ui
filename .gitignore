@@ -4,12 +4,10 @@
 /node_modules
 
 # production
+/dist
 /build
 
 # misc
 .DS_Store
 npm-debug.log*
 
-# library
-/library/dist
-/library/node_modules

@@ -1,5 +1,12 @@
 ( function( $ ) {
 
+	'use strict';
+
+	// Define global HUI object if it doesn't exist.
+	if ( 'object' !== typeof window.HUI ) {
+		window.HUI = {};
+	}
+
 	HUI.popupClose = function( el ) {
 
 		const close = $( el );

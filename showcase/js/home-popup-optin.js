@@ -6,27 +6,35 @@
 
 	function renderOptinPopup() {
 
+		const container = $( '#showcase-popup-optin' );
+
 		// Templates
-		const renderPopup = $( 'script[data-template="popup-container"]' ).text().split( /\$\{(.+?)\}/g );
-		const renderOptin = $( 'script[data-template="optin-content"]' ).text().split( /\$\{(.+?)\}/g );
+		const renderPopup = 'templates/popup-container.html';
+		const renderOptin = [
+			'templates/opt-in/default.html',
+			'templates/opt-in/compact.html',
+			'templates/opt-in/focus-optin.html',
+			'templates/opt-in/focus-content.html'
+		];
 
-		$( 'body' ).append( renderPopup );
+		container.load( renderPopup, function() {
 
-		$( '.hustle-popup' ).each( function() {
+			// Render opt-in
+			$( '.hustle-popup-mask' ).addClass( 'hustle-optin-mask' );
+			$( '.hustle-popup-content' ).load( randomSettings( renderOptin ), function() {
+				closeOptinPopup();
+			});
 
-			const popup = $( this );
+			openOptinPopup();
 
-			if ( ! popup.hasClass( 'showcase-informational-popup' ) ) {
-				popup.addClass( 'showcase-optin-popup' );
-				popup.find( '.hustle-popup-content' ).append( renderOptin );
-			}
 		});
 	};
 
 	function openOptinPopup() {
 
 		const button = $( '#showcase-show-optin-popup' );
-		const getModule = $( '.showcase-optin-popup' );
+		const sample = $( '#showcase-popup-optin' );
+		const getModule = sample.find( '.hustle-popup' );
 
 		// Module settings
 		let moduleId = 0;
@@ -106,7 +114,6 @@
 			'sunrise',
 			'midnight'
 		];
-		const moduleCloseOverlay = 1;
 
 		button.on( 'click', function() {
 
@@ -131,10 +138,6 @@
 				// Module palette
 				getModule.addClass( 'hustle-palette--' + randomSettings( modulePalette ) );
 
-				// Overlay mask behaviour
-				getModule.attr( 'data-overlay-close', moduleCloseOverlay );
-				getModule.find( '.hustle-popup-mask' ).addClass( 'hustle-optin-mask' );
-
 				$( '.hustle-popup.hustle-module-' + moduleId ).each( function() {
 
 					const popup = $( this );
@@ -149,12 +152,11 @@
 
 	function resetOptinPopup() {
 
-		const getModule = $( '.showcase-optin-popup' );
+		const getModule = $( '#showcase-popup-optin' ).find( '.hustle-popup' );
 
 		const moduleId = 0;
 		const moduleAnimationIn = 'no_animation';
 		const moduleAnimationOut = 'no_animation';
-		const moduleCloseOverlay = 0;
 
 		/**
 		 * Reset sample module settings
@@ -171,10 +173,6 @@
 
 		// Exit animation
 		getModule.attr( 'data-outro', randomSettings( moduleAnimationOut ) );
-
-		// Overlay mask behaviour
-		getModule.attr( 'data-overlay-close', moduleCloseOverlay );
-		getModule.find( '.hustle-popup-mask' ).addClass( 'hustle-optin-mask' );
 
 		// Module palette
 		getModule.removeClass ( function( index, className ) {
@@ -228,11 +226,7 @@
 	};
 
 	$( window ).on( 'load', function() {
-
 		renderOptinPopup();
-		openOptinPopup();
-		closeOptinPopup();
-
 	});
 
 }( jQuery ) );

@@ -93,7 +93,6 @@ showcase.output.styles = './public/assets/css/';
 showcase.output.images = './public/assets/images/';
 
 showcase.watch.styles = [
-	hustle.source.styles + '**/*.scss',
 	showcase.source.styles + '**/*.scss'
 ];
 
@@ -159,7 +158,8 @@ gulp.task( 'hustle:scripts', function( cb ) {
 			suffix: '.min'
 		}),
 		header( banner ),
-		gulp.dest( hustle.output.scripts )
+		gulp.dest( hustle.output.scripts ),
+		gulp.dest( showcase.output.scripts )
 	], cb );
 });
 

@@ -106,7 +106,9 @@ showcase.watch.fonts = [
 ];
 
 showcase.watch.html = [
-	hustle.output.main + '*.html'
+	showcase.output.main + '*.html',
+	showcase.output.main + 'templates/*.html',
+	showcase.output.main + 'templates/opt-in/*.html'
 ];
 
 // ==================================================

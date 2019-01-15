@@ -65,5 +65,11 @@
 				display: block;
 			}
 		}
+
+		&.hustle-button-cta {
+			display: inline-flex;
+			flex-direction: column;
+			align-items: center;
+		}
 	}
 }

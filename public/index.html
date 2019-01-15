@@ -82,7 +82,10 @@
 
 						<div class="sui-col-md-4">
 
-							<button class="showcase-button-sample">
+							<button
+								id="showcase-show-optin-slidein"
+								class="showcase-button-sample"
+							>
 								<span class="title">Slide-in Opt-in</span>
 								<span class="image"></span>
 							</button>
@@ -159,7 +162,7 @@
 
 			<div id="showcase-popup-optin"></div>
 
-			<div id="showcase-popup-informational"></div>
+			<div id="showcase-slidein-optin"></div>
 
 		</div>
 
@@ -170,136 +173,9 @@
 		<script src="assets/js/hustle-ui.min.js"></script>
 		<script src="assets/js/showcase-ui.min.js"></script>
 
-		<!-- Pop-up Container -->
-		<script type="text/html" data-template="popup-container">
-
-			<div
-				class="hustle-ui hustle-popup"
-				data-id="0"
-				data-delay="0"
-				data-intro="no_animation"
-				data-outro="no_animation"
-				data-overlay-close="1"
-			>
-
-				<div class="hustle-popup-mask" aria-hidden="true"></div>
-
-				<div class="hustle-popup-content"></div>
-
-			</div>
-
-		</script>
-
-		<!-- Opt-in Sample -->
-		<script type="text/html" data-template="optin-content">
-
-			<div class="hustle-optin hustle-optin--default">
-
-				<button class="hustle-button-icon hustle-button-close">
-					<i class="hustle-icon-close" aria-hidden="true"></i>
-					<span class="hustle-screen-reader">Close this module</span>
-				</button>
-
-				<div class="hustle-optin-content">
-
-					<!-- Success Message -->
-					<div class="hustle-success" style="display: none;">
-
-						<i class="hustle-icon-check" aria-hidden="true"></i>
-
-						<div class="hustle-success-content">
-
-							<p>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Nullam quis risus eget urna mollis ornare vel eu leo.</p>
-
-						</div>
-
-					</div>
-
-					<!-- Opt-in Layout -->
-					<div class="hustle-layout">
-
-						<div class="hustle-layout-body">
-
-							<!-- Layout Content -->
-							<div class="hustle-layout-content hustle-layout-position--left">
-
-								<div class="hustle-image hustle-image-fit--contain" aria-hidden="true">
-									<img
-										src="assets/images/horizontal.png"
-										alt="Horizontal image for sample opt-in"
-									/>
-								</div>
-
-								<div class="hustle-content">
-
-									<div class="hustle-content-wrap">
-
-										<!-- Layout Title Group -->
-										<div class="hustle-group-title">
-
-											<!-- Layout Title -->
-											<span class="hustle-title">Malesuada Parturient Tellus</span>
-
-											<!-- Layout Subtitle -->
-											<span class="hustle-subtitle">Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</span>
-
-										</div>
-
-										<!-- Layout Content Group -->
-										<div class="hustle-group-content">
-
-											<p>Cras mattis consectetur purus sit amet fermentum. <strong>Curabitur blandit tempus porttitor.</strong> Etiam porta sem malesuada magna mollis euismod. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum <a href="/" target="_blank" rel="nofollow">massa justo</a> sit amet risus. Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
-
-										</div>
-
-										<a
-											href="https://premium.wpmudev.org/"
-											target="_blank"
-											rel="nofollow"
-											class="hustle-button hustle-button-cta"
-										>
-											Call To Action
-										</a>
-
-									</div>
-
-								</div>
-
-							</div>
-
-							<!-- Layout Form -->
-							<form class="hustle-layout-form">
-
-								<div class="hustle-form hustle-form-inline"></div>
-
-								<label
-									for=""
-									class="hustle-checkbox hustle-gdpr"
-								>
-									<input
-										type="checkbox"
-										id=""
-									/>
-									<span aria-hidden="true"></span>
-									<span>From time to time we would like to send you offers and information we think you would be interested in. If you do not want to receive these, please untick the box.</span>
-								</label>
-
-								<div class="hustle-error-message" style="display: none;"></div>
-
-							</form>
-
-						</div>
-
-					</div>
-
-				</div>
-
-			</div>
-
-		</script>
-
-		<!-- reCaptcha -->
+		<!-- reCaptcha
 		<script src="https://www.google.com/recaptcha/api.js"></script>
+		-->
 
 	</body>
 

@@ -7,9 +7,9 @@ Run development environment with:
 ```npm run start```
 
 # Library
-Publish latest changes on the library with:
+Generate required assets for the library and publish latest changes to `master` branch:
 ```npm run deploy:hustle```
 
 # Showcase
-Publish latest changes for demo site with:
+Generate necessary assets for demo site and publish to `gh-pages` branch:
 ```npm run deploy:demo```

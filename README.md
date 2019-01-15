@@ -1,12 +1,12 @@
 # Hustle UI Development
 
-**Install**
+### Install
 
 Get all necessary dependencies to work using:
 
 ```npm install```
 
-**Development**
+### Development
 
 Start browser-sync and compiling assets with:
 

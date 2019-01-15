@@ -52,6 +52,37 @@
 
 	}
 
+	function closeSlidein( element ) {
+
+		element.find( '.hustle-button-close' ).each( function() {
+
+			const close = $( this );
+
+			HUI.slideinClose( close );
+
+			close.on( 'click', function() {
+
+				setTimeout( function() {
+					$( '#showcase-slidein-optin' ).empty();
+					enableButton( $( '#showcase-show-optin-slidein' ) );
+				}, 1000 );
+			});
+
+		});
+	}
+
+	function optinSubmitButton( element ) {
+
+		element.find( '.hustle-button-submit' ).each( function() {
+
+			const button = $( this );
+			const delay = 1000;
+
+			HUI.buttonSubmit( button, delay );
+
+		});
+	}
+
 	function renderSlidein( moduleId ) {
 
 		const container = $( '#showcase-slidein-optin' );
@@ -79,30 +110,14 @@
 				// Render opt-in
 				slideinContent.load( randomSettings( renderOptin ), function() {
 
-					$( this ).find( '.hustle-button-close' ).each( function() {
+					HUI.inputFilled();
+					HUI.inputRequired();
+					HUI.checkboxGdpr();
 
-						const close = $( this );
+					optinSubmitButton( $( this ) );
 
-						HUI.slideinClose( close );
+					closeSlidein( $( this ) );
 
-						close.on( 'click', function() {
-
-							setTimeout( function() {
-								$( '#showcase-slidein-optin' ).empty();
-								enableButton( $( '#showcase-show-optin-slidein' ) );
-							}, 1000 );
-						});
-
-					});
-
-					$( this ).find( '.hustle-button-submit' ).each( function() {
-
-						const button = $( this );
-						const delay = 1000;
-
-						HUI.buttonSubmit( button, delay );
-
-					});
 				});
 
 				// Open slide-in

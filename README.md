@@ -2,12 +2,8 @@
 
 ### Install
 
-Get all necessary dependencies to work using:
-
-```npm install```
+Get all necessary dependencies to work using `npm install` in the command line.
 
 ### Development
 
-Start browser-sync and compiling assets with:
-
-```npm run start```
+Initialize browser-sync and start compiling assets while you work on changes using `npm run start` in the command line.

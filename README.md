@@ -1,4 +1,5 @@
-# Hustle UI Development
+# Hustle UI Library
+For internal use in [WPMU DEV](https://wpmudev.org/) plugins.
 
 ## Usage
 

@@ -79,15 +79,23 @@
 				// Render opt-in
 				slideinContent.load( randomSettings( renderOptin ), function() {
 
-					$( '.hustle-button-close' ).each( function() {
+					$( this ).find( '.hustle-button-close' ).each( function() {
 
 						const close = $( this );
 
 						HUI.slideinClose( close );
 
+						close.on( 'click', function() {
+
+							setTimeout( function() {
+								$( '#showcase-slidein-optin' ).empty();
+								enableButton( $( '#showcase-show-optin-slidein' ) );
+							}, 1000 );
+						});
+
 					});
 
-					$( '.hustle-button-submit' ).each( function() {
+					$( this ).find( '.hustle-button-submit' ).each( function() {
 
 						const button = $( this );
 						const delay = 1000;
@@ -109,8 +117,6 @@
 		let moduleId = 0;
 
 		const btnOpen = $( '#showcase-show-optin-slidein' );
-		const btnClose = $( '.hustle-button-close' );
-		const container = $( '#showcase-slidein-optin' );
 
 		btnOpen.on( 'click', function() {
 
@@ -119,15 +125,6 @@
 			renderSlidein( moduleId );
 			disableButton( $( this ) );
 
-		});
-
-		container.on( 'click', btnClose, function( e ) {
-
-			enableButton( btnOpen );
-
-            setTimeout( function() {
-				container.empty();
-            }, 1000 );
 		});
 	});
 

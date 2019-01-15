@@ -14,10 +14,11 @@
 	* `enhance/modal-box` for improvements.
 	* `fix/modal-box` for bugfixing.
 2. Make your commits and push to the new branch you created.
-3. File the new pull request agains `development` branch.
-4. Assign someone to review your code.
-5. Once the PR is approved, the assigned reviewer will merge your changes in `development` branch.
-6. Delete your branch locally and make sure it does not exist remote.
+3. Edit `README.md` file and list your changes. Push to the new branch you created.
+4. File the new pull request agains `development` branch.
+5. Assign someone to review your code.
+6. Once the PR is approved, the assigned reviewer will merge your changes in `development` branch.
+7. Delete your branch locally and make sure it does not exist remote.
 
 **Remember:** It is a good idea to create a Pull Request as soon as possible so everybody knows what's going on with the project from the PRs screen in Bitbucket.
 

@@ -72,8 +72,8 @@ hustle.watch.fonts = [
 ];
 
 hustle.watch.files = [
-	hustle.source.main + 'README.md',
-	hustle.source.main + 'CHANGELOG.md'
+	'./README.md',
+	'./CHANGELOG.md'
 ];
 
 const showcase = {

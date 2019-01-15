@@ -1,9 +1,9 @@
 # Hustle UI Development
 
-### Install
+## Usage
 
-Get all necessary dependencies to work using `npm install` in the command line.
+See our [showcase](https://wpmudev.github.io/hustle-ui/).
 
-### Development
+## Contributing
 
-Initialize browser-sync and start compiling assets while you work on changes using `npm run start` in the command line.
+Please read through our [contributing guidelines](https://github.com/wpmudev/hustle-ui/blob/development/CONTRIBUTING.md).

@@ -38,10 +38,14 @@ Requirements:
 
 ### Library Release
 
-```npm run deploy:hustle```
+```
+npm run deploy:hustle
+```
 
 ### Showcase Release
 
-```npm run deploy:demo```
+```
+npm run deploy:demo
+```
 
 **Important:** Remember to always run both commands since we need library and showcase show the same latest assets.

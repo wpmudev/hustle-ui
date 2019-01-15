@@ -71,8 +71,10 @@
 						<div class="sui-col-md-4">
 
 							<button
-								id="showcase-show-optin-popup"
+								id="show-sample-popup-optin"
 								class="showcase-button-sample"
+								data-module-type="popup"
+								data-module-mode="optin"
 							>
 								<span class="title">Pop-up Opt-in</span>
 								<span class="image"></span>
@@ -83,8 +85,10 @@
 						<div class="sui-col-md-4">
 
 							<button
-								id="showcase-show-optin-slidein"
+								id="show-sample-slidein-optin"
 								class="showcase-button-sample"
+								data-module-type="slidein"
+								data-module-mode="optin"
 							>
 								<span class="title">Slide-in Opt-in</span>
 								<span class="image"></span>
@@ -94,7 +98,7 @@
 
 						<div class="sui-col-md-4">
 
-							<button class="showcase-button-sample">
+							<button class="showcase-button-sample" disabled>
 								<span class="title">More About Opt-ins</span>
 								<span class="image"></span>
 							</button>
@@ -107,7 +111,12 @@
 
 						<div class="sui-col-md-4">
 
-							<button class="showcase-button-sample">
+							<button
+								id="show-sample-popup-info"
+								class="showcase-button-sample"
+								data-module-type="popup"
+								data-module-mode="info"
+							>
 								<span class="title">Pop-up Informational</span>
 								<span class="image"></span>
 							</button>
@@ -117,8 +126,10 @@
 						<div class="sui-col-md-4">
 
 							<button
-								id="showcase-show-info-slidein"
+								id="show-sample-slidein-info"
 								class="showcase-button-sample"
+								data-module-type="slidein"
+								data-module-mode="info"
 							>
 								<span class="title">Slide-in Informational</span>
 								<span class="image"></span>
@@ -128,7 +139,7 @@
 
 						<div class="sui-col-md-4">
 
-							<button class="showcase-button-sample">
+							<button class="showcase-button-sample" disabled>
 								<span class="title">More About Infos</span>
 								<span class="image"></span>
 							</button>
@@ -163,11 +174,11 @@
 
 			</div>
 
-			<div id="showcase-popup-optin"></div>
+			<div id="sample-popup-optin" class="showcase-sample-wrapper"></div>
+			<div id="sample-slidein-optin" class="showcase-sample-wrapper"></div>
 
-			<div id="showcase-slidein-optin"></div>
-
-			<div id="showcase-slidein-informational"></div>
+			<div id="sample-popup-info" class="showcase-sample-wrapper"></div>
+			<div id="sample-slidein-info" class="showcase-sample-wrapper"></div>
 
 		</div>
 

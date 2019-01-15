@@ -470,8 +470,10 @@
 
 ( function( $ ) {
 
+	'use strict';
+
 	// Define global HUI object if it doesn't exist.
-	if ( 'object' !== typeof HUI ) {
+	if ( 'object' !== typeof window.HUI ) {
 		window.HUI = {};
 	}
 
@@ -607,6 +609,13 @@
 
 ( function( $ ) {
 
+	'use strict';
+
+	// Define global HUI object if it doesn't exist.
+	if ( 'object' !== typeof window.HUI ) {
+		window.HUI = {};
+	}
+
 	HUI.checkboxGdpr = function() {
 
 		$( '.hustle-ui .hustle-gdpr input' ).on( 'change', function( e ) {
@@ -627,6 +636,13 @@
 }( jQuery ) );
 
 ( function( $ ) {
+
+	'use strict';
+
+	// Define global HUI object if it doesn't exist.
+	if ( 'object' !== typeof window.HUI ) {
+		window.HUI = {};
+	}
 
 	HUI.inlineLoad = function( el ) {
 
@@ -718,6 +734,13 @@
 
 ( function( $ ) {
 
+	'use strict';
+
+	// Define global HUI object if it doesn't exist.
+	if ( 'object' !== typeof window.HUI ) {
+		window.HUI = {};
+	}
+
 	HUI.inputFilled = function() {
 
 		$( '.hustle-ui .hustle-input' ).blur( function() {
@@ -738,6 +761,13 @@
 }( jQuery ) );
 
 ( function( $ ) {
+
+	'use strict';
+
+	// Define global HUI object if it doesn't exist.
+	if ( 'object' !== typeof window.HUI ) {
+		window.HUI = {};
+	}
 
 	HUI.inputRequired = function() {
 
@@ -763,6 +793,13 @@
 }( jQuery ) );
 
 ( function( $ ) {
+
+	'use strict';
+
+	// Define global HUI object if it doesn't exist.
+	if ( 'object' !== typeof window.HUI ) {
+		window.HUI = {};
+	}
 
 	HUI.popupClose = function( el ) {
 
@@ -886,6 +923,13 @@
 
 ( function( $ ) {
 
+	'use strict';
+
+	// Define global HUI object if it doesn't exist.
+	if ( 'object' !== typeof window.HUI ) {
+		window.HUI = {};
+	}
+
 	HUI.popupLoad = function( el, delay ) {
 
 		const popup = $( el );
@@ -978,6 +1022,13 @@
 
 ( function( $ ) {
 
+	'use strict';
+
+	// Define global HUI object if it doesn't exist.
+	if ( 'object' !== typeof window.HUI ) {
+		window.HUI = {};
+	}
+
 	HUI.slideinClose = function( el ) {
 
 		const close = $( el );
@@ -1029,6 +1080,13 @@
 }( jQuery ) );
 
 ( function( $ ) {
+
+	'use strict';
+
+	// Define global HUI object if it doesn't exist.
+	if ( 'object' !== typeof window.HUI ) {
+		window.HUI = {};
+	}
 
 	HUI.slideinLoad = function( el, delay ) {
 

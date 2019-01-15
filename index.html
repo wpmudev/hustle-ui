@@ -62,7 +62,7 @@
 
 				<div class="showcase-content">
 
-					<p>Hustle UI came about from our love for pixel-perfect design and is built to work with Hustle plugin in mind. We're constantly improving this library and working on making it a 100% accessible library.</p>
+					<p>Hustle UI came about from our love for pixel-perfect design and is built to work with Hustle plugin in mind. We're constantly improving this library and working on making it 100% accessible.</p>
 
 					<div id="main"></div>
 
@@ -70,7 +70,10 @@
 
 						<div class="sui-col-md-4">
 
-							<button class="showcase-button-sample">
+							<button
+								id="showcase-show-optin-popup"
+								class="showcase-button-sample"
+							>
 								<span class="title">Pop-up Opt-in</span>
 								<span class="image"></span>
 							</button>
@@ -79,7 +82,10 @@
 
 						<div class="sui-col-md-4">
 
-							<button class="showcase-button-sample">
+							<button
+								id="showcase-show-optin-slidein"
+								class="showcase-button-sample"
+							>
 								<span class="title">Slide-in Opt-in</span>
 								<span class="image"></span>
 							</button>
@@ -110,7 +116,10 @@
 
 						<div class="sui-col-md-4">
 
-							<button class="showcase-button-sample">
+							<button
+								id="showcase-show-info-slidein"
+								class="showcase-button-sample"
+							>
 								<span class="title">Slide-in Informational</span>
 								<span class="image"></span>
 							</button>
@@ -154,19 +163,24 @@
 
 			</div>
 
+			<div id="showcase-popup-optin"></div>
+
+			<div id="showcase-slidein-optin"></div>
+
+			<div id="showcase-slidein-informational"></div>
+
 		</div>
 
 		<!-- jQuery -->
 		<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 
 		<!-- Hustle UI -->
-		<script src="assets/js/template.js" type="text/html" id="sample-template"></script>
-
+		<script src="assets/js/hustle-ui.min.js"></script>
 		<script src="assets/js/showcase-ui.min.js"></script>
-		<script>console.log( HUI );</script>
 
-		<!-- reCaptcha -->
+		<!-- reCaptcha
 		<script src="https://www.google.com/recaptcha/api.js"></script>
+		-->
 
 	</body>
 

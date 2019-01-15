@@ -8,6 +8,10 @@
 		element.prop( 'disabled', true );
 	}
 
+	function enableButton( element ) {
+		element.prop( 'disabled', false );
+	}
+
 	function getSlideinSettings( element, moduleId ) {
 
 		const slidein = element;
@@ -82,6 +86,15 @@
 						HUI.slideinClose( close );
 
 					});
+
+					$( '.hustle-button-submit' ).each( function() {
+
+						const button = $( this );
+						const delay = 1000;
+
+						HUI.buttonSubmit( button, delay );
+
+					});
 				});
 
 				// Open slide-in
@@ -108,19 +121,13 @@
 
 		});
 
-		btnClose.each( function() {
+		container.on( 'click', btnClose, function( e ) {
 
-			const button = $( this );
+			enableButton( btnOpen );
 
-			HUI.slideinClose( button );
-
-			button.on( 'click', function() {
-
-				setTimeout( function() {
-					container.empty();
-				}, 1000 );
-			});
-
+            setTimeout( function() {
+				container.empty();
+            }, 1000 );
 		});
 	});
 

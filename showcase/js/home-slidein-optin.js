@@ -73,7 +73,16 @@
 				getSlideinSettings( slideinContainer, moduleId );
 
 				// Render opt-in
-				slideinContent.load( randomSettings( renderOptin ) );
+				slideinContent.load( randomSettings( renderOptin ), function() {
+
+					$( '.hustle-button-close' ).each( function() {
+
+						const close = $( this );
+
+						HUI.slideinClose( close );
+
+					});
+				});
 
 				// Open slide-in
 				HUI.slideinLoad( slideinContainer, 0 );

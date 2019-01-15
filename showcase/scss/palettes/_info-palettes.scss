@@ -43,17 +43,39 @@
 
 		.hustle-info {
 
+			&.hustle-info--stacked {
+
+				.hustle-layout {
+
+					// ELEMENT: Title color
+					.hustle-title {
+						color: map-get($title-color--alt, $palette);
+					}
+
+					// ELEMENT: Subtitle color
+					.hustle-subtitle {
+						color: map-get($subtitle-color--alt, $palette);
+					}
+				}
+			}
+
+			&:not(.hustle-info--stacked) {
+
+				.hustle-layout {
+
+					// ELEMENT: Title color
+					.hustle-title {
+						color: map-get($title-color, $palette);
+					}
+
+					// ELEMENT: Subtitle color
+					.hustle-subtitle {
+						color: map-get($subtitle-color, $palette);
+					}
+				}
+			}
+
 			.hustle-layout {
-
-				// ELEMENT: Title color
-				.hustle-title {
-					color: map-get($title-color, $palette);
-				}
-
-				// ELEMENT: Subtitle color
-				.hustle-subtitle {
-					color: map-get($subtitle-color, $palette);
-				}
 
 				.hustle-group-content {
 

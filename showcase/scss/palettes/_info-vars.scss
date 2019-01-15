@@ -41,6 +41,16 @@ $title-color: (
 	midnight:   #FFFFFF,
 );
 
+// Alternative title color
+$title-color--alt: (
+	gray-slate: #38454E,
+	coffee:     #46403B,
+	ectoplasm:  #403159,
+	blue:       #176387,
+	sunrise:    #B03E34,
+	midnight:   #25282B,
+);
+
 // Subtitle color
 $subtitle-color: (
 	gray-slate: #FFFFFF,
@@ -49,6 +59,16 @@ $subtitle-color: (
 	blue:       #FFFFFF,
 	sunrise:    #FFFFFF,
 	midnight:   #FFFFFF,
+);
+
+// Alternative subtitle color
+$subtitle-color--alt: (
+	gray-slate: #5D7380,
+	coffee:     #59524B,
+	ectoplasm:  #513E70,
+	blue:       #78B5D1,
+	sunrise:    #CB4B40,
+	midnight:   #363B3F,
 );
 
 // Content color

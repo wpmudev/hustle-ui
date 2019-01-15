@@ -48,4 +48,4 @@ npm run deploy:hustle
 npm run deploy:demo
 ```
 
-**Important:** Remember to always run both commands since we need library and showcase show the same latest assets.
+**Important:** Remember to always run both commands since we need [showcase](https://github.com/wpmudev/hustle-ui/tree/gh-pages) synced with the same latest assets from the [library](https://github.com/wpmudev/hustle-ui/tree/master).

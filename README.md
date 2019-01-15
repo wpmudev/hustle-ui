@@ -1,15 +1,25 @@
-# Install
-Install necessary dependencies with:
+# Hustle UI Development
+
+## Install
+
+Get all necessary dependencies to work using:
+
 ```npm install```
 
-# Development
-Run development environment with:
+## Development
+
+Start browser-sync and compiling assets with:
+
 ```npm run start```
 
-# Library
+## Library
+
 Generate required assets for the library and publish latest changes to `master` branch:
+
 ```npm run deploy:hustle```
 
-# Showcase
+## Showcase
+
 Generate necessary assets for demo site and publish to `gh-pages` branch:
+
 ```npm run deploy:demo```

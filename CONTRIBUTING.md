@@ -4,7 +4,7 @@
 
 1. Do not commit on `master` or `development` or `gh-pages` branches.
 2. Branch `development` is where our base code resides and will allow us to beta test.
-3. Branch `master` is where we can find *Hustle UI Library* compiled assets. You should never push directly to this branch.
+3. Branch `master` is where we can find **Hustle UI Library** compiled assets. You should never push directly to this branch.
 4. Branch `gh-pages` contains only public files that handle demo site. You should never push directly to this branch.
 
 ## Workflow
@@ -19,7 +19,7 @@
 5. Once the PR is approved, the assigned reviewer will merge your changes in `development` branch.
 6. Delete your branch locally and make sure it does not exist remote.
 
-*Remember:* It is a good idea to create a Pull Request as soon as possible so everybody knows what's going on with the project from the PRs screen in Bitbucket.
+**Remember:** It is a good idea to create a Pull Request as soon as possible so everybody knows what's going on with the project from the PRs screen in Bitbucket.
 
 ## Command Line
 
@@ -34,7 +34,7 @@ Requirements:
 * Must be a developer member of the [WPMU DEV Organization](https://github.com/orgs/wpmudev/people).
 * Must be on `development` branch with a clean working directory.
 
-*Note:* The following commands handle all aspects of releasing the next version. Once ran, they will build all necessary files that corresponds to the semver version, commit them and publish to the correct branch.
+**Note:** The following commands handle all aspects of releasing the next version. Once ran, they will build all necessary files that corresponds to the semver version, commit them and publish to the correct branch.
 
 ### Library Release
 
@@ -44,4 +44,4 @@ Requirements:
 
 ```npm run deploy:demo```
 
-*Important:* Remember to always run both commands since we need library and showcase show the same latest assets.
+**Important:** Remember to always run both commands since we need library and showcase show the same latest assets.

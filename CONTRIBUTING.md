@@ -21,6 +21,12 @@
 
 *Remember:* It is a good idea to create a Pull Request as soon as possible so everybody knows what's going on with the project from the PRs screen in Bitbucket.
 
+## Command Line
+
+1. Install node. It's recommended to install `nvm` to switch between node versions.
+2. Execute `npm install` in root project folder to install all necessary packages.
+3. Execute `npm run start` to watch css and js changes. The demo file will then automatically be served up by [Browsersync](https://browsersync.io/). All changes made will automatically be watched and the page live reloaded when changes are made.
+
 ## Updating Hustle UI Library
 
 Requirements:

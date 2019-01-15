@@ -169,10 +169,10 @@
 		});
 
 		// Intro animation
-		getModule.attr( 'data-intro', randomSettings( moduleAnimationIn ) );
+		getModule.attr( 'data-intro', moduleAnimationIn );
 
 		// Exit animation
-		getModule.attr( 'data-outro', randomSettings( moduleAnimationOut ) );
+		getModule.attr( 'data-outro', moduleAnimationOut );
 
 		// Module palette
 		getModule.removeClass ( function( index, className ) {
@@ -185,6 +185,7 @@
 		$( '.hustle-button-close' ).each( function() {
 
 			const close = $( this );
+			const mask = close.find( '.hustle-popup-mask' );
 
 			HUI.popupClose( close );
 
@@ -221,8 +222,39 @@
 				}, delay );
 			});
 
-		});
+			mask.on( 'click', function() {
 
+				const popup = $( this ).closest( '.hustle-popup' );
+				const checkOutro = popup.data( 'outro' );
+
+				let delay = 1000;
+				let animateOut = 'no_animation';
+
+				if ( '' !== checkOutro ) {
+					animateOut = checkOutro;
+				}
+
+				if ( 'no_animation' === animateOut ) {
+					delay = 0;
+				}
+
+				if ( 'fadeOut' === animateOut ) {
+					delay = 305;
+				}
+
+				if ( 'newspaperOut' === animateOut ) {
+					delay = 505;
+				}
+
+				if ( 'bounceOut' === animateOut ) {
+					delay = 755;
+				}
+
+				setTimeout( function() {
+					resetOptinPopup();
+				}, delay );
+			});
+		});
 	};
 
 	$( window ).on( 'load', function() {

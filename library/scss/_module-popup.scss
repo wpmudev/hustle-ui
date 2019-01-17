@@ -23,8 +23,8 @@
 			position: relative;
 			margin: auto;
 
-			.hustle-optin,
-			.hustle-informational {
+			.hustle-info,
+			.hustle-optin {
 
 				@include media(max-width, sm) {
 					padding-top: $hui-gutter-sm;

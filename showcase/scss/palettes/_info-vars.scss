@@ -201,84 +201,11 @@ $cta-label-active: (
 );
 
 // ========================================|
-// 4. GDPR CHECKBOX                        |
+// 4. ADDITIONAL SETTINGS                  |
 // ========================================|
 
 // ****************************************
 // 4.1. DEFAULT
-
-// Background color
-$checkbox-background-static: (
-	gray-slate: #FFFFFF,
-	coffee:     #FFFFFF,
-	ectoplasm:  #FFFFFF,
-	blue:       #FFFFFF,
-	sunrise:    #FFFFFF,
-	midnight:   #FFFFFF,
-);
-
-// Label color
-$checkbox-label: (
-	gray-slate: #FFFFFF,
-	coffee:     #FFFFFF,
-	ectoplasm:  #FFFFFF,
-	blue:       #FFFFFF,
-	sunrise:    #FFFFFF,
-	midnight:   #FFFFFF,
-);
-
-// ****************************************
-// 4.2. CHECKED
-
-// Background color
-$checkbox-background-checked: (
-	gray-slate: #FFFFFF,
-	coffee:     #FFFFFF,
-	ectoplasm:  #FFFFFF,
-	blue:       #FFFFFF,
-	sunrise:    #FFFFFF,
-	midnight:   #FFFFFF,
-);
-
-// Icon color
-$checkbox-icon: (
-	gray-slate: #38C5B5,
-	coffee:     #C6A685,
-	ectoplasm:  #513E70,
-	blue:       #78B5D1,
-	sunrise:    #CBB000,
-	midnight:   #DD4F3D,
-);
-
-// ****************************************
-// 4.3. ERROR
-
-// Background color
-$checkbox-background-error: (
-	gray-slate: #FFFFFF,
-	coffee:     #FFFFFF,
-	ectoplasm:  #FFFFFF,
-	blue:       #FFFFFF,
-	sunrise:    #FFFFFF,
-	midnight:   #FFFFFF,
-);
-
-// Border color
-$checkbox-border-error: (
-	gray-slate: #D43858,
-	coffee:     #D43858,
-	ectoplasm:  #D43858,
-	blue:       #D43858,
-	sunrise:    #333333,
-	midnight:   #DD4F3D,
-);
-
-// ========================================|
-// 5. ADDITIONAL SETTINGS                  |
-// ========================================|
-
-// ****************************************
-// 5.1. DEFAULT
 
 // Pop-up mask
 $popup-mask: (

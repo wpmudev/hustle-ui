@@ -205,6 +205,14 @@
 						$( '#show-sample-' + moduleType + '-' + moduleMode ).prop( 'disabled', false );
 					}, delay );
 				});
+
+				close.closest( '.hustle-ui' ).find( '.hustle-popup-mask' ).on( 'click', function() {
+
+					setTimeout( function() {
+						$( '#sample-' + moduleType + '-' + moduleMode ).empty();
+						$( '#show-sample-' + moduleType + '-' + moduleMode ).prop( 'disabled', false );
+					}, delay );
+				});
 			});
 		}
 

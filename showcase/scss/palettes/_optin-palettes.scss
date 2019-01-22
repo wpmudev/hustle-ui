@@ -266,9 +266,6 @@
 					}
 
 					span[aria-hidden] {
-						border-width: 2px;
-						border-style: solid;
-						border-color: transparent;
 						background-color: map-get($checkbox-background-static, $palette);
 					}
 

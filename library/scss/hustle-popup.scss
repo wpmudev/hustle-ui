@@ -1,4 +1,10 @@
-@include hustle-class() {
+@import "variables";
+@import "animations";
+@import "mixin-breakpoints";
+@import "mixin-browsers";
+@import "mixin-opacity";
+
+.hustle-ui {
 
 	&.hustle-popup {
 		width: 100%;
@@ -16,6 +22,8 @@
 			height: 100%;
 			display: block;
 			position: fixed;
+			top: 0;
+			left: 0;
 		}
 	
 		.hustle-popup-content {
@@ -438,16 +446,6 @@
 					animation-name: zoomOutRight;
 				}
 			}
-
-			@include media(max-width, sm) {
-				padding-right: $hui-gutter-sm;
-				padding-left: $hui-gutter-sm;
-			}
-
-			@include media(min-width, sm) {
-				padding-right: $hui-gutter;
-				padding-left: $hui-gutter;
-			}
 		}
 
 		&.hustle-show {
@@ -459,6 +457,20 @@
 			.hustle-popup-mask {
 				cursor: pointer;
 			}
+		}
+
+		@include support(ie) {
+			align-items: baseline;
+		}
+
+		@include media(max-width, sm) {
+			padding-right: $hui-gutter-sm;
+			padding-left: $hui-gutter-sm;
+		}
+
+		@include media(min-width, sm) {
+			padding-right: $hui-gutter;
+			padding-left: $hui-gutter;
 		}
 	}
 }

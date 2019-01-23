@@ -1,4 +1,9 @@
-@include hustle-class() {
+@import "variables";
+@import "animations";
+@import "mixin-breakpoints";
+@import "mixin-opacity";
+
+.hustle-ui {
 
 	&.hustle-inline {
 		@include opacity(0);

@@ -1,4 +1,4 @@
-@include hustle-class() {
+@include class-global(both) {
 
 	.hustle-checkbox {
 		display: flex;
@@ -64,6 +64,14 @@
 		&:last-child {
 			margin: 0;
 		}
+
+		&.hustle-gdpr {
+			display: inline-flex;
+
+			&:not(:first-child) {
+				margin-top: $hui-gutter-sm;
+			}
+		}
 	}
 
 	.hustle-optin:not(.hustle-size--small) {
@@ -74,6 +82,16 @@
 
 				@include media(min-width, sm) {
 					margin-right: 0;
+				}
+			}
+
+			&.hustle-gdpr {
+
+				&:not(:first-child) {
+
+					@include media(min-width, sm) {
+						margin-top: $hui-gutter;
+					}
 				}
 			}
 

@@ -33,3 +33,38 @@
 		}
 	}
 }
+
+@mixin class-global($module_mode: null) {
+
+	.hustle-ui {
+
+		&[class*="hustle-palette-"] {
+
+			@if $module_mode == both {
+
+				.hustle-info,
+				.hustle-optin {
+					@content;
+				}
+			}
+
+			@else if $module_mode == info {
+
+				.hustle-#{$module_mode} {
+					@content;
+				}
+			}
+
+			@else if $module_mode == optin {
+
+				.hustle-#{$module_mode} {
+					@content;
+				}
+			}
+
+			@else {
+				@content;
+			}
+		}
+	}
+}

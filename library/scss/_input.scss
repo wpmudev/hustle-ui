@@ -12,6 +12,7 @@
 			height: $hui-fields-height;
 			display: block;
 			padding: #{($hui-fields-height - $hui-input--line-height) / 2} $hui-input--padding;
+			border: 0;
 			border-radius: 0;
 			background-image: unset;
 			transition: $hui-transition--ease;

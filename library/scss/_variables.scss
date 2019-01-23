@@ -81,25 +81,25 @@ $icons: (
 
 // =============================================
 // 4. CLOSE BUTTON
-$hui-close--size: 30px;
-$hui-close--icon: 12px;
+$hui-close--size: 30px !default;
+$hui-close--icon: 12px !default;
 
 // =============================================
 // 6. FORM INPUT
 
-$hui-input--padding: 10px;
+$hui-input--padding: 10px     !default;
 
-$hui-input--icon-width: 20px;
-$hui-input--icon-size:  12px;
+$hui-input--icon-width: 20px  !default;
+$hui-input--icon-size:  12px  !default;
 
-$hui-input--font-size: 13px;
-$hui-input--line-height: 18px;
+$hui-input--font-size: 13px   !default;
+$hui-input--line-height: 18px !default;
 
 // =============================================
 // 8. RADIO & CHECKBOX
-$hui-checkbox--size: 20px;
-$hui-checkbox--icon-size: 10px;
-$hui-checkbox--border-width: 2px;
-$hui-checkbox--border-style: solid;
-$hui-checkbox--font-size: 12px;
-$hui-checkbox--line-height: $hui-checkbox--size;
+$hui-checkbox--size: 20px                       !default;
+$hui-checkbox--icon-size: 10px                  !default;
+$hui-checkbox--border-width: 2px                !default;
+$hui-checkbox--border-style: solid              !default;
+$hui-checkbox--font-size: 12px                  !default;
+$hui-checkbox--line-height: $hui-checkbox--size !default;

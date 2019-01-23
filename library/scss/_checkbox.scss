@@ -1,4 +1,4 @@
-@include class-global(both) {
+@include class-global() {
 
 	.hustle-checkbox {
 		display: flex;
@@ -67,14 +67,21 @@
 
 		&.hustle-gdpr {
 			display: inline-flex;
-
-			&:not(:first-child) {
-				margin-top: $hui-gutter-sm;
-			}
+			margin-top: $hui-gutter-sm;
 		}
 	}
 
 	.hustle-optin:not(.hustle-size--small) {
+
+		.hustle-checkbox {
+
+			&.hustle-gdpr {
+
+				@include media(min-width, sm) {
+					margin-top: $hui-gutter;
+				}
+			}
+		}
 
 		.hustle-checkbox-inline {
 
@@ -82,16 +89,6 @@
 
 				@include media(min-width, sm) {
 					margin-right: 0;
-				}
-			}
-
-			&.hustle-gdpr {
-
-				&:not(:first-child) {
-
-					@include media(min-width, sm) {
-						margin-top: $hui-gutter;
-					}
 				}
 			}
 

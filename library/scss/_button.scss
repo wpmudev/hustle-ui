@@ -8,6 +8,8 @@
 		min-height: $hui-fields-height;
 		position: relative;
 		margin: 0;
+		border: 0;
+		border-radius: 0;
 		padding: #{($hui-fields-height - 18px) / 2} 16px;
 		cursor: pointer;
 		font: bold 13px/18px $hui-font;

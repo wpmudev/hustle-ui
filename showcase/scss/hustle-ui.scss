@@ -3,8 +3,15 @@
 
 $hui-font-path: '../fonts/';
 
-// Import original shared-ui styles.
+// Load icons font
 @import "../../library/scss/hustle-icons";
+
+// Load modules by type
+@import "../../library/scss/hustle-popup";
+@import "../../library/scss/hustle-slidein";
+@import "../../library/scss/hustle-inline";
+
+// Load modules by mode
 @import "../../library/scss/hustle-optin";
 @import "../../library/scss/hustle-info";
 @import "../../library/scss/hustle-social";

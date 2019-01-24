@@ -30,8 +30,9 @@
 					margin: 0;
 					padding: #{($hui-fields-height - $hui-input--line-height) / 2} 0;
 					font: 400 #{$hui-input--font-size}/#{$hui-input--line-height} $hui-font;
+					letter-spacing: 0;
 
-					.select2-selection__placeholder {
+					&, .select2-selection__placeholder {
 						@extend %hui-text-truncate;
 					}
 

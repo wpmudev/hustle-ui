@@ -38,15 +38,16 @@
 			text-align: center;
 			transition: $hui-transition--ease;
 
-			@include icon(before, check) {
-				width: 100%;
+			&:before {
+				content: " ";
+				width: 10px;
+				height: 10px;
 				@include opacity(0);
 				display: block;
 				position: absolute;
 				top: 50%;
-				left: 0;
-				color: inherit;
-				transform: translateY(-50%);
+				left: 50%;
+				transform: translateY(-50%, -50%);
 			}
 		}
 

@@ -12,19 +12,19 @@
 				height: $hui-image-sm;
 				overflow: hidden;
 			}
-	
+
 			&.hustle-image-fit--fill {
 				@extend %hui-image-fit-fill;
 			}
-	
+
 			&.hustle-image-fit--contain {
 				@extend %hui-image-fit-contain;
 			}
-	
+
 			&.hustle-image-fit--cover {
 				@extend %hui-image-fit-cover;
 			}
-	
+
 			&.hustle-image-fit--none {
 				@extend %hui-image-fit-full;
 			}
@@ -65,6 +65,7 @@
 					}
 
 					@include media(min-width, sm) {
+						max-width: $hui-image;
 						display: flex;
 						flex-direction: column;
 						justify-content: center;

@@ -70,6 +70,7 @@
 				.hustle-layout-form {
 
 					@include media(min-width, sm) {
+						max-width: $hui-image;
 						display: flex;
 						flex: 0 0 $hui-image;
 						flex-direction: column;

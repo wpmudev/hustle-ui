@@ -36,7 +36,8 @@
 				dir: dir,
 				language: language,
 				placeholder: placeholder,
-				dropdownCssClass: 'hustle-module-' + moduleId + ' hustle-dropdown'
+				dropdownCssClass: 'hustle-module-' + moduleId + ' hustle-dropdown',
+				minimumResultsForSearch: Infinity
 			});
 		});
 	};

@@ -45,7 +45,9 @@
 			"es6": true
 		}
 	},
-	"eslintIgnore": [],
+	"eslintIgnore": [
+		"library/js/select2.full.js"
+	],
 	"scripts": {
 		"start": "gulp development",
 		"hustle": "gulp hustle:build",

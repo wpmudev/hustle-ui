@@ -258,6 +258,7 @@
 						HUI.inputFilled();
 						HUI.inputRequired();
 						HUI.checkboxGdpr();
+						HUI.huiSelect2();
 
 						$( this ).find( '.hustle-button-submit' ).each( function() {
 

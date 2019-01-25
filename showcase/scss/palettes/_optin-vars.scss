@@ -621,3 +621,66 @@ $nsa-color-active: (
 	sunrise:    #9A8603,
 	midnight:   #C63D2B,
 );
+
+// ========================================|
+// 10. CALENDAR                            |
+// ========================================|
+
+// ****************************************
+// 10.1. DEFAULT
+
+// Container background
+$calendar-container: (
+	gray-slate: #ADB5B7,
+	coffee:     #CCC2B7,
+	ectoplasm:  #ADB5B7,
+	blue:       #FFFFFF,
+	sunrise:    #F1E6AD,
+	midnight:   #ADB5B7,
+);
+
+// Table head color
+$calendar-thead: (
+	gray-slate: #ADB5B7,
+	coffee:     #CCC2B7,
+	ectoplasm:  #ADB5B7,
+	blue:       #FFFFFF,
+	sunrise:    #333333,
+	midnight:   #ADB5B7,
+);
+
+// Table date color
+$calendar-date: (
+	gray-slate: #ADB5B7,
+	coffee:     #CCC2B7,
+	ectoplasm:  #ADB5B7,
+	blue:       #FFFFFF,
+	sunrise:    #CB4B40,
+	midnight:   #ADB5B7,
+);
+
+// ****************************************
+// 10.2. HOVER
+
+// Table date color
+$calendar-date-hover: (
+	gray-slate: #ADB5B7,
+	coffee:     #CCC2B7,
+	ectoplasm:  #ADB5B7,
+	blue:       #FFFFFF,
+	sunrise:    #B03E34,
+	midnight:   #ADB5B7,
+);
+
+// ****************************************
+// 10.3. HOVER
+
+// Table date color
+$calendar-date-active: (
+	gray-slate: #ADB5B7,
+	coffee:     #CCC2B7,
+	ectoplasm:  #ADB5B7,
+	blue:       #FFFFFF,
+	sunrise:    #B03E34,
+	midnight:   #ADB5B7,
+);

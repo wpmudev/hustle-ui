@@ -423,4 +423,39 @@
 			}
 		}
 	}
+
+	// ========================================|
+	// 10. CALENDAR                            |
+	// ========================================|
+	.hustle-calendar {
+
+		&.hustle-palette--#{$palette} {
+
+			&:before {
+				background-color: map-get($calendar-container, $palette);
+			}
+
+			.ui-datepicker-calendar {
+
+				thead th {
+					color: map-get($calendar-thead, $palette);
+				}
+
+				tbody td {
+
+					a {
+						color: map-get($calendar-date, $palette);
+
+						&:hover {
+							color: map-get($calendar-date-hover, $palette);
+						}
+
+						&:active {
+							color: map-get($calendar-date-active, $palette);
+						}
+					}
+				}
+			}
+		}
+	}
 }

@@ -90,8 +90,13 @@
 				isRTL: ( true === element.data( 'rtl-support' ) ) ? true : false,
 				showButtonPanel: true,
 				beforeShow: function( input, inst ) {
+
 					( inst.dpDiv ).addClass( 'hustle-calendar' );
 					( inst.dpDiv ).addClass( 'hustle-module-' + container.data( 'id' ) );
+
+					if ( '' !== container.data( 'calendar-palette' ) ) {
+						( inst.dpDiv ).addClass( 'hustle-palette--' + container.data( 'calendar-palette' ) );
+					}
 				}
 			});
 		});

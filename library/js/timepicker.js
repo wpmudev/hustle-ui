@@ -21,7 +21,7 @@
 				interval: 30,
 				minTime: '0',
 				maxTime: '11:59pm',
-				defaultTime: null,
+				defaultTime: ( '' !== element.data( 'time-default' ) ) ? element.data( 'time-default' ) : null,
 				startTime: '00:00',
 				dynamic: false,
 				dropdown: true,

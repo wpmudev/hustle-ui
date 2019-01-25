@@ -260,7 +260,7 @@
 						HUI.inputRequired();
 						HUI.checkboxGdpr();
 						HUI.select2();
-						HUI.timepicker();
+						HUI.timepicker( '.hustle-time' );
 						HUI.datepicker( '.hustle-date' );
 
 						$( this ).find( '.hustle-button-submit' ).each( function() {

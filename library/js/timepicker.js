@@ -8,17 +8,19 @@
 		window.HUI = {};
 	}
 
-	HUI.timepicker = function() {
+	HUI.timepicker = function( el ) {
+
+		const select = $( el );
 
 		$( '.hustle-ui' ).each( function() {
 
 			const container = $( this );
 			const moduleId = container.data( 'id' );
-			const element  = container.find( '.hustle-time' );
+			const element  = container.find( select );
 
 			element.timepicker({
-				timeFormat: 'h:mm p',
-				interval: 30,
+				timeFormat: ( '' !== element.data( 'time-format' ) ) ? element.data( 'time-format' ) : 'h:mm p',
+				interval: ( '' !== element.data( 'time-interval' ) ) ? element.data( 'time-interval' ) : 60,
 				minTime: '0',
 				maxTime: '11:59pm',
 				defaultTime: ( '' !== element.data( 'time-default' ) ) ? element.data( 'time-default' ) : null,
@@ -30,6 +32,6 @@
 		});
 	};
 
-	HUI.timepicker();
+	HUI.timepicker( '.hustle-time' );
 
 }( jQuery ) );

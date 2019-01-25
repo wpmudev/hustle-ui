@@ -259,6 +259,7 @@
 						HUI.inputRequired();
 						HUI.checkboxGdpr();
 						HUI.select2();
+						HUI.datepicker( '.hustle-date' );
 
 						$( this ).find( '.hustle-button-submit' ).each( function() {
 

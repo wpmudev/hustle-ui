@@ -46,7 +46,8 @@
 		}
 	},
 	"eslintIgnore": [
-		"library/js/select2.full.js"
+		"library/js/select2.full.js",
+		"library/js/timepicker.full.js"
 	],
 	"scripts": {
 		"start": "gulp development",

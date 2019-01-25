@@ -7606,7 +7606,7 @@
 		window.HUI = {};
 	}
 
-	HUI.huiSelect2 = function() {
+	HUI.select2 = function() {
 
 		$( '.hustle-ui' ).each( function() {
 
@@ -7640,7 +7640,7 @@
 		});
 	};
 
-	HUI.huiSelect2();
+	HUI.select2();
 
 }( jQuery ) );
 

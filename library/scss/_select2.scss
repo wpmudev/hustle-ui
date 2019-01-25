@@ -94,9 +94,10 @@
 				padding: #{$hui-input--padding / 2} 0;
 
 				.select2-results__option {
-					padding: #{$hui-input--padding / 2} $hui-input--padding;
+					padding: $hui-input--padding;
 					font: 400 #{$hui-input--font-size}/#{$hui-input--line-height} $hui-font;
 					letter-spacing: 0;
+					transition: $hui-transition--ease;
 				}
 			}
 		}

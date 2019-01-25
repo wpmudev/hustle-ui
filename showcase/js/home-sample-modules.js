@@ -112,7 +112,8 @@
 			popup.attr( 'data-outro', getRandom( moduleAnimationOut ) );
 
 			// Module palette
-			popup.addClass( 'hustle-palette--' + getRandom( modulePalette ) );
+			popup.attr( 'data-calendar-palette', getRandom( modulePalette ) );
+			popup.addClass( 'hustle-palette--' + popup.data( 'calendar-palette' ) );
 
 			// Module mask
 			popup.find( '.hustle-popup-mask' ).addClass( 'hustle-' + moduleMode + '-mask' );

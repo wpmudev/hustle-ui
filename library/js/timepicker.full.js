@@ -374,6 +374,9 @@
                 // idea from https://prototype.lighthouseapp.com/projects/8887/tickets/248-results-popup-from-ajaxautocompleter-disappear-when-user-clicks-on-scrollbars-in-ie6ie7
                 i.element.data('timepicker-event-namespace', Math.random());
 
+				// Append the timepicker within a relative div closer to the input.
+				widget.container.insertAfter( i.element.closest( '.hustle-layout' ) )
+
                 $(document).bind('click.timepicker-' + i.element.data('timepicker-event-namespace'), function(event) {
                     if (i.element.get(0) === event.target) {
                         i.element.data('timepicker-user-clicked-outside', false);
@@ -440,10 +443,9 @@
                 }
 
                 var containerDecorationHeight = widget.container.outerHeight() - widget.container.height(),
-                    zindex = i.options.zindex ? i.options.zindex : i.element.offsetParent().css( 'z-index' ),
-					elementOffset = i.element.offset();
-
-				console.log( i.element.offset().top );
+					zindex = i.options.zindex ? i.options.zindex : i.element.offsetParent().css( 'z-index' ),
+					$field = i.element.closest( '.hustle-field' ),
+					elementOffset = $field.position(); //i.element.offset();
 
                 // position the container right below the element, or as close to as possible.
                 widget.container.css( {
@@ -458,14 +460,15 @@
 
                 // now we need to calculate the element offset and position the container again.
                 // If the browser added scrollbars, the container's original position is not aligned
-                // with the element's final position. This step fixes that problem.
+				// with the element's final position. This step fixes that problem.
+				elementOffset = $field.position();
                 widget.container.css( {
                     width: i.element.outerWidth(),
 					height: widget.ui.outerHeight() + containerDecorationHeight,
 					cursor: 'default',
-					position: 'fixed',
+					position: 'absolute',
                     zIndex: 999999,
-                    left: i.element.offset().left
+                    left: elementOffset.left
                 } );
 
                 var calculatedWidth = widget.container.width() - ( widget.ui.outerWidth() - widget.ui.width() );

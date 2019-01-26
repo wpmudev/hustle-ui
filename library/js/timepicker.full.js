@@ -467,13 +467,6 @@
 					left: elementOffset.left
 				} );
 
-				var calculatedWidth = widget.container.width() - ( widget.ui.outerWidth() - widget.ui.width() );
-
-				// hardcode ui, viewport and item's width. I couldn't get it to work using CSS only
-				widget.ui.css( { width: calculatedWidth } );
-				widget.viewport.css( { width: calculatedWidth } );
-				i.items.css( { width: calculatedWidth } );
-
 				// XXX: what's this line doing here?
 				widget.instance = i;
 

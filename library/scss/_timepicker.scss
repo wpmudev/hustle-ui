@@ -27,15 +27,18 @@
 	}
 
 	&.ui-timepicker-standard {
-		// overwrites .ui-widget-content
-		color: #222;
 
 		a {
-			border: 1px solid transparent;
 			color: #222;
 			display: block;
-			padding: 0.2em 0.4em;
-			text-decoration: none;
+			margin: 0;
+			padding: #{$hui-gutter-sm / 2} $hui-gutter-sm;
+			border: 0;
+
+			&,
+			&:visited {
+				text-decoration: none;
+			}
 		}
 
 		.ui-state-hover {

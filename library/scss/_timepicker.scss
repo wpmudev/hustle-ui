@@ -1,20 +1,18 @@
 .ui-timepicker-container {
 	overflow: hidden;
-	position: absolute;
 	margin: 0;
 	padding: 2px 0;
 	box-sizing: border-box;
 	font: 400 13px/20px $hui-font;
-	letter-spacing: 0;
 
 	.ui-timepicker {
 		height: 205px;
 		display: block;
 		margin: 0;
-		padding: 0 1px;
+		padding: 0;
 		box-sizing: content-box;
 		text-align: center;
-		list-style: none outside none;
+		list-style: none;
 
 		.ui-timepicker-viewport {
 			height: 205px;
@@ -28,6 +26,7 @@
 	}
 
 	&.ui-timepicker-standard {
+		// overwrites .ui-widget-content
 		color: #222;
 
 		a {

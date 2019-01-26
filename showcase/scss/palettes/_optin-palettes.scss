@@ -474,13 +474,16 @@
 					color: #333333;
 				}
 
-				&:hover {
+				&:hover,
+				&:active,
+				&.ui-state-hover {
 					color: #333333;
+					background-color: #ADB5B7;
 				}
 
-				&:active,
 				&.ui-active-item {
-					color: #333333;
+					color: #FFFFFF;
+					background-color: #38C5B5;
 				}
 			}
 		}

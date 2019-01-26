@@ -305,15 +305,13 @@
                     }
                 }
 
-                widget.active = item.eq(0).children('a').addClass('ui-state-hover')
-                                                        .attr('id', 'ui-active-item')
-                                          .end();
+                widget.active = item.eq(0).children('a').addClass('ui-state-hover ui-active-item').end();
             },
 
             deactivate: function() {
                 var widget = this;
                 if (!widget.active) { return; }
-                widget.active.children('a').removeClass('ui-state-hover').removeAttr('id');
+                widget.active.children('a').removeClass('ui-state-hover ui-active-item');
                 widget.active = null;
             },
 

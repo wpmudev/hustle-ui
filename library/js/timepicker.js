@@ -26,8 +26,8 @@
 				defaultTime: ( '' !== element.data( 'time-default' ) ) ? element.data( 'time-default' ) : null,
 				startTime: '00:00',
 				dynamic: false,
-				dropdown: true,
-				scrollbar: true
+				dropdown: ( true === element.data( 'time-dropdown' ) ) ? true : false,
+				scrollbar: ( true === element.data( 'time-dropdown' ) ) ? true : false
 			});
 		});
 	};

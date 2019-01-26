@@ -39,11 +39,11 @@
         $.TimePicker = function() {
             var widget = this;
 
-            widget.container = $('.ui-timepicker-container');
+            widget.container = $('.hustle-timepicker');
             widget.ui = widget.container.find('.ui-timepicker');
 
             if (widget.container.length === 0) {
-                widget.container = $('<div></div>').addClass('ui-timepicker-container')
+                widget.container = $('<div></div>').addClass('hustle-timepicker')
                                     .addClass('ui-timepicker-hidden ui-helper-hidden')
                                     .appendTo('body')
                                     .hide();

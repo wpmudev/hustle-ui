@@ -71,9 +71,7 @@
 
         $.TimePicker.count = 0;
         $.TimePicker.instance = function() {
-            if (!$.TimePicker._instance) {
-                $.TimePicker._instance = new $.TimePicker();
-            }
+            $.TimePicker._instance = new $.TimePicker();
             return $.TimePicker._instance;
         };
 

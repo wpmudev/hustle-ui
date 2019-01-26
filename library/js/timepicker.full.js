@@ -44,12 +44,11 @@
 
 			if (widget.container.length === 0) {
 				widget.container = $('<div></div>').addClass('hustle-timepicker')
-									.addClass('ui-timepicker-hidden ui-helper-hidden')
 									.appendTo('body')
-									.hide();
+									.hide()
+									.removeClass( 'hustle-show' );
 				widget.ui = $( '<div></div>' ).addClass('ui-timepicker')
 									.addClass('ui-widget ui-widget-content ui-menu')
-									.addClass('ui-corner-all')
 									.appendTo(widget.container);
 				widget.viewport = $('<ul></ul>').addClass( 'ui-timepicker-viewport' )
 									.appendTo( widget.ui );
@@ -118,7 +117,7 @@
 				while(time < end) {
 					if (widget._isValidTime(i, time)) {
 						item = $('<li>').addClass('ui-menu-item').appendTo(ul);
-						$('<a>').addClass('ui-corner-all').text($.fn.timepicker.formatTime(i.options.timeFormat, time)).appendTo(item);
+						$('<a>').text($.fn.timepicker.formatTime(i.options.timeFormat, time)).appendTo(item);
 						item.data('time-value', time);
 					}
 					time = new Date(time.getTime() + i.options.interval * 60 * 1000);
@@ -303,13 +302,13 @@
 					}
 				}
 
-				widget.active = item.eq(0).children('a').addClass('ui-state-hover ui-active-item').end();
+				//widget.active = item.eq(0).children('a').addClass('ui-state-hover').end();
 			},
 
 			deactivate: function() {
 				var widget = this;
 				if (!widget.active) { return; }
-				widget.active.children('a').removeClass('ui-state-hover ui-active-item');
+				//widget.active.children('a').removeClass('ui-state-hover');
 				widget.active = null;
 			},
 
@@ -415,7 +414,7 @@
 				i.rebuild = false;
 
 				// theme
-				widget.container.removeClass('ui-helper-hidden ui-timepicker-hidden ui-timepicker-standard ui-timepicker-corners').show();
+				widget.container.removeClass('ui-timepicker-standard ui-timepicker-corners').show().addClass( 'hustle-show' );
 
 				switch (i.options.theme) {
 				case 'standard':
@@ -452,7 +451,7 @@
 				// then show the container so that the browser can consider the timepicker's
 				// height to calculate the page's total height and decide if adding scrollbars
 				// is necessary.
-				widget.container.show();
+				widget.container.show().addClass( 'hustle-show' );
 
 				// now we need to calculate the element offset and position the container again.
 				// If the browser added scrollbars, the container's original position is not aligned
@@ -460,11 +459,11 @@
 				elementOffset = $field.position();
 				widget.container.css( {
 					width: i.element.outerWidth(),
-					height: widget.ui.outerHeight() + containerDecorationHeight,
-					cursor: 'default',
 					position: 'absolute',
 					zIndex: 999999,
 					left: elementOffset.left
+					//cursor: 'default',
+					//height: widget.ui.outerHeight() + containerDecorationHeight,
 				} );
 
 				// XXX: what's this line doing here?
@@ -500,9 +499,9 @@
 				var widget = this;
 
 				if (widget.instance === i) {
-					widget.container.addClass('ui-helper-hidden ui-timepicker-hidden').hide();
+					widget.container.hide().removeClass( 'hustle-show' );
 					widget.ui.scrollTop(0);
-					widget.ui.children().removeClass('ui-state-hover');
+					//widget.ui.children().removeClass('ui-state-hover');
 				}
 
 				$(document).unbind('click.timepicker-' + i.element.data('timepicker-event-namespace'));

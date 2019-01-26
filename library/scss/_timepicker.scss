@@ -1,5 +1,6 @@
 .hustle-timepicker {
 	overflow: hidden;
+	display: none;
 	margin: 0;
 	padding: 2px 0;
 	box-sizing: border-box;
@@ -7,13 +8,15 @@
 	letter-spacing: 0;
 
 	.ui-timepicker {
-		height: 205px;
+		max-height: 200px;
+		@include opacity(1);
 		display: block;
 		margin: 0;
 		padding: 0;
 		box-sizing: content-box;
 		text-align: center;
 		list-style: none outside none;
+		transition: $hui-transition--ease;
 
 		.ui-timepicker-viewport {
 			height: 205px;
@@ -29,6 +32,7 @@
 	&.ui-timepicker-standard {
 
 		a {
+			cursor: pointer;
 			display: block;
 			margin: 0;
 			padding: #{$hui-gutter-sm / 2} $hui-gutter-sm;
@@ -45,26 +49,17 @@
 			}
 		}
 
-		.ui-state-hover {
-			// overwrites .ui-state-hover
-			background-color: #DADADA;
-			border: 1px solid #999;
-			font-weight: normal;
-			color: #212121;
-		}
-
 		.ui-menu-item {
 			margin: 0;
 			padding: 0;
 		}
 	}
-}
 
-.ui-timepicker-hidden {
-	// overwrites .ui-helper-hidden
-	display: none;
-}
+	&.hustle-show {
+		display: block;
 
-.ui-timepicker-no-scrollbar .ui-timepicker {
-	border: none;
+		.ui-timepicker {
+			@include opacity(1);
+		}
+	}
 }

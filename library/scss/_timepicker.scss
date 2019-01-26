@@ -1,9 +1,10 @@
-.ui-timepicker-container {
+.hustle-timepicker {
 	overflow: hidden;
 	margin: 0;
 	padding: 2px 0;
 	box-sizing: border-box;
 	font: 400 13px/20px $hui-font;
+	letter-spacing: 0;
 
 	.ui-timepicker {
 		height: 205px;
@@ -12,7 +13,7 @@
 		padding: 0;
 		box-sizing: content-box;
 		text-align: center;
-		list-style: none;
+		list-style: none outside none;
 
 		.ui-timepicker-viewport {
 			height: 205px;

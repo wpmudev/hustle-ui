@@ -106,7 +106,19 @@ $hui-checkbox--font-size: 12px                  !default;
 $hui-checkbox--line-height: $hui-checkbox--size !default;
 
 // =============================================
-// 9. TIME PICKER
+// 9. CALENDAR
+
+$hui-calendar-header--icon-width:        30px !default;
+$hui-calendar-header--icon-height:       30px !default;
+$hui-calendar-header--icon-size:         12px !default;
+
+$hui-calendar-header--title-font-size:   15px !default;
+$hui-calendar-header--title-line-height: 30px !default;
+
+$hui-calendar-table--cell-width:         30px !default;
+
+// =============================================
+// 10. TIME PICKER
 
 $hui-time-dropdown--height:      230px !default;
 $hui-time-dropdown--font-size:   13px  !default;

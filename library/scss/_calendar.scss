@@ -3,10 +3,15 @@
 	&.hustle-calendar {
 		width: auto;
 		margin: 0;
-		padding: 2px 0;
+		padding: 1px 0;
 		border: 0;
 		border-radius: 0;
 		background-color: transparent;
+
+		&, * {
+			box-sizing: border-box;
+			@extend %hui-text-reset;
+		}
 
 		&:before {
 			content: " ";
@@ -19,13 +24,54 @@
 			z-index: -1;
 		}
 
-		.ui-datepicker-header,
-		.ui-datepicker-calendar,
-		.ui-datepicker-buttonpane {
-			padding: $hui-gutter-sm;
-		}
-
 		.ui-datepicker-header {
+			display: block;
+			padding: #{$hui-gutter-sm + 5px} $hui-gutter-sm;
+
+			.ui-corner-all {
+				width: $hui-calendar-header--icon-width;
+				height: $hui-calendar-header--icon-height;
+				cursor: pointer;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				position: absolute;
+				top: #{$hui-gutter-sm + 5px};
+				font-size: $hui-calendar-header--icon-size;
+				transition: $hui-transition--ease;
+
+				@include icon(before, chevron-down);
+
+				.ui-icon {
+					@extend %hui-screen-reader;
+				}
+
+				&.ui-datepicker-prev {
+					left: $hui-gutter-sm;
+					right: unset;
+
+					&:before {
+						transform: rotate(90deg);
+					}
+				}
+
+				&.ui-datepicker-next {
+					left: unset;
+					right: $hui-gutter-sm;
+
+					&:before {
+						transform: rotate(-90deg);
+					}
+				}
+			}
+
+			.ui-datepicker-title {
+				display: block;
+				padding: 0 $hui-calendar-header--icon-width;
+				font: 600 #{$hui-calendar-header--title-font-size}/#{$hui-calendar-header--title-line-height} $hui-font;
+				letter-spacing: 0.14px;
+				text-align: center;
+			}
 
 			+ .ui-datepicker-calendar {
 				padding-top: 0;
@@ -42,30 +88,57 @@
 			tbody {
 
 				tr {
+					margin: 0;
 					padding: 0;
+					border: 0;
 
 					th, td {
-						padding: 2px;
+						margin: 0;
+						padding: 7px 7px 8px 8px;
+						border: 0;
 						text-align: center;
 
 						a, span {
-							width: 30px;
+							width: $hui-calendar-table--cell-width;
 							display: block;
-							padding: 5px 2px;
+							padding: 2px;
+							border: 0;
+							border-radius: #{$hui-calendar-table--cell-width * 2};
 						}
 
 						a {
-							font-weight: 600;
 							text-decoration: none;
 							transition: $hui-transition--ease;
+
+							&,
+							&:hover,
+							&:active,
+							&:visited {
+								outline: none;
+								box-shadow: none;
+								text-decoration: none;
+							}
+
+							&,
+							&:visited {
+								font-weight: 400;
+							}
+
+							&:hover,
+							&:active {
+								font-weight: 600;
+							}
+						}
+
+						&:first-child {
+							padding-left: #{$hui-gutter-sm + 5px};
+						}
+
+						&:last-child {
+							padding-right: #{$hui-gutter-sm + 5px};
 						}
 
 						&.ui-datepicker-unselectable {
-							pointer-events: none;
-						}
-
-						&.ui-state-disabled {
-							@include opacity(0.5);
 							cursor: not-allowed;
 						}
 					}
@@ -77,9 +150,9 @@
 				tr {
 
 					th {
-						font-size: 11px;
-						line-height: 20px;
-						text-transform: uppercase;
+						font-size: 12px;
+						line-height: #{$hui-calendar-table--cell-width - 4px};
+						font-weight: 600;
 
 						span {
 							display: block;
@@ -94,28 +167,72 @@
 
 					td {
 						font-size: 13px;
-						line-height: 20px;
+						line-height: #{$hui-calendar-table--cell-width - 4px};
+					}
+				}
+			}
+
+			&:last-child {
+
+				thead:last-child,
+				tbody:last-child {
+
+					tr:last-child {
+
+						th, td {
+							padding-bottom: #{$hui-gutter-sm + 5px};
+						}
 					}
 				}
 			}
 
 			+ .ui-datepicker-buttonpane {
-				padding-top: 0;
+				padding-top: 8px;
 			}
 		}
 
 		.ui-datepicker-buttonpane {
 			display: flex;
-			justify-content: space-between;
+			align-items: center;
+			justify-content: flex-end;
+			margin: 0;
+			padding: #{$hui-gutter-sm + 5px};
+			border: 0;
 
 			button {
+				cursor: pointer;
 				display: block;
 				flex: 0 0 auto;
 				margin: 0;
+				border: 0;
+				border-radius: 0;
+				font-weight: bold;
+				font-family: $hui-font;
+				text-align: center;
+
+				&,
+				&:hover,
+				&:active {
+					outline: none;
+					box-shadow: none;
+				}
 
 				+ button {
-					margin-left: $hui-gutter-sm;
+					margin-left: $hui-gutter;
 				}
+			}
+
+			.ui-priority-primary {
+				min-width: 66px;
+				padding: 3px 5px;
+				font-size: 13px;
+				line-height: 24px;
+			}
+
+			.ui-priority-secondary {
+				padding: 0;
+				font-size: 14px;
+				line-height: 20px;
 			}
 		}
 	}

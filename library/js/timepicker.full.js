@@ -45,7 +45,6 @@
 			if (widget.container.length === 0) {
 				widget.container = $('<div></div>').addClass('hustle-timepicker')
 									.appendTo('body')
-									.hide()
 									.removeClass( 'hustle-show' );
 				widget.ui = $( '<div></div>' ).addClass('ui-timepicker')
 									.addClass('ui-widget ui-widget-content ui-menu')
@@ -418,7 +417,7 @@
 				 *
 				 * @since Hustle UI 4.0
 				 */
-				widget.container.removeClass( 'ui-timepicker-standard ui-timepicker-corners' ).show().addClass( 'hustle-show' );
+				widget.container.removeClass( 'ui-timepicker-standard ui-timepicker-corners' ).addClass( 'hustle-show' );
 
 				/*
 				switch ( i.options.theme ) {
@@ -460,7 +459,7 @@
 				// then show the container so that the browser can consider the timepicker's
 				// height to calculate the page's total height and decide if adding scrollbars
 				// is necessary.
-				widget.container.show().addClass( 'hustle-show' );
+				widget.container.addClass( 'hustle-show' );
 
 				// now we need to calculate the element offset and position the container again.
 				// If the browser added scrollbars, the container's original position is not aligned
@@ -508,7 +507,7 @@
 				var widget = this;
 
 				if (widget.instance === i) {
-					widget.container.hide().removeClass( 'hustle-show' );
+					widget.container.removeClass( 'hustle-show' );
 					widget.ui.scrollTop(0);
 					//widget.ui.children().removeClass('ui-state-hover');
 				}

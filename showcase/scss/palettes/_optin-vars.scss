@@ -631,45 +631,85 @@ $nsa-color-active: (
 
 // Container background
 $calendar-container: (
-	gray-slate: #ADB5B7,
-	coffee:     #CCC2B7,
-	ectoplasm:  #ADB5B7,
+	gray-slate: #FFFFFF,
+	coffee:     #FFFFFF,
+	ectoplasm:  #FFFFFF,
 	blue:       #FFFFFF,
-	sunrise:    #F1E6AD,
-	midnight:   #ADB5B7,
+	sunrise:    #FFFFFF,
+	midnight:   #FFFFFF,
+);
+
+// Title color
+$calendar-title: (
+	gray-slate: #35414A,
+	coffee:     #423D38,
+	ectoplasm:  #3D2F54,
+	blue:       #165E80,
+	sunrise:    #A73B31,
+	midnight:   #232629,
+);
+
+// Navigation arrows
+$calendar-nav-arrows: (
+	gray-slate: #35414A,
+	coffee:     #423D38,
+	ectoplasm:  #3D2F54,
+	blue:       #165E80,
+	sunrise:    #A73B31,
+	midnight:   #232629,
 );
 
 // Table head color
 $calendar-thead: (
-	gray-slate: #ADB5B7,
-	coffee:     #CCC2B7,
-	ectoplasm:  #ADB5B7,
-	blue:       #FFFFFF,
-	sunrise:    #333333,
-	midnight:   #ADB5B7,
+	gray-slate: #35414A,
+	coffee:     #35414A,
+	ectoplasm:  #35414A,
+	blue:       #35414A,
+	sunrise:    #35414A,
+	midnight:   #35414A,
 );
 
-// Table date color
-$calendar-date: (
-	gray-slate: #ADB5B7,
-	coffee:     #CCC2B7,
-	ectoplasm:  #ADB5B7,
+// Table cell color
+$calendar-cell-color: (
+	gray-slate: #5D7380,
+	coffee:     #5D7380,
+	ectoplasm:  #5D7380,
+	blue:       #5D7380,
+	sunrise:    #5D7380,
+	midnight:   #5D7380,
+);
+
+// Table cell background
+$calendar-cell-background: (
+	gray-slate: #FFFFFF,
+	coffee:     #FFFFFF,
+	ectoplasm:  #FFFFFF,
 	blue:       #FFFFFF,
-	sunrise:    #CB4B40,
-	midnight:   #ADB5B7,
+	sunrise:    #FFFFFF,
+	midnight:   #FFFFFF,
 );
 
 // ****************************************
 // 10.2. HOVER
 
-// Table date color
-$calendar-date-hover: (
-	gray-slate: #ADB5B7,
-	coffee:     #CCC2B7,
-	ectoplasm:  #ADB5B7,
+// Table cell color
+$calendar-cell-color-hover: (
+	gray-slate: #FFFFFF,
+	coffee:     #FFFFFF,
+	ectoplasm:  #FFFFFF,
 	blue:       #FFFFFF,
-	sunrise:    #B03E34,
-	midnight:   #ADB5B7,
+	sunrise:    #FFFFFF,
+	midnight:   #FFFFFF,
+);
+
+// Table cell background
+$calendar-cell-background-hover: (
+	gray-slate: #38C5B5,
+	coffee:     #C6A685,
+	ectoplasm:  #B9CE33,
+	blue:       #4D95B6,
+	sunrise:    #CBB000,
+	midnight:   #DD4F3D,
 );
 
 // ****************************************

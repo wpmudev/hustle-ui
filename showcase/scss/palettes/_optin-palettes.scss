@@ -435,6 +435,17 @@
 				background-color: map-get($calendar-container, $palette);
 			}
 
+			.ui-datepicker-header {
+
+				.ui-corner-all {
+					color: map-get($calendar-nav-arrows, $palette);
+				}
+
+				.ui-datepicker-title {
+					color: map-get($calendar-title, $palette);
+				}
+			}
+
 			.ui-datepicker-calendar {
 
 				thead th {
@@ -442,12 +453,15 @@
 				}
 
 				tbody td {
+					color: map-get($calendar-cell-color, $palette);
 
 					a {
-						color: map-get($calendar-date, $palette);
+						color: map-get($calendar-cell-color, $palette);
+						background-color: map-get($calendar-cell-background, $palette);
 
 						&:hover {
-							color: map-get($calendar-date-hover, $palette);
+							color: map-get($calendar-cell-color-hover, $palette);
+							background-color: map-get($calendar-cell-background-hover, $palette);
 						}
 
 						&:active {

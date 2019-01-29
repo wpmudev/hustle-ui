@@ -69,6 +69,14 @@
 				// ELEMENT: Form
 				.hustle-layout-form {
 
+					&:only-child {
+
+						@include media(min-width, sm) {
+							max-width: 100%;
+							flex: 1;
+						}
+					}
+
 					@include media(min-width, sm) {
 						max-width: $hui-image;
 						display: flex;

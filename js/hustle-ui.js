@@ -731,7 +731,7 @@
 					( inst.dpDiv ).addClass( 'hustle-calendar' );
 					( inst.dpDiv ).addClass( 'hustle-module-' + container.data( 'id' ) );
 
-					if ( '' !== container.data( 'calendar-palette' ) ) {
+					if ( 'undefined' !== typeof container.data( 'calendar-palette' ) ) {
 						( inst.dpDiv ).addClass( 'hustle-palette--' + container.data( 'calendar-palette' ) );
 					}
 				}

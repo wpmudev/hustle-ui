@@ -462,28 +462,32 @@
 	// ========================================|
 	// 11. TIMEPICKER                          |
 	// ========================================|
-	.hustle-timepicker {
+	.hustle-palette--#{$palette} {
 
-		.ui-timepicker {
-			background-color: #FFFFFF;
+		.hustle-timepicker {
 
-			a {
+			.ui-timepicker {
+				background-color: map-get($time-container, $palette);
 
-				&,
-				&:visited {
-					color: #333333;
-				}
+				a {
 
-				&:hover,
-				&:active,
-				&.ui-state-hover {
-					color: #333333;
-					background-color: #ADB5B7;
-				}
+					&,
+					&:visited {
+						background-color: map-get($time-background, $palette);
+						color: map-get($time-color, $palette);
+					}
 
-				&.ui-active-item {
-					color: #FFFFFF;
-					background-color: #38C5B5;
+					&:hover,
+					&.ui-state-hover {
+						background-color: map-get($time-background-hover, $palette);
+						color: map-get($time-color-hover, $palette);
+					}
+
+					&:active,
+					&.ui-active-item {
+						background-color: map-get($time-background-active, $palette);
+						color: map-get($time-color-active, $palette);
+					}
 				}
 			}
 		}

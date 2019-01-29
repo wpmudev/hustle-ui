@@ -684,3 +684,86 @@ $calendar-date-active: (
 	sunrise:    #B03E34,
 	midnight:   #ADB5B7,
 );
+
+// ========================================|
+// 11. TIME PICKER                         |
+// ========================================|
+
+// ****************************************
+// 11.1. DEFAULT
+
+// Container BG
+$time-container: (
+	gray-slate: #FFFFFF,
+	coffee:     #FFFFFF,
+	ectoplasm:  #FFFFFF,
+	blue:       #FFFFFF,
+	sunrise:    #FFFFFF,
+	midnight:   #FFFFFF,
+);
+
+// Time background
+$time-background: (
+	gray-slate: #FFFFFF,
+	coffee:     #FFFFFF,
+	ectoplasm:  #FFFFFF,
+	blue:       #FFFFFF,
+	sunrise:    #FFFFFF,
+	midnight:   #FFFFFF,
+);
+
+// Time color
+$time-color: (
+	gray-slate: #5D7380,
+	coffee:     #59524B,
+	ectoplasm:  #513E70,
+	blue:       #4D95B6,
+	sunrise:    #333333,
+	midnight:   #363B3F,
+);
+
+// ****************************************
+// 11.2. HOVER
+
+// Time background
+$time-background-hover: (
+	gray-slate: #38C5B5,
+	coffee:     #C6A685,
+	ectoplasm:  #B9CE33,
+	blue:       #78B5D1,
+	sunrise:    #CBB000,
+	midnight:   #DD4F3D,
+);
+
+// Time color
+$time-color-hover: (
+	gray-slate: #FFFFFF,
+	coffee:     #FFFFFF,
+	ectoplasm:  #FFFFFF,
+	blue:       #FFFFFF,
+	sunrise:    #FFFFFF,
+	midnight:   #FFFFFF,
+);
+
+// ****************************************
+// 11.3. ACTIVE
+
+// Time background
+$time-background-active: (
+	gray-slate: #38C5B5,
+	coffee:     #C6A685,
+	ectoplasm:  #B9CE33,
+	blue:       #78B5D1,
+	sunrise:    #CBB000,
+	midnight:   #DD4F3D,
+);
+
+// Time color
+$time-color-active: (
+	gray-slate: #FFFFFF,
+	coffee:     #FFFFFF,
+	ectoplasm:  #FFFFFF,
+	blue:       #FFFFFF,
+	sunrise:    #FFFFFF,
+	midnight:   #FFFFFF,
+);

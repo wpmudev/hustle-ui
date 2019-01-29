@@ -722,10 +722,10 @@
 				dayNamesMin: minDays,
 				dayNamesShort: shortDays,
 				minDate: ( '' !== element.data( 'min-date' ) ) ? element.data( 'min-date' ) : null,
-				changeMonth: true,
-				changeYear: true,
+				changeMonth: false,
+				changeYear: false,
 				isRTL: ( true === element.data( 'rtl-support' ) ) ? true : false,
-				showButtonPanel: true,
+				showButtonPanel: false,
 				beforeShow: function( input, inst ) {
 
 					( inst.dpDiv ).addClass( 'hustle-calendar' );

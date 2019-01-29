@@ -414,7 +414,7 @@
 				i.rebuild = false;
 
 				/**
-				 * Time Picker Theme
+				 * Theme Support
 				 *
 				 * @since Hustle UI 4.0
 				 */

@@ -60,6 +60,7 @@
 					&:only-child {
 
 						@include media(min-width, sm) {
+							max-width: 100%;
 							flex: 1;
 						}
 					}

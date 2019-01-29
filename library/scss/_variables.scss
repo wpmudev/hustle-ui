@@ -97,9 +97,17 @@ $hui-input--line-height: 18px !default;
 
 // =============================================
 // 8. RADIO & CHECKBOX
+
 $hui-checkbox--size: 20px                       !default;
 $hui-checkbox--icon-size: 10px                  !default;
 $hui-checkbox--border-width: 2px                !default;
 $hui-checkbox--border-style: solid              !default;
 $hui-checkbox--font-size: 12px                  !default;
 $hui-checkbox--line-height: $hui-checkbox--size !default;
+
+// =============================================
+// 9. TIME PICKER
+
+$hui-time-dropdown--height:      200px !default;
+$hui-time-dropdown--font-size:   13px  !default;
+$hui-time-dropdown--line-height: 30px  !default;

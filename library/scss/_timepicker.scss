@@ -54,6 +54,16 @@
 					box-shadow: none;
 					text-decoration: none;
 				}
+
+				&,
+				&:visited {
+					font-weight: 400;
+				}
+
+				&:hover,
+				&:active {
+					font-weight: 600;
+				}
 			}
 		}
 	}

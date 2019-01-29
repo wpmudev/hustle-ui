@@ -413,19 +413,28 @@
 
 				i.rebuild = false;
 
-				// theme
-				widget.container.removeClass('ui-timepicker-standard ui-timepicker-corners').show().addClass( 'hustle-show' );
+				/**
+				 * Time Picker Theme
+				 *
+				 * @since Hustle UI 4.0
+				 */
+				widget.container.removeClass( 'ui-timepicker-standard ui-timepicker-corners' ).show().addClass( 'hustle-show' );
 
-				switch (i.options.theme) {
-				case 'standard':
-					widget.container.addClass('ui-timepicker-standard');
-					break;
-				case 'standard-rounded-corners':
-					widget.container.addClass('ui-timepicker-standard ui-timepicker-corners');
-					break;
-				default:
-					break;
+				/*
+				switch ( i.options.theme ) {
+
+					case 'standard' :
+						widget.container.addClass('ui-timepicker-standard');
+						break;
+
+					case 'standard-rounded-corners'
+						widget.container.addClass( 'ui-timepicker-standard ui-timepicker-corners' );
+						break;
+
+					default :
+						break;
 				}
+				*/
 
 				/* resize ui */
 
@@ -632,7 +641,7 @@
 			startTime: null,
 			interval: 30,
 			dynamic: true,
-			theme: 'standard',
+			theme: null,
 			zindex: null,
 			dropdown: true,
 			scrollbar: false,

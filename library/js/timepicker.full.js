@@ -417,7 +417,12 @@
 				 *
 				 * @since Hustle UI 4.0
 				 */
-				widget.container.removeClass( 'ui-timepicker-standard ui-timepicker-corners' ).addClass( 'hustle-show' );
+
+				// Remove standard theme classes
+				widget.container.removeClass( 'ui-timepicker-standard ui-timepicker-corners' );
+
+				// Show time picker dropdown
+				widget.container.addClass( 'hustle-show' );
 
 				/*
 				switch ( i.options.theme ) {

@@ -16,26 +16,10 @@
 			const moduleId = container.data( 'id' );
 			const element  = container.find( '.hustle-select2' );
 
-			let dir = 'ltr';
-			let language = 'en';
-			let placeholder = null;
-
-			if ( true === element.data( 'rtl-support' ) ) {
-				dir = 'rtl';
-			}
-
-			if ( '' !== element.data( 'placeholder' ) ) {
-				placeholder = element.data( 'placeholder' );
-			}
-
-			if ( '' !== element.data( 'language' ) ) {
-				language = element.data( 'language' );
-			}
-
 			element.HUIselect2({
-				dir: dir,
-				language: language,
-				placeholder: placeholder,
+				dir: ( true === element.data( 'rtl-support' ) ) ? 'rtl' : 'ltr',
+				language: ( '' !== element.data( 'language' ) ) ? element.data( 'language' ) : 'en',
+				placeholder: ( '' !== element.data( 'placeholder' ) ) ? element.data( 'placeholder' ) : null,
 				dropdownCssClass: 'hustle-module-' + moduleId + ' hustle-dropdown',
 				minimumResultsForSearch: Infinity
 			});

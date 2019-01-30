@@ -7,7 +7,7 @@
 		window.HUI = {};
 	}
 
-	HUI.buttonSubmit = function( el, delay ) {
+	HUI.optinSimulation = function( el ) {
 
 		const button = $( el );
 		const module = button.closest( '.hustle-ui' );
@@ -35,14 +35,6 @@
 			checkbox.removeClass( 'hustle-field-error' );
 			error.hide();
 
-		}
-
-		function animateButton() {
-			button.addClass( 'hustle-button-onload' );
-		}
-
-		function staticButton() {
-			button.removeClass( 'hustle-button-onload' );
 		}
 
 		function checkGdpr() {
@@ -78,19 +70,6 @@
 
 		}
 
-		function errorMessage() {
-			error.show();
-		}
-
-		function successMessage() {
-
-			layout.slideUp( 800 );
-
-			setTimeout( function() {
-				success.slideDown();
-			}, 800 );
-		}
-
 		function init() {
 
 			resetOnLoad();
@@ -98,7 +77,8 @@
 			button.on( 'click', function( e ) {
 
 				resetOnClick();
-				animateButton();
+
+				HUI.optinSubmit( button );
 
 				setTimeout( function() {
 
@@ -106,14 +86,12 @@
 					checkRequired();
 
 					if ( form.find( '.hustle-field-error' ).length ) {
-						errorMessage();
+						HUI.optinError( error );
 					} else {
-						successMessage();
+						HUI.optinSuccess( success );
 					}
 
-					staticButton();
-
-				}, delay );
+				}, 1000 );
 
 				e.preventDefault();
 				e.stopPropagation();
@@ -125,14 +103,5 @@
 
 		return this;
 	};
-
-	$( '.hustle-button-submit' ).each( function() {
-
-		const button = $( this );
-		const delay = 1000;
-
-		HUI.buttonSubmit( button, delay );
-
-	});
 
 }( jQuery ) );

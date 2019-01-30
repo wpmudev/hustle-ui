@@ -13,7 +13,7 @@
 		const container = success.closest( '.hustle-ui' );
 		const layout = container.find( '.hustle-layout' );
 
-		if ( ! success.is( '.hustle-success' ) && '' === success.length ) {
+		if ( ! success.is( '.hustle-success' ) ) {
 			return;
 		}
 

@@ -266,9 +266,8 @@
 						$( this ).find( '.hustle-button-submit' ).each( function() {
 
 							const button = $( this );
-							const delay = 1000;
 
-							HUI.buttonSubmit( button, delay );
+							HUI.optinSimulation( button );
 
 						});
 

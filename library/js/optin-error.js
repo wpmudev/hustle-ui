@@ -11,7 +11,7 @@
 
 		const message = $( el );
 
-		if ( ! message.is( '.hustle-error-message' ) && '' === message.length ) {
+		if ( ! message.is( '.hustle-error-message' ) ) {
 			return;
 		}
 

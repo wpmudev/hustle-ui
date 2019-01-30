@@ -22,6 +22,4 @@
 		});
 	};
 
-	HUI.checkboxGdpr();
-
 }( jQuery ) );

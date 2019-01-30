@@ -86,13 +86,4 @@
 		return this;
 	};
 
-	$( '.hustle-popup' ).each( function() {
-
-		const popup = $( this );
-		const delay = $( this ).data( 'delay' );
-
-		HUI.popupLoad( popup, delay );
-
-	});
-
 }( jQuery ) );

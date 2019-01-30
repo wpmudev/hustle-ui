@@ -117,12 +117,4 @@
 		return this;
 	};
 
-	$( '.hustle-button-close' ).each( function() {
-
-		const close = $( this );
-
-		HUI.popupClose( close );
-
-	});
-
 }( jQuery ) );

@@ -89,8 +89,4 @@
 		return this;
 	};
 
-	$( '.hustle-inline' ).each( function() {
-		HUI.inlineLoad( this );
-	});
-
 }( jQuery ) );

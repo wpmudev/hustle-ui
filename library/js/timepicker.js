@@ -32,6 +32,4 @@
 		});
 	};
 
-	HUI.timepicker( '.hustle-time' );
-
 }( jQuery ) );

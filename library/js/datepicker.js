@@ -102,6 +102,4 @@
 		});
 	};
 
-	HUI.datepicker( '.hustle-date' );
-
 }( jQuery ) );

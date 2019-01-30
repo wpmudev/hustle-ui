@@ -26,6 +26,4 @@
 		});
 	};
 
-	HUI.inputRequired();
-
 }( jQuery ) );

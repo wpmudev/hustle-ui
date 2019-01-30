@@ -42,6 +42,4 @@
 		});
 	};
 
-	HUI.select2();
-
 }( jQuery ) );

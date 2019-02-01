@@ -92,6 +92,7 @@
 
 			close.on( 'click', function( e ) {
 
+				popup.trigger( 'hustle:module:closed', this );
 				closePopup();
 
 				e.preventDefault();
@@ -103,6 +104,7 @@
 
 				overlay.on( 'click', function( e ) {
 
+					popup.trigger( 'hustle:module:click_outside', this );
 					closePopup();
 
 					e.preventDefault();

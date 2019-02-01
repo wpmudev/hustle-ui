@@ -30,6 +30,7 @@
 
 			close.on( 'click', function( e ) {
 
+				slidein.trigger( 'hustle:module:closed', this );
 				animationOut();
 
 				setTimeout( function() {

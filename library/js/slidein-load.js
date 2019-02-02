@@ -98,13 +98,4 @@
 		return this;
 	};
 
-	$( '.hustle-slidein' ).each( function() {
-
-		const slidein = $( this );
-		const delay = $( this ).data( 'delay' );
-
-		HUI.slideinLoad( slidein, delay );
-
-	});
-
 }( jQuery ) );

@@ -9,11 +9,11 @@
 
 	HUI.slideinClose = function( el ) {
 
-		const close = $( el );
-		const slidein = close.closest( '.hustle-ui' );
-		const content = slidein.find( '.hustle-slidein-content' );
+		const slidein = $( el ),
+			close = slidein.find( '.hustle-button-close' ),
+			content = slidein.find( '.hustle-slidein-content' );
 
-		if ( ! close.is( '.hustle-button-close' ) ) {
+		if ( ! close.length ) {
 			return;
 		}
 

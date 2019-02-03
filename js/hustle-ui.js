@@ -477,145 +477,6 @@
 		window.HUI = {};
 	}
 
-	HUI.buttonSubmit = function( el, delay ) {
-
-		const button = $( el );
-		const module = button.closest( '.hustle-ui' );
-		const optin = module.find( '.hustle-optin' );
-		const success = optin.find( '.hustle-success' );
-		const layout = optin.find( '.hustle-layout' );
-		const form = layout.find( '.hustle-layout-form' );
-		const error = form.find( '.hustle-error-message' );
-
-		if ( ! optin.is( '.hustle-optin' ) ) {
-			return;
-		}
-
-		function resetOnLoad() {
-			success.hide();
-			error.hide();
-		}
-
-		function resetOnClick() {
-
-			const input = form.find( '.hustle-field' );
-			const checkbox = form.find( '.hustle-checkbox' );
-
-			input.removeClass( 'hustle-field-error' );
-			checkbox.removeClass( 'hustle-field-error' );
-			error.hide();
-
-		}
-
-		function animateButton() {
-			button.addClass( 'hustle-button-onload' );
-		}
-
-		function staticButton() {
-			button.removeClass( 'hustle-button-onload' );
-		}
-
-		function checkGdpr() {
-
-			const label = form.find( '.hustle-gdpr' );
-			const input = label.find( 'input' );
-
-			if ( input.is( ':checked' ) ) {
-				label.removeClass( 'hustle-field-error' );
-			} else {
-				label.addClass( 'hustle-field-error' );
-			}
-		}
-
-		function checkRequired() {
-
-			const input = form.find( '.hustle-input' );
-			const label = input.parent();
-
-			label.each( function() {
-
-				const field = $( this );
-
-				if ( field.hasClass( 'hustle-field-required' ) ) {
-
-					if ( '' === field.find( 'input' ).val() ) {
-						field.addClass( 'hustle-field-error' );
-					} else {
-						field.removeClass( 'hustle-field-error' );
-					}
-				}
-			});
-
-		}
-
-		function errorMessage() {
-			error.show();
-		}
-
-		function successMessage() {
-
-			layout.slideUp( 800 );
-
-			setTimeout( function() {
-				success.slideDown();
-			}, 800 );
-		}
-
-		function init() {
-
-			resetOnLoad();
-
-			button.on( 'click', function( e ) {
-
-				resetOnClick();
-				animateButton();
-
-				setTimeout( function() {
-
-					checkGdpr();
-					checkRequired();
-
-					if ( form.find( '.hustle-field-error' ).length ) {
-						errorMessage();
-					} else {
-						successMessage();
-					}
-
-					staticButton();
-
-				}, delay );
-
-				e.preventDefault();
-				e.stopPropagation();
-
-			});
-		}
-
-		init();
-
-		return this;
-	};
-
-	$( '.hustle-button-submit' ).each( function() {
-
-		const button = $( this );
-		const delay = 1000;
-
-		HUI.buttonSubmit( button, delay );
-
-	});
-
-}( jQuery ) );
-
-( function( $ ) {
-
-	'use strict';
-
-	// Define global HUI object if it doesn't exist.
-	if ( 'object' !== typeof window.HUI ) {
-		window.HUI = {};
-	}
-
 	HUI.checkboxGdpr = function() {
 
 		$( '.hustle-ui .hustle-gdpr input' ).on( 'change', function( e ) {
@@ -630,8 +491,6 @@
 			}
 		});
 	};
-
-	HUI.checkboxGdpr();
 
 }( jQuery ) );
 
@@ -739,8 +598,6 @@
 		});
 	};
 
-	HUI.datepicker( '.hustle-date' );
-
 }( jQuery ) );
 
 ( function( $ ) {
@@ -834,10 +691,6 @@
 		return this;
 	};
 
-	$( '.hustle-inline' ).each( function() {
-		HUI.inlineLoad( this );
-	});
-
 }( jQuery ) );
 
 ( function( $ ) {
@@ -863,8 +716,6 @@
 
 		});
 	};
-
-	HUI.inputFilled();
 
 }( jQuery ) );
 
@@ -896,7 +747,246 @@
 		});
 	};
 
-	HUI.inputRequired();
+}( jQuery ) );
+
+( function( $ ) {
+
+	'use strict';
+
+	// Define global HUI object if it doesn't exist.
+	if ( 'object' !== typeof window.HUI ) {
+		window.HUI = {};
+	}
+
+	HUI.optinError = function( el ) {
+
+		const message = $( el );
+
+		if ( ! message.is( '.hustle-error-message' ) ) {
+			return;
+		}
+
+		function init() {
+			message.show();
+		}
+
+		init();
+
+		return this;
+
+	};
+
+}( jQuery ) );
+
+( function( $ ) {
+
+	'use strict';
+
+	// Define global HUI object if it doesn't exist.
+	if ( 'object' !== typeof window.HUI ) {
+		window.HUI = {};
+	}
+
+	HUI.optinSimulation = function( el ) {
+
+		const button = $( el );
+		const module = button.closest( '.hustle-ui' );
+		const optin = module.find( '.hustle-optin' );
+		const success = optin.find( '.hustle-success' );
+		const layout = optin.find( '.hustle-layout' );
+		const form = layout.find( '.hustle-layout-form' );
+		const error = form.find( '.hustle-error-message' );
+
+		if ( ! optin.is( '.hustle-optin' ) ) {
+			return;
+		}
+
+		function resetOnLoad() {
+			success.hide();
+			error.hide();
+		}
+
+		function init() {
+
+			resetOnLoad();
+
+			button.on( 'click', function( e ) {
+
+				resetOnClick();
+
+				HUI.optinSubmit( button );
+
+				setTimeout( function() {
+
+					HUI.optinValidate( module );
+
+					if ( form.find( '.hustle-field-error' ).length ) {
+						HUI.optinError( error );
+					} else {
+						HUI.optinSuccess( success );
+					}
+
+				}, 1000 );
+
+				e.preventDefault();
+				e.stopPropagation();
+
+			});
+		}
+
+		init();
+
+		return this;
+	};
+
+}( jQuery ) );
+
+( function( $ ) {
+
+	'use strict';
+
+	// Define global HUI object if it doesn't exist.
+	if ( 'object' !== typeof window.HUI ) {
+		window.HUI = {};
+	}
+
+	HUI.optinSubmit = function( el ) {
+
+		const button = $( el );
+		const module = button.closest( '.hustle-ui' );
+		const optin = module.find( '.hustle-optin' );
+
+		if ( ! button.is( '.hustle-button-submit' ) || ! optin[0] || ! optin.length ) {
+			return;
+		}
+
+		function init() {
+
+			button.addClass( 'hustle-button-onload' );
+
+			setTimeout( function() {
+				button.removeClass( 'hustle-button-onload' );
+			}, 1000 );
+		}
+
+		init();
+
+		return this;
+
+	};
+
+}( jQuery ) );
+
+( function( $ ) {
+
+	'use strict';
+
+	// Define global HUI object if it doesn't exist.
+	if ( 'object' !== typeof window.HUI ) {
+		window.HUI = {};
+	}
+
+	HUI.optinSuccess = function( el ) {
+
+		const success = $( el );
+		const container = success.closest( '.hustle-ui' );
+		const layout = container.find( '.hustle-layout' );
+
+		if ( ! success.is( '.hustle-success' ) ) {
+			return;
+		}
+
+		function successMessage() {
+
+			layout.slideUp( 800 );
+
+			setTimeout( function() {
+				success.slideDown();
+			}, 800 );
+		}
+
+		function init() {
+			successMessage();
+		}
+
+		init();
+
+		return this;
+
+	};
+
+}( jQuery ) );
+
+( function( $ ) {
+
+	'use strict';
+
+	// Define global HUI object if it doesn't exist.
+	if ( 'object' !== typeof window.HUI ) {
+		window.HUI = {};
+	}
+
+	HUI.optinValidate = function( el ) {
+
+		const module = $( el ),
+			form = module.find( '.hustle-layout-form' );
+
+		function resetOnClick() {
+
+			const input = form.find( '.hustle-field' ),
+				checkbox = form.find( '.hustle-checkbox' ),
+				error = form.find( '.hustle-error-message' );
+
+			input.removeClass( 'hustle-field-error' );
+			checkbox.removeClass( 'hustle-field-error' );
+			error.hide();
+
+		}
+
+		function checkGdpr() {
+
+			const label = form.find( '.hustle-gdpr' ),
+				input = label.find( 'input' );
+
+			if ( input.is( ':checked' ) ) {
+				label.removeClass( 'hustle-field-error' );
+			} else {
+				label.addClass( 'hustle-field-error' );
+			}
+		}
+
+		function checkRequired() {
+
+			const input = form.find( '.hustle-input' );
+			const label = input.parent();
+
+			label.each( function() {
+
+				const field = $( this );
+
+				if ( field.hasClass( 'hustle-field-required' ) ) {
+
+					if ( '' === field.find( 'input' ).val() ) {
+						field.addClass( 'hustle-field-error' );
+					} else {
+						field.removeClass( 'hustle-field-error' );
+					}
+				}
+			});
+		}
+
+		function init() {
+
+			resetOnClick();
+
+			checkGdpr();
+			checkRequired();
+		}
+
+		init();
+
+		return this;
+	};
 
 }( jQuery ) );
 
@@ -911,12 +1001,12 @@
 
 	HUI.popupClose = function( el ) {
 
-		const close = $( el );
-		const popup = close.closest( '.hustle-ui' );
-		const overlay = popup.find( '.hustle-popup-mask' );
-		const content = popup.find( '.hustle-popup-content' );
+		const popup = $( el ),
+			close = popup.find( '.hustle-button-close' ),
+			overlay = popup.find( '.hustle-popup-mask' ),
+			content = popup.find( '.hustle-popup-content' );
 
-		if ( ! close.is( '.hustle-button-close' ) ) {
+		if ( ! close.length ) {
 			return;
 		}
 
@@ -994,6 +1084,7 @@
 
 			close.on( 'click', function( e ) {
 
+				popup.trigger( 'hustle:module:closed', this );
 				closePopup();
 
 				e.preventDefault();
@@ -1005,6 +1096,7 @@
 
 				overlay.on( 'click', function( e ) {
 
+					popup.trigger( 'hustle:module:click_outside', this );
 					closePopup();
 
 					e.preventDefault();
@@ -1018,14 +1110,6 @@
 
 		return this;
 	};
-
-	$( '.hustle-button-close' ).each( function() {
-
-		const close = $( this );
-
-		HUI.popupClose( close );
-
-	});
 
 }( jQuery ) );
 
@@ -1110,21 +1194,13 @@
 				animationIn();
 			}, layoutTime );
 
+			HUI.popupClose( el );
 		}
 
 		init();
 
 		return this;
 	};
-
-	$( '.hustle-popup' ).each( function() {
-
-		const popup = $( this );
-		const delay = $( this ).data( 'delay' );
-
-		HUI.popupLoad( popup, delay );
-
-	});
 
 }( jQuery ) );
 
@@ -7722,33 +7798,15 @@
 			const moduleId = container.data( 'id' );
 			const element  = container.find( '.hustle-select2' );
 
-			let dir = 'ltr';
-			let language = 'en';
-			let placeholder = null;
-
-			if ( true === element.data( 'rtl-support' ) ) {
-				dir = 'rtl';
-			}
-
-			if ( '' !== element.data( 'placeholder' ) ) {
-				placeholder = element.data( 'placeholder' );
-			}
-
-			if ( '' !== element.data( 'language' ) ) {
-				language = element.data( 'language' );
-			}
-
 			element.HUIselect2({
-				dir: dir,
-				language: language,
-				placeholder: placeholder,
+				dir: ( true === element.data( 'rtl-support' ) ) ? 'rtl' : 'ltr',
+				language: ( '' !== element.data( 'language' ) ) ? element.data( 'language' ) : 'en',
+				placeholder: ( '' !== element.data( 'placeholder' ) ) ? element.data( 'placeholder' ) : null,
 				dropdownCssClass: 'hustle-module-' + moduleId + ' hustle-dropdown',
 				minimumResultsForSearch: Infinity
 			});
 		});
 	};
-
-	HUI.select2();
 
 }( jQuery ) );
 
@@ -7763,11 +7821,11 @@
 
 	HUI.slideinClose = function( el ) {
 
-		const close = $( el );
-		const slidein = close.closest( '.hustle-ui' );
-		const content = slidein.find( '.hustle-slidein-content' );
+		const slidein = $( el ),
+			close = slidein.find( '.hustle-button-close' ),
+			content = slidein.find( '.hustle-slidein-content' );
 
-		if ( ! close.is( '.hustle-button-close' ) ) {
+		if ( ! close.length ) {
 			return;
 		}
 
@@ -7784,6 +7842,7 @@
 
 			close.on( 'click', function( e ) {
 
+				slidein.trigger( 'hustle:module:closed', this );
 				animationOut();
 
 				setTimeout( function() {
@@ -7800,14 +7859,6 @@
 
 		return this;
 	};
-
-	$( '.hustle-button-close' ).each( function() {
-
-		const close = $( this );
-
-		HUI.slideinClose( close );
-
-	});
 
 }( jQuery ) );
 
@@ -7903,21 +7954,13 @@
 				animation();
 			}, layoutTime );
 
+			HUI.slideinClose( el );
 		}
 
 		init();
 
 		return this;
 	};
-
-	$( '.hustle-slidein' ).each( function() {
-
-		const slidein = $( this );
-		const delay = $( this ).data( 'delay' );
-
-		HUI.slideinLoad( slidein, delay );
-
-	});
 
 }( jQuery ) );
 
@@ -8826,7 +8869,5 @@
 			});
 		});
 	};
-
-	HUI.timepicker( '.hustle-time' );
 
 }( jQuery ) );

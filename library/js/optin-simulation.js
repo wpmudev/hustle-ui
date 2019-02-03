@@ -26,50 +26,6 @@
 			error.hide();
 		}
 
-		function resetOnClick() {
-
-			const input = form.find( '.hustle-field' );
-			const checkbox = form.find( '.hustle-checkbox' );
-
-			input.removeClass( 'hustle-field-error' );
-			checkbox.removeClass( 'hustle-field-error' );
-			error.hide();
-
-		}
-
-		function checkGdpr() {
-
-			const label = form.find( '.hustle-gdpr' );
-			const input = label.find( 'input' );
-
-			if ( input.is( ':checked' ) ) {
-				label.removeClass( 'hustle-field-error' );
-			} else {
-				label.addClass( 'hustle-field-error' );
-			}
-		}
-
-		function checkRequired() {
-
-			const input = form.find( '.hustle-input' );
-			const label = input.parent();
-
-			label.each( function() {
-
-				const field = $( this );
-
-				if ( field.hasClass( 'hustle-field-required' ) ) {
-
-					if ( '' === field.find( 'input' ).val() ) {
-						field.addClass( 'hustle-field-error' );
-					} else {
-						field.removeClass( 'hustle-field-error' );
-					}
-				}
-			});
-
-		}
-
 		function init() {
 
 			resetOnLoad();
@@ -82,8 +38,7 @@
 
 				setTimeout( function() {
 
-					checkGdpr();
-					checkRequired();
+					HUI.optinValidate( module );
 
 					if ( form.find( '.hustle-field-error' ).length ) {
 						HUI.optinError( error );

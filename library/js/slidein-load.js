@@ -90,6 +90,7 @@
 				animation();
 			}, layoutTime );
 
+			HUI.slideinClose( el );
 		}
 
 		init();

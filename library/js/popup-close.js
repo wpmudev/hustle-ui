@@ -9,12 +9,12 @@
 
 	HUI.popupClose = function( el ) {
 
-		const close = $( el );
-		const popup = close.closest( '.hustle-ui' );
-		const overlay = popup.find( '.hustle-popup-mask' );
-		const content = popup.find( '.hustle-popup-content' );
+		const popup = $( el ),
+			close = popup.find( '.hustle-button-close' ),
+			overlay = popup.find( '.hustle-popup-mask' ),
+			content = popup.find( '.hustle-popup-content' );
 
-		if ( ! close.is( '.hustle-button-close' ) ) {
+		if ( ! close.length ) {
 			return;
 		}
 

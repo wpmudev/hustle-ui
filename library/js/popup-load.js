@@ -79,6 +79,7 @@
 				animationIn();
 			}, layoutTime );
 
+			HUI.popupClose( el );
 		}
 
 		init();

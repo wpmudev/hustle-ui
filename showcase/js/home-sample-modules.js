@@ -166,6 +166,7 @@
 
 				const close = $( this );
 				const popup = $( this ).closest( '.hustle-popup' );
+				const module = $( this ).closest( '.hustle-ui' );
 				const checkOutro = popup.data( 'outro' );
 
 				let delay = 1000;
@@ -192,11 +193,11 @@
 				}
 
 				if ( 'popup' === moduleType ) {
-					HUI.popupClose( close );
+					HUI.popupClose( module );
 				}
 
 				if ( 'slidein' === moduleType ) {
-					HUI.slideinClose( close );
+					HUI.slideinClose( module );
 				}
 
 				close.on( 'click', function() {

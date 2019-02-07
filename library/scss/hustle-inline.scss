@@ -12,6 +12,7 @@
 		margin: $hui-gutter 0;
 
 		.hustle-inline-content {
+			width: 100%;
 			min-width: 100%;
 			margin: 0 auto;
 
@@ -220,11 +221,11 @@
 				}
 			}
 		}
-	
+
 		&:first-child {
 			margin-top: 0;
 		}
-	
+
 		&:last-child {
 			margin-bottom: 0;
 		}

@@ -18,6 +18,7 @@
 		z-index: $hui-z-index;
 
 		.hustle-slidein-content {
+			width: 100%;
 			max-width: $hui-dialog-width;
 			overflow-y: auto;
 			@include opacity(0);

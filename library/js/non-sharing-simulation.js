@@ -7,7 +7,7 @@
 		window.HUI = {};
 	}
 
-	HUI.optinSimulation = function( el ) {
+	HUI.nonSharingSimulation = function( el ) {
 
 		const module = $( el );
 

@@ -267,7 +267,7 @@
 						const module = $( this ).closest( '.hustle-ui' ),
 							cta = module.find( '.hustle-button-cta' );
 
-						HUI.optinSimulation( module );
+						HUI.nonSharingSimulation( module );
 
 						// The simulation prevents the CTA from working,
 						// so adding the functionality here instead.

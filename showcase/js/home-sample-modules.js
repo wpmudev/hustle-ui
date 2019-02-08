@@ -264,14 +264,9 @@
 						HUI.timepicker( '.hustle-time' );
 						HUI.datepicker( '.hustle-date' );
 
-						$( this ).find( '.hustle-button-submit' ).each( function() {
+						const module = $( this ).closest( '.hustle-ui' );
 
-							const button = $( this );
-
-							HUI.optinSimulation( button );
-
-						});
-
+						HUI.optinSimulation( module );
 					}
 
 					closesModule( $( this ) );

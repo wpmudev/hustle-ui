@@ -41,7 +41,8 @@
 
 			button.on( 'click', function( e ) {
 
-				resetOnClick();
+				e.preventDefault();
+				e.stopPropagation();
 
 				HUI.optinSubmit( button );
 

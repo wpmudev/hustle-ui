@@ -264,9 +264,19 @@
 						HUI.timepicker( '.hustle-time' );
 						HUI.datepicker( '.hustle-date' );
 
-						const module = $( this ).closest( '.hustle-ui' );
+						const module = $( this ).closest( '.hustle-ui' ),
+							cta = module.find( '.hustle-button-cta' );
 
 						HUI.optinSimulation( module );
+
+						// The simulation prevents the CTA from working,
+						// so adding the functionality here instead.
+						cta.on( 'click', function( e ) {
+							const url = cta.attr( 'href' ),
+								target = cta.attr( 'target' );
+
+							window.open( url, target );
+						});
 					}
 
 					closesModule( $( this ) );

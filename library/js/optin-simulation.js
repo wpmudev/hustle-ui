@@ -9,17 +9,19 @@
 
 	HUI.optinSimulation = function( el ) {
 
-		const button = $( el );
-		const module = button.closest( '.hustle-ui' );
-		const optin = module.find( '.hustle-optin' );
-		const success = optin.find( '.hustle-success' );
-		const layout = optin.find( '.hustle-layout' );
-		const form = layout.find( '.hustle-layout-form' );
-		const error = form.find( '.hustle-error-message' );
+		const module = $( el );
 
-		if ( ! optin.is( '.hustle-optin' ) ) {
+		if ( ! module.is( '.hustle-ui' ) ) {
 			return;
 		}
+
+		const optin = module.find( '.hustle-optin' ),
+			button = module.find( '.hustle-button-submit' ),
+			cta = module.find( '.hustle-button-cta' ),
+			success = optin.find( '.hustle-success' ),
+			layout = optin.find( '.hustle-layout' ),
+			form = layout.find( '.hustle-layout-form' ),
+			error = form.find( '.hustle-error-message' );
 
 		function resetOnLoad() {
 			success.hide();
@@ -29,6 +31,13 @@
 		function init() {
 
 			resetOnLoad();
+
+			// Prevent CTA from working.
+			if ( cta.length ) {
+				cta.on( 'click', function( e ) {
+					e.preventDefault();
+				});
+			}
 
 			button.on( 'click', function( e ) {
 

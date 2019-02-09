@@ -9,7 +9,7 @@
 
 	HUI.inputFilled = function() {
 
-		$( '.hustle-ui .hustle-input' ).blur( function() {
+		$( '.hustle-ui .hustle-input' ).on( 'keyup blur change', function() {
 
 			const input = $( this );
 

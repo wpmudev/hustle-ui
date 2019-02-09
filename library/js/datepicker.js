@@ -75,7 +75,6 @@
 		$( '.hustle-ui' ).each( function() {
 
 			const container = $( this );
-			const moduleId = container.data( 'id' );
 			const element  = container.find( input );
 
 			element.datepicker({

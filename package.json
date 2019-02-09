@@ -54,8 +54,8 @@
 		"hustle": "gulp hustle:build",
 		"showcase": "gulp showcase:build",
 		"cleanup": "rm -rf node_modules/gh-pages/.cache",
-		"deploy:hustle": "npm run hustle && npm run cleanup && gh-pages -b master -d ./dist -u 'Leighton Sapir <leigh@incsub.com>'",
-		"deploy:demo": "npm run showcase && npm run cleanup && gh-pages -b gh-pages -d ./public -u 'Leighton Sapir <leigh@incsub.com>'",
+		"deploy:hustle": "npm run hustle && npm run cleanup && gh-pages -b master -d ./dist",
+		"deploy:demo": "npm run showcase && npm run cleanup && gh-pages -b gh-pages -d ./public",
 		"deploy": "npm run deploy:hustle && npm run deploy:demo"
 	}
 }

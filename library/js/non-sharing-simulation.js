@@ -34,6 +34,7 @@
 
 			// Prevent CTA from working.
 			if ( cta.length ) {
+
 				cta.on( 'click', function( e ) {
 					e.preventDefault();
 				});

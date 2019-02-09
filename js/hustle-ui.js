@@ -571,7 +571,6 @@
 		$( '.hustle-ui' ).each( function() {
 
 			const container = $( this );
-			const moduleId = container.data( 'id' );
 			const element  = container.find( input );
 
 			element.datepicker({
@@ -704,7 +703,7 @@
 
 	HUI.inputFilled = function() {
 
-		$( '.hustle-ui .hustle-input' ).blur( function() {
+		$( '.hustle-ui .hustle-input' ).on( 'keyup blur change', function() {
 
 			const input = $( this );
 
@@ -758,48 +757,21 @@
 		window.HUI = {};
 	}
 
-	HUI.optinError = function( el ) {
+	HUI.nonSharingSimulation = function( el ) {
 
-		const message = $( el );
+		const module = $( el );
 
-		if ( ! message.is( '.hustle-error-message' ) ) {
+		if ( ! module.is( '.hustle-ui' ) ) {
 			return;
 		}
 
-		function init() {
-			message.show();
-		}
-
-		init();
-
-		return this;
-
-	};
-
-}( jQuery ) );
-
-( function( $ ) {
-
-	'use strict';
-
-	// Define global HUI object if it doesn't exist.
-	if ( 'object' !== typeof window.HUI ) {
-		window.HUI = {};
-	}
-
-	HUI.optinSimulation = function( el ) {
-
-		const button = $( el );
-		const module = button.closest( '.hustle-ui' );
-		const optin = module.find( '.hustle-optin' );
-		const success = optin.find( '.hustle-success' );
-		const layout = optin.find( '.hustle-layout' );
-		const form = layout.find( '.hustle-layout-form' );
-		const error = form.find( '.hustle-error-message' );
-
-		if ( ! optin.is( '.hustle-optin' ) ) {
-			return;
-		}
+		const optin = module.find( '.hustle-optin' ),
+			button = module.find( '.hustle-button-submit' ),
+			cta = module.find( '.hustle-button-cta' ),
+			success = optin.find( '.hustle-success' ),
+			layout = optin.find( '.hustle-layout' ),
+			form = layout.find( '.hustle-layout-form' ),
+			error = form.find( '.hustle-error-message' );
 
 		function resetOnLoad() {
 			success.hide();
@@ -810,9 +782,18 @@
 
 			resetOnLoad();
 
+			// Prevent CTA from working.
+			if ( cta.length ) {
+
+				cta.on( 'click', function( e ) {
+					e.preventDefault();
+				});
+			}
+
 			button.on( 'click', function( e ) {
 
-				resetOnClick();
+				e.preventDefault();
+				e.stopPropagation();
 
 				HUI.optinSubmit( button );
 
@@ -837,6 +818,35 @@
 		init();
 
 		return this;
+	};
+
+}( jQuery ) );
+
+( function( $ ) {
+
+	'use strict';
+
+	// Define global HUI object if it doesn't exist.
+	if ( 'object' !== typeof window.HUI ) {
+		window.HUI = {};
+	}
+
+	HUI.optinError = function( el ) {
+
+		const message = $( el );
+
+		if ( ! message.is( '.hustle-error-message' ) ) {
+			return;
+		}
+
+		function init() {
+			message.show();
+		}
+
+		init();
+
+		return this;
+
 	};
 
 }( jQuery ) );

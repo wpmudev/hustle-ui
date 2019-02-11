@@ -1,7 +1,7 @@
 @include hustle-class(optin) {
 
 	.hustle-recaptcha {
-		margin: $hui-spacing-sm 0;
+		margin: $hui-gutter-sm 0;
 
 		&[data-size="normal"] {
 			width: 302px;
@@ -53,7 +53,7 @@
 			}
 
 			@include media(min-width, sm) {
-				margin: $hui-spacing 0;
+				margin: $hui-gutter 0;
 			}
 		}
 	}

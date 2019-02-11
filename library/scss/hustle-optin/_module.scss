@@ -14,7 +14,7 @@
 			@include media(max-width, sm) {
 				padding: $hui-gutter-sm;
 			}
-	
+
 			@include media(min-width, sm) {
 				padding: $hui-gutter;
 			}
@@ -33,10 +33,13 @@
 		}
 
 		.hustle-nsa-link {
+			margin: 0;
+			padding: 0;
+			border: 0;
 			font: 400 14px/20px $hui-font;
 
 			a {
-				font-weight: bold;
+				font-weight: inherit;
 				transition: $hui-transition--ease;
 
 				&,

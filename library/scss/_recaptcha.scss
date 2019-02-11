@@ -1,6 +1,6 @@
 @include hustle-class() {
 
-	.hustle-form {
+	.hustle-layout-form {
 
 		.hustle-recaptcha {
 			margin: $hui-spacing-sm 0;
@@ -30,7 +30,7 @@
 
 	&:not(.hustle-size--small) {
 
-		.hustle-form {
+		.hustle-layout-form {
 
 			.hustle-recaptcha {
 

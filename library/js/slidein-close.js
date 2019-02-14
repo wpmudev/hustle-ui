@@ -35,7 +35,7 @@
 
 		function init() {
 
-			slidein.on( 'click', function( e ) {
+			slidein.on( 'click', function() {
 				preventAutohide = true;
 			});
 

@@ -7,12 +7,14 @@
 		window.HUI = {};
 	}
 
-	HUI.popupClose = function( el ) {
+	HUI.popupClose = function( el, autohideDelay ) {
 
 		const popup = $( el ),
 			close = popup.find( '.hustle-button-close' ),
 			overlay = popup.find( '.hustle-popup-mask' ),
 			content = popup.find( '.hustle-popup-content' );
+
+		let	preventAutohide = false;
 
 		if ( ! close.length ) {
 			return;
@@ -89,6 +91,23 @@
 		}
 
 		function init() {
+
+			popup.on( 'click', function() {
+				preventAutohide = true;
+			});
+
+			if ( autohideDelay ) {
+
+				setTimeout( function() {
+
+					if ( ! preventAutohide ) {
+						popup.trigger( 'hustle:module:hidden', this );
+						closePopup();
+					}
+
+				}, autohideDelay );
+
+			}
 
 			close.on( 'click', function( e ) {
 

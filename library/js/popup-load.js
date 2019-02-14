@@ -7,12 +7,10 @@
 		window.HUI = {};
 	}
 
-	HUI.popupLoad = function( el, delay ) {
+	HUI.popupLoad = function( el, autohideDelay ) {
 
 		const popup = $( el );
 		const content = popup.find( '.hustle-popup-content' );
-		const moduleTime = delay;
-		const layoutTime = delay + 200;
 
 		if ( ! popup.is( '.hustle-popup' ) ) {
 			return;
@@ -71,15 +69,15 @@
 			popup.removeClass( 'hustle-show' );
 			animation();
 
-			setTimeout( function() {
-				popup.addClass( 'hustle-show' );
-			}, moduleTime );
+			// Module time.
+			popup.addClass( 'hustle-show' );
 
+			// Layout time.
 			setTimeout( function() {
 				animationIn();
-			}, layoutTime );
+			}, 200 );
 
-			HUI.popupClose( el );
+			HUI.popupClose( el, autohideDelay );
 		}
 
 		init();

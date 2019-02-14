@@ -7,12 +7,10 @@
 		window.HUI = {};
 	}
 
-	HUI.slideinLoad = function( el, delay ) {
+	HUI.slideinLoad = function( el, autohideDelay ) {
 
 		const slidein = $( el );
 		const content = slidein.find( '.hustle-slidein-content' );
-		const moduleTime = delay - 200;
-		const layoutTime = delay;
 
 		if ( ! slidein.is( '.hustle-slidein' ) ) {
 			return;
@@ -82,15 +80,17 @@
 			reset();
 			position();
 
+			// Module time.
 			setTimeout( function() {
 				show();
-			}, moduleTime );
+			}, 800 );
 
+			// Layout time.
 			setTimeout( function() {
 				animation();
-			}, layoutTime );
+			}, 1000 );
 
-			HUI.slideinClose( el );
+			HUI.slideinClose( el, autohideDelay );
 		}
 
 		init();

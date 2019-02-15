@@ -1009,12 +1009,14 @@
 		window.HUI = {};
 	}
 
-	HUI.popupClose = function( el ) {
+	HUI.popupClose = function( el, autohideDelay ) {
 
 		const popup = $( el ),
 			close = popup.find( '.hustle-button-close' ),
 			overlay = popup.find( '.hustle-popup-mask' ),
 			content = popup.find( '.hustle-popup-content' );
+
+		let	preventAutohide = false;
 
 		if ( ! close.length ) {
 			return;
@@ -1092,6 +1094,23 @@
 
 		function init() {
 
+			popup.on( 'click', function() {
+				preventAutohide = true;
+			});
+
+			if ( autohideDelay ) {
+
+				setTimeout( function() {
+
+					if ( ! preventAutohide ) {
+						popup.trigger( 'hustle:module:hidden', this );
+						closePopup();
+					}
+
+				}, autohideDelay );
+
+			}
+
 			close.on( 'click', function( e ) {
 
 				popup.trigger( 'hustle:module:closed', this );
@@ -1132,12 +1151,10 @@
 		window.HUI = {};
 	}
 
-	HUI.popupLoad = function( el, delay ) {
+	HUI.popupLoad = function( el, autohideDelay ) {
 
 		const popup = $( el );
 		const content = popup.find( '.hustle-popup-content' );
-		const moduleTime = delay;
-		const layoutTime = delay + 200;
 
 		if ( ! popup.is( '.hustle-popup' ) ) {
 			return;
@@ -1196,15 +1213,15 @@
 			popup.removeClass( 'hustle-show' );
 			animation();
 
-			setTimeout( function() {
-				popup.addClass( 'hustle-show' );
-			}, moduleTime );
+			// Module time.
+			popup.addClass( 'hustle-show' );
 
+			// Layout time.
 			setTimeout( function() {
 				animationIn();
-			}, layoutTime );
+			}, 200 );
 
-			HUI.popupClose( el );
+			HUI.popupClose( el, autohideDelay );
 		}
 
 		init();
@@ -7829,11 +7846,13 @@
 		window.HUI = {};
 	}
 
-	HUI.slideinClose = function( el ) {
+	HUI.slideinClose = function( el, autohideDelay ) {
 
 		const slidein = $( el ),
 			close = slidein.find( '.hustle-button-close' ),
 			content = slidein.find( '.hustle-slidein-content' );
+
+		let	preventAutohide = false;
 
 		if ( ! close.length ) {
 			return;
@@ -7846,19 +7865,36 @@
 		function animationOut() {
 			content.addClass( 'hustle-animate-out' );
 			content.removeClass( 'hustle-animate-in' );
+
+			setTimeout( function() {
+				slidein.removeClass( 'hustle-show' );
+				content.removeClass( 'hustle-animate-out' );
+			}, 1000 );
 		}
 
 		function init() {
+
+			slidein.on( 'click', function() {
+				preventAutohide = true;
+			});
+
+			if ( autohideDelay ) {
+
+				setTimeout( function() {
+
+					if ( ! preventAutohide ) {
+						slidein.trigger( 'hustle:module:hidden', this );
+						animationOut();
+					}
+
+				}, autohideDelay );
+
+			}
 
 			close.on( 'click', function( e ) {
 
 				slidein.trigger( 'hustle:module:closed', this );
 				animationOut();
-
-				setTimeout( function() {
-					slidein.removeClass( 'hustle-show' );
-					content.removeClass( 'hustle-animate-out' );
-				}, 1000 );
 
 				e.preventDefault();
 
@@ -7881,12 +7917,10 @@
 		window.HUI = {};
 	}
 
-	HUI.slideinLoad = function( el, delay ) {
+	HUI.slideinLoad = function( el, autohideDelay ) {
 
 		const slidein = $( el );
 		const content = slidein.find( '.hustle-slidein-content' );
-		const moduleTime = delay - 200;
-		const layoutTime = delay;
 
 		if ( ! slidein.is( '.hustle-slidein' ) ) {
 			return;
@@ -7956,15 +7990,17 @@
 			reset();
 			position();
 
+			// Module time.
 			setTimeout( function() {
 				show();
-			}, moduleTime );
+			}, 800 );
 
+			// Layout time.
 			setTimeout( function() {
 				animation();
-			}, layoutTime );
+			}, 1000 );
 
-			HUI.slideinClose( el );
+			HUI.slideinClose( el, autohideDelay );
 		}
 
 		init();

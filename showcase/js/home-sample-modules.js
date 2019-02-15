@@ -284,11 +284,11 @@
 				});
 
 				if ( 'popup' === moduleType ) {
-					HUI.popupLoad( container, 0 );
+					HUI.popupLoad( container );
 				}
 
 				if ( 'slidein' === moduleType ) {
-					HUI.slideinLoad( container, 0 );
+					HUI.slideinLoad( container );
 				}
 			});
 

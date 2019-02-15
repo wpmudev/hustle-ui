@@ -7,11 +7,13 @@
 		window.HUI = {};
 	}
 
-	HUI.slideinClose = function( el ) {
+	HUI.slideinClose = function( el, autohideDelay ) {
 
 		const slidein = $( el ),
 			close = slidein.find( '.hustle-button-close' ),
 			content = slidein.find( '.hustle-slidein-content' );
+
+		let	preventAutohide = false;
 
 		if ( ! close.length ) {
 			return;
@@ -24,19 +26,36 @@
 		function animationOut() {
 			content.addClass( 'hustle-animate-out' );
 			content.removeClass( 'hustle-animate-in' );
+
+			setTimeout( function() {
+				slidein.removeClass( 'hustle-show' );
+				content.removeClass( 'hustle-animate-out' );
+			}, 1000 );
 		}
 
 		function init() {
+
+			slidein.on( 'click', function() {
+				preventAutohide = true;
+			});
+
+			if ( autohideDelay ) {
+
+				setTimeout( function() {
+
+					if ( ! preventAutohide ) {
+						slidein.trigger( 'hustle:module:hidden', this );
+						animationOut();
+					}
+
+				}, autohideDelay );
+
+			}
 
 			close.on( 'click', function( e ) {
 
 				slidein.trigger( 'hustle:module:closed', this );
 				animationOut();
-
-				setTimeout( function() {
-					slidein.removeClass( 'hustle-show' );
-					content.removeClass( 'hustle-animate-out' );
-				}, 1000 );
 
 				e.preventDefault();
 

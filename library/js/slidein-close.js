@@ -39,7 +39,7 @@
 				preventAutohide = true;
 			});
 
-			if ( autohideDelay ) {
+			if ( 'undefined' !== typeof autohideDelay && false !== autohideDelay ) {
 
 				setTimeout( function() {
 

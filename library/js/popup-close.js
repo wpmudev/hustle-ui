@@ -54,6 +54,12 @@
 			}
 		}
 
+		function escapeKeyClose( e ) {
+			if ( 27 === e.keyCode ) {
+				closePopup();
+			}
+		}
+
 		function closePopup() {
 
 			const checkOutro = popup.data( 'outro' );
@@ -91,6 +97,9 @@
 		}
 
 		function init() {
+
+			$( document ).off( 'keydown.hustle.escKey', escapeKeyClose );
+			$( document ).on( 'keydown.hustle.escKey', escapeKeyClose );
 
 			popup.on( 'click', function() {
 				preventAutohide = true;

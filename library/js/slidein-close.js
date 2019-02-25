@@ -23,6 +23,12 @@
 			return;
 		}
 
+		function escapeKeyClose( e ) {
+			if ( 27 === e.keyCode ) {
+				closePopup();
+			}
+		}
+
 		function animationOut() {
 			content.addClass( 'hustle-animate-out' );
 			content.removeClass( 'hustle-animate-in' );
@@ -34,6 +40,9 @@
 		}
 
 		function init() {
+
+			$( document ).off( 'keydown.hustle.escKey', escapeKeyClose );
+			$( document ).on( 'keydown.hustle.escKey', escapeKeyClose );
 
 			slidein.on( 'click', function() {
 				preventAutohide = true;

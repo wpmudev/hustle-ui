@@ -170,5 +170,29 @@
 				}
 			}
 		}
+
+		// IMAGE Hide
+		// Maximum width based
+		@each $name, $size in $hui-breakpoints {
+
+			&.hustle-hide-until-#{$name} {
+
+				@include media(max-width, $name) {
+					display: none !important;
+				}
+			}
+		}
+
+		// IMAGE Hide
+		// Minimum width based
+		@each $name, $size in $hui-breakpoints {
+
+			&.hustle-hide-after-#{$name} {
+
+				@include media(min-width, $name) {
+					display: none !important;
+				}
+			}
+		}
 	}
 }

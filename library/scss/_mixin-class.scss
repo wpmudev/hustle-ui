@@ -78,7 +78,73 @@
 	.hustle-ui {
 
 		@if $types == null {
-			@content;
+
+			@if $modes == null {
+
+				@if $desktop == true {
+
+					&:not(.hustle-size--small) {
+						@content;
+					}
+				}
+
+				@else {
+
+					@content;
+				}
+			}
+
+			@else {
+
+				@if $desktop == true {
+
+					&:not(.hustle-size--small) {
+
+						@each $mode in $modes {
+
+							.hustle-#{$mode} {
+
+								@if $layouts == null {
+									@content;
+								}
+
+								@else {
+
+									@each $layout in $layouts {
+
+										&.hustle-#{$mode}--#{$layout} {
+											@content;
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+
+				@else {
+
+					@each $mode in $modes {
+
+						.hustle-#{$mode} {
+
+							@if $layouts == null {
+								@content;
+							}
+
+							@else {
+
+								@each $layout in $layouts {
+
+									&.hustle-#{$mode}--#{$layout} {
+										@content;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
 		}
 
 		@else {

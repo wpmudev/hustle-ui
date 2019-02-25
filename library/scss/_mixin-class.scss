@@ -68,3 +68,99 @@
 		}
 	}
 }
+
+// Module Types: popup slidein inline
+// Module Modes: optin info
+// Module Layouts: default compact stacked focus-optin focus-content
+// Desktop: true false
+@mixin hui-class($types: null, $modes: null, $layouts: null, $desktop: false) {
+
+	.hustle-ui {
+
+		@if $types == null {
+			@content;
+		}
+
+		@else {
+
+			@each $type in $types {
+
+				&.hustle-#{$type} {
+
+					@if $modes == null {
+
+						@if $desktop == true {
+
+							&:not(.hustle-size--small) {
+								@content;
+							}
+						}
+
+						@else {
+
+							@content;
+						}
+					}
+
+					@else {
+
+						@if $desktop == true {
+
+							&:not(.hustle-size--small) {
+
+								.hustle-#{$type}-content {
+
+									@each $mode in $modes {
+
+										.hustle-#{$mode} {
+
+											@if $layouts == null {
+												@content;
+											}
+
+											@else {
+
+												@each $layout in $layouts {
+
+													&.hustle-#{$mode}--#{$layout} {
+														@content;
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+
+						@else {
+
+							.hustle-#{$type}-content {
+
+								@each $mode in $modes {
+
+									.hustle-#{$mode} {
+
+										@if $layouts == null {
+											@content;
+										}
+
+										@else {
+
+											@each $layout in $layouts {
+
+												&.hustle-#{$mode}-#{$layout} {
+													@content;
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

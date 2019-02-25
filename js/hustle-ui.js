@@ -692,7 +692,7 @@
 
 }( jQuery ) );
 
-( function( $, window ) {
+( function( $ ) {
 
 	// Enable strict mode
 	'use strict';

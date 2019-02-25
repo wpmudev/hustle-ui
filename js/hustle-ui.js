@@ -1056,6 +1056,12 @@
 			}
 		}
 
+		function escapeKeyClose( e ) {
+			if ( 27 === e.keyCode ) {
+				closePopup();
+			}
+		}
+
 		function closePopup() {
 
 			const checkOutro = popup.data( 'outro' );
@@ -1094,11 +1100,14 @@
 
 		function init() {
 
+			$( document ).off( 'keydown.hustle.escKey', escapeKeyClose );
+			$( document ).on( 'keydown.hustle.escKey', escapeKeyClose );
+
 			popup.on( 'click', function() {
 				preventAutohide = true;
 			});
 
-			if ( autohideDelay ) {
+			if ( 'undefined' !== typeof autohideDelay && false !== autohideDelay ) {
 
 				setTimeout( function() {
 
@@ -7862,6 +7871,12 @@
 			return;
 		}
 
+		function escapeKeyClose( e ) {
+			if ( 27 === e.keyCode ) {
+				closePopup();
+			}
+		}
+
 		function animationOut() {
 			content.addClass( 'hustle-animate-out' );
 			content.removeClass( 'hustle-animate-in' );
@@ -7874,11 +7889,14 @@
 
 		function init() {
 
+			$( document ).off( 'keydown.hustle.escKey', escapeKeyClose );
+			$( document ).on( 'keydown.hustle.escKey', escapeKeyClose );
+
 			slidein.on( 'click', function() {
 				preventAutohide = true;
 			});
 
-			if ( autohideDelay ) {
+			if ( 'undefined' !== typeof autohideDelay && false !== autohideDelay ) {
 
 				setTimeout( function() {
 

@@ -1,94 +1,90 @@
-@include body-class(focus-optin) {
+// Module Settings
+//
+// Module Mode: optin
+// Module Layout: focus-optin
 
-	// SIZE: Global
+@include hui-class(null, optin, focus-optin, false) {
+
 	.hustle-layout {
 
-		// ELEMENT: Content
-		.hustle-layout-content {
+		// ELEMENT: Image
+		.hustle-image {
 
-			.hustle-image {
+			&.hustle-image-fit--fill,
+			&.hustle-image-fit--cover,
+			&.hustle-image-fit--contain {
+				height: $hui-image-sm;
+				overflow: hidden;
+			}
 
-				&.hustle-image-fit--fill,
-				&.hustle-image-fit--cover,
-				&.hustle-image-fit--contain {
-					height: $hui-image-sm;
-					overflow: hidden;
-				}
+			&.hustle-image-fit--fill {
+				@extend %hui-image-fit-fill;
+			}
 
-				&.hustle-image-fit--fill {
-					@extend %hui-image-fit-fill;
-				}
+			&.hustle-image-fit--contain {
+				@extend %hui-image-fit-contain;
+			}
 
-				&.hustle-image-fit--contain {
-					@extend %hui-image-fit-contain;
-				}
+			&.hustle-image-fit--cover {
+				@extend %hui-image-fit-cover;
+			}
 
-				&.hustle-image-fit--cover {
-					@extend %hui-image-fit-cover;
-				}
-
-				&.hustle-image-fit--none {
-					@extend %hui-image-fit-full;
-				}
+			&.hustle-image-fit--none {
+				@extend %hui-image-fit-full;
 			}
 		}
 	}
+}
 
-	// SIZE: Normal
-	&:not(.hustle-size--small) {
+@include hui-class(null, optin, focus-optin, true) {
 
-		.hustle-layout {
+	.hustle-layout {
 
-			.hustle-layout-body {
+		.hustle-layout-content {
 
-				// ELEMENT: Content
-				.hustle-layout-content {
+			// ELEMENT: Content
+			.hustle-layout-content {
 
-					.hustle-image:only-child {
-
-						@include media(min-width, sm) {
-							height: 100%;
-							flex: 1;
-						}
-					}
-
-					.hustle-content {
-
-						@include media(min-width, sm) {
-							flex: 1;
-						}
-					}
+				.hustle-image:only-child {
 
 					@include media(min-width, sm) {
-						display: flex;
+						height: 100%;
 						flex: 1;
-						flex-direction: column;
 					}
 				}
 
-				// ELEMENT: Form
-				.hustle-layout-form {
-
-					&:only-child {
-
-						@include media(min-width, sm) {
-							max-width: 100%;
-							flex: 1;
-						}
-					}
+				.hustle-content {
 
 					@include media(min-width, sm) {
-						max-width: $hui-image;
-						display: flex;
-						flex: 0 0 $hui-image;
-						flex-direction: column;
-						justify-content: center;
+						flex: 1;
+					}
+				}
+			}
+
+			// ELEMENT: Form
+			.hustle-layout-form {
+
+				&:only-child {
+
+					@include media(min-width, sm) {
+						max-width: 100%;
+						flex: 1;
 					}
 				}
 
 				@include media(min-width, sm) {
+					max-width: $hui-image;
 					display: flex;
+					flex: 0 0 $hui-image;
+					flex-direction: column;
+					justify-content: center;
 				}
+			}
+
+			@include media(min-width, sm) {
+				display: flex;
+				flex: 1;
+				flex-direction: column;
 			}
 		}
 	}

@@ -1,6 +1,10 @@
-@include body-class(compact) {
+// Module Settings
+//
+// Module Mode: optin
+// Module Layout: compact
 
-	// SIZE: Global
+@include hui-class(null, optin, compact, false) {
+
 	.hustle-layout {
 
 		.hustle-layout-body {
@@ -33,74 +37,73 @@
 			}
 		}
 	}
+}
 
-	// SIZE: Normal
-	&:not(.hustle-size--small) {
+@include hui-class(null, optin, compact, true) {
 
-		.hustle-layout {
+	.hustle-layout {
 
-			.hustle-layout-body {
+		.hustle-layout-body {
 
-				// ELEMENT: Image
-				.hustle-image {
+			// ELEMENT: Image
+			.hustle-image {
 
-					&.hustle-image-fit--fill,
-					&.hustle-image-fit--cover,
-					&.hustle-image-fit--contain {
+				&.hustle-image-fit--fill,
+				&.hustle-image-fit--cover,
+				&.hustle-image-fit--contain {
 
-						@include media(min-width, sm) {
-							max-width: $hui-image;
-							height: auto;
-							flex: 0 0 $hui-image;
-						}
-					}
-
-					&.hustle-image-fit--none {
-
-						@include media(min-width, sm) {
-							max-width: 50%;
-							flex: 0 0 auto;
-						}
+					@include media(min-width, sm) {
+						max-width: $hui-image;
+						height: auto;
+						flex: 0 0 $hui-image;
 					}
 				}
 
-				// ELEMENT: Content
-				.hustle-layout-content {
+				&.hustle-image-fit--none {
 
-					.hustle-content {
+					@include media(min-width, sm) {
+						max-width: 50%;
+						flex: 0 0 auto;
+					}
+				}
+			}
+
+			// ELEMENT: Content
+			.hustle-layout-content {
+
+				.hustle-content {
+
+					@include media(min-width, sm) {
+						flex: 1;
+					}
+				}
+
+				.hustle-layout-form {
+
+					&:only-child {
 
 						@include media(min-width, sm) {
 							flex: 1;
-						}
-					}
-
-					.hustle-layout-form {
-
-						&:only-child {
-
-							@include media(min-width, sm) {
-								flex: 1;
-								display: flex;
-								flex-direction: column;
-								justify-content: center;
-							}
-						}
-
-						@include media(min-width, sm) {
-							flex: 0 0 auto;
+							display: flex;
+							flex-direction: column;
+							justify-content: center;
 						}
 					}
 
 					@include media(min-width, sm) {
-						display: flex;
-						flex: 1;
-						flex-direction: column;
+						flex: 0 0 auto;
 					}
 				}
 
 				@include media(min-width, sm) {
 					display: flex;
+					flex: 1;
+					flex-direction: column;
 				}
+			}
+
+			@include media(min-width, sm) {
+				display: flex;
 			}
 		}
 	}

@@ -149,7 +149,7 @@
 
 											@each $layout in $layouts {
 
-												&.hustle-#{$mode}-#{$layout} {
+												&.hustle-#{$mode}--#{$layout} {
 													@content;
 												}
 											}

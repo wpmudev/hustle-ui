@@ -1,4 +1,4 @@
-@include hustle-class() {
+@include hui-class(null, null, null, false) {
 
 	.hustle-screen-reader {
 		@extend %hui-screen-reader;

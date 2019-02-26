@@ -1,4 +1,9 @@
-@include body-class(compact) {
+// Module Settings
+//
+// Module Mode: info
+// Module Layout: compact
+
+@include hui-class(null, info, compact, false) {
 
 	.hustle-layout {
 
@@ -10,19 +15,19 @@
 			&.hustle-image-fit--contain {
 				height: $hui-image-sm;
 			}
-	
+
 			&.hustle-image-fit--fill {
 				@extend %hui-image-fit-fill;
 			}
-	
+
 			&.hustle-image-fit--contain {
 				@extend %hui-image-fit-contain;
 			}
-	
+
 			&.hustle-image-fit--cover {
 				@extend %hui-image-fit-cover;
 			}
-	
+
 			&.hustle-image-fit--none {
 				@extend %hui-image-fit-full;
 			}
@@ -91,113 +96,113 @@
 			}
 		}
 	}
+}
 
-	&:not(.hustle-size--small) {
+@include hui-class(null, info, compact, true) {
 
-		.hustle-layout {
+	.hustle-layout {
 
-			// ELEMENT: Image
-			.hustle-image {
+		// ELEMENT: Image
+		.hustle-image {
 
-				&.hustle-image-fit--fill,
-				&.hustle-image-fit--cover,
-				&.hustle-image-fit--contain {
+			&.hustle-image-fit--fill,
+			&.hustle-image-fit--cover,
+			&.hustle-image-fit--contain {
 
-					&:only-child {
-
-						@include media(min-width, sm) {
-							max-width: 100%;
-							height: $hui-image;
-							flex: 1;
-						}
-					}
-		
-					@include media(min-width, sm) {
-						max-width: $hui-image;
-						height: auto;
-						flex: 0 0 $hui-image;
-					}
-				}
-		
-				&.hustle-image-fit--none {
-
-					&:only-child {
-
-						@include media(min-width, sm) {
-							max-width: 100%;
-							flex: 1;
-						}
-					}
-		
-					@include media(min-width, sm) {
-						max-width: 50%;
-						flex: 0 0 auto;
-					}
-				}
-			}
-
-			// ELEMENT: Content
-			.hustle-content {
-
-				.hustle-content-wrap {
+				&:only-child {
 
 					@include media(min-width, sm) {
-						padding: $hui-gutter 0;
-					}
-				}
-
-				// ELEMENT: Group Title
-				.hustle-group-title {
-
-					&:not(:last-child) {
-
-						@include media(min-width, sm) {
-							padding-bottom: $hui-gutter;
-						}
-					}
-				}
-
-				// ELEMENT: Group Content
-				.hustle-group-content {
-
-					&:not(:first-child) {
-
-						@include media(min-width, sm) {
-							padding-top: $hui-gutter;
-						}
-					}
-
-					&:not(:last-child) {
-
-						@include media(min-width, sm) {
-							padding-bottom: $hui-gutter;
-						}
-					}
-				}
-
-				// ELEMENT: Call To Action
-				.hustle-button {
-
-					+ .hustle-checkbox {
-
-						@include media(min-width, sm) {
-							margin-top: $hui-gutter;
-						}
-					}
-
-					@include media(min-width, sm) {
-						width: auto;
+						max-width: 100%;
+						height: $hui-image;
+						flex: 1;
 					}
 				}
 
 				@include media(min-width, sm) {
-					padding: 0 $hui-gutter;
+					max-width: $hui-image;
+					height: auto;
+					flex: 0 0 $hui-image;
+				}
+			}
+
+			&.hustle-image-fit--none {
+
+				&:only-child {
+
+					@include media(min-width, sm) {
+						max-width: 100%;
+						flex: 1;
+					}
+				}
+
+				@include media(min-width, sm) {
+					max-width: 50%;
+					flex: 0 0 auto;
+				}
+			}
+		}
+
+		// ELEMENT: Content
+		.hustle-content {
+
+			.hustle-content-wrap {
+
+				@include media(min-width, sm) {
+					padding: $hui-gutter 0;
+				}
+			}
+
+			// ELEMENT: Group Title
+			.hustle-group-title {
+
+				&:not(:last-child) {
+
+					@include media(min-width, sm) {
+						padding-bottom: $hui-gutter;
+					}
+				}
+			}
+
+			// ELEMENT: Group Content
+			.hustle-group-content {
+
+				&:not(:first-child) {
+
+					@include media(min-width, sm) {
+						padding-top: $hui-gutter;
+					}
+				}
+
+				&:not(:last-child) {
+
+					@include media(min-width, sm) {
+						padding-bottom: $hui-gutter;
+					}
+				}
+			}
+
+			// ELEMENT: Call To Action
+			.hustle-button {
+
+				+ .hustle-checkbox {
+
+					@include media(min-width, sm) {
+						margin-top: $hui-gutter;
+					}
+				}
+
+				@include media(min-width, sm) {
+					width: auto;
 				}
 			}
 
 			@include media(min-width, sm) {
-				display: flex;
+				padding: 0 $hui-gutter;
 			}
+		}
+
+		@include media(min-width, sm) {
+			display: flex;
 		}
 	}
 }

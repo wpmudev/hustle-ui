@@ -1,4 +1,4 @@
-@include body-class() {
+@include hui-class(null, optin, null, false) {
 	width: 100%;
 	display: block;
 
@@ -10,26 +10,12 @@
 	.hustle-layout {
 
 		.hustle-layout-form {
-
-			@include media(max-width, sm) {
-				padding: $hui-gutter-sm;
-			}
-
-			@include media(min-width, sm) {
-				padding: $hui-gutter;
-			}
+			padding: $hui-gutter-sm;
 		}
 
 		.hustle-layout-footer {
 			text-align: center;
-
-			@include media(max-width, sm) {
-				margin-top: $hui-gutter-sm;
-			}
-
-			@include media(min-width, sm) {
-				margin-top: $hui-gutter;
-			}
+			margin-top: $hui-gutter-sm;
 		}
 
 		.hustle-nsa-link {
@@ -50,6 +36,26 @@
 					outline: none;
 					box-shadow: none;
 				}
+			}
+		}
+	}
+}
+
+@include hui-class(null, optin, null, true) {
+
+	.hustle-layout {
+
+		.hustle-layout-form {
+
+			@include media(min-width, sm) {
+				padding: $hui-gutter;
+			}
+		}
+
+		.hustle-layout-footer {
+
+			@include media(min-width, sm) {
+				margin-top: $hui-gutter;
 			}
 		}
 	}

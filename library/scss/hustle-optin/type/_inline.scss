@@ -1,16 +1,17 @@
-.hustle-inline {
+@include hui-class(inline, optin, null, false) {
 
-	@include body-class() {
+	.hustle-button-close {
+		user-select: none !important;
+		visibility: hidden !important;
+		display: none !important;
+	}
 
-		.hustle-optin-header {
-			display: none;
-		}
+	.hustle-layout {
 
-		.hustle-layout {
-
-			.hustle-layout-footer {
-				display: none;
-			}
+		.hustle-layout-footer {
+			user-select: none !important;
+			visibility: hidden !important;
+			display: none !important;
 		}
 	}
 }

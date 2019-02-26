@@ -1,8 +1,9 @@
 @import "variables";
 @import "animations";
-@import "mixin-class";
-@import "mixin-breakpoints";
-@import "mixin-opacity";
+
+@import "mixins/main-class";
+@import "mixins/breakpoints";
+@import "mixins/opacity";
 
 @include hui-class(inline, null, null, false) {
 	@include opacity(0);

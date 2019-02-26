@@ -1,33 +1,39 @@
 @import "variables";
 @import "animations";
-@import "helpers";
-@import "mixin-class";
-@import "mixin-breakpoints";
-@import "mixin-browsers";
-@import "mixin-icon";
-@import "mixin-opacity";
-@import "mixin-content";
 
-@import "input";
-@import "button";
-@import "button-icon";
-@import "radio";
-@import "checkbox";
-@import "select2";
-@import "calendar";
-@import "timepicker";
-@import "content";
-@import "image";
-@import "recaptcha";
-@import "error-message";
-@import "accessibility";
+@import "helpers/screen-reader";
+@import "helpers/text-reset";
+@import "helpers/text-truncate";
+@import "helpers/icons";
 
-@import "hustle-optin/module";
-@import "hustle-optin/module-content";
-@import "hustle-optin/module-form";
-@import "hustle-optin/module-success";
+@import "mixins/main-class";
+@import "mixins/breakpoints";
+@import "mixins/browsers";
+@import "mixins/icon";
+@import "mixins/opacity";
+@import "mixins/content";
 
-@import "hustle-optin/layout/default";
-@import "hustle-optin/layout/compact";
-@import "hustle-optin/layout/focus-optin";
-@import "hustle-optin/layout/focus-content";
+@import "globals/accessibility";
+@import "globals/button";
+@import "globals/button-icon";
+@import "globals/content";
+@import "globals/image";
+
+@import "opt-ins/elements/input";
+@import "opt-ins/elements/radio";
+@import "opt-ins/elements/checkbox";
+@import "opt-ins/elements/select2";
+@import "opt-ins/elements/calendar";
+@import "opt-ins/elements/timepicker";
+@import "opt-ins/elements/recaptcha";
+@import "opt-ins/elements/error-message";
+
+@import "opt-ins/module";
+@import "opt-ins/module-content";
+@import "opt-ins/module-form";
+@import "opt-ins/module-success";
+
+@import "opt-ins/layouts/default";
+@import "opt-ins/layouts/compact";
+@import "opt-ins/layouts/focus-optin";
+@import "opt-ins/layouts/focus-content";

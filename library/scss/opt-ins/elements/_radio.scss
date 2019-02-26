@@ -1,6 +1,6 @@
-@include hui-class(null, null, null, false) {
+@include hui-class(null, optin, null, false) {
 
-	.hustle-checkbox {
+	.hustle-radio {
 		display: flex;
 		vertical-align: middle;
 		margin: 0 0 $hui-gutter-sm;
@@ -33,19 +33,22 @@
 			border-width: $hui-checkbox--border-width;
 			border-style: $hui-checkbox--border-style;
 			border-color: transparent;
+			border-radius: 50%;
 			font-size: $hui-checkbox--icon-size;
 			text-align: center;
 			transition: $hui-transition--ease;
 
-			@include icon(before, check) {
-				width: 100%;
+			&:before {
+				content: " ";
+				width: 10px;
+				height: 10px;
 				@include opacity(0);
 				display: block;
 				position: absolute;
 				top: 50%;
-				left: 0;
-				color: inherit;
-				transform: translateY(-50%);
+				left: 50%;
+				border-radius: 100%;
+				transform: translate(-50%, -50%);
 			}
 		}
 
@@ -64,26 +67,11 @@
 		&:last-child {
 			margin: 0;
 		}
-
-		&.hustle-gdpr {
-			display: inline-flex;
-			margin-top: $hui-gutter-sm;
-		}
 	}
 
 	.hustle-optin:not(.hustle-size--small) {
 
-		.hustle-checkbox {
-
-			&.hustle-gdpr {
-
-				@include media(min-width, sm) {
-					margin-top: $hui-gutter;
-				}
-			}
-		}
-
-		.hustle-checkbox-inline {
+		.hustle-radio-inline {
 
 			&:last-child {
 

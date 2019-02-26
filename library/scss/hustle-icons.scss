@@ -1,5 +1,34 @@
 @import "variables";
-@import "helpers";
-@import "mixin-class";
-@import "mixin-icon";
-@import "icons";
+@import "helpers/icons";
+@import "mixins/main-class";
+@import "mixins/icon";
+
+@at-root {
+
+	@font-face {
+		font-family: $hui-font--icon;
+		font-weight: normal;
+		font-style: normal;
+		src: url('#{$hui-font-path}hustle-icons-font.eot');
+		src: local('hustle-icons-font'),
+			 url('#{$hui-font-path}hustle-icons-font.eot?#iefix') format('embedded-opentype'),
+			 url('#{$hui-font-path}hustle-icons-font.woff2') format('woff2'),
+			 url('#{$hui-font-path}hustle-icons-font.woff') format('woff'),
+			 url('#{$hui-font-path}hustle-icons-font.ttf') format('truetype'),
+			 url('#{$hui-font-path}hustle-icons-font.svg?#hustle-icons-font') format('svg');
+	}
+}
+
+@include hui-class(null, null, null, false) {
+
+	[class*="hustle-icon-"] {
+		@include icon(both);
+	}
+
+	@each $name, $char in $icons {
+
+		.hustle-icon-#{$name}:before {
+			content: $char;
+		}
+	}
+}

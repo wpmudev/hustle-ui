@@ -1,22 +1,25 @@
 @import "variables";
-@import "helpers";
-@import "mixin-class";
-@import "mixin-breakpoints";
-@import "mixin-browsers";
-@import "mixin-icon";
-@import "mixin-opacity";
-@import "mixin-content";
 @import "animations";
 
-@import "button";
-@import "button-icon";
-@import "checkbox";
-@import "content";
-@import "image";
-@import "error-message";
+@import "helpers/screen-reader";
+@import "helpers/text-reset";
+@import "helpers/text-truncate";
+@import "helpers/icons";
 
-@import "hustle-info/module";
+@import "mixins/main-class";
+@import "mixins/breakpoints";
+@import "mixins/browsers";
+@import "mixins/icon";
+@import "mixins/opacity";
+@import "mixins/content";
 
-@import "hustle-info/layout/default";
-@import "hustle-info/layout/compact";
-@import "hustle-info/layout/stacked";
+@import "globals/button";
+@import "globals/button-icon";
+@import "globals/content";
+@import "globals/image";
+
+@import "informationals/module";
+
+@import "informationals/layouts/default";
+@import "informationals/layouts/compact";
+@import "informationals/layouts/stacked";

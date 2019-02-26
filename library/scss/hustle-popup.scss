@@ -1,9 +1,10 @@
 @import "variables";
 @import "animations";
-@import "mixin-class";
-@import "mixin-breakpoints";
-@import "mixin-browsers";
-@import "mixin-opacity";
+
+@import "mixins/main-class";
+@import "mixins/breakpoints";
+@import "mixins/browsers";
+@import "mixins/opacity";
 
 @include hui-class(popup, null, null, false) {
 	width: 100%;

@@ -7,49 +7,58 @@
 
 	.hustle-layout {
 
-		// ELEMENT: Image
-		.hustle-image {
+		// SECTION: Content
+		.hustle-layout-content {
 
-			&.hustle-image-fit--fill,
-			&.hustle-image-fit--cover,
-			&.hustle-image-fit--contain {
-				height: $hui-image-sm;
-				overflow: hidden;
-			}
+			// ELEMENT: Image
+			.hustle-image {
 
-			&.hustle-image-fit--fill {
-				@extend %hui-image-fit-fill;
-			}
+				&.hustle-image-fit--fill,
+				&.hustle-image-fit--cover,
+				&.hustle-image-fit--contain {
+					height: $hui-image-sm;
+					overflow: hidden;
+				}
 
-			&.hustle-image-fit--contain {
-				@extend %hui-image-fit-contain;
-			}
+				&.hustle-image-fit--fill {
+					@extend %hui-image-fit-fill;
+				}
 
-			&.hustle-image-fit--cover {
-				@extend %hui-image-fit-cover;
-			}
+				&.hustle-image-fit--contain {
+					@extend %hui-image-fit-contain;
+				}
 
-			&.hustle-image-fit--none {
-				@extend %hui-image-fit-full;
+				&.hustle-image-fit--cover {
+					@extend %hui-image-fit-cover;
+				}
+
+				&.hustle-image-fit--none {
+					@extend %hui-image-fit-full;
+				}
 			}
 		}
 	}
+
 }
 
 @include hui-class(null, optin, focus-optin, true) {
 
 	.hustle-layout {
 
-		.hustle-layout-content {
+		.hustle-layout-body {
 
-			// ELEMENT: Content
+			// SECTION: Content
 			.hustle-layout-content {
 
-				.hustle-image:only-child {
+				// ELEMENT: Image
+				.hustle-image {
 
-					@include media(min-width, sm) {
-						height: 100%;
-						flex: 1;
+					&:only-child {
+
+						@include media(min-width, sm) {
+							height: 100%;
+							flex: 1;
+						}
 					}
 				}
 
@@ -58,6 +67,12 @@
 					@include media(min-width, sm) {
 						flex: 1;
 					}
+				}
+
+				@include media(min-width, sm) {
+					display: flex;
+					flex: 1;
+					flex-direction: column;
 				}
 			}
 
@@ -83,8 +98,6 @@
 
 			@include media(min-width, sm) {
 				display: flex;
-				flex: 1;
-				flex-direction: column;
 			}
 		}
 	}

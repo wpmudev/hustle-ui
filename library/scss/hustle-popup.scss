@@ -1,477 +1,475 @@
 @import "variables";
 @import "animations";
+@import "mixin-class";
 @import "mixin-breakpoints";
 @import "mixin-browsers";
 @import "mixin-opacity";
 
-.hustle-ui {
+@include hui-class(popup, null, null, false) {
+	width: 100%;
+	height: 100vh;
+	overflow-y: auto;
+	display: none;
+	align-items: center;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: $hui-z-index;
 
-	&.hustle-popup {
+	.hustle-popup-mask {
 		width: 100%;
-		height: 100vh;
-		overflow-y: auto;
-		display: none;
-		align-items: center;
+		height: 100%;
+		display: block;
 		position: fixed;
 		top: 0;
 		left: 0;
-		z-index: $hui-z-index;
+	}
+
+	.hustle-popup-content {
+		width: 100%;
+		max-width: $hui-dialog-width;
+		position: relative;
+		margin: auto;
+
+		.hustle-info,
+		.hustle-optin {
+
+			@include media(max-width, sm) {
+				padding-top: $hui-gutter-sm;
+				padding-bottom: $hui-gutter-sm;
+			}
+
+			@include media(min-width, sm) {
+				padding-top: $hui-gutter;
+				padding-bottom: $hui-gutter;
+			}
+		}
+
+		&.hustle-animate {
+			@include opacity(0);
+			animation-duration: 1s;
+			animation-fill-mode: both;
+			transform-origin: center;
+			transform-style: preserve-3d;
+		}
+
+		// ======================================== //
+		// INTRO ANIMATIONS                         //
+		// ======================================== //
+		&.hustle-animate-in {
+
+			// 1. Bounce In
+			&--bounceIn {
+				@include opacity(1);
+				animation-name: bounceIn;
+				animation-duration: .75s;
+			}
+
+			// 2. Bounce In Up
+			&--bounceInUp {
+				@include opacity(1);
+				animation-name: bounceInUp;
+			}
+
+			// 3. Bounce In Down
+			&--bounceInDown {
+				@include opacity(1);
+				animation-name: bounceInDown;
+			}
+
+			// 4. Bounce In Left
+			&--bounceInLeft {
+				@include opacity(1);
+				animation-name: bounceInLeft;
+			}
+
+			// 5. Bounce In Right
+			&--bounceInRight {
+				@include opacity(1);
+				animation-name: bounceInRight;
+			}
+
+			// 6. Fade In
+			&--fadeIn {
+				@include opacity(1);
+				animation-name: fadeIn;
+				animation-duration: 300ms;
+			}
+
+			// 7. Fade In Up
+			&--fadeInUp {
+				@include opacity(1);
+				animation-name: fadeInUp;
+			}
+
+			// 8. Fade In Down
+			&--fadeInDown {
+				@include opacity(1);
+				animation-name: fadeInDown;
+			}
+
+			// 9. Fade In Left
+			&--fadeInLeft {
+				@include opacity(1);
+				animation-name: fadeInLeft;
+			}
+
+			// 10. Fade In Right
+			&--fadeInRight {
+				@include opacity(1);
+				animation-name: fadeInRight;
+			}
+
+			// 11. Fade In Up (Big)
+			&--fadeInUpBig {
+				@include opacity(1);
+				animation-name: fadeInUpBig;
+			}
+
+			// 12. Fade In Down (Big)
+			&--fadeInDownBig {
+				@include opacity(1);
+				animation-name: fadeInDownBig;
+			}
+
+			// 13. Fade In Left (Big)
+			&--fadeInLeftBig {
+				@include opacity(1);
+				animation-name: fadeInLeftBig;
+			}
+
+			// 14. Fade In Right (Big)
+			&--fadeInRightBig {
+				@include opacity(1);
+				animation-name: fadeInRightBig;
+			}
+
+			// 15. Lightspeed In
+			&--lightSpeedIn {
+				@include opacity(1);
+				animation-name: lightSpeedIn;
+				animation-timing-function: ease-out;
+			}
+
+			// 16. Newspaper In
+			&--newspaperIn {
+				@include opacity(1);
+				animation-name: newspaperIn;
+				animation-duration: .5s;
+				animation-timing-function: ease;
+			}
+
+			// 17. Roll In
+			&--rollIn {
+				@include opacity(1);
+				animation-name: rollIn;
+			}
+
+			// 18. Rotate In
+			&--rotateIn {
+				@include opacity(1);
+				animation-name: rotateIn;
+			}
+
+			// 19. Rotate In Up Left
+			&--rotateInUpLeft {
+				@include opacity(1);
+				animation-name: rotateInUpLeft;
+			}
+
+			// 20. Rotate In Up Right
+			&--rotateInUpRight {
+				@include opacity(1);
+				animation-name: rotateInUpRight;
+			}
+
+			// 21. Rotate In Down Left
+			&--rotateInDownLeft {
+				@include opacity(1);
+				animation-name: rotateInDownLeft;
+			}
+
+			// 22. Rotate In Down Right
+			&--rotateInDownRight {
+				@include opacity(1);
+				animation-name: rotateInDownRight;
+			}
+
+			// 23. Slide In Up
+			&--slideInUp {
+				@include opacity(1);
+				animation-name: slideInUp;
+			}
+
+			// 24. Slide In Down
+			&--slideInDown {
+				@include opacity(1);
+				animation-name: slideInDown;
+			}
+
+			// 25. Slide In Left
+			&--slideInLeft {
+				@include opacity(1);
+				animation-name: slideInLeft;
+			}
+
+			// 26. Slide In Right
+			&--slideInRight {
+				@include opacity(1);
+				animation-name: slideInRight;
+			}
+
+			// 27. Zoom In
+			&--zoomIn {
+				@include opacity(1);
+				animation-name: zoomIn;
+			}
+
+			// 28. Zoom In Up
+			&--zoomInUp {
+				@include opacity(1);
+				animation-name: zoomInUp;
+			}
+
+			// 29. Zoom In Down
+			&--zoomInDown {
+				@include opacity(1);
+				animation-name: zoomInDown;
+			}
+
+			// 30. Zoom In Left
+			&--zoomInLeft {
+				@include opacity(1);
+				animation-name: zoomInLeft;
+			}
+
+			// 31. Zoom In Right
+			&--zoomInRight {
+				@include opacity(1);
+				animation-name: zoomInRight;
+			}
+		}
+
+		// ======================================== //
+		// OUTRO ANIMATIONS                         //
+		// ======================================== //
+		&.hustle-animate-out {
+
+			// 1. Bounce Out
+			&--bounceOut {
+				@include opacity(0);
+				animation-name: bounceOut;
+				animation-duration: .75s;
+			}
+
+			// 2. Bounce Out Up
+			&--bounceOutUp {
+				@include opacity(0);
+				animation-name: bounceOutUp;
+			}
+
+			// 3. Bounce Out Down
+			&--bounceOutDown {
+				@include opacity(0);
+				animation-name: bounceOutDown;
+			}
+
+			// 4. Bounce Out Left
+			&--bounceOutLeft {
+				@include opacity(0);
+				animation-name: bounceOutLeft;
+			}
+
+			// 5. Bounce Out Right
+			&--bounceOutRight {
+				@include opacity(0);
+				animation-name: bounceOutRight;
+			}
+
+			// 6. Fade Out
+			&--fadeOut {
+				@include opacity(0);
+				animation: fadeOut;
+				animation-duration: 300ms;
+			}
+
+			// 7. Fade Out Up
+			&--fadeOutUp {
+				@include opacity(0);
+				animation-name: fadeOutUp;
+			}
+
+			// 8. Fade Out Down
+			&--fadeOutDown {
+				@include opacity(0);
+				animation-name: fadeOutDown;
+			}
+
+			// 9. Fade Out Left
+			&--fadeOutLeft {
+				@include opacity(0);
+				animation-name: fadeOutLeft;
+			}
+
+			// 10. Fade Out Right
+			&--fadeOutRight {
+				@include opacity(0);
+				animation-name: fadeOutRight;
+			}
+
+			// 11. Fade Out Up (Big)
+			&--fadeOutUpBig {
+				@include opacity(0);
+				animation-name: fadeOutUpBig;
+			}
+
+			// 12. Fade Out Down (Big)
+			&--fadeOutDownBig {
+				@include opacity(0);
+				animation-name: fadeOutDownBig;
+			}
+
+			// 13. Fade Out Left (Big)
+			&--fadeOutLeftBig {
+				@include opacity(0);
+				animation-name: fadeOutLeftBig;
+			}
+
+			// 14. Fade Out Right (Big)
+			&--fadeOutRightBig {
+				@include opacity(0);
+				animation-name: fadeOutRightBig;
+			}
+
+			// 15. Lightspeed Out
+			&--lightSpeedOut {
+				@include opacity(0);
+				animation-name: lightSpeedOut;
+				animation-timing-function: ease-in;
+			}
+
+			// 16. Newspaper Out
+			&--newspaperOut {
+				@include opacity(0);
+				animation-name: newspaperOut;
+				animation-duration: .5s;
+				animation-timing-function: ease;
+			}
+
+			// 17. Roll Out
+			&--rollOut {
+				@include opacity(0);
+				animation-name: rollOut;
+			}
+
+			// 18. Rotate Out
+			&--rotateOut {
+				@include opacity(0);
+				animation-name: rotateOut;
+			}
+
+			// 19. Rotate Out Up Left
+			&--rotateOutUpLeft {
+				@include opacity(0);
+				animation-name: rotateOutUpLeft;
+			}
+
+			// 20. Rotate Out Up Right
+			&--rotateOutUpRight {
+				@include opacity(0);
+				animation-name: rotateOutUpRight;
+			}
+
+			// 21. Rotate Out Down Left
+			&--rotateOutDownLeft {
+				@include opacity(0);
+				animation-name: rotateOutDownLeft;
+			}
+
+			// 22. Rotate Out Down Right
+			&--rotateOutDownRight {
+				@include opacity(0);
+				animation-name: rotateOutDownRight;
+			}
+
+			// 23. Slide Out Up
+			&--slideOutUp {
+				@include opacity(1);
+				animation-name: slideOutUp;
+			}
+
+			// 24. Slide Out Down
+			&--slideOutDown {
+				@include opacity(1);
+				animation-name: slideOutDown;
+			}
+
+			// 25. Slide Out Left
+			&--slideOutLeft {
+				@include opacity(1);
+				animation-name: slideOutLeft;
+			}
+
+			// 26. Slide Out Right
+			&--slideOutRight {
+				@include opacity(1);
+				animation-name: slideOutRight;
+			}
+
+			// 27. Zoom Out
+			&--zoomOut {
+				@include opacity(0);
+				animation-name: zoomOut;
+			}
+
+			// 28. Zoom Out Up
+			&--zoomOutUp {
+				@include opacity(0);
+				animation-name: zoomOutUp;
+			}
+
+			// 29. Zoom Out Down
+			&--zoomOutDown {
+				@include opacity(0);
+				animation-name: zoomOutDown;
+			}
+
+			// 30. Zoom Out Left
+			&--zoomOutLeft {
+				@include opacity(0);
+				animation-name: zoomOutLeft;
+			}
+
+			// 31. Zoom Out Right
+			&--zoomOutRight {
+				@include opacity(0);
+				animation-name: zoomOutRight;
+			}
+		}
+	}
+
+	&.hustle-show {
+		display: flex;
+	}
+
+	&[data-overlay-close="1"] {
 
 		.hustle-popup-mask {
-			width: 100%;
-			height: 100%;
-			display: block;
-			position: fixed;
-			top: 0;
-			left: 0;
+			cursor: pointer;
 		}
-
-		.hustle-popup-content {
-			width: 100%;
-			max-width: $hui-dialog-width;
-			position: relative;
-			margin: auto;
-
-			.hustle-info,
-			.hustle-optin {
-
-				@include media(max-width, sm) {
-					padding-top: $hui-gutter-sm;
-					padding-bottom: $hui-gutter-sm;
-				}
-
-				@include media(min-width, sm) {
-					padding-top: $hui-gutter;
-					padding-bottom: $hui-gutter;
-				}
-			}
-
-			&.hustle-animate {
-				@include opacity(0);
-				animation-duration: 1s;
-				animation-fill-mode: both;
-				transform-origin: center;
-				transform-style: preserve-3d;
-			}
-
-			// ======================================== //
-			// INTRO ANIMATIONS                         //
-			// ======================================== //
-			&.hustle-animate-in {
-
-				// 1. Bounce In
-				&--bounceIn {
-					@include opacity(1);
-					animation-name: bounceIn;
-					animation-duration: .75s;
-				}
-
-				// 2. Bounce In Up
-				&--bounceInUp {
-					@include opacity(1);
-					animation-name: bounceInUp;
-				}
-
-				// 3. Bounce In Down
-				&--bounceInDown {
-					@include opacity(1);
-					animation-name: bounceInDown;
-				}
-
-				// 4. Bounce In Left
-				&--bounceInLeft {
-					@include opacity(1);
-					animation-name: bounceInLeft;
-				}
-
-				// 5. Bounce In Right
-				&--bounceInRight {
-					@include opacity(1);
-					animation-name: bounceInRight;
-				}
-
-				// 6. Fade In
-				&--fadeIn {
-					@include opacity(1);
-					animation-name: fadeIn;
-					animation-duration: 300ms;
-				}
-
-				// 7. Fade In Up
-				&--fadeInUp {
-					@include opacity(1);
-					animation-name: fadeInUp;
-				}
-
-				// 8. Fade In Down
-				&--fadeInDown {
-					@include opacity(1);
-					animation-name: fadeInDown;
-				}
-
-				// 9. Fade In Left
-				&--fadeInLeft {
-					@include opacity(1);
-					animation-name: fadeInLeft;
-				}
-
-				// 10. Fade In Right
-				&--fadeInRight {
-					@include opacity(1);
-					animation-name: fadeInRight;
-				}
-
-				// 11. Fade In Up (Big)
-				&--fadeInUpBig {
-					@include opacity(1);
-					animation-name: fadeInUpBig;
-				}
-
-				// 12. Fade In Down (Big)
-				&--fadeInDownBig {
-					@include opacity(1);
-					animation-name: fadeInDownBig;
-				}
-
-				// 13. Fade In Left (Big)
-				&--fadeInLeftBig {
-					@include opacity(1);
-					animation-name: fadeInLeftBig;
-				}
-
-				// 14. Fade In Right (Big)
-				&--fadeInRightBig {
-					@include opacity(1);
-					animation-name: fadeInRightBig;
-				}
-
-				// 15. Lightspeed In
-				&--lightSpeedIn {
-					@include opacity(1);
-					animation-name: lightSpeedIn;
-					animation-timing-function: ease-out;
-				}
-
-				// 16. Newspaper In
-				&--newspaperIn {
-					@include opacity(1);
-					animation-name: newspaperIn;
-					animation-duration: .5s;
-					animation-timing-function: ease;
-				}
-
-				// 17. Roll In
-				&--rollIn {
-					@include opacity(1);
-					animation-name: rollIn;
-				}
-
-				// 18. Rotate In
-				&--rotateIn {
-					@include opacity(1);
-					animation-name: rotateIn;
-				}
-
-				// 19. Rotate In Up Left
-				&--rotateInUpLeft {
-					@include opacity(1);
-					animation-name: rotateInUpLeft;
-				}
-
-				// 20. Rotate In Up Right
-				&--rotateInUpRight {
-					@include opacity(1);
-					animation-name: rotateInUpRight;
-				}
-
-				// 21. Rotate In Down Left
-				&--rotateInDownLeft {
-					@include opacity(1);
-					animation-name: rotateInDownLeft;
-				}
-
-				// 22. Rotate In Down Right
-				&--rotateInDownRight {
-					@include opacity(1);
-					animation-name: rotateInDownRight;
-				}
-
-				// 23. Slide In Up
-				&--slideInUp {
-					@include opacity(1);
-					animation-name: slideInUp;
-				}
-
-				// 24. Slide In Down
-				&--slideInDown {
-					@include opacity(1);
-					animation-name: slideInDown;
-				}
-
-				// 25. Slide In Left
-				&--slideInLeft {
-					@include opacity(1);
-					animation-name: slideInLeft;
-				}
-
-				// 26. Slide In Right
-				&--slideInRight {
-					@include opacity(1);
-					animation-name: slideInRight;
-				}
-
-				// 27. Zoom In
-				&--zoomIn {
-					@include opacity(1);
-					animation-name: zoomIn;
-				}
-
-				// 28. Zoom In Up
-				&--zoomInUp {
-					@include opacity(1);
-					animation-name: zoomInUp;
-				}
-
-				// 29. Zoom In Down
-				&--zoomInDown {
-					@include opacity(1);
-					animation-name: zoomInDown;
-				}
-
-				// 30. Zoom In Left
-				&--zoomInLeft {
-					@include opacity(1);
-					animation-name: zoomInLeft;
-				}
-
-				// 31. Zoom In Right
-				&--zoomInRight {
-					@include opacity(1);
-					animation-name: zoomInRight;
-				}
-			}
-
-			// ======================================== //
-			// OUTRO ANIMATIONS                         //
-			// ======================================== //
-			&.hustle-animate-out {
-
-				// 1. Bounce Out
-				&--bounceOut {
-					@include opacity(0);
-					animation-name: bounceOut;
-					animation-duration: .75s;
-				}
-
-				// 2. Bounce Out Up
-				&--bounceOutUp {
-					@include opacity(0);
-					animation-name: bounceOutUp;
-				}
-
-				// 3. Bounce Out Down
-				&--bounceOutDown {
-					@include opacity(0);
-					animation-name: bounceOutDown;
-				}
-
-				// 4. Bounce Out Left
-				&--bounceOutLeft {
-					@include opacity(0);
-					animation-name: bounceOutLeft;
-				}
-
-				// 5. Bounce Out Right
-				&--bounceOutRight {
-					@include opacity(0);
-					animation-name: bounceOutRight;
-				}
-
-				// 6. Fade Out
-				&--fadeOut {
-					@include opacity(0);
-					animation: fadeOut;
-					animation-duration: 300ms;
-				}
-
-				// 7. Fade Out Up
-				&--fadeOutUp {
-					@include opacity(0);
-					animation-name: fadeOutUp;
-				}
-
-				// 8. Fade Out Down
-				&--fadeOutDown {
-					@include opacity(0);
-					animation-name: fadeOutDown;
-				}
-
-				// 9. Fade Out Left
-				&--fadeOutLeft {
-					@include opacity(0);
-					animation-name: fadeOutLeft;
-				}
-
-				// 10. Fade Out Right
-				&--fadeOutRight {
-					@include opacity(0);
-					animation-name: fadeOutRight;
-				}
-
-				// 11. Fade Out Up (Big)
-				&--fadeOutUpBig {
-					@include opacity(0);
-					animation-name: fadeOutUpBig;
-				}
-
-				// 12. Fade Out Down (Big)
-				&--fadeOutDownBig {
-					@include opacity(0);
-					animation-name: fadeOutDownBig;
-				}
-
-				// 13. Fade Out Left (Big)
-				&--fadeOutLeftBig {
-					@include opacity(0);
-					animation-name: fadeOutLeftBig;
-				}
-
-				// 14. Fade Out Right (Big)
-				&--fadeOutRightBig {
-					@include opacity(0);
-					animation-name: fadeOutRightBig;
-				}
-
-				// 15. Lightspeed Out
-				&--lightSpeedOut {
-					@include opacity(0);
-					animation-name: lightSpeedOut;
-					animation-timing-function: ease-in;
-				}
-
-				// 16. Newspaper Out
-				&--newspaperOut {
-					@include opacity(0);
-					animation-name: newspaperOut;
-					animation-duration: .5s;
-					animation-timing-function: ease;
-				}
-
-				// 17. Roll Out
-				&--rollOut {
-					@include opacity(0);
-					animation-name: rollOut;
-				}
-
-				// 18. Rotate Out
-				&--rotateOut {
-					@include opacity(0);
-					animation-name: rotateOut;
-				}
-
-				// 19. Rotate Out Up Left
-				&--rotateOutUpLeft {
-					@include opacity(0);
-					animation-name: rotateOutUpLeft;
-				}
-
-				// 20. Rotate Out Up Right
-				&--rotateOutUpRight {
-					@include opacity(0);
-					animation-name: rotateOutUpRight;
-				}
-
-				// 21. Rotate Out Down Left
-				&--rotateOutDownLeft {
-					@include opacity(0);
-					animation-name: rotateOutDownLeft;
-				}
-
-				// 22. Rotate Out Down Right
-				&--rotateOutDownRight {
-					@include opacity(0);
-					animation-name: rotateOutDownRight;
-				}
-
-				// 23. Slide Out Up
-				&--slideOutUp {
-					@include opacity(1);
-					animation-name: slideOutUp;
-				}
-
-				// 24. Slide Out Down
-				&--slideOutDown {
-					@include opacity(1);
-					animation-name: slideOutDown;
-				}
-
-				// 25. Slide Out Left
-				&--slideOutLeft {
-					@include opacity(1);
-					animation-name: slideOutLeft;
-				}
-
-				// 26. Slide Out Right
-				&--slideOutRight {
-					@include opacity(1);
-					animation-name: slideOutRight;
-				}
-
-				// 27. Zoom Out
-				&--zoomOut {
-					@include opacity(0);
-					animation-name: zoomOut;
-				}
-
-				// 28. Zoom Out Up
-				&--zoomOutUp {
-					@include opacity(0);
-					animation-name: zoomOutUp;
-				}
-
-				// 29. Zoom Out Down
-				&--zoomOutDown {
-					@include opacity(0);
-					animation-name: zoomOutDown;
-				}
-
-				// 30. Zoom Out Left
-				&--zoomOutLeft {
-					@include opacity(0);
-					animation-name: zoomOutLeft;
-				}
-
-				// 31. Zoom Out Right
-				&--zoomOutRight {
-					@include opacity(0);
-					animation-name: zoomOutRight;
-				}
-			}
-		}
-
-		&.hustle-show {
-			display: flex;
-		}
-
-		&[data-overlay-close="1"] {
-
-			.hustle-popup-mask {
-				cursor: pointer;
-			}
-		}
-
-		@include support(ie) {
-			align-items: baseline;
-		}
-
-		@include media(max-width, sm) {
-			padding-right: $hui-gutter-sm;
-			padding-left: $hui-gutter-sm;
-		}
-
-		@include media(min-width, sm) {
-			padding-right: $hui-gutter;
-			padding-left: $hui-gutter;
-		}
+	}
+
+	@include support(ie) {
+		align-items: baseline;
+	}
+
+	@include media(max-width, sm) {
+		padding-right: $hui-gutter-sm;
+		padding-left: $hui-gutter-sm;
+	}
+
+	@include media(min-width, sm) {
+		padding-right: $hui-gutter;
+		padding-left: $hui-gutter;
 	}
 }

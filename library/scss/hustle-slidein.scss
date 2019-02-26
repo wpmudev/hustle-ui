@@ -1,319 +1,317 @@
 @import "variables";
 @import "animations";
+@import "mixin-class";
 @import "mixin-breakpoints";
 @import "mixin-opacity";
 
-.hustle-ui {
+@include hui-class(slidein, null, null, false) {
+	pointer-events: none;
+	display: none;
+	position: fixed;
+	align-items: center;
+	justify-content: center;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;;
+	z-index: $hui-z-index;
 
-	&.hustle-slidein {
-		pointer-events: none;
-		display: none;
-		position: fixed;
-		align-items: center;
-		justify-content: center;
-		top: 0;
-		right: 0;
-		bottom: 0;
-		left: 0;;
-		z-index: $hui-z-index;
+	.hustle-slidein-content {
+		width: 100%;
+		max-width: $hui-dialog-width;
+		overflow-y: auto;
+		@include opacity(0);
+		pointer-events: initial;
+		animation-duration: 1s;
+		animation-fill-mode: both;
+		transform-origin: center;
+		transform-style: preserve-3d;
+	}
 
-		.hustle-slidein-content {
-			width: 100%;
-			max-width: $hui-dialog-width;
-			overflow-y: auto;
-			@include opacity(0);
-			pointer-events: initial;
-			animation-duration: 1s;
-			animation-fill-mode: both;
-			transform-origin: center;
-			transform-style: preserve-3d;
-		}
+	&.hustle-slidein-position {
 
-		&.hustle-slidein-position {
+		// 1. North
+		&--north {
+			align-items: flex-start;
 
-			// 1. North
-			&--north {
-				align-items: flex-start;
+			.hustle-slidein-content {
 
-				.hustle-slidein-content {
+				&.hustle-animate-in {
+					@include opacity(1);
+					animation-name: slideInDown;
+				}
 
-					&.hustle-animate-in {
-						@include opacity(1);
-						animation-name: slideInDown;
-					}
-
-					&.hustle-animate-out {
-						@include opacity(1);
-						animation-name: slideOutUp;
-					}
-
-					@include media(max-width, sm) {
-						max-height: calc(100vh - #{$hui-gutter-sm});
-					}
-
-					@include media(min-width, sm) {
-						max-height: calc(100vh - #{$hui-gutter});
-					}
+				&.hustle-animate-out {
+					@include opacity(1);
+					animation-name: slideOutUp;
 				}
 
 				@include media(max-width, sm) {
-					padding: 0 $hui-gutter-sm;
+					max-height: calc(100vh - #{$hui-gutter-sm});
 				}
 
 				@include media(min-width, sm) {
-					padding: 0 $hui-gutter;
+					max-height: calc(100vh - #{$hui-gutter});
 				}
 			}
 
-			// 2. South
-			&--south {
-				align-items: flex-end;
-
-				.hustle-slidein-content {
-
-					&.hustle-animate-in {
-						@include opacity(1);
-						animation-name: slideInUp;
-					}
-
-					&.hustle-animate-out {
-						@include opacity(1);
-						animation-name: slideOutDown;
-					}
-
-					@include media(max-width, sm) {
-						max-height: calc(100vh - #{$hui-gutter-sm});
-					}
-
-					@include media(min-width, sm) {
-						max-height: calc(100vh - #{$hui-gutter});
-					}
-				}
-
-				@include media(max-width, sm) {
-					padding: 0 $hui-gutter-sm $hui-gutter-sm;
-				}
-
-				@include media(min-width, sm) {
-					padding: 0 $hui-gutter $hui-gutter;
-				}
+			@include media(max-width, sm) {
+				padding: 0 $hui-gutter-sm;
 			}
 
-			// 3. East
-			&--east {
-				justify-content: flex-end;
-
-				.hustle-slidein-content {
-
-					&.hustle-animate-in {
-						@include opacity(1);
-						animation-name: slideInRight;
-					}
-
-					&.hustle-animate-out {
-						@include opacity(1);
-						animation-name: slideOutRight;
-					}
-
-					@include media(max-width, sm) {
-						max-height: calc(100vh - #{$hui-gutter-sm * 2});
-					}
-
-					@include media(min-width, sm) {
-						max-height: calc(100vh - #{$hui-gutter * 2});
-					}
-				}
-
-				@include media(max-width, sm) {
-					padding-left: $hui-gutter-sm;
-				}
-
-				@include media(min-width, sm) {
-					padding-left: $hui-gutter;
-				}
-			}
-
-			// 4. West
-			&--west {
-				justify-content: flex-start;
-
-				.hustle-slidein-content {
-
-					&.hustle-animate-in {
-						@include opacity(1);
-						animation-name: slideInLeft;
-					}
-
-					&.hustle-animate-out {
-						@include opacity(1);
-						animation-name: slideOutLeft;
-					}
-
-					@include media(max-width, sm) {
-						max-height: calc(100vh - #{$hui-gutter-sm * 2});
-					}
-
-					@include media(min-width, sm) {
-						max-height: calc(100vh - #{$hui-gutter * 2});
-					}
-				}
-
-				@include media(max-width, sm) {
-					padding-right: $hui-gutter-sm;
-				}
-
-				@include media(min-width, sm) {
-					padding-right: $hui-gutter;
-				}
-			}
-
-			// 5. North East
-			&--north-east {
-				justify-content: flex-end;
-				align-items: flex-start;
-
-				.hustle-slidein-content {
-
-					&.hustle-animate-in {
-						@include opacity(1);
-						animation-name: slideInRight;
-					}
-
-					&.hustle-animate-out {
-						@include opacity(1);
-						animation-name: slideOutRight;
-					}
-
-					@include media(max-width, sm) {
-						max-height: calc(100vh - #{$hui-gutter-sm});
-					}
-
-					@include media(min-width, sm) {
-						max-height: calc(100vh - #{$hui-gutter});
-					}
-				}
-
-				@include media(max-width, sm) {
-					padding-left: $hui-gutter-sm;
-				}
-
-				@include media(min-width, sm) {
-					padding-left: $hui-gutter;
-				}
-			}
-
-			// 6. North West
-			&--north-west {
-				justify-content: flex-start;
-				align-items: flex-start;
-
-				.hustle-slidein-content {
-
-					&.hustle-animate-in {
-						@include opacity(1);
-						animation-name: slideInLeft;
-					}
-
-					&.hustle-animate-out {
-						@include opacity(1);
-						animation-name: slideOutLeft;
-					}
-
-					@include media(max-width, sm) {
-						max-height: calc(100vh - #{$hui-gutter-sm});
-					}
-
-					@include media(min-width, sm) {
-						max-height: calc(100vh - #{$hui-gutter});
-					}
-				}
-
-				@include media(max-width, sm) {
-					padding-right: $hui-gutter-sm;
-				}
-
-				@include media(min-width, sm) {
-					padding-right: $hui-gutter;
-				}
-			}
-
-			// 7. South East
-			&--south-east {
-				justify-content: flex-end;
-				align-items: flex-end;
-
-				.hustle-slidein-content {
-
-					&.hustle-animate-in {
-						@include opacity(1);
-						animation-name: slideInRight;
-					}
-
-					&.hustle-animate-out {
-						@include opacity(1);
-						animation-name: slideOutRight;
-					}
-
-					@include media(max-width, sm) {
-						max-height: calc(100vh - #{$hui-gutter-sm});
-					}
-
-					@include media(min-width, sm) {
-						max-height: calc(100vh - #{$hui-gutter});
-					}
-				}
-
-				@include media(max-width, sm) {
-					padding-bottom: $hui-gutter-sm;
-					padding-left: $hui-gutter-sm;
-				}
-
-				@include media(min-width, sm) {
-					padding-bottom: $hui-gutter;
-					padding-left: $hui-gutter;
-				}
-			}
-
-			// 8. South West
-			&--south-west {
-				justify-content: flex-start;
-				align-items: flex-end;
-
-				.hustle-slidein-content {
-
-					&.hustle-animate-in {
-						@include opacity(1);
-						animation-name: slideInLeft;
-					}
-
-					&.hustle-animate-out {
-						@include opacity(1);
-						animation-name: slideOutLeft;
-					}
-
-					@include media(max-width, sm) {
-						max-height: calc(100vh - #{$hui-gutter-sm});
-					}
-
-					@include media(min-width, sm) {
-						max-height: calc(100vh - #{$hui-gutter});
-					}
-				}
-
-				@include media(max-width, sm) {
-					padding-bottom: $hui-gutter-sm;
-					padding-right: $hui-gutter-sm;
-				}
-
-				@include media(min-width, sm) {
-					padding-bottom: $hui-gutter;
-					padding-right: $hui-gutter;
-				}
+			@include media(min-width, sm) {
+				padding: 0 $hui-gutter;
 			}
 		}
 
-		&.hustle-show {
-			display: flex;
+		// 2. South
+		&--south {
+			align-items: flex-end;
+
+			.hustle-slidein-content {
+
+				&.hustle-animate-in {
+					@include opacity(1);
+					animation-name: slideInUp;
+				}
+
+				&.hustle-animate-out {
+					@include opacity(1);
+					animation-name: slideOutDown;
+				}
+
+				@include media(max-width, sm) {
+					max-height: calc(100vh - #{$hui-gutter-sm});
+				}
+
+				@include media(min-width, sm) {
+					max-height: calc(100vh - #{$hui-gutter});
+				}
+			}
+
+			@include media(max-width, sm) {
+				padding: 0 $hui-gutter-sm $hui-gutter-sm;
+			}
+
+			@include media(min-width, sm) {
+				padding: 0 $hui-gutter $hui-gutter;
+			}
 		}
+
+		// 3. East
+		&--east {
+			justify-content: flex-end;
+
+			.hustle-slidein-content {
+
+				&.hustle-animate-in {
+					@include opacity(1);
+					animation-name: slideInRight;
+				}
+
+				&.hustle-animate-out {
+					@include opacity(1);
+					animation-name: slideOutRight;
+				}
+
+				@include media(max-width, sm) {
+					max-height: calc(100vh - #{$hui-gutter-sm * 2});
+				}
+
+				@include media(min-width, sm) {
+					max-height: calc(100vh - #{$hui-gutter * 2});
+				}
+			}
+
+			@include media(max-width, sm) {
+				padding-left: $hui-gutter-sm;
+			}
+
+			@include media(min-width, sm) {
+				padding-left: $hui-gutter;
+			}
+		}
+
+		// 4. West
+		&--west {
+			justify-content: flex-start;
+
+			.hustle-slidein-content {
+
+				&.hustle-animate-in {
+					@include opacity(1);
+					animation-name: slideInLeft;
+				}
+
+				&.hustle-animate-out {
+					@include opacity(1);
+					animation-name: slideOutLeft;
+				}
+
+				@include media(max-width, sm) {
+					max-height: calc(100vh - #{$hui-gutter-sm * 2});
+				}
+
+				@include media(min-width, sm) {
+					max-height: calc(100vh - #{$hui-gutter * 2});
+				}
+			}
+
+			@include media(max-width, sm) {
+				padding-right: $hui-gutter-sm;
+			}
+
+			@include media(min-width, sm) {
+				padding-right: $hui-gutter;
+			}
+		}
+
+		// 5. North East
+		&--north-east {
+			justify-content: flex-end;
+			align-items: flex-start;
+
+			.hustle-slidein-content {
+
+				&.hustle-animate-in {
+					@include opacity(1);
+					animation-name: slideInRight;
+				}
+
+				&.hustle-animate-out {
+					@include opacity(1);
+					animation-name: slideOutRight;
+				}
+
+				@include media(max-width, sm) {
+					max-height: calc(100vh - #{$hui-gutter-sm});
+				}
+
+				@include media(min-width, sm) {
+					max-height: calc(100vh - #{$hui-gutter});
+				}
+			}
+
+			@include media(max-width, sm) {
+				padding-left: $hui-gutter-sm;
+			}
+
+			@include media(min-width, sm) {
+				padding-left: $hui-gutter;
+			}
+		}
+
+		// 6. North West
+		&--north-west {
+			justify-content: flex-start;
+			align-items: flex-start;
+
+			.hustle-slidein-content {
+
+				&.hustle-animate-in {
+					@include opacity(1);
+					animation-name: slideInLeft;
+				}
+
+				&.hustle-animate-out {
+					@include opacity(1);
+					animation-name: slideOutLeft;
+				}
+
+				@include media(max-width, sm) {
+					max-height: calc(100vh - #{$hui-gutter-sm});
+				}
+
+				@include media(min-width, sm) {
+					max-height: calc(100vh - #{$hui-gutter});
+				}
+			}
+
+			@include media(max-width, sm) {
+				padding-right: $hui-gutter-sm;
+			}
+
+			@include media(min-width, sm) {
+				padding-right: $hui-gutter;
+			}
+		}
+
+		// 7. South East
+		&--south-east {
+			justify-content: flex-end;
+			align-items: flex-end;
+
+			.hustle-slidein-content {
+
+				&.hustle-animate-in {
+					@include opacity(1);
+					animation-name: slideInRight;
+				}
+
+				&.hustle-animate-out {
+					@include opacity(1);
+					animation-name: slideOutRight;
+				}
+
+				@include media(max-width, sm) {
+					max-height: calc(100vh - #{$hui-gutter-sm});
+				}
+
+				@include media(min-width, sm) {
+					max-height: calc(100vh - #{$hui-gutter});
+				}
+			}
+
+			@include media(max-width, sm) {
+				padding-bottom: $hui-gutter-sm;
+				padding-left: $hui-gutter-sm;
+			}
+
+			@include media(min-width, sm) {
+				padding-bottom: $hui-gutter;
+				padding-left: $hui-gutter;
+			}
+		}
+
+		// 8. South West
+		&--south-west {
+			justify-content: flex-start;
+			align-items: flex-end;
+
+			.hustle-slidein-content {
+
+				&.hustle-animate-in {
+					@include opacity(1);
+					animation-name: slideInLeft;
+				}
+
+				&.hustle-animate-out {
+					@include opacity(1);
+					animation-name: slideOutLeft;
+				}
+
+				@include media(max-width, sm) {
+					max-height: calc(100vh - #{$hui-gutter-sm});
+				}
+
+				@include media(min-width, sm) {
+					max-height: calc(100vh - #{$hui-gutter});
+				}
+			}
+
+			@include media(max-width, sm) {
+				padding-bottom: $hui-gutter-sm;
+				padding-right: $hui-gutter-sm;
+			}
+
+			@include media(min-width, sm) {
+				padding-bottom: $hui-gutter;
+				padding-right: $hui-gutter;
+			}
+		}
+	}
+
+	&.hustle-show {
+		display: flex;
 	}
 }

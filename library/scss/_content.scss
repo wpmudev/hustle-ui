@@ -1,47 +1,41 @@
-@include hustle-class() {
+@include hui-class(null, optin info, null, false) {
 
-	.hustle-info,
-	.hustle-optin {
+	.hustle-layout {
 
-		// SIZE: Small
-		.hustle-layout {
+		.hustle-group-content {
 
-			.hustle-group-content {
+			&:not(:first-child) {
+				margin-top: $hui-gutter-sm;
+			}
 
-				&:not(:first-child) {
-					margin-top: $hui-gutter-sm;
-				}
-
-				&:not(:last-child) {
-					margin-bottom: $hui-gutter-sm;
-				}
+			&:not(:last-child) {
+				margin-bottom: $hui-gutter-sm;
 			}
 		}
+	}
+}
 
-		// SIZE: Normal
-		&:not(.hustle-size--small) {
+@include hui-class(null, optin info, null, true) {
 
-			.hustle-layout {
+	.hustle-layout {
 
-				.hustle-group-content {
+		.hustle-group-content {
 
-					&:not(:first-child) {
-	
-						@include media(min-width, sm) {
-							margin-top: $hui-gutter;
-						}
-					}
-	
-					&:not(:last-child) {
-	
-						@include media(min-width, sm) {
-							margin-bottom: $hui-gutter;
-						}
-					}
+			&:not(:first-child) {
+
+				@include media(min-width, sm) {
+					margin-top: $hui-gutter;
+				}
+			}
+
+			&:not(:last-child) {
+
+				@include media(min-width, sm) {
+					margin-bottom: $hui-gutter;
 				}
 			}
 		}
 	}
 }
 
-@include content(both, group-content);
+@include content(optin info, group-content);

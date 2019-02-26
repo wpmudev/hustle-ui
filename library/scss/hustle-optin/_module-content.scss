@@ -1,4 +1,4 @@
-@include body-class() {
+@include hui-class(null, optin, null, false) {
 
 	.hustle-layout {
 
@@ -41,26 +41,25 @@
 			}
 		}
 	}
+}
 
-	// SIZE: Normal
-	&:not(.hustle-size--small) {
+@include hui-class(null, optin, null, true) {
 
-		.hustle-layout {
+	.hustle-layout {
 
-			.hustle-layout-content {
+		.hustle-layout-content {
 
-				.hustle-content {
+			.hustle-content {
 
-					.hustle-content-wrap {
-
-						@include media(min-width, md) {
-							padding: $hui-gutter 0;
-						}
-					}
+				.hustle-content-wrap {
 
 					@include media(min-width, md) {
-						padding: 0 $hui-gutter;
+						padding: $hui-gutter 0;
 					}
+				}
+
+				@include media(min-width, md) {
+					padding: 0 $hui-gutter;
 				}
 			}
 		}

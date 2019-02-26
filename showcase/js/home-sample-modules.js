@@ -160,6 +160,33 @@
 
 		}
 
+		function inlineSettings( element, moduleId ) {
+
+			const inline = element;
+
+			// Module settings
+			const modulePalette = [
+				'gray-slate',
+				'coffee',
+				'ectoplasm',
+				'blue',
+				'sunrise',
+				'midnight'
+			];
+
+			/**
+			 * Assign new settings to sample module
+			 */
+
+			// Unique ID
+			inline.attr( 'data-id', moduleId );
+			inline.addClass( 'hustle-module-' + moduleId );
+
+			// Module palette
+			inline.addClass( 'hustle-palette--' + getRandom( modulePalette ) );
+
+		}
+
 		function closesModule( element ) {
 
 			element.find( '.hustle-button-close' ).each( function() {
@@ -224,6 +251,7 @@
 			let renderModuleMode = '';
 
 			if ( 'optin' === moduleMode ) {
+
 				renderModuleMode = [
 					'templates/opt-in/default.html',
 					'templates/opt-in/compact.html',
@@ -233,6 +261,7 @@
 			}
 
 			if ( 'info' === moduleMode ) {
+
 				renderModuleMode = [
 					'templates/informational/default.html',
 					'templates/informational/compact.html',
@@ -251,6 +280,10 @@
 
 				if ( 'slidein' === moduleType ) {
 					slideinSettings( container, moduleId );
+				}
+
+				if ( 'inline' === moduleType ) {
+					inlineSettings( container, moduleId );
 				}
 
 				content.load( getRandom( renderModuleMode ), function() {
@@ -289,6 +322,11 @@
 
 				if ( 'slidein' === moduleType ) {
 					HUI.slideinLoad( container );
+				}
+
+				if ( 'inline' === moduleType ) {
+					HUI.inlineResize( container );
+					HUI.inlineLoad( container );
 				}
 			});
 

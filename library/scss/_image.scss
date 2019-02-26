@@ -61,7 +61,7 @@
 	}
 }
 
-@include hustle-class() {
+@include hui-class(null, null, null, false) {
 
 	.hustle-image {
 		position: relative;

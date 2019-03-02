@@ -1,0 +1,73 @@
+@include hui-class(null, social, null, false) {
+
+	a[class*="hustle-share-"] {
+		display: block;
+		border-width: $hui-social--border-width;
+		border-style: $hui-social--border-style;
+		background-image: unset;
+		background-color: transparent;
+
+		[class*="hustle-icon-social-"] {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+
+		.hustle-counter {
+			display: block;
+			font-size: $hui-social--font-size;
+			line-height: $hui-social--line-height;
+		}
+
+		&,
+		&:hover,
+		&:focus,
+		&:active {
+			outline: none;
+			box-shadow: none;
+		}
+	}
+
+	ul {
+
+		&.hustle-counter--none {
+
+			a[class*="hustle-share-"] {
+
+				.hustle-counter {
+					display: none;
+				}
+			}
+		}
+
+		&.hustle-counter--stacked {
+
+			a[class*="hustle-share-"] {
+				min-width: map-get($hui-social--icon, size);
+				text-align: center;
+
+				.hustle-counter {
+					padding: 10px 4px;
+				}
+			}
+		}
+
+		&.hustle-counter--inline {
+
+			a[class*="hustle-share-"] {
+				height: map-get($hui-social--icon, size);
+				display: flex;
+				align-items: center;
+
+				[class*="hustle-icon-social-"] {
+					margin-top: -#{$hui-social--border-width};
+					margin-left: -#{$hui-social--border-width};
+				}
+
+				.hustle-counter {
+					padding: 0 10px;
+				}
+			}
+		}
+	}
+}

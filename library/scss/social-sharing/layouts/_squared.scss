@@ -1,0 +1,62 @@
+@include hui-class(null, social, squared, false) {
+
+	a[class*="hustle-share-"] {
+		border-radius: 0 !important;
+
+		[class*="hustle-icon-social-"] {
+			height: map-get($hui-social--icon, size);
+			font-size: map-get($hui-social--icon, icon);
+		}
+	}
+
+	@each $icon, $color in $hui-social--colors {
+
+		a.hustle-share--#{$icon} {
+			border-color: $color;
+
+			.hustle-icon-social-#{$icon} {
+				background-color: $color;
+				color: #FFFFFF;
+			}
+		}
+	}
+
+	ul {
+
+		&.hustle-counter--none {
+
+			a[class*="hustle-share-"] {
+				border-width: 0;
+
+				[class*="hustle-icon-social-"] {
+					width: map-get($hui-social--icon, size);
+				}
+			}
+		}
+
+		&.hustle-counter--stacked {
+
+			a[class*="hustle-share-"] {
+
+				[class*="hustle-icon-social-"] {
+					width: auto;
+					margin-top: -#{$hui-social--border-width};
+					margin-right: -#{$hui-social--border-width};
+					margin-left: -#{$hui-social--border-width};
+				}
+			}
+		}
+
+		&.hustle-counter--inline {
+
+			a[class*="hustle-share-"] {
+
+				[class*="hustle-icon-social-"] {
+					width: map-get($hui-social--icon, size);
+					margin-top: -#{$hui-social--border-width};
+					margin-left: -#{$hui-social--border-width};
+				}
+			}
+		}
+	}
+}

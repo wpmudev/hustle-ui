@@ -1,0 +1,36 @@
+@include hui-class(null, social, outlined, false) {
+
+	a[class*="hustle-share-"] {
+		border-radius: map-get($hui-social--icon, size) !important;
+
+		[class*="hustle-icon-social-"] {
+			width: #{map-get($hui-social--icon, size) - ($hui-social--border-width * 2)};
+			height: #{map-get($hui-social--icon, size) - ($hui-social--border-width * 2)};
+			font-size: map-get($hui-social--icon, icon-sm);
+		}
+	}
+
+	@each $icon, $color in $hui-social--colors {
+
+		a.hustle-share--#{$icon} {
+			border-color: $color;
+
+			.hustle-icon-social-#{$icon} {
+				color: $color;
+			}
+		}
+	}
+
+	ul {
+
+		&.hustle-counter--stacked {
+
+			a[class*="hustle-share-"] {
+
+				[class*="hustle-icon-social-"] {
+					margin: 0 auto;
+				}
+			}
+		}
+	}
+}

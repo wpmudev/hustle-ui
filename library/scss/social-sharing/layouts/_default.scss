@@ -1,0 +1,63 @@
+@include hui-class(null, social, default, false) {
+
+	a[class*="hustle-share-"] {
+		border-radius: 0 !important;
+
+		[class*="hustle-icon-social-"] {
+			width: #{map-get($hui-social--icon, size) - ($hui-social--border-width * 2)};
+			height: #{map-get($hui-social--icon, size) - ($hui-social--border-width * 2)};
+		}
+	}
+
+	@each $icon, $color in $hui-social--colors {
+
+		a.hustle-share--#{$icon} {
+
+			.hustle-icon-social-#{$icon} {
+				color: $color;
+			}
+		}
+
+		ul.hustle-counter--none {
+
+			a.hustle-share--#{$icon} {
+				border-color: transparent;
+			}
+		}
+
+		ul:not(.hustle-counter--none) {
+
+			a.hustle-share--#{$icon} {
+				border-color: $color;
+			}
+		}
+	}
+
+	ul {
+
+		&.hustle-counter--none {
+
+			a[class*="hustle-share-"] {
+				font-size: map-get($hui-social--icon, icon-lg);
+			}
+		}
+
+		&.hustle-counter--stacked {
+
+			a[class*="hustle-share-"] {
+				font-size: map-get($hui-social--icon, icon);
+
+				[class*="hustle-icon-social-"] {
+					margin: 0 auto;
+				}
+			}
+		}
+
+		&.hustle-counter--stacked {
+
+			a[class*="hustle-share-"] {
+				font-size: map-get($hui-social--icon, icon);
+			}
+		}
+	}
+}

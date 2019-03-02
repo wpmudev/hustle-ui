@@ -123,3 +123,33 @@ $hui-calendar-table--cell-width:         30px !default;
 $hui-time-dropdown--height:      230px !default;
 $hui-time-dropdown--font-size:   13px  !default;
 $hui-time-dropdown--line-height: 30px  !default;
+
+// =============================================
+// 11. SOCIAL ICONS
+
+$hui-social--border-width: 1px   !default;
+$hui-social--border-style: solid !default;
+$hui-social--font-size:    14px  !default;
+$hui-social--line-height:  16px  !default;
+$hui-social--icon: (
+	size:    30px,
+	icon:    16px,
+	icon-sm: 14px,
+	icon-lg: 26px
+) !default;
+
+$hui-social--colors: (
+	facebook:  #32599D,
+	twitter:   #1DA1F2,
+	google:    #EF3D2C,
+	pinterest: #DC0019,
+	reddit:    #FF4500,
+	linkedin:  #0078BA,
+	vkontakte: #4A76A8,
+	500px:     #000000,
+	houzz:     #4DBC15,
+	instagram: #EC0475,
+	twitch:    #4B367C,
+	youtube:   #FF0000,
+	telegram:  #00ACE5
+) !default;

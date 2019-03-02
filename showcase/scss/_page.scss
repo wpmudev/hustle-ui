@@ -13,6 +13,20 @@
 			padding: $gutter 0;
 		}
 
+		.showcase-sample-wrapper {
+
+			.hustle-ui {
+
+				@include media(max-width, md) {
+					margin-top: $sui-gutter-md;
+				}
+
+				@include media(min-width, md) {
+					margin-top: $sui-gutter;
+				}
+			}
+		}
+
 		@include media(max-width, md) {
 			padding: 0 $sui-gutter-md $sui-gutter-md;
 		}

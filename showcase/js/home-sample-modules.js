@@ -201,10 +201,45 @@
 
 		}
 
+		function floatSettings( element ) {
+
+			const float = element;
+
+			const posHorizontal = [
+				'left',
+				'right',
+				'center'
+			];
+
+			const posVertical = [
+				'top',
+				'bottom'
+			];
+
+			const desktopHorizontal = getRandom( posHorizontal );
+			const desktopVertical = getRandom( posVertical );
+
+			const mobilesHorizontal = getRandom( posHorizontal );
+			const mobilesVertical = getRandom( posVertical );
+
+			/**
+			 * Assign new settings to sample module
+			 */
+
+			// Desktop position
+			float.attr( 'data-position-horizontal-desktop', desktopHorizontal );
+			float.attr( 'data-position-vertical-desktop', desktopVertical );
+
+			// Mobiles position
+			float.attr( 'data-position-horizontal-mobiles', mobilesHorizontal );
+			float.attr( 'data-position-vertical-mobiles', mobilesVertical );
+		}
+
 		function socialSettings( element, moduleType ) {
 
 			const container = element;
 			const list = container.find( 'ul' );
+			const parent = container.closest( '.hustle-float' );
 
 			const dataGridDesktop = 'data-grid-desktop';
 			const dataGridMobiles = 'data-grid-mobiles';
@@ -227,6 +262,16 @@
 				// Module grid
 				container.attr( dataGridDesktop, 'inline' );
 				container.attr( dataGridMobiles, 'inline' );
+
+			} else {
+
+				if ( 'center' === parent.attr( 'data-position-horizontal-desktop' ) ) {
+					container.attr( 'data-grid-desktop', 'inline' );
+				}
+
+				if ( 'center' === parent.attr( 'data-position-horizontal-mobiles' ) ) {
+					container.attr( 'data-grid-mobiles', 'inline' );
+				}
 			}
 
 			// Module icons style
@@ -343,6 +388,10 @@
 					inlineSettings( container, moduleId, moduleMode );
 				}
 
+				if ( 'float' === moduleType ) {
+					floatSettings( container );
+				}
+
 				content.load( getRandom( renderModuleMode ), function() {
 
 					if ( 'optin' === moduleMode ) {
@@ -371,6 +420,7 @@
 
 					if ( 'social' === moduleMode ) {
 						socialSettings( $( this ).find( '.hustle-social' ), moduleType );
+						HUI.floatResize( $( this ).find( '.hustle-social' ) );
 					}
 
 					closesModule( $( this ) );
@@ -386,8 +436,17 @@
 				}
 
 				if ( 'inline' === moduleType ) {
-					HUI.inlineResize( container );
+
+					if ( 'social' !== moduleMode ) {
+						HUI.inlineResize( container );
+					}
+
 					HUI.inlineLoad( container );
+
+				}
+
+				if ( 'float' === moduleType ) {
+					HUI.floatLoad( container );
 				}
 			});
 

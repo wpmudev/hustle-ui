@@ -8,68 +8,102 @@
 	ul, li {
 		border: 0;
 		list-style: none;
-	}
 
-	// GRID: Stacked
-	// Pile social icons one on top of the other.
-	&.hustle-social--stacked {
+		&, li {
+			border: 0;
+			list-style: none;
 
-		ul {
-			display: block;
-			margin: 0;
-			padding: 0;
-
-			li {
-				margin: 0;
-
-				&:not(:last-child) {
-
-					@include media(max-width, sm) {
-						margin-bottom: $hui-gutter-sm;
-					}
-
-					@include media(min-width, sm) {
-						margin-bottom: $hui-gutter;
-					}
-				}
+			&:before,
+			&:after {
+				content: unset;
 			}
 		}
 	}
 
-	// GRID: Inline
-	// Align social icons side-by-side.
-	&:not(.hustle-social--stacked) {
+	&[data-grid-desktop="inline"] {
 
 		ul {
-			display: flex;
-			flex-wrap: wrap;
-			flex: 1;
-			align-items: center;
-			padding: 0;
 
 			li {
-				flex: 0 0 auto;
-
-				&:before,
-				&:after {
-					content: unset;
-				}
-
-				@include media(max-width, sm) {
-					padding: #{$hui-gutter-sm / 2};
-				}
 
 				@include media(min-width, sm) {
+					flex: 0 0 auto;
 					padding: #{$hui-gutter / 2};
 				}
 			}
 
-			@include media(max-width, sm) {
-				margin: -#{$hui-gutter-sm / 2};
+			@include media(min-width, sm) {
+				display: flex;
+				flex-wrap: wrap;
+				flex: 1;
+				align-items: center;
+				margin: -#{$hui-gutter / 2};
+				padding: 0;
+			}
+		}
+	}
+
+	&[data-grid-desktop="stacked"] {
+
+		ul {
+
+			li {
+
+				@include media(min-width, sm) {
+					margin: 0;
+					padding: #{$hui-gutter / 2};
+				}
 			}
 
 			@include media(min-width, sm) {
+				display: flex;
+				flex-direction: column;
 				margin: -#{$hui-gutter / 2};
+				padding: 0;
+			}
+		}
+	}
+
+	&[data-grid-mobiles="inline"] {
+
+		ul {
+
+			li {
+
+				@include media(max-width, sm) {
+					flex: 0 0 auto;
+					padding: #{$hui-gutter-sm / 2};
+				}
+			}
+
+			@include media(max-width, sm) {
+				display: flex;
+				flex-wrap: wrap;
+				flex: 1;
+				align-items: center;
+				margin: -#{$hui-gutter-sm / 2};
+				padding: 0;
+			}
+		}
+	}
+
+	&[data-grid-mobiles="stacked"] {
+
+		ul {
+
+			li {
+
+				@include media(max-width, sm) {
+					margin: 0;
+					padding: #{$hui-gutter-sm / 2};
+				}
+			}
+
+			@include media(max-width, sm) {
+				display: flex;
+				flex-direction: column;
+				margin: -#{$hui-gutter-sm / 2};
+				padding: 0;
 			}
 		}
 	}

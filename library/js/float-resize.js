@@ -9,14 +9,13 @@
 
 	HUI.floatResize = function( el ) {
 
+		const breakpoint = 783;
+
 		const container = $( el );
-		const parent = container.closest( '.hustle-ui' );
-
 		const list = container.find( 'ul' );
-		const listHeight = list.height();
-
 		const items = list.find( 'li' );
-		const itemsHeight = items.outerHeight();
+		const parent = container.closest( '.hustle-ui' );
+		const parentWidth = parent.width();
 
 		if ( ! parent.is( '.hustle-float' ) ) {
 			return;
@@ -26,8 +25,44 @@
 			return;
 		}
 
+		function reset() {
+			list.css( 'width', '' );
+		}
+
+		function resize( screen, grid ) {
+
+			const listWidth = list.width();
+			const listHeight = list.height();
+
+			const itemsHeight = items.find( 'a' ).outerHeight();
+
+			const getIconsSize = parseInt( itemsHeight );
+			const getIconsGrid = getIconsSize + ( grid * 2 );
+			const getIconsLength = items.length;
+			const getIconsTotal = getIconsGrid * getIconsLength;
+
+			const getIconsCol = getIconsTotal / parseInt( listHeight );
+			const getIconsWidth = parseInt( listWidth ) * Math.ceil( getIconsCol );
+
+			if ( 'center' !== parent.attr( 'data-position-horizontal-' + screen ) ) {
+
+				if ( listHeight < getIconsTotal ) {
+					list.css( 'width', getIconsWidth + 'px' );
+				}
+
+			}
+		}
+
 		function init() {
-			console.log( itemsHeight ); // test
+
+			reset();
+
+			if ( parentWidth < breakpoint ) {
+				resize( 'mobiles', 5 );
+			} else {
+				resize( 'desktop', 10 );
+			}
+
 		}
 
 		init();

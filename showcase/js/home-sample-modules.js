@@ -160,11 +160,11 @@
 
 		}
 
-		function inlineSettings( element, moduleId ) {
+		function inlineSettings( element, moduleId, moduleMode ) {
 
 			const inline = element;
 
-			// Module settings
+			// Module palettes
 			const modulePalette = [
 				'gray-slate',
 				'coffee',
@@ -172,6 +172,13 @@
 				'blue',
 				'sunrise',
 				'midnight'
+			];
+
+			// Module alignment
+			const moduleAlignment = [
+				'left',
+				'center',
+				'right'
 			];
 
 			/**
@@ -182,9 +189,49 @@
 			inline.attr( 'data-id', moduleId );
 			inline.addClass( 'hustle-module-' + moduleId );
 
-			// Module palette
-			inline.addClass( 'hustle-palette--' + getRandom( modulePalette ) );
+			if ( 'social' === moduleMode ) {
 
+				// Module alignment
+				inline.attr( 'data-alignment', getRandom( moduleAlignment ) );
+			} else {
+
+				// Module palette
+				inline.addClass( 'hustle-palette--' + getRandom( modulePalette ) );
+			}
+
+		}
+
+		function socialSettings( element, moduleType ) {
+
+			const container = element;
+			const list = container.find( 'ul' );
+
+			const dataGridDesktop = 'data-grid-desktop';
+			const dataGridMobiles = 'data-grid-mobiles';
+
+			const counter = [
+				'none',
+				'stacked',
+				'inline'
+			];
+
+			function resetCounter() {
+
+				$.each( counter, function( i, item ) {
+					list.removeClass( 'hustle-counter--' + item );
+				});
+			}
+
+			if ( 'inline' === moduleType ) {
+
+				// Module grid
+				container.attr( dataGridDesktop, 'inline' );
+				container.attr( dataGridMobiles, 'inline' );
+			}
+
+			// Module icons style
+			resetCounter();
+			list.addClass( 'hustle-counter--' + getRandom( counter ) );
 		}
 
 		function closesModule( element ) {
@@ -269,6 +316,16 @@
 				];
 			}
 
+			if ( 'social' === moduleMode ) {
+
+				renderModuleMode = [
+					'templates/social/default.html',
+					'templates/social/outlined.html',
+					'templates/social/rounded.html',
+					'templates/social/squared.html'
+				];
+			}
+
 			showcase.load( renderModuleType, function() {
 
 				const container = $( this ).find( '.hustle-' + moduleType );
@@ -283,7 +340,7 @@
 				}
 
 				if ( 'inline' === moduleType ) {
-					inlineSettings( container, moduleId );
+					inlineSettings( container, moduleId, moduleMode );
 				}
 
 				content.load( getRandom( renderModuleMode ), function() {
@@ -310,6 +367,10 @@
 
 							window.open( url, target );
 						});
+					}
+
+					if ( 'social' === moduleMode ) {
+						socialSettings( $( this ).find( '.hustle-social' ), moduleType );
 					}
 
 					closesModule( $( this ) );

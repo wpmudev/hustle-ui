@@ -608,6 +608,132 @@
 		window.HUI = {};
 	}
 
+	HUI.floatLoad = function( el ) {
+
+		const float = $( el );
+		const content = float.find( '.hustle-float-content' );
+
+		if ( ! float.is( '.hustle-float' ) ) {
+			return;
+		}
+
+		function reset() {
+			float.removeClass( 'hustle-show' );
+		}
+
+		function show() {
+			float.addClass( 'hustle-show' );
+		}
+
+		function animation() {
+			content.addClass( 'hustle-animate-in' );
+		}
+
+		function init() {
+
+			reset();
+
+			// Module time
+			setTimeout( function() {
+				show();
+			}, 0 );
+
+			// Layout time
+			setTimeout( function() {
+				animation();
+			}, 200 );
+
+		}
+
+		init();
+
+		return this;
+	};
+}( jQuery ) );
+
+( function( $ ) {
+
+	'use strict';
+
+	// Define global HUI object if it doesn't exist.
+	if ( 'object' !== typeof window.HUI ) {
+		window.HUI = {};
+	}
+
+	HUI.floatResize = function( el ) {
+
+		const breakpoint = 783;
+
+		const container = $( el );
+		const list = container.find( 'ul' );
+		const items = list.find( 'li' );
+		const parent = container.closest( '.hustle-ui' );
+		const parentWidth = parent.width();
+
+		if ( ! parent.is( '.hustle-float' ) ) {
+			return;
+		}
+
+		if ( ! container.is( '.hustle-social' ) ) {
+			return;
+		}
+
+		function reset() {
+			list.css( 'width', '' );
+		}
+
+		function resize( screen, grid ) {
+
+			const listWidth = list.width();
+			const listHeight = list.height();
+
+			const itemsHeight = items.find( 'a' ).outerHeight();
+
+			const getIconsSize = parseInt( itemsHeight );
+			const getIconsGrid = getIconsSize + ( grid * 2 );
+			const getIconsLength = items.length;
+			const getIconsTotal = getIconsGrid * getIconsLength;
+
+			const getIconsCol = getIconsTotal / parseInt( listHeight );
+			const getIconsWidth = parseInt( listWidth ) * Math.ceil( getIconsCol );
+
+			if ( 'center' !== parent.attr( 'data-position-horizontal-' + screen ) ) {
+
+				if ( listHeight < getIconsTotal ) {
+					list.css( 'width', getIconsWidth + 'px' );
+				}
+
+			}
+		}
+
+		function init() {
+
+			reset();
+
+			if ( parentWidth < breakpoint ) {
+				resize( 'mobiles', 5 );
+			} else {
+				resize( 'desktop', 10 );
+			}
+
+		}
+
+		init();
+
+		return this;
+
+	};
+}( jQuery ) );
+
+( function( $ ) {
+
+	'use strict';
+
+	// Define global HUI object if it doesn't exist.
+	if ( 'object' !== typeof window.HUI ) {
+		window.HUI = {};
+	}
+
 	HUI.inlineLoad = function( el ) {
 
 		const element = $( el );
@@ -7889,6 +8015,41 @@
 		});
 	};
 
+}( jQuery ) );
+
+( function( $ ) {
+
+	'use strict';
+
+	// Define global HUI object if it doesn't exist.
+	if ( 'object' !== typeof window.HUI ) {
+		window.HUI = {};
+	}
+
+	HUI.sharingSimulation = function( el ) {
+
+		const module = $( el );
+
+		if ( ! module.is( '.hustle-ui' ) ) {
+			return;
+		}
+
+		function resetOnLoad() {
+			module.hide();
+		}
+
+		function init() {
+
+			resetOnLoad();
+
+		}
+
+		init();
+
+		return this;
+	};
+
+	//HUI.sharingSimulation( '.hustle-float' );
 }( jQuery ) );
 
 ( function( $ ) {

@@ -15,8 +15,8 @@
 
 		.hustle-counter {
 			display: block;
-			font-size: $hui-social--font-size;
-			line-height: $hui-social--line-height;
+			font: 600 #{$hui-social--font-size}/#{$hui-social--line-height} $hui-font;
+			letter-spacing: 0;
 		}
 
 		&,

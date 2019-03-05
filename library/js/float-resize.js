@@ -7,7 +7,7 @@
 		window.HUI = {};
 	}
 
-	HUI.floatResize = function() {
+	HUI.floatResize = function( el ) {
 
 		const container = $( el );
 		const parent = container.closest( '.hustle-ui' );

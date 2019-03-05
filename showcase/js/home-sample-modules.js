@@ -235,6 +235,37 @@
 			float.attr( 'data-position-vertical-mobiles', mobilesVertical );
 		}
 
+		function floatGrid( element ) {
+
+			const breakpoint = 783;
+
+			const container = element; // .hustle-social
+			const list = container.find( 'ul' );
+			const parent = container.closest( '.hustle-ui' );
+
+			const dataGridDesktop = 'data-grid-desktop';
+			const dataGridMobiles = 'data-grid-mobiles';
+
+			if ( 'float' === moduleType ) {
+
+				if ( parent.width() < breakpoint ) {
+
+					if ( 'center' === parent.attr( 'data-position-horizontal-mobiles' ) ) {
+						container.attr( dataGridMobiles, 'inline' );
+					} else {
+						container.attr( dataGridMobiles, 'stacked' );
+					}
+				} else {
+
+					if ( 'center' === parent.attr( 'data-position-horizontal-desktop' ) ) {
+						container.attr( dataGridDesktop, 'inline' );
+					} else {
+						container.attr( dataGridDesktop, 'stacked' );
+					}
+				}
+			}
+		}
+
 		function socialSettings( element, moduleType ) {
 
 			const container = element;
@@ -263,15 +294,6 @@
 				container.attr( dataGridDesktop, 'inline' );
 				container.attr( dataGridMobiles, 'inline' );
 
-			} else {
-
-				if ( 'center' === parent.attr( 'data-position-horizontal-desktop' ) ) {
-					container.attr( 'data-grid-desktop', 'inline' );
-				}
-
-				if ( 'center' === parent.attr( 'data-position-horizontal-mobiles' ) ) {
-					container.attr( 'data-grid-mobiles', 'inline' );
-				}
 			}
 
 			// Module icons style
@@ -418,9 +440,21 @@
 						});
 					}
 
+					const social = $( this ).find( '.hustle-social' );
+
 					if ( 'social' === moduleMode ) {
-						socialSettings( $( this ).find( '.hustle-social' ), moduleType );
-						HUI.floatResize( $( this ).find( '.hustle-social' ) );
+
+						socialSettings( social, moduleType );
+						floatGrid( social, moduleType );
+
+						setTimeout( function() {
+							HUI.floatResize( social );
+						}, 200 );
+
+						$( window ).on( 'resize', function() {
+							floatGrid( social, moduleType );
+							HUI.floatResize( social );
+						});
 					}
 
 					closesModule( $( this ) );

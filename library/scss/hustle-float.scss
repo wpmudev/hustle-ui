@@ -2,9 +2,11 @@
 
 @import "mixins/main-class";
 @import "mixins/breakpoints";
+@import "mixins/opacity";
 
 @include hui-class(float, null, null, false) {
 	pointer-events: none;
+	display: none;
 	margin: 0;
 	padding: 0;
 	border: 0;
@@ -21,11 +23,11 @@
 		max-width: 100%;
 		max-height: 100vh;
 		position: fixed;
+		z-index: $hui-z-index;
 		top: 0;
 		right: 0;
 		bottom: 0;
 		left: 0;
-		display: flex;
 
 		.hustle-float-content {
 			width: auto;
@@ -34,6 +36,11 @@
 			max-height: 100%;
 			display: inline-flex;
 			flex: 0 0 auto;
+			@include opacity(0);
+			animation-duration: 0.5s;
+			animation-fill-mode: both;
+			transform-origin: center;
+			transform-style: preserve-3d;
 		}
 
 		// POSITION: Desktop
@@ -57,6 +64,14 @@
 
 			// HORIZONTAL: Left
 			&[data-position-horizontal-desktop="left"] {
+
+				.hustle-float-content {
+
+					&.hustle-animate-in {
+						@include opacity(1);
+						animation-name: slideInLeft;
+					}
+				}
 
 				.hustle-social {
 
@@ -92,6 +107,14 @@
 			// HORIZONTAL: Right
 			&[data-position-horizontal-desktop="right"] {
 
+				.hustle-float-content {
+
+					&.hustle-animate-in {
+						@include opacity(1);
+						animation-name: slideInRight;
+					}
+				}
+
 				.hustle-social {
 
 					&[data-grid-desktop="stacked"] ul {
@@ -125,6 +148,30 @@
 
 			// HORIZONTAL: Center
 			&[data-position-horizontal-desktop="center"] {
+
+				// VERTICAL: Top
+				&[data-position-vertical-desktop="top"] {
+
+					.hustle-float-content {
+
+						&.hustle-animate-in {
+							@include opacity(1);
+							animation-name: slideInDown;
+						}
+					}
+				}
+
+				// VERTICAL: Bottom
+				&[data-position-vertical-desktop="bottom"] {
+
+					.hustle-float-content {
+
+						&.hustle-animate-in {
+							@include opacity(1);
+							animation-name: slideInUp;
+						}
+					}
+				}
 
 				@include media(min-width, sm) {
 					justify-content: center;
@@ -227,6 +274,11 @@
 				}
 			}
 		}
+
+		// Show module
+		&.hustle-show {
+			display: flex;
+		}
 	}
 
 	// FLOAT: Context
@@ -258,161 +310,3 @@
 		}
 	}
 }
-
-/*
-@include hui-class(float, null, null, false) {
-
-	&[data-float="screen"] {
-		position: fixed;
-		pointer-events: none;
-		top: 0;
-		right: 0;
-		bottom: 0;
-		left: 0;
-		margin: 0;
-		padding: 0;
-		border: 0;
-
-		&[data-position-horizontal-desktop="left"],
-		&[data-position-horizontal-desktop="right"] {
-
-			.hustle-social {
-
-				@include media(min-width, sm) {
-					max-height: 100vh;
-				}
-			}
-
-			@include media(min-width, sm) {
-				display: flex;
-			}
-		}
-	}
-
-	&[data-position-horizontal-desktop="left"] {
-
-		&[data-float="screen"] {
-
-			.hustle-social {
-
-				&[data-grid-desktop="stacked"] ul,
-				&[data-grid-mobiles="stacked"] ul {
-
-					@include media(min-width, sm) {
-						flex-wrap: wrap;
-					}
-				}
-			}
-
-			@include media(min-width, sm) {
-				justify-content: flex-start;
-			}
-		}
-	}
-
-	&[data-position-horizontal-desktop="right"] {
-
-		&[data-float="screen"] {
-
-			.hustle-social {
-
-				&[data-grid-desktop="stacked"] ul,
-				&[data-grid-mobiles="stacked"] ul {
-
-					@include media(min-width, sm) {
-						flex-wrap: wrap-reverse;
-					}
-				}
-			}
-
-			@include media(min-width, sm) {
-				justify-content: flex-end;
-			}
-		}
-	}
-
-	&[data-position-horizontal-desktop="center"] {
-
-		.hustle-float-content {
-
-			@include media(min-width, sm) {
-				max-width: 100%;
-			}
-		}
-
-		.hustle-social {
-
-			&[data-grid-desktop="inline"] {
-
-				@include media(min-width, sm) {
-					margin: 0 $hui-gutter;
-				}
-			}
-		}
-
-		&[data-position-vertical-desktop="top"] {
-
-			@include media(min-width, sm) {
-				justify-content: flex-start;
-			}
-		}
-
-		&[data-position-vertical-desktop="bottom"] {
-
-			@include media(min-width, sm) {
-				justify-content: flex-end;
-			}
-		}
-
-		@include media(min-width, sm) {
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-		}
-	}
-
-	&[data-position-horizontal-mobiles="left"] {}
-
-	&[data-position-horizontal-mobiles="right"] {}
-
-	&[data-position-horizontal-mobiles="center"] {
-
-		.hustle-float-content {
-
-			@include media(max-width, sm) {
-				max-width: 100%;
-			}
-		}
-
-		.hustle-social {
-
-			&[data-grid-mobiles="inline"] {
-
-				@include media(max-width, sm) {
-					margin: 0 $hui-gutter-sm;
-				}
-			}
-		}
-
-		&[data-position-vertical-mobiles="top"] {
-
-			@include media(max-width, sm) {
-				justify-content: flex-start;
-			}
-		}
-
-		&[data-position-vertical-mobiles="bottom"] {
-
-			@include media(max-width, sm) {
-				justify-content: flex-end;
-			}
-		}
-
-		@include media(max-width, sm) {
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-		}
-	}
-}
-*/

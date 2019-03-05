@@ -19,7 +19,7 @@
 	}
 
 	@else if ($bp-type == between) {
-		
+
 		$min-breakpoint-width: map-get($hui-breakpoints, $bp-name-1);
 		$max-breakpoint-width: #{map-get($hui-breakpoints, $bp-name-1) - 1px};
 

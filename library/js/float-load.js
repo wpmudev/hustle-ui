@@ -35,12 +35,12 @@
 			// Module time
 			setTimeout( function() {
 				show();
-			}, 600 );
+			}, 0 );
 
 			// Layout time
 			setTimeout( function() {
 				animation();
-			}, 800 );
+			}, 200 );
 
 		}
 

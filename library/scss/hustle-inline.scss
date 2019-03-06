@@ -5,6 +5,8 @@
 @import "mixins/breakpoints";
 @import "mixins/opacity";
 
+$inline-alignment: left center right;
+
 @include hui-class(inline, null, null, false) {
 	@include opacity(0);
 	display: flex;
@@ -233,6 +235,16 @@
 			&--zoomInRight {
 				@include opacity(1);
 				animation-name: zoomInRight;
+			}
+		}
+	}
+
+	@each $align in $inline-alignment {
+
+		&[data-alignment="#{$align}"] {
+
+			.hustle-inline-content {
+				text-align: $align;
 			}
 		}
 	}

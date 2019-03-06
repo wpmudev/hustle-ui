@@ -29,6 +29,4 @@
 
 		return this;
 	};
-
-	//HUI.sharingSimulation( '.hustle-float' );
 }( jQuery ) );

@@ -227,12 +227,12 @@
 			 */
 
 			// Desktop position
-			float.attr( 'data-position-horizontal-desktop', desktopHorizontal );
-			float.attr( 'data-position-vertical-desktop', desktopVertical );
+			float.attr( 'data-desktop-positionX', desktopHorizontal );
+			float.attr( 'data-desktop-positionY', desktopVertical );
 
 			// Mobiles position
-			float.attr( 'data-position-horizontal-mobiles', mobilesHorizontal );
-			float.attr( 'data-position-vertical-mobiles', mobilesVertical );
+			float.attr( 'data-mobiles-positionX', mobilesHorizontal );
+			float.attr( 'data-mobiles-positionY', mobilesVertical );
 		}
 
 		function floatGrid( element ) {
@@ -250,14 +250,14 @@
 
 				if ( parent.width() < breakpoint ) {
 
-					if ( 'center' === parent.attr( 'data-position-horizontal-mobiles' ) ) {
+					if ( 'center' === parent.attr( 'data-mobiles-positionX' ) ) {
 						container.attr( dataGridMobiles, 'inline' );
 					} else {
 						container.attr( dataGridMobiles, 'stacked' );
 					}
 				} else {
 
-					if ( 'center' === parent.attr( 'data-position-horizontal-desktop' ) ) {
+					if ( 'center' === parent.attr( 'data-desktop-positionX' ) ) {
 						container.attr( dataGridDesktop, 'inline' );
 					} else {
 						container.attr( dataGridDesktop, 'stacked' );

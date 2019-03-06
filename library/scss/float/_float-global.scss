@@ -1,0 +1,32 @@
+@include hui-class(float, null, null, false) {
+	pointer-events: none;
+	display: none;
+	margin: 0;
+	padding: 0;
+	border: 0;
+
+	.hustle-float-content {
+
+		* {
+			pointer-events: all;
+		}
+	}
+
+	// MODULE: Mobiles
+	&[data-mobiles="false"] {
+
+		@include media(max-width, sm) {
+			display: none !important;
+			visibility: hidden !important;
+		}
+	}
+
+	// MODULE: Desktop
+	&[data-desktop="false"] {
+
+		@include media(min-width, sm) {
+			display: none !important;
+			visibility: hidden !important;
+		}
+	}
+}

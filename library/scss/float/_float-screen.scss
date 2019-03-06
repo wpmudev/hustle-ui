@@ -1,0 +1,216 @@
+$float-screen: (
+	desktop: 'min-width',
+	mobiles: 'max-width'
+);
+
+@include hui-class(float, null, null, false) {
+
+	@each $screen, $breakpoint in $float-screen {
+
+		$gutter: $hui-gutter;
+
+		@if $screen == 'mobiles' {
+			$gutter: $hui-gutter-sm;
+		}
+
+		&[data-#{$screen}="true"][data-#{$screen}-offset="screen"] {
+
+			.hustle-float-content {
+
+				@include media($breakpoint, sm) {
+					width: auto;
+					max-width: 100%;
+					height: auto;
+					max-height: 100%;
+					display: inline-flex;
+					flex: 0 0 auto;
+					@include opacity(0);
+					animation-duration: 0.5s;
+					animation-fill-mode: both;
+					transform-origin: center;
+					transform-style: preserve-3d;
+				}
+			}
+
+			// VERTICAL: Top
+			&[data-#{$screen}-positionY="top"] {
+
+				@include media($breakpoint, sm) {
+					align-items: flex-start;
+				}
+			}
+
+			// VERTICAL: Bottom
+			&[data-#{$screen}-positionY="bottom"] {
+
+				@include media($breakpoint, sm) {
+					align-items: flex-end;
+				}
+			}
+
+			// HORIZONTAL: Left
+			&[data-#{$screen}-positionX="left"] {
+
+				.hustle-float-content {
+
+					&.hustle-animate-in {
+
+						@include media($breakpoint, sm) {
+							@include opacity(1);
+							animation-name: slideInLeft;
+						}
+					}
+				}
+
+				.hustle-social {
+
+					&[data-grid-#{$screen}="stacked"] ul {
+
+						@include media($breakpoint, sm) {
+							flex-wrap: wrap;
+						}
+					}
+				}
+
+				// VERTICAL: Top
+				&[data-#{$screen}-positionY="top"] {
+
+					@include media($breakpoint, sm) {
+						padding-bottom: $gutter;
+					}
+				}
+
+				// VERTICAL: Bottom
+				&[data-#{$screen}-positionY="bottom"] {
+
+					@include media($breakpoint, sm) {
+						padding-top: $gutter;
+					}
+				}
+
+				@include media($breakpoint, sm) {
+					justify-content: flex-start;
+				}
+			}
+
+			// HORIZONTAL: Right
+			&[data-#{$screen}-positionX="right"] {
+
+				.hustle-float-content {
+
+					&.hustle-animate-in {
+
+						@include media($breakpoint, sm) {
+							@include opacity(1);
+							animation-name: slideInRight;
+						}
+					}
+				}
+
+				.hustle-social {
+
+					&[data-grid-#{$screen}="stacked"] ul {
+
+						@include media($breakpoint, sm) {
+							flex-wrap: wrap-reverse;
+						}
+					}
+				}
+
+				// VERTICAL: Top
+				&[data-#{$screen}-positionY="top"] {
+
+					@include media($breakpoint, sm) {
+						padding-bottom: $gutter;
+					}
+				}
+
+				// VERTICAL: Bottom
+				&[data-#{$screen}-positionY="bottom"] {
+
+					@include media($breakpoint, sm) {
+						padding-top: $gutter;
+					}
+				}
+
+				@include media($breakpoint, sm) {
+					justify-content: flex-end;
+				}
+			}
+
+			// HORIZONTAL: Center
+			&[data-#{$screen}-positionX="center"] {
+
+				.hustle-social {
+
+					&[data-grid-#{$screen}="inline"] ul {
+
+						@include media($breakpoint, sm) {
+							width: auto !important;
+						}
+					}
+				}
+
+				.hustle-float-content {
+
+					@include media($breakpoint, sm) {
+						padding: 0 $gutter;
+					}
+				}
+
+				// VERTICAL: Top
+				&[data-#{$screen}-positionY="top"] {
+
+					.hustle-float-content {
+
+						&.hustle-animate-in {
+
+							@include media($breakpoint, sm) {
+								@include opacity(1);
+								animation-name: slideInDown;
+							}
+						}
+					}
+				}
+
+				// VERTICAL: Bottom
+				&[data-#{$screen}-positionY="bottom"] {
+
+					.hustle-float-content {
+
+						&.hustle-animate-in {
+
+							@include media($breakpoint, sm) {
+								@include opacity(1);
+								animation-name: slideInUp;
+							}
+						}
+					}
+				}
+
+				@include media($breakpoint, sm) {
+					justify-content: center;
+				}
+			}
+
+			// Show module
+			&.hustle-show {
+
+				@include media($breakpoint, sm) {
+					display: flex;
+				}
+			}
+
+			@include media($breakpoint, sm) {
+				max-width: 100%;
+				max-height: 100vh;
+				position: fixed;
+				z-index: $hui-z-index;
+				top: 0;
+				right: 0;
+				bottom: 0;
+				left: 0;
+			}
+		}
+	}
+}

@@ -1,0 +1,41 @@
+$float-selector: (
+	desktop: 'min-width',
+	mobiles: 'max-width'
+);
+
+@include hui-class(float, null, null, false) {
+
+	@each $screen, $breakpoint in $float-selector {
+
+		$gutter: $hui-gutter;
+
+		@if $screen == 'mobiles' {
+			$gutter: $hui-gutter-sm;
+		}
+
+		&[data-#{$screen}="true"][data-#{$screen}-offset="selector"] {
+
+			// Show module
+			&.hustle-show {
+
+				@include media($breakpoint, sm) {
+					display: flex;
+				}
+			}
+
+			@include media($breakpoint, sm) {
+				position: absolute;
+			}
+		}
+	}
+}
+
+@each $screen, $breakpoint in $float-selector {
+
+	*[data-#{$screen}-parent] {
+
+		@include media($breakpoint, sm) {
+			position: relative !important;
+		}
+	}
+}

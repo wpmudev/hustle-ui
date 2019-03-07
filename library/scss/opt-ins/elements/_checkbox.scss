@@ -3,7 +3,7 @@
 	.hustle-checkbox {
 		display: flex;
 		vertical-align: middle;
-		margin: 0 0 $hui-gutter-sm;
+		margin: 0 0 map-get($gutter, small);
 		padding: 0;
 		border: 0;
 
@@ -67,7 +67,7 @@
 
 		&.hustle-gdpr {
 			display: inline-flex;
-			margin-top: $hui-gutter-sm;
+			margin-top: map-get($gutter, small);
 		}
 	}
 
@@ -78,7 +78,7 @@
 			&.hustle-gdpr {
 
 				@include media(min-width, sm) {
-					margin-top: $hui-gutter;
+					margin-top: map-get($gutter, default);
 				}
 			}
 		}
@@ -94,7 +94,7 @@
 
 			@include media(min-width, sm) {
 				display: inline-flex;
-				margin-right: $hui-gutter;
+				margin-right: map-get($gutter, default);
 				margin-bottom: 0;
 				padding-bottom: 5px;
 			}

@@ -1,7 +1,7 @@
 @include hui-class(null, optin, null, false) {
 
 	.hustle-recaptcha {
-		margin: $hui-gutter-sm 0 0;
+		margin: map-get($gutter, small) 0 0;
 
 		&[data-size="normal"] {
 			width: 302px;
@@ -42,7 +42,7 @@
 			}
 
 			@include media(min-width, sm) {
-				margin: $hui-gutter 0 0;
+				margin: map-get($gutter, default) 0 0;
 			}
 		}
 	}

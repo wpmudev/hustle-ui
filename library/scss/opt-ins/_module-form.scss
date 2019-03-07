@@ -46,8 +46,8 @@
 		}
 
 		.hustle-form-options {
-			margin-top: $hui-gutter-sm;
-			padding: $hui-gutter-sm;
+			margin-top: map-get($gutter, small);
+			padding: map-get($gutter, small);
 
 			.hustle-group-title {
 				display: block;
@@ -67,8 +67,8 @@
 		.hustle-form-options {
 
 			@include media(min-width, sm) {
-				margin-top: $hui-gutter;
-				padding: $hui-gutter;
+				margin-top: map-get($gutter, default);
+				padding: map-get($gutter, default);
 			}
 		}
 

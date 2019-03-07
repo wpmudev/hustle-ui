@@ -9,7 +9,7 @@
 
 		// SECTION: Header
 		.hustle-layout-header {
-			padding: $hui-gutter-sm;
+			padding: map-get($gutter, small);
 
 			.hustle-title,
 			.hustle-subtitle {
@@ -21,7 +21,7 @@
 				letter-spacing: 0;
 
 				+ .hustle-subtitle {
-					margin-top: $hui-gutter-sm;
+					margin-top: map-get($gutter, small);
 				}
 			}
 
@@ -66,23 +66,23 @@
 
 			// ELEMENT: Content
 			.hustle-content {
-				padding: 0 $hui-gutter-sm;
+				padding: 0 map-get($gutter, small);
 
 				.hustle-content-wrap {
-					padding: $hui-gutter-sm 0;
+					padding: map-get($gutter, small) 0;
 				}
 			}
 		}
 
 		// SECTION: Footer
 		.hustle-layout-footer {
-			padding: $hui-gutter-sm;
+			padding: map-get($gutter, small);
 			background-color: rgba(0,0,0,0.16);
 
 			.hustle-checkbox {
 
 				&:not(:only-child) {
-					margin-bottom: $hui-gutter-sm;
+					margin-bottom: map-get($gutter, small);
 				}
 			}
 		}
@@ -96,7 +96,7 @@
 		.hustle-layout-header {
 
 			@include media(min-width, sm) {
-				padding: $hui-gutter;
+				padding: map-get($gutter, default);
 			}
 		}
 
@@ -154,13 +154,13 @@
 				.hustle-content-wrap {
 
 					@include media(min-width, sm) {
-						padding: $hui-gutter 0;
+						padding: map-get($gutter, default) 0;
 					}
 				}
 
 				@include media(min-width, sm) {
 					flex: 1;
-					padding: 0 $hui-gutter;
+					padding: 0 map-get($gutter, default);
 				}
 			}
 
@@ -177,7 +177,7 @@
 
 					@include media(min-width, sm) {
 						flex: 0 1 auto;
-						margin-right: $hui-gutter;
+						margin-right: map-get($gutter, default);
 						margin-bottom: 0;
 					}
 				}
@@ -194,7 +194,7 @@
 
 			@include media(min-width, sm) {
 				display: flex;
-				padding: $hui-gutter;
+				padding: map-get($gutter, default);
 			}
 		}
 	}

@@ -5,11 +5,11 @@
 		.hustle-group-content {
 
 			&:not(:first-child) {
-				margin-top: $hui-gutter-sm;
+				margin-top: map-get($gutter, small);
 			}
 
 			&:not(:last-child) {
-				margin-bottom: $hui-gutter-sm;
+				margin-bottom: map-get($gutter, small);
 			}
 		}
 	}
@@ -24,14 +24,14 @@
 			&:not(:first-child) {
 
 				@include media(min-width, sm) {
-					margin-top: $hui-gutter;
+					margin-top: map-get($gutter, default);
 				}
 			}
 
 			&:not(:last-child) {
 
 				@include media(min-width, sm) {
-					margin-bottom: $hui-gutter;
+					margin-bottom: map-get($gutter, default);
 				}
 			}
 		}

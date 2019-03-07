@@ -27,8 +27,11 @@ $font: (
 	icons:   ("hustle-icons-font"),
 ) !default;
 
-$hui-gutter:             20px                           !default;
-$hui-gutter-sm:          10px                           !default;
+// Gutter
+$gutter: (
+	default: 20px,
+	small:   10px,
+) !default;
 
 // =============================================
 // 4. FORM FIELDS SPACING

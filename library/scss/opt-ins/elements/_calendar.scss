@@ -26,7 +26,7 @@
 
 		.ui-datepicker-header {
 			display: block;
-			padding: #{$hui-gutter-sm + 5px} $hui-gutter-sm;
+			padding: #{map-get($gutter, small) + 5px} map-get($gutter, small);
 
 			.ui-corner-all {
 				width: $hui-calendar-header--icon-width;
@@ -36,7 +36,7 @@
 				align-items: center;
 				justify-content: center;
 				position: absolute;
-				top: #{$hui-gutter-sm + 5px};
+				top: #{map-get($gutter, small) + 5px};
 				font-size: $hui-calendar-header--icon-size;
 				transition: $hui-transition--ease;
 
@@ -47,7 +47,7 @@
 				}
 
 				&.ui-datepicker-prev {
-					left: $hui-gutter-sm;
+					left: map-get($gutter, small);
 					right: unset;
 
 					&:before {
@@ -57,7 +57,7 @@
 
 				&.ui-datepicker-next {
 					left: unset;
-					right: $hui-gutter-sm;
+					right: map-get($gutter, small);
 
 					&:before {
 						transform: rotate(-90deg);
@@ -135,11 +135,11 @@
 						}
 
 						&:first-child {
-							padding-left: #{$hui-gutter-sm + 5px};
+							padding-left: #{map-get($gutter, small) + 5px};
 						}
 
 						&:last-child {
-							padding-right: #{$hui-gutter-sm + 5px};
+							padding-right: #{map-get($gutter, small) + 5px};
 						}
 
 						&.ui-datepicker-unselectable {
@@ -184,7 +184,7 @@
 					tr:last-child {
 
 						th, td {
-							padding-bottom: #{$hui-gutter-sm + 5px};
+							padding-bottom: #{map-get($gutter, small) + 5px};
 						}
 					}
 				}
@@ -200,7 +200,7 @@
 			align-items: center;
 			justify-content: flex-end;
 			margin: 0;
-			padding: #{$hui-gutter-sm + 5px};
+			padding: #{map-get($gutter, small) + 5px};
 			border: 0;
 
 			button {
@@ -222,7 +222,7 @@
 				}
 
 				+ button {
-					margin-left: $hui-gutter;
+					margin-left: map-get($gutter, default);
 				}
 			}
 

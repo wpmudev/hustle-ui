@@ -28,7 +28,7 @@
 
 				@include media(min-width, sm) {
 					flex: 0 0 auto;
-					padding: #{$hui-gutter / 2};
+					padding: #{map-get($gutter, default) / 2};
 				}
 			}
 
@@ -37,7 +37,7 @@
 				flex-wrap: wrap;
 				flex: 1;
 				align-items: center;
-				margin: -#{$hui-gutter / 2};
+				margin: -#{map-get($gutter, default) / 2};
 				padding: 0;
 			}
 		}
@@ -51,14 +51,14 @@
 
 				@include media(min-width, sm) {
 					margin: 0;
-					padding: #{$hui-gutter / 2};
+					padding: #{map-get($gutter, default) / 2};
 				}
 			}
 
 			@include media(min-width, sm) {
 				display: flex;
 				flex-direction: column;
-				margin: -#{$hui-gutter / 2};
+				margin: -#{map-get($gutter, default) / 2};
 				padding: 0;
 			}
 		}
@@ -72,7 +72,7 @@
 
 				@include media(min-width, sm) {
 					flex: 0 0 auto;
-					padding: #{$hui-gutter / 2};
+					padding: #{map-get($gutter, default) / 2};
 				}
 			}
 
@@ -81,7 +81,7 @@
 				flex-wrap: wrap;
 				flex: 1;
 				align-items: center;
-				margin: -#{$hui-gutter / 2};
+				margin: -#{map-get($gutter, default) / 2};
 				padding: 0;
 			}
 		}
@@ -95,14 +95,14 @@
 
 				@include media(max-width, sm) {
 					margin: 0;
-					padding: #{$hui-gutter-sm / 2};
+					padding: #{map-get($gutter, small) / 2};
 				}
 			}
 
 			@include media(max-width, sm) {
 				display: flex;
 				flex-direction: column;
-				margin: -#{$hui-gutter-sm / 2};
+				margin: -#{map-get($gutter, small) / 2};
 				padding: 0;
 			}
 		}
@@ -116,7 +116,7 @@
 
 				@include media(max-width, sm) {
 					flex: 0 0 auto;
-					padding: #{$hui-gutter-sm / 2};
+					padding: #{map-get($gutter, small) / 2};
 				}
 			}
 
@@ -125,17 +125,17 @@
 				flex-wrap: wrap;
 				flex: 1;
 				align-items: center;
-				margin: -#{$hui-gutter-sm / 2};
+				margin: -#{map-get($gutter, small) / 2};
 				padding: 0;
 			}
 		}
 	}
 
 	@include media(max-width, sm) {
-		padding: $hui-gutter-sm;
+		padding: map-get($gutter, small);
 	}
 
 	@include media(min-width, sm) {
-		padding: $hui-gutter;
+		padding: map-get($gutter, default);
 	}
 }

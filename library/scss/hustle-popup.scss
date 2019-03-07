@@ -36,13 +36,13 @@
 		.hustle-optin {
 
 			@include media(max-width, sm) {
-				padding-top: $hui-gutter-sm;
-				padding-bottom: $hui-gutter-sm;
+				padding-top: map-get($gutter, small);
+				padding-bottom: map-get($gutter, small);
 			}
 
 			@include media(min-width, sm) {
-				padding-top: $hui-gutter;
-				padding-bottom: $hui-gutter;
+				padding-top: map-get($gutter, default);
+				padding-bottom: map-get($gutter, default);
 			}
 		}
 
@@ -465,12 +465,12 @@
 	}
 
 	@include media(max-width, sm) {
-		padding-right: $hui-gutter-sm;
-		padding-left: $hui-gutter-sm;
+		padding-right: map-get($gutter, small);
+		padding-left: map-get($gutter, small);
 	}
 
 	@include media(min-width, sm) {
-		padding-right: $hui-gutter;
-		padding-left: $hui-gutter;
+		padding-right: map-get($gutter, default);
+		padding-left: map-get($gutter, default);
 	}
 }

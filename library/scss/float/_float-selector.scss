@@ -7,10 +7,10 @@ $float-selector: (
 
 	@each $screen, $breakpoint in $float-selector {
 
-		$gutter: $hui-gutter;
+		$float_gutter: map-get($gutter, default);
 
 		@if $screen == 'mobiles' {
-			$gutter: $hui-gutter-sm;
+			$float_gutter: map-get($gutter, small);
 		}
 
 		&[data-#{$screen}="true"][data-#{$screen}-offset="selector"] {

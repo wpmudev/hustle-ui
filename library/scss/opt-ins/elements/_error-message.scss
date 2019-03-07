@@ -3,8 +3,8 @@
 	.hustle-layout {
 
 		.hustle-error-message {
-			margin: $hui-gutter-sm 0 0;
-			padding: $hui-gutter-sm $hui-gutter;
+			margin: map-get($gutter, small) 0 0;
+			padding: map-get($gutter, small) map-get($gutter, default);
 			border: 0;
 
 			p {
@@ -25,7 +25,7 @@
 		.hustle-error-message {
 
 			@include media(min-width, sm) {
-				margin-top: $hui-gutter;
+				margin-top: map-get($gutter, default);
 			}
 		}
 	}

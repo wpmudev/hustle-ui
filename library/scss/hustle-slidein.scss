@@ -48,20 +48,20 @@
 				}
 
 				@include media(max-width, sm) {
-					max-height: calc(100vh - #{$hui-gutter-sm});
+					max-height: calc(100vh - #{map-get($gutter, small)});
 				}
 
 				@include media(min-width, sm) {
-					max-height: calc(100vh - #{$hui-gutter});
+					max-height: calc(100vh - #{map-get($gutter, default)});
 				}
 			}
 
 			@include media(max-width, sm) {
-				padding: 0 $hui-gutter-sm;
+				padding: 0 map-get($gutter, small);
 			}
 
 			@include media(min-width, sm) {
-				padding: 0 $hui-gutter;
+				padding: 0 map-get($gutter, default);
 			}
 		}
 
@@ -82,20 +82,20 @@
 				}
 
 				@include media(max-width, sm) {
-					max-height: calc(100vh - #{$hui-gutter-sm});
+					max-height: calc(100vh - #{map-get($gutter, small)});
 				}
 
 				@include media(min-width, sm) {
-					max-height: calc(100vh - #{$hui-gutter});
+					max-height: calc(100vh - #{map-get($gutter, default)});
 				}
 			}
 
 			@include media(max-width, sm) {
-				padding: 0 $hui-gutter-sm $hui-gutter-sm;
+				padding: 0 map-get($gutter, small) map-get($gutter, small);
 			}
 
 			@include media(min-width, sm) {
-				padding: 0 $hui-gutter $hui-gutter;
+				padding: 0 map-get($gutter, default) map-get($gutter, default);
 			}
 		}
 
@@ -116,20 +116,20 @@
 				}
 
 				@include media(max-width, sm) {
-					max-height: calc(100vh - #{$hui-gutter-sm * 2});
+					max-height: calc(100vh - #{map-get($gutter, small) * 2});
 				}
 
 				@include media(min-width, sm) {
-					max-height: calc(100vh - #{$hui-gutter * 2});
+					max-height: calc(100vh - #{map-get($gutter, default) * 2});
 				}
 			}
 
 			@include media(max-width, sm) {
-				padding-left: $hui-gutter-sm;
+				padding-left: map-get($gutter, small);
 			}
 
 			@include media(min-width, sm) {
-				padding-left: $hui-gutter;
+				padding-left: map-get($gutter, default);
 			}
 		}
 
@@ -150,20 +150,20 @@
 				}
 
 				@include media(max-width, sm) {
-					max-height: calc(100vh - #{$hui-gutter-sm * 2});
+					max-height: calc(100vh - #{map-get($gutter, small) * 2});
 				}
 
 				@include media(min-width, sm) {
-					max-height: calc(100vh - #{$hui-gutter * 2});
+					max-height: calc(100vh - #{map-get($gutter, default) * 2});
 				}
 			}
 
 			@include media(max-width, sm) {
-				padding-right: $hui-gutter-sm;
+				padding-right: map-get($gutter, small);
 			}
 
 			@include media(min-width, sm) {
-				padding-right: $hui-gutter;
+				padding-right: map-get($gutter, default);
 			}
 		}
 
@@ -185,20 +185,20 @@
 				}
 
 				@include media(max-width, sm) {
-					max-height: calc(100vh - #{$hui-gutter-sm});
+					max-height: calc(100vh - #{map-get($gutter, small)});
 				}
 
 				@include media(min-width, sm) {
-					max-height: calc(100vh - #{$hui-gutter});
+					max-height: calc(100vh - #{map-get($gutter, default)});
 				}
 			}
 
 			@include media(max-width, sm) {
-				padding-left: $hui-gutter-sm;
+				padding-left: map-get($gutter, small);
 			}
 
 			@include media(min-width, sm) {
-				padding-left: $hui-gutter;
+				padding-left: map-get($gutter, default);
 			}
 		}
 
@@ -220,20 +220,20 @@
 				}
 
 				@include media(max-width, sm) {
-					max-height: calc(100vh - #{$hui-gutter-sm});
+					max-height: calc(100vh - #{map-get($gutter, small)});
 				}
 
 				@include media(min-width, sm) {
-					max-height: calc(100vh - #{$hui-gutter});
+					max-height: calc(100vh - #{map-get($gutter, default)});
 				}
 			}
 
 			@include media(max-width, sm) {
-				padding-right: $hui-gutter-sm;
+				padding-right: map-get($gutter, small);
 			}
 
 			@include media(min-width, sm) {
-				padding-right: $hui-gutter;
+				padding-right: map-get($gutter, default);
 			}
 		}
 
@@ -255,22 +255,22 @@
 				}
 
 				@include media(max-width, sm) {
-					max-height: calc(100vh - #{$hui-gutter-sm});
+					max-height: calc(100vh - #{map-get($gutter, small)});
 				}
 
 				@include media(min-width, sm) {
-					max-height: calc(100vh - #{$hui-gutter});
+					max-height: calc(100vh - #{map-get($gutter, default)});
 				}
 			}
 
 			@include media(max-width, sm) {
-				padding-bottom: $hui-gutter-sm;
-				padding-left: $hui-gutter-sm;
+				padding-bottom: map-get($gutter, small);
+				padding-left: map-get($gutter, small);
 			}
 
 			@include media(min-width, sm) {
-				padding-bottom: $hui-gutter;
-				padding-left: $hui-gutter;
+				padding-bottom: map-get($gutter, default);
+				padding-left: map-get($gutter, default);
 			}
 		}
 
@@ -292,22 +292,22 @@
 				}
 
 				@include media(max-width, sm) {
-					max-height: calc(100vh - #{$hui-gutter-sm});
+					max-height: calc(100vh - #{map-get($gutter, small)});
 				}
 
 				@include media(min-width, sm) {
-					max-height: calc(100vh - #{$hui-gutter});
+					max-height: calc(100vh - #{map-get($gutter, default)});
 				}
 			}
 
 			@include media(max-width, sm) {
-				padding-bottom: $hui-gutter-sm;
-				padding-right: $hui-gutter-sm;
+				padding-bottom: map-get($gutter, small);
+				padding-right: map-get($gutter, small);
 			}
 
 			@include media(min-width, sm) {
-				padding-bottom: $hui-gutter;
-				padding-right: $hui-gutter;
+				padding-bottom: map-get($gutter, default);
+				padding-right: map-get($gutter, default);
 			}
 		}
 	}

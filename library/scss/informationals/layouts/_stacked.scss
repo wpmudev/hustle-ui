@@ -11,7 +11,7 @@
 		.hustle-layout-header {
 			min-height: 30px;
 			position: relative;
-			margin-bottom: $hui-gutter-sm;
+			margin-bottom: map-get($gutter, small);
 
 			.hustle-title,
 			.hustle-subtitle {
@@ -27,7 +27,7 @@
 				letter-spacing: 0;
 
 				+ .hustle-subtitle {
-					margin-top: $hui-gutter-sm;
+					margin-top: map-get($gutter, small);
 
 					+ .hustle-button-close {
 						top: 4px;
@@ -51,10 +51,10 @@
 		.hustle-layout-body {
 
 			.hustle-content {
-				padding: 0 $hui-gutter-sm;
+				padding: 0 map-get($gutter, small);
 
 				.hustle-content-wrap {
-					padding: $hui-gutter-sm 0;
+					padding: map-get($gutter, small) 0;
 				}
 			}
 
@@ -88,7 +88,7 @@
 			.hustle-group-content {
 
 				&:not(:last-child) {
-					padding-bottom: $hui-gutter-sm;
+					padding-bottom: map-get($gutter, small);
 					border-bottom: 1px solid rgba(0,0,0,0.16);
 					box-shadow: 0 1px 0 0 rgba(255,255,255,0.08);
 				}
@@ -99,7 +99,7 @@
 				width: 100%;
 
 				+ .hustle-checkbox {
-					margin-top: $hui-gutter-sm;
+					margin-top: map-get($gutter, small);
 				}
 			}
 		}
@@ -114,7 +114,7 @@
 		.hustle-layout-header {
 
 			@include media(min-width, sm) {
-				margin-bottom: $hui-gutter;
+				margin-bottom: map-get($gutter, default);
 			}
 		}
 
@@ -126,12 +126,12 @@
 				.hustle-content-wrap {
 
 					@include media(min-width, sm) {
-						padding: $hui-gutter 0;
+						padding: map-get($gutter, default) 0;
 					}
 				}
 
 				@include media(min-width, sm) {
-					padding: 0 $hui-gutter;
+					padding: 0 map-get($gutter, default);
 				}
 			}
 
@@ -181,7 +181,7 @@
 				&:not(:last-child) {
 
 					@include media(min-width, sm) {
-						padding-bottom: $hui-gutter;
+						padding-bottom: map-get($gutter, default);
 					}
 				}
 			}
@@ -192,7 +192,7 @@
 				+ .hustle-checkbox {
 
 					@include media(min-width, sm) {
-						margin-top: $hui-gutter;
+						margin-top: map-get($gutter, default);
 					}
 				}
 

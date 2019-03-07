@@ -3,7 +3,7 @@
 	.hustle-radio {
 		display: flex;
 		vertical-align: middle;
-		margin: 0 0 $hui-gutter-sm;
+		margin: 0 0 map-get($gutter, small);
 		padding: 0;
 		border: 0;
 
@@ -82,7 +82,7 @@
 
 			@include media(min-width, sm) {
 				display: inline-flex;
-				margin-right: $hui-gutter;
+				margin-right: map-get($gutter, default);
 				margin-bottom: 0;
 				padding-bottom: 5px;
 			}

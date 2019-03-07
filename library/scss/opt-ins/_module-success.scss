@@ -1,11 +1,11 @@
 @include hui-class(null, optin, null, false) {
 
 	.hustle-success {
-		padding: #{$hui-gutter-sm * 2};
+		padding: #{map-get($gutter, small) * 2};
 
 		[class*="hustle-icon-"] {
 			display: block;
-			margin: 0 0 #{$hui-gutter-sm / 2};
+			margin: 0 0 #{map-get($gutter, small) / 2};
 			font-size: 22px;
 			text-align: center;
 		}
@@ -19,12 +19,12 @@
 		[class*="hustle-icon-"] {
 
 			@include media(min-width, sm) {
-				margin-bottom: #{$hui-gutter / 2};
+				margin-bottom: #{map-get($gutter, default) / 2};
 			}
 		}
 
 		@include media(min-width, sm) {
-			padding: #{$hui-gutter * 2};
+			padding: #{map-get($gutter, default) * 2};
 		}
 	}
 }

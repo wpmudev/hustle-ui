@@ -34,7 +34,7 @@
 				margin: 0;
 
 				&:not(:last-child) {
-					margin-bottom: $hui-gutter-sm;
+					margin-bottom: map-get($gutter, small);
 				}
 			}
 
@@ -89,7 +89,7 @@
 					margin: 0;
 
 					&:not(:last-child) {
-						margin-bottom: #{$hui-gutter-sm / 2};
+						margin-bottom: #{map-get($gutter, small) / 2};
 					}
 				}
 			}
@@ -127,7 +127,7 @@
 			}
 
 			blockquote {
-				padding: $hui-gutter-sm 0 $hui-gutter-sm #{$hui-gutter-sm + 4px};
+				padding: map-get($gutter, small) 0 map-get($gutter, small) #{map-get($gutter, small) + 4px};
 				border-left-width: 4px;
 				border-left-style: solid;
 			}
@@ -143,7 +143,7 @@
 				&:not(:last-child) {
 
 					@include media(min-width, sm) {
-						margin-bottom: $hui-gutter;
+						margin-bottom: map-get($gutter, default);
 					}
 				}
 			}
@@ -155,7 +155,7 @@
 					&:not(:last-child) {
 
 						@include media(min-width, sm) {
-							margin-bottom: #{$hui-gutter / 2};
+							margin-bottom: #{map-get($gutter, default) / 2};
 						}
 					}
 				}

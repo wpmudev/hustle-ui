@@ -9,26 +9,29 @@
 		}
 	}
 
-	@each $icon, $color in $hui-social--colors {
+	&[data-custom="false"] {
 
-		a.hustle-share--#{$icon} {
-
-			.hustle-icon-social-#{$icon} {
-				color: $color;
-			}
-		}
-
-		ul.hustle-counter--none {
+		@each $icon, $color in $hui-social--colors {
 
 			a.hustle-share--#{$icon} {
-				border-color: transparent;
+
+				.hustle-icon-social-#{$icon} {
+					color: $color;
+				}
 			}
-		}
 
-		ul:not(.hustle-counter--none) {
+			ul.hustle-counter--none {
 
-			a.hustle-share--#{$icon} {
-				border-color: $color;
+				a.hustle-share--#{$icon} {
+					border-color: transparent;
+				}
+			}
+
+			ul:not(.hustle-counter--none) {
+
+				a.hustle-share--#{$icon} {
+					border-color: $color;
+				}
 			}
 		}
 	}

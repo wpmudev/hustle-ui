@@ -10,13 +10,16 @@
 		}
 	}
 
-	@each $icon, $color in $hui-social--colors {
+	&[data-custom="false"] {
 
-		a.hustle-share--#{$icon} {
-			border-color: $color;
+		@each $icon, $color in $hui-social--colors {
 
-			.hustle-icon-social-#{$icon} {
-				color: $color;
+			a.hustle-share--#{$icon} {
+				border-color: $color;
+
+				.hustle-icon-social-#{$icon} {
+					color: $color;
+				}
 			}
 		}
 	}

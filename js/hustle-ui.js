@@ -586,21 +586,31 @@
 				showButtonPanel: false,
 				beforeShow: function( input, inst ) {
 
-					// Remove all Forminator UI related classes
-					( inst.dpDiv ).removeClass( function( index, css ) {
-						return ( css.match( /\bforminator-\S+/g ) || []).join( '' );
-					});
-
-					// Remove all Hustle UI related classes
-					( inst.dpDiv ).removeClass( function( index, css ) {
-						return ( css.match( /\bhustle-\S+/g ) || []).join( '' );
-					});
-
-					( inst.dpDiv ).addClass( 'hustle-calendar' );
-					( inst.dpDiv ).addClass( 'hustle-module-' + container.data( 'id' ) );
-
 					if ( 'undefined' !== typeof container.data( 'calendar-palette' ) ) {
-						( inst.dpDiv ).addClass( 'hustle-palette--' + container.data( 'calendar-palette' ) );
+
+						( inst.dpDiv )
+						.removeClass( function( index, css ) {
+							return ( css.match ( /\bforminator-\S+/g ) || []).join( ' ' );
+						})
+						.removeClass( function( index, css ) {
+							return ( css.match ( /\bhustle-\S+/g ) || []).join( ' ' );
+						})
+						.addClass( 'hustle-calendar' )
+						.addClass( 'hustle-module-' + container.data( 'id' ) )
+						.addClass( 'hustle-palette--' + container.data( 'calendar-palette' ) )
+						;
+					} else {
+
+						( inst.dpDiv )
+						.removeClass( function( index, css ) {
+							return ( css.match ( /\bforminator-\S+/g ) || []).join( ' ' );
+						})
+						.removeClass( function( index, css ) {
+							return ( css.match ( /\bhustle-\S+/g ) || []).join( ' ' );
+						})
+						.addClass( 'hustle-calendar' )
+						.addClass( 'hustle-module-' + container.data( 'id' ) )
+						;
 					}
 				}
 			});

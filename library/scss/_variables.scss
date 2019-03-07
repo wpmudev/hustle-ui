@@ -33,25 +33,11 @@ $gutter: (
 	small:   10px,
 ) !default;
 
-// Form fields spacing
-$field-spacing: (
-	joined:    1px,
-	separated: 10px,
-) !default;
-
 // Transition
 $transition: (
 	ease: 0.2s ease,
 	linear: 0.2s linear,
 ) !default;
-
-$hui-dialog-width:       800px                          !default;
-$hui-z-index:            999991                         !default;
-
-$hui-fields-height:      36px                           !default;
-
-$hui-image:              320px                          !default;
-$hui-image-sm:           150px                          !default;
 
 // =============================================
 // 2. BREAKPOINTS
@@ -92,6 +78,23 @@ $icons: (
 	close:            "\e917",
 	loader:           "\e918",
 ) !default;
+
+// =============================================
+// 4. FORM BASICS
+
+// Form fields spacing
+$field-spacing: (
+	joined:    1px,
+	separated: 10px,
+) !default;
+
+$hui-dialog-width:       800px                          !default;
+$hui-z-index:            999991                         !default;
+
+$hui-fields-height:      36px                           !default;
+
+$hui-image:              320px                          !default;
+$hui-image-sm:           150px                          !default;
 
 // =============================================
 // 4. CLOSE BUTTON

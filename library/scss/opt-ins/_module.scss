@@ -22,7 +22,7 @@
 			margin: 0;
 			padding: 0;
 			border: 0;
-			font: 400 14px/20px $hui-font;
+			font: 400 14px/20px map-get($font, default);
 
 			a {
 				font-weight: inherit;

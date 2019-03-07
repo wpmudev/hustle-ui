@@ -12,7 +12,7 @@
 		border-radius: 0;
 		padding: #{($hui-fields-height - 18px) / 2} 16px;
 		cursor: pointer;
-		font: bold 13px/18px $hui-font;
+		font: bold 13px/18px map-get($font, default);
 		letter-spacing: 0.5px;
 		text-align: center;
 		transition: $hui-transition--ease;

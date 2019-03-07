@@ -23,7 +23,7 @@
 			}
 
 			.hustle-title {
-				font: 400 33px/38px $hui-font--alt;
+				font: 400 33px/38px map-get($font, alt);
 				letter-spacing: 0;
 
 				+ .hustle-subtitle {
@@ -36,7 +36,7 @@
 			}
 
 			.hustle-subtitle {
-				font: bold 14px/24px $hui-font;
+				font: bold 14px/24px map-get($font, default);
 				letter-spacing: 0;
 			}
 

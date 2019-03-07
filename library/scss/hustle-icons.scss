@@ -8,16 +8,16 @@
 @at-root {
 
 	@font-face {
-		font-family: $hui-font--icon;
+		font-family: map-get($font, icons);
 		font-weight: normal;
 		font-style: normal;
-		src: url('#{$hui-font-path}hustle-icons-font.eot');
+		src: url('#{map-get($path, fonts)}hustle-icons-font.eot');
 		src: local('hustle-icons-font'),
-			 url('#{$hui-font-path}hustle-icons-font.eot?#iefix') format('embedded-opentype'),
-			 url('#{$hui-font-path}hustle-icons-font.woff2') format('woff2'),
-			 url('#{$hui-font-path}hustle-icons-font.woff') format('woff'),
-			 url('#{$hui-font-path}hustle-icons-font.ttf') format('truetype'),
-			 url('#{$hui-font-path}hustle-icons-font.svg?#hustle-icons-font') format('svg');
+			 url('#{map-get($path, fonts)}hustle-icons-font.eot?#iefix') format('embedded-opentype'),
+			 url('#{map-get($path, fonts)}hustle-icons-font.woff2') format('woff2'),
+			 url('#{map-get($path, fonts)}hustle-icons-font.woff') format('woff'),
+			 url('#{map-get($path, fonts)}hustle-icons-font.ttf') format('truetype'),
+			 url('#{map-get($path, fonts)}hustle-icons-font.svg?#hustle-icons-font') format('svg');
 	}
 }
 

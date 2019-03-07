@@ -36,7 +36,7 @@
 					margin: 0;
 					padding: 0;
 					border: 0;
-					font: 400 #{$hui-time-dropdown--font-size}/#{$hui-time-dropdown--line-height} $hui-font;
+					font: 400 #{$hui-time-dropdown--font-size}/#{$hui-time-dropdown--line-height} map-get($font, default);
 					letter-spacing: 0;
 				}
 

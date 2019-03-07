@@ -68,7 +68,7 @@
 			.ui-datepicker-title {
 				display: block;
 				padding: 0 $hui-calendar-header--icon-width;
-				font: 600 #{$hui-calendar-header--title-font-size}/#{$hui-calendar-header--title-line-height} $hui-font;
+				font: 600 #{$hui-calendar-header--title-font-size}/#{$hui-calendar-header--title-line-height} map-get($font, default);
 				letter-spacing: 0.14px;
 				text-align: center;
 			}
@@ -86,7 +86,7 @@
 			border: 0;
 			border-spacing: 0;
 			border-collapse: collapse;
-			font-family: $hui-font;
+			font-family: map-get($font, default);
 
 			thead,
 			tbody {
@@ -211,7 +211,7 @@
 				border: 0;
 				border-radius: 0;
 				font-weight: bold;
-				font-family: $hui-font;
+				font-family: map-get($font, default);
 				text-align: center;
 
 				&,

@@ -4,7 +4,7 @@
 
 		.hustle-input,
 		.hustle-input-label {
-			font: 400 #{$hui-input--font-size}/#{$hui-input--line-height} $hui-font;
+			font: 400 #{$hui-input--font-size}/#{$hui-input--line-height} map-get($font, default);
 		}
 
 		.hustle-input {

@@ -6,7 +6,7 @@
 		.hustle-#{$container} {
 
 			&, * {
-				font-family: $hui-font;
+				font-family: map-get($font, default);
 				letter-spacing: 0;
 
 				b, strong {

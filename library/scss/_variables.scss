@@ -14,16 +14,24 @@
 // =============================================
 // 1. BASIC VARIABLES
 
-$hui-version:            '4.0.0'                        !default;
-$hui-font-path:          '../fonts/'                    !default;
-$hui-image-path:         '../images/'                   !default;
+// Paths
+$path: (
+	fonts:  '../fonts/',
+	images: '../images/'
+) !default;
 
-$hui-font:               "Open Sans", sans-serif        !default;
-$hui-font--alt:          "Georgia", Times, serif        !default;
-$hui-font--icon:         "hustle-icons-font"            !default;
+// Fonts
+$font: (
+	default: ("Open Sans", sans-serif),
+	alt:     ("Georgia", Times, serif),
+	icons:   ("hustle-icons-font"),
+) !default;
 
 $hui-gutter:             20px                           !default;
 $hui-gutter-sm:          10px                           !default;
+
+// =============================================
+// 4. FORM FIELDS SPACING
 
 $hui-spacing:            10px                           !default;
 $hui-spacing-sm:         1px                            !default;

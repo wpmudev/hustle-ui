@@ -21,7 +21,7 @@
 				.hustle-title {
 					display: block;
 					margin: 0;
-					font: 700 20px/27px $hui-font;
+					font: 700 20px/27px map-get($font, default);
 					letter-spacing: 0;
 					text-transform: none;
 
@@ -34,7 +34,7 @@
 				.hustle-subtitle {
 					display: block;
 					margin: 0;
-					font: 700 14px/18px $hui-font;
+					font: 700 14px/18px map-get($font, default);
 					letter-spacing: 0;
 					text-transform: none;
 				}

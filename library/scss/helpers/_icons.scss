@@ -2,7 +2,7 @@
 	speak: none;
 	display: inline-block;
 	color: inherit;
-	font-family: $hui-font--icon !important;
+	font-family: map-get($font, icons) !important;
 	font-size: 1em;
 	line-height: 1em;
 	font-style: normal;

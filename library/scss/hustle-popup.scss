@@ -15,7 +15,7 @@
 	position: fixed;
 	top: 0;
 	left: 0;
-	z-index: $hui-z-index;
+	z-index: map-get($module, z-index);
 
 	.hustle-popup-mask {
 		width: 100%;
@@ -28,7 +28,7 @@
 
 	.hustle-popup-content {
 		width: 100%;
-		max-width: $hui-dialog-width;
+		max-width: map-get($module, max-width);
 		position: relative;
 		margin: auto;
 

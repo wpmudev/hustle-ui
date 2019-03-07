@@ -15,11 +15,11 @@
 	right: 0;
 	bottom: 0;
 	left: 0;
-	z-index: $hui-z-index;
+	z-index: map-get($module, z-index);
 
 	.hustle-slidein-content {
 		width: 100%;
-		max-width: $hui-dialog-width;
+		max-width: map-get($module, max-width);
 		overflow-y: auto;
 		@include opacity(0);
 		pointer-events: initial;

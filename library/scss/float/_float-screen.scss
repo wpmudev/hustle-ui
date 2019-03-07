@@ -205,7 +205,7 @@ $float-screen: (
 				max-width: 100%;
 				max-height: 100vh;
 				position: fixed;
-				z-index: $hui-z-index;
+				z-index: map-get($module, z-index);
 				top: 0;
 				right: 0;
 				bottom: 0;

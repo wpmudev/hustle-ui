@@ -4,6 +4,8 @@
 // 1. BASIC VARIABLES
 // 2. BREAKPOINTS
 // 3. ICONS LIST
+// 4. MODULE BASICS
+// 5. FORM BASICS
 // 4. CLOSE BUTTON
 // 5. REGULAR BUTTON
 // 6. FORM INPUT
@@ -80,7 +82,15 @@ $icons: (
 ) !default;
 
 // =============================================
-// 4. FORM BASICS
+// 4. MODULE BASICS
+
+$module: (
+	max-width: 800px,
+	z-index:   999991,
+) !default;
+
+// =============================================
+// 5. FORM BASICS
 
 // Fields size
 $field-size: (
@@ -93,9 +103,6 @@ $field-spacing: (
 	joined:    1px,
 	separated: 10px,
 ) !default;
-
-$hui-dialog-width:       800px                          !default;
-$hui-z-index:            999991                         !default;
 
 $hui-image:              320px                          !default;
 $hui-image-sm:           150px                          !default;

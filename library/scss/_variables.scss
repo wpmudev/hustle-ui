@@ -84,9 +84,16 @@ $icons: (
 // =============================================
 // 4. MODULE BASICS
 
+// Module size and position
 $module: (
 	max-width: 800px,
 	z-index:   999991,
+) !default;
+
+// Module image
+$module-image: (
+	default: 320px,
+	small:   150px,
 ) !default;
 
 // =============================================
@@ -103,9 +110,6 @@ $field-spacing: (
 	joined:    1px,
 	separated: 10px,
 ) !default;
-
-$hui-image:              320px                          !default;
-$hui-image-sm:           150px                          !default;
 
 // =============================================
 // 4. CLOSE BUTTON

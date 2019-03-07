@@ -13,7 +13,7 @@
 			&.hustle-image-fit--fill,
 			&.hustle-image-fit--cover,
 			&.hustle-image-fit--contain {
-				height: $hui-image-sm;
+				height: map-get($module-image, small);
 				overflow: hidden;
 			}
 
@@ -70,11 +70,11 @@
 				}
 
 				@include media(min-width, sm) {
-					max-width: $hui-image;
+					max-width: map-get($module-image, default);
 					display: flex;
 					flex-direction: column;
 					justify-content: center;
-					flex: 0 0 $hui-image;
+					flex: 0 0 map-get($module-image, default);
 				}
 			}
 

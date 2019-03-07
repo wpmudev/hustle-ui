@@ -64,7 +64,7 @@
 				&.hustle-image-fit--fill,
 				&.hustle-image-fit--cover,
 				&.hustle-image-fit--contain {
-					height: $hui-image-sm;
+					height: map-get($module-image, small);
 				}
 
 				&.hustle-image-fit--fill {
@@ -146,15 +146,15 @@
 
 						@include media(min-width, sm) {
 							max-width: 100%;
-							height: $hui-image;
+							height: map-get($module-image, default);
 							flex: 1;
 						}
 					}
 
 					@include media(min-width, sm) {
-						max-width: $hui-image;
+						max-width: map-get($module-image, default);
 						height: auto;
-						flex: 0 0 $hui-image;
+						flex: 0 0 map-get($module-image, default);
 					}
 				}
 

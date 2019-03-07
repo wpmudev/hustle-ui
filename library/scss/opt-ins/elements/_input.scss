@@ -8,7 +8,9 @@
 		}
 
 		.hustle-input {
-			width: 100%;
+			width: map-get($field-size, width);
+			min-width: unset; // Prevent themes or other plugins from overwritting
+			max-width: unset; // Prevent themes or other plugins from overwritting
 			height: map-get($field-size, height);
 			display: block;
 			margin: 0;
@@ -39,7 +41,7 @@
 		}
 
 		.hustle-input-label {
-			width: 100%;
+			width: map-get($field-size, width);
 			user-select: none;
 			pointer-events: none;
 			position: absolute;

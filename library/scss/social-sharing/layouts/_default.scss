@@ -4,33 +4,33 @@
 		border-radius: 0 !important;
 
 		[class*="hustle-icon-social-"] {
-			width: #{map-get($hui-social--icon, size) - ($hui-social--border-width * 2)};
-			height: #{map-get($hui-social--icon, size) - ($hui-social--border-width * 2)};
+			width: #{map-get($social-module, icon-size) - (map-get($social-module, border-width) * 2)};
+			height: #{map-get($social-module, icon-size) - (map-get($social-module, border-width) * 2)};
 		}
 	}
 
 	&[data-custom="false"] {
 
-		@each $icon, $color in $hui-social--colors {
+		@each $media, $palette in $social-media-colors {
 
-			a.hustle-share--#{$icon} {
+			a.hustle-share--#{$media} {
 
-				.hustle-icon-social-#{$icon} {
-					color: $color;
+				.hustle-icon-social-#{$media} {
+					color: social-media($media, default);
 				}
 			}
 
 			ul.hustle-counter--none {
 
-				a.hustle-share--#{$icon} {
+				a.hustle-share--#{$media} {
 					border-color: transparent;
 				}
 			}
 
 			ul:not(.hustle-counter--none) {
 
-				a.hustle-share--#{$icon} {
-					border-color: $color;
+				a.hustle-share--#{$media} {
+					border-color: social-media($media, default);
 				}
 			}
 		}
@@ -41,14 +41,14 @@
 		&.hustle-counter--none {
 
 			a[class*="hustle-share-"] {
-				font-size: map-get($hui-social--icon, icon-lg);
+				font-size: map-get($social-icons-size, large);
 			}
 		}
 
 		&.hustle-counter--stacked {
 
 			a[class*="hustle-share-"] {
-				font-size: map-get($hui-social--icon, icon);
+				font-size: map-get($social-icons-size, default);
 
 				[class*="hustle-icon-social-"] {
 					margin: 0 auto;
@@ -59,7 +59,7 @@
 		&.hustle-counter--stacked {
 
 			a[class*="hustle-share-"] {
-				font-size: map-get($hui-social--icon, icon);
+				font-size: map-get($social-icons-size, default);
 			}
 		}
 	}

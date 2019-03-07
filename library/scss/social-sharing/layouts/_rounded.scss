@@ -1,24 +1,24 @@
 @include hui-class(null, social, rounded, false) {
 
 	a[class*="hustle-share-"] {
-		border-radius: map-get($hui-social--icon, size) !important;
+		border-radius: map-get($social-module, icon-size) !important;
 
 		[class*="hustle-icon-social-"] {
-			height: map-get($hui-social--icon, size);
-			border-radius: map-get($hui-social--icon, size) !important;
-			font-size: map-get($hui-social--icon, icon-sm);
+			height: map-get($social-module, icon-size);
+			border-radius: map-get($social-module, icon-size) !important;
+			font-size: map-get($social-icons-size, small);
 		}
 	}
 
 	&[data-custom="false"] {
 
-		@each $icon, $color in $hui-social--colors {
+		@each $media, $palette in $social-media-colors {
 
-			a.hustle-share--#{$icon} {
-				border-color: $color;
+			a.hustle-share--#{$media} {
+				border-color: social-media($media, default);
 
-				.hustle-icon-social-#{$icon} {
-					background-color: $color;
+				.hustle-icon-social-#{$media} {
+					background-color: social-media($media, default);
 					color: #FFFFFF;
 				}
 			}
@@ -33,7 +33,7 @@
 				border-width: 0;
 
 				[class*="hustle-icon-social-"] {
-					width: map-get($hui-social--icon, size);
+					width: map-get($social-module, icon-size);
 				}
 			}
 		}
@@ -44,9 +44,9 @@
 
 				[class*="hustle-icon-social-"] {
 					width: auto;
-					margin-top: -#{$hui-social--border-width};
-					margin-right: -#{$hui-social--border-width};
-					margin-left: -#{$hui-social--border-width};
+					margin-top: -#{map-get($social-module, border-width)};
+					margin-right: -#{map-get($social-module, border-width)};
+					margin-left: -#{map-get($social-module, border-width)};
 				}
 			}
 		}
@@ -56,9 +56,9 @@
 			a[class*="hustle-share-"] {
 
 				[class*="hustle-icon-social-"] {
-					width: map-get($hui-social--icon, size);
-					margin-top: -#{$hui-social--border-width};
-					margin-left: -#{$hui-social--border-width};
+					width: map-get($social-module, icon-size);
+					margin-top: -#{map-get($social-module, border-width)};
+					margin-left: -#{map-get($social-module, border-width)};
 				}
 			}
 		}

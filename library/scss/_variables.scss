@@ -146,31 +146,81 @@ $field-timepicker: (
 ) !default;
 
 // =============================================
-// 11. SOCIAL ICONS
+// 6. SOCIAL SHARE MODULE BASICS
 
-$hui-social--border-width: 1px   !default;
-$hui-social--border-style: solid !default;
-$hui-social--font-size:    14px  !default;
-$hui-social--line-height:  16px  !default;
-$hui-social--icon: (
-	size:    30px,
-	icon:    16px,
-	icon-sm: 14px,
-	icon-lg: 26px
+// Module basics
+$social-module: (
+	border-width: 1px,
+	border-style: solid,
+	font-size:    14px,
+	line-height:  16px,
+	icon-size:    30px,
 ) !default;
 
-$hui-social--colors: (
-	facebook:  #32599D,
-	twitter:   #1DA1F2,
-	google:    #EF3D2C,
-	pinterest: #DC0019,
-	reddit:    #FF4500,
-	linkedin:  #0078BA,
-	vkontakte: #4A76A8,
-	500px:     #000000,
-	houzz:     #4DBC15,
-	instagram: #EC0475,
-	twitch:    #4B367C,
-	youtube:   #FF0000,
-	telegram:  #00ACE5
+// Icons size
+$social-icons-size: (
+	default: 16px,
+	small:   14px,
+	large:   26px,
 ) !default;
+
+// Icons colors (map)
+$social-media-colors: (
+	facebook: (
+		default: #32599D,
+		hover:   #32599D,
+	),
+	twitter: (
+		default: #1DA1F2,
+		hover:   #1DA1F2,
+	),
+	google: (
+		default: #EF3D2C,
+		hover:   #EF3D2C,
+	),
+	pinterest: (
+		default: #DC0019,
+		hover:   #DC0019,
+	),
+	reddit: (
+		default: #FF4500,
+		hover:   #FF4500,
+	),
+	linkedin: (
+		default: #0078BA,
+		hover:   #0078BA,
+	),
+	vkontakte: (
+		default: #4A76A8,
+		hover:   #4A76A8,
+	),
+	500px: (
+		default: #000000,
+		hover:   #000000,
+	),
+	houzz: (
+		default: #4DBC15,
+		hover:   #4DBC15,
+	),
+	instagram: (
+		default: #EC0475,
+		hover:   #EC0475,
+	),
+	twitch: (
+		default: #4B367C,
+		hover:   #4B367C,
+	),
+	youtube: (
+		default: #FF0000,
+		hover:   #FF0000,
+	),
+	telegram: (
+		default: #00ACE5,
+		hover:   #00ACE5,
+	),
+) !default;
+
+// Icons colors (function)
+@function social-media($social-media, $state: 'default') {
+	@return map-get( map-get($social-media-colors, $social-media), $state );
+}

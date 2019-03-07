@@ -1,24 +1,24 @@
 @include hui-class(null, social, outlined, false) {
 
 	a[class*="hustle-share-"] {
-		border-radius: map-get($hui-social--icon, size) !important;
+		border-radius: map-get($social-module, icon-size) !important;
 
 		[class*="hustle-icon-social-"] {
-			width: #{map-get($hui-social--icon, size) - ($hui-social--border-width * 2)};
-			height: #{map-get($hui-social--icon, size) - ($hui-social--border-width * 2)};
-			font-size: map-get($hui-social--icon, icon-sm);
+			width: #{map-get($social-module, icon-size) - (map-get($social-module, border-width) * 2)};
+			height: #{map-get($social-module, icon-size) - (map-get($social-module, border-width) * 2)};
+			font-size: map-get($social-icons-size, small);
 		}
 	}
 
 	&[data-custom="false"] {
 
-		@each $icon, $color in $hui-social--colors {
+		@each $media, $palette in $social-media-colors {
 
-			a.hustle-share--#{$icon} {
-				border-color: $color;
+			a.hustle-share--#{$media} {
+				border-color: social-media($media, default);
 
-				.hustle-icon-social-#{$icon} {
-					color: $color;
+				.hustle-icon-social-#{$media} {
+					color: social-media($media, default);
 				}
 			}
 		}

@@ -12,7 +12,7 @@
 		}
 
 		.ui-timepicker {
-			max-height: $hui-time-dropdown--height;
+			max-height: map-get($field-timepicker, height);
 			@include opacity(1);
 			display: block;
 			margin: 0;
@@ -23,7 +23,7 @@
 			transition: map-get($transition, ease);
 
 			.ui-timepicker-viewport {
-				height: $hui-time-dropdown--height;
+				height: map-get($field-timepicker, height);
 				overflow: auto;
 				overflow-x: hidden; // IE
 				display: block;
@@ -36,7 +36,7 @@
 					margin: 0;
 					padding: 0;
 					border: 0;
-					font: 400 #{$hui-time-dropdown--font-size}/#{$hui-time-dropdown--line-height} map-get($font, default);
+					font: 400 #{map-get($field-timepicker, font-size)}/#{map-get($field-timepicker, line-height)} map-get($font, default);
 					letter-spacing: 0;
 				}
 

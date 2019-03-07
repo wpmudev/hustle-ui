@@ -138,12 +138,12 @@ $field-calendar: (
 	cell-size:   30px,
 ) !default;
 
-// =============================================
-// 10. TIME PICKER
-
-$hui-time-dropdown--height:      230px !default;
-$hui-time-dropdown--font-size:   13px  !default;
-$hui-time-dropdown--line-height: 30px  !default;
+// Time picker basics
+$field-timepicker: (
+	height:      230px,
+	font-size:   13px,
+	line-height: 30px,
+) !default;
 
 // =============================================
 // 11. SOCIAL ICONS

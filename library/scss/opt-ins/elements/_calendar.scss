@@ -29,15 +29,15 @@
 			padding: #{map-get($gutter, small) + 5px} map-get($gutter, small);
 
 			.ui-corner-all {
-				width: $hui-calendar-header--icon-width;
-				height: $hui-calendar-header--icon-height;
+				width: map-get($field-calendar, arrows-size);
+				height: map-get($field-calendar, arrows-size);
 				cursor: pointer;
 				display: flex;
 				align-items: center;
 				justify-content: center;
 				position: absolute;
 				top: #{map-get($gutter, small) + 5px};
-				font-size: $hui-calendar-header--icon-size;
+				font-size: map-get($field-calendar, arrows-icon);
 				transition: map-get($transition, ease);
 
 				@include icon(before, chevron-down);
@@ -67,8 +67,8 @@
 
 			.ui-datepicker-title {
 				display: block;
-				padding: 0 $hui-calendar-header--icon-width;
-				font: 600 #{$hui-calendar-header--title-font-size}/#{$hui-calendar-header--title-line-height} map-get($font, default);
+				padding: 0 map-get($field-calendar, arrows-size);
+				font: 600 #{map-get($field-calendar, font-size)}/#{map-get($field-calendar, arrows-size)} map-get($font, default);
 				letter-spacing: 0.14px;
 				text-align: center;
 			}
@@ -103,11 +103,11 @@
 						text-align: center;
 
 						a, span {
-							width: $hui-calendar-table--cell-width;
+							width: map-get($field-calendar, cell-size);
 							display: block;
 							padding: 2px;
 							border: 0;
-							border-radius: #{$hui-calendar-table--cell-width * 2};
+							border-radius: #{map-get($field-calendar, cell-size) * 2};
 						}
 
 						a {
@@ -155,7 +155,7 @@
 
 					th {
 						font-size: 12px;
-						line-height: #{$hui-calendar-table--cell-width - 4px};
+						line-height: #{map-get($field-calendar, cell-size) - 4px};
 						font-weight: 600;
 
 						span {
@@ -171,7 +171,7 @@
 
 					td {
 						font-size: 13px;
-						line-height: #{$hui-calendar-table--cell-width - 4px};
+						line-height: #{map-get($field-calendar, cell-size) - 4px};
 					}
 				}
 			}

@@ -130,17 +130,13 @@ $field-radio: (
 	font-size:    12px,
 ) !default;
 
-// =============================================
-// 9. CALENDAR
-
-$hui-calendar-header--icon-width:        30px !default;
-$hui-calendar-header--icon-height:       30px !default;
-$hui-calendar-header--icon-size:         12px !default;
-
-$hui-calendar-header--title-font-size:   15px !default;
-$hui-calendar-header--title-line-height: 30px !default;
-
-$hui-calendar-table--cell-width:         30px !default;
+// Calendar basics
+$field-calendar: (
+	arrows-size: 30px,
+	arrows-icon: 12px,
+	font-size:   15px,
+	cell-size:   30px,
+) !default;
 
 // =============================================
 // 10. TIME PICKER

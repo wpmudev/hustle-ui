@@ -156,7 +156,8 @@
 			slidein.attr( 'data-position', getRandom( position ) );
 
 			// Module palette
-			slidein.addClass( 'hustle-palette--' + getRandom( modulePalette ) );
+			slidein.attr( 'data-calendar-palette', getRandom( modulePalette ) );
+			slidein.addClass( 'hustle-palette--' + slidein.data( 'calendar-palette' ) );
 
 		}
 
@@ -196,7 +197,8 @@
 			} else {
 
 				// Module palette
-				inline.addClass( 'hustle-palette--' + getRandom( modulePalette ) );
+				inline.attr( 'data-calendar-palette', getRandom( modulePalette ) );
+				inline.addClass( 'hustle-palette--' + inline.data( 'calendar-palette' ) );
 			}
 
 		}

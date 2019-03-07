@@ -28,7 +28,7 @@
 					height: auto;
 					flex: 1;
 					margin: 0;
-					padding: #{($hui-fields-height - $hui-input--line-height) / 2} 0;
+					padding: #{(map-get($field-size, height) - $hui-input--line-height) / 2} 0;
 					font: 400 #{$hui-input--font-size}/#{$hui-input--line-height} map-get($font, default);
 					letter-spacing: 0;
 

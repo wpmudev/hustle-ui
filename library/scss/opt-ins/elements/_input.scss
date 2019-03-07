@@ -9,10 +9,10 @@
 
 		.hustle-input {
 			width: 100%;
-			height: $hui-fields-height;
+			height: map-get($field-size, height);
 			display: block;
 			margin: 0;
-			padding: #{($hui-fields-height - $hui-input--line-height) / 2} $hui-input--padding;
+			padding: #{(map-get($field-size, height) - $hui-input--line-height) / 2} $hui-input--padding;
 			border: 0;
 			border-radius: 0;
 			background-image: unset;

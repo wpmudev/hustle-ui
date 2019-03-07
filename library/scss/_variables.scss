@@ -82,6 +82,12 @@ $icons: (
 // =============================================
 // 4. FORM BASICS
 
+// Fields size
+$field-size: (
+	width:  100%, // Not being used yet
+	height: 36px,
+) !default;
+
 // Fields spacing
 $field-spacing: (
 	joined:    1px,
@@ -90,8 +96,6 @@ $field-spacing: (
 
 $hui-dialog-width:       800px                          !default;
 $hui-z-index:            999991                         !default;
-
-$hui-fields-height:      36px                           !default;
 
 $hui-image:              320px                          !default;
 $hui-image-sm:           150px                          !default;

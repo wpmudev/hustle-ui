@@ -15,7 +15,7 @@
 		font: bold 13px/18px map-get($font, default);
 		letter-spacing: 0.5px;
 		text-align: center;
-		transition: $hui-transition--ease;
+		transition: map-get($transition, ease);
 
 		.hustle-button-text {
 			display: block;

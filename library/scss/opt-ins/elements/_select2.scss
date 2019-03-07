@@ -63,7 +63,7 @@
 						display: block;
 						color: inherit;
 						text-align: center;
-						transition: $hui-transition--linear;
+						transition: map-get($transition, linear);
 					}
 				}
 			}
@@ -97,7 +97,7 @@
 					padding: $hui-input--padding;
 					font: 400 #{$hui-input--font-size}/#{$hui-input--line-height} map-get($font, default);
 					letter-spacing: 0;
-					transition: $hui-transition--ease;
+					transition: map-get($transition, ease);
 				}
 			}
 		}

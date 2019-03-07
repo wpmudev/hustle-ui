@@ -17,7 +17,7 @@
 // Paths
 $path: (
 	fonts:  '../fonts/',
-	images: '../images/'
+	images: '../images/',
 ) !default;
 
 // Fonts
@@ -39,8 +39,11 @@ $field-spacing: (
 	separated: 10px,
 ) !default;
 
-$hui-transition--ease:   0.2s ease                      !default;
-$hui-transition--linear: 0.2s linear                    !default;
+// Transition
+$transition: (
+	ease: 0.2s ease,
+	linear: 0.2s linear,
+) !default;
 
 $hui-dialog-width:       800px                          !default;
 $hui-z-index:            999991                         !default;

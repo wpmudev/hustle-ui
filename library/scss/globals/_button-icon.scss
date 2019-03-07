@@ -12,7 +12,7 @@
 		background-color: transparent;
 		background-image: unset;
 		text-align: center;
-		transition: $hui-transition--ease;
+		transition: map-get($transition, ease);
 
 		[class*="hustle-icon-"] {
 			display: block;

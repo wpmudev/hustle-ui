@@ -35,7 +35,7 @@
 			border-color: transparent;
 			font-size: $hui-checkbox--icon-size;
 			text-align: center;
-			transition: $hui-transition--ease;
+			transition: map-get($transition, ease);
 
 			@include icon(before, check) {
 				width: 100%;

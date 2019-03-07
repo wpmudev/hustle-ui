@@ -14,7 +14,7 @@
 				}
 
 				a {
-					transition: $hui-transition--ease;
+					transition: map-get($transition, ease);
 
 					&,
 					&:focus,

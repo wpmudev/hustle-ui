@@ -16,7 +16,7 @@
 			border: 0;
 			border-radius: 0;
 			background-image: unset;
-			transition: $hui-transition--ease;
+			transition: map-get($transition, ease);
 
 			&,
 			&:hover,
@@ -55,7 +55,7 @@
 				justify-content: center;
 				font-size: $hui-input--icon-size;
 				text-align: center;
-				transition: $hui-transition--ease;
+				transition: map-get($transition, ease);
 
 				&:before {
 					display: block;
@@ -70,7 +70,7 @@
 				display: block;
 				flex: 1 1 auto;
 				@extend %hui-text-truncate;
-				transition: $hui-transition--ease;
+				transition: map-get($transition, ease);
 			}
 		}
 

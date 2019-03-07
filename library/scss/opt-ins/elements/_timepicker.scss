@@ -20,7 +20,7 @@
 			box-sizing: content-box;
 			text-align: center;
 			list-style: none outside none;
-			transition: $hui-transition--ease;
+			transition: map-get($transition, ease);
 
 			.ui-timepicker-viewport {
 				height: $hui-time-dropdown--height;
@@ -46,7 +46,7 @@
 					margin: 0;
 					padding: 0 map-get($gutter, small);
 					border: 0;
-					transition: $hui-transition--ease;
+					transition: map-get($transition, ease);
 
 					&,
 					&:hover,

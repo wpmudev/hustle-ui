@@ -38,7 +38,7 @@
 				position: absolute;
 				top: #{map-get($gutter, small) + 5px};
 				font-size: $hui-calendar-header--icon-size;
-				transition: $hui-transition--ease;
+				transition: map-get($transition, ease);
 
 				@include icon(before, chevron-down);
 
@@ -112,7 +112,7 @@
 
 						a {
 							text-decoration: none;
-							transition: $hui-transition--ease;
+							transition: map-get($transition, ease);
 
 							&,
 							&:hover,

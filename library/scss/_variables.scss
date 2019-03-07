@@ -6,11 +6,6 @@
 // 3. ICONS LIST
 // 4. MODULE BASICS
 // 5. FORM BASICS
-// 4. CLOSE BUTTON
-// 5. REGULAR BUTTON
-// 6. FORM INPUT
-// 7. FORM SPACING
-// 8. RADIO & CHECKBOX
 // =============================================
 
 // =============================================
@@ -117,26 +112,23 @@ $field-spacing: (
 	separated: 10px,
 ) !default;
 
-// =============================================
-// 6. FORM INPUT
+// Input basics
+$field-input: (
+	padding:     10px,
+	font-size:   13px,
+	line-height: 18px,
+	icon-width:  20px,
+	icon-size:   12px,
+) !default;
 
-$hui-input--padding: 10px     !default;
-
-$hui-input--icon-width: 20px  !default;
-$hui-input--icon-size:  12px  !default;
-
-$hui-input--font-size: 13px   !default;
-$hui-input--line-height: 18px !default;
-
-// =============================================
-// 8. RADIO & CHECKBOX
-
-$hui-checkbox--size: 20px                       !default;
-$hui-checkbox--icon-size: 10px                  !default;
-$hui-checkbox--border-width: 2px                !default;
-$hui-checkbox--border-style: solid              !default;
-$hui-checkbox--font-size: 12px                  !default;
-$hui-checkbox--line-height: $hui-checkbox--size !default;
+// Radio basics
+$field-radio: (
+	size:         20px,
+	border-width: 2px,
+	border-style: solid,
+	icon-size:    10px,
+	font-size:    12px,
+) !default;
 
 // =============================================
 // 9. CALENDAR

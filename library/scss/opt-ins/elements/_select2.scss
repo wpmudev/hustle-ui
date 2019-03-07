@@ -20,7 +20,7 @@
 				display: flex;
 				align-items: center;
 				margin: 0;
-				padding: 0 $hui-input--padding;
+				padding: 0 map-get($field-input, padding);
 				border: 0;
 				border-radius: 0;
 
@@ -28,8 +28,8 @@
 					height: auto;
 					flex: 1;
 					margin: 0;
-					padding: #{(map-get($field-size, height) - $hui-input--line-height) / 2} 0;
-					font: 400 #{$hui-input--font-size}/#{$hui-input--line-height} map-get($font, default);
+					padding: #{(map-get($field-size, height) - map-get($field-input, line-height)) / 2} 0;
+					font: 400 #{map-get($field-input, font-size)}/#{map-get($field-input, line-height)} map-get($font, default);
 					letter-spacing: 0;
 
 					&, .select2-selection__placeholder {
@@ -37,7 +37,7 @@
 					}
 
 					+ .select2-selection__arrow {
-						margin-left: #{$hui-input--padding / 2};
+						margin-left: #{map-get($field-input, padding) / 2};
 					}
 				}
 
@@ -91,11 +91,11 @@
 		.select2-results {
 
 			.select2-results__options {
-				padding: #{$hui-input--padding / 2} 0;
+				padding: #{map-get($field-input, padding) / 2} 0;
 
 				.select2-results__option {
-					padding: $hui-input--padding;
-					font: 400 #{$hui-input--font-size}/#{$hui-input--line-height} map-get($font, default);
+					padding: map-get($field-input, padding);
+					font: 400 #{map-get($field-input, font-size)}/#{map-get($field-input, line-height)} map-get($font, default);
 					letter-spacing: 0;
 					transition: map-get($transition, ease);
 				}

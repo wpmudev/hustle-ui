@@ -4,7 +4,7 @@
 
 		.hustle-input,
 		.hustle-input-label {
-			font: 400 #{$hui-input--font-size}/#{$hui-input--line-height} map-get($font, default);
+			font: 400 #{map-get($field-input, font-size)}/#{map-get($field-input, line-height)} map-get($font, default);
 		}
 
 		.hustle-input {
@@ -14,7 +14,7 @@
 			height: map-get($field-size, height);
 			display: block;
 			margin: 0;
-			padding: #{(map-get($field-size, height) - $hui-input--line-height) / 2} $hui-input--padding;
+			padding: #{(map-get($field-size, height) - map-get($field-input, line-height)) / 2} map-get($field-input, padding);
 			border: 0;
 			border-radius: 0;
 			background-image: unset;
@@ -33,7 +33,7 @@
 
 					span {
 						opacity: 0;
-						transform: translateX($hui-input--icon-width);
+						transform: translateX(map-get($field-input, icon-width));
 						transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
 					}
 				}
@@ -46,16 +46,16 @@
 			pointer-events: none;
 			position: absolute;
 			display: flex;
-			padding: 0 $hui-input--padding;
+			padding: 0 map-get($field-input, padding);
 
 			[class*="hustle-icon-"] {
-				width: $hui-input--icon-width;
-				height: $hui-input--icon-width;
+				width: map-get($field-input, icon-width);
+				height: map-get($field-input, icon-width);
 				display: flex;
-				flex: 0 0 $hui-input--icon-width;
+				flex: 0 0 map-get($field-input, icon-width);
 				flex-direction: column;
 				justify-content: center;
-				font-size: $hui-input--icon-size;
+				font-size: map-get($field-input, icon-size);
 				text-align: center;
 				transition: map-get($transition, ease);
 
@@ -80,7 +80,7 @@
 		&.hustle-field-icon--animated {
 
 			.hustle-input {
-				padding-left: #{$hui-input--padding + $hui-input--icon-width + 5px};
+				padding-left: #{map-get($field-input, padding) + map-get($field-input, icon-width) + 5px};
 			}
 		}
 
@@ -94,7 +94,7 @@
 
 						[class*="hustle-icon-"] {
 							opacity: 0;
-							transform: translateX(-#{$hui-input--icon-width});
+							transform: translateX(-#{map-get($field-input, icon-width)});
 							transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
 						}
 					}

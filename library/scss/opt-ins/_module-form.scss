@@ -29,7 +29,7 @@
 				.hustle-field {
 
 					&:not(:last-child) {
-						margin-bottom: $hui-spacing-sm;
+						margin-bottom: map-get($field-spacing, joined);
 					}
 				}
 			}
@@ -39,7 +39,7 @@
 				.hustle-field {
 
 					&:not(:last-child) {
-						margin-bottom: $hui-spacing;
+						margin-bottom: map-get($field-spacing, separated);
 					}
 				}
 			}
@@ -98,7 +98,7 @@
 						&:not(:last-child) {
 
 							@include media(min-width, sm) {
-								margin-right: $hui-spacing-sm;
+								margin-right: map-get($field-spacing, joined);
 								margin-bottom: 0;
 							}
 						}
@@ -112,7 +112,7 @@
 						&:not(:last-child) {
 
 							@include media(min-width, sm) {
-								margin-right: $hui-spacing;
+								margin-right: map-get($field-spacing, separated);
 								margin-bottom: 0;
 							}
 						}

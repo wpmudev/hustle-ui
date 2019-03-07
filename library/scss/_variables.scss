@@ -33,11 +33,11 @@ $gutter: (
 	small:   10px,
 ) !default;
 
-// =============================================
-// 4. FORM FIELDS SPACING
-
-$hui-spacing:            10px                           !default;
-$hui-spacing-sm:         1px                            !default;
+// Form fields spacing
+$field-spacing: (
+	joined:    1px,
+	separated: 10px,
+) !default;
 
 $hui-transition--ease:   0.2s ease                      !default;
 $hui-transition--linear: 0.2s linear                    !default;

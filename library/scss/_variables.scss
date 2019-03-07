@@ -96,6 +96,12 @@ $module-image: (
 	small:   150px,
 ) !default;
 
+// Module close
+$module-close: (
+	button-size: 30px,
+	icon-size:   12px,
+) !default;
+
 // =============================================
 // 5. FORM BASICS
 
@@ -110,11 +116,6 @@ $field-spacing: (
 	joined:    1px,
 	separated: 10px,
 ) !default;
-
-// =============================================
-// 4. CLOSE BUTTON
-$hui-close--size: 30px !default;
-$hui-close--icon: 12px !default;
 
 // =============================================
 // 6. FORM INPUT

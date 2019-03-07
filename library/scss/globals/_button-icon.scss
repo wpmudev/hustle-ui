@@ -1,8 +1,8 @@
 @include hui-class(null, null, null, false) {
 
 	.hustle-button-icon {
-		width: 30px;
-		height: 30px;
+		width: map-get($module-close, button-size);
+		height: map-get($module-close, button-size);
 		cursor: pointer;
 		display: inline-flex;
 		align-items: center;
@@ -17,7 +17,7 @@
 		[class*="hustle-icon-"] {
 			display: block;
 			margin: 0 auto;
-			font-size: $hui-close--icon;
+			font-size: map-get($module-close, icon-size);
 
 			&:before {
 				display: block;

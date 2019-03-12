@@ -233,7 +233,10 @@ $float-screen: (
 	body.admin-bar {
 
 		@include hui-class(float, null, null, false) {
-			margin-top: $top-bar;
+
+			@include media($breakpoint, sm) {
+				margin-top: $top-bar;
+			}
 		}
 	}
 }

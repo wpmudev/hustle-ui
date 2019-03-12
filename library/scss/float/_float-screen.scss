@@ -214,3 +214,26 @@ $float-screen: (
 		}
 	}
 }
+
+// ============================================================
+// WordPress
+//
+// Add proper margins when viewing social sharing on
+// admin side or when admin bar is enabled on front.
+// Margins will prevent social share from hiding the
+// top and side bars.
+@each $screen, $breakpoint in $float-screen {
+
+	$top-bar: 32px;
+
+	@if $screen == 'mobiles' {
+		$top-bar: 46px;
+	}
+
+	body.admin-bar {
+
+		@include hui-class(float, null, null, false) {
+			margin-top: $top-bar;
+		}
+	}
+}

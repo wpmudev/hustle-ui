@@ -25,6 +25,14 @@
 
 	[class*="hustle-icon-"] {
 		@include icon(both);
+
+		&.hustle-loading-icon {
+
+			&:before {
+				display: block;
+				animation: spin 1.3s linear infinite;
+			}
+		}
 	}
 
 	@each $name, $char in $icons {

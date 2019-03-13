@@ -812,7 +812,7 @@
 
 				if ( 'no_animation' === element.data( 'intro' ) ) {
 
-					load( 0 );
+					load( 100 );
 
 				} else {
 

@@ -810,14 +810,21 @@
 
 			} else {
 
-				$( window ).scroll( function() {
+				if ( 'no_animation' === element.data( 'intro' ) ) {
 
-					const windowPosition = $( window ).scrollTop() + windowHeight;
+					load( 0 );
 
-					if ( windowPosition >= elementPosition ) {
-						load( 100 );
-					}
-				});
+				} else {
+
+					$( window ).scroll( function() {
+
+						const windowPosition = $( window ).scrollTop() + windowHeight;
+
+						if ( windowPosition >= elementPosition ) {
+							load( 100 );
+						}
+					});
+				}
 			}
 		}
 

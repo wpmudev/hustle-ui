@@ -9,14 +9,9 @@
 		border: 0;
 		list-style: none;
 
-		&, li {
-			border: 0;
-			list-style: none;
-
-			&:before,
-			&:after {
-				content: unset;
-			}
+		&:before,
+		&:after {
+			content: unset;
 		}
 	}
 
@@ -28,6 +23,7 @@
 
 				@include media(min-width, sm) {
 					flex: 0 0 auto;
+					margin: 0;
 					padding: #{map-get($gutter, default) / 2};
 				}
 			}
@@ -72,6 +68,7 @@
 
 				@include media(min-width, sm) {
 					flex: 0 0 auto;
+					margin: 0;
 					padding: #{map-get($gutter, default) / 2};
 				}
 			}
@@ -116,6 +113,7 @@
 
 				@include media(max-width, sm) {
 					flex: 0 0 auto;
+					margin: 0;
 					padding: #{map-get($gutter, small) / 2};
 				}
 			}

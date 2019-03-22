@@ -45,7 +45,7 @@
 				e.preventDefault();
 				e.stopPropagation();
 
-				HUI.optinSubmit( button );
+				HUI.optinSubmit( this, 1000 );
 
 				setTimeout( function() {
 

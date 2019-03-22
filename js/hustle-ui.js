@@ -983,7 +983,7 @@
 				e.preventDefault();
 				e.stopPropagation();
 
-				HUI.optinSubmit( button );
+				HUI.optinSubmit( this, 1000 );
 
 				setTimeout( function() {
 
@@ -1048,7 +1048,7 @@
 		window.HUI = {};
 	}
 
-	HUI.optinSubmit = function( el ) {
+	HUI.optinSubmit = function( el, delay = false ) {
 
 		const button = $( el );
 		const module = button.closest( '.hustle-ui' );
@@ -1060,11 +1060,20 @@
 
 		function init() {
 
+			let delayValue = ( true === $.isNumeric( delay ) ) ? delay : '1000';
+
+			if ( true === $.isNumeric( delay ) ) {
+				delayValue = delay;
+			}
+
 			button.addClass( 'hustle-button-onload' );
 
-			setTimeout( function() {
-				button.removeClass( 'hustle-button-onload' );
-			}, 1000 );
+			if ( false !== delay ) {
+
+				setTimeout( function() {
+					button.removeClass( 'hustle-button-onload' );
+				}, delayValue );
+			}
 		}
 
 		init();

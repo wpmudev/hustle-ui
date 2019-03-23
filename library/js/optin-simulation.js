@@ -78,20 +78,19 @@
 
 				resetOnClick();
 
-				HUI.optinSubmit( button );
+				checkGdpr();
+				checkRequired();
 
-				setTimeout( function() {
+				if ( form.find( '.hustle-field-error' ).length ) {
+					HUI.optinError( error );
+				} else {
+					HUI.optinSubmit( button );
 
-					checkGdpr();
-					checkRequired();
-
-					if ( form.find( '.hustle-field-error' ).length ) {
-						HUI.optinError( error );
-					} else {
+					setTimeout( function() {
 						HUI.optinSuccess( success );
-					}
+					}, 1000 );
+				}
 
-				}, 1000 );
 
 				e.preventDefault();
 				e.stopPropagation();

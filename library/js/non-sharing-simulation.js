@@ -45,22 +45,17 @@
 				e.preventDefault();
 				e.stopPropagation();
 
-				HUI.optinSubmit( this, 1000 );
+				HUI.optinValidate( module );
 
-				setTimeout( function() {
+				if ( form.find( '.hustle-field-error' ).length ) {
+					HUI.optinError( error );
+				} else {
+					HUI.optinSubmit( this, 1000 );
 
-					HUI.optinValidate( module );
-
-					if ( form.find( '.hustle-field-error' ).length ) {
-						HUI.optinError( error );
-					} else {
+					setTimeout( function() {
 						HUI.optinSuccess( success );
-					}
-
-				}, 1000 );
-
-				e.preventDefault();
-				e.stopPropagation();
+					}, 1000 );
+				}
 
 			});
 		}

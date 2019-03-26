@@ -16,6 +16,8 @@
 			return;
 		}
 
+		popup.css( 'opacity', 1 );
+
 		function animation() {
 
 			const checkIntro = popup.data( 'intro' );

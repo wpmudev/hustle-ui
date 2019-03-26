@@ -16,6 +16,8 @@
 			return;
 		}
 
+		slidein.css( 'opacity', 1 );
+
 		function reset() {
 			slidein.removeClass( 'hustle-show' );
 		}

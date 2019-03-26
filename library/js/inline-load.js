@@ -19,6 +19,8 @@
 			return;
 		}
 
+		element.css( 'opacity', 1 );
+
 		function reset() {
 			element.removeClass( 'hustle-show' );
 		}

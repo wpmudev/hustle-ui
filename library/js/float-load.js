@@ -16,6 +16,8 @@
 			return;
 		}
 
+		float.css( 'opacity', 1 );
+
 		function reset() {
 			float.removeClass( 'hustle-show' );
 		}

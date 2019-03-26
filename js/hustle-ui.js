@@ -627,6 +627,8 @@
 			return;
 		}
 
+		float.css( 'opacity', 1 );
+
 		function reset() {
 			float.removeClass( 'hustle-show' );
 		}
@@ -755,6 +757,8 @@
 		if ( ! element.is( '.hustle-inline' ) ) {
 			return;
 		}
+
+		element.css( 'opacity', 1 );
 
 		function reset() {
 			element.removeClass( 'hustle-show' );
@@ -983,22 +987,17 @@
 				e.preventDefault();
 				e.stopPropagation();
 
-				HUI.optinSubmit( this, 1000 );
+				HUI.optinValidate( module );
 
-				setTimeout( function() {
+				if ( form.find( '.hustle-field-error' ).length ) {
+					HUI.optinError( error );
+				} else {
+					HUI.optinSubmit( this, 1000 );
 
-					HUI.optinValidate( module );
-
-					if ( form.find( '.hustle-field-error' ).length ) {
-						HUI.optinError( error );
-					} else {
+					setTimeout( function() {
 						HUI.optinSuccess( success );
-					}
-
-				}, 1000 );
-
-				e.preventDefault();
-				e.stopPropagation();
+					}, 1000 );
+				}
 
 			});
 		}
@@ -1365,6 +1364,8 @@
 		if ( ! popup.is( '.hustle-popup' ) ) {
 			return;
 		}
+
+		popup.css( 'opacity', 1 );
 
 		function animation() {
 
@@ -8173,6 +8174,8 @@
 		if ( ! slidein.is( '.hustle-slidein' ) ) {
 			return;
 		}
+
+		slidein.css( 'opacity', 1 );
 
 		function reset() {
 			slidein.removeClass( 'hustle-show' );

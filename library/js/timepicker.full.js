@@ -369,7 +369,11 @@
 				i.element.data('timepicker-event-namespace', Math.random());
 
 				// Append the timepicker within a relative div closer to the input.
-				widget.container.insertAfter( i.element.closest( '.hustle-layout' ) )
+				if ( i.element.closest( '.sui-form-field' ).length ) {
+					i.element.closest( '.sui-form-field' ).append( widget.container );
+				} else {
+					widget.container.insertAfter( i.element.closest( '.hustle-layout' ) );
+				}
 
 				$(document).bind('click.timepicker-' + i.element.data('timepicker-event-namespace'), function(event) {
 					if (i.element.get(0) === event.target) {

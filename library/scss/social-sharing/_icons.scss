@@ -2,8 +2,6 @@
 
 	a[class*="hustle-share-"] {
 		display: block;
-		border-width: map-get($social-module, border-width);
-		border-style: map-get($social-module, border-style);
 		background-image: unset;
 		background-color: transparent;
 
@@ -23,6 +21,8 @@
 		&:hover,
 		&:focus,
 		&:active {
+			border-width: map-get($social-module, border-width);
+			border-style: map-get($social-module, border-style);
 			outline: none;
 			box-shadow: none;
 			text-decoration: none;

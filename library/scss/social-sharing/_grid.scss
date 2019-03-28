@@ -11,7 +11,8 @@
 
 		&:before,
 		&:after {
-			content: unset;
+			content: unset !important;
+			display: none !important;
 		}
 	}
 

@@ -2,6 +2,8 @@
 
 	'use strict';
 
+	const HUI = {};
+
 	// Define global HUI object if it doesn't exist.
 	if ( 'object' !== typeof window.HUI ) {
 		window.HUI = {};

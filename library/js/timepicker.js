@@ -1,7 +1,8 @@
 ( function( $ ) {
 
-	// Enable strict mode
 	'use strict';
+
+	const HUI = {};
 
 	// Define global HUI object if it doesn't exist.
 	if ( 'object' !== typeof window.HUI ) {

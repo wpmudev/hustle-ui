@@ -1,10 +1,14 @@
 'use strict';
 
+// Import `src` and `dest` from gulp for use in the task.
+const { src, dest } = require( 'gulp' );
+
 // ==================================================
 // Supported Packages
 const fs           = require( 'fs' );
 const pump         = require( 'pump' );
 const gulp         = require( 'gulp' );
+const babel        = require( 'gulp-babel' );
 const watch        = require( 'gulp-watch' );
 const sass         = require( 'gulp-sass' );
 const header       = require( 'gulp-header' );
@@ -152,6 +156,13 @@ gulp.task( 'hustle:scripts', function( cb ) {
 		eslint(),
 		eslint.format(),
 		eslint.failAfterError(),
+		babel({
+			presets: [
+				[ '@babel/env', {
+					modules: false
+				} ]
+			]
+		}),
 		concat( 'hustle-ui.js' ),
 		header( banner ),
 		gulp.dest( hustle.output.scripts ),
@@ -217,6 +228,13 @@ gulp.task( 'showcase:scripts', function( cb ) {
 		eslint(),
 		eslint.format(),
 		eslint.failAfterError(),
+		babel({
+			presets: [
+				[ '@babel/env', {
+					modules: false
+				} ]
+			]
+		}),
 		concat( 'showcase-ui.js' ),
 		uglify(),
 		rename({

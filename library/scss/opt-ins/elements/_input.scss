@@ -44,9 +44,12 @@
 			width: map-get($field-size, width);
 			user-select: none;
 			pointer-events: none;
-			position: absolute;
 			display: flex;
+			position: absolute;
+			top: 50%;
+			left: 0;
 			padding: 0 map-get($field-input, padding);
+			transform: translateY(-50%);
 
 			[class*="hustle-icon-"] {
 				width: map-get($field-input, icon-width);

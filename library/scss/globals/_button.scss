@@ -5,14 +5,14 @@
 	button.hustle-button {
 		width: auto;
 		min-width: 100px;
-		min-height: map-get($field-size, height);
+		height: map-get($field-size, height);
 		position: relative;
 		margin: 0;
 		border: 0;
 		border-radius: 0;
-		padding: #{(map-get($field-size, height) - 18px) / 2} 16px;
+		padding: 2px 16px;
 		cursor: pointer;
-		font: bold 13px/18px map-get($font, default);
+		font: bold 13px/#{map-get($field-size, height) - 4px} map-get($font, default);
 		letter-spacing: 0.5px;
 		text-align: center;
 		transition: map-get($transition, ease);

@@ -26,7 +26,7 @@
 			height: map-get($field-radio, size);
 			cursor: pointer;
 			display: block;
-			flex: 0 0 map-get($field-radio, size);
+			flex: 0 0 auto;
 			position: relative;
 			margin: 0;
 			padding: 0;
@@ -50,11 +50,16 @@
 		}
 
 		span:not([aria-hidden]) {
+			display: block;
 			flex: 1 1 auto;
-			margin: 0 0 0 10px;
+			padding: 0 0 0 10px;
 			font-size: map-get($field-radio, font-size);
 			line-height: map-get($field-radio, size);
 			font-family: map-get($font, default);
+
+			@include support(ie) {
+				flex: 1;
+			}
 		}
 
 		&[for] {

@@ -31,6 +31,13 @@
 
 			&.hustle-image-fit--none {
 				@extend %hui-image-fit-full;
+
+				img {
+
+					@include support(ie) {
+						flex-shrink: 0;
+					}
+				}
 			}
 		}
 	}
@@ -57,15 +64,16 @@
 						display: flex;
 						flex-direction: column;
 						justify-content: center;
-						flex: 1 1 1;
+						flex: 1 1 auto;
 					}
 				}
 
 				&:only-child {
 
 					@include media(min-width, sm) {
-						max-width: 100%;
-						flex: 1 1 1;
+						width: 100%;
+						max-width: none;
+						flex: 0 0 auto;
 					}
 				}
 

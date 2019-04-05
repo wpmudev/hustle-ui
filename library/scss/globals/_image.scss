@@ -58,6 +58,10 @@
 		display: block;
 		flex: 0 1 auto;
 		margin: 0 auto;
+
+		@include support(ie) {
+			flex-shrink: 0;
+		}
 	}
 }
 

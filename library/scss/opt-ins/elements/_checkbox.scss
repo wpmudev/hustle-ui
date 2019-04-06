@@ -73,6 +73,10 @@
 		&.hustle-gdpr {
 			display: inline-flex;
 			margin-top: map-get($gutter, small);
+
+			@include support(ie) {
+				display: flex;
+			}
 		}
 	}
 

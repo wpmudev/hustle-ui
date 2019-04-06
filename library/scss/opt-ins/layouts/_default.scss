@@ -84,7 +84,7 @@
 						&:only-child {
 
 							@include media(min-width, sm) {
-								max-width: unset;
+								max-width: none;
 								height: map-get($module-image, default);
 								flex: 1;
 							}
@@ -102,7 +102,7 @@
 						&:only-child {
 
 							@include media(min-width, sm) {
-								max-width: unset;
+								max-width: none;
 								flex: 1;
 							}
 						}

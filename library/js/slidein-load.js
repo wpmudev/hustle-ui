@@ -33,35 +33,35 @@
 			let positionX = '';
 			let positionY = '';
 
-			if ( checkPosition.charAt( 0 ).includes( 'n' ) ) {
+			if ( -1 !== checkPosition.charAt( 0 ).indexOf( 'n' ) ) {
 				positionX = 'north';
 			}
 
-			if ( checkPosition.charAt( 0 ).includes( 's' ) ) {
+			if ( -1 !== checkPosition.charAt( 0 ).indexOf( 's' ) ) {
 				positionX = 'south';
 			}
 
-			if ( checkPosition.charAt( 0 ).includes( 'e' ) ) {
+			if ( -1 !== checkPosition.charAt( 0 ).indexOf( 'e' ) ) {
 				positionX = 'east';
 			}
 
-			if ( checkPosition.charAt( 0 ).includes( 'w' ) ) {
+			if ( -1 !== checkPosition.charAt( 0 ).indexOf( 'w' ) ) {
 				positionX = 'west';
 			}
 
-			if ( checkPosition.charAt( 1 ).includes( 'n' ) ) {
+			if ( -1 !== checkPosition.charAt( 1 ).indexOf( 'n' ) ) {
 				positionY = 'north';
 			}
 
-			if ( checkPosition.charAt( 1 ).includes( 's' ) ) {
+			if ( -1 !== checkPosition.charAt( 1 ).indexOf( 's' ) ) {
 				positionY = 'south';
 			}
 
-			if ( checkPosition.charAt( 1 ).includes( 'e' ) ) {
+			if ( -1 !== checkPosition.charAt( 1 ).indexOf( 'e' ) ) {
 				positionY = 'east';
 			}
 
-			if ( checkPosition.charAt( 1 ).includes( 'w' ) ) {
+			if ( -1 !== checkPosition.charAt( 1 ).indexOf( 'w' ) ) {
 				positionY = 'west';
 			}
 

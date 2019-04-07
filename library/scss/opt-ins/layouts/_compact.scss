@@ -74,7 +74,8 @@
 				.hustle-content {
 
 					@include media(min-width, sm) {
-						flex: 1;
+						min-height: 1px;
+						flex: 1 1 auto;
 					}
 				}
 
@@ -83,7 +84,8 @@
 					&:only-child {
 
 						@include media(min-width, sm) {
-							flex: 1;
+							min-height: 1px;
+							flex: 1 1 auto;
 							display: flex;
 							flex-direction: column;
 							justify-content: center;
@@ -96,8 +98,9 @@
 				}
 
 				@include media(min-width, sm) {
+					min-width: 1px;
 					display: flex;
-					flex: 1;
+					flex: 1 1 auto;
 					flex-direction: column;
 				}
 			}

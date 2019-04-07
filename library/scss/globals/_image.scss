@@ -40,6 +40,7 @@
 		-ms-interpolation-mode: bicubic;
 
 		@include support(ie) {
+			width: auto;
 			height: auto;
 		}
 	}

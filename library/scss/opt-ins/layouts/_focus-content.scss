@@ -61,6 +61,7 @@
 				.hustle-layout-form {
 
 					@include media(min-width, sm) {
+						min-height: 1px;
 						display: flex;
 						flex-direction: column;
 						justify-content: center;
@@ -89,10 +90,11 @@
 			.hustle-layout-content {
 
 				@include media(min-width, sm) {
+					min-width: 1px;
 					display: flex;
 					flex-direction: column;
 					justify-content: center;
-					flex: 1;
+					flex: 1 1 auto;
 				}
 			}
 

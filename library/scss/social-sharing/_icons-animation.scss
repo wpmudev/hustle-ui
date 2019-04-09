@@ -1,0 +1,101 @@
+@keyframes bounceUpDown {
+	from, 60%, 75%, 90%, to {
+		animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+	}
+	from {
+		transform: translateY(0);
+	}
+	75% {
+		transform: translateY(-10px);
+	}
+	to {
+		transform: translateY(0);
+	}
+}
+
+@keyframes bounceDownUp {
+	from, 60%, 75%, 90%, to {
+		animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+	}
+	from {
+		transform: translateY(0);
+	}
+	75% {
+		transform: translateY(10px);
+	}
+	to {
+		transform: translateY(0);
+	}
+}
+
+@keyframes flash {
+	from {
+		@include opacity(1);
+	}
+	75% {
+		@include opacity(0);
+	}
+	to {
+		@include opacity(1);
+	}
+}
+
+@keyframes zoom {
+	from {
+		transform: scale(1);
+	}
+	75% {
+		transform: scale(1.2);
+	}
+	to {
+		transform: scale(1);
+	}
+}
+
+@include hui-class(null, social, null, false) {
+
+	ul {
+
+		&.hustle-animated {
+
+			li a {
+				animation-duration: 250ms;
+				animation-fill-mode: both;
+				transform-origin: center;
+				transform-style: preserve-3d;
+			}
+
+			// ANIMATION: Bounce Up Down
+			&[data-animation="bounceUpDown"] {
+
+				li a:hover {
+					animation-name: bounceUpDown;
+				}
+			}
+
+			// ANIMATION: Bounce Up Down (Reverse)
+			&[data-animation="bounceDownUp"] {
+
+				li a:hover {
+					animation-name: bounceDownUp;
+				}
+			}
+
+			// ANIMATION: Flash
+			&[data-animation="flash"] {
+
+				li a:hover {
+					animation-name: flash;
+				}
+			}
+
+			// ANIMATION: Zoom
+			&[data-animation="zoom"] {
+
+				li a:hover {
+					animation-name: zoom;
+				}
+			}
+		}
+	}
+}

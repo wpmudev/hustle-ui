@@ -41,6 +41,7 @@
 
 			widget.container = $('.hustle-timepicker');
 			widget.ui = widget.container.find('.ui-timepicker');
+			widget.viewport = widget.ui.find('.ui-timepicker-viewport');
 
 			if (widget.container.length === 0) {
 				widget.container = $('<div></div>').addClass('hustle-timepicker')

@@ -13,10 +13,10 @@
 
 			const input = $( this );
 
-			if ( '' !== input.val() ) {
-				input.parent().addClass( 'hustle-field-filled' );
-			} else {
+			if ( '' === input.val() && this.validity.valid ) {
 				input.parent().removeClass( 'hustle-field-filled' );
+			} else {
+				input.parent().addClass( 'hustle-field-filled' );
 			}
 
 		});

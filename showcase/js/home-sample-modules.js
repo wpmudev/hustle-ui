@@ -459,14 +459,17 @@
 						});
 					}
 
-					if ( 'slidein' === moduleType ) {
+					setTimeout( function() {
 
-						HUI.slideinBoxShadow( container );
+						if ( 'slidein' === moduleType ) {
 
-						$( window ).on( 'resize', function() {
 							HUI.slideinBoxShadow( container );
-						});
-					}
+
+							$( window ).on( 'resize', function() {
+								HUI.slideinBoxShadow( container );
+							});
+						}
+					});
 
 					closesModule( $( this ) );
 

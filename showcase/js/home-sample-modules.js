@@ -460,6 +460,7 @@
 					}
 
 					if ( 'slidein' === moduleType ) {
+
 						HUI.slideinBoxShadow( container );
 
 						$( window ).on( 'resize', function() {

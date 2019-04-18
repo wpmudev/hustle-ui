@@ -11,7 +11,6 @@
 
 		const slidein = $( el );
 		const content = slidein.find( '.hustle-slidein-content' );
-		const shadow = slidein.find( '.hustle-slidein-shadow' );
 
 		if ( ! slidein.is( '.hustle-slidein' ) ) {
 			return;
@@ -76,10 +75,6 @@
 
 		function animation() {
 			content.addClass( 'hustle-animate-in' );
-
-			if ( shadow.length ) {
-				shadow.addClass( 'hustle-animate-in' );
-			}
 		}
 
 		function init() {
@@ -95,6 +90,7 @@
 			// Layout time.
 			setTimeout( function() {
 				animation();
+				slidein.find( '.hustle-slidein-shadow' ).addClass( 'hustle-animate-in' ); // Box shadow animation
 			}, 1000 );
 
 			HUI.slideinClose( el, autohideDelay );

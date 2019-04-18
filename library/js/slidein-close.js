@@ -11,7 +11,8 @@
 
 		const slidein = $( el ),
 			close = slidein.find( '.hustle-button-close' ),
-			content = slidein.find( '.hustle-slidein-content' );
+			content = slidein.find( '.hustle-slidein-content' )
+			;
 
 		let	preventAutohide = false;
 
@@ -64,7 +65,15 @@
 			close.on( 'click', function( e ) {
 
 				slidein.trigger( 'hustle:module:closed', this );
+
 				animationOut();
+
+				slidein.find( '.hustle-slidein-shadow' ).addClass( 'hustle-animate-out' );
+				slidein.find( '.hustle-slidein-shadow' ).removeClass( 'hustle-animate-in' );
+
+				setTimeout( function() {
+					slidein.find( '.hustle-slidein-shadow' ).removeClass( 'hustle-animate-out' );
+				}, 1000 );
 
 				e.preventDefault();
 

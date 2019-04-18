@@ -7,7 +7,7 @@
 
 @include hui-class(slidein, null, null, false) {
 	pointer-events: none;
-	display: none;
+	visibility: hidden; // display: none;
 	position: fixed;
 	align-items: center;
 	justify-content: center;
@@ -360,5 +360,6 @@
 
 	&.hustle-show {
 		display: flex;
+		visibility: visible;
 	}
 }

@@ -6,4 +6,42 @@
 		box-sizing: border-box;
 		@extend %hui-text-reset;
 	}
+
+	.hustle-nsa-link {
+		margin: 0;
+		padding: 0;
+		border: 0;
+		font: 400 14px/20px map-get($font, default);
+
+		a {
+			font-weight: inherit;
+			transition: map-get($transition, ease);
+
+			&,
+			&:hover,
+			&:focus,
+			&:active,
+			&:visited {
+				outline: none;
+				box-shadow: none;
+			}
+		}
+
+		&:not(:first-child) {
+			margin-top: map-get($gutter, small);
+		}
+	}
+}
+
+@include hui-class(null, info, null, true) {
+
+	.hustle-nsa-link {
+
+		&:not(:first-child) {
+
+			@include media(min-width, sm) {
+				margin-top: map-get($gutter, default);
+			}
+		}
+	}
 }

@@ -11,13 +11,9 @@
 
 		const slidein = $( el );
 
-		const layout = slidein.find( '.hustle-layout' );
+		const layout = ( slidein.find( '.hustle-info--stacked' ).length ) ? slidein.find( '.hustle-layout-body' ) : slidein.find( '.hustle-layout' );
 		const width  = layout.width();
 		const height = layout.height();
-		const offset = layout.offset();
-
-		const offsetTop = offset.top - $( window ).scrollTop();
-		const offsetLeft = offset.left - $( window ).scrollLeft();
 
 		let shadowBox = '<div class="hustle-slidein-shadow"></div>';
 
@@ -38,10 +34,23 @@
 				shadowBox = slidein.find( '.hustle-slidein-shadow' );
 				shadowBox.css({
 					'width': width + 'px',
-					'height': height + 'px',
-					'top': offsetTop + 'px',
-					'left': offsetLeft + 'px'
+					'height': height + 'px'
 				});
+
+				if ( slidein.find( '.hustle-info--stacked' ).length ) {
+
+					const innerHeight = slidein.find( '.hustle-layout-header' ).height();
+					const outerHeight = slidein.find( '.hustle-layout-header' ).outerHeight( true );
+					const calcMargin = outerHeight - innerHeight;
+
+					if ( 'n' === slidein.data( 'position' ) || 'ne' === slidein.data( 'position' ) || 'nw' === slidein.data( 'position' ) ) {
+						shadowBox.css( 'top', outerHeight + 'px' );
+					}
+
+					if ( 'e' === slidein.data( 'position' ) || 'w' === slidein.data( 'position' ) ) {
+						shadowBox.css( 'margin-top', ( outerHeight - ( innerHeight / 2 ) - ( calcMargin / 2 ) ) + 'px' );
+					}
+				}
 			}
 		}
 

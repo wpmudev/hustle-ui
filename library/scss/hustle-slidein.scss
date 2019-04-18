@@ -34,9 +34,10 @@
 	.hustle-slidein-shadow {
 		@include opacity(0);
 		pointer-events: none;
+		display: block;
+		flex: 0 0 auto;
 		position: absolute;
 		z-index: 0;
-		box-shadow: 20px 16px 20px 50px #bc005b; // TEST
 		animation-duration: 1s;
 		animation-fill-mode: both;
 		transform-origin: center;
@@ -48,6 +49,7 @@
 		// 1. North
 		&--north {
 			align-items: flex-start;
+			justify-content: center;
 
 			.hustle-slidein-content,
 			.hustle-slidein-shadow {
@@ -74,6 +76,10 @@
 				}
 			}
 
+			.hustle-slidein-shadow {
+				top: map-get($module-close, button-size);
+			}
+
 			@include media(max-width, sm) {
 				padding: 0 map-get($gutter, small);
 			}
@@ -86,6 +92,7 @@
 		// 2. South
 		&--south {
 			align-items: flex-end;
+			justify-content: center;
 
 			.hustle-slidein-content,
 			.hustle-slidein-shadow {
@@ -150,6 +157,11 @@
 				}
 			}
 
+			.hustle-slidein-shadow {
+				margin-top: #{map-get($module-close, button-size) / 2}; // Fix to keep shadow aligned
+				right: 0;
+			}
+
 			@include media(max-width, sm) {
 				padding-left: map-get($gutter, small);
 			}
@@ -161,6 +173,7 @@
 
 		// 4. West
 		&--west {
+			align-items: center;
 			justify-content: flex-start;
 
 			.hustle-slidein-content,
@@ -186,6 +199,11 @@
 				@include media(min-width, sm) {
 					max-height: calc(100vh - #{map-get($gutter, default) * 2});
 				}
+			}
+
+			.hustle-slidein-shadow {
+				margin-top: #{map-get($module-close, button-size) / 2}; // Fix to keep shadow aligned
+				left: 0;
 			}
 
 			@include media(max-width, sm) {
@@ -227,6 +245,11 @@
 				}
 			}
 
+			.hustle-slidein-shadow {
+				top: map-get($module-close, button-size);
+				right: 0;
+			}
+
 			@include media(max-width, sm) {
 				padding-left: map-get($gutter, small);
 			}
@@ -264,6 +287,11 @@
 				@include media(min-width, sm) {
 					max-height: calc(100vh - #{map-get($gutter, default)});
 				}
+			}
+
+			.hustle-slidein-shadow {
+				top: map-get($module-close, button-size);
+				left: 0;
 			}
 
 			@include media(max-width, sm) {

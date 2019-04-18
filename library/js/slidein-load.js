@@ -17,7 +17,7 @@
 		const offset = layout.offset();
 
 		const offsetTop = offset.top - $( window ).scrollTop();
-		const offsetLeft = offset.left - $( window ).scrollTop();
+		const offsetLeft = offset.left - $( window ).scrollLeft();
 
 		let shadowBox = '<div class="hustle-slidein-shadow"></div>';
 
@@ -30,14 +30,18 @@
 			if ( layout.length ) {
 
 				// Create box
-				slidein.append( shadowBox );
+				if ( ! slidein.find( '.hustle-slidein-shadow' ).length ) {
+					slidein.append( shadowBox );
+				}
 
 				// Box CSS
 				shadowBox = slidein.find( '.hustle-slidein-shadow' );
 				shadowBox.css({
 					'width': width + 'px',
 					'height': height + 'px',
+					'pointer-events': 'none',
 					'position': 'absolute',
+					'z-index': '-1',
 					'top': offsetTop + 'px',
 					'left': offsetLeft + 'px',
 					'box-shadow': '20px 16px 20px 50px #bc005b' // TEST

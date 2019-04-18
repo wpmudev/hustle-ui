@@ -19,7 +19,7 @@
 		const offsetTop = offset.top - $( window ).scrollTop();
 		const offsetLeft = offset.left - $( window ).scrollLeft();
 
-		let shadowBox = '<div class="hustle-slidein-shadow"></div>';
+		let shadowBox = '<div class="hustle-slidein-shadow hustle-animate-in"></div>';
 
 		if ( ! slidein.is( '.hustle-slidein' ) ) {
 			return;
@@ -36,15 +36,11 @@
 
 				// Box CSS
 				shadowBox = slidein.find( '.hustle-slidein-shadow' );
-				shadowBox.css({
+				shadowBox.addClass( 'hustle-animate-in' ).css({
 					'width': width + 'px',
 					'height': height + 'px',
-					'pointer-events': 'none',
-					'position': 'absolute',
-					'z-index': '-1',
 					'top': offsetTop + 'px',
-					'left': offsetLeft + 'px',
-					'box-shadow': '20px 16px 20px 50px #bc005b' // TEST
+					'left': offsetLeft + 'px'
 				});
 			}
 		}

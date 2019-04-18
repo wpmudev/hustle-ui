@@ -23,6 +23,20 @@
 		overflow-y: auto;
 		@include opacity(0);
 		pointer-events: initial;
+		position: relative;
+		z-index: 1;
+		animation-duration: 1s;
+		animation-fill-mode: both;
+		transform-origin: center;
+		transform-style: preserve-3d;
+	}
+
+	.hustle-slidein-shadow {
+		@include opacity(0);
+		pointer-events: none;
+		position: absolute;
+		z-index: 0;
+		box-shadow: 20px 16px 20px 50px #bc005b; // TEST
 		animation-duration: 1s;
 		animation-fill-mode: both;
 		transform-origin: center;
@@ -35,7 +49,8 @@
 		&--north {
 			align-items: flex-start;
 
-			.hustle-slidein-content {
+			.hustle-slidein-content,
+			.hustle-slidein-shadow {
 
 				&.hustle-animate-in {
 					@include opacity(1);
@@ -46,6 +61,9 @@
 					@include opacity(1);
 					animation-name: slideOutUp;
 				}
+			}
+
+			.hustle-slidein-content {
 
 				@include media(max-width, sm) {
 					max-height: calc(100vh - #{map-get($gutter, small)});
@@ -69,7 +87,8 @@
 		&--south {
 			align-items: flex-end;
 
-			.hustle-slidein-content {
+			.hustle-slidein-content,
+			.hustle-slidein-shadow {
 
 				&.hustle-animate-in {
 					@include opacity(1);
@@ -80,6 +99,9 @@
 					@include opacity(1);
 					animation-name: slideOutDown;
 				}
+			}
+
+			.hustle-slidein-content {
 
 				@include media(max-width, sm) {
 					max-height: calc(100vh - #{map-get($gutter, small)});
@@ -103,7 +125,8 @@
 		&--east {
 			justify-content: flex-end;
 
-			.hustle-slidein-content {
+			.hustle-slidein-content,
+			.hustle-slidein-shadow {
 
 				&.hustle-animate-in {
 					@include opacity(1);
@@ -114,6 +137,9 @@
 					@include opacity(1);
 					animation-name: slideOutRight;
 				}
+			}
+
+			.hustle-slidein-content {
 
 				@include media(max-width, sm) {
 					max-height: calc(100vh - #{map-get($gutter, small) * 2});
@@ -137,7 +163,8 @@
 		&--west {
 			justify-content: flex-start;
 
-			.hustle-slidein-content {
+			.hustle-slidein-content,
+			.hustle-slidein-shadow {
 
 				&.hustle-animate-in {
 					@include opacity(1);
@@ -148,6 +175,9 @@
 					@include opacity(1);
 					animation-name: slideOutLeft;
 				}
+			}
+
+			.hustle-slidein-content {
 
 				@include media(max-width, sm) {
 					max-height: calc(100vh - #{map-get($gutter, small) * 2});
@@ -172,7 +202,8 @@
 			justify-content: flex-end;
 			align-items: flex-start;
 
-			.hustle-slidein-content {
+			.hustle-slidein-content,
+			.hustle-slidein-shadow {
 
 				&.hustle-animate-in {
 					@include opacity(1);
@@ -183,6 +214,9 @@
 					@include opacity(1);
 					animation-name: slideOutRight;
 				}
+			}
+
+			.hustle-slidein-content {
 
 				@include media(max-width, sm) {
 					max-height: calc(100vh - #{map-get($gutter, small)});
@@ -207,7 +241,8 @@
 			justify-content: flex-start;
 			align-items: flex-start;
 
-			.hustle-slidein-content {
+			.hustle-slidein-content,
+			.hustle-slidein-shadow {
 
 				&.hustle-animate-in {
 					@include opacity(1);
@@ -218,6 +253,9 @@
 					@include opacity(1);
 					animation-name: slideOutLeft;
 				}
+			}
+
+			.hustle-slidein-content {
 
 				@include media(max-width, sm) {
 					max-height: calc(100vh - #{map-get($gutter, small)});
@@ -242,7 +280,8 @@
 			justify-content: flex-end;
 			align-items: flex-end;
 
-			.hustle-slidein-content {
+			.hustle-slidein-content,
+			.hustle-slidein-shadow {
 
 				&.hustle-animate-in {
 					@include opacity(1);
@@ -253,6 +292,9 @@
 					@include opacity(1);
 					animation-name: slideOutRight;
 				}
+			}
+
+			.hustle-slidein-content {
 
 				@include media(max-width, sm) {
 					max-height: calc(100vh - #{map-get($gutter, small)});
@@ -279,7 +321,8 @@
 			justify-content: flex-start;
 			align-items: flex-end;
 
-			.hustle-slidein-content {
+			.hustle-slidein-content,
+			.hustle-slidein-shadow {
 
 				&.hustle-animate-in {
 					@include opacity(1);
@@ -290,6 +333,9 @@
 					@include opacity(1);
 					animation-name: slideOutLeft;
 				}
+			}
+
+			.hustle-slidein-content {
 
 				@include media(max-width, sm) {
 					max-height: calc(100vh - #{map-get($gutter, small)});

@@ -6519,9 +6519,12 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
     function animationOut() {
       content.addClass('hustle-animate-out');
       content.removeClass('hustle-animate-in');
+      slidein.find('.hustle-slidein-shadow').addClass('hustle-animate-out');
+      slidein.find('.hustle-slidein-shadow').removeClass('hustle-animate-in');
       setTimeout(function () {
         slidein.removeClass('hustle-show');
         content.removeClass('hustle-animate-out');
+        slidein.find('.hustle-slidein-shadow').removeClass('hustle-animate-out');
       }, 1000);
     }
 
@@ -6544,7 +6547,6 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
       close.on('click', function (e) {
         slidein.trigger('hustle:module:closed', this);
         animationOut();
-        e.preventDefault();
       });
     }
 
@@ -6625,6 +6627,7 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
 
     function animation() {
       content.addClass('hustle-animate-in');
+      slidein.find('.hustle-slidein-shadow').addClass('hustle-animate-in'); // Box shadow animation
     }
 
     function init() {
@@ -6639,6 +6642,60 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
         animation();
       }, 1000);
       HUI.slideinClose(el, autohideDelay);
+    }
+
+    init();
+    return this;
+  };
+})(jQuery);
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+(function ($) {
+  'use strict'; // Define global HUI object if it doesn't exist.
+
+  if ('object' !== _typeof(window.HUI)) {
+    window.HUI = {};
+  }
+
+  HUI.slideinBoxShadow = function (el) {
+    var slidein = $(el);
+    var layout = slidein.find('.hustle-info--stacked').length ? slidein.find('.hustle-layout-body') : slidein.find('.hustle-layout');
+    var width = layout.width();
+    var height = layout.height();
+    var shadowBox = '<div class="hustle-slidein-shadow"></div>';
+
+    if (!slidein.is('.hustle-slidein')) {
+      return;
+    }
+
+    function init() {
+      if (layout.length) {
+        // Create box
+        if (!slidein.find('.hustle-slidein-shadow').length) {
+          slidein.append(shadowBox);
+        } // Box CSS
+
+
+        shadowBox = slidein.find('.hustle-slidein-shadow');
+        shadowBox.css({
+          'width': width + 'px',
+          'height': height + 'px'
+        });
+
+        if (slidein.find('.hustle-info--stacked').length) {
+          var innerHeight = slidein.find('.hustle-layout-header').height();
+          var outerHeight = slidein.find('.hustle-layout-header').outerHeight(true);
+          var calcMargin = outerHeight - innerHeight;
+
+          if ('n' === slidein.data('position') || 'ne' === slidein.data('position') || 'nw' === slidein.data('position')) {
+            shadowBox.css('top', outerHeight + 'px');
+          }
+
+          if ('e' === slidein.data('position') || 'w' === slidein.data('position')) {
+            shadowBox.css('margin-top', outerHeight - innerHeight / 2 - calcMargin / 2 + 'px');
+          }
+        }
+      }
     }
 
     init();

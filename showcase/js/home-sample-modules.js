@@ -459,6 +459,10 @@
 						});
 					}
 
+					if ( 'slidein' === moduleType ) {
+						HUI.slideinBoxShadow( container );
+					}
+
 					closesModule( $( this ) );
 
 				});

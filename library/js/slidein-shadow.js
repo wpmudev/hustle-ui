@@ -19,7 +19,7 @@
 		const offsetTop = offset.top - $( window ).scrollTop();
 		const offsetLeft = offset.left - $( window ).scrollLeft();
 
-		let shadowBox = '<div class="hustle-slidein-shadow hustle-animate-in"></div>';
+		let shadowBox = '<div class="hustle-slidein-shadow"></div>';
 
 		if ( ! slidein.is( '.hustle-slidein' ) ) {
 			return;
@@ -36,7 +36,7 @@
 
 				// Box CSS
 				shadowBox = slidein.find( '.hustle-slidein-shadow' );
-				shadowBox.addClass( 'hustle-animate-in' ).css({
+				shadowBox.css({
 					'width': width + 'px',
 					'height': height + 'px',
 					'top': offsetTop + 'px',

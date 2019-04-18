@@ -11,6 +11,7 @@
 
 		const slidein = $( el );
 		const content = slidein.find( '.hustle-slidein-content' );
+		const shadow = slidein.find( '.hustle-slidein-shadow' );
 
 		if ( ! slidein.is( '.hustle-slidein' ) ) {
 			return;
@@ -75,6 +76,10 @@
 
 		function animation() {
 			content.addClass( 'hustle-animate-in' );
+
+			if ( shadow.length ) {
+				shadow.addClass( 'hustle-animate-in' );
+			}
 		}
 
 		function init() {

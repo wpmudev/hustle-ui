@@ -75,6 +75,7 @@
 
 		function animation() {
 			content.addClass( 'hustle-animate-in' );
+			slidein.find( '.hustle-slidein-shadow' ).addClass( 'hustle-animate-in' ); // Box shadow animation
 		}
 
 		function init() {
@@ -90,7 +91,6 @@
 			// Layout time.
 			setTimeout( function() {
 				animation();
-				slidein.find( '.hustle-slidein-shadow' ).addClass( 'hustle-animate-in' ); // Box shadow animation
 			}, 1000 );
 
 			HUI.slideinClose( el, autohideDelay );

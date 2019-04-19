@@ -15,13 +15,9 @@
 		const width  = layout.width();
 		const height = layout.height();
 
-		let shadowBox = '<div class="hustle-slidein-shadow"></div>';
+		let shadowBox = '<div class="hustle-slidein-shadow" aria-hidden="true"></div>';
 
 		if ( ! slidein.is( '.hustle-slidein' ) ) {
-			return;
-		}
-
-		if ( 'true' !== slidein.data( 'shadow' ) ) {
 			return;
 		}
 

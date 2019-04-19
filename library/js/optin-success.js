@@ -33,8 +33,8 @@
 					closeModule = HUI.slideinClose;
 				} else if ( container.is( '.hustle-popup' ) ) {
 					closeModule = HUI.popupClose;
-				} else {
-					closeModule = HUI.popupClose; // TODO: add embed closing.
+				} else if ( container.is( '.hustle-inline' ) ) {
+					closeModule = HUI.inlineClose;
 				}
 
 				setTimeout( () => closeModule( container, 0 ), closeDelay );

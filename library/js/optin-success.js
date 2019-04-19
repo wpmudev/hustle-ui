@@ -11,7 +11,8 @@
 
 		const success = $( el );
 		const container = success.closest( '.hustle-ui' );
-		const layout = container.find( '.hustle-layout' );
+		const layout = container.find( '.hustle-layout' ),
+			closeDelay = success.data( 'close-delay' );
 
 		if ( ! success.is( '.hustle-success' ) ) {
 			return;

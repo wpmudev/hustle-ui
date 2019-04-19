@@ -21,6 +21,10 @@
 			return;
 		}
 
+		if ( 'true' !== slidein.data( 'shadow' ) ) {
+			return;
+		}
+
 		function init() {
 
 			if ( layout.length ) {

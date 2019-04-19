@@ -522,7 +522,8 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
   HUI.optinSuccess = function (el) {
     var success = $(el);
     var container = success.closest('.hustle-ui');
-    var layout = container.find('.hustle-layout');
+    var layout = container.find('.hustle-layout'),
+        closeDelay = success.data('close-delay');
 
     if (!success.is('.hustle-success')) {
       return;

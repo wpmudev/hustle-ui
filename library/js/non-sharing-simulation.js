@@ -53,7 +53,7 @@
 					HUI.optinSubmit( this, 1000 );
 
 					setTimeout( function() {
-						HUI.optinSuccess( success );
+						HUI.optinSuccess( success, success.data( 'close-delay' ) );
 					}, 1000 );
 				}
 

@@ -24,6 +24,21 @@
 			setTimeout( function() {
 				success.slideDown();
 			}, 800 );
+
+			if ( closeDelay || 0 === closeDelay ) {
+
+				let closeModule = null;
+
+				if ( container.is( '.hustle-slidein' ) ) {
+					closeModule = HUI.slideinClose;
+				} else if ( container.is( '.hustle-popup' ) ) {
+					closeModule = HUI.popupClose;
+				} else {
+					closeModule = HUI.popupClose; // TODO: add embed closing.
+				}
+
+				setTimeout( () => closeModule( container, 0 ), closeDelay );
+			}
 		}
 
 		function init() {

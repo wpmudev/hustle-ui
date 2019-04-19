@@ -6662,13 +6662,9 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
     var layout = slidein.find('.hustle-info--stacked').length ? slidein.find('.hustle-layout-body') : slidein.find('.hustle-layout');
     var width = layout.width();
     var height = layout.height();
-    var shadowBox = '<div class="hustle-slidein-shadow"></div>';
+    var shadowBox = '<div class="hustle-slidein-shadow" aria-hidden="true"></div>';
 
     if (!slidein.is('.hustle-slidein')) {
-      return;
-    }
-
-    if ('true' !== slidein.data('shadow')) {
       return;
     }
 

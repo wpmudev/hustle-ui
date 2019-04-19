@@ -317,10 +317,10 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
     $('.hustle-ui .hustle-input').on('keyup blur change', function () {
       var input = $(this);
 
-      if ('' !== input.val()) {
-        input.parent().addClass('hustle-field-filled');
-      } else {
+      if ('' === input.val() && this.validity.valid) {
         input.parent().removeClass('hustle-field-filled');
+      } else {
+        input.parent().addClass('hustle-field-filled');
       }
     });
   };
@@ -6665,6 +6665,10 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
     var shadowBox = '<div class="hustle-slidein-shadow"></div>';
 
     if (!slidein.is('.hustle-slidein')) {
+      return;
+    }
+
+    if ('true' !== slidein.data('shadow')) {
       return;
     }
 

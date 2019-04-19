@@ -194,6 +194,46 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
     window.HUI = {};
   }
 
+  HUI.inlineClose = function (el, autohideDelay) {
+    var inline = $(el),
+        content = inline.find('.hustle-inline-content');
+    var preventAutohide = false;
+
+    if (!inline.hasClass('hustle-inline')) {
+      return;
+    }
+
+    function animationOut() {
+      inline.slideUp(800);
+      setTimeout(function () {
+        inline.remove();
+      }, 800);
+    }
+
+    function init() {
+      if ('undefined' !== typeof autohideDelay && false !== autohideDelay) {
+        setTimeout(function () {
+          if (!preventAutohide) {
+            inline.trigger('hustle:module:hidden', this);
+            animationOut();
+          }
+        }, autohideDelay);
+      }
+    }
+
+    init();
+    return this;
+  };
+})(jQuery);
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+(function ($) {
+  'use strict'; // Define global HUI object if it doesn't exist.
+
+  if ('object' !== _typeof(window.HUI)) {
+    window.HUI = {};
+  }
+
   HUI.inlineLoad = function (el) {
     var element = $(el);
     var content = element.find('.hustle-inline-content');
@@ -397,7 +437,7 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
         } else {
           HUI.optinSubmit(this, 1000);
           setTimeout(function () {
-            HUI.optinSuccess(success);
+            HUI.optinSuccess(success, success.data('close-delay'));
           }, 1000);
         }
       });
@@ -493,6 +533,22 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
       setTimeout(function () {
         success.slideDown();
       }, 800);
+
+      if (closeDelay || 0 === closeDelay) {
+        var closeModule = null;
+
+        if (container.is('.hustle-slidein')) {
+          closeModule = HUI.slideinClose;
+        } else if (container.is('.hustle-popup')) {
+          closeModule = HUI.popupClose;
+        } else if (container.is('.hustle-inline')) {
+          closeModule = HUI.inlineClose;
+        }
+
+        setTimeout(function () {
+          return closeModule(container, 0);
+        }, closeDelay);
+      }
     }
 
     function init() {

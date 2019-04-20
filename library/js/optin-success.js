@@ -11,8 +11,10 @@
 
 		const success = $( el );
 		const container = success.closest( '.hustle-ui' );
-		const layout = container.find( '.hustle-layout' ),
-			closeDelay = success.data( 'close-delay' );
+		const layout = container.find( '.hustle-layout' );
+		const shadow = container.find( '.hustle-slidein-shadow' );
+		const shadowH = success.innerHeight();
+		const closeDelay = success.data( 'close-delay' );
 
 		if ( ! success.is( '.hustle-success' ) ) {
 			return;
@@ -21,9 +23,15 @@
 		function successMessage() {
 
 			layout.slideUp( 800 );
+			shadow.slideUp( 800, function() {
+				$( this ).css({
+					'height': shadowH + 'px'
+				});
+			});
 
 			setTimeout( function() {
-				success.slideDown();
+				success.slideDown( 500 );
+				shadow.slideDown( 500 );
 			}, 800 );
 
 			if ( closeDelay || 0 === closeDelay ) {

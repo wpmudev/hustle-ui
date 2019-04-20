@@ -522,8 +522,10 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
   HUI.optinSuccess = function (el) {
     var success = $(el);
     var container = success.closest('.hustle-ui');
-    var layout = container.find('.hustle-layout'),
-        closeDelay = success.data('close-delay');
+    var layout = container.find('.hustle-layout');
+    var shadow = container.find('.hustle-slidein-shadow');
+    var shadowH = success.innerHeight();
+    var closeDelay = success.data('close-delay');
 
     if (!success.is('.hustle-success')) {
       return;
@@ -531,8 +533,14 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
 
     function successMessage() {
       layout.slideUp(800);
+      shadow.slideUp(800, function () {
+        $(this).css({
+          'height': shadowH + 'px'
+        });
+      });
       setTimeout(function () {
-        success.slideDown();
+        success.slideDown(500);
+        shadow.slideDown(500);
       }, 800);
 
       if (closeDelay || 0 === closeDelay) {

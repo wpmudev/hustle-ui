@@ -17,7 +17,7 @@
 
 		let shadowBox = '<div class="hustle-slidein-shadow" aria-hidden="true"></div>';
 
-		if ( ! slidein.is( '.hustle-slidein' ) ) {
+		if ( ! slidein.is( '.hustle-slidein' ) || ! slidein.data( 'has-shadow' ) ) {
 			return;
 		}
 
@@ -51,7 +51,27 @@
 						shadowBox.css( 'margin-top', ( outerHeight - ( innerHeight / 2 ) - ( calcMargin / 2 ) ) + 'px' );
 					}
 				}
+
+				syncShadow();
 			}
+		}
+
+		function syncShadow() {
+			const targetNode = layout[0],
+				config = {
+					childList: true,
+					subtree: true
+				},
+				observerCallback = () => {
+					shadowBox.animate({
+						'height': layout.height() + 'px'
+					}, 0 );
+				};
+
+			const observer = new MutationObserver( observerCallback );
+
+			observer.observe( targetNode, config );
+
 		}
 
 		init();

@@ -22,16 +22,38 @@
 
 		function successMessage() {
 
-			layout.slideUp( 800 );
-			shadow.slideUp( 800, function() {
-				$( this ).css({
-					'height': shadowH + 'px'
-				});
-			});
+			let hideLayout = () => layout.slideUp( 800 ),
+				showSuccess = () => success.slideDown();
+
+			if ( container.is( '.hustle-slidein' ) ) {
+				const boxShadow = container.find( '.hustle-slidein-shadow' );
+
+				if ( boxShadow.length ) {
+
+					hideLayout = () => {
+						layout.slideUp({
+							duration: 800,
+							step: function() {
+								boxShadow.css({'height': layout.height() + 'px'});
+							}
+						});
+					};
+
+					showSuccess = () => {
+						success.slideDown({
+							duration: 500,
+							step: function() {
+								boxShadow.css({'height': success.outerHeight() + 'px'});
+							}
+						});
+					};
+				}
+			}
+
+			hideLayout();
 
 			setTimeout( function() {
-				success.slideDown( 500 );
-				shadow.slideDown( 500 );
+				showSuccess();
 			}, 800 );
 
 			if ( closeDelay || 0 === closeDelay ) {

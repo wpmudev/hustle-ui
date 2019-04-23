@@ -11,8 +11,10 @@
 
 		const success = $( el );
 		const container = success.closest( '.hustle-ui' );
-		const layout = container.find( '.hustle-layout' ),
-			closeDelay = success.data( 'close-delay' );
+		const layout = container.find( '.hustle-layout' );
+		const shadow = container.find( '.hustle-slidein-shadow' );
+		const shadowH = success.innerHeight();
+		const closeDelay = success.data( 'close-delay' );
 
 		if ( ! success.is( '.hustle-success' ) ) {
 			return;
@@ -39,7 +41,7 @@
 
 					showSuccess = () => {
 						success.slideDown({
-							duration: 400,
+							duration: 500,
 							step: function() {
 								boxShadow.css({'height': success.outerHeight() + 'px'});
 							}

@@ -59,18 +59,31 @@
 		function syncShadow() {
 			const targetNode = layout[0],
 				config = {
+					attributes: true,
+					attributeFilter: [ 'class' ],
 					childList: true,
 					subtree: true
-				},
-				observerCallback = () => {
-					shadowBox.animate({
-						'height': layout.height() + 'px'
-					}, 0 );
 				};
 
-			const observer = new MutationObserver( observerCallback );
+			const observer = new MutationObserver( () => {
+				shadowBox.animate({
+					'height': layout.height() + 'px'
+				}, 0 );
+			});
 
 			observer.observe( targetNode, config );
+
+			$( document ).on( 'hustle:module:closed', ( e ) => {
+				if ( e.target === slidein[0]) {
+					observer.disconnect();
+				}
+			});
+
+			$( document ).on( 'hustle:module:hidden', ( e ) => {
+				if ( e.target === slidein[0]) {
+					observer.disconnect();
+				}
+			});
 
 		}
 

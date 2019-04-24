@@ -27,7 +27,7 @@
 		function escapeKeyClose( e ) {
 
 			if ( 27 === e.keyCode ) {
-				closePopup();
+				animationOut();
 			}
 		}
 

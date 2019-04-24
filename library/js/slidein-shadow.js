@@ -73,6 +73,28 @@
 
 			observer.observe( targetNode, config );
 
+			$( document ).on( 'hustle:module:submit:success', function( e ) {
+
+				if ( $( e.target )[0] === slidein.find( '.hustle-layout-form' )[0]) {
+
+					observer.disconnect();
+
+					const success = slidein.find( '.hustle-success' );
+
+					targetNode = success[0];
+
+					observer = new MutationObserver( function() {
+						shadowBox.animate({
+						'height': success.outerHeight() + 'px'
+						}, 0 );
+					});
+
+					observer.observe( targetNode, config );
+
+				}
+
+			});
+
 			$( document ).on( 'hustle:module:closed', ( e ) => {
 				if ( e.target === slidein[0]) {
 					observer.disconnect();

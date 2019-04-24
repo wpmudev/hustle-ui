@@ -12,7 +12,9 @@
 		const popup = $( el ),
 			close = popup.find( '.hustle-button-close' ),
 			overlay = popup.find( '.hustle-popup-mask' ),
-			content = popup.find( '.hustle-popup-content' );
+			content = popup.find( '.hustle-popup-content' ),
+			neverSee = popup.find( '.hustle-nsa-link' )
+			;
 
 		let	preventAutohide = false;
 
@@ -126,6 +128,13 @@
 				e.preventDefault();
 				e.stopPropagation();
 
+			});
+
+			neverSee.on( 'click', function( e ) {
+				e.preventDefault();
+
+				popup.trigger( 'hustle:module:clicked_never_see', this );
+				closePopup();
 			});
 
 			if ( 1 === popup.data( 'overlay-close' ) ) {

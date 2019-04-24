@@ -11,7 +11,8 @@
 
 		const slidein = $( el ),
 			close = slidein.find( '.hustle-button-close' ),
-			content = slidein.find( '.hustle-slidein-content' )
+			content = slidein.find( '.hustle-slidein-content' ),
+			neverSee = slidein.find( '.hustle-nsa-link' )
 			;
 
 		let	preventAutohide = false;
@@ -73,6 +74,13 @@
 
 				animationOut();
 
+			});
+
+			neverSee.on( 'click', function( e ) {
+				e.preventDefault();
+
+				slidein.trigger( 'hustle:module:clicked_never_see', this );
+				animationOut();
 			});
 		}
 

@@ -3,6 +3,7 @@
 
 @import "mixins/main-class";
 @import "mixins/breakpoints";
+@import "mixins/browsers";
 @import "mixins/opacity";
 
 @include hui-class(slidein, null, null, false) {
@@ -42,6 +43,9 @@
 		animation-fill-mode: both;
 		transform-origin: center;
 		transform-style: preserve-3d;
+		// TEST
+		background-color: rgba(128, 0, 128, 0.5);
+		box-shadow: 20px 20px 50px 40px rgba(128, 0, 128, 0.5);
 	}
 
 	&.hustle-slidein-position {
@@ -74,10 +78,6 @@
 				@include media(min-width, sm) {
 					max-height: calc(100vh - #{map-get($gutter, default)});
 				}
-			}
-
-			.hustle-slidein-shadow {
-				top: map-get($module-close, button-size);
 			}
 
 			@include media(max-width, sm) {
@@ -119,6 +119,17 @@
 				}
 			}
 
+			.hustle-slidein-shadow {
+
+				@include media(max-width, sm) {
+					margin-bottom: map-get($gutter, small);
+				}
+
+				@include media(min-width, sm) {
+					margin-bottom: map-get($gutter, default);
+				}
+			}
+
 			@include media(max-width, sm) {
 				padding: 0 map-get($gutter, small) map-get($gutter, small);
 			}
@@ -155,11 +166,6 @@
 				@include media(min-width, sm) {
 					max-height: calc(100vh - #{map-get($gutter, default) * 2});
 				}
-			}
-
-			.hustle-slidein-shadow {
-				margin-top: #{map-get($module-close, button-size) / 2}; // Fix to keep shadow aligned
-				right: 0;
 			}
 
 			@include media(max-width, sm) {
@@ -201,11 +207,6 @@
 				}
 			}
 
-			.hustle-slidein-shadow {
-				margin-top: #{map-get($module-close, button-size) / 2}; // Fix to keep shadow aligned
-				left: 0;
-			}
-
 			@include media(max-width, sm) {
 				padding-right: map-get($gutter, small);
 			}
@@ -243,11 +244,6 @@
 				@include media(min-width, sm) {
 					max-height: calc(100vh - #{map-get($gutter, default)});
 				}
-			}
-
-			.hustle-slidein-shadow {
-				top: map-get($module-close, button-size);
-				right: 0;
 			}
 
 			@include media(max-width, sm) {
@@ -289,11 +285,6 @@
 				}
 			}
 
-			.hustle-slidein-shadow {
-				top: map-get($module-close, button-size);
-				left: 0;
-			}
-
 			@include media(max-width, sm) {
 				padding-right: map-get($gutter, small);
 			}
@@ -330,6 +321,17 @@
 
 				@include media(min-width, sm) {
 					max-height: calc(100vh - #{map-get($gutter, default)});
+				}
+			}
+
+			.hustle-slidein-shadow {
+
+				@include media(max-width, sm) {
+					margin-bottom: map-get($gutter, small);
+				}
+
+				@include media(min-width, sm) {
+					margin-bottom: map-get($gutter, default);
 				}
 			}
 
@@ -371,6 +373,17 @@
 
 				@include media(min-width, sm) {
 					max-height: calc(100vh - #{map-get($gutter, default)});
+				}
+			}
+
+			.hustle-slidein-shadow {
+
+				@include media(max-width, sm) {
+					margin-bottom: map-get($gutter, small);
+				}
+
+				@include media(min-width, sm) {
+					margin-bottom: map-get($gutter, default);
 				}
 			}
 

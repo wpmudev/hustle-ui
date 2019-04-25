@@ -11,15 +11,23 @@
 
 		const slidein = $( el );
 
-		const layout = ( slidein.find( '.hustle-info--stacked' ).length ) ? slidein.find( '.hustle-layout-body' ) : slidein.find( '.hustle-layout' );
-		const width  = layout.width();
-		const height = layout.height();
-
-		let shadowBox = '<div class="hustle-slidein-shadow" aria-hidden="true"></div>';
-
 		if ( ! slidein.is( '.hustle-slidein' ) || ! slidein.data( 'has-shadow' ) ) {
 			return;
 		}
+
+		const layout = ( slidein.find( '.hustle-info--stacked' ).length ) ? slidein.find( '.hustle-layout-body' ) : slidein.find( '.hustle-layout' );
+
+		let width = layout.width(),
+			height = 0;
+
+		if ( layout.is( ':visible' ) ) {
+			height = layout.height();
+		} else {
+			layout = slidein.find( '.success-message' );
+			height = layout.outerHeight();
+		}
+
+		let shadowBox = '<div class="hustle-slidein-shadow" aria-hidden="true"></div>';
 
 		function init() {
 

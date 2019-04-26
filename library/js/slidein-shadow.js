@@ -21,6 +21,10 @@
 		let nsaLink  = slidein.find( '.hustle-layout-footer' );
 		let closeBtn = slidein.find( '.hustle-button-close' );
 
+		if ( ! slidein.is( '.hustle-slidein' ) || ! slidein.data( 'has-shadow' ) ) {
+			return;
+		}
+
 		if ( slidein.find( '.hustle-info--default' ).length || slidein.find( '.hustle-info--compact' ).length ) {
 			layout = slidein.find( '.hustle-layout' );
 		}
@@ -31,9 +35,12 @@
 
 		let shadowBox = '<div class="hustle-slidein-shadow" aria-hidden="true"></div>';
 
-		if ( ! slidein.is( '.hustle-slidein' ) || ! slidein.data( 'has-shadow' ) ) {
-			return;
+		// Create box
+		if ( ! slidein.find( '.hustle-slidein-shadow' ).length ) {
+			slidein.append( shadowBox );
 		}
+
+		shadowBox = slidein.find( '.hustle-slidein-shadow' );
 
 		function detectBrowser() {
 
@@ -100,22 +107,51 @@
 
 		function syncShadow() {
 
-			const targetNode = layout[0],
-				config = {
+			let targetNode = layout.is( ':visible' ) ? layout[0] : slidein.find( '.hustle-success' )[0];
+
+			const config = {
 					attributes: true,
 					attributeFilter: [ 'class' ],
 					childList: true,
 					subtree: true
 				};
 
-			const observer = new MutationObserver( () => {
+			let observer = new MutationObserver( () => {
 
 				shadowBox.animate({
-					'height': layout.height() + 'px'
+					'height': shadowSize( 'height' ) + 'px'
 				}, 0 );
+				shadowY( shadowBox );
 			});
 
 			observer.observe( targetNode, config );
+
+			$( document ).on( 'hustle:module:submit:success', function( e ) {
+
+				if ( $( e.target )[0] === slidein.find( '.hustle-layout-form' )[0]) {
+
+					shadowBox.css({
+						top: 'auto',
+						bottom: 'auto'
+					});
+
+					observer.disconnect();
+
+					const success = slidein.find( '.hustle-success' );
+
+					targetNode = success[0];
+
+					observer = new MutationObserver( function() {
+						shadowBox.animate({
+						'height': success.outerHeight() + 'px'
+						}, 0 );
+					});
+
+					observer.observe( targetNode, config );
+
+				}
+
+			});
 
 			$( document ).on( 'hustle:module:closed', ( e ) => {
 
@@ -137,7 +173,11 @@
 			let value = 0;
 
 			if ( 'width' === size ) {
-				value = layout.width();
+				if ( layout.is( ':visible' ) ) {
+					value = layout.width();
+				} else {
+					value = slidein.find( '.hustle-success' ).outerWidth();
+				}
 			}
 
 			if ( 'height' === size ) {
@@ -145,7 +185,11 @@
 				if ( layout.height() > screen.height() ) {
 					value = ( content.height() - 30 );
 				} else {
-					value = layout.height();
+					if ( layout.is( ':visible' ) ) {
+						value = layout.height();
+					} else {
+						value = slidein.find( '.hustle-success' ).outerHeight();
+					}
 				}
 			}
 
@@ -275,13 +319,6 @@
 
 		function init() {
 
-			// Create box
-			if ( ! slidein.find( '.hustle-slidein-shadow' ).length ) {
-				slidein.append( shadowBox );
-			}
-
-			// Box CSS
-			shadowBox = slidein.find( '.hustle-slidein-shadow' );
 			shadowBox.css({
 				'width': shadowSize( 'width' ) + 'px',
 				'height': shadowSize( 'height' ) + 'px',

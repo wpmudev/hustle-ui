@@ -126,14 +126,7 @@
 
 			// Module settings
 			const position = [
-				'n',
-				's',
-				'e',
-				'w',
-				'ne',
-				'nw',
-				'se',
-				'sw'
+				's'
 			];
 
 			const modulePalette = [

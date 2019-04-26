@@ -120,11 +120,11 @@
 			}
 
 			@include media(max-width, sm) {
-				padding: map-get($gutter, small) 0 map-get($gutter, small);
+				padding: map-get($gutter, small) map-get($gutter, small) 0;
 			}
 
 			@include media(min-width, sm) {
-				padding: map-get($gutter, default) 0 map-get($gutter, default);
+				padding: map-get($gutter, default) map-get($gutter, default) 0;
 			}
 		}
 

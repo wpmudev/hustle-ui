@@ -523,8 +523,6 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
     var success = $(el);
     var container = success.closest('.hustle-ui');
     var layout = container.find('.hustle-layout');
-    var shadow = container.find('.hustle-slidein-shadow');
-    var shadowH = success.innerHeight();
     var closeDelay = success.data('close-delay');
 
     if (!success.is('.hustle-success')) {
@@ -532,15 +530,44 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
     }
 
     function successMessage() {
-      layout.slideUp(800);
-      shadow.slideUp(800, function () {
-        $(this).css({
-          'height': shadowH + 'px'
-        });
-      });
+      var hideLayout = function hideLayout() {
+        return layout.slideUp(800);
+      },
+          showSuccess = function showSuccess() {
+        return success.slideDown();
+      };
+
+      if (container.is('.hustle-slidein')) {
+        var boxShadow = container.find('.hustle-slidein-shadow');
+
+        if (boxShadow.length) {
+          hideLayout = function hideLayout() {
+            layout.slideUp({
+              duration: 800,
+              step: function step() {
+                boxShadow.css({
+                  'height': layout.height() + 'px'
+                });
+              }
+            });
+          };
+
+          showSuccess = function showSuccess() {
+            success.slideDown({
+              duration: 500,
+              step: function step() {
+                boxShadow.css({
+                  'height': success.outerHeight() + 'px'
+                });
+              }
+            });
+          };
+        }
+      }
+
+      hideLayout();
       setTimeout(function () {
-        success.slideDown(500);
-        shadow.slideDown(500);
+        showSuccess();
       }, 800);
 
       if (closeDelay || 0 === closeDelay) {
@@ -640,7 +667,8 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
     var popup = $(el),
         close = popup.find('.hustle-button-close'),
         overlay = popup.find('.hustle-popup-mask'),
-        content = popup.find('.hustle-popup-content');
+        content = popup.find('.hustle-popup-content'),
+        neverSee = popup.find('.hustle-nsa-link');
     var preventAutohide = false;
 
     if (!close.length) {
@@ -737,6 +765,11 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
         closePopup();
         e.preventDefault();
         e.stopPropagation();
+      });
+      neverSee.on('click', function (e) {
+        e.preventDefault();
+        popup.trigger('hustle:module:clicked_never_see', this);
+        closePopup();
       });
 
       if (1 === popup.data('overlay-close')) {
@@ -6564,7 +6597,8 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
   HUI.slideinClose = function (el, autohideDelay) {
     var slidein = $(el),
         close = slidein.find('.hustle-button-close'),
-        content = slidein.find('.hustle-slidein-content');
+        content = slidein.find('.hustle-slidein-content'),
+        neverSee = slidein.find('.hustle-nsa-link');
     var preventAutohide = false;
 
     if (!close.length) {
@@ -6577,7 +6611,7 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
 
     function escapeKeyClose(e) {
       if (27 === e.keyCode) {
-        closePopup();
+        animationOut();
       }
     }
 
@@ -6611,6 +6645,11 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
 
       close.on('click', function (e) {
         slidein.trigger('hustle:module:closed', this);
+        animationOut();
+      });
+      neverSee.on('click', function (e) {
+        e.preventDefault();
+        slidein.trigger('hustle:module:clicked_never_see', this);
         animationOut();
       });
     }
@@ -6722,45 +6761,270 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
     window.HUI = {};
   }
 
-  HUI.slideinBoxShadow = function (el) {
-    var slidein = $(el);
-    var layout = slidein.find('.hustle-info--stacked').length ? slidein.find('.hustle-layout-body') : slidein.find('.hustle-layout');
-    var width = layout.width();
-    var height = layout.height();
-    var shadowBox = '<div class="hustle-slidein-shadow" aria-hidden="true"></div>';
+  $.fn.hasScrollBar = function () {
+    return this.get(0).scrollHeight > this.height();
+  };
 
-    if (!slidein.is('.hustle-slidein')) {
+  HUI.slideinBoxShadow = function (el) {
+    var screen = $(window);
+    var slidein = $(el);
+    var content = slidein.find('.hustle-slidein-content');
+    var layout = slidein.find('.hustle-layout-body');
+    var nsaLink = slidein.find('.hustle-layout-footer');
+    var closeBtn = slidein.find('.hustle-button-close');
+
+    if (!slidein.is('.hustle-slidein') || !slidein.data('has-shadow')) {
       return;
     }
 
-    function init() {
-      if (layout.length) {
-        // Create box
-        if (!slidein.find('.hustle-slidein-shadow').length) {
-          slidein.append(shadowBox);
-        } // Box CSS
+    if (slidein.find('.hustle-info--default').length || slidein.find('.hustle-info--compact').length) {
+      layout = slidein.find('.hustle-layout');
+    }
 
+    if (slidein.find('.hustle-info--default').length || slidein.find('.hustle-info--compact').length || slidein.find('.hustle-info--stacked').length) {
+      nsaLink = slidein.find('.hustle-nsa-link');
+    }
 
-        shadowBox = slidein.find('.hustle-slidein-shadow');
-        shadowBox.css({
-          'width': width + 'px',
-          'height': height + 'px'
-        });
+    var shadowBox = '<div class="hustle-slidein-shadow" aria-hidden="true"></div>'; // Create box
 
-        if (slidein.find('.hustle-info--stacked').length) {
-          var innerHeight = slidein.find('.hustle-layout-header').height();
-          var outerHeight = slidein.find('.hustle-layout-header').outerHeight(true);
-          var calcMargin = outerHeight - innerHeight;
+    if (!slidein.find('.hustle-slidein-shadow').length) {
+      slidein.append(shadowBox);
+    }
 
-          if ('n' === slidein.data('position') || 'ne' === slidein.data('position') || 'nw' === slidein.data('position')) {
-            shadowBox.css('top', outerHeight + 'px');
-          }
+    shadowBox = slidein.find('.hustle-slidein-shadow');
 
-          if ('e' === slidein.data('position') || 'w' === slidein.data('position')) {
-            shadowBox.css('margin-top', outerHeight - innerHeight / 2 - calcMargin / 2 + 'px');
+    function detectBrowser() {
+      /**
+       * DO NOT REMOVE
+       * We will need this later for IE fixes.
+       */
+      var agent = window.navigator.userAgent;
+      var index = agent.indexOf('MSIE');
+      var $browser = 0;
+
+      if (0 < index) {
+        // If IE, return version number.
+        $browser = parseInt(agent.substring(index + 5, agent.indexOf('.', index)));
+      } else if (!!navigator.userAgent.match(/Trident\/7\./)) {
+        // If IE 11 then look for Updated user agent string.
+        $browser = 11;
+      }
+
+      return $browser;
+    }
+
+    function scrollBarWidth() {
+      var inner = document.createElement('p');
+      inner.style.width = '100%';
+      inner.style.height = '200px';
+      var outer = document.createElement('div');
+      outer.style.width = '200px';
+      outer.style.height = '150px';
+      outer.style.overflow = 'hidden';
+      outer.style.visibility = 'hidden';
+      outer.style.position = 'absolute';
+      outer.style.top = '0px';
+      outer.style.left = '0px';
+      outer.appendChild(inner);
+      document.body.appendChild(outer);
+      var w1 = inner.offsetWidth;
+      outer.style.overflow = 'scroll';
+      var w2 = inner.offsetWidth;
+
+      if (w1 === w2) {
+        w2 = outer.clientWidth;
+      }
+
+      document.body.removeChild(outer);
+      return w1 - w2;
+    }
+
+    function syncShadow() {
+      var targetNode = layout.is(':visible') ? layout[0] : slidein.find('.hustle-success')[0];
+      var config = {
+        attributes: true,
+        attributeFilter: ['class'],
+        childList: true,
+        subtree: true
+      };
+      var observer = new MutationObserver(function () {
+        shadowBox.animate({
+          'height': shadowSize('height') + 'px'
+        }, 0);
+        shadowY(shadowBox);
+      });
+      observer.observe(targetNode, config);
+      $(document).on('hustle:module:submit:success', function (e) {
+        if ($(e.target)[0] === slidein.find('.hustle-layout-form')[0]) {
+          shadowBox.css({
+            top: 'auto',
+            bottom: 'auto'
+          });
+          observer.disconnect();
+          var success = slidein.find('.hustle-success');
+          targetNode = success[0];
+          observer = new MutationObserver(function () {
+            shadowBox.animate({
+              'height': success.outerHeight() + 'px'
+            }, 0);
+          });
+          observer.observe(targetNode, config);
+        }
+      });
+      $(document).on('hustle:module:closed', function (e) {
+        if (e.target === slidein[0]) {
+          observer.disconnect();
+        }
+      });
+      $(document).on('hustle:module:hidden', function (e) {
+        if (e.target === slidein[0]) {
+          observer.disconnect();
+        }
+      });
+    }
+
+    function shadowSize(size) {
+      var value = 0;
+
+      if ('width' === size) {
+        if (layout.is(':visible')) {
+          value = layout.width();
+        } else {
+          value = slidein.find('.hustle-success').outerWidth();
+        }
+      }
+
+      if ('height' === size) {
+        if (layout.height() > screen.height()) {
+          value = content.height() - 30;
+        } else {
+          if (layout.is(':visible')) {
+            value = layout.height();
+          } else {
+            value = slidein.find('.hustle-success').outerHeight();
           }
         }
       }
+
+      return value;
+    }
+
+    function shadowX(element) {
+      var shadow = $(element); // Position
+
+      var position = slidein.data('position');
+      var north = 'n' === position;
+      var south = 's' === position;
+      var east = 'e' === position;
+      var west = 'w' === position;
+      var northEast = 'ne' === position;
+      var northWest = 'nw' === position;
+      var southEast = 'se' === position;
+      var southWest = 'sw' === position; // Offset
+
+      var offsetPos = '';
+      var offsetVal = 0;
+
+      if (north || south) {
+        offsetPos = 'left';
+        offsetVal = (screen.width() - shadow.width()) / 2;
+      }
+
+      if (west || northWest || southWest) {
+        offsetPos = 'left';
+        offsetVal = 0;
+      }
+
+      if (east || northEast || southEast) {
+        offsetPos = 'right';
+        offsetVal = 0;
+      }
+
+      if ('' === offsetPos) {
+        return;
+      }
+
+      return shadow.css(offsetPos, offsetVal + 'px');
+    }
+
+    function shadowY(element) {
+      var shadow = $(element); // Layout: Opt-in
+
+      var optinDefault = slidein.find('.hustle-optin--default');
+      var optinCompact = slidein.find('.hustle-optin--compact');
+      var optinFocusOp = slidein.find('.hustle-optin--focus-optin');
+      var optinFocusCo = slidein.find('.hustle-optin--focus-content'); // Layout: Informational
+
+      var infoDefault = slidein.find('.hustle-info--default');
+      var infoCompact = slidein.find('.hustle-info--compact');
+      var infoStacked = slidein.find('.hustle-info--stacked'); // Position
+
+      var position = slidein.data('position');
+      var north = 'n' === position;
+      var south = 's' === position;
+      var east = 'e' === position;
+      var west = 'w' === position;
+      var northEast = 'ne' === position;
+      var northWest = 'nw' === position;
+      var southEast = 'se' === position;
+      var southWest = 'sw' === position; // Offset
+
+      var offsetPos = '';
+      var offsetVal = 0;
+
+      if (north || northEast || northWest) {
+        var calculate = closeBtn.height();
+
+        if (infoStacked.length) {
+          calculate = slidein.find('.hustle-layout-header').outerHeight(true);
+        }
+
+        offsetPos = 'top';
+        offsetVal = calculate;
+      }
+
+      if (south || southEast || southWest) {
+        var spacing = nsaLink.length ? nsaLink.outerHeight(true) : 0;
+
+        if (content.hasScrollBar()) {
+          spacing = 0;
+        }
+
+        offsetPos = 'bottom';
+        offsetVal = spacing;
+      }
+
+      if (east || west) {
+        var heightFull = screen.height();
+        var heightSlide = content.height();
+
+        var _calculate = (heightFull - heightSlide) / 2 + 30;
+
+        if (infoStacked.length) {
+          _calculate = (heightFull - heightSlide) / 2 + slidein.find('.hustle-layout-header').outerHeight(true);
+        }
+
+        offsetPos = 'top';
+        offsetVal = _calculate;
+      }
+
+      if ('' === offsetPos) {
+        return;
+      }
+
+      return shadow.css(offsetPos, offsetVal + 'px');
+    }
+
+    function init() {
+      shadowBox.css({
+        'width': shadowSize('width') + 'px',
+        'height': shadowSize('height') + 'px',
+        'margin-right': content.hasScrollBar() && 0 < scrollBarWidth() ? scrollBarWidth() + 'px' : '0'
+      }); // Extras
+
+      shadowX(shadowBox);
+      shadowY(shadowBox);
+      syncShadow();
     }
 
     init();

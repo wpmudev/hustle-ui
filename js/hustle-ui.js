@@ -6789,7 +6789,8 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
 
     if (!slidein.find('.hustle-slidein-shadow').length) {
       slidein.append(shadowBox);
-    }
+    } // Get box
+
 
     shadowBox = slidein.find('.hustle-slidein-shadow');
 
@@ -7016,6 +7017,7 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
     }
 
     function init() {
+      // Box CSS
       shadowBox.css({
         'width': shadowSize('width') + 'px',
         'height': shadowSize('height') + 'px',

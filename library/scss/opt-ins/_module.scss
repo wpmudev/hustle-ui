@@ -61,3 +61,17 @@
 		}
 	}
 }
+
+@include hui-class(slidein, optin, null, false) {
+
+	.hustle-layout {
+
+		.hustle-layout-footer {
+			margin-bottom: map-get($gutter, small);
+
+			@include media(min-width, sm) {
+				margin-bottom: map-get($gutter, default);
+			}
+		}
+	}
+}

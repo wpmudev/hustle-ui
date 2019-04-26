@@ -47,3 +47,17 @@
 		}
 	}
 }
+
+@include hui-class(slidein, info, null, false) {
+
+	.hustle-nsa-link {
+
+		&:last-child {
+			margin-bottom: map-get($gutter, small);
+
+			@include media(min-width, sm) {
+				margin-bottom: map-get($gutter, default);
+			}
+		}
+	}
+}

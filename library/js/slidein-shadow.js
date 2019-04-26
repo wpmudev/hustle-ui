@@ -17,8 +17,9 @@
 		const slidein = $( el );
 		const content = slidein.find( '.hustle-slidein-content' );
 
-		let layout  = slidein.find( '.hustle-layout-body' );
-		let nsaLink = slidein.find( '.hustle-layout-footer' );
+		let layout   = slidein.find( '.hustle-layout-body' );
+		let nsaLink  = slidein.find( '.hustle-layout-footer' );
+		let closeBtn = slidein.find( '.hustle-button-close' );
 
 		if ( slidein.find( '.hustle-info--default' ).length || slidein.find( '.hustle-info--compact' ).length ) {
 			layout = slidein.find( '.hustle-layout' );
@@ -35,6 +36,11 @@
 		}
 
 		function detectBrowser() {
+
+			/**
+			 * DO NOT REMOVE
+			 * We will need this later for IE fixes.
+			 */
 
 			const agent = window.navigator.userAgent;
 			const index = agent.indexOf( 'MSIE' );
@@ -54,6 +60,41 @@
 			}
 
 			return $browser;
+
+		}
+
+		function scrollBarWidth() {
+
+			let inner = document.createElement( 'p' );
+
+			inner.style.width = '100%';
+			inner.style.height = '200px';
+
+			let outer = document.createElement( 'div' );
+
+			outer.style.width = '200px';
+			outer.style.height = '150px';
+			outer.style.overflow = 'hidden';
+			outer.style.visibility = 'hidden';
+			outer.style.position = 'absolute';
+			outer.style.top = '0px';
+			outer.style.left = '0px';
+
+			outer.appendChild( inner );
+			document.body.appendChild( outer );
+
+			let w1 = inner.offsetWidth;
+			outer.style.overflow = 'scroll';
+
+			let w2 = inner.offsetWidth;
+
+			if ( w1 === w2 ) {
+				w2 = outer.clientWidth;
+			}
+
+			document.body.removeChild( outer );
+
+			return ( w1 - w2 );
 
 		}
 
@@ -93,7 +134,7 @@
 
 		function shadowSize( size ) {
 
-			let value   = 0;
+			let value = 0;
 
 			if ( 'width' === size ) {
 				value = layout.width();
@@ -184,15 +225,35 @@
 			let offsetVal = 0;
 
 			if ( north || northEast || northWest ) {
+
+				let calculate = closeBtn.height();
+
+				if ( infoStacked.length ) {
+					calculate = slidein.find( '.hustle-layout-header' ).outerHeight( true );
+				}
+
 				offsetPos = 'top';
-				offsetVal = slidein.find( '.hustle-button-icon' ).height();
+				offsetVal = calculate;
+
+			}
+
+			if ( south || southEast || southWest ) {
+
+				let spacing = ( nsaLink.length ) ? nsaLink.outerHeight( true ) : 0;
+
+				if ( content.hasScrollBar() ) {
+					spacing = 0;
+				}
+
+				offsetPos = 'bottom';
+				offsetVal = spacing;
+
 			}
 
 			if ( east || west ) {
 
-				const heightFull  = screen.height();
-				const heightSlide = content.height();
-
+				let heightFull  = screen.height();
+				let heightSlide = content.height();
 				let calculate = ( ( heightFull - heightSlide ) / 2 ) + 30;
 
 				if ( infoStacked.length ) {
@@ -212,91 +273,6 @@
 
 		}
 
-		function stackedShadow( element ) {
-
-			const shadow = $( element );
-			const position = slidein.data( 'position' );
-
-			const north = ( 'n' === position );
-			const northEast = ( 'ne' === position );
-			const northWest = ( 'nw' === position );
-			const east = ( 'e' === position );
-			const west = ( 'w' === position );
-
-			if ( slidein.find( '.hustle-info--stacked' ).length ) {
-
-				const innerHeight = slidein.find( '.hustle-layout-header' ).height();
-				const outerHeight = slidein.find( '.hustle-layout-header' ).outerHeight( true );
-				const calcMargin  = outerHeight - innerHeight;
-				const calcHeight  = ( outerHeight - ( innerHeight / 2 ) - ( calcMargin / 2 ) );
-
-				if ( north || northEast || northWest ) {
-					shadow.css( 'top', outerHeight + 'px' );
-				}
-
-				if ( east || west ) {
-					shadow.css( 'margin-top', calcHeight + 'px' );
-				}
-			}
-		}
-
-		function positionShadow( element ) {
-
-			const shadow = $( element );
-			const screen = $( window );
-			const position = slidein.data( 'position' );
-			const margins = ( 782 < screen.width() ) ? 20 : 10;
-
-			const north = ( 'n' === position );
-			const south = ( 's' === position );
-			const east  = ( 'e' === position );
-			const west  = ( 'w' === position );
-			const northEast = ( 'ne' === position );
-			const northWest = ( 'nw' === position );
-			const southEast = ( 'se' === position );
-			const southWest = ( 'sw' === position );
-
-			let alignment = '';
-
-			if ( north || south ) {
-				alignment = ( screen.width() - shadow.width() ) / 2;
-				shadow.css( 'left', alignment + 'px' );
-			}
-
-			const infoDefault = slidein.find( '.hustle-info--default' );
-			const infoCompact = slidein.find( '.hustle-info--compact' );
-			const infoStacked = slidein.find( '.hustle-info--stacked' );
-
-			let nsaLink = slidein.find( '.hustle-layout-footer' );
-
-			if ( infoDefault.length || infoCompact.length || infoStacked.length ) {
-				nsaLink = slidein.find( '.hustle-nsa-link' );
-			}
-
-			if ( south || southEast || southWest ) {
-
-				alignment = ( nsaLink.length ) ? nsaLink.outerHeight( true ) : 0;
-
-				if ( slidein.find( '.hustle-slidein-content' ).height() >= ( screen.height() - margins ) ) {
-					alignment = 0;
-				}
-
-				shadow.css( 'bottom', alignment + 'px' );
-			}
-
-			if ( east || west ) {
-
-				alignment = ( nsaLink.length ) ? nsaLink.outerHeight( true ) : 0;
-
-				shadow.css( 'margin-bottom', ( alignment / 2 ) + 'px' );
-			}
-
-			if ( 0 < detectBrowser() && slidein.find( '.hustle-slidein-content' ).hasScrollBar() ) {
-				console.log( 'IE detected' );
-			}
-
-		}
-
 		function init() {
 
 			// Create box
@@ -308,15 +284,13 @@
 			shadowBox = slidein.find( '.hustle-slidein-shadow' );
 			shadowBox.css({
 				'width': shadowSize( 'width' ) + 'px',
-				'height': shadowSize( 'height' ) + 'px'
+				'height': shadowSize( 'height' ) + 'px',
+				'margin-right': ( content.hasScrollBar() && ( 0 < scrollBarWidth() ) ) ? scrollBarWidth() + 'px' : '0'
 			});
 
 			// Extras
 			shadowX( shadowBox );
 			shadowY( shadowBox );
-
-			// stackedShadow( shadowBox );
-			// positionShadow( shadowBox );
 			syncShadow();
 		}
 

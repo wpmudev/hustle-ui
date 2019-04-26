@@ -40,6 +40,7 @@
 			slidein.append( shadowBox );
 		}
 
+		// Get box
 		shadowBox = slidein.find( '.hustle-slidein-shadow' );
 
 		function detectBrowser() {
@@ -319,6 +320,7 @@
 
 		function init() {
 
+			// Box CSS
 			shadowBox.css({
 				'width': shadowSize( 'width' ) + 'px',
 				'height': shadowSize( 'height' ) + 'px',

@@ -741,6 +741,7 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
       setTimeout(function () {
         popup.removeClass('hustle-show');
         content.removeClass('hustle-animate-out--' + animateOut);
+        $('html').removeClass('hustle-no-scroll');
       }, delay);
     }
 

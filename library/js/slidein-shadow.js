@@ -33,6 +33,15 @@
 			nsaLink = slidein.find( '.hustle-nsa-link' );
 		}
 
+		let shadowBox = '<div class="hustle-slidein-shadow" aria-hidden="true"></div>';
+
+		// Create box
+		if ( ! slidein.find( '.hustle-slidein-shadow' ).length ) {
+			slidein.append( shadowBox );
+		}
+
+		shadowBox = slidein.find( '.hustle-slidein-shadow' );
+
 		function detectBrowser() {
 
 			/**
@@ -98,19 +107,21 @@
 
 		function syncShadow() {
 
-			const targetNode = layout.is( ':visible' ) ? layout[0] : slidein.find( '.success-message' )[0],
-				config = {
+			let targetNode = layout.is( ':visible' ) ? layout[0] : slidein.find( '.hustle-success' )[0];
+
+			const config = {
 					attributes: true,
 					attributeFilter: [ 'class' ],
 					childList: true,
 					subtree: true
 				};
 
-			const observer = new MutationObserver( () => {
+			let observer = new MutationObserver( () => {
 
 				shadowBox.animate({
 					'height': shadowSize( 'height' ) + 'px'
 				}, 0 );
+				shadowY( shadowBox );
 			});
 
 			observer.observe( targetNode, config );
@@ -118,6 +129,11 @@
 			$( document ).on( 'hustle:module:submit:success', function( e ) {
 
 				if ( $( e.target )[0] === slidein.find( '.hustle-layout-form' )[0]) {
+
+					shadowBox.css({
+						top: 'auto',
+						bottom: 'auto'
+					});
 
 					observer.disconnect();
 
@@ -157,7 +173,11 @@
 			let value = 0;
 
 			if ( 'width' === size ) {
-				value = layout.width();
+				if ( layout.is( ':visible' ) ) {
+					value = layout.width();
+				} else {
+					value = slidein.find( '.hustle-success' ).outerWidth();
+				}
 			}
 
 			if ( 'height' === size ) {
@@ -168,7 +188,7 @@
 					if ( layout.is( ':visible' ) ) {
 						value = layout.height();
 					} else {
-						value = slidein.find( '.success-message' ).outerHeight();
+						value = slidein.find( '.hustle-success' ).outerHeight();
 					}
 				}
 			}
@@ -299,13 +319,6 @@
 
 		function init() {
 
-			// Create box
-			if ( ! slidein.find( '.hustle-slidein-shadow' ).length  ) {
-				slidein.append( shadowBox );
-			}
-
-			// Box CSS
-			shadowBox = slidein.find( '.hustle-slidein-shadow' );
 			shadowBox.css({
 				'width': shadowSize( 'width' ) + 'px',
 				'height': shadowSize( 'height' ) + 'px',

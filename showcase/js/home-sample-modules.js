@@ -126,7 +126,14 @@
 
 			// Module settings
 			const position = [
-				'n'
+				'n',
+				's',
+				'e',
+				'w',
+				'ne',
+				'nw',
+				'se',
+				'sw'
 			];
 
 			const modulePalette = [
@@ -363,14 +370,19 @@
 			if ( 'optin' === moduleMode ) {
 
 				renderModuleMode = [
-					'templates/opt-in/default.html'
+					'templates/opt-in/default.html',
+					'templates/opt-in/compact.html',
+					'templates/opt-in/focus-optin.html',
+					'templates/opt-in/focus-content.html'
 				];
 			}
 
 			if ( 'info' === moduleMode ) {
 
 				renderModuleMode = [
-					'templates/informational/compact.html'
+					'templates/informational/default.html',
+					'templates/informational/compact.html',
+					'templates/informational/stacked.html'
 				];
 			}
 

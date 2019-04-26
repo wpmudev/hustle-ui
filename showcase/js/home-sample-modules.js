@@ -135,6 +135,7 @@
 				'se',
 				'sw'
 			];
+
 			const modulePalette = [
 				'gray-slate',
 				'coffee',

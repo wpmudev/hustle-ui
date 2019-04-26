@@ -12,8 +12,6 @@
 		const success = $( el );
 		const container = success.closest( '.hustle-ui' );
 		const layout = container.find( '.hustle-layout' );
-		const shadow = container.find( '.hustle-slidein-shadow' );
-		const shadowH = success.innerHeight();
 		const closeDelay = success.data( 'close-delay' );
 
 		if ( ! success.is( '.hustle-success' ) ) {

@@ -2,7 +2,7 @@
 
 	&.hustle-calendar {
 		width: auto;
-		z-index: 999991;
+		z-index: #{map-get($module, z-index) + 1} !important;
 		margin: 0;
 		padding: 1px 0;
 		border: 0;

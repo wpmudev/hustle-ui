@@ -25,6 +25,7 @@
 			&:visited {
 				outline: none;
 				box-shadow: none;
+				text-decoration: none;
 			}
 		}
 
@@ -42,6 +43,20 @@
 
 			@include media(min-width, sm) {
 				margin-top: map-get($gutter, default);
+			}
+		}
+	}
+}
+
+@include hui-class(slidein, info, null, false) {
+
+	.hustle-nsa-link {
+
+		&:last-child {
+			margin-bottom: map-get($gutter, small);
+
+			@include media(min-width, sm) {
+				margin-bottom: map-get($gutter, default);
 			}
 		}
 	}

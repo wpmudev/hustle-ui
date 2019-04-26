@@ -126,7 +126,7 @@
 
 			// Module settings
 			const position = [
-				's'
+				'n'
 			];
 
 			const modulePalette = [
@@ -363,19 +363,14 @@
 			if ( 'optin' === moduleMode ) {
 
 				renderModuleMode = [
-					'templates/opt-in/default.html',
-					'templates/opt-in/compact.html',
-					'templates/opt-in/focus-optin.html',
-					'templates/opt-in/focus-content.html'
+					'templates/opt-in/default.html'
 				];
 			}
 
 			if ( 'info' === moduleMode ) {
 
 				renderModuleMode = [
-					'templates/informational/default.html',
-					'templates/informational/compact.html',
-					'templates/informational/stacked.html'
+					'templates/informational/compact.html'
 				];
 			}
 

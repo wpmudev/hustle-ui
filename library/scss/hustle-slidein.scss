@@ -6,6 +6,8 @@
 @import "mixins/browsers";
 @import "mixins/opacity";
 
+@import "globals/page-scroll";
+
 @include hui-class(slidein, null, null, false) {
 	pointer-events: none;
 	visibility: hidden; // display: none;

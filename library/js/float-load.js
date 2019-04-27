@@ -16,14 +16,44 @@
 			return;
 		}
 
-		float.css( 'opacity', 1 );
+		function abortLoad() {
+			float.remove();
+		}
+
+		function loadSelector() {
+			let selector = float.data( 'desktop-selector' );
+
+			if ( ! selector.length ) {
+				abortLoad();
+				return;
+			}
+
+			selector = $( selector );
+
+			if ( ! selector.length ) {
+				abortLoad();
+				return;
+			}
+
+			selector.css( 'position', 'relative' );
+			float.appendTo( selector );
+			show();
+
+		}
 
 		function reset() {
 			float.removeClass( 'hustle-show' );
 		}
 
 		function show() {
-			float.addClass( 'hustle-show' );
+
+			float.css( 'opacity', 1 );
+
+			// Module time
+			setTimeout( () => float.addClass( 'hustle-show' ), 0 );
+
+			// Layout time
+			setTimeout( () => animation(), 200 );
 		}
 
 		function animation() {
@@ -34,15 +64,12 @@
 
 			reset();
 
-			// Module time
-			setTimeout( function() {
-				show();
-			}, 0 );
+			if ( 'selector' === float.data( 'desktop-offset' ) ) { // TODO: do mobile too.
+				loadSelector();
 
-			// Layout time
-			setTimeout( function() {
-				animation();
-			}, 200 );
+			} else {
+				show();
+			}
 
 		}
 

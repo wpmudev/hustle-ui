@@ -17,11 +17,13 @@
 		}
 
 		function abortLoad() {
-			float.remove();
+			float.hide();
 		}
 
 		function loadSelector() {
-			let selector = float.data( 'desktop-selector' );
+
+			// TODO: set the correct breakpoint.
+			let selector = 600 < $( window ).width() ? float.data( 'desktop-selector' ) : float.data( 'mobiles-selector' );
 
 			if ( ! selector.length ) {
 				abortLoad();
@@ -47,6 +49,7 @@
 
 		function show() {
 
+			float.css( 'display', '' );
 			float.css( 'opacity', 1 );
 
 			// Module time
@@ -62,9 +65,28 @@
 
 		function init() {
 
+			let offset = '';
+			if ( 600 < $( window ).width() ) { // TODO: set the correct breakpoint.
+				if ( float.hasClass( 'hustle-displaying-in-large' ) ) {
+					return;
+				}
+				offset = float.data( 'desktop-offset' );
+				float.addClass( 'hustle-displaying-in-large' );
+				float.removeClass( 'hustle-displaying-in-small' );
+
+			} else {
+				if ( float.hasClass( 'hustle-displaying-in-small' ) ) {
+					return;
+				}
+				offset = float.data( 'mobiles-offset' );
+				float.addClass( 'hustle-displaying-in-small' );
+				float.removeClass( 'hustle-displaying-in-large' );
+
+			}
+
 			reset();
 
-			if ( 'selector' === float.data( 'desktop-offset' ) ) { // TODO: do mobile too.
+			if ( 'selector' === offset ) {
 				loadSelector();
 
 			} else {

@@ -234,8 +234,14 @@ $float-screen: (
 
 		@include hui-class(float, null, null, false) {
 
-			@include media($breakpoint, sm) {
-				margin-top: $top-bar;
+			@each $screen, $breakpoint in $float-screen {
+
+				&[data-#{$screen}="true"][data-#{$screen}-offset="screen"] {
+
+					@include media($breakpoint, sm) {
+						margin-top: $top-bar;
+					}
+				}
 			}
 		}
 	}

@@ -94,14 +94,50 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
       return;
     }
 
-    _float.css('opacity', 1);
+    function abortLoad() {
+      _float.hide();
+    }
+
+    function loadSelector() {
+      // TODO: set the correct breakpoint.
+      var selector = 600 < $(window).width() ? _float.data('desktop-selector') : _float.data('mobiles-selector');
+
+      if (!selector.length) {
+        abortLoad();
+        return;
+      }
+
+      selector = $(selector);
+
+      if (!selector.length) {
+        abortLoad();
+        return;
+      }
+
+      selector.css('position', 'relative');
+
+      _float.appendTo(selector);
+
+      show();
+    }
 
     function reset() {
       _float.removeClass('hustle-show');
     }
 
     function show() {
-      _float.addClass('hustle-show');
+      _float.css('display', '');
+
+      _float.css('opacity', 1); // Module time
+
+
+      setTimeout(function () {
+        return _float.addClass('hustle-show');
+      }, 0); // Layout time
+
+      setTimeout(function () {
+        return animation();
+      }, 200);
     }
 
     function animation() {
@@ -109,15 +145,38 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
     }
 
     function init() {
-      reset(); // Module time
+      var offset = '';
 
-      setTimeout(function () {
+      if (600 < $(window).width()) {
+        // TODO: set the correct breakpoint.
+        if (_float.hasClass('hustle-displaying-in-large')) {
+          return;
+        }
+
+        offset = _float.data('desktop-offset');
+
+        _float.addClass('hustle-displaying-in-large');
+
+        _float.removeClass('hustle-displaying-in-small');
+      } else {
+        if (_float.hasClass('hustle-displaying-in-small')) {
+          return;
+        }
+
+        offset = _float.data('mobiles-offset');
+
+        _float.addClass('hustle-displaying-in-small');
+
+        _float.removeClass('hustle-displaying-in-large');
+      }
+
+      reset();
+
+      if ('selector' === offset) {
+        loadSelector();
+      } else {
         show();
-      }, 0); // Layout time
-
-      setTimeout(function () {
-        animation();
-      }, 200);
+      }
     }
 
     init();

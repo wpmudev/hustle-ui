@@ -15,6 +15,86 @@ $float-selector: (
 
 		&[data-#{$screen}="true"][data-#{$screen}-offset="selector"] {
 
+			// HORIZONTAL: Left
+			&[data-#{$screen}-positionX="left"] {
+
+				.hustle-float-content {
+
+					&.hustle-animate-in {
+
+						@include media($breakpoint, sm) {
+							@include opacity(1);
+							animation-name: slideInLeft;
+						}
+					}
+				}
+			}
+
+			// HORIZONTAL: Right
+			&[data-#{$screen}-positionX="right"] {
+
+				.hustle-float-content {
+
+					&.hustle-animate-in {
+
+						@include media($breakpoint, sm) {
+							@include opacity(1);
+							animation-name: slideInRight;
+						}
+					}
+				}
+			}
+
+			// HORIZONTAL: Center
+			&[data-#{$screen}-positionX="center"] {
+				right: 0;
+				left: 0;
+
+				.hustle-social {
+
+					&[data-grid-#{$screen}="inline"] ul {
+
+						@include media($breakpoint, sm) {
+							width: auto !important;
+						}
+					}
+				}
+
+				// VERTICAL: Top
+				&[data-#{$screen}-positionY="top"] {
+
+					.hustle-float-content {
+
+						&.hustle-animate-in {
+
+							@include media($breakpoint, sm) {
+								@include opacity(1);
+								animation-name: slideInDown;
+							}
+						}
+					}
+				}
+
+				// VERTICAL: Bottom
+				&[data-#{$screen}-positionY="bottom"] {
+
+					.hustle-float-content {
+
+						&.hustle-animate-in {
+
+							@include media($breakpoint, sm) {
+								@include opacity(1);
+								animation-name: slideInUp;
+							}
+						}
+					}
+				}
+
+				@include media($breakpoint, sm) {
+					justify-content: center;
+				}
+			}
+
 			// Show module
 			&.hustle-show {
 

@@ -16,14 +16,47 @@
 			return;
 		}
 
-		float.css( 'opacity', 1 );
+		function abortLoad() {
+			float.hide();
+		}
+
+		function loadSelector() {
+
+			// TODO: set the correct breakpoint.
+			let selector = 600 < $( window ).width() ? float.data( 'desktop-selector' ) : float.data( 'mobiles-selector' );
+
+			if ( ! selector.length ) {
+				abortLoad();
+				return;
+			}
+
+			selector = $( selector );
+
+			if ( ! selector.length ) {
+				abortLoad();
+				return;
+			}
+
+			selector.css( 'position', 'relative' );
+			float.appendTo( selector );
+			show();
+
+		}
 
 		function reset() {
 			float.removeClass( 'hustle-show' );
 		}
 
 		function show() {
-			float.addClass( 'hustle-show' );
+
+			float.css( 'display', '' );
+			float.css( 'opacity', 1 );
+
+			// Module time
+			setTimeout( () => float.addClass( 'hustle-show' ), 0 );
+
+			// Layout time
+			setTimeout( () => animation(), 200 );
 		}
 
 		function animation() {
@@ -32,17 +65,33 @@
 
 		function init() {
 
+			let offset = '';
+			if ( 600 < $( window ).width() ) { // TODO: set the correct breakpoint.
+				if ( float.hasClass( 'hustle-displaying-in-large' ) ) {
+					return;
+				}
+				offset = float.data( 'desktop-offset' );
+				float.addClass( 'hustle-displaying-in-large' );
+				float.removeClass( 'hustle-displaying-in-small' );
+
+			} else {
+				if ( float.hasClass( 'hustle-displaying-in-small' ) ) {
+					return;
+				}
+				offset = float.data( 'mobiles-offset' );
+				float.addClass( 'hustle-displaying-in-small' );
+				float.removeClass( 'hustle-displaying-in-large' );
+
+			}
+
 			reset();
 
-			// Module time
-			setTimeout( function() {
-				show();
-			}, 0 );
+			if ( 'selector' === offset ) {
+				loadSelector();
 
-			// Layout time
-			setTimeout( function() {
-				animation();
-			}, 200 );
+			} else {
+				show();
+			}
 
 		}
 

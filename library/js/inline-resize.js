@@ -23,12 +23,12 @@
 
 				if ( element.hasClass( 'hustle-size--small' ) ) {
 
-					if ( 783 < elWidth ) {
+					if ( 500 < elWidth ) {
 						element.removeClass( 'hustle-size--small' );
 					}
 				} else {
 
-					if ( 782 > elWidth ) {
+					if ( 500 >= elWidth ) {
 						element.addClass( 'hustle-size--small' );
 					}
 				}

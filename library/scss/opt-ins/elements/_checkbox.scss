@@ -57,6 +57,19 @@
 			line-height: map-get($field-radio, size);
 			font-family: map-get($font, default);
 
+			a {
+
+				&,
+				&:hover,
+				&:focus,
+				&:active {
+					border-width: 0;
+					outline: none;
+					box-shadow: none;
+					text-decoration: none;
+				}
+			}
+
 			@include support(ie) {
 				flex: 1;
 			}

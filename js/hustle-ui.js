@@ -388,11 +388,11 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
     function init() {
       if (783 < Math.max(document.documentElement.clientWidth, window.innerWidth || 0)) {
         if (element.hasClass('hustle-size--small')) {
-          if (783 < elWidth) {
+          if (500 < elWidth) {
             element.removeClass('hustle-size--small');
           }
         } else {
-          if (782 > elWidth) {
+          if (500 >= elWidth) {
             element.addClass('hustle-size--small');
           }
         }

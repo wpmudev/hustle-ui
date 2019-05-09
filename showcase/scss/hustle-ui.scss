@@ -6,6 +6,9 @@ $hui-font-path: '../fonts/';
 // Load icons font
 @import "../../library/scss/hustle-icons";
 
+// Load global styles
+@import "../../library/scss/hustle-global";
+
 // Load modules by type
 @import "../../library/scss/hustle-popup";
 @import "../../library/scss/hustle-slidein";

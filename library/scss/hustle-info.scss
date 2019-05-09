@@ -13,10 +13,7 @@
 @import "mixins/opacity";
 @import "mixins/content";
 
-@import "globals/button";
-@import "globals/button-icon";
-@import "globals/content";
-@import "globals/image";
+@import "helpers/image-fitting"; // Load after mixins
 
 @import "informationals/module";
 

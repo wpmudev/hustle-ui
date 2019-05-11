@@ -251,6 +251,11 @@
 				@include opacity(1);
 				animation-name: zoomInRight;
 			}
+
+			// 32. No Animation
+			&--no_animation {
+				@include opacity(1);
+			}
 		}
 
 		// ======================================== //
@@ -447,6 +452,11 @@
 			&--zoomOutRight {
 				@include opacity(0);
 				animation-name: zoomOutRight;
+			}
+
+			// 32. No Animation
+			&--no_animation {
+				@include opacity(0);
 			}
 		}
 	}

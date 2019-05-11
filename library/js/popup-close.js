@@ -29,34 +29,23 @@
 		function removeIntro() {
 
 			const checkIntro = popup.data( 'intro' );
+			const animateIn = checkIntro;
 
-			let animateIn = 'no_animation';
+			content.removeClass( 'hustle-animate-in--' + animateIn );
 
-			if ( '' !== checkIntro ) {
-				animateIn = checkIntro;
-			}
-
-			if ( 'no_animation' !== animateIn ) {
-				content.removeClass( 'hustle-animate-in--' + animateIn );
-			}
 		}
 
 		function animationOut() {
 
 			const checkOutro = popup.data( 'outro' );
+			const animateOut = checkOutro;
 
-			let animateOut = 'no_animation';
+			content.addClass( 'hustle-animate-out--' + animateOut );
 
-			if ( '' !== checkOutro ) {
-				animateOut = checkOutro;
-			}
-
-			if ( 'no_animation' !== animateOut ) {
-				content.addClass( 'hustle-animate-out--' + animateOut );
-			}
 		}
 
 		function escapeKeyClose( e ) {
+
 			if ( 27 === e.keyCode ) {
 				closePopup();
 			}

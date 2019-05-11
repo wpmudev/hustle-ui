@@ -740,28 +740,14 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
 
     function removeIntro() {
       var checkIntro = popup.data('intro');
-      var animateIn = 'no_animation';
-
-      if ('' !== checkIntro) {
-        animateIn = checkIntro;
-      }
-
-      if ('no_animation' !== animateIn) {
-        content.removeClass('hustle-animate-in--' + animateIn);
-      }
+      var animateIn = checkIntro;
+      content.removeClass('hustle-animate-in--' + animateIn);
     }
 
     function animationOut() {
       var checkOutro = popup.data('outro');
-      var animateOut = 'no_animation';
-
-      if ('' !== checkOutro) {
-        animateOut = checkOutro;
-      }
-
-      if ('no_animation' !== animateOut) {
-        content.addClass('hustle-animate-out--' + animateOut);
-      }
+      var animateOut = checkOutro;
+      content.addClass('hustle-animate-out--' + animateOut);
     }
 
     function escapeKeyClose(e) {
@@ -866,46 +852,13 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
     popup.css('opacity', 1);
 
     function animation() {
-      var checkIntro = popup.data('intro');
-      var checkOutro = popup.data('outro');
-      var animateIn = 'no_animation';
-      var animateOut = 'no_animation';
-
-      if ('' !== checkIntro) {
-        animateIn = checkIntro;
-      }
-
-      if ('' !== checkOutro) {
-        animateOut = checkOutro;
-      }
-
-      if ('no_animation' !== animateIn || 'no_animation' !== animateOut) {
-        content.addClass('hustle-animate');
-      }
-
-      if (content.hasClass('hustle-animate') && 'no_animation' === animateIn) {
-        content.hide();
-        content.css({
-          opacity: 1
-        });
-      }
+      content.addClass('hustle-animate');
     }
 
     function animationIn() {
       var checkIntro = popup.data('intro');
-      var animateIn = 'no_animation';
-
-      if ('' !== checkIntro) {
-        animateIn = checkIntro;
-      }
-
-      if ('no_animation' !== animateIn) {
-        content.addClass('hustle-animate-in--' + animateIn);
-      } else {
-        if (content.hasClass('hustle-animate')) {
-          content.show();
-        }
-      }
+      var animateIn = checkIntro;
+      content.addClass('hustle-animate-in--' + animateIn);
     }
 
     function init() {

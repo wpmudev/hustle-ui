@@ -13,11 +13,7 @@
 @import "mixins/opacity";
 @import "mixins/content";
 
-@import "globals/accessibility";
-@import "globals/button";
-@import "globals/button-icon";
-@import "globals/content";
-@import "globals/image";
+@import "helpers/image-fitting"; // Load after mixins
 
 @import "opt-ins/elements/input";
 @import "opt-ins/elements/radio";

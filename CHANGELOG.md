@@ -1,8 +1,11 @@
-v4.0.0
+v1.0.0-beta.5
 - [New] Hustle icons font.
-- [New] Opt-in module styles.
-- [New] Informational module styles.
-- [New] Social share module styles.
+- [New] Module Type: Pop-up styles.
+- [New] Module Type: Slide-in styles.
+- [New] Module Type: Embed styles.
+- [New] Module Mode: Opt-in styles.
+- [New] Module Mode: Informational styles.
+- [New] Module Mode: Social share styles.
 - [New] JS function to add filled class to inputs when are not empty.
 - [New] JS function to add error class on required inputs.
 - [New] JS function to show pop-up modules.

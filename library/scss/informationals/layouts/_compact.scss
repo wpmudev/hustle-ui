@@ -148,6 +148,7 @@
 			.hustle-content-wrap {
 
 				@include media(min-width, sm) {
+					flex: 0 0 auto;
 					padding: map-get($gutter, default) 0;
 				}
 			}
@@ -197,7 +198,9 @@
 			}
 
 			@include media(min-width, sm) {
+				display: flex;
 				flex: 1;
+				align-items: center;
 				padding: 0 map-get($gutter, default);
 			}
 		}

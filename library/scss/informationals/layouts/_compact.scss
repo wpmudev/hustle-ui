@@ -148,7 +148,7 @@
 			.hustle-content-wrap {
 
 				@include media(min-width, sm) {
-					flex: 0 0 auto;
+					flex: 1;
 					padding: map-get($gutter, default) 0;
 				}
 			}

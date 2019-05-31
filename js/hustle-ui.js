@@ -6752,6 +6752,7 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
       position(); // Module time.
 
       setTimeout(function () {
+        jQuery(window).trigger('resize');
         show();
       }, 800); // Layout time.
 

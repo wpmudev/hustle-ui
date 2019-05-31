@@ -1,4 +1,4 @@
-v1.0.0-beta.5
+v1.0.0-beta.6
 - [New] Hustle icons font.
 - [New] Module Type: Pop-up styles.
 - [New] Module Type: Slide-in styles.

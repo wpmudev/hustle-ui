@@ -85,7 +85,7 @@
 
 			// Module time.
 			setTimeout( function() {
-				jQuery(window).trigger('resize');
+				jQuery( window ).trigger( 'resize' );
 				show();
 			}, 800 );
 

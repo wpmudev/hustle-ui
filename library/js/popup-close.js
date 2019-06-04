@@ -78,6 +78,8 @@
 				delay = 755;
 			}
 
+			popup.removeClass( 'hustle-animation-stopped' );
+
 			animationOut();
 			removeIntro();
 

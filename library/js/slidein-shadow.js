@@ -175,7 +175,7 @@
 
 			if ( 'width' === size ) {
 				if ( layout.is( ':visible' ) ) {
-					value = layout.width();
+					value = layout.parent().width();
 				} else {
 					value = slidein.find( '.hustle-success' ).outerWidth();
 				}
@@ -183,11 +183,11 @@
 
 			if ( 'height' === size ) {
 
-				if ( layout.height() > screen.height() ) {
+				if ( layout.parent().height() > screen.height() ) {
 					value = ( content.height() - 30 );
 				} else {
 					if ( layout.is( ':visible' ) ) {
-						value = layout.height();
+						value = layout.parent().height();
 					} else {
 						value = slidein.find( '.hustle-success' ).outerHeight();
 					}

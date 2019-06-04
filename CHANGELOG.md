@@ -1,3 +1,7 @@
+v1.0.1-beta.1
+- [Fix] Pop-up Module: Some types of animations are causing additional scrollbar.
+
+
 v1.0.0-beta.6
 - [New] Hustle icons font.
 - [New] Module Type: Pop-up styles.

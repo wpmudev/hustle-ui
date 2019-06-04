@@ -13,6 +13,8 @@
 @import "mixins/opacity";
 @import "mixins/content";
 
+@import "helpers/image-fitting"; // Load after mixins
+
 @import "globals/controls";
 @import "globals/button";
 @import "globals/button-icon";

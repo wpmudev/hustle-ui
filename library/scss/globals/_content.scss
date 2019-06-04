@@ -2,6 +2,13 @@
 
 	.hustle-layout {
 
+		.hustle-group-title {
+
+			+ .hustle-button {
+				margin-top: map-get($gutter, small);
+			}
+		}
+
 		.hustle-group-content {
 
 			&:not(:first-child) {
@@ -18,6 +25,16 @@
 @include hui-class(null, optin info, null, true) {
 
 	.hustle-layout {
+
+		.hustle-group-title {
+
+			+ .hustle-button {
+
+				@include media(min-width, sm) {
+					margin-top: map-get($gutter, default);
+				}
+			}
+		}
 
 		.hustle-group-content {
 

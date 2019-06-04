@@ -6,8 +6,6 @@
 @import "mixins/browsers";
 @import "mixins/opacity";
 
-@import "globals/page-scroll";
-
 @include hui-class(popup, null, null, false) {
 	width: 100%;
 	height: 100vh;

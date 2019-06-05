@@ -86,6 +86,7 @@
 				minDate: ( '' !== element.data( 'min-date' ) ) ? element.data( 'min-date' ) : null,
 				changeMonth: false,
 				changeYear: false,
+				dateFormat: ( '' !== element.data( 'format' ) ) ? element.data( 'format' ) : 'yy-mm-dd',
 				isRTL: ( true === element.data( 'rtl-support' ) ) ? true : false,
 				showButtonPanel: false,
 				beforeShow: function( input, inst ) {

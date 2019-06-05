@@ -6,12 +6,11 @@
 @import "mixins/browsers";
 @import "mixins/opacity";
 
-@import "globals/page-scroll";
-
 @include hui-class(popup, null, null, false) {
 	width: 100%;
 	height: 100vh;
-	overflow-y: auto;
+	overflow-x: hidden;
+	overflow-y: hidden;
 	display: none;
 	align-items: center;
 	position: fixed;
@@ -463,6 +462,10 @@
 
 	&.hustle-show {
 		display: flex;
+	}
+
+	&.hustle-animation-stopped {
+		overflow-y: auto;
 	}
 
 	&[data-overlay-close="1"] {

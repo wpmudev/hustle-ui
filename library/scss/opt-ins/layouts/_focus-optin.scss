@@ -5,6 +5,13 @@
 
 @include hui-class(null, optin, focus-optin, false) {
 
+	.hustle-success,
+	.hustle-button-icon,
+	.hustle-layout-body,
+	.hustle-layout-footer {
+		pointer-events: initial;
+	}
+
 	.hustle-layout {
 
 		// SECTION: Content

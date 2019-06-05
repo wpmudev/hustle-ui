@@ -1,5 +1,6 @@
 v1.0.1-beta.1
 - [Fix] Pop-up Module: Some types of animations are causing additional scrollbar.
+- [Fix] Slide-in Module: Prevent module from covering admin bar elements when placed at top.
 
 
 v1.0.0-beta.6

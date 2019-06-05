@@ -23,7 +23,6 @@
 		max-width: map-get($module, max-width);
 		overflow-y: auto;
 		@include opacity(0);
-		pointer-events: initial;
 		position: relative;
 		z-index: 1;
 		animation-duration: 1s;

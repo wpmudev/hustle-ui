@@ -363,7 +363,7 @@
 					arrange = i.options.dynamic && selectedTime;
 
 				// return if dropdown is disabled
-				if (!i.options.dropdown) { return i.element; }
+				if (!i.options.dropdown || i.options.hideDropdown) { return i.element; }
 
 				// fix for issue https://github.com/wvega/timepicker/issues/56
 				// idea from https://prototype.lighthouseapp.com/projects/8887/tickets/248-results-popup-from-ajaxautocompleter-disappear-when-user-clicks-on-scrollbars-in-ie6ie7

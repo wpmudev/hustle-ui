@@ -9,6 +9,18 @@
 
 	HUI.inputFilled = function() {
 
+		$( '.hustle-ui .hustle-input' ).each( ( i, el ) => {
+
+			const input = $( el );
+
+			if ( '' === input.val() && el.validity.valid ) {
+				input.parent().removeClass( 'hustle-field-filled' );
+			} else {
+				input.parent().addClass( 'hustle-field-filled' );
+			}
+
+		});
+
 		$( '.hustle-ui .hustle-input' ).on( 'keyup blur change', function() {
 
 			const input = $( this );

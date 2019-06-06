@@ -584,7 +584,7 @@
 				if (time && time.getMinutes && widget._isValidTime(i, time)) {
 					time = normalize(time);
 					i.selectedTime = time;
-					i.element.val(i.format(time, i.options.timeFormat)).trigger('change');
+					i.element.val(i.format(time, i.options.timeFormat));
 
 					// TODO: add documentaion about setTime being chainable
 					if (silent) { return i; }

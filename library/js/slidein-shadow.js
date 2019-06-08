@@ -8,7 +8,7 @@
 	}
 
 	$.fn.hasScrollBar = function() {
-		return this.get( 0 ).scrollHeight > this.height();
+		return this.get( 0 ).scrollHeight > this.get( 0 ).clientHeight;
 	};
 
 	HUI.slideinBoxShadow = function( el ) {
@@ -108,7 +108,7 @@
 
 		function syncShadow() {
 
-			let targetNode = layout.is( ':visible' ) ? layout[0] : slidein.find( '.hustle-success' )[0];
+			let targetNode = slidein.find( '.hustle-success' ).is( ':visible' ) ? slidein.find( '.hustle-success' )[0] : layout[0];
 
 			const config = {
 					attributes: true,
@@ -175,14 +175,14 @@
 
 			if ( 'width' === size ) {
 				if ( layout.is( ':visible' ) ) {
-					value = layout.width() > layout.parent().width() ? layout.parent.width() : layout.width();
+					value = layout.width() > layout.parent().width() ? layout.parent().width() : layout.width();
 				} else {
 					value = slidein.find( '.hustle-success' ).outerWidth();
 				}
 			}
 
 			if ( 'height' === size ) {
-				let layoutHeight = layout.height() > layout.parent().height() ? layout.parent.height() : layout.height();
+				let layoutHeight = layout.height() > layout.parent().height() ? layout.parent().height() : layout.height();
 
 				if ( layoutHeight > screen.height() ) {
 					value = ( content.height() - 30 );

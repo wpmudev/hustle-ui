@@ -1,6 +1,7 @@
 v1.0.1-beta.1
-- [Fix] Pop-up Module: Some types of animations are causing additional scrollbar.
-- [Fix] Slide-in Module: Prevent module from covering admin bar elements when placed at top.
+- [Fix] [Module]  Pop-up: Some types of animations are causing additional scrollbar.
+- [Fix] [Module]  Slide-in: Prevent module from covering admin bar elements when placed at top.
+- [Fix] [Element] Time Picker: Console error when clicking entering value if dropdown list was hidden.
 
 
 v1.0.0

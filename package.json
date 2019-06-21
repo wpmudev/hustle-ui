@@ -59,7 +59,6 @@
 		"showcase": "gulp showcase:build",
 		"cleanup": "rm -rf node_modules/gh-pages/.cache",
 		"deploy:hustle": "npm run hustle && npm run cleanup && gh-pages -b master -d ./dist",
-		"deploy:hustle-401": "npm run hustle && npm run cleanup && gh-pages -b version/4.0.1 -d ./dist",
 		"deploy:demo": "npm run showcase && npm run cleanup && gh-pages -b gh-pages -d ./public",
 		"deploy": "npm run deploy:hustle && npm run deploy:demo"
 	}

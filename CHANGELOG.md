@@ -1,8 +1,9 @@
 v1.0.1-beta.1
-- [Fix] [Module]  Pop-up: Some types of animations are causing additional scrollbar.
-- [Fix] [Module]  Slide-in: Prevent module from covering admin bar elements when placed at top.
-- [Fix] [Element] Time Picker: Console error when clicking entering value if dropdown list was hidden.
-- [Fix] [Element] Time Picker: Maximum call stack size exceeded when entering value manually.
+- [Fix] [Module]      Pop-up: Some types of animations are causing additional scrollbar.
+- [Fix] [Module]      Slide-in: Prevent module from covering admin bar elements when placed at top.
+- [Fix] [Element]     Time Picker: Console error when clicking entering value if dropdown list was hidden.
+- [Fix] [Element]     Time Picker: Maximum call stack size exceeded when entering value manually.
+- [Enhance] [Element] Input: Check if input is filled on load.
 
 
 v1.0.0

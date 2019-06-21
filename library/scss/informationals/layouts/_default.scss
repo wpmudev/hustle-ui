@@ -5,6 +5,12 @@
 
 @include hui-class(null, info, default, false) {
 
+	.hustle-layout,
+	.hustle-nsa-link,
+	.hustle-button-icon {
+		pointer-events: initial;
+	}
+
 	.hustle-layout {
 
 		// SECTION: Header

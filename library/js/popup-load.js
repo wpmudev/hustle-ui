@@ -27,8 +27,35 @@
 			const checkIntro = popup.data( 'intro' );
 			const animateIn = checkIntro;
 
+			let delay = 1000;
+
+			if ( 'no_animation' === animateIn ) {
+				delay = 0;
+			}
+
+			if (
+				'bounceIn' === animateIn ||
+				'bounceInUp' === animateIn ||
+				'bounceInDown' === animateIn ||
+				'bounceInLeft' === animateIn ||
+				'bounceInRight' === animateIn
+			) {
+				delay = 755;
+			}
+
+			if ( 'fadeIn' === animateIn ) {
+				delay = 305;
+			}
+
+			if ( 'newspaperIn' === animateIn ) {
+				delay = 505;
+			}
+
 			content.addClass( 'hustle-animate-in--' + animateIn );
 
+			setTimeout( function() {
+				popup.addClass( 'hustle-animation-stopped' );
+			}, ( delay + 1 ) );
 		}
 
 		function init() {

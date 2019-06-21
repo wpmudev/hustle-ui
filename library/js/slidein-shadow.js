@@ -175,19 +175,20 @@
 
 			if ( 'width' === size ) {
 				if ( layout.is( ':visible' ) ) {
-					value = layout.width();
+					value = layout.width() > layout.parent().width() ? layout.parent.width() : layout.width();
 				} else {
 					value = slidein.find( '.hustle-success' ).outerWidth();
 				}
 			}
 
 			if ( 'height' === size ) {
+				let layoutHeight = layout.height() > layout.parent().height() ? layout.parent.height() : layout.height();
 
-				if ( layout.height() > screen.height() ) {
+				if ( layoutHeight > screen.height() ) {
 					value = ( content.height() - 30 );
 				} else {
 					if ( layout.is( ':visible' ) ) {
-						value = layout.height();
+						value = layoutHeight;
 					} else {
 						value = slidein.find( '.hustle-success' ).outerHeight();
 					}

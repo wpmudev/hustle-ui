@@ -54,6 +54,7 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
         minDate: '' !== element.data('min-date') ? element.data('min-date') : null,
         changeMonth: false,
         changeYear: false,
+        dateFormat: '' !== element.data('format') ? element.data('format') : 'yy-mm-dd',
         isRTL: true === element.data('rtl-support') ? true : false,
         showButtonPanel: false,
         beforeShow: function beforeShow(input, inst) {
@@ -413,6 +414,15 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
   }
 
   HUI.inputFilled = function () {
+    $('.hustle-ui .hustle-input').each(function (i, el) {
+      var input = $(el);
+
+      if ('' === input.val() && el.validity.valid) {
+        input.parent().removeClass('hustle-field-filled');
+      } else {
+        input.parent().addClass('hustle-field-filled');
+      }
+    });
     $('.hustle-ui .hustle-input').on('keyup blur change', function () {
       var input = $(this);
 
@@ -781,6 +791,7 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
         delay = 755;
       }
 
+      popup.removeClass('hustle-animation-stopped');
       animationOut();
       removeIntro();
       setTimeout(function () {
@@ -858,7 +869,28 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
     function animationIn() {
       var checkIntro = popup.data('intro');
       var animateIn = checkIntro;
+      var delay = 1000;
+
+      if ('no_animation' === animateIn) {
+        delay = 0;
+      }
+
+      if ('bounceIn' === animateIn || 'bounceInUp' === animateIn || 'bounceInDown' === animateIn || 'bounceInLeft' === animateIn || 'bounceInRight' === animateIn) {
+        delay = 755;
+      }
+
+      if ('fadeIn' === animateIn) {
+        delay = 305;
+      }
+
+      if ('newspaperIn' === animateIn) {
+        delay = 505;
+      }
+
       content.addClass('hustle-animate-in--' + animateIn);
+      setTimeout(function () {
+        popup.addClass('hustle-animation-stopped');
+      }, delay + 1);
     }
 
     function init() {
@@ -6903,18 +6935,20 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
 
       if ('width' === size) {
         if (layout.is(':visible')) {
-          value = layout.width();
+          value = layout.width() > layout.parent().width() ? layout.parent.width() : layout.width();
         } else {
           value = slidein.find('.hustle-success').outerWidth();
         }
       }
 
       if ('height' === size) {
-        if (layout.height() > screen.height()) {
+        var layoutHeight = layout.height() > layout.parent().height() ? layout.parent.height() : layout.height();
+
+        if (layoutHeight > screen.height()) {
           value = content.height() - 30;
         } else {
           if (layout.is(':visible')) {
-            value = layout.height();
+            value = layoutHeight;
           } else {
             value = slidein.find('.hustle-success').outerHeight();
           }
@@ -7443,7 +7477,7 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
             selectedTime = i.getTime(),
             arrange = i.options.dynamic && selectedTime; // return if dropdown is disabled
 
-        if (!i.options.dropdown) {
+        if (!i.options.dropdown || i.options.hideDropdown) {
           return i.element;
         } // fix for issue https://github.com/wvega/timepicker/issues/56
         // idea from https://prototype.lighthouseapp.com/projects/8887/tickets/248-results-popup-from-ajaxautocompleter-disappear-when-user-clicks-on-scrollbars-in-ie6ie7
@@ -7648,7 +7682,7 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
         if (time && time.getMinutes && widget._isValidTime(i, time)) {
           time = normalize(time);
           i.selectedTime = time;
-          i.element.val(i.format(time, i.options.timeFormat)).trigger('change'); // TODO: add documentaion about setTime being chainable
+          i.element.val(i.format(time, i.options.timeFormat)); // TODO: add documentaion about setTime being chainable
 
           if (silent) {
             return i;
@@ -7951,6 +7985,7 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
         startTime: '00:00',
         dynamic: false,
         dropdown: true === element.data('time-dropdown') ? true : false,
+        hideDropdown: true === element.data('hide-dropdown') ? true : false,
         scrollbar: true === element.data('time-dropdown') ? true : false
       });
     });

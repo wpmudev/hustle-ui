@@ -5,14 +5,6 @@
 
 @include hui-class(null, info, stacked, false) {
 
-	.hustle-title,
-	.hustle-subtitle,
-	.hustle-nsa-link,
-	.hustle-button-icon,
-	.hustle-layout-body {
-		pointer-events: initial;
-	}
-
 	.hustle-layout {
 
 		// ELEMENT: Header
@@ -217,5 +209,17 @@
 				display: flex;
 			}
 		}
+	}
+}
+
+@include hui-class(slidein, info, stacked, false) {
+
+	.hustle-layout,
+	.hustle-title,
+	.hustle-subtitle,
+	.hustle-nsa-link,
+	.hustle-button-icon,
+	.hustle-layout-body {
+		pointer-events: initial;
 	}
 }

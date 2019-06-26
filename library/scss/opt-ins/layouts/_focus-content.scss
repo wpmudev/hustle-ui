@@ -5,13 +5,6 @@
 
 @include hui-class(null, optin, focus-content, false) {
 
-	.hustle-success,
-	.hustle-button-icon,
-	.hustle-layout-body,
-	.hustle-layout-footer {
-		pointer-events: initial;
-	}
-
 	.hustle-layout {
 
 		// ELEMENT: Image
@@ -109,5 +102,16 @@
 				display: flex;
 			}
 		}
+	}
+}
+
+@include hui-class(slidein, optin, focus-content, false) {
+
+	.hustle-success,
+	.hustle-layout,
+	.hustle-button-icon,
+	.hustle-layout-body,
+	.hustle-layout-footer {
+		pointer-events: initial;
 	}
 }

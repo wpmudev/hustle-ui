@@ -5,12 +5,6 @@
 
 @include hui-class(null, info, compact, false) {
 
-	.hustle-layout,
-	.hustle-nsa-link,
-	.hustle-button-icon {
-		pointer-events: initial;
-	}
-
 	.hustle-layout {
 
 		// ELEMENT: Image
@@ -214,5 +208,14 @@
 		@include media(min-width, sm) {
 			display: flex;
 		}
+	}
+}
+
+@include hui-class(slidein, info, compact, false) {
+
+	.hustle-layout,
+	.hustle-nsa-link,
+	.hustle-button-icon {
+		pointer-events: initial;
 	}
 }

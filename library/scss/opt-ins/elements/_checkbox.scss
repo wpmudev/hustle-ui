@@ -86,6 +86,7 @@
 		&.hustle-gdpr {
 			display: inline-flex;
 			margin-top: map-get($gutter, small);
+			margin-bottom: 0;
 
 			@include support(ie) {
 				display: flex;
@@ -101,6 +102,7 @@
 
 				@include media(min-width, sm) {
 					margin-top: map-get($gutter, default);
+					margin-bottom: 0;
 				}
 			}
 		}

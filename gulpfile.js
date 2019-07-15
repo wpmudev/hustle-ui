@@ -156,6 +156,7 @@ gulp.task( 'hustle:scripts', function( cb ) {
 		eslint(),
 		eslint.format(),
 		eslint.failAfterError(),
+		concat( 'hustle-ui.js' ),
 		babel({
 			presets: [
 				[ '@babel/env', {
@@ -163,7 +164,6 @@ gulp.task( 'hustle:scripts', function( cb ) {
 				} ]
 			]
 		}),
-		concat( 'hustle-ui.js' ),
 		header( banner ),
 		gulp.dest( hustle.output.scripts ),
 		uglify(),
@@ -228,6 +228,7 @@ gulp.task( 'showcase:scripts', function( cb ) {
 		eslint(),
 		eslint.format(),
 		eslint.failAfterError(),
+		concat( 'showcase-ui.js' ),
 		babel({
 			presets: [
 				[ '@babel/env', {
@@ -235,7 +236,6 @@ gulp.task( 'showcase:scripts', function( cb ) {
 				} ]
 			]
 		}),
-		concat( 'showcase-ui.js' ),
 		uglify(),
 		rename({
 			suffix: '.min'

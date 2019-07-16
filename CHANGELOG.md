@@ -1,3 +1,8 @@
+v1.0.2-beta.1
+- [New] [Module]  Social Share: Email icon colors.
+- [Fix] [Element] GDPR Checkbox: Unnecessary extra spacing at bottom.
+
+
 v1.0.1-beta.2
 - [Fix]     [Module]  Pop-up: Some types of animations are causing additional scrollbar.
 - [Fix]     [Module]  Slide-in: Prevent module from covering admin bar elements when placed at top.

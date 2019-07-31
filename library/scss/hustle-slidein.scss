@@ -27,7 +27,6 @@
 		@include opacity(0);
 		position: absolute;
 		margin: auto;
-		box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.76); // TEST: Module Shadow.
 		animation-duration: 1s;
 		animation-fill-mode: both;
 		transform-origin: center;

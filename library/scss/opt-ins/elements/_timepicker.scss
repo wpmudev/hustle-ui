@@ -2,7 +2,6 @@
 
 	.hustle-timepicker {
 		overflow: hidden;
-		visibility: hidden;
 		display: none;
 		margin: 0;
 		padding: 1px 0;
@@ -72,12 +71,12 @@
 			}
 		}
 
-		// &.hustle-show {
-		// 	display: block;
+		&.hustle-show {
+			display: block;
 
-		// 	.ui-timepicker {
-		// 		@include opacity(1);
-		// 	}
-		// }
+			.ui-timepicker {
+				@include opacity(1);
+			}
+		}
 	}
 }

@@ -33,16 +33,13 @@
 		}
 
 		function animationOut() {
+
 			content.addClass( 'hustle-animate-out' );
 			content.removeClass( 'hustle-animate-in' );
-
-			slidein.find( '.hustle-slidein-shadow' ).addClass( 'hustle-animate-out' );
-			slidein.find( '.hustle-slidein-shadow' ).removeClass( 'hustle-animate-in' );
 
 			setTimeout( function() {
 				slidein.removeClass( 'hustle-show' );
 				content.removeClass( 'hustle-animate-out' );
-				slidein.find( '.hustle-slidein-shadow' ).removeClass( 'hustle-animate-out' );
 			}, 1000 );
 		}
 

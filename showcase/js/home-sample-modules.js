@@ -450,13 +450,8 @@
 						socialSettings( social, moduleType );
 						floatGrid( social, moduleType );
 
-						setTimeout( function() {
-							HUI.floatResize( social );
-						}, 200 );
-
 						$( window ).on( 'resize', function() {
 							floatGrid( social, moduleType );
-							HUI.floatResize( social );
 						});
 					}
 

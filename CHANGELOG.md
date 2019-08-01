@@ -1,6 +1,7 @@
 v1.0.2-beta.1
 - [New] [Module]  Social Share: Email icon colors.
 - [Fix] [Module]  Slide-in: Timepicker dropdown causes scrollbar.
+- [Fix] [Module]  Social Share: Stacked icons overfloat its container on IE.
 - [Fix] [Element] Global Content: Conflict with Forminator styles.
 - [Fix] [Element] GDPR Checkbox: Unnecessary extra spacing at bottom.
 

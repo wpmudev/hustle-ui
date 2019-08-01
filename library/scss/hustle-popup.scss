@@ -12,6 +12,7 @@
 	overflow-x: hidden;
 	overflow-y: hidden;
 	display: none;
+	user-select: auto;
 	align-items: center;
 	position: fixed;
 	top: 0;
@@ -25,6 +26,7 @@
 		position: fixed;
 		top: 0;
 		left: 0;
+		pointer-events: none;
 	}
 
 	.hustle-popup-content {
@@ -472,6 +474,7 @@
 
 		.hustle-popup-mask {
 			cursor: pointer;
+			pointer-events: all;
 		}
 	}
 

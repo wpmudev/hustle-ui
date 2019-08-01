@@ -6,7 +6,7 @@
 		.hustle-#{$container} {
 			word-break: break-word;
 
-			&, * {
+			&, *:not([class*="forminator-"]) {
 				font-family: map-get($font, default);
 				letter-spacing: 0;
 
@@ -31,15 +31,18 @@
 				}
 			}
 
-			* {
+			*:not([class*="forminator-"]) {
 				color: inherit;
 			}
 
 			h1, h2, h3, h4, h5, h6, p, ul, ol, blockquote {
-				margin: 0;
 
-				&:not(:last-child) {
-					margin-bottom: map-get($gutter, small);
+				&:not(.forminator-poll--question):not(.forminator-poll--description):not(.forminator-poll--answers) {
+					margin: 0;
+
+					&:not(:last-child) {
+						margin-bottom: map-get($gutter, small);
+					}
 				}
 			}
 
@@ -74,32 +77,38 @@
 			}
 
 			&, p {
-				font-size: 14px;
-				line-height: 1.45em;
-				font-weight: 400;
+
+				&:not(.forminator-poll--question):not(.forminator-poll--description) {
+					font-size: 14px;
+					line-height: 1.45em;
+					font-weight: 400;
+				}
 			}
 
 			ul, ol {
-				padding: 0;
-				border: 0;
-				list-style: none;
 
-				li {
-					margin: 0 0 5px;
+				&:not(.forminator-poll--answers) {
 					padding: 0;
 					border: 0;
-				}
+					list-style: none;
 
-				ul, ol {
-					margin: 0;
+					li {
+						margin: 0 0 5px;
+						padding: 0;
+						border: 0;
+					}
 
-					&:not(:last-child) {
-						margin-bottom: #{map-get($gutter, small) / 2};
+					ul, ol {
+						margin: 0;
+
+						&:not(:last-child) {
+							margin-bottom: #{map-get($gutter, small) / 2};
+						}
 					}
 				}
 			}
 
-			ul {
+			ul:not(.forminator-poll--answers) {
 
 				li {
 
@@ -117,7 +126,7 @@
 				}
 			}
 
-			ol {
+			ol:not(.forminator-poll--answers) {
 				counter-reset: hui-custom-counter;
 
 				li {

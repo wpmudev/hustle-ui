@@ -1,9 +1,10 @@
-v1.0.1-beta.2
+v1.0.1-beta.3
 - [Fix]     [Module]  Pop-up: Some types of animations are causing additional scrollbar.
 - [Fix]     [Module]  Slide-in: Prevent module from covering admin bar elements when placed at top.
 - [Fix]     [Module]  Slide-in: Drop shadow spread out when enable custom size to all devices.
 - [Fix]     [Module]  Slide-in: Can't scroll on modules.
 - [Fix]     [Module]  Embed: Module custom width.
+- [Fix]     [Module]  Embed: Call to action button on default layout should not be hidden.
 - [Fix]     [Element] Time Picker: Maximum call stack size exceeded when entering value manually.
 - [Fix]     [Element] Time Picker: Not able to select an option from dropdown list.
 - [Fix]     [Element] Time Picker: Momentary hide dropdown list until element position can be fixed.

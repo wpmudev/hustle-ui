@@ -24,6 +24,7 @@
 			error = form.find( '.hustle-error-message' );
 
 		function resetOnLoad() {
+			form.find( '.hustle-error-message' ).not( ':first' ).remove();
 			success.hide();
 			error.hide();
 		}
@@ -41,14 +42,15 @@
 			}
 
 			button.on( 'click', function( e ) {
+				var errors;
 
 				e.preventDefault();
 				e.stopPropagation();
 
-				HUI.optinValidate( module );
+				errors = HUI.optinValidate( module );
 
-				if ( form.find( '.hustle-field-error' ).length ) {
-					HUI.optinError( error );
+				if ( errors.length ) {
+					HUI.optinError( error, errors );
 				} else {
 					HUI.optinSubmit( this, 1000 );
 

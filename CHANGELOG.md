@@ -1,3 +1,12 @@
+v1.0.3-beta.1
+- [Enhance] [Module] Pop-up: Pause iframe videos when closing the module.
+- [Enhance] [Module] Pop-up: Allow changing the default error messages.
+- [Enhance] [Module] Slide-in: Pause iframe videos when closing the module.
+- [Enhance] [Module] Slide-in: Allow changing the default error messages.
+- [Enhance] [Module] Embed: Pause iframe videos when closing the module.
+- [Enhance] [Module] Embed: Allow changing the default error messages.
+
+
 v1.0.2-beta.1
 - [New] [Module]  Social Share: Email icon colors.
 - [Fix] [Module]  Slide-in: Timepicker dropdown causes scrollbar.

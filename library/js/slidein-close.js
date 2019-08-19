@@ -37,6 +37,11 @@
 			content.addClass( 'hustle-animate-out' );
 			content.removeClass( 'hustle-animate-in' );
 
+			slidein.find( '.hustle-slidein-shadow' ).addClass( 'hustle-animate-out' );
+			slidein.find( '.hustle-slidein-shadow' ).removeClass( 'hustle-animate-in' );
+
+			slidein.find( 'iframe' ).each( ( i, el ) => $( el ).attr( 'src', $( el ).attr( 'src' ) ) );
+
 			setTimeout( function() {
 				slidein.removeClass( 'hustle-show' );
 				content.removeClass( 'hustle-animate-out' );

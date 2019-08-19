@@ -25,7 +25,6 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
     });
   };
 })(jQuery);
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 (function ($) {
   // Enable strict mode
@@ -77,7 +76,6 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
     });
   };
 })(jQuery);
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 (function ($) {
   'use strict'; // Define global HUI object if it doesn't exist.
@@ -184,68 +182,6 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
     return this;
   };
 })(jQuery);
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
-(function ($) {
-  'use strict'; // Define global HUI object if it doesn't exist.
-
-  if ('object' !== _typeof(window.HUI)) {
-    window.HUI = {};
-  }
-
-  HUI.floatResize = function (el) {
-    var breakpoint = 783;
-    var container = $(el);
-    var list = container.find('ul');
-    var items = list.find('li');
-    var parent = container.closest('.hustle-ui');
-    var parentWidth = parent.width();
-
-    if (!parent.is('.hustle-float')) {
-      return;
-    }
-
-    if (!container.is('.hustle-social')) {
-      return;
-    }
-
-    function reset() {
-      list.css('width', '');
-    }
-
-    function resize(screen, grid) {
-      var listWidth = list.width();
-      var listHeight = list.height();
-      var itemsHeight = items.find('a').outerHeight();
-      var getIconsSize = parseInt(itemsHeight);
-      var getIconsGrid = getIconsSize + grid * 2;
-      var getIconsLength = items.length;
-      var getIconsTotal = getIconsGrid * getIconsLength;
-      var getIconsCol = getIconsTotal / parseInt(listHeight);
-      var getIconsWidth = parseInt(listWidth) * Math.ceil(getIconsCol);
-
-      if ('center' !== parent.attr('data-position-horizontal-' + screen)) {
-        if (listHeight < getIconsTotal) {
-          list.css('width', getIconsWidth + 'px');
-        }
-      }
-    }
-
-    function init() {
-      reset();
-
-      if (parentWidth < breakpoint) {
-        resize('mobiles', 5);
-      } else {
-        resize('desktop', 10);
-      }
-    }
-
-    init();
-    return this;
-  };
-})(jQuery);
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 (function ($) {
   'use strict'; // Define global HUI object if it doesn't exist.
@@ -285,7 +221,6 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
     return this;
   };
 })(jQuery);
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 (function ($) {
   'use strict'; // Define global HUI object if it doesn't exist.
@@ -368,7 +303,6 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
     return this;
   };
 })(jQuery);
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 (function ($) {
   // Enable strict mode
@@ -404,7 +338,6 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
     return this;
   };
 })(jQuery);
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 (function ($) {
   'use strict'; // Define global HUI object if it doesn't exist.
@@ -434,7 +367,6 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
     });
   };
 })(jQuery);
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 (function ($) {
   'use strict'; // Define global HUI object if it doesn't exist.
@@ -458,7 +390,6 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
     });
   };
 })(jQuery);
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 (function ($) {
   'use strict'; // Define global HUI object if it doesn't exist.
@@ -516,7 +447,6 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
     return this;
   };
 })(jQuery);
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 (function ($) {
   'use strict'; // Define global HUI object if it doesn't exist.
@@ -540,7 +470,6 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
     return this;
   };
 })(jQuery);
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 (function ($) {
   'use strict'; // Define global HUI object if it doesn't exist.
@@ -579,7 +508,6 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
     return this;
   };
 })(jQuery);
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 (function ($) {
   'use strict'; // Define global HUI object if it doesn't exist.
@@ -605,34 +533,6 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
           showSuccess = function showSuccess() {
         return success.slideDown();
       };
-
-      if (container.is('.hustle-slidein')) {
-        var boxShadow = container.find('.hustle-slidein-shadow');
-
-        if (boxShadow.length) {
-          hideLayout = function hideLayout() {
-            layout.slideUp({
-              duration: 800,
-              step: function step() {
-                boxShadow.css({
-                  'height': layout.height() + 'px'
-                });
-              }
-            });
-          };
-
-          showSuccess = function showSuccess() {
-            success.slideDown({
-              duration: 500,
-              step: function step() {
-                boxShadow.css({
-                  'height': success.outerHeight() + 'px'
-                });
-              }
-            });
-          };
-        }
-      }
 
       hideLayout();
       setTimeout(function () {
@@ -664,7 +564,6 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
     return this;
   };
 })(jQuery);
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 (function ($) {
   'use strict'; // Define global HUI object if it doesn't exist.
@@ -723,7 +622,6 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
     return this;
   };
 })(jQuery);
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 (function ($) {
   'use strict'; // Define global HUI object if it doesn't exist.
@@ -843,7 +741,6 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
     return this;
   };
 })(jQuery);
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 (function ($) {
   'use strict'; // Define global HUI object if it doesn't exist.
@@ -909,8 +806,6 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
     return this;
   };
 })(jQuery);
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
 /*!
  * Select2 4.0.5
  * https://select2.github.io
@@ -921,6 +816,8 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
  * Modified logic/function,etc besides formatting should be marked with //HUI-SELECT2
  * For easy debugging process or update upstream of select
  */
+
+
 (function (factory) {
   // HUI-SELECT2 disable AMD and module exports
   if (false && typeof define === 'function' && define.amd) {
@@ -6577,7 +6474,6 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
 
   return select2;
 });
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 (function ($) {
   // Enable strict mode
@@ -6602,7 +6498,6 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
     });
   };
 })(jQuery);
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 (function ($) {
   'use strict'; // Define global HUI object if it doesn't exist.
@@ -6630,7 +6525,6 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
     return this;
   };
 })(jQuery);
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 (function ($) {
   'use strict'; // Define global HUI object if it doesn't exist.
@@ -6663,12 +6557,9 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
     function animationOut() {
       content.addClass('hustle-animate-out');
       content.removeClass('hustle-animate-in');
-      slidein.find('.hustle-slidein-shadow').addClass('hustle-animate-out');
-      slidein.find('.hustle-slidein-shadow').removeClass('hustle-animate-in');
       setTimeout(function () {
         slidein.removeClass('hustle-show');
         content.removeClass('hustle-animate-out');
-        slidein.find('.hustle-slidein-shadow').removeClass('hustle-animate-out');
       }, 1000);
     }
 
@@ -6703,7 +6594,76 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
     return this;
   };
 })(jQuery);
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+(function ($) {
+  'use strict'; // Define global HUI object if it doesn't exist.
+
+  if ('object' !== _typeof(window.HUI)) {
+    window.HUI = {};
+  }
+
+  HUI.slideinLayouts = function (el) {
+    var slidein = $(el);
+    var content = slidein.find('.hustle-slidein-content > div');
+    var header = slidein.find('.hustle-layout-header');
+    var footer = slidein.find('.hustle-layout-footer'); // Check if element exists.
+
+    if (!slidein.length) {
+      return;
+    } // Check if element is an slide-in.
+
+
+    if (!slidein.hasClass('hustle-slidein')) {
+      return;
+    } // Check if element module is informational.
+
+
+    if (content.hasClass('hustle-info')) {
+      footer = slidein.find('.hustle-nsa-link');
+    } // Check if footer exists.
+
+
+    if (!footer.length) {
+      return;
+    }
+
+    function headerHeight() {
+      return header.outerHeight(true);
+    }
+
+    function footerHeight() {
+      return footer.outerHeight(true);
+    }
+
+    function init() {
+      if (content.hasClass('hustle-info--stacked')) {
+        slidein.css({
+          'padding-top': headerHeight() + 'px'
+        });
+        content.css({
+          'max-height': 'calc(100vh - ' + (footerHeight() + headerHeight()) + 'px)'
+        });
+        header.css({
+          'top': '-' + headerHeight() + 'px'
+        });
+      } else {
+        content.css({
+          'max-height': 'calc(100vh - ' + (footerHeight() + 30) + 'px)'
+        });
+      }
+
+      slidein.css({
+        'padding-bottom': footerHeight() + 'px'
+      });
+      footer.css({
+        'bottom': '-' + footerHeight() + 'px'
+      });
+    }
+
+    init();
+    return this;
+  };
+})(jQuery);
 
 (function ($) {
   'use strict'; // Define global HUI object if it doesn't exist.
@@ -6776,7 +6736,6 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
 
     function animation() {
       content.addClass('hustle-animate-in');
-      slidein.find('.hustle-slidein-shadow').addClass('hustle-animate-in'); // Box shadow animation
     }
 
     function init() {
@@ -6798,291 +6757,6 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
     return this;
   };
 })(jQuery);
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
-(function ($) {
-  'use strict'; // Define global HUI object if it doesn't exist.
-
-  if ('object' !== _typeof(window.HUI)) {
-    window.HUI = {};
-  }
-
-  $.fn.hasScrollBar = function () {
-    return this.get(0).scrollHeight > this.get(0).clientHeight;
-  };
-
-  HUI.slideinBoxShadow = function (el) {
-    var screen = $(window);
-    var slidein = $(el);
-    var content = slidein.find('.hustle-slidein-content');
-    var layout = slidein.find('.hustle-layout-body');
-    var nsaLink = slidein.find('.hustle-layout-footer');
-    var closeBtn = slidein.find('.hustle-button-close');
-
-    if (!slidein.is('.hustle-slidein') || !slidein.data('has-shadow')) {
-      return;
-    }
-
-    if (slidein.find('.hustle-info--default').length || slidein.find('.hustle-info--compact').length) {
-      layout = slidein.find('.hustle-layout');
-    }
-
-    if (slidein.find('.hustle-info--default').length || slidein.find('.hustle-info--compact').length || slidein.find('.hustle-info--stacked').length) {
-      nsaLink = slidein.find('.hustle-nsa-link');
-    }
-
-    var shadowBox = '<div class="hustle-slidein-shadow" aria-hidden="true"></div>'; // Create box
-
-    if (!slidein.find('.hustle-slidein-shadow').length) {
-      slidein.append(shadowBox);
-    } // Get box
-
-
-    shadowBox = slidein.find('.hustle-slidein-shadow');
-
-    function detectBrowser() {
-      /**
-       * DO NOT REMOVE
-       * We will need this later for IE fixes.
-       */
-      var agent = window.navigator.userAgent;
-      var index = agent.indexOf('MSIE');
-      var $browser = 0;
-
-      if (0 < index) {
-        // If IE, return version number.
-        $browser = parseInt(agent.substring(index + 5, agent.indexOf('.', index)));
-      } else if (!!navigator.userAgent.match(/Trident\/7\./)) {
-        // If IE 11 then look for Updated user agent string.
-        $browser = 11;
-      }
-
-      return $browser;
-    }
-
-    function scrollBarWidth() {
-      var inner = document.createElement('p');
-      inner.style.width = '100%';
-      inner.style.height = '200px';
-      var outer = document.createElement('div');
-      outer.style.width = '200px';
-      outer.style.height = '150px';
-      outer.style.overflow = 'hidden';
-      outer.style.visibility = 'hidden';
-      outer.style.position = 'absolute';
-      outer.style.top = '0px';
-      outer.style.left = '0px';
-      outer.appendChild(inner);
-      document.body.appendChild(outer);
-      var w1 = inner.offsetWidth;
-      outer.style.overflow = 'scroll';
-      var w2 = inner.offsetWidth;
-
-      if (w1 === w2) {
-        w2 = outer.clientWidth;
-      }
-
-      document.body.removeChild(outer);
-      return w1 - w2;
-    }
-
-    function syncShadow() {
-      var targetNode = slidein.find('.hustle-success').is(':visible') ? slidein.find('.hustle-success')[0] : layout[0];
-      var config = {
-        attributes: true,
-        attributeFilter: ['class'],
-        childList: true,
-        subtree: true
-      };
-      var observer = new MutationObserver(function () {
-        shadowBox.animate({
-          'height': shadowSize('height') + 'px'
-        }, 0);
-        shadowY(shadowBox);
-      });
-      observer.observe(targetNode, config);
-      $(document).on('hustle:module:submit:success', function (e) {
-        if ($(e.target)[0] === slidein.find('.hustle-layout-form')[0]) {
-          shadowBox.css({
-            top: 'auto',
-            bottom: 'auto'
-          });
-          observer.disconnect();
-          var success = slidein.find('.hustle-success');
-          targetNode = success[0];
-          observer = new MutationObserver(function () {
-            shadowBox.animate({
-              'height': success.outerHeight() + 'px'
-            }, 0);
-          });
-          observer.observe(targetNode, config);
-        }
-      });
-      $(document).on('hustle:module:closed', function (e) {
-        if (e.target === slidein[0]) {
-          observer.disconnect();
-        }
-      });
-      $(document).on('hustle:module:hidden', function (e) {
-        if (e.target === slidein[0]) {
-          observer.disconnect();
-        }
-      });
-    }
-
-    function shadowSize(size) {
-      var value = 0;
-
-      if ('width' === size) {
-        if (layout.is(':visible')) {
-          value = layout.width() > layout.parent().width() ? layout.parent().width() : layout.width();
-        } else {
-          value = slidein.find('.hustle-success').outerWidth();
-        }
-      }
-
-      if ('height' === size) {
-        var layoutHeight = layout.height() > layout.parent().height() ? layout.parent().height() : layout.height();
-
-        if (layoutHeight > screen.height()) {
-          value = content.height() - 30;
-        } else {
-          if (layout.is(':visible')) {
-            value = layoutHeight;
-          } else {
-            value = slidein.find('.hustle-success').outerHeight();
-          }
-        }
-      }
-
-      return value;
-    }
-
-    function shadowX(element) {
-      var shadow = $(element); // Position
-
-      var position = slidein.data('position');
-      var north = 'n' === position;
-      var south = 's' === position;
-      var east = 'e' === position;
-      var west = 'w' === position;
-      var northEast = 'ne' === position;
-      var northWest = 'nw' === position;
-      var southEast = 'se' === position;
-      var southWest = 'sw' === position; // Offset
-
-      var offsetPos = '';
-      var offsetVal = 0;
-
-      if (north || south) {
-        offsetPos = 'left';
-        offsetVal = (screen.width() - shadow.width()) / 2;
-      }
-
-      if (west || northWest || southWest) {
-        offsetPos = 'left';
-        offsetVal = 0;
-      }
-
-      if (east || northEast || southEast) {
-        offsetPos = 'right';
-        offsetVal = 0;
-      }
-
-      if ('' === offsetPos) {
-        return;
-      }
-
-      return shadow.css(offsetPos, offsetVal + 'px');
-    }
-
-    function shadowY(element) {
-      var shadow = $(element); // Layout: Opt-in
-
-      var optinDefault = slidein.find('.hustle-optin--default');
-      var optinCompact = slidein.find('.hustle-optin--compact');
-      var optinFocusOp = slidein.find('.hustle-optin--focus-optin');
-      var optinFocusCo = slidein.find('.hustle-optin--focus-content'); // Layout: Informational
-
-      var infoDefault = slidein.find('.hustle-info--default');
-      var infoCompact = slidein.find('.hustle-info--compact');
-      var infoStacked = slidein.find('.hustle-info--stacked'); // Position
-
-      var position = slidein.data('position');
-      var north = 'n' === position;
-      var south = 's' === position;
-      var east = 'e' === position;
-      var west = 'w' === position;
-      var northEast = 'ne' === position;
-      var northWest = 'nw' === position;
-      var southEast = 'se' === position;
-      var southWest = 'sw' === position; // Offset
-
-      var offsetPos = '';
-      var offsetVal = 0;
-
-      if (north || northEast || northWest) {
-        var calculate = closeBtn.height();
-
-        if (infoStacked.length) {
-          calculate = slidein.find('.hustle-layout-header').outerHeight(true);
-        }
-
-        offsetPos = 'top';
-        offsetVal = calculate;
-      }
-
-      if (south || southEast || southWest) {
-        var spacing = nsaLink.length ? nsaLink.outerHeight(true) : 0;
-
-        if (content.hasScrollBar()) {
-          spacing = 0;
-        }
-
-        offsetPos = 'bottom';
-        offsetVal = spacing;
-      }
-
-      if (east || west) {
-        var heightFull = screen.height();
-        var heightSlide = content.height();
-
-        var _calculate = (heightFull - heightSlide) / 2 + 30;
-
-        if (infoStacked.length) {
-          _calculate = (heightFull - heightSlide) / 2 + slidein.find('.hustle-layout-header').outerHeight(true);
-        }
-
-        offsetPos = 'top';
-        offsetVal = _calculate;
-      }
-
-      if ('' === offsetPos) {
-        return;
-      }
-
-      return shadow.css(offsetPos, offsetVal + 'px');
-    }
-
-    function init() {
-      // Box CSS
-      shadowBox.css({
-        'width': shadowSize('width') + 'px',
-        'height': shadowSize('height') + 'px',
-        'margin-right': content.hasScrollBar() && 0 < scrollBarWidth() ? scrollBarWidth() + 'px' : '0'
-      }); // Extras
-
-      shadowX(shadowBox);
-      shadowY(shadowBox);
-      syncShadow();
-    }
-
-    init();
-    return this;
-  };
-})(jQuery);
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
 /**
  * jQuery Timepicker
  * http://timepicker.co
@@ -7091,6 +6765,8 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
  *
  * Copyright (c) 2016 Willington Vega; Licensed MIT, GPL
  */
+
+
 (function (factory) {
   if ((typeof module === "undefined" ? "undefined" : _typeof(module)) === 'object' && _typeof(module.exports) === 'object') {
     factory(require('jquery'), window, document);
@@ -7960,7 +7636,6 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
     }();
   })();
 });
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 (function ($) {
   // Enable strict mode

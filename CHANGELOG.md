@@ -1,3 +1,12 @@
+v1.0.3-beta.1
+- [Enhance] [Module] Pop-up: Pause iframe videos when closing the module.
+- [Enhance] [Module] Pop-up: Allow changing the default error messages.
+- [Enhance] [Module] Slide-in: Pause iframe videos when closing the module.
+- [Enhance] [Module] Slide-in: Allow changing the default error messages.
+- [Enhance] [Module] Embed: Pause iframe videos when closing the module.
+- [Enhance] [Module] Embed: Allow changing the default error messages.
+
+
 v1.0.1-beta.3
 - [Fix]     [Module]  Pop-up: Some types of animations are causing additional scrollbar.
 - [Fix]     [Module]  Slide-in: Prevent module from covering admin bar elements when placed at top.

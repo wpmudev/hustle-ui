@@ -399,7 +399,7 @@
 			showcase.load( renderModuleType, function() {
 
 				const container = $( this ).find( '.hustle-' + moduleType );
-				const content = container.find( '.hustle-' + moduleType + '-content' );
+				const content   = container.find( '.hustle-' + moduleType + '-content' );
 
 				if ( 'popup' === moduleType ) {
 					popupSettings( container, moduleId );
@@ -450,13 +450,8 @@
 						socialSettings( social, moduleType );
 						floatGrid( social, moduleType );
 
-						setTimeout( function() {
-							HUI.floatResize( social );
-						}, 200 );
-
 						$( window ).on( 'resize', function() {
 							floatGrid( social, moduleType );
-							HUI.floatResize( social );
 						});
 					}
 
@@ -464,10 +459,10 @@
 
 						if ( 'slidein' === moduleType ) {
 
-							HUI.slideinBoxShadow( container );
+							HUI.slideinLayouts( container );
 
 							$( window ).on( 'resize', function() {
-								HUI.slideinBoxShadow( container );
+								HUI.slideinLayouts( container );
 							});
 						}
 					});

@@ -214,12 +214,17 @@
 
 @include hui-class(slidein, info, stacked, false) {
 
-	.hustle-layout,
-	.hustle-title,
-	.hustle-subtitle,
-	.hustle-nsa-link,
-	.hustle-button-icon,
-	.hustle-layout-body {
-		pointer-events: initial;
+	.hustle-layout-header {
+		width: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+
+	.hustle-nsa-link {
+		width: 100%;
+		position: absolute;
+		bottom: 0;
+		left: 0;
 	}
 }

@@ -65,10 +65,7 @@ $float-screen: (
 				.hustle-social {
 
 					&[data-grid-#{$screen}="stacked"] ul {
-
-						@include media($breakpoint, sm) {
-							flex-wrap: wrap;
-						}
+						overflow: auto;
 					}
 				}
 
@@ -110,10 +107,7 @@ $float-screen: (
 				.hustle-social {
 
 					&[data-grid-#{$screen}="stacked"] ul {
-
-						@include media($breakpoint, sm) {
-							flex-wrap: wrap-reverse;
-						}
+						overflow: auto;
 					}
 				}
 

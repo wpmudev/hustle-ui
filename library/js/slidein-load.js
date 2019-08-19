@@ -70,12 +70,10 @@
 			} else {
 				slidein.addClass( 'hustle-slidein-position--' + positionX + '-' + positionY );
 			}
-
 		}
 
 		function animation() {
 			content.addClass( 'hustle-animate-in' );
-			slidein.find( '.hustle-slidein-shadow' ).addClass( 'hustle-animate-in' ); // Box shadow animation
 		}
 
 		function init() {

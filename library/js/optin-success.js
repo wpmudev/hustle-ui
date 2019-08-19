@@ -23,31 +23,6 @@
 			let hideLayout = () => layout.slideUp( 800 ),
 				showSuccess = () => success.slideDown();
 
-			if ( container.is( '.hustle-slidein' ) ) {
-				const boxShadow = container.find( '.hustle-slidein-shadow' );
-
-				if ( boxShadow.length ) {
-
-					hideLayout = () => {
-						layout.slideUp({
-							duration: 800,
-							step: function() {
-								boxShadow.css({'height': layout.height() + 'px'});
-							}
-						});
-					};
-
-					showSuccess = () => {
-						success.slideDown({
-							duration: 500,
-							step: function() {
-								boxShadow.css({'height': success.outerHeight() + 'px'});
-							}
-						});
-					};
-				}
-			}
-
 			hideLayout();
 
 			setTimeout( function() {

@@ -107,11 +107,16 @@
 
 @include hui-class(slidein, optin, focus-content, false) {
 
-	.hustle-success,
-	.hustle-layout,
-	.hustle-button-icon,
-	.hustle-layout-body,
+	.hustle-button-icon {
+		position: absolute;
+		top: -#{map-get($module-close, button-size)};
+		right: 0;
+	}
+
 	.hustle-layout-footer {
-		pointer-events: initial;
+		width: 100%;
+		position: absolute;
+		bottom: 0;
+		left: 0;
 	}
 }

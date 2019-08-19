@@ -76,6 +76,7 @@ $icons: (
 	loader:           "\e918",
 	social-500px:     "\e919",
 	social-whatsapp:  "\e91a",
+	social-email:     "\e901",
 ) !default;
 
 // =============================================
@@ -223,6 +224,10 @@ $social-media-colors: (
 	whatsapp: (
 		default: #00C73D,
 		hover:   #00C73D,
+	),
+	email: (
+		default: #BFB45A,
+		hover:   #BFB45A,
 	),
 ) !default;
 

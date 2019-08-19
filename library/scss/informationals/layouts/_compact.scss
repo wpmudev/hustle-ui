@@ -213,9 +213,16 @@
 
 @include hui-class(slidein, info, compact, false) {
 
-	.hustle-layout,
-	.hustle-nsa-link,
 	.hustle-button-icon {
-		pointer-events: initial;
+		position: absolute;
+		top: -#{map-get($module-close, button-size)};
+		right: 0;
+	}
+
+	.hustle-nsa-link {
+		width: 100%;
+		position: absolute;
+		bottom: 0;
+		left: 0;
 	}
 }

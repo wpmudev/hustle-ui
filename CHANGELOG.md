@@ -1,4 +1,4 @@
-v1.0.1-beta.3
+v1.0.1
 - [Fix]     [Module]  Pop-up: Some types of animations are causing additional scrollbar.
 - [Fix]     [Module]  Slide-in: Prevent module from covering admin bar elements when placed at top.
 - [Fix]     [Module]  Slide-in: Drop shadow spread out when enable custom size to all devices.

@@ -126,12 +126,14 @@
 				.hustle-content-wrap {
 
 					@include media(min-width, sm) {
+						min-width: 1px;
 						flex: 1;
 						padding: map-get($gutter, default) 0;
 					}
 				}
 
 				@include media(min-width, sm) {
+					min-width: 1px;
 					display: flex;
 					flex: 1;
 					align-items: center;
@@ -149,6 +151,7 @@
 					&:only-child {
 
 						@include media(min-width, sm) {
+							min-width: 1px;
 							max-width: 100%;
 							height: map-get($module-image, default);
 							flex: 1;
@@ -167,6 +170,7 @@
 					&:only-child {
 
 						@include media(min-width, sm) {
+							min-width: 1px;
 							max-width: 100%;
 							flex: 1;
 						}

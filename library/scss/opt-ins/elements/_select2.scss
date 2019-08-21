@@ -25,6 +25,7 @@
 				border-radius: 0;
 
 				.select2-selection__rendered {
+					min-width: 1px;
 					height: auto;
 					flex: 1;
 					margin: 0;

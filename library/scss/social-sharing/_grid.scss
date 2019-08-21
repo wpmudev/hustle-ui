@@ -30,6 +30,7 @@
 			}
 
 			@include media(min-width, sm) {
+				min-width: 1px;
 				display: flex;
 				flex-wrap: wrap;
 				flex: 1;
@@ -79,6 +80,7 @@
 			}
 
 			@include media(min-width, sm) {
+				min-width: 1px;
 				display: flex;
 				flex-wrap: wrap;
 				flex: 1;
@@ -128,6 +130,7 @@
 			}
 
 			@include media(max-width, sm) {
+				min-width: 1px;
 				display: flex;
 				flex-wrap: wrap;
 				flex: 1;

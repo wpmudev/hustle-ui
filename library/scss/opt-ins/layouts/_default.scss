@@ -84,6 +84,7 @@
 						&:only-child {
 
 							@include media(min-width, sm) {
+								min-width: 1px;
 								max-width: none;
 								height: map-get($module-image, default);
 								flex: 1;
@@ -102,6 +103,7 @@
 						&:only-child {
 
 							@include media(min-width, sm) {
+								min-width: 1px;
 								max-width: none;
 								flex: 1;
 							}
@@ -117,6 +119,7 @@
 				.hustle-content {
 
 					@include media(min-width, sm) {
+						min-width: 1px;
 						flex: 1;
 					}
 				}

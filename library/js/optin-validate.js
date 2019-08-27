@@ -32,7 +32,7 @@
 			const label = form.find( '.hustle-gdpr' ),
 				input = label.find( 'input' );
 
-			if ( input.is( ':checked' ) ) {
+			if ( ! label.length || input.is( ':checked' ) ) {
 				label.removeClass( 'hustle-field-error' );
 			} else {
 				label.addClass( 'hustle-field-error' );

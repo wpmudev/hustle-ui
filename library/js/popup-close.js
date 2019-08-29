@@ -47,6 +47,8 @@
 		function escapeKeyClose( e ) {
 
 			if ( 27 === e.keyCode ) {
+				preventAutohide = true;
+				popup.trigger( 'hustle:module:esc_key_pressed', this );
 				closePopup();
 			}
 		}

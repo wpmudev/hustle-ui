@@ -1,5 +1,6 @@
-v1.0.2-beta.1
+v1.0.2-beta.2
 - [New] [Module]  Social Share: Email icon colors.
+- [Fix] [Icons]   Ensure text remains visible during webfont load.
 - [Fix] [Module]  Slide-in: Timepicker dropdown causes scrollbar.
 - [Fix] [Module]  Social Share: Stacked icons overfloat its container on IE.
 - [Fix] [Element] Global Content: Conflict with Forminator styles.

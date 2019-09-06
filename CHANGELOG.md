@@ -6,6 +6,7 @@ v1.0.2-beta.3
 - [Fix] [Module]  Social Share: Stacked icons overfloat its container on IE.
 - [Fix] [Element] Global Content: Conflict with Forminator styles.
 - [Fix] [Element] GDPR Checkbox: Unnecessary extra spacing at bottom.
+- [Fix] [Element] Time Picker: Open dropdown list on top of field when applies.
 
 
 v1.0.1

@@ -485,7 +485,7 @@
 					//cursor: 'default',
 					//height: widget.ui.outerHeight() + containerDecorationHeight,
 				} );
-				
+
 				var listPosition = $field.offset().top - $(document).scrollTop();
 
 				// position the container right above the element, or as close to as possible.

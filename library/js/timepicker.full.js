@@ -459,8 +459,7 @@
 					zindex = i.options.zindex ? i.options.zindex : i.element.offsetParent().css( 'z-index' ),
 					$field = i.element.closest( '.hustle-field' ),
 					elementOffset = $field.position(); //i.element.offset();
-					viewHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0),
-					listPosition = $field.offset().top - $(document).scrollTop()
+					viewHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0)
 					;
 
 				// position the container right below the element, or as close to as possible.
@@ -468,13 +467,6 @@
 					top: elementOffset.top + i.element.outerHeight(),
 					left: elementOffset.left
 				});
-
-				// position the container right above the element, or as close to as possible.
-				if ( ( viewHeight - listPosition ) < 200 ) {
-					widget.container.css({
-						top: elementOffset.top - widget.container.outerHeight()
-					});
-				}
 
 				// then show the container so that the browser can consider the timepicker's
 				// height to calculate the page's total height and decide if adding scrollbars
@@ -493,6 +485,15 @@
 					//cursor: 'default',
 					//height: widget.ui.outerHeight() + containerDecorationHeight,
 				} );
+				
+				var listPosition = $field.offset().top - $(document).scrollTop();
+
+				// position the container right above the element, or as close to as possible.
+				if ( ( viewHeight - listPosition ) < 200 ) {
+					widget.container.css({
+						top: elementOffset.top - widget.container.outerHeight()
+					});
+				}
 
 				// XXX: what's this line doing here?
 				widget.instance = i;

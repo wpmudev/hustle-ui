@@ -7245,7 +7245,8 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
             zindex = i.options.zindex ? i.options.zindex : i.element.offsetParent().css('z-index'),
             $field = i.element.closest('.hustle-field'),
             elementOffset = $field.position(); //i.element.offset();
-        // position the container right below the element, or as close to as possible.
+
+        viewHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0); // position the container right below the element, or as close to as possible.
 
         widget.container.css({
           top: elementOffset.top + i.element.outerHeight(),
@@ -7266,7 +7267,15 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
           left: elementOffset.left //cursor: 'default',
           //height: widget.ui.outerHeight() + containerDecorationHeight,
 
-        }); // XXX: what's this line doing here?
+        });
+        var listPosition = $field.offset().top - $(document).scrollTop(); // position the container right above the element, or as close to as possible.
+
+        if (viewHeight - listPosition < 200) {
+          widget.container.css({
+            top: elementOffset.top - widget.container.outerHeight()
+          });
+        } // XXX: what's this line doing here?
+
 
         widget.instance = i; // try to match input field's current value with an item in the
         // dropdown

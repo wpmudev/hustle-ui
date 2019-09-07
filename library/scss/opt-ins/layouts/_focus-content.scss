@@ -54,6 +54,7 @@
 				.hustle-image {
 
 					@include media(min-width, sm) {
+						min-height: 0;
 						flex: 0 0 auto;
 					}
 				}
@@ -74,12 +75,14 @@
 					@include media(min-width, sm) {
 						width: 100%;
 						max-width: none;
+						min-height: 0;
 						flex: 0 0 auto;
 					}
 				}
 
 				@include media(min-width, sm) {
 					max-width: map-get($module-image, default);
+					min-height: 0;
 					display: flex;
 					flex-direction: column;
 					justify-content: center;
@@ -91,6 +94,7 @@
 
 				@include media(min-width, sm) {
 					min-width: 1px;
+					min-height: 0;
 					display: flex;
 					flex-direction: column;
 					justify-content: center;
@@ -99,7 +103,26 @@
 			}
 
 			@include media(min-width, sm) {
+				min-height: 0;
 				display: flex;
+			}
+		}
+	}
+}
+
+@include hui-class(null, optin, focus-content, true, true) {
+
+	.hustle-layout {
+
+		.hustle-layout-body {
+
+			// SECTION: Sidebar.
+			.hustle-layout-sidebar {
+
+				@include media(min-width, sm) {
+					min-width: 50%;
+					flex-shrink: 1;
+				}
 			}
 		}
 	}

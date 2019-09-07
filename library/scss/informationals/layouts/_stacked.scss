@@ -110,7 +110,7 @@
 
 	.hustle-layout {
 
-		// ELEMENT: Header
+		// ELEMENT: Header.
 		.hustle-layout-header {
 
 			@include media(min-width, sm) {
@@ -118,20 +118,23 @@
 			}
 		}
 
-		// ELEMENT: Body
+		// ELEMENT: Body.
 		.hustle-layout-body {
 
+			// ELEMENT: Content.
 			.hustle-content {
 
 				.hustle-content-wrap {
 
 					@include media(min-width, sm) {
+						min-height: 0;
 						flex: 1;
 						padding: map-get($gutter, default) 0;
 					}
 				}
 
 				@include media(min-width, sm) {
+					min-height: 0;
 					display: flex;
 					flex: 1;
 					align-items: center;
@@ -139,7 +142,7 @@
 				}
 			}
 
-			// ELEMENT: Image
+			// ELEMENT: Image.
 			.hustle-image {
 
 				&.hustle-image-fit--fill,
@@ -151,6 +154,7 @@
 						@include media(min-width, sm) {
 							max-width: 100%;
 							height: map-get($module-image, default);
+							min-height: 0;
 							flex: 1;
 						}
 					}
@@ -158,6 +162,7 @@
 					@include media(min-width, sm) {
 						max-width: map-get($module-image, default);
 						height: auto;
+						min-height: 0;
 						flex: 0 0 map-get($module-image, default);
 					}
 				}
@@ -174,12 +179,13 @@
 
 					@include media(min-width, sm) {
 						max-width: 50%;
+						min-height: 0;
 						flex: 0 0 auto;
 					}
 				}
 			}
 
-			// ELEMENT: Group Content
+			// ELEMENT: Group Content.
 			.hustle-group-content {
 
 				&:not(:last-child) {
@@ -190,7 +196,7 @@
 				}
 			}
 
-			// ELEMENT: Call To Action
+			// ELEMENT: Call To Action.
 			.hustle-button {
 
 				+ .hustle-checkbox {
@@ -202,11 +208,37 @@
 
 				@include media(min-width, sm) {
 					width: auto;
+					min-height: 0;
 				}
 			}
 
 			@include media(min-width, sm) {
+				min-height: 0;
 				display: flex;
+			}
+		}
+	}
+}
+
+@include hui-class(null, info, stacked, true, true) {
+
+	.hustle-layout {
+
+		// ELEMENT: Body.
+		.hustle-layout-body {
+
+			// ELEMENT: Image.
+			.hustle-image {
+
+				&.hustle-image-fit--fill,
+				&.hustle-image-fit--cover,
+				&.hustle-image-fit--contain {
+
+					@include media(min-width, sm) {
+						min-width: 1px;
+						flex-shrink: 1;
+					}
+				}
 			}
 		}
 	}

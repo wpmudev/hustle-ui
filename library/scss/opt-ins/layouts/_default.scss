@@ -75,6 +75,7 @@
 			&.hustle-layout-position--left,
 			&.hustle-layout-position--right {
 
+				// ELEMENT: Image.
 				.hustle-image {
 
 					&.hustle-image-fit--fill,
@@ -85,6 +86,7 @@
 
 							@include media(min-width, sm) {
 								max-width: none;
+								min-width: 1px;
 								height: map-get($module-image, default);
 								flex: 1;
 							}
@@ -93,6 +95,7 @@
 						@include media(min-width, sm) {
 							max-width: map-get($module-image, default);
 							height: auto;
+							min-height: 0;
 							flex: 0 0 map-get($module-image, default);
 						}
 					}
@@ -103,6 +106,7 @@
 
 							@include media(min-width, sm) {
 								max-width: none;
+								min-width: 1px;
 								flex: 1;
 							}
 						}
@@ -112,17 +116,63 @@
 							flex: 0 0 auto;
 						}
 					}
+
+					@include media(min-width, sm) {
+						min-height: 0;
+					}
 				}
 
+				// ELEMENT: Content.
 				.hustle-content {
 
 					@include media(min-width, sm) {
-						flex: 1;
+						min-width: 1px;
+						min-height: 0;
+						flex: 1 1 auto;
 					}
 				}
 
 				@include media(min-width, sm) {
+					min-height: 0;
 					display: flex;
+				}
+			}
+		}
+	}
+}
+
+@include hui-class(null, optin, default, true, true) {
+
+	.hustle-layout {
+
+		.hustle-layout-content {
+
+			// POSITION: Horizontal Sides
+			// Image can be displayed at left or right of the content
+			&.hustle-layout-position--left,
+			&.hustle-layout-position--right {
+
+				// ELEMENT: Image.
+				.hustle-image {
+
+					&.hustle-image-fit--fill,
+					&.hustle-image-fit--cover,
+					&.hustle-image-fit--contain,
+					&.hustle-image-fit--none {
+
+						@include media(min-width, sm) {
+							min-width: 1px;
+							flex-shrink: 1;
+						}
+					}
+
+					&.hustle-image-fit--none {
+
+						@include media(min-width, sm) {
+							min-width: 1px;
+							flex-shrink: 1;
+						}
+					}
 				}
 			}
 		}

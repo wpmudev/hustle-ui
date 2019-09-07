@@ -73,7 +73,8 @@
 // Module Modes: optin info social
 // Module Layouts: default compact stacked focus-optin focus-content
 // Desktop: true false
-@mixin hui-class($types: null, $modes: null, $layouts: null, $desktop: false) {
+// Custom size: true false
+@mixin hui-class($types: null, $modes: null, $layouts: null, $desktop: false, $custom: false) {
 
 	.hustle-ui {
 
@@ -84,7 +85,17 @@
 				@if $desktop == true {
 
 					&:not(.hustle-size--small) {
-						@content;
+
+						@if $custom == true {
+
+							&.hustle-size--custom {
+								@content;
+							}
+						}
+
+						@else {
+							@content;
+						}
 					}
 				}
 
@@ -99,20 +110,49 @@
 
 					&:not(.hustle-size--small) {
 
-						@each $mode in $modes {
+						@if $custom == true {
 
-							.hustle-#{$mode} {
+							&.hustle-size--custom {
 
-								@if $layouts == null {
-									@content;
-								}
+								@each $mode in $modes {
 
-								@else {
+									.hustle-#{$mode} {
 
-									@each $layout in $layouts {
-
-										&.hustle-#{$mode}--#{$layout} {
+										@if $layouts == null {
 											@content;
+										}
+
+										@else {
+
+											@each $layout in $layouts {
+
+												&.hustle-#{$mode}--#{$layout} {
+													@content;
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+
+						@else {
+
+							@each $mode in $modes {
+
+								.hustle-#{$mode} {
+
+									@if $layouts == null {
+										@content;
+									}
+
+									@else {
+
+										@each $layout in $layouts {
+
+											&.hustle-#{$mode}--#{$layout} {
+												@content;
+											}
 										}
 									}
 								}
@@ -157,7 +197,17 @@
 						@if $desktop == true {
 
 							&:not(.hustle-size--small) {
-								@content;
+
+								@if $custom == true {
+
+									&.hustle-size--custom {
+										@content;
+									}
+								}
+
+								@else {
+									@content;
+								}
 							}
 						}
 
@@ -173,22 +223,54 @@
 
 							&:not(.hustle-size--small) {
 
-								.hustle-#{$type}-content {
+								@if $custom == true {
 
-									@each $mode in $modes {
+									&.hustle-size--custom {
 
-										.hustle-#{$mode} {
+										.hustle-#{$type}-content {
 
-											@if $layouts == null {
-												@content;
-											}
+											@each $mode in $modes {
 
-											@else {
+												.hustle-#{$mode} {
 
-												@each $layout in $layouts {
-
-													&.hustle-#{$mode}--#{$layout} {
+													@if $layouts == null {
 														@content;
+													}
+
+													@else {
+
+														@each $layout in $layouts {
+
+															&.hustle-#{$mode}--#{$layout} {
+																@content;
+															}
+														}
+													}
+												}
+											}
+										}
+									}
+								}
+
+								@else {
+
+									.hustle-#{$type}-content {
+
+										@each $mode in $modes {
+
+											.hustle-#{$mode} {
+
+												@if $layouts == null {
+													@content;
+												}
+
+												@else {
+
+													@each $layout in $layouts {
+
+														&.hustle-#{$mode}--#{$layout} {
+															@content;
+														}
 													}
 												}
 											}

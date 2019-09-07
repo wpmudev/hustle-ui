@@ -102,7 +102,7 @@
 
 	.hustle-layout {
 
-		// ELEMENT: Image
+		// ELEMENT: Image.
 		.hustle-image {
 
 			&.hustle-image-fit--fill,
@@ -121,6 +121,7 @@
 				@include media(min-width, sm) {
 					max-width: map-get($module-image, default);
 					height: auto;
+					min-height: 0;
 					flex: 0 0 map-get($module-image, default);
 				}
 			}
@@ -131,23 +132,26 @@
 
 					@include media(min-width, sm) {
 						max-width: 100%;
+						min-height: 0;
 						flex: 1;
 					}
 				}
 
 				@include media(min-width, sm) {
 					max-width: 50%;
+					min-height: 0;
 					flex: 0 0 auto;
 				}
 			}
 		}
 
-		// ELEMENT: Content
+		// ELEMENT: Content.
 		.hustle-content {
 
 			.hustle-content-wrap {
 
 				@include media(min-width, sm) {
+					min-height: 0;
 					flex: 1;
 					padding: map-get($gutter, default) 0;
 				}
@@ -194,10 +198,13 @@
 
 				@include media(min-width, sm) {
 					width: auto;
+					min-height: 0;
+					flex: 0 0 auto;
 				}
 			}
 
 			@include media(min-width, sm) {
+				min-height: 0;
 				display: flex;
 				flex: 1;
 				align-items: center;
@@ -206,7 +213,29 @@
 		}
 
 		@include media(min-width, sm) {
+			min-height: 0;
 			display: flex;
+		}
+	}
+}
+
+@include hui-class(null, info, compact, true, true) {
+
+	.hustle-layout {
+
+		// ELEMENT: Image.
+		.hustle-image {
+
+			&.hustle-image-fit--fill,
+			&.hustle-image-fit--cover,
+			&.hustle-image-fit--contain,
+			&.hustle-image-fit--none {
+
+				@include media(min-width, sm) {
+					min-width: 1px;
+					flex-shrink: 1;
+				}
+			}
 		}
 	}
 }

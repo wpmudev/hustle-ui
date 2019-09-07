@@ -3,6 +3,8 @@ v1.0.2-beta.3
 - [Fix] [Icons]   Ensure text remains visible during webfont load.
 - [Fix] [Module]  Slide-in: Timepicker dropdown causes scrollbar.
 - [Fix] [Module]  Slide-in: Links can be clicked even when module should be hidden.
+- [Fix] [Module]  Slide-in: Overflow is not working on Chrome.
+- [Fix] [Module]  Slide-in: Custom size is not working.
 - [Fix] [Module]  Social Share: Stacked icons overfloat its container on IE.
 - [Fix] [Element] Global Content: Conflict with Forminator styles.
 - [Fix] [Element] GDPR Checkbox: Unnecessary extra spacing at bottom.

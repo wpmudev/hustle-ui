@@ -9,6 +9,7 @@ v1.0.3-beta.1
 - [Enhance] [Module]  Embed: Pause iframe videos when closing the module.
 - [Enhance] [Module]  Embed: Allow changing the default error messages.
 - [Enhance] [Element] Global: Make flex elements to resize accordingly.
+- [Enhance] [Element] Calendar: Make strings translatable.
 
 
 v1.0.2-beta.3

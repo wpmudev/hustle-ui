@@ -28,6 +28,8 @@
 		function escapeKeyClose( e ) {
 
 			if ( 27 === e.keyCode ) {
+				preventAutohide = true;
+				slidein.trigger( 'hustle:module:esc_key_pressed', this );
 				animationOut();
 			}
 		}

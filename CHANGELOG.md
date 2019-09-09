@@ -1,3 +1,14 @@
+v1.0.3-beta.1
+- [Fix]     [Module]  Slide-in: Overflow not working correctly on Chrome.
+- [Enhance] [Module]  Pop-up: Pause iframe videos when closing the module.
+- [Enhance] [Module]  Pop-up: Allow changing the default error messages.
+- [Enhance] [Module]  Slide-in: Pause iframe videos when closing the module.
+- [Enhance] [Module]  Slide-in: Allow changing the default error messages.
+- [Enhance] [Module]  Embed: Pause iframe videos when closing the module.
+- [Enhance] [Module]  Embed: Allow changing the default error messages.
+- [Enhance] [Element] Global: Make flex elements to resize accordingly.
+
+
 v1.0.2-beta.3
 - [New] [Module]  Social Share: Email icon colors.
 - [Fix] [Icons]   Ensure text remains visible during webfont load.

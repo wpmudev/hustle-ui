@@ -80,6 +80,8 @@
 
 			popup.removeClass( 'hustle-animation-stopped' );
 
+			popup.find( 'iframe' ).each( ( i, el ) => $( el ).attr( 'src', $( el ).attr( 'src' ) ) );
+
 			animationOut();
 			removeIntro();
 

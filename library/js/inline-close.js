@@ -35,6 +35,7 @@
 				setTimeout( function() {
 
 					if ( ! preventAutohide ) {
+						inline.find( 'iframe' ).each( ( i, el ) => $( el ).attr( 'src', $( el ).attr( 'src' ) ) );
 						inline.trigger( 'hustle:module:hidden', this );
 						animationOut();
 					}

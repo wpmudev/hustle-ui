@@ -1,5 +1,7 @@
 v1.0.3-beta.1
+- [Fix]     [Module]  Pop-up: Using ESC key to close module is not working as expected.
 - [Fix]     [Module]  Slide-in: Overflow not working correctly on Chrome.
+- [Fix]     [Module]  Slide-in: Using ESC key to close module is not working as expected.
 - [Enhance] [Module]  Pop-up: Pause iframe videos when closing the module.
 - [Enhance] [Module]  Pop-up: Allow changing the default error messages.
 - [Enhance] [Module]  Slide-in: Pause iframe videos when closing the module.

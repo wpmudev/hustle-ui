@@ -34,13 +34,8 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
     window.HUI = {};
   }
 
-  HUI.datepicker = function (el) {
+  HUI.datepicker = function (el, fullDays, shortDays, minDays, fullMonths, shortMonths) {
     var input = $(el);
-    var fullMonths = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-    var shortMonths = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-    var fullDays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-    var minDays = ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'];
-    var shortDays = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
     $('.hustle-ui').each(function () {
       var container = $(this);
       var element = container.find(input);
@@ -210,6 +205,9 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
       if ('undefined' !== typeof autohideDelay && false !== autohideDelay) {
         setTimeout(function () {
           if (!preventAutohide) {
+            inline.find('iframe').each(function (i, el) {
+              return $(el).attr('src', $(el).attr('src'));
+            });
             inline.trigger('hustle:module:hidden', this);
             animationOut();
           }
@@ -414,6 +412,7 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
         error = form.find('.hustle-error-message');
 
     function resetOnLoad() {
+      form.find('.hustle-error-message').not(':first').remove();
       success.hide();
       error.hide();
     }
@@ -428,12 +427,13 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
       }
 
       button.on('click', function (e) {
+        var errors;
         e.preventDefault();
         e.stopPropagation();
-        HUI.optinValidate(module);
+        errors = HUI.optinValidate(module);
 
-        if (form.find('.hustle-field-error').length) {
-          HUI.optinError(error);
+        if (errors.length) {
+          HUI.optinError(error, errors);
         } else {
           HUI.optinSubmit(this, 1000);
           setTimeout(function () {
@@ -455,18 +455,48 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
     window.HUI = {};
   }
 
-  HUI.optinError = function (el) {
-    var message = $(el);
+  HUI.optinError = function (el, errors) {
+    var message = $(el),
+        $form = message.closest('form');
 
     if (!message.is('.hustle-error-message')) {
       return;
     }
 
-    function init() {
+    function init(errors) {
+      var first = true;
+
+      if (!$.isArray(errors)) {
+        var newErrors = [];
+        $.each(errors, function (index, value) {
+          newErrors.push(value);
+        });
+        errors = newErrors;
+      }
+
+      if ('undefined' !== typeof errors && errors.length) {
+        $.each(errors, function (index, element) {
+          if ('undefined' === typeof element || !element) {
+            return true;
+          }
+
+          if (first) {
+            message.append('<p>' + element + '</p>');
+            first = false;
+          } else {
+            $('<div class="hustle-error-message"><p>' + element + '</p></div>').appendTo($form);
+          }
+        });
+      }
+
+      if ('undefined' === typeof errors || first) {
+        message.append('<p>' + message.data('default-error') + '</p>');
+      }
+
       message.show();
     }
 
-    init();
+    init(errors);
     return this;
   };
 })(jQuery);
@@ -574,25 +604,28 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
 
   HUI.optinValidate = function (el) {
     var module = $(el),
+        errors = [],
         form = module.find('.hustle-layout-form');
 
     function resetOnClick() {
       var input = form.find('.hustle-field'),
           checkbox = form.find('.hustle-checkbox'),
           error = form.find('.hustle-error-message');
+      form.find('.hustle-error-message').not(':first').remove();
       input.removeClass('hustle-field-error');
       checkbox.removeClass('hustle-field-error');
-      error.hide();
+      error.html('').hide();
     }
 
     function checkGdpr() {
       var label = form.find('.hustle-gdpr'),
           input = label.find('input');
 
-      if (input.is(':checked')) {
+      if (!label.length || input.is(':checked')) {
         label.removeClass('hustle-field-error');
       } else {
         label.addClass('hustle-field-error');
+        errors.push(input.data('required-error'));
       }
     }
 
@@ -605,6 +638,7 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
         if (field.hasClass('hustle-field-required')) {
           if ('' === field.find('input').val()) {
             field.addClass('hustle-field-error');
+            errors.push(field.find('.hustle-input').data('required-error'));
           } else {
             field.removeClass('hustle-field-error');
           }
@@ -614,12 +648,12 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
 
     function init() {
       resetOnClick();
-      checkGdpr();
       checkRequired();
+      checkGdpr();
     }
 
     init();
-    return this;
+    return errors;
   };
 })(jQuery);
 
@@ -660,6 +694,8 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
 
     function escapeKeyClose(e) {
       if (27 === e.keyCode) {
+        preventAutohide = true;
+        popup.trigger('hustle:module:esc_key_pressed', this);
         closePopup();
       }
     }
@@ -690,6 +726,9 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
       }
 
       popup.removeClass('hustle-animation-stopped');
+      popup.find('iframe').each(function (i, el) {
+        return $(el).attr('src', $(el).attr('src'));
+      });
       animationOut();
       removeIntro();
       setTimeout(function () {
@@ -787,7 +826,7 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
       content.addClass('hustle-animate-in--' + animateIn);
       setTimeout(function () {
         popup.addClass('hustle-animation-stopped');
-      }, delay + 1);
+      }, delay + 50);
     }
 
     function init() {
@@ -6550,6 +6589,8 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
 
     function escapeKeyClose(e) {
       if (27 === e.keyCode) {
+        preventAutohide = true;
+        slidein.trigger('hustle:module:esc_key_pressed', this);
         animationOut();
       }
     }
@@ -6557,6 +6598,9 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
     function animationOut() {
       content.addClass('hustle-animate-out');
       content.removeClass('hustle-animate-in');
+      slidein.find('iframe').each(function (i, el) {
+        return $(el).attr('src', $(el).attr('src'));
+      });
       setTimeout(function () {
         slidein.removeClass('hustle-show');
         content.removeClass('hustle-animate-out');

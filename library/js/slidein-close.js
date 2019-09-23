@@ -28,6 +28,8 @@
 		function escapeKeyClose( e ) {
 
 			if ( 27 === e.keyCode ) {
+				preventAutohide = true;
+				slidein.trigger( 'hustle:module:esc_key_pressed', this );
 				animationOut();
 			}
 		}
@@ -36,6 +38,8 @@
 
 			content.addClass( 'hustle-animate-out' );
 			content.removeClass( 'hustle-animate-in' );
+
+			slidein.find( 'iframe' ).each( ( i, el ) => $( el ).attr( 'src', $( el ).attr( 'src' ) ) );
 
 			setTimeout( function() {
 				slidein.removeClass( 'hustle-show' );

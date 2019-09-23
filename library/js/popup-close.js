@@ -47,6 +47,8 @@
 		function escapeKeyClose( e ) {
 
 			if ( 27 === e.keyCode ) {
+				preventAutohide = true;
+				popup.trigger( 'hustle:module:esc_key_pressed', this );
 				closePopup();
 			}
 		}
@@ -79,6 +81,8 @@
 			}
 
 			popup.removeClass( 'hustle-animation-stopped' );
+
+			popup.find( 'iframe' ).each( ( i, el ) => $( el ).attr( 'src', $( el ).attr( 'src' ) ) );
 
 			animationOut();
 			removeIntro();

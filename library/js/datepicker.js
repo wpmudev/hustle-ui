@@ -8,69 +8,9 @@
 		window.HUI = {};
 	}
 
-	HUI.datepicker = function( el ) {
+	HUI.datepicker = function( el, fullDays, shortDays, minDays, fullMonths, shortMonths ) {
 
 		const input = $( el );
-
-		let fullMonths = [
-			'January',
-			'February',
-			'March',
-			'April',
-			'May',
-			'June',
-			'July',
-			'August',
-			'September',
-			'October',
-			'November',
-			'December'
-		];
-
-		let shortMonths = [
-			'Jan',
-			'Feb',
-			'Mar',
-			'Apr',
-			'May',
-			'Jun',
-			'Jul',
-			'Aug',
-			'Sep',
-			'Oct',
-			'Nov',
-			'Dec'
-		];
-
-		let fullDays = [
-			'Sunday',
-			'Monday',
-			'Tuesday',
-			'Wednesday',
-			'Thursday',
-			'Friday',
-			'Saturday'
-		];
-
-		let minDays = [
-			'Su',
-			'Mo',
-			'Tu',
-			'We',
-			'Th',
-			'Fr',
-			'Sa'
-		];
-
-		let shortDays = [
-			'Sun',
-			'Mon',
-			'Tue',
-			'Wed',
-			'Thu',
-			'Fri',
-			'Sat'
-		];
 
 		$( '.hustle-ui' ).each( function() {
 

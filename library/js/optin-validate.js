@@ -10,6 +10,7 @@
 	HUI.optinValidate = function( el ) {
 
 		const module = $( el ),
+			errors = [],
 			form = module.find( '.hustle-layout-form' );
 
 		function resetOnClick() {
@@ -18,9 +19,11 @@
 				checkbox = form.find( '.hustle-checkbox' ),
 				error = form.find( '.hustle-error-message' );
 
+			form.find( '.hustle-error-message' ).not( ':first' ).remove();
+
 			input.removeClass( 'hustle-field-error' );
 			checkbox.removeClass( 'hustle-field-error' );
-			error.hide();
+			error.html( '' ).hide();
 
 		}
 
@@ -29,10 +32,11 @@
 			const label = form.find( '.hustle-gdpr' ),
 				input = label.find( 'input' );
 
-			if ( input.is( ':checked' ) ) {
+			if ( ! label.length || input.is( ':checked' ) ) {
 				label.removeClass( 'hustle-field-error' );
 			} else {
 				label.addClass( 'hustle-field-error' );
+				errors.push( input.data( 'required-error' ) );
 			}
 		}
 
@@ -49,6 +53,7 @@
 
 					if ( '' === field.find( 'input' ).val() ) {
 						field.addClass( 'hustle-field-error' );
+						errors.push( field.find( '.hustle-input' ).data( 'required-error' ) );
 					} else {
 						field.removeClass( 'hustle-field-error' );
 					}
@@ -60,13 +65,13 @@
 
 			resetOnClick();
 
-			checkGdpr();
 			checkRequired();
+			checkGdpr();
 		}
 
 		init();
 
-		return this;
+		return errors;
 	};
 
 }( jQuery ) );

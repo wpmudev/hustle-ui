@@ -1,3 +1,18 @@
+v1.1.0-beta.2
+- [Fix]     [Module]  Pop-up: Using ESC key to close module is not working as expected.
+- [Fix]     [Module]  Slide-in: Overflow not working correctly on Chrome.
+- [Fix]     [Module]  Slide-in: Using ESC key to close module is not working as expected.
+- [Fix]     [Module]  Pop-up: Scroll bar appears during some pop-up animations.
+- [Enhance] [Module]  Pop-up: Pause iframe videos when closing the module.
+- [Enhance] [Module]  Pop-up: Allow changing the default error messages.
+- [Enhance] [Module]  Slide-in: Pause iframe videos when closing the module.
+- [Enhance] [Module]  Slide-in: Allow changing the default error messages.
+- [Enhance] [Module]  Embed: Pause iframe videos when closing the module.
+- [Enhance] [Module]  Embed: Allow changing the default error messages.
+- [Enhance] [Element] Global: Make flex elements to resize accordingly.
+- [Enhance] [Element] Calendar: Make strings translatable.
+
+
 v1.0.2
 - [New] [Module]  Social Share: Email icon colors.
 - [Fix] [Icons]   Ensure text remains visible during webfont load.

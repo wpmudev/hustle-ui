@@ -55,7 +55,7 @@
 
 			setTimeout( function() {
 				popup.addClass( 'hustle-animation-stopped' );
-			}, ( delay + 1 ) );
+			}, ( delay + 50 ) );
 		}
 
 		function init() {

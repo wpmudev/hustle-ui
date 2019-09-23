@@ -1,6 +1,10 @@
 {
 	"name": "hustle-ui",
+<<<<<<< HEAD
 	"version": "1.0.3-beta.1",
+=======
+	"version": "1.0.2",
+>>>>>>> 411be3f5c1e72887a99eda290b3be8b70cf845b5
 	"private": true,
 	"author": "WPMU DEV",
 	"contributors": [

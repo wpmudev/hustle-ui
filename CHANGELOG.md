@@ -1,4 +1,4 @@
-v1.0.2-beta.4
+v1.0.2
 - [New] [Module]  Social Share: Email icon colors.
 - [Fix] [Icons]   Ensure text remains visible during webfont load.
 - [Fix] [Module]  Slide-in: Timepicker dropdown causes scrollbar.

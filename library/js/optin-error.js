@@ -9,7 +9,8 @@
 
 	HUI.optinError = function( el, errors ) {
 
-		const message = $( el );
+		const message = $( el ),
+			$form = message.closest( 'form' );
 
 		if ( ! message.is( '.hustle-error-message' ) ) {
 			return;
@@ -33,11 +34,11 @@
 						message.append( '<p>' + element + '</p>' );
 						first = false;
 					} else {
-						$( '<div class="hustle-error-message"><p>' + element + '</p></div>' ).insertAfter( message );
+						$( '<div class="hustle-error-message"><p>' + element + '</p></div>' ).appendTo( $form );
 					}
 				});
 			}
-			if ( 'undefined' === typeof errors && errors.length || first ) {
+			if ( 'undefined' === typeof errors || first ) {
 				message.append( '<p>' + message.data( 'default-error' ) + '</p>' );
 			}
 			message.show();

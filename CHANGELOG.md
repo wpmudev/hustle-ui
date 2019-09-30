@@ -1,4 +1,5 @@
-v1.1.0-beta.2
+v1.1.0-beta.3
+- [New]     [Element] reCAPTCHA: Hidden badgge.
 - [Fix]     [Module]  Pop-up: Using ESC key to close module is not working as expected.
 - [Fix]     [Module]  Slide-in: Overflow not working correctly on Chrome.
 - [Fix]     [Module]  Slide-in: Using ESC key to close module is not working as expected.

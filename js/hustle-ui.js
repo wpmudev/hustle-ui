@@ -845,6 +845,81 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
     return this;
   };
 })(jQuery);
+
+(function () {
+  // Enable strict mode
+  'use strict'; // Define global HUI object if it doesn't exist.
+
+  if ('object' !== _typeof(window.HUI)) {
+    window.HUI = {};
+  }
+
+  HUI.maybeRenderRecaptcha = function ($module, self) {
+    var _$module$data = $module.data(),
+        renderId = _$module$data.renderId,
+        moduleId = _$module$data.id,
+        $recaptchaContainer = $module.find('#hustle-modal-recaptcha-' + moduleId + '-' + renderId); // If there's no recaptcha field, nothing to do here.
+
+
+    if (!$recaptchaContainer.length) {
+      return;
+    } // The data for rendering the recaptcha is in the container.
+
+
+    var _$recaptchaContainer$ = $recaptchaContainer.data(),
+        sitekey = _$recaptchaContainer$.sitekey,
+        version = _$recaptchaContainer$.version,
+        theme = _$recaptchaContainer$.theme,
+        size = _$recaptchaContainer$.size,
+        badge = _$recaptchaContainer$.badge; // Use a wrapper to be removed and added again on re-render. Required for preview in admin's settings page.
+
+
+    var $wrapper = $recaptchaContainer.find('.hustle-recaptcha-badge');
+
+    if ($wrapper.length) {
+      var captchaId = $recaptchaContainer.attr('recaptcha-id');
+      $wrapper.remove();
+      grecaptcha.reset(captchaId);
+    }
+
+    $recaptchaContainer.append('<div class="hustle-recaptcha-badge"></div>');
+    $wrapper = $recaptchaContainer.find('.hustle-recaptcha-badge');
+    var data = {
+      sitekey: sitekey,
+      theme: theme,
+      size: size,
+      badge: badge,
+      'expired-callback': function expiredCallback() {
+        return grecaptcha.reset($recaptchaContainer.attr('recaptcha-id'));
+      }
+    };
+
+    if ('v2_checkbox' === version) {
+      $module.find('.hustle-modal-body button').prop('disabled', true);
+
+      data.callback = function (token) {
+        $module.find('input[name="recaptcha-response"]').val(token);
+        $module.find('.hustle-layout-body button').removeProp('disabled');
+      };
+    } else {
+      data.callback = function (token) {
+        $module.find('input[name="recaptcha-response"]').val(token); // Callback for when recaptcha has been executed. Triggers the form submission on frontend.
+
+        if (self) {
+          self.doSubmit($recaptchaContainer.closest('.hustle-layout-form'));
+        }
+      };
+    }
+
+    if ('undefined' !== typeof grecaptcha) {
+      // Do render the recaptcha. Keep the recaptcha's ID in the container for later use.
+      grecaptcha.ready(function () {
+        var recaptchaId = grecaptcha.render($wrapper[0], data);
+        $recaptchaContainer.attr('recaptcha-id', recaptchaId);
+      });
+    }
+  };
+})();
 /*!
  * Select2 4.0.5
  * https://select2.github.io

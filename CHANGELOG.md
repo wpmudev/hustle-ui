@@ -1,9 +1,10 @@
-v1.1.0-beta.3
+v1.1.0-beta.4
 - [New]     [Element] reCAPTCHA: Hidden badgge.
 - [Fix]     [Module]  Pop-up: Using ESC key to close module is not working as expected.
 - [Fix]     [Module]  Slide-in: Overflow not working correctly on Chrome.
 - [Fix]     [Module]  Slide-in: Using ESC key to close module is not working as expected.
 - [Fix]     [Module]  Pop-up: Scroll bar appears during some pop-up animations.
+- [Fix]     [Element] Select2: Dropdown with search input has z-index problems.
 - [Enhance] [Module]  Pop-up: Pause iframe videos when closing the module.
 - [Enhance] [Module]  Pop-up: Allow changing the default error messages.
 - [Enhance] [Module]  Slide-in: Pause iframe videos when closing the module.
@@ -12,6 +13,7 @@ v1.1.0-beta.3
 - [Enhance] [Module]  Embed: Allow changing the default error messages.
 - [Enhance] [Element] Global: Make flex elements to resize accordingly.
 - [Enhance] [Element] Calendar: Make strings translatable.
+- [Enhance] [Element] reCAPTCHA: Render this element when previewing on Gutenberg editor.
 
 
 v1.0.2

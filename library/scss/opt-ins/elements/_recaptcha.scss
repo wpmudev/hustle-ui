@@ -3,6 +3,15 @@
 	.hustle-recaptcha {
 		margin: map-get($gutter, small) 0 0;
 
+		&.hustle-recaptcha-nobadge {
+			height: 0 !important;
+			@include opacity(0);
+			visibility: hidden !important;
+			margin: 0 !important;
+			padding: 0 !important;
+			border: 0 !important;
+		}
+
 		&[data-size="normal"] {
 			width: 302px;
 			height: 76px;
@@ -19,30 +28,66 @@
 		&:first-child {
 			margin-top: 0;
 		}
+
+		&-copy {
+			display: block;
+
+			&, p {
+				font-size: 12px;
+				line-height: 1.7em;
+				font-family: map-get($font, default);
+				font-weight: 400;
+				letter-spacing: 0;
+
+				b, strong {
+					font-weight: 700;
+				}
+
+				a {
+					transition: map-get($transition, ease);
+
+					&,
+					&:focus,
+					&:hover,
+					&:active,
+					&:visited {
+						border: 0;
+						outline: none;
+						box-shadow: none;
+						font-weight: 700;
+						text-decoration: none;
+					}
+				}
+			}
+		}
 	}
+}
 
-	&:not(.hustle-size--small) {
+@include hui-class(null, optin, null, true) {
 
-		.hustle-recaptcha {
+	.hustle-recaptcha,
+	.hustle-recaptcha-copy {
 
-			&[data-size="normal"] {
-
-				@include media(min-width, sm) {
-					transform: unset;
-					transform-style: unset;
-					transform-origin: unset;
-				}
-			}
-
-			&:first-child {
-
-				@include media(min-width, sm) {
-					margin-top: 0;
-				}
-			}
+		&:first-child {
 
 			@include media(min-width, sm) {
-				margin: map-get($gutter, default) 0 0;
+				margin-top: 0;
+			}
+		}
+
+		@include media(min-width, sm) {
+			margin-top: map-get($gutter, default);
+		}
+	}
+
+	.hustle-recaptcha {
+
+		&[data-size="normal"] {
+
+			@include media(min-width, sm) {
+				transform: unset;
+				transform-style: unset;
+				transform-origin: unset;
 			}
 		}
 	}

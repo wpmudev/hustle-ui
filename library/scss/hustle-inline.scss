@@ -8,6 +8,7 @@
 $inline-alignment: left center right;
 
 @include hui-class(inline, null, null, false) {
+	width: 100% !important;
 	@include opacity(0);
 	display: flex;
 	align-items: center;

@@ -1,3 +1,7 @@
+v1.1.1-beta.1
+- [Fix] [Module] Social Share: Alignment problems with Twenty Twenty WP Theme.
+
+
 v1.1.0
 - [New]     [Element] reCAPTCHA: Hidden badgge.
 - [Fix]     [Module]  Pop-up: Using ESC key to close module is not working as expected.

@@ -8,7 +8,6 @@
 $inline-alignment: left center right;
 
 @include hui-class(inline, null, null, false) {
-	width: 100% !important;
 	@include opacity(0);
 	display: flex;
 	align-items: center;
@@ -266,5 +265,17 @@ $inline-alignment: left center right;
 
 	@include media(min-width, sm) {
 		margin: map-get($gutter, default) 0;
+	}
+}
+
+// FIX: TwentyTwenty WP Theme.
+.post-inner.thin {
+
+	.entry-content {
+
+		@include hui-class(inline, null, null, false) {
+			margin-right: auto;
+			margin-left: auto;
+		}
 	}
 }

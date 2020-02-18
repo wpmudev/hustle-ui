@@ -1,5 +1,6 @@
 v1.1.1-beta.1
 - [Fix] [Module] Social Share: Alignment problems with Twenty Twenty WP Theme.
+- [Fix] [Module] Slidein: "Stacked" layout breaks if no NSA element is present.
 
 
 v1.1.0

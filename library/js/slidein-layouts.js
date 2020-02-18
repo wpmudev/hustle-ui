@@ -31,9 +31,9 @@
 		}
 
 		// Check if footer exists.
-		if ( ! footer.length ) {
-			return;
-		}
+		//if ( ! footer.length ) {
+		//	return;
+		//}
 
 		function headerHeight() {
 			return header.outerHeight( true );

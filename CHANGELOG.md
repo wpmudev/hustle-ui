@@ -1,3 +1,7 @@
+v1.2.0-alpha.1
+- [Fix] [Module] Embed: Module not displaying in preview in certain display sizes.
+
+
 v1.1.1-beta.1
 - [Fix] [Module] Social Share: Alignment problems with Twenty Twenty WP Theme.
 - [Fix] [Module] Slidein: "Stacked" layout breaks if no NSA element is present.

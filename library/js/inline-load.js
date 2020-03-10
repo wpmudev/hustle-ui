@@ -69,7 +69,7 @@
 			reset();
 			animation();
 
-			if ( windowHeight > elementPosition ) {
+			if ( windowHeight > elementPosition || element.hasClass( 'hustle-preview' ) ) {
 
 				load( 200 );
 

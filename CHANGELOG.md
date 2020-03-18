@@ -1,3 +1,8 @@
+v1.1.1
+- [Fix] [Module] Social Share: Alignment problems with Twenty Twenty WP Theme.
+- [Fix] [Module] Slidein: "Stacked" layout breaks if no NSA element is present.
+
+
 v1.1.0
 - [New]     [Element] reCAPTCHA: Hidden badgge.
 - [Fix]     [Module]  Pop-up: Using ESC key to close module is not working as expected.

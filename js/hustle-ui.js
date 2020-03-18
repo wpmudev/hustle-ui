@@ -3,7 +3,7 @@
  * Copyright 2019 Incsub (https://incsub.com)
  * Licensed under GPL v3 (http://www.gnu.org/licenses/gpl-3.0.html)
  */
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 (function ($) {
   'use strict'; // Define global HUI object if it doesn't exist.
@@ -6740,11 +6740,10 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
     if (content.hasClass('hustle-info')) {
       footer = slidein.find('.hustle-nsa-link');
     } // Check if footer exists.
+    //if ( ! footer.length ) {
+    //	return;
+    //}
 
-
-    if (!footer.length) {
-      return;
-    }
 
     function headerHeight() {
       return header.outerHeight(true);

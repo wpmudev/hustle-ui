@@ -1,3 +1,7 @@
+v1.2.0
+- [Fix] [Element] Global: Font Awesome is being overwritten.
+
+
 v1.1.1
 - [Fix] [Module] Social Share: Alignment problems with Twenty Twenty WP Theme.
 - [Fix] [Module] Slidein: "Stacked" layout breaks if no NSA element is present.

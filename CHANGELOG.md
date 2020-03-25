@@ -1,3 +1,7 @@
+v1.2.1
+- [Fix] [Element] Select2: Element has conflicts with My Listings theme.
+
+
 v1.2.0
 - [Fix] [Element] Global: Font Awesome is being overwritten.
 

@@ -1,5 +1,3 @@
-@import './select2-jquery';
-
 @include hui-class(null, optin, null, false) {
 
 	.hustle-select2 {
@@ -8,6 +6,9 @@
 		+ .select2 {
 			width: 100% !important;
 			display: block;
+			margin: 0;
+			padding: 0;
+			border: 0;
 
 			&, * {
 				display: block;
@@ -17,6 +18,7 @@
 
 			.select2-selection--single {
 				height: auto;
+				min-height: 1px;
 				display: flex;
 				align-items: center;
 				margin: 0;
@@ -27,9 +29,12 @@
 				.select2-selection__rendered {
 					min-width: 1px;
 					height: auto;
+					min-height: 1px;
 					flex: 1;
 					margin: 0;
 					padding: #{(map-get($field-size, height) - map-get($field-input, line-height)) / 2} 0;
+					border: 0;
+					box-shadow: none;
 					font: 400 #{map-get($field-input, font-size)}/#{map-get($field-input, line-height)} map-get($font, default);
 					letter-spacing: 0;
 
@@ -45,12 +50,15 @@
 				.select2-selection__arrow {
 					width: 20px;
 					height: 20px;
+					min-height: 1px;
 					display: flex;
 					align-items: center;
 					flex: 0 0 auto;
 					position: relative;
-					top: auto;
-					right: auto;
+					top: 0;
+					right: 0;
+					bottom: auto;
+					left: auto;
 					font-size: 12px;
 					line-height: 20px;
 
@@ -83,10 +91,15 @@
 }
 
 .select2-dropdown {
-	z-index: 11;
+	width: 100%;
+	display: block;
+	position: absolute;
+	z-index: 1051;
+	left: -100000px;
+	box-sizing: border-box;
 
 	&.hustle-dropdown {
-		border: 0;
+		border: 0 !important;
 		border-radius: 0;
 
 		.select2-results {
@@ -111,6 +124,21 @@
 		// Position: Bottom
 		&.select2-dropdown--below {
 			margin-top: 2px;
+		}
+	}
+}
+
+.select2-container {
+
+	// STATE: Open.
+	&.select2-container--open {
+
+		.select2-dropdown {
+			z-index: 999999;
+
+			&.hustle-dropdown {
+				border: 0;
+			}
 		}
 	}
 }

@@ -1,8 +1,16 @@
-v1.2.0-alpha.1
+v1.2.2
 - [Fix] [Module] Embed: Module not displaying in preview in certain display sizes.
 
 
-v1.1.1-beta.1
+v1.2.1
+- [Fix] [Element] Select2: Element has conflicts with My Listings theme.
+
+
+v1.2.0
+- [Fix] [Element] Global: Font Awesome is being overwritten.
+
+
+v1.1.1
 - [Fix] [Module] Social Share: Alignment problems with Twenty Twenty WP Theme.
 - [Fix] [Module] Slidein: "Stacked" layout breaks if no NSA element is present.
 

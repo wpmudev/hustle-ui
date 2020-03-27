@@ -1,3 +1,7 @@
+v1.2.2
+- [Fix] [Module] Embed: Module not displaying in preview in certain display sizes.
+
+
 v1.2.1
 - [Fix] [Element] Select2: Element has conflicts with My Listings theme.
 

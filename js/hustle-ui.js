@@ -280,7 +280,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       reset();
       animation();
 
-      if (windowHeight > elementPosition) {
+      if (windowHeight > elementPosition || element.hasClass('hustle-preview')) {
         load(200);
       } else {
         if ('no_animation' === element.data('intro')) {

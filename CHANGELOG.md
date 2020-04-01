@@ -1,3 +1,6 @@
+v1.2.3
+- [FIX] [Module] Pop-up: iframes, videos and objects in pshowing as expected.
+
 v1.2.2
 - [Fix] [Module] Embed: Module not displaying in preview in certain display sizes.
 

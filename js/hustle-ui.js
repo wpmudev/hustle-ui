@@ -829,6 +829,24 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       }, delay + 50);
     }
 
+    function resizeObjectsInContent() {
+      var containerWidth = popup.find('.hustle-group-content').outerWidth();
+      popup.find('iframe, object, video').each(function () {
+        var iframe = $(this);
+        var width = iframe.attr('width');
+        var height = iframe.attr('height');
+        var ratio;
+
+        if (_typeof(width) !== undefined && _typeof(height) !== undefined && 0 < width) {
+          ratio = containerWidth / width;
+          iframe.css({
+            'width': containerWidth,
+            'height': height * ratio
+          });
+        }
+      });
+    }
+
     function init() {
       popup.removeClass('hustle-show');
       animation(); // Module time.
@@ -837,7 +855,9 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 
       setTimeout(function () {
         animationIn();
-      }, 200);
+      }, 200); // resize iframes, object and videos
+
+      resizeObjectsInContent();
       HUI.popupClose(el, autohideDelay);
     }
 

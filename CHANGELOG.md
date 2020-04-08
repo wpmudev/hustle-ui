@@ -1,3 +1,6 @@
+v1.2.4
+- [FIX] [Icons] Static icons aren't animated anymore.
+
 v1.2.3
 - [FIX] [Module] Pop-up: iframes, videos and objects in pshowing as expected.
 

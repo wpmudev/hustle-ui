@@ -87,6 +87,26 @@
 			}
 		}
 
+		&.hustle-field-icon--static {
+			.hustle-input {
+				+ .hustle-input-label {
+					span[class*="hustle-icon-"] {
+						transition: none;
+					}
+				}
+				&:focus,
+				&:hover {
+					+ .hustle-input-label {
+						span[class*="hustle-icon-"] {
+							opacity: 1;
+							transform: none;
+							transition: none;
+						}
+					}
+				}
+			}
+		}
+
 		&.hustle-field-icon--animated {
 
 			.hustle-input {

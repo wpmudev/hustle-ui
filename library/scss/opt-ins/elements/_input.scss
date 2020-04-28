@@ -26,18 +26,6 @@
 				outline: none;
 				box-shadow: none;
 			}
-
-			&:focus {
-
-				+ .hustle-input-label {
-
-					span {
-						opacity: 0;
-						transform: translateX(map-get($field-input, icon-width));
-						transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
-					}
-				}
-			}
 		}
 
 		.hustle-input-label {

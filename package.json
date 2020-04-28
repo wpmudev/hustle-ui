@@ -1,6 +1,6 @@
 {
 	"name": "hustle-ui",
-	"version": "1.2.2",
+	"version": "1.2.4",
 	"private": true,
 	"author": "WPMU DEV",
 	"contributors": [
@@ -60,6 +60,8 @@
 		"cleanup": "rm -rf node_modules/gh-pages/.cache",
 		"deploy:hustle": "npm run hustle && npm run cleanup && gh-pages -b master -d ./dist",
 		"deploy:demo": "npm run showcase && npm run cleanup && gh-pages -b gh-pages -d ./public",
-		"deploy": "npm run deploy:hustle && npm run deploy:demo"
+		"release:patch": "npm version patch --no-git-tag-version && npm run deploy:hustle && npm run deploy:demo",
+		"release:minor": "npm version minor --no-git-tag-version && npm run deploy:hustle && npm run deploy:demo",
+		"release:major": "npm version major --no-git-tag-version && npm run deploy:hustle && npm run deploy:demo"
 	}
 }

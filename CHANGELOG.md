@@ -1,3 +1,6 @@
+v1.2.5
+- [Fix] [Module] Social Share: Centering on mobile messed the desktop offest.
+
 v1.2.4
 - [Fix] [Element] Global: static icons shouldn't be animated.
 

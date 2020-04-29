@@ -1,12 +1,13 @@
 v1.2.5
 - [Fix] [Module] Social Share: Centering on mobile messed the desktop offest.
+- [Fix] [Element] Select2: Dropdown list showing behind module.
 
 v1.2.4
-- [Fix] [Element] Global: static icons shouldn't be animated.
+- [Fix] [Element] Global: Static icons shouldn't be animated.
 
 
 v1.2.3
-- [Fix] [Module] Pop-up: iframes, videos and objects in pshowing as expected.
+- [Fix] [Module] Pop-up: iframes, videos and objects in module not showing as expected.
 
 
 v1.2.2

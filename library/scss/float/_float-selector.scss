@@ -47,16 +47,11 @@ $float-selector: (
 
 			// HORIZONTAL: Center
 			&[data-#{$screen}-positionX="center"] {
-				@if $screen == 'mobiles' {
-					@include media($breakpoint, sm) {
-						right: 0;
-						left: 0;
-					}
-				} @else {
+				@if $screen != 'mobiles' {
 					right: 0;
 					left: 0;
 				}
-				
+
 
 				.hustle-social {
 
@@ -100,6 +95,10 @@ $float-selector: (
 
 				@include media($breakpoint, sm) {
 					justify-content: center;
+					@if $screen == 'mobiles' {
+						right: 0;
+						left: 0;
+					}
 				}
 			}
 

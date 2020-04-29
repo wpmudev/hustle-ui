@@ -132,9 +132,9 @@
 
 	// STATE: Open.
 	&.select2-container--open {
+		z-index: 999999;
 
 		.select2-dropdown {
-			z-index: 999999;
 
 			&.hustle-dropdown {
 				border: 0;

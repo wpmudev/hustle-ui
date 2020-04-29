@@ -2,6 +2,7 @@ v1.2.5
 - [Fix] [Module] Social Share: Centering on mobile messed the desktop offest.
 - [Fix] [Element] Select2: Dropdown list showing behind module.
 
+
 v1.2.4
 - [Fix] [Element] Global: Static icons shouldn't be animated.
 

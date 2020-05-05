@@ -1,3 +1,7 @@
+v1.2.6
+- [Fix] [Element] Select2: Override extra margins added by TwentyTwenty WordPress Theme.
+
+
 v1.2.5
 - [Fix] [Module] Social Share: Centering on mobile messed the desktop offest.
 - [Fix] [Element] Select2: Dropdown list showing behind module.

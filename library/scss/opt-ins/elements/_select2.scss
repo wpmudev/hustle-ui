@@ -112,6 +112,8 @@
 					font: 400 #{map-get($field-input, font-size)}/#{map-get($field-input, line-height)} map-get($font, default);
 					letter-spacing: 0;
 					transition: map-get($transition, ease);
+					margin-top: 0;
+					margin-left: 0;
 				}
 			}
 		}

@@ -1,3 +1,7 @@
+v1.2.7
+- [Fix] [Element] Input: Hidden icon with filled field.
+
+
 v1.2.6
 - [Fix] [Element] Select2: Override extra margins added by TwentyTwenty WordPress Theme.
 

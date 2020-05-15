@@ -59,7 +59,7 @@
 				}
 			}
 
-			span {
+			span:not([class*="hustle-icon-"]) {
 				display: block;
 				flex: 1 1 auto;
 				@extend %hui-text-truncate;
@@ -98,7 +98,7 @@
 
 			.hustle-input-label {
 
-				span {
+				span:not([class*="hustle-icon-"]) {
 					opacity: 0;
 				}
 			}

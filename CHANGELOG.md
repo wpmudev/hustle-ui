@@ -1,3 +1,6 @@
+v1.2.8
+- [Fix] [Element] Timepicker: OnChange event for correct hiding labels.
+
 v1.2.7
 - [Fix] [Element] Input: Hidden icon with filled field.
 

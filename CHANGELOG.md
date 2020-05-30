@@ -1,3 +1,7 @@
+v1.3.0
+- [Enhance] [Module] Opt-in: Stop supporting feature image.
+
+
 v1.2.7
 - [Fix] [Element] Input: Hidden icon with filled field.
 

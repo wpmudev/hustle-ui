@@ -12,13 +12,6 @@
 			// ELEMENT: Image
 			.hustle-image {
 
-				&.hustle-image-fit--fill,
-				&.hustle-image-fit--cover,
-				&.hustle-image-fit--contain {
-					height: map-get($module-image, small);
-					overflow: hidden;
-				}
-
 				&.hustle-image-fit--fill {
 					@extend %hui-image-fit-fill;
 				}
@@ -44,29 +37,6 @@
 	.hustle-layout {
 
 		.hustle-layout-body {
-
-			// ELEMENT: Image.
-			.hustle-image {
-
-				&.hustle-image-fit--fill,
-				&.hustle-image-fit--cover,
-				&.hustle-image-fit--contain {
-
-					@include media(min-width, sm) {
-						max-width: map-get($module-image, default);
-						height: auto;
-						flex: 0 0 map-get($module-image, default);
-					}
-				}
-
-				&.hustle-image-fit--none {
-
-					@include media(min-width, sm) {
-						max-width: 50%;
-						flex: 0 0 auto;
-					}
-				}
-			}
 
 			// ELEMENT: Content.
 			.hustle-layout-content {
@@ -116,6 +86,7 @@
 	}
 }
 
+// @todo Styles for custom size.
 @include hui-class(null, optin, compact, true, true)  {
 
 	.hustle-layout {
@@ -140,6 +111,7 @@
 	}
 }
 
+// @todo Styles for slide-ins.
 @include hui-class(slidein, optin, compact, false) {
 
 	.hustle-button-icon {

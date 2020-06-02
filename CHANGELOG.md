@@ -1,5 +1,6 @@
 v1.3.0
-- [Enhance] [Module] Opt-in: Stop supporting feature image.
+- [Enhance] [Module] Opt-in: Stop supporting feature image size.
+- [Enhance] [Module] Opt-in: Stop supporting form fields proximity.
 
 
 v1.2.7

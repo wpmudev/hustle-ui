@@ -23,26 +23,6 @@
 
 		.hustle-form-fields {
 			display: block;
-
-			&.hustle-proximity-joined {
-
-				.hustle-field {
-
-					&:not(:last-child) {
-						margin-bottom: map-get($field-spacing, joined);
-					}
-				}
-			}
-
-			&.hustle-proximity-separated {
-
-				.hustle-field {
-
-					&:not(:last-child) {
-						margin-bottom: map-get($field-spacing, separated);
-					}
-				}
-			}
 		}
 
 		.hustle-form-options {
@@ -91,46 +71,6 @@
 			}
 
 			.hustle-form-fields {
-
-				&.hustle-proximity-joined {
-
-					.hustle-field {
-
-						&:not(:last-child) {
-
-							@include media(min-width, sm) {
-								margin-top: #{map-get($field-spacing, joined) / 2};
-								margin-right: map-get($field-spacing, joined);
-								margin-bottom: #{map-get($field-spacing, joined) / 2};
-							}
-						}
-					}
-
-					@include media(min-width, sm) {
-						margin-top: -#{map-get($field-spacing, joined) / 2};
-						margin-bottom: -#{map-get($field-spacing, joined) / 2};
-					}
-				}
-
-				&.hustle-proximity-separated {
-
-					.hustle-field {
-
-						&:not(:last-child) {
-
-							@include media(min-width, sm) {
-								margin-top: #{map-get($field-spacing, separated) / 2};
-								margin-right: map-get($field-spacing, separated);
-								margin-bottom: #{map-get($field-spacing, separated) / 2};
-							}
-						}
-					}
-
-					@include media(min-width, sm) {
-						margin-top: -#{map-get($field-spacing, separated) / 2};
-						margin-bottom: -#{map-get($field-spacing, separated) / 2};
-					}
-				}
 
 				@include media(min-width, sm) {
 					display: flex;

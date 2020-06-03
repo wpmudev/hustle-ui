@@ -1,4 +1,7 @@
 v1.3.0
+- [Enhance] [Module] Global: Stop supporting title styles.
+- [Enhance] [Module] Global: Stop supporting subtitle styles.
+- [Enhance] [Module] Opt-in: Stop supporting main content styles.
 - [Enhance] [Module] Opt-in: Stop supporting feature image size.
 - [Enhance] [Module] Opt-in: Stop supporting form fields proximity.
 

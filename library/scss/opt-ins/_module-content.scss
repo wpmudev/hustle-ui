@@ -8,56 +8,11 @@
 				display: flex;
 				flex-direction: column;
 				justify-content: center;
-				padding: 0 map-get($gutter, small);
 
 				.hustle-content-wrap {
 					width: 100%;
 					height: auto;
 					flex: 0 0 auto;
-					padding: map-get($gutter, small) 0;
-				}
-
-				// ELEMENT: Title
-				.hustle-title {
-					font: 700 20px/27px map-get($font, default);
-					letter-spacing: 0;
-					text-transform: none;
-
-					+ .hustle-subtitle {
-						margin-top: map-get($gutter, small);
-					}
-				}
-
-				// ELEMENT: Subtitle
-				.hustle-subtitle {
-					display: block;
-					margin: 0;
-					font: 700 14px/18px map-get($font, default);
-					letter-spacing: 0;
-					text-transform: none;
-				}
-			}
-		}
-	}
-}
-
-@include hui-class(null, optin, null, true) {
-
-	.hustle-layout {
-
-		.hustle-layout-content {
-
-			.hustle-content {
-
-				.hustle-content-wrap {
-
-					@include media(min-width, md) {
-						padding: map-get($gutter, default) 0;
-					}
-				}
-
-				@include media(min-width, md) {
-					padding: 0 map-get($gutter, default);
 				}
 			}
 		}

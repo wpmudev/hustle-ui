@@ -5,14 +5,8 @@
 	button.hustle-button {
 		width: auto;
 		min-width: 100px;
-		// height: map-get($field-size, height);
 		position: relative;
-		margin: 0;
-		border: 0;
-		border-radius: 0;
-		padding: 2px 16px;
 		cursor: pointer;
-		font: bold 13px/#{map-get($field-size, height) - 4px} map-get($font, default);
 		letter-spacing: 0.5px;
 		text-align: center;
 		transition: map-get($transition, ease);
@@ -41,8 +35,6 @@
 		&:active,
 		&:visited {
 			outline: none;
-			box-shadow: none;
-			text-decoration: none;
 		}
 
 		&.hustle-button-onload {

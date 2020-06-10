@@ -1,37 +1,10 @@
 // Module Settings
-//
-// Module Mode: optin
-// Module Layout: compact
 
-@include hui-class(null, optin, compact, false) {
-
-	.hustle-layout {
-
-		.hustle-layout-body {
-
-			// ELEMENT: Image
-			.hustle-image {
-
-				&.hustle-image-fit--fill {
-					@extend %hui-image-fit-fill;
-				}
-
-				&.hustle-image-fit--contain {
-					@extend %hui-image-fit-contain;
-				}
-
-				&.hustle-image-fit--cover {
-					@extend %hui-image-fit-cover;
-				}
-
-				&.hustle-image-fit--none {
-					@extend %hui-image-fit-full;
-				}
-			}
-		}
-	}
-}
-
+// Module Types: all
+// Module Modes: optin
+// Module Layouts: compact
+// Desktop: true
+// Custom size: false
 @include hui-class(null, optin, compact, true) {
 
 	.hustle-layout {
@@ -86,7 +59,11 @@
 	}
 }
 
-// @todo Styles for custom size.
+// Module Types: all
+// Module Modes: optin
+// Module Layouts: compact
+// Desktop: true
+// Custom size: true
 @include hui-class(null, optin, compact, true, true)  {
 
 	.hustle-layout {
@@ -111,7 +88,11 @@
 	}
 }
 
-// @todo Styles for slide-ins.
+// Module Types: slide-ins
+// Module Modes: optin
+// Module Layouts: compact
+// Desktop: false
+// Custom size: false
 @include hui-class(slidein, optin, compact, false) {
 
 	.hustle-button-icon {

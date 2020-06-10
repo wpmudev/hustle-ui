@@ -24,33 +24,12 @@
 		.hustle-form-fields {
 			display: block;
 		}
-
-		.hustle-form-options {
-			margin-top: map-get($gutter, small);
-			padding: map-get($gutter, small);
-
-			.hustle-group-title {
-				display: block;
-				margin: 0 0 20px;
-				padding: 0;
-				border: 0;
-				font: bold 13px/22px map-get($font, default);
-			}
-		}
 	}
 }
 
 @include hui-class(null, optin, default compact focus-content focus-optin, true) {
 
 	.hustle-form {
-
-		.hustle-form-options {
-
-			@include media(min-width, sm) {
-				margin-top: map-get($gutter, default);
-				padding: map-get($gutter, default);
-			}
-		}
 
 		&.hustle-form-inline {
 

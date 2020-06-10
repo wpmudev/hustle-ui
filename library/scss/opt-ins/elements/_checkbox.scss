@@ -30,9 +30,6 @@
 			position: relative;
 			margin: 0;
 			padding: 0;
-			border-width: map-get($field-radio, border-width);
-			border-style: map-get($field-radio, border-style);
-			border-color: transparent;
 			font-size: map-get($field-radio, icon-size);
 			text-align: center;
 			transition: map-get($transition, ease);
@@ -53,9 +50,6 @@
 			display: block;
 			flex: 1 1 auto;
 			padding: 0 0 0 10px;
-			font-size: map-get($field-radio, font-size);
-			line-height: map-get($field-radio, size);
-			font-family: map-get($font, default);
 
 			a {
 

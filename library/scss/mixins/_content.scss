@@ -76,15 +76,6 @@
 				text-transform: uppercase;
 			}
 
-			&, p {
-
-				&:not(.forminator-poll--question):not(.forminator-poll--description) {
-					font-size: 14px;
-					line-height: 1.45em;
-					font-weight: 400;
-				}
-			}
-
 			ul, ol {
 
 				&:not(.forminator-poll--answers) {

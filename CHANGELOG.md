@@ -1,3 +1,5 @@
+ - [Enhance] [Module] Added js events after module displayed
+
 v1.2.7
 - [Fix] [Element] Input: Hidden icon with filled field.
 

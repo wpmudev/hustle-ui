@@ -61,6 +61,7 @@
 
 			setTimeout( function() {
 				animationIn();
+				$( document ).trigger( 'hustle:module:displayed', element );
 			}, delay );
 		}
 

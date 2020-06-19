@@ -90,6 +90,7 @@
 			// Layout time.
 			setTimeout( function() {
 				animation();
+				$( document ).trigger( 'hustle:module:displayed', slidein );
 			}, 1000 );
 
 			HUI.slideinClose( el, autohideDelay );

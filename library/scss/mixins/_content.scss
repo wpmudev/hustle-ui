@@ -6,12 +6,10 @@
 		.hustle-#{$container} {
 			word-break: break-word;
 
-			&, h1, h2, h3, h4, h5, h6, p, li, blockquote {
-				font-family: map-get($font, default);
-				letter-spacing: 0;
+			*:not([class*="forminator-"]) {
 
 				b, strong {
-					font-weight: 700;
+					font-weight: bold;
 				}
 
 				a {
@@ -25,66 +23,20 @@
 						border: 0;
 						outline: none;
 						box-shadow: none;
-						font-weight: 700;
+						font-weight: bold;
 						text-decoration: none;
 					}
 				}
 			}
 
-			*:not([class*="forminator-"]) {
-				color: inherit;
-			}
-
-			h1, h2, h3, h4, h5, h6, p, ul, ol, blockquote {
-
-				&:not(.forminator-poll--question):not(.forminator-poll--description):not(.forminator-poll--answers) {
-					margin: 0;
-
-					&:not(:last-child) {
-						margin-bottom: map-get($gutter, small);
-					}
-				}
-			}
-
-			h1, h2, h3, h4, h5, h6 {
-				line-height: 1.4em;
-				font-weight: 700;
-			}
-
-			h1 {
-				font-size: 28px;
-			}
-
-			h2 {
-				font-size: 22px;
-			}
-
-			h3 {
-				font-size: 18px;
-			}
-
-			h4 {
-				font-size: 16px;
-			}
-
-			h5 {
-				font-size: 14px;
-			}
-
-			h6 {
-				font-size: 12px;
-				text-transform: uppercase;
-			}
-
 			ul, ol {
 
-				&:not(.forminator-poll--answers) {
+				&:not([class*="forminator-"]) {
 					padding: 0;
 					border: 0;
 					list-style: none;
 
 					li {
-						margin: 0 0 5px;
 						padding: 0;
 						border: 0;
 					}
@@ -99,7 +51,7 @@
 				}
 			}
 
-			ul:not(.forminator-poll--answers) {
+			ul:not([class*="forminator-"]) {
 
 				li {
 
@@ -117,7 +69,7 @@
 				}
 			}
 
-			ol:not(.forminator-poll--answers) {
+			ol:not([class*="forminator-"]) {
 				counter-reset: hui-custom-counter;
 
 				li {

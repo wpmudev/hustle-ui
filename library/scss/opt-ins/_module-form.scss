@@ -16,47 +16,5 @@
 			border: 0;
 			text-align: left;
 		}
-
-		.hustle-button {
-			width: 100%;
-		}
-
-		.hustle-form-fields {
-			display: block;
-		}
-	}
-}
-
-@include hui-class(null, optin, default compact focus-content focus-optin, true) {
-
-	.hustle-form {
-
-		&.hustle-form-inline {
-
-			.hustle-field {
-
-				@include media(min-width, sm) {
-					min-width: 100px;
-					flex: 1;
-				}
-			}
-
-			.hustle-button {
-
-				@include media(min-width, sm) {
-					width: auto;
-					flex: 0 0 auto;
-				}
-			}
-
-			.hustle-form-fields {
-
-				@include media(min-width, sm) {
-					display: flex;
-					flex-wrap: wrap;
-					align-items: center;
-				}
-			}
-		}
 	}
 }

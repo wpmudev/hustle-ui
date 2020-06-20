@@ -1,7 +1,6 @@
 @include hui-class(null, optin, null, false) {
 
 	.hustle-success {
-		padding: #{map-get($gutter, small) * 2};
 
 		[class*="hustle-icon-"] {
 			display: block;
@@ -21,10 +20,6 @@
 			@include media(min-width, sm) {
 				margin-bottom: #{map-get($gutter, default) / 2};
 			}
-		}
-
-		@include media(min-width, sm) {
-			padding: #{map-get($gutter, default) * 2};
 		}
 	}
 }

@@ -35,20 +35,6 @@
 		position: relative;
 		margin: auto;
 
-		.hustle-info,
-		.hustle-optin {
-
-			@include media(max-width, sm) {
-				padding-top: map-get($gutter, small);
-				padding-bottom: map-get($gutter, small);
-			}
-
-			@include media(min-width, sm) {
-				padding-top: map-get($gutter, default);
-				padding-bottom: map-get($gutter, default);
-			}
-		}
-
 		&.hustle-animate {
 			@include opacity(0);
 			animation-duration: 1s;
@@ -480,15 +466,5 @@
 
 	@include support(ie) {
 		align-items: baseline;
-	}
-
-	@include media(max-width, sm) {
-		padding-right: map-get($gutter, small);
-		padding-left: map-get($gutter, small);
-	}
-
-	@include media(min-width, sm) {
-		padding-right: map-get($gutter, default);
-		padding-left: map-get($gutter, default);
 	}
 }

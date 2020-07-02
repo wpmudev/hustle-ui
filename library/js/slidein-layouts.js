@@ -14,6 +14,7 @@
 
 		let header = slidein.find( '.hustle-layout-header' );
 		let footer = slidein.find( '.hustle-layout-footer' );
+		let close  = slidein.find( '.hustle-button-close' );
 
 		// Check if element exists.
 		if ( ! slidein.length ) {
@@ -43,6 +44,10 @@
 			return footer.outerHeight( true );
 		}
 
+		function closeHeight() {
+			return close.outerHeight( false );
+		}
+
 		function init() {
 
 			if ( content.hasClass( 'hustle-info--stacked' ) ) {
@@ -61,7 +66,7 @@
 			} else {
 
 				content.css({
-					'max-height': 'calc(100vh - ' + ( footerHeight() + 30 ) + 'px)'
+					'max-height': 'calc(100vh - ' + ( footerHeight() + closeHeight() ) + 'px)'
 				});
 			}
 

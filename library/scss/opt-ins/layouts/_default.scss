@@ -35,35 +35,6 @@
 	}
 }
 
-// Module Types: all
-// Module Modes: optin
-// Module Layouts: default
-// Desktop: true
-// Custom size: true
-@include hui-class(null, optin, default, true, true) {
-
-	.hustle-layout {
-
-		.hustle-layout-content {
-
-			// POSITION: Horizontal Sides
-			// Image can be displayed at left or right of the content
-			&.hustle-layout-position--left,
-			&.hustle-layout-position--right {
-
-				// ELEMENT: Image.
-				.hustle-image {
-
-					@include media(min-width, sm) {
-						min-width: 1px;
-						flex-shrink: 1;
-					}
-				}
-			}
-		}
-	}
-}
-
 // Module Types: slidein
 // Module Modes: optin
 // Module Layouts: default

@@ -1,23 +1,36 @@
+%button {
+	min-width: 100px;
+	cursor: pointer;
+	text-align: center;
+	transition: map-get($transition, ease);
+
+	&,
+	&:focus,
+	&:hover,
+	&:active,
+	&:visited {
+		outline: none;
+	}
+}
+
 @include hui-class(null, null, null, false) {
 
-	.hustle-button,
-	a.hustle-button,
-	button.hustle-button {
+	// BUTTON: Call to Action.
+	a.hustle-button-cta,
+	button.hustle-button-cta {
+		@extend %button;
+	}
+
+	// BUTTON: Submit.
+	a.hustle-button-submit,
+	button.hustle-button-submit {
 		width: auto;
-		min-width: 100px;
+		display: block;
 		position: relative;
-		cursor: pointer;
-		letter-spacing: 0.5px;
-		text-align: center;
-		transition: map-get($transition, ease);
+		@extend %button;
 
 		.hustle-button-text {
 			display: block;
-		}
-
-		.hustle-loading-text {
-			display: none;
-			@extend %hui-screen-reader;
 		}
 
 		.hustle-loading-icon {
@@ -29,40 +42,17 @@
 			font-size: 14px;
 		}
 
-		&,
-		&:focus,
-		&:hover,
-		&:active,
-		&:visited {
-			outline: none;
-		}
-
 		&.hustle-button-onload {
 			pointer-events: none;
 			@include opacity(0.6);
 
 			.hustle-button-text {
-				display: none;
-			}
-
-			.hustle-loading-text {
-				display: block;
 				@include opacity(0);
 			}
 
 			.hustle-loading-icon {
 				display: block;
 			}
-		}
-
-		&.hustle-button-cta {
-			display: inline-flex;
-			flex-direction: column;
-			align-items: center;
-		}
-
-		&.hustle-button-submit {
-			display: block;
 		}
 	}
 }

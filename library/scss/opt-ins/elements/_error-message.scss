@@ -15,16 +15,3 @@
 		}
 	}
 }
-
-@include hui-class(null, optin info, null, true) {
-
-	.hustle-layout {
-
-		.hustle-error-message {
-
-			@include media(min-width, sm) {
-				margin-top: map-get($gutter, default);
-			}
-		}
-	}
-}

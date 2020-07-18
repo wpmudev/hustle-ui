@@ -6,6 +6,7 @@
 			width: map-get($field-size, width);
 			min-width: unset; // Prevent themes or other plugins from overwritting.
 			max-width: unset; // Prevent themes or other plugins from overwritting.
+			min-height: auto; // Prevent themes or other plugins from overwritting.
 			display: block;
 			background-image: unset;
 			transition: map-get($transition, ease);

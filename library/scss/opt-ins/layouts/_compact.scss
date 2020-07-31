@@ -59,35 +59,6 @@
 	}
 }
 
-// Module Types: all
-// Module Modes: optin
-// Module Layouts: compact
-// Desktop: true
-// Custom size: true
-@include hui-class(null, optin, compact, true, true)  {
-
-	.hustle-layout {
-
-		.hustle-layout-body {
-
-			// ELEMENT: Image.
-			.hustle-image {
-
-				&.hustle-image-fit--fill,
-				&.hustle-image-fit--cover,
-				&.hustle-image-fit--contain,
-				&.hustle-image-fit--none {
-
-					@include media(min-width, sm) {
-						min-width: 1px;
-						flex-shrink: 1;
-					}
-				}
-			}
-		}
-	}
-}
-
 // Module Types: slide-ins
 // Module Modes: optin
 // Module Layouts: compact

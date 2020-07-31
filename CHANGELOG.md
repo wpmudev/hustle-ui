@@ -1,10 +1,10 @@
 v1.3.0
-- [Enhance] [Module] Global: Stop supporting title styles.
-- [Enhance] [Module] Global: Stop supporting subtitle styles.
-- [Enhance] [Module] Opt-in: Stop supporting main content styles.
-- [Enhance] [Module] Opt-in: Stop supporting feature image size.
-- [Enhance] [Module] Opt-in: Stop supporting form fields proximity.
-- [Enhance] [Module] Opt-in: Stop supporting call to action button settings.
+- [Enhance] Global: Stop supporting color and font settings.
+			Dev Notes: Color and settings from now on will be handled directly on
+			Hustle v4.3.0.
+- [Enhance] Global: Stop supporting advanced settings (margin, padding, border, shadow).
+			Dev Notes: Advanced settings from now on will be handled directly on
+			Hustle v4.3.0.
 
 
 v1.2.7

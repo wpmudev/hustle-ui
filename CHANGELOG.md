@@ -1,4 +1,4 @@
-v1.3.0
+v2.0.0
 - [Enhance] Global: Stop supporting color and font settings.
 			Dev Notes: Color and settings from now on will be handled directly on
 			Hustle v4.3.0.

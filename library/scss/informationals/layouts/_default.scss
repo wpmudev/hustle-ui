@@ -44,21 +44,6 @@
 
 		.hustle-layout-content {
 
-			// ELEMENT: Image.
-			.hustle-image {
-
-				&.hustle-image-fit--fill,
-				&.hustle-image-fit--cover,
-				&.hustle-image-fit--contain,
-				&.hustle-image-fit--none {
-
-					@include media(min-width, sm) {
-						min-width: 1px;
-						flex-shrink: 1;
-					}
-				}
-			}
-
 			// ELEMENT: Content.
 			.hustle-content {
 

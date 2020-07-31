@@ -25,12 +25,16 @@
 				delayValue = delay;
 			}
 
-			button.addClass( 'hustle-button-onload' );
+			button
+				.addClass( 'hustle-button-onload' )
+				.attr( 'aria-label', button.attr( 'data-loading-text' ) );
 
 			if ( false !== delay ) {
 
 				setTimeout( function() {
-					button.removeClass( 'hustle-button-onload' );
+					button
+						.removeClass( 'hustle-button-onload' )
+						.removeAttr( 'aria-label' );
 				}, delayValue );
 			}
 		}

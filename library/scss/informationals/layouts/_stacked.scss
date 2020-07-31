@@ -11,11 +11,9 @@
 		.hustle-layout-header {
 			min-height: 30px;
 			position: relative;
-			margin-bottom: map-get($gutter, small);
 
 			.hustle-title,
 			.hustle-subtitle {
-				display: block;
 
 				&:first-child {
 					padding-right: 30px;
@@ -23,21 +21,13 @@
 			}
 
 			.hustle-title {
-				font: 400 33px/38px map-get($font, alt);
-				letter-spacing: 0;
 
 				+ .hustle-subtitle {
-					margin-top: map-get($gutter, small);
 
 					+ .hustle-button-close {
 						top: 4px;
 					}
 				}
-			}
-
-			.hustle-subtitle {
-				font: bold 14px/24px map-get($font, default);
-				letter-spacing: 0;
 			}
 
 			.hustle-button-close {
@@ -50,56 +40,14 @@
 		// ELEMENT: Body
 		.hustle-layout-body {
 
-			.hustle-content {
-				padding: 0 map-get($gutter, small);
-
-				.hustle-content-wrap {
-					padding: map-get($gutter, small) 0;
-				}
-			}
-
-			// ELEMENT: Image
-			.hustle-image {
-
-				&.hustle-image-fit--fill,
-				&.hustle-image-fit--cover,
-				&.hustle-image-fit--contain {
-					height: map-get($module-image, small);
-				}
-
-				&.hustle-image-fit--fill {
-					@extend %hui-image-fit-fill;
-				}
-
-				&.hustle-image-fit--contain {
-					@extend %hui-image-fit-contain;
-				}
-
-				&.hustle-image-fit--cover {
-					@extend %hui-image-fit-cover;
-				}
-
-				&.hustle-image-fit--none {
-					@extend %hui-image-fit-full;
-				}
-			}
-
 			// ELEMENT: Group Content
 			.hustle-group-content {
 
 				&:not(:last-child) {
+					margin-bottom: map-get($gutter, small);
 					padding-bottom: map-get($gutter, small);
 					border-bottom: 1px solid rgba(0,0,0,0.16);
 					box-shadow: 0 1px 0 0 rgba(255,255,255,0.08);
-				}
-			}
-
-			// ELEMENT: Call To Action
-			.hustle-button {
-				width: 100%;
-
-				+ .hustle-checkbox {
-					margin-top: map-get($gutter, small);
 				}
 			}
 		}
@@ -109,14 +57,6 @@
 @include hui-class(null, info, stacked, true) {
 
 	.hustle-layout {
-
-		// ELEMENT: Header.
-		.hustle-layout-header {
-
-			@include media(min-width, sm) {
-				margin-bottom: map-get($gutter, default);
-			}
-		}
 
 		// ELEMENT: Body.
 		.hustle-layout-body {
@@ -130,7 +70,6 @@
 						min-width: 1px;
 						min-height: 0;
 						flex: 1;
-						padding: map-get($gutter, default) 0;
 					}
 				}
 
@@ -140,52 +79,6 @@
 					display: flex;
 					flex: 1;
 					align-items: center;
-					padding: 0 map-get($gutter, default);
-				}
-			}
-
-			// ELEMENT: Image.
-			.hustle-image {
-
-				&.hustle-image-fit--fill,
-				&.hustle-image-fit--cover,
-				&.hustle-image-fit--contain {
-
-					&:only-child {
-
-						@include media(min-width, sm) {
-							min-width: 1px;
-							max-width: 100%;
-							height: map-get($module-image, default);
-							min-height: 0;
-							flex: 1;
-						}
-					}
-
-					@include media(min-width, sm) {
-						max-width: map-get($module-image, default);
-						height: auto;
-						min-height: 0;
-						flex: 0 0 map-get($module-image, default);
-					}
-				}
-
-				&.hustle-image-fit--none {
-
-					&:only-child {
-
-						@include media(min-width, sm) {
-							min-width: 1px;
-							max-width: 100%;
-							flex: 1;
-						}
-					}
-
-					@include media(min-width, sm) {
-						max-width: 50%;
-						min-height: 0;
-						flex: 0 0 auto;
-					}
 				}
 			}
 
@@ -195,24 +88,9 @@
 				&:not(:last-child) {
 
 					@include media(min-width, sm) {
+						margin-bottom: map-get($gutter, default);
 						padding-bottom: map-get($gutter, default);
 					}
-				}
-			}
-
-			// ELEMENT: Call To Action.
-			.hustle-button {
-
-				+ .hustle-checkbox {
-
-					@include media(min-width, sm) {
-						margin-top: map-get($gutter, default);
-					}
-				}
-
-				@include media(min-width, sm) {
-					width: auto;
-					min-height: 0;
 				}
 			}
 

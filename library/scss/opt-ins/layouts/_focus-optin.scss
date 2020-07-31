@@ -1,45 +1,10 @@
 // Module Settings
-//
-// Module Mode: optin
-// Module Layout: focus-optin
 
-@include hui-class(null, optin, focus-optin, false) {
-
-	.hustle-layout {
-
-		// SECTION: Content
-		.hustle-layout-content {
-
-			// ELEMENT: Image
-			.hustle-image {
-
-				&.hustle-image-fit--fill,
-				&.hustle-image-fit--cover,
-				&.hustle-image-fit--contain {
-					height: map-get($module-image, small);
-					overflow: hidden;
-				}
-
-				&.hustle-image-fit--fill {
-					@extend %hui-image-fit-fill;
-				}
-
-				&.hustle-image-fit--contain {
-					@extend %hui-image-fit-contain;
-				}
-
-				&.hustle-image-fit--cover {
-					@extend %hui-image-fit-cover;
-				}
-
-				&.hustle-image-fit--none {
-					@extend %hui-image-fit-full;
-				}
-			}
-		}
-	}
-}
-
+// Module Types: all
+// Module Modes: optin
+// Module Layouts: focus-optin
+// Desktop: true
+// Custom size: false
 @include hui-class(null, optin, focus-optin, true) {
 
 	.hustle-layout {
@@ -48,19 +13,6 @@
 
 			// SECTION: Content.
 			.hustle-layout-content {
-
-				// ELEMENT: Image.
-				.hustle-image {
-
-					&:only-child {
-
-						@include media(min-width, sm) {
-							height: 100%;
-							min-height: 0;
-							flex: 1;
-						}
-					}
-				}
 
 				// ELEMENT: Content.
 				.hustle-content {
@@ -115,6 +67,11 @@
 	}
 }
 
+// Module Types: slide-ins
+// Module Modes: optin
+// Module Layouts: focus-optin
+// Desktop: false
+// Custom size: false
 @include hui-class(slidein, optin, focus-optin, false) {
 
 	.hustle-button-icon {

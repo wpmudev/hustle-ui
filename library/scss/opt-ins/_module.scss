@@ -9,23 +9,9 @@
 
 	.hustle-layout {
 
-		.hustle-layout-form {
-			padding: map-get($gutter, small);
-		}
-
-		.hustle-layout-footer {
-			text-align: center;
-			margin-top: map-get($gutter, small);
-		}
-
 		.hustle-nsa-link {
-			margin: 0;
-			padding: 0;
-			border: 0;
-			font: 400 14px/20px map-get($font, default);
 
 			a {
-				font-weight: inherit;
 				transition: map-get($transition, ease);
 
 				&,
@@ -35,42 +21,7 @@
 				&:visited {
 					outline: none;
 					box-shadow: none;
-					text-decoration: none;
 				}
-			}
-		}
-	}
-}
-
-@include hui-class(null, optin, null, true) {
-
-	.hustle-layout {
-
-		.hustle-layout-form {
-
-			@include media(min-width, sm) {
-				padding: map-get($gutter, default);
-			}
-		}
-
-		.hustle-layout-footer {
-
-			@include media(min-width, sm) {
-				margin-top: map-get($gutter, default);
-			}
-		}
-	}
-}
-
-@include hui-class(slidein, optin, null, false) {
-
-	.hustle-layout {
-
-		.hustle-layout-footer {
-			margin-bottom: map-get($gutter, small);
-
-			@include media(min-width, sm) {
-				margin-bottom: map-get($gutter, default);
 			}
 		}
 	}

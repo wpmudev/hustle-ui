@@ -1,3 +1,12 @@
+v1.3.0
+- [Enhance] [Module] Global: Stop supporting title styles.
+- [Enhance] [Module] Global: Stop supporting subtitle styles.
+- [Enhance] [Module] Opt-in: Stop supporting main content styles.
+- [Enhance] [Module] Opt-in: Stop supporting feature image size.
+- [Enhance] [Module] Opt-in: Stop supporting form fields proximity.
+- [Enhance] [Module] Opt-in: Stop supporting call to action button settings.
+
+
 v1.2.7
 - [Fix] [Element] Input: Hidden icon with filled field.
 

@@ -1,3 +1,12 @@
+v2.0.0
+- [Enhance] Global: Stop supporting color and font settings.
+			Dev Notes: Color and settings from now on will be handled directly on
+			Hustle v4.3.0.
+- [Enhance] Global: Stop supporting advanced settings (margin, padding, border, shadow).
+			Dev Notes: Advanced settings from now on will be handled directly on
+			Hustle v4.3.0.
+
+
 v1.2.7
 - [Fix] [Element] Input: Hidden icon with filled field.
 

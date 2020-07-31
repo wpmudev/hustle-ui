@@ -525,11 +525,11 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         delayValue = delay;
       }
 
-      button.addClass('hustle-button-onload');
+      button.addClass('hustle-button-onload').attr('aria-label', button.attr('data-loading-text'));
 
       if (false !== delay) {
         setTimeout(function () {
-          button.removeClass('hustle-button-onload');
+          button.removeClass('hustle-button-onload').removeAttr('aria-label');
         }, delayValue);
       }
     }
@@ -6745,7 +6745,8 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
     var slidein = $(el);
     var content = slidein.find('.hustle-slidein-content > div');
     var header = slidein.find('.hustle-layout-header');
-    var footer = slidein.find('.hustle-layout-footer'); // Check if element exists.
+    var footer = slidein.find('.hustle-layout-footer');
+    var close = slidein.find('.hustle-button-close'); // Check if element exists.
 
     if (!slidein.length) {
       return;
@@ -6773,6 +6774,10 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       return footer.outerHeight(true);
     }
 
+    function closeHeight() {
+      return close.outerHeight(false);
+    }
+
     function init() {
       if (content.hasClass('hustle-info--stacked')) {
         slidein.css({
@@ -6786,7 +6791,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         });
       } else {
         content.css({
-          'max-height': 'calc(100vh - ' + (footerHeight() + 30) + 'px)'
+          'max-height': 'calc(100vh - ' + (footerHeight() + closeHeight()) + 'px)'
         });
       }
 

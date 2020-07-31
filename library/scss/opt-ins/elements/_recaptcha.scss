@@ -33,11 +33,6 @@
 			display: block;
 
 			&, p {
-				font-size: 12px;
-				line-height: 1.7em;
-				font-family: map-get($font, default);
-				font-weight: 400;
-				letter-spacing: 0;
 
 				b, strong {
 					font-weight: 700;
@@ -65,8 +60,7 @@
 
 @include hui-class(null, optin, null, true) {
 
-	.hustle-recaptcha,
-	.hustle-recaptcha-copy {
+	.hustle-recaptcha {
 
 		&:first-child {
 

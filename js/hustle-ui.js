@@ -6743,6 +6743,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 
   HUI.slideinLayouts = function (el) {
     var slidein = $(el);
+    var wrapper = slidein.find('.hustle-slidein-content');
     var content = slidein.find('.hustle-slidein-content > div');
     var header = slidein.find('.hustle-layout-header');
     var footer = slidein.find('.hustle-layout-footer');
@@ -6774,6 +6775,8 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       return footer.outerHeight(true);
     }
 
+    console.log(footerHeight());
+
     function closeHeight() {
       return close.outerHeight(false);
     }
@@ -6800,7 +6803,17 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       });
       footer.css({
         'bottom': '-' + footerHeight() + 'px'
-      });
+      }); // Check for all slide-ins placed on south.
+
+      var atSouth = 's' === slidein.attr('data-position');
+      var atSouthWest = 'sw' === slidein.attr('data-position');
+      var atSouthEast = 'se' === slidein.attr('data-position');
+
+      if (atSouth || atSouthWest || atSouthEast) {
+        wrapper.css({
+          'bottom': footerHeight() + 'px'
+        });
+      }
     }
 
     init();

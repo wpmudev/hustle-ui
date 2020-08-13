@@ -1,3 +1,8 @@
+v2.0.1
+- [Fix]     [Module] Slide-ins: Modules are not showing up properly on IE.
+- [Enhance] [Module] Slide-ins: Animation timing has decreased in 0.5 seconds making modules show/hide faster.
+
+
 v2.0.0
 - [Enhance] Global: Stop supporting color and font settings.
 			Dev Notes: Color and settings from now on will be handled directly on

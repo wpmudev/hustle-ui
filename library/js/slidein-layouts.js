@@ -10,6 +10,7 @@
 	HUI.slideinLayouts = function( el ) {
 
 		const slidein = $( el );
+		const wrapper = slidein.find( '.hustle-slidein-content' );
 		const content = slidein.find( '.hustle-slidein-content > div' );
 
 		let header = slidein.find( '.hustle-layout-header' );
@@ -43,6 +44,7 @@
 		function footerHeight() {
 			return footer.outerHeight( true );
 		}
+		console.log( footerHeight() );
 
 		function closeHeight() {
 			return close.outerHeight( false );
@@ -77,6 +79,17 @@
 			footer.css({
 				'bottom': '-' + footerHeight() + 'px'
 			});
+
+			// Check for all slide-ins placed on south.
+			const atSouth = ( 's' === slidein.attr( 'data-position' ) );
+			const atSouthWest = ( 'sw' === slidein.attr( 'data-position' ) );
+			const atSouthEast = ( 'se' === slidein.attr( 'data-position' ) );
+
+			if ( atSouth || atSouthWest || atSouthEast ) {
+				wrapper.css({
+					'bottom': footerHeight() + 'px'
+				});
+			}
 		}
 
 		init();

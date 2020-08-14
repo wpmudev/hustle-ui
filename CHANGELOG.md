@@ -1,3 +1,7 @@
+v2.0.2
+- [Fix] [Module] Slide-ins: Bottom position undefined for south aligned modules when no footer was added.
+
+
 v2.0.1
 - [Fix]     [Module] Slide-ins: Modules are not showing up properly on IE.
 - [Enhance] [Module] Slide-ins: Animation timing has decreased in 0.5 seconds making modules show/hide faster.

@@ -6772,10 +6772,13 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
     }
 
     function footerHeight() {
-      return footer.outerHeight(true);
-    }
+      // Check if footer exists.
+      if (footer.length) {
+        return footer.outerHeight(true);
+      }
 
-    console.log(footerHeight());
+      return 0;
+    }
 
     function closeHeight() {
       return close.outerHeight(false);

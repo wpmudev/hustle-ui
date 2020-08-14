@@ -42,9 +42,14 @@
 		}
 
 		function footerHeight() {
-			return footer.outerHeight( true );
+
+			// Check if footer exists.
+			if ( footer.length ) {
+				return footer.outerHeight( true );
+			}
+
+			return 0;
 		}
-		console.log( footerHeight() );
 
 		function closeHeight() {
 			return close.outerHeight( false );

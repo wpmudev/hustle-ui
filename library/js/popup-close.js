@@ -91,7 +91,9 @@
 				popup.removeClass( 'hustle-show' );
 				content.removeClass( 'hustle-animate-out--' + animateOut );
 
-				$( 'html' ).removeClass( 'hustle-no-scroll' );
+				if ( ! $( '.hustle-show.hustle-scroll-forbidden' ).length ) {
+					$('html').removeClass('hustle-no-scroll');
+				}
 			}, delay );
 		}
 

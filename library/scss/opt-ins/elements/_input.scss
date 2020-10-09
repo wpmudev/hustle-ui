@@ -2,21 +2,12 @@
 
 	.hustle-field {
 
-		.hustle-input,
-		.hustle-input-label {
-			font: 400 #{map-get($field-input, font-size)}/#{map-get($field-input, line-height)} map-get($font, default);
-		}
-
 		.hustle-input {
 			width: map-get($field-size, width);
-			min-width: unset; // Prevent themes or other plugins from overwritting
-			max-width: unset; // Prevent themes or other plugins from overwritting
-			height: map-get($field-size, height);
+			min-width: unset; // Prevent themes or other plugins from overwritting.
+			max-width: unset; // Prevent themes or other plugins from overwritting.
+			min-height: auto; // Prevent themes or other plugins from overwritting.
 			display: block;
-			margin: 0;
-			padding: #{(map-get($field-size, height) - map-get($field-input, line-height)) / 2} map-get($field-input, padding);
-			border: 0;
-			border-radius: 0;
 			background-image: unset;
 			transition: map-get($transition, ease);
 
@@ -34,10 +25,8 @@
 			pointer-events: none;
 			display: flex;
 			position: absolute;
-			top: 50%;
+			top: 0;
 			left: 0;
-			padding: 0 map-get($field-input, padding);
-			transform: translateY(-50%);
 
 			[class*="hustle-icon-"] {
 				width: map-get($field-input, icon-width);
@@ -64,14 +53,6 @@
 				flex: 1 1 auto;
 				@extend %hui-text-truncate;
 				transition: map-get($transition, ease);
-			}
-		}
-
-		&.hustle-field-icon--static,
-		&.hustle-field-icon--animated {
-
-			.hustle-input {
-				padding-left: #{map-get($field-input, padding) + map-get($field-input, icon-width) + 5px};
 			}
 		}
 

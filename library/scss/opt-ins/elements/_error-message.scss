@@ -11,21 +11,6 @@
 				margin: 0;
 				padding: 0;
 				border: 0;
-				font: 400 12px/20px map-get($font, default);
-				letter-spacing: 0;
-			}
-		}
-	}
-}
-
-@include hui-class(null, optin info, null, true) {
-
-	.hustle-layout {
-
-		.hustle-error-message {
-
-			@include media(min-width, sm) {
-				margin-top: map-get($gutter, default);
 			}
 		}
 	}

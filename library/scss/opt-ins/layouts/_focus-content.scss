@@ -1,48 +1,10 @@
 // Module Settings
-//
-// Module Mode: optin
-// Module Layout: focus-content
 
-@include hui-class(null, optin, focus-content, false) {
-
-	.hustle-layout {
-
-		// ELEMENT: Image
-		.hustle-image {
-
-			&.hustle-image-fit--fill,
-			&.hustle-image-fit--cover,
-			&.hustle-image-fit--contain {
-				height: map-get($module-image, small);
-				overflow: hidden;
-			}
-
-			&.hustle-image-fit--fill {
-				@extend %hui-image-fit-fill;
-			}
-
-			&.hustle-image-fit--contain {
-				@extend %hui-image-fit-contain;
-			}
-
-			&.hustle-image-fit--cover {
-				@extend %hui-image-fit-cover;
-			}
-
-			&.hustle-image-fit--none {
-				@extend %hui-image-fit-full;
-
-				img {
-
-					@include support(ie) {
-						flex-shrink: 0;
-					}
-				}
-			}
-		}
-	}
-}
-
+// Module Types: all
+// Module Modes: optin
+// Module Layouts: focus-content
+// Desktop: true
+// Custom size: false
 @include hui-class(null, optin, focus-content, true) {
 
 	.hustle-layout {
@@ -69,25 +31,6 @@
 						flex: 1 1 auto;
 					}
 				}
-
-				&:only-child {
-
-					@include media(min-width, sm) {
-						width: 100%;
-						max-width: none;
-						min-height: 0;
-						flex: 0 0 auto;
-					}
-				}
-
-				@include media(min-width, sm) {
-					max-width: map-get($module-image, default);
-					min-height: 0;
-					display: flex;
-					flex-direction: column;
-					justify-content: center;
-					flex: 0 0 map-get($module-image, default);
-				}
 			}
 
 			.hustle-layout-content {
@@ -110,24 +53,11 @@
 	}
 }
 
-@include hui-class(null, optin, focus-content, true, true) {
-
-	.hustle-layout {
-
-		.hustle-layout-body {
-
-			// SECTION: Sidebar.
-			.hustle-layout-sidebar {
-
-				@include media(min-width, sm) {
-					min-width: 50%;
-					flex-shrink: 1;
-				}
-			}
-		}
-	}
-}
-
+// Module Types: slidein
+// Module Modes: optin
+// Module Layouts: focus-content
+// Desktop: false
+// Custom size: false
 @include hui-class(slidein, optin, focus-content, false) {
 
 	.hustle-button-icon {

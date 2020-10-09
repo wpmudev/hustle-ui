@@ -28,7 +28,14 @@
 				dynamic: false,
 				dropdown: ( true === element.data( 'time-dropdown' ) ) ? true : false,
 				hideDropdown: ( true === element.data( 'hide-dropdown' ) ) ? true : false,
-				scrollbar: ( true === element.data( 'time-dropdown' ) ) ? true : false
+				scrollbar: ( true === element.data( 'time-dropdown' ) ) ? true : false,
+				change: () => {
+					if ( '' === element.val() ) {
+						element.parent().removeClass( 'hustle-field-filled' );
+					} else {
+						element.parent().addClass( 'hustle-field-filled' );
+					}
+				}
 			});
 		});
 	};

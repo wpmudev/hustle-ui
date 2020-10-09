@@ -3,156 +3,11 @@
 // Module Mode: info
 // Module Layout: default
 
-@include hui-class(null, info, default, false) {
-
-	.hustle-layout {
-
-		// SECTION: Header
-		.hustle-layout-header {
-			padding: map-get($gutter, small);
-
-			.hustle-title,
-			.hustle-subtitle {
-				display: block;
-			}
-
-			.hustle-title {
-				font: 400 33px/38px map-get($font, alt);
-				letter-spacing: 0;
-
-				+ .hustle-subtitle {
-					margin-top: map-get($gutter, small);
-				}
-			}
-
-			.hustle-subtitle {
-				font: bold 14px/24px map-get($font, default);
-				letter-spacing: 0;
-			}
-
-			+ div {
-				border-top: 1px solid rgba(0,0,0,0.16);
-			}
-		}
-
-		// SECTION: Content
-		.hustle-layout-content {
-
-			// ELEMENT: Image
-			.hustle-image {
-
-				&.hustle-image-fit--fill,
-				&.hustle-image-fit--cover,
-				&.hustle-image-fit--contain {
-					height: map-get($module-image, small);
-				}
-
-				&.hustle-image-fit--fill {
-					@extend %hui-image-fit-fill;
-				}
-
-				&.hustle-image-fit--contain {
-					@extend %hui-image-fit-contain;
-				}
-
-				&.hustle-image-fit--cover {
-					@extend %hui-image-fit-cover;
-				}
-
-				&.hustle-image-fit--none {
-					@extend %hui-image-fit-full;
-				}
-			}
-
-			// ELEMENT: Content
-			.hustle-content {
-				padding: 0 map-get($gutter, small);
-
-				.hustle-content-wrap {
-					padding: map-get($gutter, small) 0;
-				}
-			}
-		}
-
-		// SECTION: Footer
-		.hustle-layout-footer {
-			padding: map-get($gutter, small);
-			background-color: rgba(0,0,0,0.16);
-
-			.hustle-checkbox {
-
-				&:not(:only-child) {
-					margin-bottom: map-get($gutter, small);
-				}
-			}
-		}
-	}
-}
-
 @include hui-class(null, info, default, true) {
 
 	.hustle-layout {
 
-		.hustle-layout-header {
-
-			@include media(min-width, sm) {
-				padding: map-get($gutter, default);
-			}
-		}
-
 		.hustle-layout-content {
-
-			// ELEMENT: Image.
-			.hustle-image {
-
-				&.hustle-image-fit--fill,
-				&.hustle-image-fit--cover,
-				&.hustle-image-fit--contain {
-
-					&:only-child {
-
-						@include media(min-width, sm) {
-							min-width: 1px;
-							max-width: 100%;
-							height: map-get($module-image, default);
-							min-height: 0;
-							flex: 1;
-						}
-					}
-
-					&:not(:only-child) {
-
-						@include media(min-width, sm) {
-							max-width: map-get($module-image, default);
-							height: auto;
-							min-height: 0;
-							flex: 0 0 map-get($module-image, default);
-						}
-					}
-				}
-
-				&.hustle-image-fit--none {
-
-					&:only-child {
-
-						@include media(min-width, sm) {
-							min-width: 1px;
-							max-width: 100%;
-							min-height: 0;
-							flex: 1;
-						}
-					}
-
-					&:not(:only-child) {
-
-						@include media(min-width, sm) {
-							max-width: 50%;
-							min-height: 0;
-							flex: 0 0 auto;
-						}
-					}
-				}
-			}
 
 			// ELEMENT: Content.
 			.hustle-content {
@@ -163,7 +18,6 @@
 						min-width: 1px;
 						min-height: 0;
 						flex: 1;
-						padding: map-get($gutter, default) 0;
 					}
 				}
 
@@ -173,47 +27,12 @@
 					display: flex;
 					flex: 1;
 					align-items: center;
-					padding: 0 map-get($gutter, default);
 				}
 			}
 
 			@include media(min-width, sm) {
 				min-height: 0;
 				display: flex;
-			}
-		}
-
-		.hustle-layout-footer {
-
-			.hustle-checkbox {
-
-				&:not(:only-child) {
-
-					@include media(min-width, sm) {
-						min-width: 1px;
-						min-height: 0;
-						flex: 0 1 auto;
-						margin-right: map-get($gutter, default);
-						margin-bottom: 0;
-					}
-				}
-			}
-
-			.hustle-button {
-
-				@include media(min-width, sm) {
-					max-width: 100%;
-					min-height: 0;
-					flex: 0 0 auto;
-					margin-right: 0;
-					margin-left: auto;
-				}
-			}
-
-			@include media(min-width, sm) {
-				min-height: 0;
-				display: flex;
-				padding: map-get($gutter, default);
 			}
 		}
 	}
@@ -224,21 +43,6 @@
 	.hustle-layout {
 
 		.hustle-layout-content {
-
-			// ELEMENT: Image.
-			.hustle-image {
-
-				&.hustle-image-fit--fill,
-				&.hustle-image-fit--cover,
-				&.hustle-image-fit--contain,
-				&.hustle-image-fit--none {
-
-					@include media(min-width, sm) {
-						min-width: 1px;
-						flex-shrink: 1;
-					}
-				}
-			}
 
 			// ELEMENT: Content.
 			.hustle-content {

@@ -1,17 +1,137 @@
 @import "variables";
-@import "animations";
 
 @import "mixins/main-class";
 @import "mixins/breakpoints";
 @import "mixins/browsers";
 @import "mixins/opacity";
 
+// Intro animations.
+@keyframes showFromRight {
+	from {
+		transform: translateX(110%);
+		visibility: visible;
+	}
+	to {
+		transform: translateX(0);
+	}
+}
+
+@keyframes showFromLeft {
+	from {
+		transform: translateX(-110%);
+		visibility: visible;
+	}
+	to {
+		transform: translateX(0);
+	}
+}
+
+@keyframes showFromTopCenter {
+	from {
+		transform: translateX(-50%) translateY(-110%);
+		visibility: visible;
+	}
+	to {
+		transform: translateX(-50%) translateY(0);
+	}
+}
+
+@keyframes showFromRightCenter {
+	from {
+		transform: translateX(110%) translateY(-50%);
+		visibility: visible;
+	}
+	to {
+		transform: translateX(0) translateY(-50%);
+	}
+}
+
+@keyframes showFromBottomCenter {
+	from {
+		transform: translateX(-50%) translateY(110%);
+		visibility: visible;
+	}
+	to {
+		transform: translateX(-50%) translateY(0);
+	}
+}
+
+@keyframes showFromLeftCenter {
+	from {
+		transform: translateX(-110%) translateY(-50%);
+		visibility: visible;
+	}
+	to {
+		transform: translateX(0) translateY(-50%);
+	}
+}
+
+// Outro animations.
+@keyframes hideToRight {
+	from {
+		transform: translateX(0);
+		visibility: visible;
+	}
+	to {
+		transform: translateX(110%);
+	}
+}
+
+@keyframes hideToLeft {
+	from {
+		transform: translateX(0);
+		visibility: visible;
+	}
+	to {
+		transform: translateX(-110%);
+	}
+}
+
+@keyframes hideToTopCenter {
+	from {
+		transform: translateX(-50%) translateY(0);
+	}
+	to {
+		visibility: hidden;
+		transform: translateX(-50%) translateY(-110%);
+	}
+}
+
+@keyframes hideToRightCenter {
+	from {
+		transform: translateX(0) translateY(-50%);
+		visibility: visible;
+	}
+	to {
+		transform: translateX(110%) translateY(-50%);
+	}
+}
+
+@keyframes hideToBottomCenter {
+	from {
+		transform: translateX(-50%) translateY(0);
+	}
+	to {
+		visibility: hidden;
+		transform: translateX(-50%) translateY(110%);
+	}
+}
+
+@keyframes hideToLeftCenter {
+	from {
+		transform: translateX(0) translateY(-50%);
+		visibility: visible;
+	}
+	to {
+		transform: translateX(-110%) translateY(-50%);
+	}
+}
+
 @include hui-class(slidein, null, null, false) {
 	width: 100%;
 	height: 100%;
 	min-height: 0;
 	max-height: 100%;
-	overflow: auto;
 	visibility: hidden;
 	pointer-events: none;
 	user-select: auto;
@@ -30,7 +150,7 @@
 		@include opacity(0);
 		position: absolute;
 		margin: auto;
-		animation-duration: 1s;
+		animation-duration: 0.5s;
 		animation-fill-mode: both;
 		transform-origin: center;
 		transform-style: preserve-3d;
@@ -48,21 +168,22 @@
 
 		// 1. North
 		&--north {
-			align-items: flex-start;
-			justify-content: center;
 			padding-right: map-get($gutter, default);
 			padding-left: map-get($gutter, default);
 
 			.hustle-slidein-content {
+				top: map-get($module-close, button-size);
+				left: 50%;
+				transform: translateX(-50%);
 
 				&.hustle-animate-in {
 					@include opacity(1);
-					animation-name: slideInDown;
+					animation-name: showFromTopCenter;
 				}
 
 				&.hustle-animate-out {
 					@include opacity(1);
-					animation-name: slideOutUp;
+					animation-name: hideToTopCenter;
 				}
 
 				> [class*="hustle-"] {
@@ -82,21 +203,21 @@
 
 		// 2. South
 		&--south {
-			align-items: flex-end;
-			justify-content: center;
 			padding-right: map-get($gutter, default);
 			padding-left: map-get($gutter, default);
 
 			.hustle-slidein-content {
+				left: 50%;
+				transform: translateX(-50%);
 
 				&.hustle-animate-in {
 					@include opacity(1);
-					animation-name: slideInUp;
+					animation-name: showFromBottomCenter;
 				}
 
 				&.hustle-animate-out {
 					@include opacity(1);
-					animation-name: slideOutDown;
+					animation-name: hideToBottomCenter;
 				}
 
 				> [class*="hustle-"] {
@@ -116,20 +237,21 @@
 
 		// 3. East
 		&--east {
-			align-items: center;
-			justify-content: flex-end;
 			padding-left: map-get($gutter, default);
 
 			.hustle-slidein-content {
+				top: 50%;
+				right: 0;
+				transform: translateY(-50%);
 
 				&.hustle-animate-in {
 					@include opacity(1);
-					animation-name: slideInRight;
+					animation-name: showFromRightCenter;
 				}
 
 				&.hustle-animate-out {
 					@include opacity(1);
-					animation-name: slideOutRight;
+					animation-name: hideToRightCenter;
 				}
 
 				> [class*="hustle-"] {
@@ -148,20 +270,21 @@
 
 		// 4. West
 		&--west {
-			align-items: center;
-			justify-content: flex-start;
 			padding-right: map-get($gutter, default);
 
 			.hustle-slidein-content {
+				top: 50%;
+				left: 0;
+				transform: translateY(-50%);
 
 				&.hustle-animate-in {
 					@include opacity(1);
-					animation-name: slideInLeft;
+					animation-name: showFromLeftCenter;
 				}
 
 				&.hustle-animate-out {
 					@include opacity(1);
-					animation-name: slideOutLeft;
+					animation-name: hideToLeftCenter;
 				}
 
 				> [class*="hustle-"] {
@@ -180,20 +303,20 @@
 
 		// 5. North East
 		&--north-east {
-			justify-content: flex-end;
-			align-items: flex-start;
 			padding-left: map-get($gutter, default);
 
 			.hustle-slidein-content {
+				top: map-get($module-close, button-size);
+				right: 0;
 
 				&.hustle-animate-in {
 					@include opacity(1);
-					animation-name: slideInRight;
+					animation-name: showFromRight;
 				}
 
 				&.hustle-animate-out {
 					@include opacity(1);
-					animation-name: slideOutRight;
+					animation-name: hideToRight;
 				}
 
 				> [class*="hustle-"] {
@@ -212,11 +335,11 @@
 
 		// 6. North West
 		&--north-west {
-			justify-content: flex-start;
-			align-items: flex-start;
 			padding-right: map-get($gutter, default);
 
 			.hustle-slidein-content {
+				top: map-get($module-close, button-size);
+				left: 0;
 
 				&.hustle-animate-in {
 					@include opacity(1);
@@ -244,20 +367,19 @@
 
 		// 7. South East
 		&--south-east {
-			justify-content: flex-end;
-			align-items: flex-end;
 			padding-left: map-get($gutter, default);
 
 			.hustle-slidein-content {
+				right: 0;
 
 				&.hustle-animate-in {
 					@include opacity(1);
-					animation-name: slideInRight;
+					animation-name: showFromRight;
 				}
 
 				&.hustle-animate-out {
 					@include opacity(1);
-					animation-name: slideOutRight;
+					animation-name: hideToRight;
 				}
 
 				> [class*="hustle-"] {
@@ -276,20 +398,19 @@
 
 		// 8. South West
 		&--south-west {
-			justify-content: flex-start;
-			align-items: flex-end;
 			padding-right: map-get($gutter, default);
 
 			.hustle-slidein-content {
+				left: 0;
 
 				&.hustle-animate-in {
 					@include opacity(1);
-					animation-name: slideInLeft;
+					animation-name: showFromLeft;
 				}
 
 				&.hustle-animate-out {
 					@include opacity(1);
-					animation-name: slideOutLeft;
+					animation-name: hideToLeft;
 				}
 
 				> [class*="hustle-"] {
@@ -308,7 +429,6 @@
 	}
 
 	&.hustle-show {
-		display: flex;
 		visibility: visible;
 
 		.hustle-slidein-content {

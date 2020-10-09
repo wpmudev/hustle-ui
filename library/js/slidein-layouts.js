@@ -10,10 +10,12 @@
 	HUI.slideinLayouts = function( el ) {
 
 		const slidein = $( el );
+		const wrapper = slidein.find( '.hustle-slidein-content' );
 		const content = slidein.find( '.hustle-slidein-content > div' );
 
 		let header = slidein.find( '.hustle-layout-header' );
 		let footer = slidein.find( '.hustle-layout-footer' );
+		let close  = slidein.find( '.hustle-button-close' );
 
 		// Check if element exists.
 		if ( ! slidein.length ) {
@@ -40,7 +42,17 @@
 		}
 
 		function footerHeight() {
-			return footer.outerHeight( true );
+
+			// Check if footer exists.
+			if ( footer.length ) {
+				return footer.outerHeight( true );
+			}
+
+			return 0;
+		}
+
+		function closeHeight() {
+			return close.outerHeight( false );
 		}
 
 		function init() {
@@ -61,7 +73,7 @@
 			} else {
 
 				content.css({
-					'max-height': 'calc(100vh - ' + ( footerHeight() + 30 ) + 'px)'
+					'max-height': 'calc(100vh - ' + ( footerHeight() + closeHeight() ) + 'px)'
 				});
 			}
 
@@ -72,6 +84,17 @@
 			footer.css({
 				'bottom': '-' + footerHeight() + 'px'
 			});
+
+			// Check for all slide-ins placed on south.
+			const atSouth = ( 's' === slidein.attr( 'data-position' ) );
+			const atSouthWest = ( 'sw' === slidein.attr( 'data-position' ) );
+			const atSouthEast = ( 'se' === slidein.attr( 'data-position' ) );
+
+			if ( atSouth || atSouthWest || atSouthEast ) {
+				wrapper.css({
+					'bottom': footerHeight() + 'px'
+				});
+			}
 		}
 
 		init();

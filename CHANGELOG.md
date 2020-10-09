@@ -1,4 +1,25 @@
- - [Enhance] [Module] Added js events after module displayed
+v2.0.3
+- [Fix]     [Element] Timepicker: OnChange event for correct hiding labels.
+- [Enhance] [Module] Added js events after module displayed
+
+
+v2.0.2
+- [Fix] [Module] Slide-ins: Bottom position undefined for south aligned modules when no footer was added.
+
+
+v2.0.1
+- [Fix]     [Module] Slide-ins: Modules are not showing up properly on IE.
+- [Enhance] [Module] Slide-ins: Animation timing has decreased in 0.5 seconds making modules show/hide faster.
+
+
+v2.0.0
+- [Enhance] Global: Stop supporting color and font settings.
+			Dev Notes: Color and settings from now on will be handled directly on
+			Hustle v4.3.0.
+- [Enhance] Global: Stop supporting advanced settings (margin, padding, border, shadow).
+			Dev Notes: Advanced settings from now on will be handled directly on
+			Hustle v4.3.0.
+
 
 v1.2.7
 - [Fix] [Element] Input: Hidden icon with filled field.

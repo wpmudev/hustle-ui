@@ -1,5 +1,6 @@
 v2.0.3
-- [Fix] [Element] Timepicker: OnChange event for correct hiding labels.
+- [Fix]     [Element] Timepicker: OnChange event for correct hiding labels.
+- [Enhance] [Module] Added js events after module displayed
 
 
 v2.0.2
@@ -18,6 +19,7 @@ v2.0.0
 - [Enhance] Global: Stop supporting advanced settings (margin, padding, border, shadow).
 			Dev Notes: Advanced settings from now on will be handled directly on
 			Hustle v4.3.0.
+
 
 v1.2.7
 - [Fix] [Element] Input: Hidden icon with filled field.

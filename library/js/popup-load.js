@@ -89,6 +89,7 @@
 			// Layout time.
 			setTimeout( function() {
 				animationIn();
+				$( document ).trigger( 'hustle:module:displayed', popup );
 			}, 200 );
 
 			// resize iframes, object and videos

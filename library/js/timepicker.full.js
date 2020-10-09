@@ -429,6 +429,8 @@
 				// Show time picker dropdown
 				widget.container.addClass( 'hustle-show' );
 
+				$( document ).trigger( 'hustle:module:displayed', widget );
+
 				/*
 				switch ( i.options.theme ) {
 

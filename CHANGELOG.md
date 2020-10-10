@@ -1,5 +1,7 @@
 v2.0.3
-- [Fix] [Module] Embeds: GDPR checkbox make jump to top of the page
+- [Fix]     [Element] Timepicker: OnChange event for correct hiding labels.
+- [Enhance] [Module]  Added js events after module displayed
+- [Fix]     [Module]  Embeds: GDPR checkbox make jump to top of the page
 
 v2.0.2
 - [Fix] [Module] Slide-ins: Bottom position undefined for south aligned modules when no footer was added.

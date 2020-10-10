@@ -1,3 +1,6 @@
+v2.0.3
+- [Fix] [Module] Embeds: GDPR checkbox make jump to top of the page
+
 v2.0.2
 - [Fix] [Module] Slide-ins: Bottom position undefined for south aligned modules when no footer was added.
 

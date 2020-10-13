@@ -60,6 +60,10 @@
 			};
 		}
 
+		data['error-callback'] = function() {
+			$wrapper.addClass( 'hustle-recaptcha-preview-has-error' );
+		};
+
 		if ( 'undefined' !== typeof grecaptcha ) {
 
 			// Do render the recaptcha. Keep the recaptcha's ID in the container for later use.

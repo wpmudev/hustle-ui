@@ -92,7 +92,7 @@
 				content.removeClass( 'hustle-animate-out--' + animateOut );
 
 				if ( ! $( '.hustle-show.hustle-scroll-forbidden' ).length ) {
-					$('html').removeClass('hustle-no-scroll');
+					$( 'html' ).removeClass( 'hustle-no-scroll' );
 				}
 			}, delay );
 		}

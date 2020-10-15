@@ -61,7 +61,7 @@
 
 		function animation() {
 			content.addClass( 'hustle-animate-in' );
-			$( document ).trigger( 'hustle:module:displayed', content )
+			$( document ).trigger( 'hustle:module:displayed', content );
 		}
 
 		function init() {

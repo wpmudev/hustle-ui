@@ -1,7 +1,7 @@
 v2.0.3
 - [Fix]     [Element] Timepicker: OnChange event for correct hiding labels.
-- [Enhance] [Module] Added js events after module displayed
-
+- [Fix]     [Element] reCAPTCHA: Design issue appears in error message after entering incorrect keys
+- [Enhance] [Module] Added js events after module displayed.
 
 v2.0.2
 - [Fix] [Module] Slide-ins: Bottom position undefined for south aligned modules when no footer was added.

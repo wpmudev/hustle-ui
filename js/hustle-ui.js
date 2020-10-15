@@ -136,6 +136,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 
     function animation() {
       content.addClass('hustle-animate-in');
+      $(document).trigger('hustle:module:displayed', content);
     }
 
     function init() {
@@ -273,6 +274,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       element.addClass('hustle-show');
       setTimeout(function () {
         animationIn();
+        $(document).trigger('hustle:module:displayed', element);
       }, delay);
     }
 
@@ -734,7 +736,10 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       setTimeout(function () {
         popup.removeClass('hustle-show');
         content.removeClass('hustle-animate-out--' + animateOut);
-        $('html').removeClass('hustle-no-scroll');
+
+        if (!$('.hustle-show.hustle-scroll-forbidden').length) {
+          $('html').removeClass('hustle-no-scroll');
+        }
       }, delay);
     }
 
@@ -855,6 +860,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 
       setTimeout(function () {
         animationIn();
+        $(document).trigger('hustle:module:displayed', popup);
       }, 200); // resize iframes, object and videos
 
       resizeObjectsInContent();
@@ -930,6 +936,10 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         }
       };
     }
+
+    data['error-callback'] = function () {
+      $wrapper.addClass('hustle-recaptcha-preview-has-error');
+    };
 
     if ('undefined' !== typeof grecaptcha) {
       // Do render the recaptcha. Keep the recaptcha's ID in the container for later use.
@@ -6908,6 +6918,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 
       setTimeout(function () {
         animation();
+        $(document).trigger('hustle:module:displayed', slidein);
       }, 1000);
       HUI.slideinClose(el, autohideDelay);
     }
@@ -7375,6 +7386,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         widget.container.removeClass('ui-timepicker-standard ui-timepicker-corners'); // Show time picker dropdown
 
         widget.container.addClass('hustle-show');
+        $(document).trigger('hustle:module:displayed', widget);
         /*
         switch ( i.options.theme ) {
         		case 'standard' :
@@ -7829,7 +7841,14 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         dynamic: false,
         dropdown: true === element.data('time-dropdown') ? true : false,
         hideDropdown: true === element.data('hide-dropdown') ? true : false,
-        scrollbar: true === element.data('time-dropdown') ? true : false
+        scrollbar: true === element.data('time-dropdown') ? true : false,
+        change: function change() {
+          if ('' === element.val()) {
+            element.parent().removeClass('hustle-field-filled');
+          } else {
+            element.parent().addClass('hustle-field-filled');
+          }
+        }
       });
     });
   };

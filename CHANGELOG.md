@@ -1,3 +1,11 @@
+v2.0.3
+- [Fix] [Module] Embeds: GDPR checkbox make jump to top of the page.
+- [Fix] [Module] Pop-ups: Page scroll functionality not working when more than 2 pop-ups are displayed.
+- [Fix] [Element] Timepicker: OnChange event for correct hiding labels.
+- [Fix] [Element] reCAPTCHA: Design issue appears in error message after entering incorrect keys.
+- [Enhance] [Module] Added js events after module displayed.
+
+
 v2.0.2
 - [Fix] [Module] Slide-ins: Bottom position undefined for south aligned modules when no footer was added.
 

@@ -5,6 +5,7 @@ v2.0.3
 
 v2.0.2
 - [Fix] [Module] Slide-ins: Bottom position undefined for south aligned modules when no footer was added.
+- [Fix] [Module] Enable and Disable page scroll funtionality is not working when more than 2 popup are displaying in frontend.
 
 
 v2.0.1

@@ -42,7 +42,7 @@
 					}
 
 					ul, ol {
-						margin: 0;
+						margin-left: map-get($gutter, default);
 
 						&:not(:last-child) {
 							margin-bottom: #{map-get($gutter, small) / 2};

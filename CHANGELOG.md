@@ -1,3 +1,6 @@
+v2.0.5
+- [Fix] [Module] Pop-ups: Sub bullet point indentation in the main content is not appearing properly
+
 v2.0.4
 - [Fix] [Module] Embeds: GDPR checkbox make jump to top of the page.
 - [Fix] [Module] Pop-ups: Page scroll functionality not working when more than 2 pop-ups are displayed.

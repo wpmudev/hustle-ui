@@ -1,4 +1,8 @@
-v2.0.3
+v2.0.5
+- [Fix] Global: Form fields gap in mobile not working.
+
+
+v2.0.4
 - [Fix] [Module] Embeds: GDPR checkbox make jump to top of the page.
 - [Fix] [Module] Pop-ups: Page scroll functionality not working when more than 2 pop-ups are displayed.
 - [Fix] [Element] Timepicker: OnChange event for correct hiding labels.

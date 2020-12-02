@@ -18,7 +18,7 @@
 
 		function init( errors ) {
 			var first = true;
-			if ( ! $.isArray( errors ) ) {
+			if ( ! Array.isArray( errors ) ) {
 				let newErrors = [];
 				$.each( errors, function( index, value ) {
 					newErrors.push( value );

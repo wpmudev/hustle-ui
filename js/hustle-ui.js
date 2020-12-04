@@ -288,7 +288,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         if ('no_animation' === element.data('intro')) {
           load(100);
         } else {
-          $(window).scroll(function () {
+          $(window).on('scroll', function () {
             var windowPosition = $(window).scrollTop() + windowHeight;
 
             if (windowPosition >= elementPosition) {
@@ -468,7 +468,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
     function init(errors) {
       var first = true;
 
-      if (!$.isArray(errors)) {
+      if (!Array.isArray(errors)) {
         var newErrors = [];
         $.each(errors, function (index, value) {
           newErrors.push(value);
@@ -521,15 +521,10 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
     }
 
     function init() {
-      var delayValue = true === $.isNumeric(delay) ? delay : '1000';
-
-      if (true === $.isNumeric(delay)) {
-        delayValue = delay;
-      }
-
       button.addClass('hustle-button-onload').attr('aria-label', button.attr('data-loading-text'));
 
       if (false !== delay) {
+        var delayValue = !isNaN(parseInt(delay)) ? delay : '1000';
         setTimeout(function () {
           button.removeClass('hustle-button-onload').removeAttr('aria-label');
         }, delayValue);

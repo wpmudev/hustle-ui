@@ -1,3 +1,7 @@
+v2.0.6
+- [Fix] jQuery console error warnings.
+
+
 v2.0.5
 - [Fix] Global: Form fields gap in mobile not working.
 

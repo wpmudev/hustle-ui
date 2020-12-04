@@ -82,7 +82,7 @@
 
 				} else {
 
-					$( window ).scroll( function() {
+					$( window ).on( 'scroll', function() {
 
 						const windowPosition = $( window ).scrollTop() + windowHeight;
 

@@ -18,18 +18,12 @@
 		}
 
 		function init() {
-
-			let delayValue = ( true === $.isNumeric( delay ) ) ? delay : '1000';
-
-			if ( true === $.isNumeric( delay ) ) {
-				delayValue = delay;
-			}
-
 			button
 				.addClass( 'hustle-button-onload' )
 				.attr( 'aria-label', button.attr( 'data-loading-text' ) );
 
 			if ( false !== delay ) {
+				const delayValue = ( ! isNaN( parseInt( delay ) ) ) ? delay : '1000';
 
 				setTimeout( function() {
 					button

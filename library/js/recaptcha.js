@@ -46,7 +46,7 @@
 
 			data.callback = function( token ) {
 				$module.find( 'input[name="recaptcha-response"]' ).val( token );
-				$module.find( '.hustle-layout-body button' ).removeProp( 'disabled' );
+				$module.find( '.hustle-layout-body button' ).prop( 'disabled', false );
 			};
 
 		} else {

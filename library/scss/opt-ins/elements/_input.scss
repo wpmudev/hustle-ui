@@ -24,6 +24,8 @@
 			user-select: none;
 			pointer-events: none;
 			display: flex;
+			flex-flow: row wrap;
+			align-items: center;
 			position: absolute;
 			top: 0;
 			left: 0;

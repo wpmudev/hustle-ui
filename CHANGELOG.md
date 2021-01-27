@@ -1,3 +1,8 @@
+v2.0.7
+- [Fix] [HUS-686](https://incsub.atlassian.net/browse/HUS-686) Opt-in icon incorrectly alignment.
+- [Fix] [HUS-667](https://incsub.atlassian.net/browse/HUS-667) jQuery font family selectors under accordions not working.
+
+
 v2.0.6
 - [Fix] jQuery console error warnings.
 

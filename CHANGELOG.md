@@ -1,17 +1,31 @@
-v2.0.8
-- [Fix] [HUS-686](https://incsub.atlassian.net/browse/HUS-686) Opt-in icon incorrectly alignment.
-- [Fix] [HUS-667](https://incsub.atlassian.net/browse/HUS-667) jQuery font family selectors under accordions not working.
+# Changelog
 
+## v2.0.9
 
-v2.0.6
+#### Bug Fixes
+- [HUS-1034](https://incsub.atlassian.net/browse/HUS-1034) 🐛 fix(pop-ups): Overlay on iPhone Devices with OS>=14.3.
+
+#### Committers: 1
+- Leighton Sapir ([@iamleigh](https://github.com/iamleigh))
+
+## [HUI 2.0.8](https://github.com/wpmudev/shared-ui/releases/tag/v2.10.8)
+
+#### Bug Fixes
+- [HUS-667](https://incsub.atlassian.net/browse/HUS-667) 🐛 fix(pop-ups): jQuery font family selectors under accordions not working.
+- [HUS-686](https://incsub.atlassian.net/browse/HUS-686) 🐛 fix(opt-ins): Incorrect alignment for icon.
+
+#### Committers: 1
+- Danae Millan ([@a-danae](https://github.com/a-danae))
+
+## v2.0.6
 - [Fix] jQuery console error warnings.
 
 
-v2.0.5
+## v2.0.5
 - [Fix] Global: Form fields gap in mobile not working.
 
 
-v2.0.4
+## v2.0.4
 - [Fix] [Module] Embeds: GDPR checkbox make jump to top of the page.
 - [Fix] [Module] Pop-ups: Page scroll functionality not working when more than 2 pop-ups are displayed.
 - [Fix] [Element] Timepicker: OnChange event for correct hiding labels.
@@ -19,16 +33,16 @@ v2.0.4
 - [Enhance] [Module] Added js events after module displayed.
 
 
-v2.0.2
+## v2.0.2
 - [Fix] [Module] Slide-ins: Bottom position undefined for south aligned modules when no footer was added.
 
 
-v2.0.1
+## v2.0.1
 - [Fix]     [Module] Slide-ins: Modules are not showing up properly on IE.
 - [Enhance] [Module] Slide-ins: Animation timing has decreased in 0.5 seconds making modules show/hide faster.
 
 
-v2.0.0
+## v2.0.0
 - [Enhance] Global: Stop supporting color and font settings.
 			Dev Notes: Color and settings from now on will be handled directly on
 			Hustle v4.3.0.

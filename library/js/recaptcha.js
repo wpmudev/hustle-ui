@@ -61,6 +61,10 @@
 		}
 
 		data['error-callback'] = function() {
+			const form = $recaptchaContainer.closest('.hustle-layout-form'),
+					errors = [ 'Coud not get recaptcha response. Please, contact the site administrator.' ];
+			HUI.optinError( form.find( '.hustle-error-message' ), errors );
+			form.find('.hustle-button-submit').prop('disabled', true);
 			$wrapper.addClass( 'hustle-recaptcha-preview-has-error' );
 		};
 

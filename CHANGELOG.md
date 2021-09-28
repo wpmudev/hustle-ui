@@ -8,6 +8,7 @@
 - [HUS-628](https://incsub.atlassian.net/browse/HUS-628) 🐛 fix(informational): Main content with sub-list not aligning correctly.
 
 #### Committers: 1
+- Ivan Svyrskyi ([@ioannup](https://github.com/ioannup))
 - Leighton Sapir ([@iamleigh](https://github.com/iamleigh))
 
 ## [v2.0.9](https://github.com/wpmudev/shared-ui/releases/tag/v2.10.9)

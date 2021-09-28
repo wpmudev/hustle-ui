@@ -1,6 +1,6 @@
 # Changelog
 
-## [v2.0.10](https://github.com/wpmudev/shared-ui/releases/tag/v2.10.11)
+## [v2.0.10](https://github.com/wpmudev/shared-ui/releases/tag/v2.0.10)
 
 #### Bug Fixes
 - [HUS-690](https://incsub.atlassian.net/browse/HUS-690) 🐛 fix(opt-ins): Improve error handling when the recaptcha keys are invalid.
@@ -11,7 +11,7 @@
 - Ivan Svyrskyi ([@ioannup](https://github.com/ioannup))
 - Leighton Sapir ([@iamleigh](https://github.com/iamleigh))
 
-## [v2.0.9](https://github.com/wpmudev/shared-ui/releases/tag/v2.10.9)
+## [v2.0.9](https://github.com/wpmudev/shared-ui/releases/tag/v2.0.9)
 
 #### Bug Fixes
 - [HUS-1034](https://incsub.atlassian.net/browse/HUS-1034) 🐛 fix(pop-ups): Overlay on iPhone Devices with OS>=14.3.
@@ -19,7 +19,7 @@
 #### Committers: 1
 - Leighton Sapir ([@iamleigh](https://github.com/iamleigh))
 
-## [v2.0.8](https://github.com/wpmudev/shared-ui/releases/tag/v2.10.8)
+## [v2.0.8](https://github.com/wpmudev/shared-ui/releases/tag/v2.0.8)
 
 #### Bug Fixes
 - [HUS-667](https://incsub.atlassian.net/browse/HUS-667) 🐛 fix(pop-ups): jQuery font family selectors under accordions not working.

@@ -42,13 +42,10 @@
 					}
 
 					ul, ol {
+						margin-left: 20px !important;
 
-						&:not([class*="forminator-"]) {
-							margin: 0 0 0 20px;
-
-							&:not(:last-child) {
-								margin-bottom: #{map-get($gutter, small) / 2};
-							}
+						&:not(:last-child) {
+							margin-bottom: #{map-get($gutter, small) / 2};
 						}
 					}
 				}

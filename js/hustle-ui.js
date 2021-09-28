@@ -3,7 +3,7 @@
  * Copyright 2019 Incsub (https://incsub.com)
  * Licensed under GPL v3 (http://www.gnu.org/licenses/gpl-3.0.html)
  */
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 (function ($) {
   'use strict'; // Define global HUI object if it doesn't exist.
@@ -933,6 +933,10 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
     }
 
     data['error-callback'] = function () {
+      var form = $recaptchaContainer.closest('.hustle-layout-form'),
+          errors = ['Coud not get recaptcha response. Please, contact the site administrator.'];
+      HUI.optinError(form.find('.hustle-error-message'), errors);
+      form.find('.hustle-button-submit').prop('disabled', true);
       $wrapper.addClass('hustle-recaptcha-preview-has-error');
     };
 
@@ -7600,9 +7604,7 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
       dropdown: true,
       scrollbar: false,
       // callbacks
-      change: function change()
-      /*time*/
-      {}
+      change: function change() {}
     };
     $.TimePicker.methods = {
       chainable: ['next', 'previous', 'open', 'close', 'destroy', 'setTime']

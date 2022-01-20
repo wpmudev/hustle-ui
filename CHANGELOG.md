@@ -1,5 +1,7 @@
 # Changelog
 
+- [HUS-1014](https://incsub.atlassian.net/browse/HUS-1014) 🐛: jQuery compatibility issues
+
 ## [v2.0.11](https://github.com/wpmudev/shared-ui/releases/tag/v2.0.11)
 
 #### Bug Fixes

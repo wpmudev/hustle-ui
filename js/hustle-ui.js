@@ -93,8 +93,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
     }
 
     function loadSelector() {
-      // TODO: set the correct breakpoint.
-      var selector = 600 < $(window).width() ? _float.data('desktop-selector') : _float.data('mobiles-selector');
+      var selector = hustleSettings.mobile_breakpoint < $(window).width() ? _float.data('desktop-selector') : _float.data('mobiles-selector');
 
       if (!selector.length) {
         abortLoad();
@@ -142,8 +141,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
     function init() {
       var offset = '';
 
-      if (600 < $(window).width()) {
-        // TODO: set the correct breakpoint.
+      if (hustleSettings.mobile_breakpoint < $(window).width()) {
         if (_float.hasClass('hustle-displaying-in-large')) {
           return;
         }
@@ -4068,7 +4066,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 
         if (this._request != null) {
           // JSONP requests cannot always be aborted
-          if ($.isFunction(this._request.abort)) {
+          if (typeof this._request.abort === 'function') {
             this._request.abort();
           }
 
@@ -5949,7 +5947,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         var $container = decorated.call(this);
         var containerCssClass = this.options.get('containerCssClass') || '';
 
-        if ($.isFunction(containerCssClass)) {
+        if (typeof containerCssClass === 'function') {
           containerCssClass = containerCssClass(this.$element);
         }
 
@@ -5974,7 +5972,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 
         var containerCss = this.options.get('containerCss') || {};
 
-        if ($.isFunction(containerCss)) {
+        if (typeof containerCss === 'function') {
           containerCss = containerCss(this.$element);
         }
 
@@ -5998,7 +5996,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         var $dropdown = decorated.call(this);
         var dropdownCssClass = this.options.get('dropdownCssClass') || '';
 
-        if ($.isFunction(dropdownCssClass)) {
+        if (typeof dropdownCssClass === 'function') {
           dropdownCssClass = dropdownCssClass(this.$element);
         }
 
@@ -6023,7 +6021,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 
         var dropdownCss = this.options.get('dropdownCss') || {};
 
-        if ($.isFunction(dropdownCss)) {
+        if (typeof dropdownCss === 'function') {
           dropdownCss = dropdownCss(this.$element);
         }
 
@@ -7551,7 +7549,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         if (previous !== null || i.selectedTime !== null) {
           i.element.trigger('time-change', [time]);
 
-          if ($.isFunction(i.options.change)) {
+          if (typeof i.options.change === 'function') {
             i.options.change.apply(i.element, [time]);
           }
         }

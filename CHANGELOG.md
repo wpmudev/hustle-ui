@@ -1,6 +1,10 @@
 # Changelog
 
-- [HUS-1014](https://incsub.atlassian.net/browse/HUS-1014) 🐛: jQuery compatibility issues
+## [v2.0.12](https://github.com/wpmudev/shared-ui/releases/tag/v2.0.12)
+
+#### Bug Fixes
+- [HUS-1014](https://incsub.atlassian.net/browse/HUS-1014) 🐛 fix: jQuery compatibility issues.
+- [HUS-1135](https://incsub.atlassian.net/browse/HUS-1135) 🐛 fix(social-share): Modules do not follow the defined mobile breakpoint.
 
 ## [v2.0.11](https://github.com/wpmudev/shared-ui/releases/tag/v2.0.11)
 

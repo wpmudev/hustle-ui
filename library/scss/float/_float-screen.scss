@@ -1,11 +1,11 @@
 $float-screen: (
-	desktop: 'min-width',
-	mobiles: 'max-width'
+	desktop: '.hustle-displaying-in-large',
+	mobiles: '.hustle-displaying-in-small'
 );
 
 @include hui-class(float, null, null, false) {
 
-	@each $screen, $breakpoint in $float-screen {
+	@each $screen, $class in $float-screen {
 
 		$float_gutter: map-get($gutter, default);
 
@@ -13,39 +13,30 @@ $float-screen: (
 			$float_gutter: map-get($gutter, small);
 		}
 
-		&[data-#{$screen}="true"][data-#{$screen}-offset="screen"] {
+		&[data-#{$screen}="true"][data-#{$screen}-offset="screen"]#{$class} {
 
 			.hustle-float-content {
-
-				@include media($breakpoint, sm) {
-					width: auto;
-					max-width: 100%;
-					height: auto;
-					max-height: 100%;
-					display: inline-flex;
-					flex: 0 0 auto;
-					@include opacity(0);
-					animation-duration: 0.5s;
-					animation-fill-mode: both;
-					transform-origin: center;
-					transform-style: preserve-3d;
-				}
+				width: auto;
+				max-width: 100%;
+				height: auto;
+				max-height: 100%;
+				display: inline-flex;
+				flex: 0 0 auto;
+				@include opacity(0);
+				animation-duration: 0.5s;
+				animation-fill-mode: both;
+				transform-origin: center;
+				transform-style: preserve-3d;
 			}
 
 			// VERTICAL: Top
 			&[data-#{$screen}-positionY="top"] {
-
-				@include media($breakpoint, sm) {
-					align-items: flex-start;
-				}
+				align-items: flex-start;
 			}
 
 			// VERTICAL: Bottom
 			&[data-#{$screen}-positionY="bottom"] {
-
-				@include media($breakpoint, sm) {
-					align-items: flex-end;
-				}
+				align-items: flex-end;
 			}
 
 			// HORIZONTAL: Left
@@ -54,11 +45,8 @@ $float-screen: (
 				.hustle-float-content {
 
 					&.hustle-animate-in {
-
-						@include media($breakpoint, sm) {
-							@include opacity(1);
-							animation-name: slideInLeft;
-						}
+						@include opacity(1);
+						animation-name: slideInLeft;
 					}
 				}
 
@@ -71,23 +59,15 @@ $float-screen: (
 
 				// VERTICAL: Top
 				&[data-#{$screen}-positionY="top"] {
-
-					@include media($breakpoint, sm) {
-						padding-bottom: $float_gutter;
-					}
+					padding-bottom: $float_gutter;
 				}
 
 				// VERTICAL: Bottom
 				&[data-#{$screen}-positionY="bottom"] {
-
-					@include media($breakpoint, sm) {
-						padding-top: $float_gutter;
-					}
+					padding-top: $float_gutter;
 				}
 
-				@include media($breakpoint, sm) {
-					justify-content: flex-start;
-				}
+				justify-content: flex-start;
 			}
 
 			// HORIZONTAL: Right
@@ -96,11 +76,8 @@ $float-screen: (
 				.hustle-float-content {
 
 					&.hustle-animate-in {
-
-						@include media($breakpoint, sm) {
-							@include opacity(1);
-							animation-name: slideInRight;
-						}
+						@include opacity(1);
+						animation-name: slideInRight;
 					}
 				}
 
@@ -113,23 +90,15 @@ $float-screen: (
 
 				// VERTICAL: Top
 				&[data-#{$screen}-positionY="top"] {
-
-					@include media($breakpoint, sm) {
-						padding-bottom: $float_gutter;
-					}
+					padding-bottom: $float_gutter;
 				}
 
 				// VERTICAL: Bottom
 				&[data-#{$screen}-positionY="bottom"] {
-
-					@include media($breakpoint, sm) {
-						padding-top: $float_gutter;
-					}
+					padding-top: $float_gutter;
 				}
 
-				@include media($breakpoint, sm) {
-					justify-content: flex-end;
-				}
+				justify-content: flex-end;
 			}
 
 			// HORIZONTAL: Center
@@ -138,18 +107,12 @@ $float-screen: (
 				.hustle-social {
 
 					&[data-grid-#{$screen}="inline"] ul {
-
-						@include media($breakpoint, sm) {
-							width: auto !important;
-						}
+						width: auto !important;
 					}
 				}
 
 				.hustle-float-content {
-
-					@include media($breakpoint, sm) {
-						padding: 0 $float_gutter;
-					}
+					padding: 0 $float_gutter;
 				}
 
 				// VERTICAL: Top
@@ -158,11 +121,8 @@ $float-screen: (
 					.hustle-float-content {
 
 						&.hustle-animate-in {
-
-							@include media($breakpoint, sm) {
-								@include opacity(1);
-								animation-name: slideInDown;
-							}
+							@include opacity(1);
+							animation-name: slideInDown;
 						}
 					}
 				}
@@ -173,38 +133,28 @@ $float-screen: (
 					.hustle-float-content {
 
 						&.hustle-animate-in {
-
-							@include media($breakpoint, sm) {
-								@include opacity(1);
-								animation-name: slideInUp;
-							}
+							@include opacity(1);
+							animation-name: slideInUp;
 						}
 					}
 				}
 
-				@include media($breakpoint, sm) {
-					justify-content: center;
-				}
+				justify-content: center;
 			}
 
 			// Show module
 			&.hustle-show {
-
-				@include media($breakpoint, sm) {
-					display: flex;
-				}
+				display: flex;
 			}
 
-			@include media($breakpoint, sm) {
-				max-width: 100%;
-				max-height: 100vh;
-				position: fixed;
-				z-index: 99999;
-				top: 0;
-				right: 0;
-				bottom: 0;
-				left: 0;
-			}
+			max-width: 100%;
+			max-height: 100vh;
+			position: fixed;
+			z-index: 99999;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
 		}
 	}
 }
@@ -216,7 +166,7 @@ $float-screen: (
 // admin side or when admin bar is enabled on front.
 // Margins will prevent social share from hiding the
 // top and side bars.
-@each $screen, $breakpoint in $float-screen {
+@each $screen, $class in $float-screen {
 
 	$top-bar: 32px;
 
@@ -228,13 +178,10 @@ $float-screen: (
 
 		@include hui-class(float, null, null, false) {
 
-			@each $screen, $breakpoint in $float-screen {
+			@each $screen, $class in $float-screen {
 
-				&[data-#{$screen}="true"][data-#{$screen}-offset="screen"] {
-
-					@include media($breakpoint, sm) {
-						margin-top: $top-bar;
-					}
+				&[data-#{$screen}="true"][data-#{$screen}-offset="screen"]#{$class} {
+					margin-top: $top-bar;
 				}
 			}
 		}

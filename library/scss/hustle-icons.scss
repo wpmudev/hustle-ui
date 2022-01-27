@@ -12,13 +12,9 @@
 		font-weight: normal;
 		font-style: normal;
 		font-display: swap;
-		src: url('#{map-get($path, fonts)}hustle-icons-font.eot');
 		src: local('hustle-icons-font'),
-			 url('#{map-get($path, fonts)}hustle-icons-font.eot') format('embedded-opentype'),
-			 url('#{map-get($path, fonts)}hustle-icons-font.ttf') format('truetype'),
-			 url('#{map-get($path, fonts)}hustle-icons-font.woff') format('woff'),
 			 url('#{map-get($path, fonts)}hustle-icons-font.woff2') format('woff2'),
-			 url('#{map-get($path, fonts)}hustle-icons-font.svg?#hustle-icons-font') format('svg');
+			 url('#{map-get($path, fonts)}hustle-icons-font.woff') format('woff');
 	}
 }
 

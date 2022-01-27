@@ -609,7 +609,7 @@
 				// TODO: add documentation about this event
 				if (previous !== null || i.selectedTime !== null) {
 					i.element.trigger('time-change', [time]);
-					if ($.isFunction(i.options.change)) {
+					if (typeof i.options.change === 'function') {
 						i.options.change.apply(i.element, [time]);
 					}
 				}

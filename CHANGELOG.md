@@ -1,7 +1,9 @@
-#### Bug Fixes
-- [HUS-1135](https://incsub.atlassian.net/browse/HUS-1135) 🐛 fix(social-sharing): Social Sharing modules do not follow the defined Mobile Breakpoint.
-
 # Changelog
+
+## [v2.0.12](https://github.com/wpmudev/shared-ui/releases/tag/v2.0.12)
+
+#### Bug Fixes
+- [HUS-1135](https://incsub.atlassian.net/browse/HUS-1135) 🐛 fix(social-share): Modules do not follow the defined mobile breakpoint.
 
 ## [v2.0.11](https://github.com/wpmudev/shared-ui/releases/tag/v2.0.11)
 

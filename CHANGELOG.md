@@ -1,5 +1,7 @@
 # Changelog
 
+- [HUS-931] Remove redundant fonts
+
 ## [v2.0.11](https://github.com/wpmudev/shared-ui/releases/tag/v2.0.11)
 
 #### Bug Fixes

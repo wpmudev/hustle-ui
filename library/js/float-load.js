@@ -22,8 +22,7 @@
 
 		function loadSelector() {
 
-			// TODO: set the correct breakpoint.
-			let selector = 600 < $( window ).width() ? float.data( 'desktop-selector' ) : float.data( 'mobiles-selector' );
+			let selector = hustleSettings.mobile_breakpoint < $( window ).width() ? float.data( 'desktop-selector' ) : float.data( 'mobiles-selector' );
 
 			if ( ! selector.length ) {
 				abortLoad();
@@ -67,7 +66,7 @@
 		function init() {
 
 			let offset = '';
-			if ( 600 < $( window ).width() ) { // TODO: set the correct breakpoint.
+			if ( hustleSettings.mobile_breakpoint < $( window ).width() ) {
 				if ( float.hasClass( 'hustle-displaying-in-large' ) ) {
 					return;
 				}

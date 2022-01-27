@@ -1,11 +1,11 @@
 $float-selector: (
-	desktop: 'min-width',
-	mobiles: 'max-width'
+	desktop: '.hustle-displaying-in-large',
+	mobiles: '.hustle-displaying-in-small'
 );
 
 @include hui-class(float, null, null, false) {
 
-	@each $screen, $breakpoint in $float-selector {
+	@each $screen, $class in $float-selector {
 
 		$float_gutter: map-get($gutter, default);
 
@@ -13,7 +13,7 @@ $float-selector: (
 			$float_gutter: map-get($gutter, small);
 		}
 
-		&[data-#{$screen}="true"][data-#{$screen}-offset="selector"] {
+		&[data-#{$screen}="true"][data-#{$screen}-offset="selector"]#{$class} {
 
 			// HORIZONTAL: Left
 			&[data-#{$screen}-positionX="left"] {
@@ -21,11 +21,8 @@ $float-selector: (
 				.hustle-float-content {
 
 					&.hustle-animate-in {
-
-						@include media($breakpoint, sm) {
-							@include opacity(1);
-							animation-name: slideInLeft;
-						}
+						@include opacity(1);
+						animation-name: slideInLeft;
 					}
 				}
 			}
@@ -36,11 +33,8 @@ $float-selector: (
 				.hustle-float-content {
 
 					&.hustle-animate-in {
-
-						@include media($breakpoint, sm) {
-							@include opacity(1);
-							animation-name: slideInRight;
-						}
+						@include opacity(1);
+						animation-name: slideInRight;
 					}
 				}
 			}
@@ -56,10 +50,7 @@ $float-selector: (
 				.hustle-social {
 
 					&[data-grid-#{$screen}="inline"] ul {
-
-						@include media($breakpoint, sm) {
-							width: auto !important;
-						}
+						width: auto !important;
 					}
 				}
 
@@ -69,11 +60,8 @@ $float-selector: (
 					.hustle-float-content {
 
 						&.hustle-animate-in {
-
-							@include media($breakpoint, sm) {
-								@include opacity(1);
-								animation-name: slideInDown;
-							}
+							@include opacity(1);
+							animation-name: slideInDown;
 						}
 					}
 				}
@@ -84,45 +72,32 @@ $float-selector: (
 					.hustle-float-content {
 
 						&.hustle-animate-in {
-
-							@include media($breakpoint, sm) {
-								@include opacity(1);
-								animation-name: slideInUp;
-							}
+							@include opacity(1);
+							animation-name: slideInUp;
 						}
 					}
 				}
 
-				@include media($breakpoint, sm) {
-					justify-content: center;
-					@if $screen == 'mobiles' {
-						right: 0;
-						left: 0;
-					}
+				justify-content: center;
+				@if $screen == 'mobiles' {
+					right: 0;
+					left: 0;
 				}
 			}
 
 			// Show module
 			&.hustle-show {
-
-				@include media($breakpoint, sm) {
-					display: flex;
-				}
+				display: flex;
 			}
 
-			@include media($breakpoint, sm) {
-				position: absolute;
-			}
+			position: absolute;
 		}
 	}
 }
 
-@each $screen, $breakpoint in $float-selector {
+@each $screen, $class in $float-selector {
 
-	*[data-#{$screen}-parent] {
-
-		@include media($breakpoint, sm) {
-			position: relative !important;
-		}
+	*[data-#{$screen}-parent] #{$class} {
+		position: relative !important;
 	}
 }

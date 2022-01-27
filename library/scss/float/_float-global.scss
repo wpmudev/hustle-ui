@@ -13,20 +13,14 @@
 	}
 
 	// MODULE: Mobiles
-	&[data-mobiles="false"] {
-
-		@include media(max-width, sm) {
-			display: none !important;
-			visibility: hidden !important;
-		}
+	&[data-mobiles="false"].hustle-displaying-in-small {
+		display: none !important;
+		visibility: hidden !important;
 	}
 
 	// MODULE: Desktop
-	&[data-desktop="false"] {
-
-		@include media(min-width, sm) {
-			display: none !important;
-			visibility: hidden !important;
-		}
+	&[data-desktop="false"].hustle-displaying-in-large {
+		display: none !important;
+		visibility: hidden !important;
 	}
 }

@@ -3456,7 +3456,7 @@
 
 				if (this._request != null) {
 					// JSONP requests cannot always be aborted
-					if ($.isFunction(this._request.abort)) {
+					if (typeof this._request.abort === 'function') {
 						this._request.abort();
 					}
 
@@ -5771,7 +5771,7 @@
 
 				var containerCssClass = this.options.get('containerCssClass') || '';
 
-				if ($.isFunction(containerCssClass)) {
+				if (typeof containerCssClass === 'function') {
 					containerCssClass = containerCssClass(this.$element);
 				}
 
@@ -5797,7 +5797,7 @@
 
 				var containerCss = this.options.get('containerCss') || {};
 
-				if ($.isFunction(containerCss)) {
+				if (typeof containerCss === 'function') {
 					containerCss = containerCss(this.$element);
 				}
 
@@ -5828,7 +5828,7 @@
 
 				var dropdownCssClass = this.options.get('dropdownCssClass') || '';
 
-				if ($.isFunction(dropdownCssClass)) {
+				if (typeof dropdownCssClass === 'function') {
 					dropdownCssClass = dropdownCssClass(this.$element);
 				}
 
@@ -5854,7 +5854,7 @@
 
 				var dropdownCss = this.options.get('dropdownCss') || {};
 
-				if ($.isFunction(dropdownCss)) {
+				if (typeof dropdownCss === 'function') {
 					dropdownCss = dropdownCss(this.$element);
 				}
 

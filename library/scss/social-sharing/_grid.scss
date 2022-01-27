@@ -1,3 +1,94 @@
+.hustle-ui.hustle-displaying-in-large .hustle-social {
+
+	&[data-grid-desktop="inline"] {
+
+		ul {
+
+			li {
+				flex: 0 0 auto;
+				margin: 0;
+				padding: #{map-get($gutter, default) / 2};
+			}
+
+			min-width: 1px;
+			display: flex;
+			flex-wrap: wrap;
+			flex: 1;
+			align-items: center;
+			margin: -#{map-get($gutter, default) / 2};
+			padding: 0;
+
+			@include support(ie) {
+				flex: 1 1 auto;
+			}
+		}
+	}
+
+	&[data-grid-desktop="stacked"] {
+
+		ul {
+
+			li {
+				margin: 0;
+				padding: #{map-get($gutter, default) / 2};
+			}
+
+			display: flex;
+			flex-direction: column;
+			margin: -#{map-get($gutter, default) / 2};
+			padding: 0;
+		}
+	}
+
+	padding: map-get($gutter, default);
+}
+
+.hustle-ui.hustle-displaying-in-small .hustle-social {
+
+	&[data-grid-mobiles="stacked"] {
+
+		ul {
+
+			li {
+				margin: 0;
+				padding: #{map-get($gutter, small) / 2};
+			}
+
+			display: flex;
+			flex-direction: column;
+			margin: -#{map-get($gutter, small) / 2};
+			padding: 0;
+		}
+	}
+
+	&[data-grid-mobiles="inline"] {
+
+		ul {
+
+			li {
+
+				flex: 0 0 auto;
+				margin: 0;
+				padding: #{map-get($gutter, small) / 2};
+			}
+
+			min-width: 1px;
+			display: flex;
+			flex-wrap: wrap;
+			flex: 1;
+			align-items: center;
+			margin: -#{map-get($gutter, small) / 2};
+			padding: 0;
+
+			@include support(ie) {
+				flex: 1 1 auto;
+			}
+		}
+	}
+
+	padding: map-get($gutter, small);
+}
+
 @include hui-class(null, social, null, false) {
 	width: auto;
 	max-width: 100%;
@@ -14,142 +105,5 @@
 			content: unset !important;
 			display: none !important;
 		}
-	}
-
-	&[data-grid-desktop="inline"] {
-
-		ul {
-
-			li {
-
-				@include media(min-width, sm) {
-					flex: 0 0 auto;
-					margin: 0;
-					padding: #{map-get($gutter, default) / 2};
-				}
-			}
-
-			@include media(min-width, sm) {
-				min-width: 1px;
-				display: flex;
-				flex-wrap: wrap;
-				flex: 1;
-				align-items: center;
-				margin: -#{map-get($gutter, default) / 2};
-				padding: 0;
-
-				@include support(ie) {
-					flex: 1 1 auto;
-				}
-			}
-		}
-	}
-
-	&[data-grid-desktop="stacked"] {
-
-		ul {
-
-			li {
-
-				@include media(min-width, sm) {
-					margin: 0;
-					padding: #{map-get($gutter, default) / 2};
-				}
-			}
-
-			@include media(min-width, sm) {
-				display: flex;
-				flex-direction: column;
-				margin: -#{map-get($gutter, default) / 2};
-				padding: 0;
-			}
-		}
-	}
-
-	&[data-grid-desktop="inline"] {
-
-		ul {
-
-			li {
-
-				@include media(min-width, sm) {
-					flex: 0 0 auto;
-					margin: 0;
-					padding: #{map-get($gutter, default) / 2};
-				}
-			}
-
-			@include media(min-width, sm) {
-				min-width: 1px;
-				display: flex;
-				flex-wrap: wrap;
-				flex: 1;
-				align-items: center;
-				margin: -#{map-get($gutter, default) / 2};
-				padding: 0;
-
-				@include support(ie) {
-					flex: 1 1 auto;
-				}
-			}
-		}
-	}
-
-	&[data-grid-mobiles="stacked"] {
-
-		ul {
-
-			li {
-
-				@include media(max-width, sm) {
-					margin: 0;
-					padding: #{map-get($gutter, small) / 2};
-				}
-			}
-
-			@include media(max-width, sm) {
-				display: flex;
-				flex-direction: column;
-				margin: -#{map-get($gutter, small) / 2};
-				padding: 0;
-			}
-		}
-	}
-
-	&[data-grid-mobiles="inline"] {
-
-		ul {
-
-			li {
-
-				@include media(max-width, sm) {
-					flex: 0 0 auto;
-					margin: 0;
-					padding: #{map-get($gutter, small) / 2};
-				}
-			}
-
-			@include media(max-width, sm) {
-				min-width: 1px;
-				display: flex;
-				flex-wrap: wrap;
-				flex: 1;
-				align-items: center;
-				margin: -#{map-get($gutter, small) / 2};
-				padding: 0;
-
-				@include support(ie) {
-					flex: 1 1 auto;
-				}
-			}
-		}
-	}
-
-	@include media(max-width, sm) {
-		padding: map-get($gutter, small);
-	}
-
-	@include media(min-width, sm) {
-		padding: map-get($gutter, default);
 	}
 }

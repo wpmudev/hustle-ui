@@ -1,5 +1,8 @@
 # Changelog
 
+#### Bug Fixes
+- [HUS-1166](https://incsub.atlassian.net/browse/HUS-1166) 🐛 fix(social-share): Social sharing icons always vertical
+
 ## [v2.0.12](https://github.com/wpmudev/shared-ui/releases/tag/v2.0.12)
 
 #### Bug Fixes

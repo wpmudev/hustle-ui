@@ -99,4 +99,22 @@
 
 		return this;
 	};
+
+	HUI.inlineResizeSocialSharing = function( el ) {
+	  var element = $( el );
+	  if ( ! element.is( '.hustle-inline' ) ) {
+		return;
+	  }
+
+	  function init() {
+		if ( hustleSettings.mobile_breakpoint < $( window ).width() ) {
+		  element.addClass( 'hustle-displaying-in-large' ).removeClass( 'hustle-displaying-in-small' );
+		} else {
+		  element.removeClass( 'hustle-displaying-in-large' ).addClass( 'hustle-displaying-in-small' );
+		}
+	  }
+
+	  init();
+	  return this;
+	};
 }( jQuery ) );

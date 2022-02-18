@@ -3,7 +3,7 @@
  * Copyright 2019 Incsub (https://incsub.com)
  * Licensed under GPL v3 (http://www.gnu.org/licenses/gpl-3.0.html)
  */
-function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
 
 (function ($) {
   'use strict'; // Define global HUI object if it doesn't exist.
@@ -169,6 +169,25 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         loadSelector();
       } else {
         show();
+      }
+    }
+
+    init();
+    return this;
+  };
+
+  HUI.inlineResizeSocialSharing = function (el) {
+    var element = $(el);
+
+    if (!element.is('.hustle-inline')) {
+      return;
+    }
+
+    function init() {
+      if (hustleSettings.mobile_breakpoint < $(window).width()) {
+        element.addClass('hustle-displaying-in-large').removeClass('hustle-displaying-in-small');
+      } else {
+        element.removeClass('hustle-displaying-in-large').addClass('hustle-displaying-in-small');
       }
     }
 
@@ -7602,7 +7621,9 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       dropdown: true,
       scrollbar: false,
       // callbacks
-      change: function change() {}
+      change: function
+        /*time*/
+      change() {}
     };
     $.TimePicker.methods = {
       chainable: ['next', 'previous', 'open', 'close', 'destroy', 'setTime']

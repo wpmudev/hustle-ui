@@ -5263,11 +5263,11 @@
 			};
 
 			Select2.prototype._bindAdapters = function () {
-				this.dataAdapter.bind(this, this.$container);
-				this.selection.bind(this, this.$container);
+				this.dataAdapter.on(this, this.$container);
+				this.selection.on(this, this.$container);
 
-				this.dropdown.bind(this, this.$container);
-				this.results.bind(this, this.$container);
+				this.dropdown.on(this, this.$container);
+				this.results.on(this, this.$container);
 			};
 
 			Select2.prototype._registerDomEvents = function () {
@@ -5285,8 +5285,8 @@
 					self.trigger('focus', evt);
 				});
 
-				this._syncA = Utils.bind(this._syncAttributes, this);
-				this._syncS = Utils.bind(this._syncSubtree, this);
+				this._syncA = Utils.on(this._syncAttributes, this);
+				this._syncS = Utils.on(this._syncSubtree, this);
 
 				if (this.$element[0].attachEvent) {
 					this.$element[0].attachEvent('onpropertychange', this._syncA);
@@ -6290,11 +6290,11 @@
 
 			$.fn.extend({
 				mousewheel: function(fn) {
-					return fn ? this.bind('mousewheel', fn) : this.trigger('mousewheel');
+					return fn ? this.on('mousewheel', fn) : this.trigger('mousewheel');
 				},
 
 				unmousewheel: function(fn) {
-					return this.unbind('mousewheel', fn);
+					return this.off('mousewheel', fn);
 				}
 			});
 

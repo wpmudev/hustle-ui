@@ -54,13 +54,13 @@
 									.appendTo( widget.ui );
 
 				if ($.fn.jquery >= '1.4.2') {
-					widget.ui.on('a', 'mouseenter.timepicker', function() {
+					widget.ui.on('mouseenter.timepicker', 'a', function() {
 						// passing false instead of an instance object tells the function
 						// to use the current instance
 						widget.activate(false, $(this).parent());
-					}).on('a', 'mouseleave.timepicker', function() {
+					}).on('mouseleave.timepicker', 'a', function() {
 						widget.deactivate(false);
-					}).on('a', 'click.timepicker', function(event) {
+					}).on('click.timepicker', 'a', function(event) {
 						event.preventDefault();
 						widget.select(false, $(this).parent());
 					});

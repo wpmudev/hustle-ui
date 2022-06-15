@@ -1,5 +1,10 @@
 # Changelog
 
+## [v2.0.14](https://github.com/wpmudev/shared-ui/releases/tag/v2.0.14)
+
+#### Bug Fixes
+- [HUS-1159](https://incsub.atlassian.net/browse/HUS-1159) 🐛 fix: replaced deprecated delegate, bind and unbind method with new ones.
+
 ## [v2.0.13](https://github.com/wpmudev/shared-ui/releases/tag/v2.0.13)
 
 #### Bug Fixes

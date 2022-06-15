@@ -54,13 +54,13 @@
 									.appendTo( widget.ui );
 
 				if ($.fn.jquery >= '1.4.2') {
-					widget.ui.delegate('a', 'mouseenter.timepicker', function() {
+					widget.ui.on('mouseenter.timepicker', 'a', function() {
 						// passing false instead of an instance object tells the function
 						// to use the current instance
 						widget.activate(false, $(this).parent());
-					}).delegate('a', 'mouseleave.timepicker', function() {
+					}).on('mouseleave.timepicker', 'a', function() {
 						widget.deactivate(false);
-					}).delegate('a', 'click.timepicker', function(event) {
+					}).on('click.timepicker', 'a', function(event) {
 						event.preventDefault();
 						widget.select(false, $(this).parent());
 					});
@@ -238,7 +238,7 @@
 			_addInputEventsHandlers: function(i) {
 				var widget = this;
 
-				i.element.bind('keydown.timepicker', function(event) {
+				i.element.on('keydown.timepicker', function(event) {
 					switch (event.which || event.keyCode) {
 					case widget.keyCode.ENTER:
 					case widget.keyCode.NUMPAD_ENTER:
@@ -261,15 +261,15 @@
 						}
 						break;
 					}
-				}).bind('focus.timepicker', function() {
+				}).on('focus.timepicker', function() {
 					i.open();
-				}).bind('blur.timepicker', function() {
+				}).on('blur.timepicker', function() {
 					setTimeout(function() {
 						if (i.element.data('timepicker-user-clicked-outside')) {
 							i.close();
 						}
 					});
-				}).bind('change.timepicker', function() {
+				}).on('change.timepicker', function() {
 					if (i.closed()) {
 						i.setTime($.fn.timepicker.parseTime(i.element.val()));
 					}
@@ -376,7 +376,7 @@
 					widget.container.insertAfter( i.element.closest( '.hustle-layout' ) );
 				}
 
-				$(document).bind('click.timepicker-' + i.element.data('timepicker-event-namespace'), function(event) {
+				$(document).on('click.timepicker-' + i.element.data('timepicker-event-namespace'), function(event) {
 					if (i.element.get(0) === event.target) {
 						i.element.data('timepicker-user-clicked-outside', false);
 					} else {
@@ -401,11 +401,11 @@
 					if ($.fn.jquery < '1.4.2') {
 						widget.viewport.children().remove();
 						widget.viewport.append(i.items);
-						widget.viewport.find('a').bind('mouseover.timepicker', function() {
+						widget.viewport.find('a').on('mouseover.timepicker', function() {
 							widget.activate(i, $(this).parent());
-						}).bind('mouseout.timepicker', function() {
+						}).on('mouseout.timepicker', function() {
 							widget.deactivate(i);
-						}).bind('click.timepicker', function(event) {
+						}).on('click.timepicker', function(event) {
 							event.preventDefault();
 							widget.select(i, $(this).parent());
 						});
@@ -535,7 +535,7 @@
 					//widget.ui.children().removeClass('ui-state-hover');
 				}
 
-				$(document).unbind('click.timepicker-' + i.element.data('timepicker-event-namespace'));
+				$(document).off('click.timepicker-' + i.element.data('timepicker-event-namespace'));
 
 				return i.element;
 			},
@@ -547,7 +547,7 @@
 			destroy: function(i) {
 				var widget = this;
 				widget.close(i, true);
-				return i.element.unbind('.timepicker').data('TimePicker', null);
+				return i.element.off('.timepicker').data('TimePicker', null);
 			},
 
 			//

@@ -3,7 +3,12 @@
 ## [v2.0.13](https://github.com/wpmudev/shared-ui/releases/tag/v2.0.13)
 
 #### Bug Fixes
+- [HUS-1159](https://incsub.atlassian.net/browse/HUS-1159) 🐛 fix: Replaced deprecated delegate, bind and unbind method with new ones.
 - [HUS-1166](https://incsub.atlassian.net/browse/HUS-1166) 🐛 fix(social-share): Social sharing icons always vertical
+
+#### Committers: 2
+- Ivan Svyrskyi ([@ioannup](https://github.com/ioannup))
+- Pawan Kumar ([@creador-dev](https://github.com/creador-dev))
 
 ## [v2.0.12](https://github.com/wpmudev/shared-ui/releases/tag/v2.0.12)
 
@@ -11,6 +16,9 @@
 - [HUS-931](https://incsub.atlassian.net/browse/HUS-931) 🐛 fix: Remove redundant fonts.
 - [HUS-1014](https://incsub.atlassian.net/browse/HUS-1014) 🐛 fix: jQuery compatibility issues.
 - [HUS-1135](https://incsub.atlassian.net/browse/HUS-1135) 🐛 fix(social-share): Modules do not follow the defined mobile breakpoint.
+
+#### Committers: 1
+- Leighton Sapir ([@iamleigh](https://github.com/iamleigh))
 
 ## [v2.0.11](https://github.com/wpmudev/shared-ui/releases/tag/v2.0.11)
 

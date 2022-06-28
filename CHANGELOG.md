@@ -1,5 +1,8 @@
 # Changelog
 
+#### New feature
+- [HUS-941](https://incsub.atlassian.net/browse/HUS-941) Allow select years and months in the date picker
+
 ## [v2.0.13](https://github.com/wpmudev/shared-ui/releases/tag/v2.0.13)
 
 #### Bug Fixes

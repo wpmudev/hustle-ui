@@ -4,7 +4,7 @@ All notable changes to this project will be documented in this file. See [Conven
 
 ## [2.0.15](https://github.com/wpmudev/hustle-ui/compare/v2.0.14...v2.0.15) (2022-07-07)
 
-#### 🐛 Bug Fixes
+#### 🚀 Improvements
 - `opt-ins`
   - **fix(date-picker):** Allow years and months selection. [#71](https://github.com/wpmudev/hustle-ui/pull/71) ([HUS-941](https://incsub.atlassian.net/browse/HUS-941)) ([@ioannup](https://github.com/ioannup))
 

@@ -72,6 +72,11 @@
 				font: 600 #{map-get($field-calendar, font-size)}/#{map-get($field-calendar, arrows-size)} map-get($font, default);
 				letter-spacing: 0.14px;
 				text-align: center;
+				select {
+					margin-top: -10px;
+					padding-top: 5px;
+					padding-bottom: 5px;
+				}
 			}
 
 			+ .ui-datepicker-calendar {

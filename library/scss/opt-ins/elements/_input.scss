@@ -88,3 +88,13 @@
 		}
 	}
 }
+
+@include hui-class(null, null, null, false, false, true) {
+	.hustle-field {
+
+		.hustle-input,
+		.hustle-input-label {
+			text-align: right !important;
+		}
+	}
+}

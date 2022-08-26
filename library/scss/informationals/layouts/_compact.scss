@@ -50,3 +50,11 @@
 		left: 0;
 	}
 }
+
+@include hui-class(slidein, info, compact, false, false, true) {
+
+	.hustle-button-icon {
+		left: 0;
+		right: auto;
+	}
+}

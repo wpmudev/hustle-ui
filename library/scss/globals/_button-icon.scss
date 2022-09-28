@@ -39,3 +39,15 @@
 		}
 	}
 }
+
+@include hui-class(null, null, null, false, false, true) {
+
+	.hustle-button-icon {
+		&.hustle-button-close {
+			margin-right: auto;
+			margin-left: 0;
+			left: 0;
+			right: auto;
+		}
+	}
+}

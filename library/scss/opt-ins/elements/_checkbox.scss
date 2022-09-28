@@ -120,3 +120,12 @@
 		}
 	}
 }
+
+@include hui-class(null, optin, null, false, false, true) {
+	.hustle-checkbox {
+
+		span:not([aria-hidden]) {
+			padding: 0 10px 0 0;
+		}
+	}
+}

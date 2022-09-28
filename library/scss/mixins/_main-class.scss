@@ -74,45 +74,309 @@
 // Module Layouts: default compact stacked focus-optin focus-content
 // Desktop: true false
 // Custom size: true false
-@mixin hui-class($types: null, $modes: null, $layouts: null, $desktop: false, $custom: false) {
+// rtl: true false
+@mixin hui-class($types: null, $modes: null, $layouts: null, $desktop: false, $custom: false, $rtl: false) {
 
-	.hustle-ui {
+	@if $rtl == true { 
+		.rtl {
 
-		@if $types == null {
+			.hustle-ui {
 
-			@if $modes == null {
-
-				@if $desktop == true {
-
-					&:not(.hustle-size--small) {
-
-						@if $custom == true {
-
-							&.hustle-size--custom {
-								@content;
+				@if $types == null {
+	
+					@if $modes == null {
+	
+						@if $desktop == true {
+	
+							&:not(.hustle-size--small) {
+	
+								@if $custom == true {
+	
+									&.hustle-size--custom {
+										@content;
+									}
+								}
+	
+								@else {
+									@content;
+								}
 							}
 						}
-
+	
 						@else {
 							@content;
 						}
 					}
+	
+					@else {
+	
+						@if $desktop == true {
+	
+							&:not(.hustle-size--small) {
+	
+								@if $custom == true {
+	
+									&.hustle-size--custom {
+	
+										@each $mode in $modes {
+	
+											.hustle-#{$mode} {
+	
+												@if $layouts == null {
+													@content;
+												}
+	
+												@else {
+	
+													@each $layout in $layouts {
+	
+														&.hustle-#{$mode}--#{$layout} {
+															@content;
+														}
+													}
+												}
+											}
+										}
+									}
+								}
+	
+								@else {
+	
+									@each $mode in $modes {
+	
+										.hustle-#{$mode} {
+	
+											@if $layouts == null {
+												@content;
+											}
+	
+											@else {
+	
+												@each $layout in $layouts {
+	
+													&.hustle-#{$mode}--#{$layout} {
+														@content;
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+	
+						@else {
+	
+							@each $mode in $modes {
+	
+								.hustle-#{$mode} {
+	
+									@if $layouts == null {
+										@content;
+									}
+	
+									@else {
+	
+										@each $layout in $layouts {
+	
+											&.hustle-#{$mode}--#{$layout} {
+												@content;
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+	
+				@else {
+	
+					@each $type in $types {
+	
+						&.hustle-#{$type} {
+	
+							@if $modes == null {
+	
+								@if $desktop == true {
+	
+									&:not(.hustle-size--small) {
+	
+										@if $custom == true {
+	
+											&.hustle-size--custom {
+												@content;
+											}
+										}
+	
+										@else {
+											@content;
+										}
+									}
+								}
+	
+								@else {
+	
+									@content;
+								}
+							}
+	
+							@else {
+	
+								@if $desktop == true {
+	
+									&:not(.hustle-size--small) {
+	
+										@if $custom == true {
+	
+											&.hustle-size--custom {
+	
+												.hustle-#{$type}-content {
+	
+													@each $mode in $modes {
+	
+														.hustle-#{$mode} {
+	
+															@if $layouts == null {
+																@content;
+															}
+	
+															@else {
+	
+																@each $layout in $layouts {
+	
+																	&.hustle-#{$mode}--#{$layout} {
+																		@content;
+																	}
+																}
+															}
+														}
+													}
+												}
+											}
+										}
+	
+										@else {
+	
+											.hustle-#{$type}-content {
+	
+												@each $mode in $modes {
+	
+													.hustle-#{$mode} {
+	
+														@if $layouts == null {
+															@content;
+														}
+	
+														@else {
+	
+															@each $layout in $layouts {
+	
+																&.hustle-#{$mode}--#{$layout} {
+																	@content;
+																}
+															}
+														}
+													}
+												}
+											}
+										}
+									}
+								}
+	
+								@else {
+	
+									.hustle-#{$type}-content {
+	
+										@each $mode in $modes {
+	
+											.hustle-#{$mode} {
+	
+												@if $layouts == null {
+													@content;
+												}
+	
+												@else {
+	
+													@each $layout in $layouts {
+	
+														&.hustle-#{$mode}--#{$layout} {
+															@content;
+														}
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	} @else {
+		.hustle-ui {
+
+			@if $types == null {
+
+				@if $modes == null {
+
+					@if $desktop == true {
+
+						&:not(.hustle-size--small) {
+
+							@if $custom == true {
+
+								&.hustle-size--custom {
+									@content;
+								}
+							}
+
+							@else {
+								@content;
+							}
+						}
+					}
+
+					@else {
+						@content;
+					}
 				}
 
 				@else {
-					@content;
-				}
-			}
 
-			@else {
+					@if $desktop == true {
 
-				@if $desktop == true {
+						&:not(.hustle-size--small) {
 
-					&:not(.hustle-size--small) {
+							@if $custom == true {
 
-						@if $custom == true {
+								&.hustle-size--custom {
 
-							&.hustle-size--custom {
+									@each $mode in $modes {
+
+										.hustle-#{$mode} {
+
+											@if $layouts == null {
+												@content;
+											}
+
+											@else {
+
+												@each $layout in $layouts {
+
+													&.hustle-#{$mode}--#{$layout} {
+														@content;
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+
+							@else {
 
 								@each $mode in $modes {
 
@@ -135,24 +399,24 @@
 								}
 							}
 						}
+					}
 
-						@else {
+					@else {
 
-							@each $mode in $modes {
+						@each $mode in $modes {
 
-								.hustle-#{$mode} {
+							.hustle-#{$mode} {
 
-									@if $layouts == null {
-										@content;
-									}
+								@if $layouts == null {
+									@content;
+								}
 
-									@else {
+								@else {
 
-										@each $layout in $layouts {
+									@each $layout in $layouts {
 
-											&.hustle-#{$mode}--#{$layout} {
-												@content;
-											}
+										&.hustle-#{$mode}--#{$layout} {
+											@content;
 										}
 									}
 								}
@@ -160,72 +424,75 @@
 						}
 					}
 				}
+			}
 
-				@else {
+			@else {
 
-					@each $mode in $modes {
+				@each $type in $types {
 
-						.hustle-#{$mode} {
+					&.hustle-#{$type} {
 
-							@if $layouts == null {
-								@content;
+						@if $modes == null {
+
+							@if $desktop == true {
+
+								&:not(.hustle-size--small) {
+
+									@if $custom == true {
+
+										&.hustle-size--custom {
+											@content;
+										}
+									}
+
+									@else {
+										@content;
+									}
+								}
 							}
 
 							@else {
 
-								@each $layout in $layouts {
-
-									&.hustle-#{$mode}--#{$layout} {
-										@content;
-									}
-								}
-							}
-						}
-					}
-				}
-			}
-		}
-
-		@else {
-
-			@each $type in $types {
-
-				&.hustle-#{$type} {
-
-					@if $modes == null {
-
-						@if $desktop == true {
-
-							&:not(.hustle-size--small) {
-
-								@if $custom == true {
-
-									&.hustle-size--custom {
-										@content;
-									}
-								}
-
-								@else {
-									@content;
-								}
+								@content;
 							}
 						}
 
 						@else {
 
-							@content;
-						}
-					}
+							@if $desktop == true {
 
-					@else {
+								&:not(.hustle-size--small) {
 
-						@if $desktop == true {
+									@if $custom == true {
 
-							&:not(.hustle-size--small) {
+										&.hustle-size--custom {
 
-								@if $custom == true {
+											.hustle-#{$type}-content {
 
-									&.hustle-size--custom {
+												@each $mode in $modes {
+
+													.hustle-#{$mode} {
+
+														@if $layouts == null {
+															@content;
+														}
+
+														@else {
+
+															@each $layout in $layouts {
+
+																&.hustle-#{$mode}--#{$layout} {
+																	@content;
+																}
+															}
+														}
+													}
+												}
+											}
+										}
+									}
+
+									@else {
 
 										.hustle-#{$type}-content {
 
@@ -251,53 +518,27 @@
 										}
 									}
 								}
-
-								@else {
-
-									.hustle-#{$type}-content {
-
-										@each $mode in $modes {
-
-											.hustle-#{$mode} {
-
-												@if $layouts == null {
-													@content;
-												}
-
-												@else {
-
-													@each $layout in $layouts {
-
-														&.hustle-#{$mode}--#{$layout} {
-															@content;
-														}
-													}
-												}
-											}
-										}
-									}
-								}
 							}
-						}
 
-						@else {
+							@else {
 
-							.hustle-#{$type}-content {
+								.hustle-#{$type}-content {
 
-								@each $mode in $modes {
+									@each $mode in $modes {
 
-									.hustle-#{$mode} {
+										.hustle-#{$mode} {
 
-										@if $layouts == null {
-											@content;
-										}
+											@if $layouts == null {
+												@content;
+											}
 
-										@else {
+											@else {
 
-											@each $layout in $layouts {
+												@each $layout in $layouts {
 
-												&.hustle-#{$mode}--#{$layout} {
-													@content;
+													&.hustle-#{$mode}--#{$layout} {
+														@content;
+													}
 												}
 											}
 										}

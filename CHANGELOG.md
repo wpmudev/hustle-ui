@@ -2,9 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org/) for commit guidelines.
 
+## [2.0.16](https://github.com/wpmudev/hustle-ui/compare/v2.0.15...v2.0.16) (2022-09-28)
+
+#### 🚀 Improvements
+- `opt-ins`
+  - **aria(global):** RTL support for elements. [#72](https://github.com/wpmudev/hustle-ui/pull/72) ([HUS-791](https://incsub.atlassian.net/browse/HUS-791)) ([@ioannup](https://github.com/ioannup))
+
+#### Committers: 1
+
+- Pawan Kumar ([@creador-dev](https://github.com/creador-dev))
+
 ## [2.0.15](https://github.com/wpmudev/hustle-ui/compare/v2.0.14...v2.0.15) (2022-07-07)
 
-#### 🐛 Bug Fixes
+#### 🚀 Improvements
 - `opt-ins`
   - **fix(date-picker):** Allow years and months selection. [#71](https://github.com/wpmudev/hustle-ui/pull/71) ([HUS-941](https://incsub.atlassian.net/browse/HUS-941)) ([@ioannup](https://github.com/ioannup))
 

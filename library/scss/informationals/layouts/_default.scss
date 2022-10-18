@@ -57,12 +57,6 @@
 
 @include hui-class(slidein, info, default, false) {
 
-	.hustle-button-icon {
-		position: absolute;
-		top: -#{map-get($module-close, button-size)};
-		right: 0;
-	}
-
 	.hustle-nsa-link {
 		width: 100%;
 		position: absolute;

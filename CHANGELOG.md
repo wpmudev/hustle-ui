@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org/) for commit guidelines.
 
+## [2.0.17](https://github.com/wpmudev/hustle-ui/compare/v2.0.16...v2.0.17) (2022-11-10)
+
+#### 🚀 Improvements
+- `opt-ins`
+  - **fix(timepicker):** Field only works in one module when multiple exists in the same page. [#75](https://github.com/wpmudev/hustle-ui/pull/75) ([HUS-1213](https://incsub.atlassian.net/browse/HUS-1213)) ([@creadordev](https://github.com/creadordev))
+
+#### Committers: 1
+
+- Pawan Kumar ([@creador-dev](https://github.com/creador-dev))
+
 ## [2.0.16](https://github.com/wpmudev/hustle-ui/compare/v2.0.15...v2.0.16) (2022-09-28)
 
 #### 🚀 Improvements
@@ -10,7 +20,7 @@ All notable changes to this project will be documented in this file. See [Conven
 
 #### Committers: 1
 
-- Pawan Kumar ([@creador-dev](https://github.com/creador-dev))
+- Ivan Svyrskyi ([@ioannup](https://github.com/ioannup))
 
 ## [2.0.15](https://github.com/wpmudev/hustle-ui/compare/v2.0.14...v2.0.15) (2022-07-07)
 

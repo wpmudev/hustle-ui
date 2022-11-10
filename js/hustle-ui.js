@@ -6926,7 +6926,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
   };
 })(jQuery);
 /**
- * jQuery Timepicker
+ * jQuery Timepicker - v1.3.5 - 2016-07-10
  * http://timepicker.co
  *
  * Enhances standard form input fields helping users to select (or type) times.
@@ -6972,18 +6972,18 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       widget.viewport = widget.ui.find('.ui-timepicker-viewport');
 
       if (widget.container.length === 0) {
-        widget.container = $('<div></div>').addClass('hustle-timepicker').appendTo('body').removeClass('hustle-show');
+        widget.container = $('<div></div>').addClass('hustle-timepicker').addClass('ui-timepicker-hidden ui-helper-hidden').appendTo('body').removeClass('hustle-show');
         widget.ui = $('<div></div>').addClass('ui-timepicker').addClass('ui-widget ui-widget-content ui-menu').appendTo(widget.container);
         widget.viewport = $('<ul></ul>').addClass('ui-timepicker-viewport').appendTo(widget.ui);
 
         if ($.fn.jquery >= '1.4.2') {
-          widget.ui.on('mouseenter.timepicker', 'a', function () {
+          widget.ui.delegate('a', 'mouseenter.timepicker', function () {
             // passing false instead of an instance object tells the function
             // to use the current instance
             widget.activate(false, $(this).parent());
-          }).on('mouseleave.timepicker', 'a', function () {
+          }).delegate('a', 'mouseleave.timepicker', function () {
             widget.deactivate(false);
-          }).on('click.timepicker', 'a', function (event) {
+          }).delegate('a', 'click.timepicker', function (event) {
             event.preventDefault();
             widget.select(false, $(this).parent());
           });
@@ -6994,7 +6994,10 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
     $.TimePicker.count = 0;
 
     $.TimePicker.instance = function () {
-      $.TimePicker._instance = new $.TimePicker();
+      if (!$.TimePicker._instance) {
+        $.TimePicker._instance = new $.TimePicker();
+      }
+
       return $.TimePicker._instance;
     };
 
@@ -7190,7 +7193,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       },
       _addInputEventsHandlers: function _addInputEventsHandlers(i) {
         var widget = this;
-        i.element.on('keydown.timepicker', function (event) {
+        i.element.bind('keydown.timepicker', function (event) {
           switch (event.which || event.keyCode) {
             case widget.keyCode.ENTER:
             case widget.keyCode.NUMPAD_ENTER:
@@ -7219,15 +7222,15 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 
               break;
           }
-        }).on('focus.timepicker', function () {
+        }).bind('focus.timepicker', function () {
           i.open();
-        }).on('blur.timepicker', function () {
+        }).bind('blur.timepicker', function () {
           setTimeout(function () {
             if (i.element.data('timepicker-user-clicked-outside')) {
               i.close();
             }
           });
-        }).on('change.timepicker', function () {
+        }).bind('change.timepicker', function () {
           if (i.closed()) {
             i.setTime($.fn.timepicker.parseTime(i.element.val()));
           }
@@ -7259,17 +7262,18 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
           } else if (offset >= height) {
             widget.ui.scrollTop(scroll + offset - height + item.height());
           }
-        } //widget.active = item.eq(0).children('a').addClass('ui-state-hover').end();
+        }
 
+        widget.active = item.eq(0).children('a').addClass('ui-state-hover').attr('id', 'ui-active-item').end();
       },
       deactivate: function deactivate() {
         var widget = this;
 
         if (!widget.active) {
           return;
-        } //widget.active.children('a').removeClass('ui-state-hover');
+        }
 
-
+        widget.active.children('a').removeClass('ui-state-hover').removeAttr('id');
         widget.active = null;
       },
 
@@ -7327,7 +7331,8 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         // idea from https://prototype.lighthouseapp.com/projects/8887/tickets/248-results-popup-from-ajaxautocompleter-disappear-when-user-clicks-on-scrollbars-in-ie6ie7
 
 
-        i.element.data('timepicker-event-namespace', Math.random()); // Append the timepicker within a relative div closer to the input.
+        i.element.data('timepicker-event-namespace', Math.random());
+        widget.container.insertAfter(i.element.closest('.hustle-layout'));
 
         if (i.element.closest('.sui-form-field').length) {
           i.element.closest('.sui-form-field').append(widget.container);
@@ -7335,11 +7340,11 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
           widget.container.insertAfter(i.element.closest('.hustle-layout'));
         }
 
-        $(document).on('click.timepicker-' + i.element.data('timepicker-event-namespace'), function (event) {
+        $(document).bind('click.timepicker-' + i.element.data('timepicker-event-namespace'), function (event) {
           if (i.element.get(0) === event.target) {
             i.element.data('timepicker-user-clicked-outside', false);
           } else {
-            i.element.data('timepicker-user-clicked-outside', true).blur();
+            widget.container.insertAfter(i.element.closest('.hustle-layout'));
           }
         }); // if a date is already selected and options.dynamic is true,
         // arrange the items in the list so the first item is
@@ -7359,11 +7364,11 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
           if ($.fn.jquery < '1.4.2') {
             widget.viewport.children().remove();
             widget.viewport.append(i.items);
-            widget.viewport.find('a').on('mouseover.timepicker', function () {
+            widget.viewport.find('a').bind('mouseover.timepicker', function () {
               widget.activate(i, $(this).parent());
-            }).on('mouseout.timepicker', function () {
+            }).bind('mouseout.timepicker', function () {
               widget.deactivate(i);
-            }).on('click.timepicker', function (event) {
+            }).bind('click.timepicker', function (event) {
               event.preventDefault();
               widget.select(i, $(this).parent());
             });
@@ -7375,33 +7380,34 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 
         i.rebuild = false;
         /**
-         * Theme Support
-         *
-         * @since Hustle UI 4.0
-         */
+        * Theme Support
+        *
+        * @since Hustle UI 4.0
+        */
         // Remove standard theme classes
 
         widget.container.removeClass('ui-timepicker-standard ui-timepicker-corners'); // Show time picker dropdown
 
         widget.container.addClass('hustle-show');
         $(document).trigger('hustle:module:displayed', widget);
-        /*
-        switch ( i.options.theme ) {
-        		case 'standard' :
-        		widget.container.addClass('ui-timepicker-standard');
-        		break;
-        		case 'standard-rounded-corners'
-        		widget.container.addClass( 'ui-timepicker-standard ui-timepicker-corners' );
-        		break;
-        		default :
-        		break;
-        }
-        */
 
+        switch (i.options.theme) {
+          case 'standard':
+            widget.container.addClass('ui-timepicker-standard');
+            break;
+
+          case 'standard-rounded-corners':
+            widget.container.addClass('ui-timepicker-standard ui-timepicker-corners');
+            break;
+
+          default:
+            break;
+        }
         /* resize ui */
         // we are hiding the scrollbar in the dropdown menu adding a 40px
         // padding to the wrapper element making the scrollbar appear in the
         // part of the wrapper that's hidden by the container (a DIV).
+
 
         if (!widget.container.hasClass('ui-timepicker-no-scrollbar') && !i.options.scrollbar) {
           widget.container.addClass('ui-timepicker-no-scrollbar');
@@ -7413,8 +7419,8 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         var containerDecorationHeight = widget.container.outerHeight() - widget.container.height(),
             zindex = i.options.zindex ? i.options.zindex : i.element.offsetParent().css('z-index'),
             $field = i.element.closest('.hustle-field'),
-            elementOffset = $field.position(); //i.element.offset();
-
+            elementOffset = $field.position(),
+            //i.element.offset();
         viewHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0); // position the container right below the element, or as close to as possible.
 
         widget.container.css({
@@ -7479,10 +7485,10 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 
         if (widget.instance === i) {
           widget.container.removeClass('hustle-show');
-          widget.ui.scrollTop(0); //widget.ui.children().removeClass('ui-state-hover');
+          widget.ui.scrollTop(0); // widget.ui.children().removeClass('ui-state-hover');
         }
 
-        $(document).off('click.timepicker-' + i.element.data('timepicker-event-namespace'));
+        $(document).unbind('click.timepicker-' + i.element.data('timepicker-event-namespace'));
         return i.element;
       },
       closed: function closed() {
@@ -7491,7 +7497,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       destroy: function destroy(i) {
         var widget = this;
         widget.close(i, true);
-        return i.element.off('.timepicker').data('TimePicker', null);
+        return i.element.unbind('.timepicker').data('TimePicker', null);
       },
       //
       parse: function parse(i, str) {
@@ -7550,7 +7556,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         if (previous !== null || i.selectedTime !== null) {
           i.element.trigger('time-change', [time]);
 
-          if (typeof i.options.change === 'function') {
+          if ($.isFunction(i.options.change)) {
             i.options.change.apply(i.element, [time]);
           }
         }
@@ -7598,7 +7604,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       startTime: null,
       interval: 30,
       dynamic: true,
-      theme: null,
+      theme: 'standard',
       zindex: null,
       dropdown: true,
       scrollbar: false,
@@ -7701,13 +7707,13 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
      * All non-digit characters are removed from the string before trying to
      * parse the time.
      *
-     * ''	   can't be converted and the function returns false.
-     * '1'	  is converted to	 01:00:00 am
-     * '11'	 is converted to	 11:00:00 am
-     * '111'	is converted to	 01:11:00 am
-     * '1111'   is converted to	 11:11:00 am
-     * '11111'  is converted to	 01:11:11 am
-     * '111111' is converted to	 11:11:11 am
+     * ''       can't be converted and the function returns false.
+     * '1'      is converted to     01:00:00 am
+     * '11'     is converted to     11:00:00 am
+     * '111'    is converted to     01:11:00 am
+     * '1111'   is converted to     11:11:00 am
+     * '11111'  is converted to     01:11:11 am
+     * '111111' is converted to     11:11:11 am
      *
      * Only the first six (or less) characters are considered.
      *

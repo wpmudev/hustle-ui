@@ -42,12 +42,6 @@
 // Custom size: false
 @include hui-class(slidein, optin, default, false) {
 
-	.hustle-button-icon {
-		position: absolute;
-		top: -#{map-get($module-close, button-size)};
-		right: 0;
-	}
-
 	.hustle-layout-footer {
 		width: 100%;
 		position: absolute;

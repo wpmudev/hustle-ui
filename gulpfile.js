@@ -1,7 +1,7 @@
 'use strict';
 
 // Import `src` and `dest` from gulp for use in the task.
-const { src, dest } = require( 'gulp' );
+const { src, dest, series } = require( 'gulp' );
 
 // ==================================================
 // Supported Packages
@@ -117,23 +117,23 @@ showcase.watch.html = [
 
 // ==================================================
 // BrowserSync
-gulp.task( 'browser-sync', function() {
+function BrowserSync() {
 
-	browserSync.init({
+	return browserSync.init({
 		injectChanges: true,
 		server: {
 			baseDir: showcase.output.main
 		}
 	});
-});
+}
 
 // ==================================================
 // Tasks
 
 // Build Hustle styles
-gulp.task( 'hustle:styles', function() {
+function HustleStyles() {
 
-	gulp.src( hustle.watch.styles )
+	return src( hustle.watch.styles )
 		.pipe(
 			sass({ outputStyle: 'compressed' })
 			.on( 'error', sass.logError )
@@ -146,12 +146,12 @@ gulp.task( 'hustle:styles', function() {
 		}) )
 		.pipe( gulp.dest( hustle.output.styles ) )
 		;
-});
+}
 
 // Build Hustle scripts
-gulp.task( 'hustle:scripts', function( cb ) {
+function HustleScripts( cb ) {
 
-	pump([
+	return pump([
 		gulp.src( hustle.watch.scripts ),
 		eslint(),
 		eslint.format(),
@@ -174,36 +174,39 @@ gulp.task( 'hustle:scripts', function( cb ) {
 		gulp.dest( hustle.output.scripts ),
 		gulp.dest( showcase.output.scripts )
 	], cb );
-});
+}
 
 // Copy Hustle fonts
-gulp.task( 'hustle:fonts', function() {
+function HustleFonts() {
 
-	gulp.src( hustle.watch.fonts )
+	return src( hustle.watch.fonts )
 		.pipe( gulp.dest( hustle.output.fonts ) )
 		;
-});
+}
 
 // Copy Hustle information files
-gulp.task( 'hustle:files', function() {
+function HustleFiles() {
 
-	gulp.src( hustle.watch.files )
+	return src( hustle.watch.files )
 		.pipe( gulp.dest( hustle.output.main ) )
 		;
-});
+}
 
 // Build Hustle UI
-gulp.task( 'hustle:build', [
-	'hustle:styles',
-	'hustle:scripts',
-	'hustle:fonts',
-	'hustle:files'
-]);
+function HustleBuild( done ) {
+	HustleStyles();
+	HustleScripts();
+	HustleFonts();
+	HustleFiles();
+	done();
+}
+
+gulp.task( 'hustle:build', HustleBuild );
 
 // Build Showcase styles
-gulp.task( 'showcase:styles', function() {
+function ShowcaseStyles() {
 
-	gulp.src( showcase.watch.styles )
+	return src( showcase.watch.styles )
 		.pipe(
 			sass({ outputStyle: 'compressed' })
 			.on( 'error', sass.logError )
@@ -218,12 +221,12 @@ gulp.task( 'showcase:styles', function() {
 			match: '**/*.css'
 		}) )
 		;
-});
+}
 
 // Build Showcase scripts
-gulp.task( 'showcase:scripts', function( cb ) {
+function ShowcaseScripts( cb ) {
 
-	pump([
+	return pump([
 		gulp.src( showcase.watch.scripts ),
 		eslint(),
 		eslint.format(),
@@ -243,66 +246,69 @@ gulp.task( 'showcase:scripts', function( cb ) {
 		gulp.dest( showcase.output.scripts ),
 		browserSync.stream()
 	], cb );
-});
+}
 
 // Copy Showcase fonts
-gulp.task( 'showcase:fonts', function() {
+function ShowcaseFonts() {
 
-	gulp.src( showcase.watch.fonts )
+	return src( showcase.watch.fonts )
 		.pipe( gulp.dest( showcase.output.fonts ) )
 		.pipe( browserSync.stream() )
 		;
-});
+}
 
 // Build Showcase
-gulp.task( 'showcase:build', [
-	'showcase:styles',
-	'showcase:scripts',
-	'showcase:fonts'
-]);
+function ShowcaseBuild( done ) {
+	ShowcaseStyles();
+	ShowcaseScripts();
+	ShowcaseFonts();
+	done();
+}
+
+gulp.task( 'showcase:build', ShowcaseBuild );
 
 // ==================================================
 // Watch
 
-gulp.task( 'hustle:watch', function() {
+function HustleWatch() {
 
 	// Watch Hustle styles
-	gulp.watch( hustle.watch.styles, [ 'hustle:styles' ]);
+	gulp.watch( hustle.watch.styles, gulp.series( HustleStyles ) );
 
 	// Watch Hustle scripts
-	gulp.watch( hustle.watch.scripts, [ 'hustle:scripts' ]);
+	gulp.watch( hustle.watch.scripts, gulp.series( HustleScripts ) );
 
 	// Watch Hustle fonts
-	gulp.watch( hustle.watch.fonts, [ 'hustle:fonts' ]);
+	gulp.watch( hustle.watch.fonts, gulp.series( HustleFonts ) );
 
 	// Watch Hustle information files
-	gulp.watch( hustle.watch.files, [ 'hustle:files' ]);
+	gulp.watch( hustle.watch.files, gulp.series( HustleFiles ) );
 
-});
+}
 
-gulp.task( 'showcase:watch', function() {
+function ShowcaseWatch() {
 
 	// Watch Showcase styles
-	gulp.watch( showcase.watch.styles, [ 'showcase:styles' ]);
+	gulp.watch( showcase.watch.styles, gulp.series( ShowcaseStyles ) );
 
 	// Watch Showcase scripts
-	gulp.watch( showcase.watch.scripts, [ 'showcase:scripts' ]);
+	gulp.watch( showcase.watch.scripts, gulp.series( ShowcaseScripts ) );
 
 	// Watch Showcase fonts
-	gulp.watch( showcase.watch.fonts, [ 'showcase:fonts' ]);
+	gulp.watch( showcase.watch.fonts, gulp.series( ShowcaseFonts ) );
 
 	// Watch for HTML changes
 	gulp.watch( showcase.watch.html ).on( 'change', browserSync.reload );
 
-});
+}
 
 // ==================================================
 // Development
 
-gulp.task( 'development', [
-	'hustle:build',
-	'showcase:build',
-	'browser-sync',
-	'hustle:watch',
-	'showcase:watch'
-]);
+gulp.task( 'development', gulp.series(
+	HustleBuild,
+	ShowcaseBuild,
+	BrowserSync,
+	HustleWatch,
+	ShowcaseWatch
+) );

@@ -1,15 +1,13 @@
 'use strict';
 
 // Import `src` and `dest` from gulp for use in the task.
-const { src, dest, series } = require( 'gulp' );
+const { src, dest, series, task, watch } = require( 'gulp' );
 
 // ==================================================
 // Supported Packages
 const fs           = require( 'fs' );
 const pump         = require( 'pump' );
-const gulp         = require( 'gulp' );
 const babel        = require( 'gulp-babel' );
-const watch        = require( 'gulp-watch' );
 const sass         = require( 'gulp-sass' );
 const header       = require( 'gulp-header' );
 const autoprefixer = require( 'gulp-autoprefixer' );
@@ -144,7 +142,7 @@ function HustleStyles() {
 		.pipe( rename({
 			suffix: '.min'
 		}) )
-		.pipe( gulp.dest( hustle.output.styles ) )
+		.pipe( dest( hustle.output.styles ) )
 		;
 }
 
@@ -152,7 +150,7 @@ function HustleStyles() {
 function HustleScripts( cb ) {
 
 	return pump([
-		gulp.src( hustle.watch.scripts ),
+		src( hustle.watch.scripts ),
 		eslint(),
 		eslint.format(),
 		eslint.failAfterError(),
@@ -165,14 +163,14 @@ function HustleScripts( cb ) {
 			]
 		}),
 		header( banner ),
-		gulp.dest( hustle.output.scripts ),
+		dest( hustle.output.scripts ),
 		uglify(),
 		rename({
 			suffix: '.min'
 		}),
 		header( banner ),
-		gulp.dest( hustle.output.scripts ),
-		gulp.dest( showcase.output.scripts )
+		dest( hustle.output.scripts ),
+		dest( showcase.output.scripts )
 	], cb );
 }
 
@@ -180,7 +178,7 @@ function HustleScripts( cb ) {
 function HustleFonts() {
 
 	return src( hustle.watch.fonts )
-		.pipe( gulp.dest( hustle.output.fonts ) )
+		.pipe( dest( hustle.output.fonts ) )
 		;
 }
 
@@ -188,7 +186,7 @@ function HustleFonts() {
 function HustleFiles() {
 
 	return src( hustle.watch.files )
-		.pipe( gulp.dest( hustle.output.main ) )
+		.pipe( dest( hustle.output.main ) )
 		;
 }
 
@@ -201,7 +199,7 @@ function HustleBuild( done ) {
 	done();
 }
 
-gulp.task( 'hustle:build', HustleBuild );
+task( 'hustle:build', HustleBuild );
 
 // Build Showcase styles
 function ShowcaseStyles() {
@@ -216,7 +214,7 @@ function ShowcaseStyles() {
 		.pipe( rename({
 			suffix: '.min'
 		}) )
-		.pipe( gulp.dest( showcase.output.styles ) )
+		.pipe( dest( showcase.output.styles ) )
 		.pipe( browserSync.stream({
 			match: '**/*.css'
 		}) )
@@ -227,7 +225,7 @@ function ShowcaseStyles() {
 function ShowcaseScripts( cb ) {
 
 	return pump([
-		gulp.src( showcase.watch.scripts ),
+		src( showcase.watch.scripts ),
 		eslint(),
 		eslint.format(),
 		eslint.failAfterError(),
@@ -243,7 +241,7 @@ function ShowcaseScripts( cb ) {
 		rename({
 			suffix: '.min'
 		}),
-		gulp.dest( showcase.output.scripts ),
+		dest( showcase.output.scripts ),
 		browserSync.stream()
 	], cb );
 }
@@ -252,7 +250,7 @@ function ShowcaseScripts( cb ) {
 function ShowcaseFonts() {
 
 	return src( showcase.watch.fonts )
-		.pipe( gulp.dest( showcase.output.fonts ) )
+		.pipe( dest( showcase.output.fonts ) )
 		.pipe( browserSync.stream() )
 		;
 }
@@ -265,7 +263,7 @@ function ShowcaseBuild( done ) {
 	done();
 }
 
-gulp.task( 'showcase:build', ShowcaseBuild );
+task( 'showcase:build', ShowcaseBuild );
 
 // ==================================================
 // Watch
@@ -273,39 +271,39 @@ gulp.task( 'showcase:build', ShowcaseBuild );
 function HustleWatch() {
 
 	// Watch Hustle styles
-	gulp.watch( hustle.watch.styles, gulp.series( HustleStyles ) );
+	watch( hustle.watch.styles, series( HustleStyles ) );
 
 	// Watch Hustle scripts
-	gulp.watch( hustle.watch.scripts, gulp.series( HustleScripts ) );
+	watch( hustle.watch.scripts, series( HustleScripts ) );
 
 	// Watch Hustle fonts
-	gulp.watch( hustle.watch.fonts, gulp.series( HustleFonts ) );
+	watch( hustle.watch.fonts, series( HustleFonts ) );
 
 	// Watch Hustle information files
-	gulp.watch( hustle.watch.files, gulp.series( HustleFiles ) );
+	watch( hustle.watch.files, series( HustleFiles ) );
 
 }
 
 function ShowcaseWatch() {
 
 	// Watch Showcase styles
-	gulp.watch( showcase.watch.styles, gulp.series( ShowcaseStyles ) );
+	watch( showcase.watch.styles, series( ShowcaseStyles ) );
 
 	// Watch Showcase scripts
-	gulp.watch( showcase.watch.scripts, gulp.series( ShowcaseScripts ) );
+	watch( showcase.watch.scripts, series( ShowcaseScripts ) );
 
 	// Watch Showcase fonts
-	gulp.watch( showcase.watch.fonts, gulp.series( ShowcaseFonts ) );
+	watch( showcase.watch.fonts, series( ShowcaseFonts ) );
 
 	// Watch for HTML changes
-	gulp.watch( showcase.watch.html ).on( 'change', browserSync.reload );
+	watch( showcase.watch.html ).on( 'change', browserSync.reload );
 
 }
 
 // ==================================================
 // Development
 
-gulp.task( 'development', gulp.series(
+task( 'development', series(
 	HustleBuild,
 	ShowcaseBuild,
 	BrowserSync,

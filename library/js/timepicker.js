@@ -18,7 +18,7 @@
 			const moduleId = container.data( 'id' );
 			const element  = container.find( select );
 
-			element.timepicker({
+			element.HUI_timepicker({
 				timeFormat: ( '' !== element.data( 'time-format' ) ) ? element.data( 'time-format' ) : 'h:mm p',
 				interval: ( '' !== element.data( 'time-interval' ) ) ? element.data( 'time-interval' ) : 60,
 				minTime: '0',

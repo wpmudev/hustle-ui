@@ -7,6 +7,8 @@
  * Copyright (c) 2016 Willington Vega; Licensed MIT, GPL
  */
 
+// @edited replaced default timepicker name with HUI_timepicker.
+
  (function (factory) {
     if ( typeof module === 'object' && typeof module.exports === 'object' ) {
         factory(require('jquery'), window, document);
@@ -24,7 +26,7 @@
             if (arguments.length === 1) {
                 var date = arguments[0];
                 if (typeof date === 'string') {
-                    date = $.fn.timepicker.parseTime(date);
+                    date = $.fn.HUI_timepicker.parseTime(date);
                 }
                 return new Date(0, 0, 0, date.getHours(), date.getMinutes(), date.getSeconds());
             } else if (arguments.length === 3) {
@@ -36,7 +38,7 @@
             }
         }
 
-        $.TimePicker = function() {
+        $.HUI_TimePicker = function() {
             var widget = this;
 
             widget.container = $('.hustle-timepicker');
@@ -69,15 +71,15 @@
             }
         };
 
-        $.TimePicker.count = 0;
-        $.TimePicker.instance = function() {
-            if (!$.TimePicker._instance) {
-                $.TimePicker._instance = new $.TimePicker();
+        $.HUI_TimePicker.count = 0;
+        $.HUI_TimePicker.instance = function() {
+            if (!$.HUI_TimePicker._instance) {
+                $.HUI_TimePicker._instance = new $.HUI_TimePicker();
             }
-            return $.TimePicker._instance;
+            return $.HUI_TimePicker._instance;
         };
 
-        $.TimePicker.prototype = {
+        $.HUI_TimePicker.prototype = {
             // extracted from from jQuery UI Core
             // http://github,com/jquery/jquery-ui/blob/master/ui/jquery.ui.core.js
             keyCode: {
@@ -120,7 +122,7 @@
                 while(time < end) {
                     if (widget._isValidTime(i, time)) {
                         item = $('<li>').addClass('ui-menu-item').appendTo(ul);
-                        $('<a>').text($.fn.timepicker.formatTime(i.options.timeFormat, time)).appendTo(item);
+                        $('<a>').text($.fn.HUI_timepicker.formatTime(i.options.timeFormat, time)).appendTo(item);
                         item.data('time-value', time);
                     }
                     time = new Date(time.getTime() + i.options.interval * 60 * 1000);
@@ -234,7 +236,7 @@
                 } else if (i.options.defaultTime && i.options.defaultTime.getFullYear) {
                     i.setTime(normalize(i.options.defaultTime));
                 } else if (i.options.defaultTime) {
-                    i.setTime($.fn.timepicker.parseTime(i.options.defaultTime));
+                    i.setTime($.fn.HUI_timepicker.parseTime(i.options.defaultTime));
                 }
             },
 
@@ -274,14 +276,14 @@
                     });
                 }).bind('change.timepicker', function() {
                     if (i.closed()) {
-                        i.setTime($.fn.timepicker.parseTime(i.element.val()));
+                        i.setTime($.fn.HUI_timepicker.parseTime(i.element.val()));
                     }
                 });
             },
 
             select: function(i, item) {
                 var widget = this, instance = i === false ? widget.instance : i;
-                widget.setTime(instance, $.fn.timepicker.parseTime(item.children('a').text()));
+                widget.setTime(instance, $.fn.HUI_timepicker.parseTime(item.children('a').text()));
                 widget.close(instance, true);
             },
 
@@ -507,7 +509,7 @@
                         var item = $(this), time;
 
                         if ($.fn.jquery < '1.4.2') {
-                            time = $.fn.timepicker.parseTime(item.find('a').text());
+                            time = $.fn.HUI_timepicker.parseTime(item.find('a').text());
                         } else {
                             time = item.data('time-value');
                         }
@@ -553,17 +555,17 @@
             //
 
             parse: function(i, str) {
-                return $.fn.timepicker.parseTime(str);
+                return $.fn.HUI_timepicker.parseTime(str);
             },
 
             format: function(i, time, format) {
                 format = format || i.options.timeFormat;
-                return $.fn.timepicker.formatTime(format, time);
+                return $.fn.HUI_timepicker.formatTime(format, time);
             },
 
             getTime: function(i) {
                 var widget = this,
-                    current = $.fn.timepicker.parseTime(i.element.val());
+                    current = $.fn.HUI_timepicker.parseTime(i.element.val());
 
                 // if current value is not valid, we return null.
                 // stored Date object is ignored, because the current value
@@ -650,7 +652,7 @@
             }
         };
 
-        $.TimePicker.defaults =  {
+        $.HUI_TimePicker.defaults =  {
             timeFormat: 'hh:mm p',
             minHour: null,
             minMinutes: null,
@@ -671,7 +673,7 @@
             change: function(/*time*/) {}
         };
 
-        $.TimePicker.methods = {
+        $.HUI_TimePicker.methods = {
             chainable: [
                 'next',
                 'previous',
@@ -682,7 +684,7 @@
             ]
         };
 
-        $.fn.timepicker = function(options) {
+        $.fn.HUI_timepicker = function(options) {
             // support calling API methods using the following syntax:
             //   $(...).timepicker('parse', '11p');
             if (typeof options === 'string') {
@@ -692,7 +694,7 @@
                 // chainable API methods
                 if (options === 'option' && arguments.length > 2) {
                     method = 'each';
-                } else if ($.inArray(options, $.TimePicker.methods.chainable) !== -1) {
+                } else if ($.inArray(options, $.HUI_TimePicker.methods.chainable) !== -1) {
                     method = 'each';
                 // API methods that return a value
                 } else {
@@ -721,17 +723,17 @@
                 return this.data('TimePicker');
             }
 
-            var globals = $.extend({}, $.TimePicker.defaults, options);
+            var globals = $.extend({}, $.HUI_TimePicker.defaults, options);
 
             return this.each(function() {
-                $.TimePicker.instance().register(this, globals);
+                $.HUI_TimePicker.instance().register(this, globals);
             });
         };
 
         /**
          * TODO: documentation
          */
-        $.fn.timepicker.formatTime = function(format, time) {
+        $.fn.HUI_timepicker.formatTime = function(format, time) {
             var hours = time.getHours(),
                 hours12 = hours % 12,
                 minutes = time.getMinutes(),
@@ -794,7 +796,7 @@
          * For a detailed list of supported formats check the unit tests at
          * http://github.com/wvega/timepicker/tree/master/tests/
          */
-        $.fn.timepicker.parseTime = (function() {
+        $.fn.HUI_timepicker.parseTime = (function() {
             var patterns = [
                     // 1, 12, 123, 1234, 12345, 123456
                     [/^(\d+)$/, '$1'],
@@ -875,9 +877,9 @@
 
                 if (h > 24) {
                     if (str.length >= 6) {
-                        return $.fn.timepicker.parseTime(str.substr(0,5));
+                        return $.fn.HUI_timepicker.parseTime(str.substr(0,5));
                     } else {
-                        return $.fn.timepicker.parseTime(str + '0' + (am ? 'a' : '') + (pm ? 'p' : ''));
+                        return $.fn.HUI_timepicker.parseTime(str + '0' + (am ? 'a' : '') + (pm ? 'p' : ''));
                     }
                 } else {
                     time.setHours(h, m, s);

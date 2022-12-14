@@ -108,24 +108,30 @@
 
 		function init() {
 
+			// Get the element that was focused before the modal was opened
+			var focusedElementBeforeModal = document.activeElement;
+
 			popup.removeClass( 'hustle-show' );
 			animation();
 
 			// Module time.
 			popup.addClass( 'hustle-show' );
 
+			popup.attr( 'tabindex', '1' );
+
 			// Layout time.
 			setTimeout( function() {
 				animationIn();
 				$( document ).trigger( 'hustle:module:displayed', popup );
+				trapFocus( popup[0].id );
 			}, 200 );
 
-			trapFocus( popup[0].id );
+			$( '#' + popup[0].id ).focus();
 
 			// resize iframes, object and videos
 			resizeObjectsInContent();
 
-			HUI.popupClose( el, autohideDelay );
+			HUI.popupClose( el, autohideDelay, focusedElementBeforeModal );
 		}
 
 		init();

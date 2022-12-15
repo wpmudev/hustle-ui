@@ -11,6 +11,9 @@
 
 		const slidein = $( el );
 		const content = slidein.find( '.hustle-slidein-content' );
+		const focusedElementBeforeModal = document.activeElement;
+		const slideinId = slidein.attr( 'id' );
+		const slideinWrapper = $( '#' + slideinId ).find( '.hustle-layout' );
 
 		if ( ! slidein.is( '.hustle-slidein' ) ) {
 			return;
@@ -91,28 +94,23 @@
 			}
 
 			if ( e.shiftKey ) /* shift + tab */ {
-				if ( document.activeElement === firstFocusableEl ) {
-				lastFocusableEl.focus();
-					e.preventDefault();
-				}
+					if ( document.activeElement === firstFocusableEl ) {
+						lastFocusableEl.focus();
+						e.preventDefault();
+					}
 				} else /* tab */ {
-				if ( document.activeElement === lastFocusableEl ) {
-				firstFocusableEl.focus();
-					e.preventDefault();
-				}
+					if ( document.activeElement === lastFocusableEl ) {
+						firstFocusableEl.focus();
+						e.preventDefault();
+					}
 				}
 			});
 		}
 
 		function init() {
 
-			// Get the element that was focused before the modal was opened
-			var focusedElementBeforeModal = document.activeElement;
-
 			reset();
 			position();
-
-			slidein.attr( 'tabindex', '1' );
 
 			// Module time.
 			setTimeout( function() {
@@ -120,17 +118,15 @@
 				show();
 			}, 800 );
 
+			slideinWrapper.attr( 'tabindex', '0' );
+
 			// Layout time.
 			setTimeout( function() {
 				animation();
 				$( document ).trigger( 'hustle:module:displayed', slidein );
-				trapFocus( slidein[0].id );
+				trapFocus( slideinId );
+				slideinWrapper.focus();
 			}, 1000 );
-
-			setTimeout( function() {
-				$( '#' + slidein[0].id ).focus();
-				console.log(  document.activeElement );
-			}, 1200 );
 
 			HUI.slideinClose( el, autohideDelay, focusedElementBeforeModal );
 		}

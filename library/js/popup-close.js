@@ -94,10 +94,12 @@
 				if ( ! $( '.hustle-show.hustle-scroll-forbidden' ).length ) {
 					$( 'html' ).removeClass( 'hustle-no-scroll' );
 				}
-
-				// Restore focus to the previously focused element
-				focusedElementBeforeModal.focus();
 			}, delay );
+
+			console.log( focusedElementBeforeModal );
+
+			// Restore focus to the previously focused element
+			focusedElementBeforeModal.focus();
 		}
 
 		function init() {

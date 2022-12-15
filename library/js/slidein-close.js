@@ -44,10 +44,12 @@
 			setTimeout( function() {
 				slidein.removeClass( 'hustle-show' );
 				content.removeClass( 'hustle-animate-out' );
-
-				// Restore focus to the previously focused element
-				focusedElementBeforeModal.focus();
 			}, 1000 );
+
+			console.log( focusedElementBeforeModal );
+
+			// Restore focus to the previously focused element
+			focusedElementBeforeModal.focus();
 		}
 
 		function init() {

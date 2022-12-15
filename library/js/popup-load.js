@@ -11,6 +11,8 @@
 
 		const popup = $( el );
 		const content = popup.find( '.hustle-popup-content' );
+		const popupId = popup.attr( 'id' );
+		const popupWrapper = $( '#' + popupId ).find( '.hustle-layout' );
 
 		if ( ! popup.is( '.hustle-popup' ) ) {
 			return;
@@ -108,7 +110,6 @@
 
 		function init() {
 
-			// Get the element that was focused before the modal was opened
 			var focusedElementBeforeModal = document.activeElement;
 
 			popup.removeClass( 'hustle-show' );
@@ -117,16 +118,16 @@
 			// Module time.
 			popup.addClass( 'hustle-show' );
 
-			popup.attr( 'tabindex', '1' );
+			popupWrapper.attr( 'tabindex', '0' );
 
 			// Layout time.
 			setTimeout( function() {
 				animationIn();
 				$( document ).trigger( 'hustle:module:displayed', popup );
-				trapFocus( popup[0].id );
+				trapFocus( popupId );
 			}, 200 );
 
-			$( '#' + popup[0].id ).focus();
+			popupWrapper.focus();
 
 			// resize iframes, object and videos
 			resizeObjectsInContent();

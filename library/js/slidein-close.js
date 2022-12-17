@@ -46,8 +46,6 @@
 				content.removeClass( 'hustle-animate-out' );
 			}, 1000 );
 
-			console.log( focusedElementBeforeModal );
-
 			// Restore focus to the previously focused element
 			focusedElementBeforeModal.focus();
 		}

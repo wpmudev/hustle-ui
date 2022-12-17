@@ -96,8 +96,6 @@
 				}
 			}, delay );
 
-			console.log( focusedElementBeforeModal );
-
 			// Restore focus to the previously focused element
 			focusedElementBeforeModal.focus();
 		}

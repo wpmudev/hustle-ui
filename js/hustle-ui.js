@@ -6933,6 +6933,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
  *
  * Copyright (c) 2016 Willington Vega; Licensed MIT, GPL
  */
+// @edited replaced default timepicker name with HUI_timepicker.
 
 
 (function (factory) {
@@ -6952,7 +6953,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         var date = arguments[0];
 
         if (typeof date === 'string') {
-          date = $.fn.timepicker.parseTime(date);
+          date = $.fn.HUI_timepicker.parseTime(date);
         }
 
         return new Date(0, 0, 0, date.getHours(), date.getMinutes(), date.getSeconds());
@@ -6965,7 +6966,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       }
     }
 
-    $.TimePicker = function () {
+    $.HUI_TimePicker = function () {
       var widget = this;
       widget.container = $('.hustle-timepicker');
       widget.ui = widget.container.find('.ui-timepicker');
@@ -6991,17 +6992,17 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       }
     };
 
-    $.TimePicker.count = 0;
+    $.HUI_TimePicker.count = 0;
 
-    $.TimePicker.instance = function () {
-      if (!$.TimePicker._instance) {
-        $.TimePicker._instance = new $.TimePicker();
+    $.HUI_TimePicker.instance = function () {
+      if (!$.HUI_TimePicker._instance) {
+        $.HUI_TimePicker._instance = new $.HUI_TimePicker();
       }
 
-      return $.TimePicker._instance;
+      return $.HUI_TimePicker._instance;
     };
 
-    $.TimePicker.prototype = {
+    $.HUI_TimePicker.prototype = {
       // extracted from from jQuery UI Core
       // http://github,com/jquery/jquery-ui/blob/master/ui/jquery.ui.core.js
       keyCode: {
@@ -7046,7 +7047,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         while (time < end) {
           if (widget._isValidTime(i, time)) {
             item = $('<li>').addClass('ui-menu-item').appendTo(ul);
-            $('<a>').text($.fn.timepicker.formatTime(i.options.timeFormat, time)).appendTo(item);
+            $('<a>').text($.fn.HUI_timepicker.formatTime(i.options.timeFormat, time)).appendTo(item);
             item.data('time-value', time);
           }
 
@@ -7188,7 +7189,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         } else if (i.options.defaultTime && i.options.defaultTime.getFullYear) {
           i.setTime(normalize(i.options.defaultTime));
         } else if (i.options.defaultTime) {
-          i.setTime($.fn.timepicker.parseTime(i.options.defaultTime));
+          i.setTime($.fn.HUI_timepicker.parseTime(i.options.defaultTime));
         }
       },
       _addInputEventsHandlers: function _addInputEventsHandlers(i) {
@@ -7232,14 +7233,14 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
           });
         }).bind('change.timepicker', function () {
           if (i.closed()) {
-            i.setTime($.fn.timepicker.parseTime(i.element.val()));
+            i.setTime($.fn.HUI_timepicker.parseTime(i.element.val()));
           }
         });
       },
       select: function select(i, item) {
         var widget = this,
             instance = i === false ? widget.instance : i;
-        widget.setTime(instance, $.fn.timepicker.parseTime(item.children('a').text()));
+        widget.setTime(instance, $.fn.HUI_timepicker.parseTime(item.children('a').text()));
         widget.close(instance, true);
       },
       activate: function activate(i, item) {
@@ -7461,7 +7462,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
                 time;
 
             if ($.fn.jquery < '1.4.2') {
-              time = $.fn.timepicker.parseTime(item.find('a').text());
+              time = $.fn.HUI_timepicker.parseTime(item.find('a').text());
             } else {
               time = item.data('time-value');
             }
@@ -7501,15 +7502,15 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       },
       //
       parse: function parse(i, str) {
-        return $.fn.timepicker.parseTime(str);
+        return $.fn.HUI_timepicker.parseTime(str);
       },
       format: function format(i, time, _format2) {
         _format2 = _format2 || i.options.timeFormat;
-        return $.fn.timepicker.formatTime(_format2, time);
+        return $.fn.HUI_timepicker.formatTime(_format2, time);
       },
       getTime: function getTime(i) {
         var widget = this,
-            current = $.fn.timepicker.parseTime(i.element.val()); // if current value is not valid, we return null.
+            current = $.fn.HUI_timepicker.parseTime(i.element.val()); // if current value is not valid, we return null.
         // stored Date object is ignored, because the current value
         // (valid or invalid) always takes priority
 
@@ -7591,7 +7592,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         }
       }
     };
-    $.TimePicker.defaults = {
+    $.HUI_TimePicker.defaults = {
       timeFormat: 'hh:mm p',
       minHour: null,
       minMinutes: null,
@@ -7611,11 +7612,11 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       // callbacks
       change: function change() {}
     };
-    $.TimePicker.methods = {
+    $.HUI_TimePicker.methods = {
       chainable: ['next', 'previous', 'open', 'close', 'destroy', 'setTime']
     };
 
-    $.fn.timepicker = function (options) {
+    $.fn.HUI_timepicker = function (options) {
       // support calling API methods using the following syntax:
       //   $(...).timepicker('parse', '11p');
       if (typeof options === 'string') {
@@ -7625,7 +7626,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 
         if (options === 'option' && arguments.length > 2) {
           method = 'each';
-        } else if ($.inArray(options, $.TimePicker.methods.chainable) !== -1) {
+        } else if ($.inArray(options, $.HUI_TimePicker.methods.chainable) !== -1) {
           method = 'each'; // API methods that return a value
         } else {
           method = 'map';
@@ -7655,9 +7656,9 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         return this.data('TimePicker');
       }
 
-      var globals = $.extend({}, $.TimePicker.defaults, options);
+      var globals = $.extend({}, $.HUI_TimePicker.defaults, options);
       return this.each(function () {
-        $.TimePicker.instance().register(this, globals);
+        $.HUI_TimePicker.instance().register(this, globals);
       });
     };
     /**
@@ -7665,7 +7666,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
      */
 
 
-    $.fn.timepicker.formatTime = function (format, time) {
+    $.fn.HUI_timepicker.formatTime = function (format, time) {
       var hours = time.getHours(),
           hours12 = hours % 12,
           minutes = time.getMinutes(),
@@ -7732,7 +7733,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
      */
 
 
-    $.fn.timepicker.parseTime = function () {
+    $.fn.HUI_timepicker.parseTime = function () {
       var patterns = [// 1, 12, 123, 1234, 12345, 123456
       [/^(\d+)$/, '$1'], // :1, :2, :3, :4 ... :9
       [/^:(\d)$/, '$10'], // :1, :12, :123, :1234 ...
@@ -7806,9 +7807,9 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 
         if (h > 24) {
           if (str.length >= 6) {
-            return $.fn.timepicker.parseTime(str.substr(0, 5));
+            return $.fn.HUI_timepicker.parseTime(str.substr(0, 5));
           } else {
-            return $.fn.timepicker.parseTime(str + '0' + (am ? 'a' : '') + (pm ? 'p' : ''));
+            return $.fn.HUI_timepicker.parseTime(str + '0' + (am ? 'a' : '') + (pm ? 'p' : ''));
           }
         } else {
           time.setHours(h, m, s);
@@ -7833,7 +7834,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       var container = $(this);
       var moduleId = container.data('id');
       var element = container.find(select);
-      element.timepicker({
+      element.HUI_timepicker({
         timeFormat: '' !== element.data('time-format') ? element.data('time-format') : 'h:mm p',
         interval: '' !== element.data('time-interval') ? element.data('time-interval') : 60,
         minTime: '0',

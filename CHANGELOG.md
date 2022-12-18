@@ -6,8 +6,7 @@ All notable changes to this project will be documented in this file. See [Conven
 
 #### 🐛 Bug Fixes
 - `opt-ins`, `slide-ins`, `embeds`
-  - **fix(timepicker):** Element breaks when using with third-party plugins. [#78](https://github.com/wpmudev/hustle-ui/pull/78) ([HUS-1250](https://incsub.atlassian.net/browse/HUS-1250)) ([@creadordev](https://github.com/creadordev))
-
+  - **fix(timepicker):** Element breaks when using third-party plugins. [#78](https://github.com/wpmudev/hustle-ui/pull/78) ([HUS-1250](https://incsub.atlassian.net/browse/HUS-1250)) ([@creadordev](https://github.com/creadordev))
 - `embeds`
   - **fix(timepicker):** Element dropdown goes out of place. [#79](https://github.com/wpmudev/hustle-ui/pull/79) ([HUS-1262](https://incsub.atlassian.net/browse/HUS-1262)) ([@creadordev](https://github.com/creadordev))
 

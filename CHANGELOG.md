@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org/) for commit guidelines.
 
+## [2.0.20](https://github.com/wpmudev/hustle-ui/compare/v2.0.19...v2.0.20) (2022-21-12)
+
+#### 🐛 Bug Fixes
+- `slide-ins`
+  - **fix(container):** Slide-in showing Vertical scroll bar both in preview and front end. [#80](https://github.com/wpmudev/hustle-ui/pull/80) ([HUS-1262](https://incsub.atlassian.net/browse/HUS-1262)) ([@creadordev](https://github.com/creadordev))
+
+#### Committers: 2
+- Leighton Sapir ([@iamleigh](https://github.com/iamleigh))
+- Pawan Kumar ([@creador-dev](https://github.com/creador-dev))
+
 ## [2.0.19](https://github.com/wpmudev/hustle-ui/compare/v2.0.18...v2.0.19) (2022-18-12)
 
 #### 🐛 Bug Fixes

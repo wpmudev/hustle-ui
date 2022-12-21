@@ -1,7 +1,6 @@
 @include hui-class(null, optin, null, false) {
 	width: 100%;
 	display: block;
-	position: relative;
 
 	&, * {
 		box-sizing: border-box;
@@ -9,6 +8,10 @@
 	}
 
 	.hustle-layout {
+
+		.hustle-main-wrapper {
+			position: relative;
+		}
 
 		.hustle-nsa-link {
 

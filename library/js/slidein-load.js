@@ -79,34 +79,6 @@
 			content.addClass( 'hustle-animate-in' );
 		}
 
-		function trapFocus( elem ) {
-			var element = document.getElementById( elem );
-			var focusableEls = element.querySelectorAll( 'a[href]:not([disabled]), button:not([disabled]), textarea:not([disabled]), input[type="text"]:not([disabled]), input[type="radio"]:not([disabled]), input[type="checkbox"]:not([disabled]), select:not([disabled])' );
-			var firstFocusableEl = focusableEls[0];
-			var lastFocusableEl = focusableEls[focusableEls.length - 1];
-			var KEYCODE_TAB = 9;
-
-			element.addEventListener( 'keydown', function( e ) {
-				var isTabPressed = ( 'Tab' === e.key || e.keyCode === KEYCODE_TAB );
-
-			if ( ! isTabPressed ) {
-				return;
-			}
-
-			if ( e.shiftKey ) /* shift + tab */ {
-					if ( document.activeElement === firstFocusableEl ) {
-						lastFocusableEl.focus();
-						e.preventDefault();
-					}
-				} else /* tab */ {
-					if ( document.activeElement === lastFocusableEl ) {
-						firstFocusableEl.focus();
-						e.preventDefault();
-					}
-				}
-			});
-		}
-
 		function init() {
 
 			reset();
@@ -124,7 +96,7 @@
 			setTimeout( function() {
 				animation();
 				$( document ).trigger( 'hustle:module:displayed', slidein );
-				trapFocus( slideinId );
+				HUI.trapFocus( slideinId );
 				slideinWrapper.focus();
 			}, 1000 );
 

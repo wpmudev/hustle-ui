@@ -7,7 +7,7 @@
 		window.HUI = {};
 	}
 
-	HUI.popupClose = function( el, autohideDelay, focusedElementBeforeModal ) {
+	HUI.popupClose = function( el, autohideDelay ) {
 
 		const popup = $( el ),
 			close = popup.find( '.hustle-button-close' ),
@@ -94,10 +94,9 @@
 				if ( ! $( '.hustle-show.hustle-scroll-forbidden' ).length ) {
 					$( 'html' ).removeClass( 'hustle-no-scroll' );
 				}
-			}, delay );
 
-			// Restore focus to the previously focused element
-			focusedElementBeforeModal.focus();
+				HUI.trapFocus();
+			}, delay );
 		}
 
 		function init() {

@@ -7,12 +7,28 @@
 		window.HUI = {};
 	}
 
-	HUI.trapFocus = function( el ) {
+	HUI.trapFocus = function() {
+
+		// detect all the modals.
+		var modals = [];
+		var modalId = '';
+
+		$( '.hustle-show[role="dialog"]' ).each( function() {
+			modals.push( '#' + this.id );
+		});
+
+		if ( ! modals.length ) {
+			return;
+		}
+
+		modalId = modals[modals.length - 1];
+
+		$( modalId ).find( '.hustle-layout' ).focus();
 
 		// Trap focus within the modal when it is open
-		$( el ).on( 'keydown', function( e ) {
+		$( modalId ).on( 'keydown', function( e ) {
 
-			var focusableElements = $( el ).find( 'a[href], button, textarea, input, select' ).filter( ':visible' );
+			var focusableElements = $( modalId ).find( 'a[href], button, textarea, input, select' ).filter( ':visible' );
 			var firstFocusableElement = focusableElements[0];
 			var lastFocusableElement = focusableElements[focusableElements.length - 1];
 			var isTabPressed = ( 'Tab' === e.key || 9 === e.keyCode );

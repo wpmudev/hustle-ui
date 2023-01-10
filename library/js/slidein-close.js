@@ -7,7 +7,7 @@
 		window.HUI = {};
 	}
 
-	HUI.slideinClose = function( el, autohideDelay, focusedElementBeforeModal ) {
+	HUI.slideinClose = function( el, autohideDelay ) {
 
 		const slidein = $( el ),
 			close = slidein.find( '.hustle-button-close' ),
@@ -44,10 +44,8 @@
 			setTimeout( function() {
 				slidein.removeClass( 'hustle-show' );
 				content.removeClass( 'hustle-animate-out' );
+				HUI.trapFocus();
 			}, 1000 );
-
-			// Restore focus to the previously focused element
-			focusedElementBeforeModal.focus();
 		}
 
 		function init() {

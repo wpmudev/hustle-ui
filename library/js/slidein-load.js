@@ -11,7 +11,6 @@
 
 		const slidein = $( el );
 		const content = slidein.find( '.hustle-slidein-content' );
-		const focusedElementBeforeModal = document.activeElement;
 		const slideinId = $( '#' + slidein.attr( 'id' ) );
 		const slideinWrapper = slideinId.find( '.hustle-layout' );
 
@@ -96,11 +95,10 @@
 			setTimeout( function() {
 				animation();
 				$( document ).trigger( 'hustle:module:displayed', slidein );
-				HUI.trapFocus( slideinId );
-				slideinWrapper.focus();
+				HUI.trapFocus();
 			}, 1000 );
 
-			HUI.slideinClose( el, autohideDelay, focusedElementBeforeModal );
+			HUI.slideinClose( el, autohideDelay );
 		}
 
 		init();

@@ -96,15 +96,13 @@
 			setTimeout( function() {
 				animationIn();
 				$( document ).trigger( 'hustle:module:displayed', popup );
-				HUI.trapFocus( popupId );
-			}, 200 );
-
-			popupWrapper.focus();
+				HUI.trapFocus();
+			}, 2000 );
 
 			// resize iframes, object and videos
 			resizeObjectsInContent();
 
-			HUI.popupClose( el, autohideDelay, focusedElementBeforeModal );
+			HUI.popupClose( el, autohideDelay );
 		}
 
 		init();

@@ -82,8 +82,6 @@
 
 		function init() {
 
-			var focusedElementBeforeModal = document.activeElement;
-
 			popup.removeClass( 'hustle-show' );
 			animation();
 
@@ -97,7 +95,7 @@
 				animationIn();
 				$( document ).trigger( 'hustle:module:displayed', popup );
 				HUI.trapFocus();
-			}, 2000 );
+			}, 200 );
 
 			// resize iframes, object and videos
 			resizeObjectsInContent();

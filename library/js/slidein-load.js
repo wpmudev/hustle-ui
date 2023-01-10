@@ -12,8 +12,8 @@
 		const slidein = $( el );
 		const content = slidein.find( '.hustle-slidein-content' );
 		const focusedElementBeforeModal = document.activeElement;
-		const slideinId = slidein.attr( 'id' );
-		const slideinWrapper = $( '#' + slideinId ).find( '.hustle-layout' );
+		const slideinId = $( '#' + slidein.attr( 'id' ) );
+		const slideinWrapper = slideinId.find( '.hustle-layout' );
 
 		if ( ! slidein.is( '.hustle-slidein' ) ) {
 			return;

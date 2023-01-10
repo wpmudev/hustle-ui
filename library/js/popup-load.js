@@ -11,8 +11,8 @@
 
 		const popup = $( el );
 		const content = popup.find( '.hustle-popup-content' );
-		const popupId = popup.attr( 'id' );
-		const popupWrapper = $( '#' + popupId ).find( '.hustle-layout' );
+		const popupId = $( '#' + popup.attr( 'id' ) );
+		const popupWrapper = popupId.find( '.hustle-layout' );
 
 		if ( ! popup.is( '.hustle-popup' ) ) {
 			return;

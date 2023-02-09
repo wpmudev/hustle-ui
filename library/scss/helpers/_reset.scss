@@ -1,7 +1,7 @@
 .hustle-ui {
-
-	* ,
-    &.hustle-ui{
+	box-sizing: border-box;
+	
+	* {
         box-sizing: border-box;
     }
 }

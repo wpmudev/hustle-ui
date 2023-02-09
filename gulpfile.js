@@ -1,15 +1,13 @@
 'use strict';
 
 // Import `src` and `dest` from gulp for use in the task.
-const { src, dest } = require( 'gulp' );
+const { src, dest, series, task, watch } = require( 'gulp' );
 
 // ==================================================
 // Supported Packages
 const fs           = require( 'fs' );
 const pump         = require( 'pump' );
-const gulp         = require( 'gulp' );
 const babel        = require( 'gulp-babel' );
-const watch        = require( 'gulp-watch' );
 const sass         = require( 'gulp-sass' );
 const header       = require( 'gulp-header' );
 const autoprefixer = require( 'gulp-autoprefixer' );
@@ -117,23 +115,23 @@ showcase.watch.html = [
 
 // ==================================================
 // BrowserSync
-gulp.task( 'browser-sync', function() {
+function BrowserSync() {
 
-	browserSync.init({
+	return browserSync.init({
 		injectChanges: true,
 		server: {
 			baseDir: showcase.output.main
 		}
 	});
-});
+}
 
 // ==================================================
 // Tasks
 
 // Build Hustle styles
-gulp.task( 'hustle:styles', function() {
+function HustleStyles() {
 
-	gulp.src( hustle.watch.styles )
+	return src( hustle.watch.styles )
 		.pipe(
 			sass({ outputStyle: 'compressed' })
 			.on( 'error', sass.logError )
@@ -144,15 +142,15 @@ gulp.task( 'hustle:styles', function() {
 		.pipe( rename({
 			suffix: '.min'
 		}) )
-		.pipe( gulp.dest( hustle.output.styles ) )
+		.pipe( dest( hustle.output.styles ) )
 		;
-});
+}
 
 // Build Hustle scripts
-gulp.task( 'hustle:scripts', function( cb ) {
+function HustleScripts( cb ) {
 
-	pump([
-		gulp.src( hustle.watch.scripts ),
+	return pump([
+		src( hustle.watch.scripts ),
 		eslint(),
 		eslint.format(),
 		eslint.failAfterError(),
@@ -165,45 +163,48 @@ gulp.task( 'hustle:scripts', function( cb ) {
 			]
 		}),
 		header( banner ),
-		gulp.dest( hustle.output.scripts ),
+		dest( hustle.output.scripts ),
 		uglify(),
 		rename({
 			suffix: '.min'
 		}),
 		header( banner ),
-		gulp.dest( hustle.output.scripts ),
-		gulp.dest( showcase.output.scripts )
+		dest( hustle.output.scripts ),
+		dest( showcase.output.scripts )
 	], cb );
-});
+}
 
 // Copy Hustle fonts
-gulp.task( 'hustle:fonts', function() {
+function HustleFonts() {
 
-	gulp.src( hustle.watch.fonts )
-		.pipe( gulp.dest( hustle.output.fonts ) )
+	return src( hustle.watch.fonts )
+		.pipe( dest( hustle.output.fonts ) )
 		;
-});
+}
 
 // Copy Hustle information files
-gulp.task( 'hustle:files', function() {
+function HustleFiles() {
 
-	gulp.src( hustle.watch.files )
-		.pipe( gulp.dest( hustle.output.main ) )
+	return src( hustle.watch.files )
+		.pipe( dest( hustle.output.main ) )
 		;
-});
+}
 
 // Build Hustle UI
-gulp.task( 'hustle:build', [
-	'hustle:styles',
-	'hustle:scripts',
-	'hustle:fonts',
-	'hustle:files'
-]);
+function HustleBuild( done ) {
+	HustleStyles();
+	HustleScripts();
+	HustleFonts();
+	HustleFiles();
+	done();
+}
+
+task( 'hustle:build', HustleBuild );
 
 // Build Showcase styles
-gulp.task( 'showcase:styles', function() {
+function ShowcaseStyles() {
 
-	gulp.src( showcase.watch.styles )
+	return src( showcase.watch.styles )
 		.pipe(
 			sass({ outputStyle: 'compressed' })
 			.on( 'error', sass.logError )
@@ -213,18 +214,18 @@ gulp.task( 'showcase:styles', function() {
 		.pipe( rename({
 			suffix: '.min'
 		}) )
-		.pipe( gulp.dest( showcase.output.styles ) )
+		.pipe( dest( showcase.output.styles ) )
 		.pipe( browserSync.stream({
 			match: '**/*.css'
 		}) )
 		;
-});
+}
 
 // Build Showcase scripts
-gulp.task( 'showcase:scripts', function( cb ) {
+function ShowcaseScripts( cb ) {
 
-	pump([
-		gulp.src( showcase.watch.scripts ),
+	return pump([
+		src( showcase.watch.scripts ),
 		eslint(),
 		eslint.format(),
 		eslint.failAfterError(),
@@ -240,69 +241,72 @@ gulp.task( 'showcase:scripts', function( cb ) {
 		rename({
 			suffix: '.min'
 		}),
-		gulp.dest( showcase.output.scripts ),
+		dest( showcase.output.scripts ),
 		browserSync.stream()
 	], cb );
-});
+}
 
 // Copy Showcase fonts
-gulp.task( 'showcase:fonts', function() {
+function ShowcaseFonts() {
 
-	gulp.src( showcase.watch.fonts )
-		.pipe( gulp.dest( showcase.output.fonts ) )
+	return src( showcase.watch.fonts )
+		.pipe( dest( showcase.output.fonts ) )
 		.pipe( browserSync.stream() )
 		;
-});
+}
 
 // Build Showcase
-gulp.task( 'showcase:build', [
-	'showcase:styles',
-	'showcase:scripts',
-	'showcase:fonts'
-]);
+function ShowcaseBuild( done ) {
+	ShowcaseStyles();
+	ShowcaseScripts();
+	ShowcaseFonts();
+	done();
+}
+
+task( 'showcase:build', ShowcaseBuild );
 
 // ==================================================
 // Watch
 
-gulp.task( 'hustle:watch', function() {
+function HustleWatch() {
 
 	// Watch Hustle styles
-	gulp.watch( hustle.watch.styles, [ 'hustle:styles' ]);
+	watch( hustle.watch.styles, series( HustleStyles ) );
 
 	// Watch Hustle scripts
-	gulp.watch( hustle.watch.scripts, [ 'hustle:scripts' ]);
+	watch( hustle.watch.scripts, series( HustleScripts ) );
 
 	// Watch Hustle fonts
-	gulp.watch( hustle.watch.fonts, [ 'hustle:fonts' ]);
+	watch( hustle.watch.fonts, series( HustleFonts ) );
 
 	// Watch Hustle information files
-	gulp.watch( hustle.watch.files, [ 'hustle:files' ]);
+	watch( hustle.watch.files, series( HustleFiles ) );
 
-});
+}
 
-gulp.task( 'showcase:watch', function() {
+function ShowcaseWatch() {
 
 	// Watch Showcase styles
-	gulp.watch( showcase.watch.styles, [ 'showcase:styles' ]);
+	watch( showcase.watch.styles, series( ShowcaseStyles ) );
 
 	// Watch Showcase scripts
-	gulp.watch( showcase.watch.scripts, [ 'showcase:scripts' ]);
+	watch( showcase.watch.scripts, series( ShowcaseScripts ) );
 
 	// Watch Showcase fonts
-	gulp.watch( showcase.watch.fonts, [ 'showcase:fonts' ]);
+	watch( showcase.watch.fonts, series( ShowcaseFonts ) );
 
 	// Watch for HTML changes
-	gulp.watch( showcase.watch.html ).on( 'change', browserSync.reload );
+	watch( showcase.watch.html ).on( 'change', browserSync.reload );
 
-});
+}
 
 // ==================================================
 // Development
 
-gulp.task( 'development', [
-	'hustle:build',
-	'showcase:build',
-	'browser-sync',
-	'hustle:watch',
-	'showcase:watch'
-]);
+task( 'development', series(
+	HustleBuild,
+	ShowcaseBuild,
+	BrowserSync,
+	HustleWatch,
+	ShowcaseWatch
+) );

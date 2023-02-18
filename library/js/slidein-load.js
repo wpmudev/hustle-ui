@@ -11,6 +11,8 @@
 
 		const slidein = $( el );
 		const content = slidein.find( '.hustle-slidein-content' );
+		const slideinId = $( '#' + slidein.attr( 'id' ) );
+		const slideinWrapper = slideinId.find( '.hustle-layout' );
 
 		if ( ! slidein.is( '.hustle-slidein' ) ) {
 			return;
@@ -87,10 +89,13 @@
 				show();
 			}, 800 );
 
+			slideinWrapper.attr( 'tabindex', '0' );
+
 			// Layout time.
 			setTimeout( function() {
 				animation();
 				$( document ).trigger( 'hustle:module:displayed', slidein );
+				HUI.trapFocus();
 			}, 1000 );
 
 			HUI.slideinClose( el, autohideDelay );

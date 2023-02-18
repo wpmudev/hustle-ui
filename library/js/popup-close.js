@@ -94,6 +94,8 @@
 				if ( ! $( '.hustle-show.hustle-scroll-forbidden' ).length ) {
 					$( 'html' ).removeClass( 'hustle-no-scroll' );
 				}
+
+				HUI.trapFocus();
 			}, delay );
 		}
 

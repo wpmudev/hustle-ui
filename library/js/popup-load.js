@@ -11,6 +11,8 @@
 
 		const popup = $( el );
 		const content = popup.find( '.hustle-popup-content' );
+		const popupId = $( '#' + popup.attr( 'id' ) );
+		const popupWrapper = popupId.find( '.hustle-layout' );
 
 		if ( ! popup.is( '.hustle-popup' ) ) {
 			return;
@@ -86,10 +88,13 @@
 			// Module time.
 			popup.addClass( 'hustle-show' );
 
+			popupWrapper.attr( 'tabindex', '0' );
+
 			// Layout time.
 			setTimeout( function() {
 				animationIn();
 				$( document ).trigger( 'hustle:module:displayed', popup );
+				HUI.trapFocus();
 			}, 200 );
 
 			// resize iframes, object and videos

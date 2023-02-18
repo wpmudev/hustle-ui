@@ -44,6 +44,7 @@
 			setTimeout( function() {
 				slidein.removeClass( 'hustle-show' );
 				content.removeClass( 'hustle-animate-out' );
+				HUI.trapFocus();
 			}, 1000 );
 		}
 

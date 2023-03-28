@@ -7,7 +7,7 @@
 	// ========================================|
 	// 1. BASIC                                |
 	// ========================================|
-	.hustle-palette--#{$palette} {
+	.hustle-palette--#{"" + $palette} {
 
 		.hustle-info {
 
@@ -41,7 +41,7 @@
 	// ========================================|
 	// 2. CONTENT                              |
 	// ========================================|
-	.hustle-palette--#{$palette} {
+	.hustle-palette--#{"" + $palette} {
 
 		.hustle-info {
 
@@ -104,7 +104,7 @@
 	// ========================================|
 	// 3. CALL TO ACTION                       |
 	// ========================================|
-	.hustle-palette--#{$palette} {
+	.hustle-palette--#{"" + $palette} {
 
 		.hustle-info {
 
@@ -139,7 +139,7 @@
 	// ========================================|
 	// 4. GDPR CHECKBOX                        |
 	// ========================================|
-	.hustle-palette--#{$palette} {
+	.hustle-palette--#{"" + $palette} {
 
 		.hustle-info {
 
@@ -184,7 +184,7 @@
 	// ========================================|
 	// 5. ADDITIONAL SETTINGS                  |
 	// ========================================|
-	.hustle-palette--#{$palette} {
+	.hustle-palette--#{"" + $palette} {
 
 		&.hustle-popup {
 

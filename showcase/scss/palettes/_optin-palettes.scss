@@ -7,7 +7,7 @@
 	// ========================================|
 	// 1. BASIC                                |
 	// ========================================|
-	.hustle-palette--#{$palette} {
+	.hustle-palette--#{"" + $palette} {
 
 		.hustle-optin {
 
@@ -39,7 +39,7 @@
 	// ========================================|
 	// 2. CONTENT                              |
 	// ========================================|
-	.hustle-palette--#{$palette} {
+	.hustle-palette--#{"" + $palette} {
 
 		.hustle-optin {
 
@@ -146,7 +146,7 @@
 	// ========================================|
 	// 3. CALL TO ACTION                       |
 	// ========================================|
-	.hustle-palette--#{$palette} {
+	.hustle-palette--#{"" + $palette} {
 
 		.hustle-optin {
 
@@ -181,7 +181,7 @@
 	// ========================================|
 	// 4. INPUTS                               |
 	// ========================================|
-	.hustle-palette--#{$palette} {
+	.hustle-palette--#{"" + $palette} {
 
 		.hustle-optin {
 
@@ -251,7 +251,7 @@
 	// ========================================|
 	// 5. RADIO AND CHECKBOX                   |
 	// ========================================|
-	.hustle-palette--#{$palette} {
+	.hustle-palette--#{"" + $palette} {
 
 		.hustle-optin {
 
@@ -310,7 +310,7 @@
 	// ========================================|
 	// 6. SUBMIT BUTTON                        |
 	// ========================================|
-	.hustle-palette--#{$palette} {
+	.hustle-palette--#{"" + $palette} {
 
 		.hustle-optin {
 
@@ -340,7 +340,7 @@
 	// ========================================|
 	// 7. FORM OPTIONS                         |
 	// ========================================|
-	.hustle-palette--#{$palette} {
+	.hustle-palette--#{"" + $palette} {
 
 		.hustle-optin {
 
@@ -360,7 +360,7 @@
 	// ========================================|
 	// 8. ERROR MESSAGE                        |
 	// ========================================|
-	.hustle-palette--#{$palette} {
+	.hustle-palette--#{"" + $palette} {
 
 		.hustle-optin {
 
@@ -381,7 +381,7 @@
 	// ========================================|
 	// 9. ADDITIONAL SETTINGS                  |
 	// ========================================|
-	.hustle-palette--#{$palette} {
+	.hustle-palette--#{"" + $palette} {
 
 		&.hustle-popup {
 
@@ -431,7 +431,7 @@
 	// ========================================|
 	.hustle-calendar {
 
-		&.hustle-palette--#{$palette} {
+		&.hustle-palette--#{"" + $palette} {
 
 			&:before {
 				background-color: map.get($calendar-container, $palette);
@@ -478,7 +478,7 @@
 	// ========================================|
 	// 11. TIMEPICKER                          |
 	// ========================================|
-	.hustle-palette--#{$palette} {
+	.hustle-palette--#{"" + $palette} {
 
 		.hustle-timepicker {
 

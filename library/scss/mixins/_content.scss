@@ -1,3 +1,6 @@
+@use "sass:map";
+@use "sass:math";
+
 // Module Modes: optin info
 @mixin content($modes: null, $container: null) {
 
@@ -13,7 +16,7 @@
 				}
 
 				a {
-					transition: map-get($transition, ease);
+					transition: map.get($transition, ease);
 
 					&,
 					&:focus,
@@ -45,7 +48,7 @@
 						margin-left: 20px !important;
 
 						&:not(:last-child) {
-							margin-bottom: #{map-get($gutter, small) / 2};
+							margin-bottom: #{math.div(map.get($gutter, small), 2)};
 						}
 					}
 				}
@@ -84,7 +87,7 @@
 			}
 
 			blockquote {
-				padding: map-get($gutter, small) 0 map-get($gutter, small) #{map-get($gutter, small) + 4px};
+				padding: map.get($gutter, small) 0 map.get($gutter, small) #{map.get($gutter, small) + 4px};
 				border-left-width: 4px;
 				border-left-style: solid;
 			}
@@ -100,7 +103,7 @@
 				&:not(:last-child) {
 
 					@include media(min-width, sm) {
-						margin-bottom: map-get($gutter, default);
+						margin-bottom: map.get($gutter, default);
 					}
 				}
 			}
@@ -112,7 +115,7 @@
 					&:not(:last-child) {
 
 						@include media(min-width, sm) {
-							margin-bottom: #{map-get($gutter, default) / 2};
+							margin-bottom: #{math.div(map.get($gutter, default) , 2)};
 						}
 					}
 				}

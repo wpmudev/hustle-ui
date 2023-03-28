@@ -1,3 +1,5 @@
+@use "sass:map";
+
 $float-selector: (
 	desktop: '.hustle-displaying-in-large',
 	mobiles: '.hustle-displaying-in-small'
@@ -7,10 +9,10 @@ $float-selector: (
 
 	@each $screen, $class in $float-selector {
 
-		$float_gutter: map-get($gutter, default);
+		$float_gutter: map.get($gutter, default);
 
 		@if $screen == 'mobiles' {
-			$float_gutter: map-get($gutter, small);
+			$float_gutter: map.get($gutter, small);
 		}
 
 		&[data-#{$screen}="true"][data-#{$screen}-offset="selector"]#{$class} {

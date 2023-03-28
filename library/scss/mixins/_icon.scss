@@ -1,3 +1,5 @@
+@use "sass:map";
+
 @mixin icon($position: before, $icon: false, $styles: true) {
 
 	@if $position == both {
@@ -7,7 +9,7 @@
 	&:#{$position} {
 
 		@if $icon {
-			content: "#{map-get($icons, $icon)}";
+			content: "#{map.get($icons, $icon)}";
 		}
 
 		@if $styles {

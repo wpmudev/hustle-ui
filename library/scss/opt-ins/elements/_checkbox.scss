@@ -1,9 +1,11 @@
+@use "sass:map";
+
 @include hui-class(null, optin, null, false) {
 
 	.hustle-checkbox {
 		display: flex;
 		vertical-align: middle;
-		margin: 0 0 map-get($gutter, small);
+		margin: 0 0 map.get($gutter, small);
 		padding: 0;
 		border: 0;
 		position: relative;
@@ -23,17 +25,17 @@
 		}
 
 		span[aria-hidden] {
-			width: map-get($field-radio, size);
-			height: map-get($field-radio, size);
+			width: map.get($field-radio, size);
+			height: map.get($field-radio, size);
 			cursor: pointer;
 			display: block;
 			flex: 0 0 auto;
 			position: relative;
 			margin: 0;
 			padding: 0;
-			font-size: map-get($field-radio, icon-size);
+			font-size: map.get($field-radio, icon-size);
 			text-align: center;
-			transition: map-get($transition, ease);
+			transition: map.get($transition, ease);
 
 			@include icon(before, check) {
 				width: 100%;
@@ -80,7 +82,7 @@
 
 		&.hustle-gdpr {
 			display: inline-flex;
-			margin-top: map-get($gutter, small);
+			margin-top: map.get($gutter, small);
 			margin-bottom: 0;
 
 			@include support(ie) {
@@ -96,7 +98,7 @@
 			&.hustle-gdpr {
 
 				@include media(min-width, sm) {
-					margin-top: map-get($gutter, default);
+					margin-top: map.get($gutter, default);
 					margin-bottom: 0;
 				}
 			}
@@ -113,7 +115,7 @@
 
 			@include media(min-width, sm) {
 				display: inline-flex;
-				margin-right: map-get($gutter, default);
+				margin-right: map.get($gutter, default);
 				margin-bottom: 0;
 				padding-bottom: 5px;
 			}

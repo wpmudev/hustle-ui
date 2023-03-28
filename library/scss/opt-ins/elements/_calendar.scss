@@ -1,8 +1,10 @@
+@use "sass:map";
+
 .ui-datepicker {
 
 	&.hustle-calendar {
 		width: auto;
-		z-index: #{map-get($module, z-index) + 1} !important;
+		z-index: #{map.get($module, z-index) + 1} !important;
 		margin: 0;
 		padding: 1px 0;
 		border: 0;
@@ -27,19 +29,19 @@
 
 		.ui-datepicker-header {
 			display: block;
-			padding: #{map-get($gutter, small) + 5px} map-get($gutter, small);
+			padding: #{map.get($gutter, small) + 5px} map.get($gutter, small);
 
 			.ui-corner-all {
-				width: map-get($field-calendar, arrows-size);
-				height: map-get($field-calendar, arrows-size);
+				width: map.get($field-calendar, arrows-size);
+				height: map.get($field-calendar, arrows-size);
 				cursor: pointer;
 				display: flex;
 				align-items: center;
 				justify-content: center;
 				position: absolute;
-				top: #{map-get($gutter, small) + 5px};
-				font-size: map-get($field-calendar, arrows-icon);
-				transition: map-get($transition, ease);
+				top: #{map.get($gutter, small) + 5px};
+				font-size: map.get($field-calendar, arrows-icon);
+				transition: map.get($transition, ease);
 
 				@include icon(before, chevron-down);
 
@@ -48,7 +50,7 @@
 				}
 
 				&.ui-datepicker-prev {
-					left: map-get($gutter, small);
+					left: map.get($gutter, small);
 					right: unset;
 
 					&:before {
@@ -58,7 +60,7 @@
 
 				&.ui-datepicker-next {
 					left: unset;
-					right: map-get($gutter, small);
+					right: map.get($gutter, small);
 
 					&:before {
 						transform: rotate(-90deg);
@@ -68,8 +70,8 @@
 
 			.ui-datepicker-title {
 				display: block;
-				padding: 0 map-get($field-calendar, arrows-size);
-				font: 600 #{map-get($field-calendar, font-size)}/#{map-get($field-calendar, arrows-size)} map-get($font, default);
+				padding: 0 map.get($field-calendar, arrows-size);
+				font: 600 #{map.get($field-calendar, font-size)}/#{map.get($field-calendar, arrows-size)} map.get($font, default);
 				letter-spacing: 0.14px;
 				text-align: center;
 				select {
@@ -92,7 +94,7 @@
 			border: 0;
 			border-spacing: 0;
 			border-collapse: collapse;
-			font-family: map-get($font, default);
+			font-family: map.get($font, default);
 
 			thead,
 			tbody {
@@ -109,16 +111,16 @@
 						text-align: center;
 
 						a, span {
-							width: map-get($field-calendar, cell-size);
+							width: map.get($field-calendar, cell-size);
 							display: block;
 							padding: 2px;
 							border: 0;
-							border-radius: #{map-get($field-calendar, cell-size) * 2};
+							border-radius: #{map.get($field-calendar, cell-size) * 2};
 						}
 
 						a {
 							text-decoration: none;
-							transition: map-get($transition, ease);
+							transition: map.get($transition, ease);
 
 							&,
 							&:hover,
@@ -141,11 +143,11 @@
 						}
 
 						&:first-child {
-							padding-left: #{map-get($gutter, small) + 5px};
+							padding-left: #{map.get($gutter, small) + 5px};
 						}
 
 						&:last-child {
-							padding-right: #{map-get($gutter, small) + 5px};
+							padding-right: #{map.get($gutter, small) + 5px};
 						}
 
 						&.ui-datepicker-unselectable {
@@ -161,7 +163,7 @@
 
 					th {
 						font-size: 12px;
-						line-height: #{map-get($field-calendar, cell-size) - 4px};
+						line-height: #{map.get($field-calendar, cell-size) - 4px};
 						font-weight: 600;
 
 						span {
@@ -177,7 +179,7 @@
 
 					td {
 						font-size: 13px;
-						line-height: #{map-get($field-calendar, cell-size) - 4px};
+						line-height: #{map.get($field-calendar, cell-size) - 4px};
 					}
 				}
 			}
@@ -190,7 +192,7 @@
 					tr:last-child {
 
 						th, td {
-							padding-bottom: #{map-get($gutter, small) + 5px};
+							padding-bottom: #{map.get($gutter, small) + 5px};
 						}
 					}
 				}
@@ -206,7 +208,7 @@
 			align-items: center;
 			justify-content: flex-end;
 			margin: 0;
-			padding: #{map-get($gutter, small) + 5px};
+			padding: #{map.get($gutter, small) + 5px};
 			border: 0;
 
 			button {
@@ -217,7 +219,7 @@
 				border: 0;
 				border-radius: 0;
 				font-weight: bold;
-				font-family: map-get($font, default);
+				font-family: map.get($font, default);
 				text-align: center;
 
 				&,
@@ -228,7 +230,7 @@
 				}
 
 				+ button {
-					margin-left: map-get($gutter, default);
+					margin-left: map.get($gutter, default);
 				}
 			}
 

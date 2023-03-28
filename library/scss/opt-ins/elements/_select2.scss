@@ -1,3 +1,6 @@
+@use "sass:map";
+@use "sass:math";
+
 @include hui-class(null, optin, null, false) {
 
 	.hustle-select2 {
@@ -36,7 +39,7 @@
 					}
 
 					+ .select2-selection__arrow {
-						margin-left: #{map-get($field-input, padding) / 2};
+						margin-left: #{math.div(map.get($field-input, padding) , 2)};
 					}
 				}
 
@@ -65,7 +68,7 @@
 						display: block;
 						color: inherit;
 						text-align: center;
-						transition: map-get($transition, linear);
+						transition: map.get($transition, linear);
 					}
 				}
 			}
@@ -98,13 +101,13 @@
 		.select2-results {
 
 			.select2-results__options {
-				padding: #{map-get($field-input, padding) / 2} 0;
+				padding: #{math.div(map.get($field-input, padding) , 2)} 0;
 
 				.select2-results__option {
-					padding: map-get($field-input, padding);
-					font: 400 #{map-get($field-input, font-size)}/#{map-get($field-input, line-height)} map-get($font, default);
+					padding: map.get($field-input, padding);
+					font: 400 #{map.get($field-input, font-size)}/#{map.get($field-input, line-height)} map.get($font, default);
 					letter-spacing: 0;
-					transition: map-get($transition, ease);
+					transition: map.get($transition, ease);
 					margin-top: 0;
 					margin-left: 0;
 				}

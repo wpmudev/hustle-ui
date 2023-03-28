@@ -1,3 +1,5 @@
+@use "sass:map";
+
 @import "variables";
 
 @import "mixins/main-class";
@@ -136,10 +138,10 @@
 	pointer-events: none;
 	user-select: auto;
 	position: fixed;
-	z-index: map-get($module, z-index);
+	z-index: map.get($module, z-index);
 	top: 0;
 	left: 0;
-	padding-top: map-get($module-close, button-size);
+	padding-top: map.get($module-close, button-size);
 
 	.hustle-slidein-content {
 		width: auto;
@@ -156,8 +158,8 @@
 		transform-style: preserve-3d;
 
 		> [class*="hustle-"] {
-			max-width: map-get($module, max-width);
-			max-height: calc(100vh - #{map-get($module-close, button-size)});
+			max-width: map.get($module, max-width);
+			max-height: calc(100vh - #{map.get($module-close, button-size)});
 			padding: 0;
 			overflow: auto;
 		}
@@ -168,11 +170,11 @@
 
 		// 1. North
 		&--north {
-			padding-right: map-get($gutter, default);
-			padding-left: map-get($gutter, default);
+			padding-right: map.get($gutter, default);
+			padding-left: map.get($gutter, default);
 
 			.hustle-slidein-content {
-				top: map-get($module-close, button-size);
+				top: map.get($module-close, button-size);
 				left: 50%;
 				transform: translateX(-50%);
 
@@ -187,24 +189,24 @@
 				}
 
 				> [class*="hustle-"] {
-					width: calc(100vw - #{map-get($gutter, default) * 2});
+					width: calc(100vw - #{map.get($gutter, default) * 2});
 
 					@include media(max-width, sm) {
-						width: calc(100vw - #{map-get($gutter, small) * 2});
+						width: calc(100vw - #{map.get($gutter, small) * 2});
 					}
 				}
 			}
 
 			@include media(max-width, sm) {
-				padding-right: map-get($gutter, small);
-				padding-left: map-get($gutter, small);
+				padding-right: map.get($gutter, small);
+				padding-left: map.get($gutter, small);
 			}
 		}
 
 		// 2. South
 		&--south {
-			padding-right: map-get($gutter, default);
-			padding-left: map-get($gutter, default);
+			padding-right: map.get($gutter, default);
+			padding-left: map.get($gutter, default);
 
 			.hustle-slidein-content {
 				left: 50%;
@@ -221,23 +223,23 @@
 				}
 
 				> [class*="hustle-"] {
-					width: calc(100vw - #{map-get($gutter, default) * 2});
+					width: calc(100vw - #{map.get($gutter, default) * 2});
 
 					@include media(max-width, sm) {
-						width: calc(100vw - #{map-get($gutter, small) * 2});
+						width: calc(100vw - #{map.get($gutter, small) * 2});
 					}
 				}
 			}
 
 			@include media(max-width, sm) {
-				padding-right: map-get($gutter, small);
-				padding-left: map-get($gutter, small);
+				padding-right: map.get($gutter, small);
+				padding-left: map.get($gutter, small);
 			}
 		}
 
 		// 3. East
 		&--east {
-			padding-left: map-get($gutter, default);
+			padding-left: map.get($gutter, default);
 
 			.hustle-slidein-content {
 				top: 50%;
@@ -255,22 +257,22 @@
 				}
 
 				> [class*="hustle-"] {
-					width: calc(100vw - #{map-get($gutter, default)});
+					width: calc(100vw - #{map.get($gutter, default)});
 
 					@include media(max-width, sm) {
-						width: calc(100vw - #{map-get($gutter, small)});
+						width: calc(100vw - #{map.get($gutter, small)});
 					}
 				}
 			}
 
 			@include media(max-width, sm) {
-				padding-left: map-get($gutter, small);
+				padding-left: map.get($gutter, small);
 			}
 		}
 
 		// 4. West
 		&--west {
-			padding-right: map-get($gutter, default);
+			padding-right: map.get($gutter, default);
 
 			.hustle-slidein-content {
 				top: 50%;
@@ -288,25 +290,25 @@
 				}
 
 				> [class*="hustle-"] {
-					width: calc(100vw - #{map-get($gutter, default)});
+					width: calc(100vw - #{map.get($gutter, default)});
 
 					@include media(max-width, sm) {
-						width: calc(100vw - #{map-get($gutter, small)});
+						width: calc(100vw - #{map.get($gutter, small)});
 					}
 				}
 			}
 
 			@include media(max-width, sm) {
-				padding-right: map-get($gutter, small);
+				padding-right: map.get($gutter, small);
 			}
 		}
 
 		// 5. North East
 		&--north-east {
-			padding-left: map-get($gutter, default);
+			padding-left: map.get($gutter, default);
 
 			.hustle-slidein-content {
-				top: map-get($module-close, button-size);
+				top: map.get($module-close, button-size);
 				right: 0;
 
 				&.hustle-animate-in {
@@ -320,25 +322,25 @@
 				}
 
 				> [class*="hustle-"] {
-					width: calc(100vw - #{map-get($gutter, default)});
+					width: calc(100vw - #{map.get($gutter, default)});
 
 					@include media(max-width, sm) {
-						width: calc(100vw - #{map-get($gutter, small)});
+						width: calc(100vw - #{map.get($gutter, small)});
 					}
 				}
 			}
 
 			@include media(max-width, sm) {
-				padding-left: map-get($gutter, small);
+				padding-left: map.get($gutter, small);
 			}
 		}
 
 		// 6. North West
 		&--north-west {
-			padding-right: map-get($gutter, default);
+			padding-right: map.get($gutter, default);
 
 			.hustle-slidein-content {
-				top: map-get($module-close, button-size);
+				top: map.get($module-close, button-size);
 				left: 0;
 
 				&.hustle-animate-in {
@@ -352,22 +354,22 @@
 				}
 
 				> [class*="hustle-"] {
-					width: calc(100vw - #{map-get($gutter, default)});
+					width: calc(100vw - #{map.get($gutter, default)});
 
 					@include media(max-width, sm) {
-						width: calc(100vw - #{map-get($gutter, small)});
+						width: calc(100vw - #{map.get($gutter, small)});
 					}
 				}
 			}
 
 			@include media(max-width, sm) {
-				padding-right: map-get($gutter, small);
+				padding-right: map.get($gutter, small);
 			}
 		}
 
 		// 7. South East
 		&--south-east {
-			padding-left: map-get($gutter, default);
+			padding-left: map.get($gutter, default);
 
 			.hustle-slidein-content {
 				right: 0;
@@ -383,22 +385,22 @@
 				}
 
 				> [class*="hustle-"] {
-					width: calc(100vw - #{map-get($gutter, default)});
+					width: calc(100vw - #{map.get($gutter, default)});
 
 					@include media(max-width, sm) {
-						width: calc(100vw - #{map-get($gutter, small)});
+						width: calc(100vw - #{map.get($gutter, small)});
 					}
 				}
 			}
 
 			@include media(max-width, sm) {
-				padding-left: map-get($gutter, small);
+				padding-left: map.get($gutter, small);
 			}
 		}
 
 		// 8. South West
 		&--south-west {
-			padding-right: map-get($gutter, default);
+			padding-right: map.get($gutter, default);
 
 			.hustle-slidein-content {
 				left: 0;
@@ -414,16 +416,16 @@
 				}
 
 				> [class*="hustle-"] {
-					width: calc(100vw - #{map-get($gutter, default)});
+					width: calc(100vw - #{map.get($gutter, default)});
 
 					@include media(max-width, sm) {
-						width: calc(100vw - #{map-get($gutter, small)});
+						width: calc(100vw - #{map.get($gutter, small)});
 					}
 				}
 			}
 
 			@include media(max-width, sm) {
-				padding-right: map-get($gutter, small);
+				padding-right: map.get($gutter, small);
 			}
 		}
 	}

@@ -3,8 +3,16 @@
 
 $sui-font-path: '../fonts/';
 
-// Import original shared-ui styles.
-@import "../../node_modules/@wpmudev/shared-ui/scss/shared-ui";
+// Import original Shared UI tools
+@import "../../node_modules/@wpmudev/shared-ui/scss/functions";
+@import "../../node_modules/@wpmudev/shared-ui/scss/colors";
+@import "../../node_modules/@wpmudev/shared-ui/scss/variables";
+@import "../../node_modules/@wpmudev/shared-ui/scss/mixins";
+@import "../../node_modules/@wpmudev/shared-ui/scss/accessibility";
+
+// Import original Shared UI main stylesheet to prevent issues
+// during build since it uses deprecated modules
+@import "../../node_modules/@wpmudev/shared-ui/dist/css/shared-ui.css";
 
 // ============================================================
 // Showcase UI

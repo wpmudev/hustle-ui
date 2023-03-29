@@ -1,6 +1,6 @@
 @include body-class() {
 
 	.showcase-screen-reader-only {
-		@extend %screen-reader-only;
+		@extend %sui-screen-reader-text;
 	}
 }

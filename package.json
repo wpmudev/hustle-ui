@@ -24,20 +24,20 @@
 		"fs": "0.0.1-security",
 		"gh-pages": "^2.0.1",
 		"gulp": "^4.0.2",
-		"gulp-autoprefixer": "^6.0.0",
+		"gulp-autoprefixer": "^8.0.0",
 		"gulp-babel": "^8.0.0",
-		"gulp-clean-css": "^3.10.0",
+		"gulp-clean-css": "^4.3.0",
 		"gulp-concat": "^2.6.1",
-		"gulp-eslint": "^5.0.0",
-		"gulp-header": "^2.0.7",
+		"gulp-eslint": "^6.0.0",
+		"gulp-header": "^2.0.9",
 		"gulp-plumber": "^1.2.1",
 		"gulp-rename": "^2.0.0",
-		"gulp-replace": "^1.0.0",
-		"sass": "^1.54.0",
+		"gulp-replace": "^1.1.4",
 		"gulp-sass": "^5.1.0",
-		"gulp-uglify": "^3.0.1",
-		"gulp-uglify-es": "^1.0.4",
-		"pump": "^3.0.0"
+		"gulp-uglify": "^3.0.2",
+		"gulp-uglify-es": "^3.0.0",
+		"pump": "^3.0.0",
+		"sass": "^1.60.0"
 	},
 	"eslintConfig": {
 		"extends": "wordpress",
@@ -63,5 +63,8 @@
 		"release:patch": "npm version patch --no-git-tag-version && npm run deploy:hustle && npm run deploy:demo",
 		"release:minor": "npm version minor --no-git-tag-version && npm run deploy:hustle && npm run deploy:demo",
 		"release:major": "npm version major --no-git-tag-version && npm run deploy:hustle && npm run deploy:demo"
+	},
+	"overrides": {
+		"graceful-fs": "^4.2.10"
 	}
 }

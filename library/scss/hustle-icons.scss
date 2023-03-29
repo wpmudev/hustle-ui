@@ -1,3 +1,5 @@
+@use "sass:map";
+
 @import "variables";
 
 @import "helpers/icons";
@@ -8,13 +10,13 @@
 @at-root {
 
 	@font-face {
-		font-family: map-get($font, icons);
+		font-family: map.get($font, icons);
 		font-weight: normal;
 		font-style: normal;
 		font-display: swap;
 		src: local('hustle-icons-font'),
-			 url('#{map-get($path, fonts)}hustle-icons-font.woff2') format('woff2'),
-			 url('#{map-get($path, fonts)}hustle-icons-font.woff') format('woff');
+			 url('#{map.get($path, fonts)}hustle-icons-font.woff2') format('woff2'),
+			 url('#{map.get($path, fonts)}hustle-icons-font.woff') format('woff');
 	}
 }
 

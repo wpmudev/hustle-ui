@@ -1,9 +1,11 @@
+@use "sass:map";
+
 @include hui-class(null, optin, null, false) {
 
 	.hustle-radio {
 		display: flex;
 		vertical-align: middle;
-		margin: 0 0 map-get($gutter, small);
+		margin: 0 0 map.get($gutter, small);
 		padding: 0;
 		border: 0;
 
@@ -22,18 +24,18 @@
 		}
 
 		span[aria-hidden] {
-			width: map-get($field-radio, size);
-			height: map-get($field-radio, size);
+			width: map.get($field-radio, size);
+			height: map.get($field-radio, size);
 			cursor: pointer;
 			display: block;
-			flex: 0 0 map-get($field-radio, size);
+			flex: 0 0 map.get($field-radio, size);
 			position: relative;
 			margin: 0;
 			padding: 0;
 			border-radius: 50%;
-			font-size: map-get($field-radio, icon-size);
+			font-size: map.get($field-radio, icon-size);
 			text-align: center;
-			transition: map-get($transition, ease);
+			transition: map.get($transition, ease);
 
 			&:before {
 				content: " ";
@@ -76,7 +78,7 @@
 
 			@include media(min-width, sm) {
 				display: inline-flex;
-				margin-right: map-get($gutter, default);
+				margin-right: map.get($gutter, default);
 				margin-bottom: 0;
 				padding-bottom: 5px;
 			}

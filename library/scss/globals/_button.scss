@@ -1,8 +1,10 @@
+@use "sass:map";
+
 %button {
 	min-width: 100px;
 	cursor: pointer;
 	text-align: center;
-	transition: map-get($transition, ease);
+	transition: map.get($transition, ease);
 
 	&,
 	&:focus,

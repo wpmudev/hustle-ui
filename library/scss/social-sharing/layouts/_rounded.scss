@@ -1,12 +1,14 @@
+@use "sass:map";
+
 @include hui-class(null, social, rounded, false) {
 
 	a[class*="hustle-share-"] {
-		border-radius: map-get($social-module, icon-size) !important;
+		border-radius: map.get($social-module, icon-size) !important;
 
 		[class*="hustle-icon-social-"] {
-			height: map-get($social-module, icon-size);
-			border-radius: map-get($social-module, icon-size) !important;
-			font-size: map-get($social-icons-size, small);
+			height: map.get($social-module, icon-size);
+			border-radius: map.get($social-module, icon-size) !important;
+			font-size: map.get($social-icons-size, small);
 		}
 	}
 
@@ -33,7 +35,7 @@
 				border-width: 0;
 
 				[class*="hustle-icon-social-"] {
-					width: map-get($social-module, icon-size);
+					width: map.get($social-module, icon-size);
 				}
 			}
 		}
@@ -44,9 +46,9 @@
 
 				[class*="hustle-icon-social-"] {
 					width: auto;
-					margin-top: -#{map-get($social-module, border-width)};
-					margin-right: -#{map-get($social-module, border-width)};
-					margin-left: -#{map-get($social-module, border-width)};
+					margin-top: -#{map.get($social-module, border-width)};
+					margin-right: -#{map.get($social-module, border-width)};
+					margin-left: -#{map.get($social-module, border-width)};
 				}
 			}
 		}
@@ -56,9 +58,9 @@
 			a[class*="hustle-share-"] {
 
 				[class*="hustle-icon-social-"] {
-					width: map-get($social-module, icon-size);
-					margin-top: -#{map-get($social-module, border-width)};
-					margin-left: -#{map-get($social-module, border-width)};
+					width: map.get($social-module, icon-size);
+					margin-top: -#{map.get($social-module, border-width)};
+					margin-left: -#{map.get($social-module, border-width)};
 				}
 			}
 		}

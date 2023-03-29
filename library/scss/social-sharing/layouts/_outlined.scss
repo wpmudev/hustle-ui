@@ -1,12 +1,14 @@
+@use "sass:map";
+
 @include hui-class(null, social, outlined, false) {
 
 	a[class*="hustle-share-"] {
-		border-radius: map-get($social-module, icon-size) !important;
+		border-radius: map.get($social-module, icon-size) !important;
 
 		[class*="hustle-icon-social-"] {
-			width: #{map-get($social-module, icon-size) - (map-get($social-module, border-width) * 2)};
-			height: #{map-get($social-module, icon-size) - (map-get($social-module, border-width) * 2)};
-			font-size: map-get($social-icons-size, small);
+			width: #{map.get($social-module, icon-size) - (map.get($social-module, border-width) * 2)};
+			height: #{map.get($social-module, icon-size) - (map.get($social-module, border-width) * 2)};
+			font-size: map.get($social-icons-size, small);
 		}
 	}
 

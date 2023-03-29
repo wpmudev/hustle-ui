@@ -1,3 +1,4 @@
+@use "sass:map";
 // =============================================
 // VARIABLES MENU
 //
@@ -233,5 +234,5 @@ $social-media-colors: (
 
 // Icons colors (function)
 @function social-media($social-media, $state: 'default') {
-	@return map-get( map-get($social-media-colors, $social-media), $state );
+	@return map.get( map.get($social-media-colors, $social-media), $state );
 }

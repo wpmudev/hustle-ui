@@ -1,10 +1,12 @@
+@use "sass:map";
+
 @include hui-class(null, optin info, null, false) {
 
 	.hustle-layout {
 
 		.hustle-error-message {
-			margin: map-get($gutter, small) 0 0;
-			padding: map-get($gutter, small) map-get($gutter, default);
+			margin: map.get($gutter, small) 0 0;
+			padding: map.get($gutter, small) map.get($gutter, default);
 			border: 0;
 
 			p {

@@ -1,3 +1,5 @@
+@use "sass:map";
+
 @include hui-class(null, optin, null, false) {
 	width: 100%;
 	display: block;
@@ -16,7 +18,7 @@
 		.hustle-nsa-link {
 
 			a {
-				transition: map-get($transition, ease);
+				transition: map.get($transition, ease);
 
 				&,
 				&:hover,

@@ -1,3 +1,5 @@
+@use "sass:map";
+
 @import "variables";
 @import "animations";
 
@@ -11,7 +13,7 @@ $inline-alignment: left center right;
 	@include opacity(0);
 	display: flex;
 	align-items: center;
-	margin: map-get($gutter, small) 0;
+	margin: map.get($gutter, small) 0;
 
 	.hustle-inline-content {
 		width: 100%;
@@ -264,7 +266,7 @@ $inline-alignment: left center right;
 	}
 
 	@include media(min-width, sm) {
-		margin: map-get($gutter, default) 0;
+		margin: map.get($gutter, default) 0;
 	}
 }
 

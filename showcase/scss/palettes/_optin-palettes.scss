@@ -1,3 +1,5 @@
+@use "sass:map";
+
 @import "palettes/optin-vars";
 
 @each $palette in $palettes {
@@ -5,7 +7,7 @@
 	// ========================================|
 	// 1. BASIC                                |
 	// ========================================|
-	.hustle-palette--#{$palette} {
+	.hustle-palette--#{"" + $palette} {
 
 		.hustle-optin {
 
@@ -13,23 +15,23 @@
 
 				// ELEMENT: Main background
 				.hustle-layout-body {
-					background-color: map-get($main-background, $palette);
+					background-color: map.get($main-background, $palette);
 				}
 
 				// ELEMENT: Image container BG
 				.hustle-image {
-					background-color: map-get($image-container, $palette);
+					background-color: map.get($image-container, $palette);
 				}
 
 				// ELEMENT: Form area background
 				.hustle-layout-form {
-					background-color: map-get($form-background, $palette);
+					background-color: map.get($form-background, $palette);
 				}
 			}
 
 			// ELEMENT: Success message background
 			.hustle-success {
-				background-color: map-get($main-background, $palette);
+				background-color: map.get($main-background, $palette);
 			}
 		}
 	}
@@ -37,7 +39,7 @@
 	// ========================================|
 	// 2. CONTENT                              |
 	// ========================================|
-	.hustle-palette--#{$palette} {
+	.hustle-palette--#{"" + $palette} {
 
 		.hustle-optin {
 
@@ -45,19 +47,19 @@
 
 				// ELEMENT: Title
 				.hustle-title {
-					color: map-get($title-color, $palette);
+					color: map.get($title-color, $palette);
 				}
 
 				// ELEMENT: Subtitle
 				.hustle-subtitle {
-					color: map-get($subtitle-color, $palette);
+					color: map.get($subtitle-color, $palette);
 				}
 
 				// ELEMENT: Content color
 				.hustle-group-content {
 
 					&, * {
-						color: map-get($content-color, $palette);
+						color: map.get($content-color, $palette);
 					}
 
 					// ELEMENT: Link color
@@ -65,32 +67,32 @@
 
 						&,
 						&:visited {
-							color: map-get($link-color-static, $palette);
+							color: map.get($link-color-static, $palette);
 						}
 
 						&:hover {
-							color: map-get($link-color-hover, $palette);
+							color: map.get($link-color-hover, $palette);
 						}
 
 						&:focus,
 						&:active {
-							color: map-get($link-color-active, $palette);
+							color: map.get($link-color-active, $palette);
 						}
 					}
 
 					// ELEMENT: OL counter
 					ol li:before {
-						color: map-get($ol-counter, $palette);
+						color: map.get($ol-counter, $palette);
 					}
 
 					// ELEMENT: UL bullets
 					ul li:before {
-						background-color: map-get($ul-bullets, $palette);
+						background-color: map.get($ul-bullets, $palette);
 					}
 
 					// ELEMENT: Blockquote border
 					blockquote {
-						border-left-color: map-get($blockquote-border, $palette);
+						border-left-color: map.get($blockquote-border, $palette);
 					}
 				}
 			}
@@ -101,7 +103,7 @@
 				.hustle-success-content {
 
 					&, * {
-						color: map-get($content-color, $palette);
+						color: map.get($content-color, $palette);
 					}
 
 					// ELEMENT: Link color
@@ -109,32 +111,32 @@
 
 						&,
 						&:visited {
-							color: map-get($link-color-static, $palette);
+							color: map.get($link-color-static, $palette);
 						}
 
 						&:hover {
-							color: map-get($link-color-hover, $palette);
+							color: map.get($link-color-hover, $palette);
 						}
 
 						&:focus,
 						&:active {
-							color: map-get($link-color-active, $palette);
+							color: map.get($link-color-active, $palette);
 						}
 					}
 
 					// ELEMENT: OL counter
 					ol li:before {
-						color: map-get($ol-counter, $palette);
+						color: map.get($ol-counter, $palette);
 					}
 
 					// ELEMENT: UL bullets
 					ul li:before {
-						background-color: map-get($ul-bullets, $palette);
+						background-color: map.get($ul-bullets, $palette);
 					}
 
 					// ELEMENT: Blockquote border
 					blockquote {
-						border-left-color: map-get($blockquote-border, $palette);
+						border-left-color: map.get($blockquote-border, $palette);
 					}
 				}
 			}
@@ -144,7 +146,7 @@
 	// ========================================|
 	// 3. CALL TO ACTION                       |
 	// ========================================|
-	.hustle-palette--#{$palette} {
+	.hustle-palette--#{"" + $palette} {
 
 		.hustle-optin {
 
@@ -157,19 +159,19 @@
 
 					&,
 					&:visited {
-						background-color: map-get($cta-background-static, $palette);
-						color: map-get($cta-label-static, $palette);
+						background-color: map.get($cta-background-static, $palette);
+						color: map.get($cta-label-static, $palette);
 					}
 
 					&:hover {
-						background-color: map-get($cta-background-hover, $palette);
-						color: map-get($cta-label-hover, $palette);
+						background-color: map.get($cta-background-hover, $palette);
+						color: map.get($cta-label-hover, $palette);
 					}
 
 					&:focus,
 					&:active {
-						background-color: map-get($cta-background-active, $palette);
-						color: map-get($cta-label-active, $palette);
+						background-color: map.get($cta-background-active, $palette);
+						color: map.get($cta-label-active, $palette);
 					}
 				}
 			}
@@ -179,7 +181,7 @@
 	// ========================================|
 	// 4. INPUTS                               |
 	// ========================================|
-	.hustle-palette--#{$palette} {
+	.hustle-palette--#{"" + $palette} {
 
 		.hustle-optin {
 
@@ -191,27 +193,27 @@
 						border-width: 2px;
 						border-style: solid;
 						border-color: transparent;
-						background-color: map-get($input-background-static, $palette);
-						color: map-get($input-color, $palette);
+						background-color: map.get($input-background-static, $palette);
+						color: map.get($input-color, $palette);
 
 						&:hover {
-							background-color: map-get($input-background-hover, $palette);
+							background-color: map.get($input-background-hover, $palette);
 
 							+ .hustle-input-label {
 
 								[class*="hustle-icon-"] {
-									color: map-get($input-icon-hover, $palette);
+									color: map.get($input-icon-hover, $palette);
 								}
 							}
 						}
 
 						&:focus {
-							background-color: map-get($input-background-focus, $palette);
+							background-color: map.get($input-background-focus, $palette);
 
 							+ .hustle-input-label {
 
 								[class*="hustle-icon-"] {
-									color: map-get($input-icon-focus, $palette);
+									color: map.get($input-icon-focus, $palette);
 								}
 							}
 						}
@@ -220,24 +222,24 @@
 					.hustle-input-label {
 
 						span {
-							color: map-get($input-placeholder, $palette);
+							color: map.get($input-placeholder, $palette);
 						}
 
 						[class*="hustle-icon-"] {
-							color: map-get($input-icon-static, $palette);
+							color: map.get($input-icon-static, $palette);
 						}
 					}
 
 					&.hustle-field-error {
 
 						.hustle-input {
-							border-color: map-get($input-border-error, $palette);
+							border-color: map.get($input-border-error, $palette);
 						}
 
 						.hustle-input-label {
 
 							[class*="hustle-icon-"] {
-								color: map-get($input-icon-error, $palette);
+								color: map.get($input-icon-error, $palette);
 							}
 						}
 					}
@@ -249,7 +251,7 @@
 	// ========================================|
 	// 5. RADIO AND CHECKBOX                   |
 	// ========================================|
-	.hustle-palette--#{$palette} {
+	.hustle-palette--#{"" + $palette} {
 
 		.hustle-optin {
 
@@ -261,23 +263,23 @@
 					input:checked {
 
 						+ span[aria-hidden] {
-							background-color: map-get($checkbox-background-checked, $palette);
+							background-color: map.get($checkbox-background-checked, $palette);
 						}
 					}
 
 					span[aria-hidden] {
-						background-color: map-get($checkbox-background-static, $palette);
+						background-color: map.get($checkbox-background-static, $palette);
 					}
 
 					span:not([aria-hidden]) {
-						color: map-get($checkbox-label, $palette);
+						color: map.get($checkbox-label, $palette);
 					}
 
 					&.hustle-field-error {
 
 						span[aria-hidden] {
-							background-color: map-get($checkbox-background-error, $palette);
-							border-color: map-get($checkbox-border-error, $palette);
+							background-color: map.get($checkbox-background-error, $palette);
+							border-color: map.get($checkbox-border-error, $palette);
 						}
 					}
 				}
@@ -287,7 +289,7 @@
 					input:checked {
 
 						+ span[aria-hidden]:before {
-							background-color: map-get($checkbox-icon, $palette);
+							background-color: map.get($checkbox-icon, $palette);
 						}
 					}
 				}
@@ -297,7 +299,7 @@
 					input:checked {
 
 						+ span[aria-hidden]:before {
-							color: map-get($checkbox-icon, $palette);
+							color: map.get($checkbox-icon, $palette);
 						}
 					}
 				}
@@ -308,7 +310,7 @@
 	// ========================================|
 	// 6. SUBMIT BUTTON                        |
 	// ========================================|
-	.hustle-palette--#{$palette} {
+	.hustle-palette--#{"" + $palette} {
 
 		.hustle-optin {
 
@@ -318,17 +320,17 @@
 					border-width: 0;
 					border-style: none;
 					border-color: transparent;
-					background-color: map-get($submit-background-static, $palette);
-					color: map-get($submit-label-static, $palette);
+					background-color: map.get($submit-background-static, $palette);
+					color: map.get($submit-label-static, $palette);
 
 					&:hover {
-						background-color: map-get($submit-background-hover, $palette);
-						color: map-get($submit-label-hover, $palette);
+						background-color: map.get($submit-background-hover, $palette);
+						color: map.get($submit-label-hover, $palette);
 					}
 
 					&:active {
-						background-color: map-get($submit-background-active, $palette);
-						color: map-get($submit-label-active, $palette);
+						background-color: map.get($submit-background-active, $palette);
+						color: map.get($submit-label-active, $palette);
 					}
 				}
 			}
@@ -338,17 +340,17 @@
 	// ========================================|
 	// 7. FORM OPTIONS                         |
 	// ========================================|
-	.hustle-palette--#{$palette} {
+	.hustle-palette--#{"" + $palette} {
 
 		.hustle-optin {
 
 			.hustle-layout {
 
 				.hustle-form-options {
-					background-color: map-get($options-background, $palette);
+					background-color: map.get($options-background, $palette);
 
 					.hustle-group-title {
-						color: map-get($options-content, $palette);
+						color: map.get($options-content, $palette);
 					}
 				}
 			}
@@ -358,18 +360,18 @@
 	// ========================================|
 	// 8. ERROR MESSAGE                        |
 	// ========================================|
-	.hustle-palette--#{$palette} {
+	.hustle-palette--#{"" + $palette} {
 
 		.hustle-optin {
 
 			.hustle-layout {
 
 				.hustle-error-message {
-					background-color: map-get($error-background, $palette);
-					box-shadow: inset 4px 0 0 0 map-get($error-border, $palette);
+					background-color: map.get($error-background, $palette);
+					box-shadow: inset 4px 0 0 0 map.get($error-border, $palette);
 
 					p {
-						color: map-get($error-message, $palette);
+						color: map.get($error-message, $palette);
 					}
 				}
 			}
@@ -379,13 +381,13 @@
 	// ========================================|
 	// 9. ADDITIONAL SETTINGS                  |
 	// ========================================|
-	.hustle-palette--#{$palette} {
+	.hustle-palette--#{"" + $palette} {
 
 		&.hustle-popup {
 
 			// Pop-up mask
 			.hustle-optin-mask {
-				background-color: map-get($popup-mask, $palette);
+				background-color: map.get($popup-mask, $palette);
 			}
 		}
 
@@ -393,33 +395,33 @@
 		.hustle-success {
 
 			.hustle-icon-check {
-				color: map-get($success-icon, $palette);
+				color: map.get($success-icon, $palette);
 			}
 		}
 
 		// ELEMENT: Button close
 		.hustle-button-close {
-			color: map-get($close-color-static, $palette);
+			color: map.get($close-color-static, $palette);
 
 			&:hover {
-				color: map-get($close-color-hover, $palette);
+				color: map.get($close-color-hover, $palette);
 			}
 
 			&:active {
-				color: map-get($close-color-active, $palette);
+				color: map.get($close-color-active, $palette);
 			}
 		}
 
 		// ELEMENT: Never See Link
 		.hustle-nsa-link a:not(.sui-button) {
-			color: map-get($nsa-color-static, $palette);
+			color: map.get($nsa-color-static, $palette);
 
 			&:hover {
-				color: map-get($nsa-color-hover, $palette);
+				color: map.get($nsa-color-hover, $palette);
 			}
 
 			&:active {
-				color: map-get($nsa-color-active, $palette);
+				color: map.get($nsa-color-active, $palette);
 			}
 		}
 	}
@@ -429,43 +431,43 @@
 	// ========================================|
 	.hustle-calendar {
 
-		&.hustle-palette--#{$palette} {
+		&.hustle-palette--#{"" + $palette} {
 
 			&:before {
-				background-color: map-get($calendar-container, $palette);
+				background-color: map.get($calendar-container, $palette);
 			}
 
 			.ui-datepicker-header {
 
 				.ui-corner-all {
-					color: map-get($calendar-nav-arrows, $palette);
+					color: map.get($calendar-nav-arrows, $palette);
 				}
 
 				.ui-datepicker-title {
-					color: map-get($calendar-title, $palette);
+					color: map.get($calendar-title, $palette);
 				}
 			}
 
 			.ui-datepicker-calendar {
 
 				thead th {
-					color: map-get($calendar-thead, $palette);
+					color: map.get($calendar-thead, $palette);
 				}
 
 				tbody td {
-					color: map-get($calendar-cell-color, $palette);
+					color: map.get($calendar-cell-color, $palette);
 
 					a {
-						color: map-get($calendar-cell-color, $palette);
-						background-color: map-get($calendar-cell-background, $palette);
+						color: map.get($calendar-cell-color, $palette);
+						background-color: map.get($calendar-cell-background, $palette);
 
 						&:hover {
-							color: map-get($calendar-cell-color-hover, $palette);
-							background-color: map-get($calendar-cell-background-hover, $palette);
+							color: map.get($calendar-cell-color-hover, $palette);
+							background-color: map.get($calendar-cell-background-hover, $palette);
 						}
 
 						&:active {
-							color: map-get($calendar-date-active, $palette);
+							color: map.get($calendar-date-active, $palette);
 						}
 					}
 				}
@@ -476,31 +478,31 @@
 	// ========================================|
 	// 11. TIMEPICKER                          |
 	// ========================================|
-	.hustle-palette--#{$palette} {
+	.hustle-palette--#{"" + $palette} {
 
 		.hustle-timepicker {
 
 			.ui-timepicker {
-				background-color: map-get($time-container, $palette);
+				background-color: map.get($time-container, $palette);
 
 				a {
 
 					&,
 					&:visited {
-						background-color: map-get($time-background, $palette);
-						color: map-get($time-color, $palette);
+						background-color: map.get($time-background, $palette);
+						color: map.get($time-color, $palette);
 					}
 
 					&:hover,
 					&.ui-state-hover {
-						background-color: map-get($time-background-hover, $palette);
-						color: map-get($time-color-hover, $palette);
+						background-color: map.get($time-background-hover, $palette);
+						color: map.get($time-color-hover, $palette);
 					}
 
 					&:active,
 					&.ui-active-item {
-						background-color: map-get($time-background-active, $palette);
-						color: map-get($time-color-active, $palette);
+						background-color: map.get($time-background-active, $palette);
+						color: map.get($time-color-active, $palette);
 					}
 				}
 			}

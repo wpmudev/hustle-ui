@@ -1,3 +1,5 @@
+@use "sass:map";
+
 @include hui-class(null, info, null, false) {
 	width: 100%;
 	display: block;
@@ -11,12 +13,12 @@
 		margin: 0;
 		padding: 0;
 		border: 0;
-		font: 400 14px/20px map-get($font, default);
+		font: 400 14px/20px map.get($font, default);
 		text-align: center;
 
 		a {
 			font-weight: inherit;
-			transition: map-get($transition, ease);
+			transition: map.get($transition, ease);
 
 			&,
 			&:hover,
@@ -30,7 +32,7 @@
 		}
 
 		&:not(:first-child) {
-			margin-top: map-get($gutter, small);
+			margin-top: map.get($gutter, small);
 		}
 	}
 }
@@ -42,7 +44,7 @@
 		&:not(:first-child) {
 
 			@include media(min-width, sm) {
-				margin-top: map-get($gutter, default);
+				margin-top: map.get($gutter, default);
 			}
 		}
 	}
@@ -53,10 +55,10 @@
 	.hustle-nsa-link {
 
 		&:last-child {
-			margin-bottom: map-get($gutter, small);
+			margin-bottom: map.get($gutter, small);
 
 			@include media(min-width, sm) {
-				margin-bottom: map-get($gutter, default);
+				margin-bottom: map.get($gutter, default);
 			}
 		}
 	}

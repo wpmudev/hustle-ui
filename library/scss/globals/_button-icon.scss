@@ -1,8 +1,10 @@
+@use "sass:map";
+
 @include hui-class(null, null, null, false) {
 
 	.hustle-button-icon {
-		width: map-get($module-close, button-size);
-		height: map-get($module-close, button-size);
+		width: map.get($module-close, button-size);
+		height: map.get($module-close, button-size);
 		cursor: pointer;
 		display: inline-flex;
 		align-items: center;
@@ -12,12 +14,12 @@
 		background-color: transparent;
 		background-image: unset;
 		text-align: center;
-		transition: map-get($transition, ease);
+		transition: map.get($transition, ease);
 
 		[class*="hustle-icon-"] {
 			display: block;
 			margin: 0 auto;
-			font-size: map-get($module-close, icon-size);
+			font-size: map.get($module-close, icon-size);
 
 			&:before {
 				display: block;

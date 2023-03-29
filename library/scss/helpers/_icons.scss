@@ -1,8 +1,10 @@
+@use "sass:map";
+
 %hui-icons {
 	speak: none;
 	display: inline-block;
 	color: inherit;
-	font-family: map-get($font, icons) !important;
+	font-family: map.get($font, icons) !important;
 	font-size: 1em;
 	line-height: 1em;
 	font-style: normal;

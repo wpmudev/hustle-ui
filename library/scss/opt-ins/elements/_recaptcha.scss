@@ -1,7 +1,9 @@
+@use "sass:map";
+
 @include hui-class(null, optin, null, false) {
 
 	.hustle-recaptcha {
-		margin: map-get($gutter, small) 0 0;
+		margin: map.get($gutter, small) 0 0;
 
 		&.hustle-recaptcha-nobadge {
 			height: 0 !important;
@@ -39,7 +41,7 @@
 				}
 
 				a {
-					transition: map-get($transition, ease);
+					transition: map.get($transition, ease);
 
 					&,
 					&:focus,
@@ -70,7 +72,7 @@
 		}
 
 		@include media(min-width, sm) {
-			margin-top: map-get($gutter, default);
+			margin-top: map.get($gutter, default);
 		}
 	}
 

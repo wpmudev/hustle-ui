@@ -1,3 +1,5 @@
+@use "sass:math";
+
 @include body-class(true) {
 
 	.showcase-button-sample {
@@ -21,11 +23,11 @@
 			text-transform: uppercase;
 
 			@include media(max-width, md) {
-				padding: #{$sui-gutter-md / 2} $sui-gutter-md;
+				padding: #{math.div($sui-gutter-md , 2)} $sui-gutter-md;
 			}
 
 			@include media(min-width, md) {
-				padding: #{$sui-gutter / 2} $sui-gutter;
+				padding: #{math.div($sui-gutter , 2)} $sui-gutter;
 			}
 		}
 

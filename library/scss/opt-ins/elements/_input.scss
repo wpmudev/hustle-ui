@@ -1,15 +1,17 @@
+@use "sass:map";
+
 @include hui-class(null, null, null, false) {
 
 	.hustle-field {
 
 		.hustle-input {
-			width: map-get($field-size, width);
+			width: map.get($field-size, width);
 			min-width: unset; // Prevent themes or other plugins from overwritting.
 			max-width: unset; // Prevent themes or other plugins from overwritting.
 			min-height: auto; // Prevent themes or other plugins from overwritting.
 			display: block;
 			background-image: unset;
-			transition: map-get($transition, ease);
+			transition: map.get($transition, ease);
 
 			&,
 			&:hover,
@@ -20,7 +22,7 @@
 		}
 
 		.hustle-input-label {
-			width: map-get($field-size, width);
+			width: map.get($field-size, width);
 			user-select: none;
 			pointer-events: none;
 			display: flex;
@@ -31,15 +33,15 @@
 			left: 0;
 
 			[class*="hustle-icon-"] {
-				width: map-get($field-input, icon-width);
-				height: map-get($field-input, icon-width);
+				width: map.get($field-input, icon-width);
+				height: map.get($field-input, icon-width);
 				display: flex;
-				flex: 0 0 map-get($field-input, icon-width);
+				flex: 0 0 map.get($field-input, icon-width);
 				flex-direction: column;
 				justify-content: center;
-				font-size: map-get($field-input, icon-size);
+				font-size: map.get($field-input, icon-size);
 				text-align: center;
-				transition: map-get($transition, ease);
+				transition: map.get($transition, ease);
 
 				&:before {
 					display: block;
@@ -54,7 +56,7 @@
 				display: block;
 				flex: 1 1 auto;
 				@extend %hui-text-truncate;
-				transition: map-get($transition, ease);
+				transition: map.get($transition, ease);
 			}
 		}
 
@@ -68,7 +70,7 @@
 
 						[class*="hustle-icon-"] {
 							opacity: 0;
-							transform: translateX(-#{map-get($field-input, icon-width)});
+							transform: translateX(-#{map.get($field-input, icon-width)});
 							transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
 						}
 					}

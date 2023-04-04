@@ -743,7 +743,6 @@ function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" =
 
       // Module time.
       popup.addClass('hustle-show');
-      popupWrapper.attr('tabindex', '0');
 
       // Layout time.
       setTimeout(function () {
@@ -6102,7 +6101,6 @@ function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" =
         jQuery(window).trigger('resize');
         show();
       }, 800);
-      slideinWrapper.attr('tabindex', '0');
 
       // Layout time.
       setTimeout(function () {
@@ -7008,7 +7006,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" =
       return;
     }
     modalId = modals[modals.length - 1];
-    $(modalId).find('.hustle-layout').focus();
+    $(modalId).find('a[href], button, textarea, input, select').filter(':visible')[0].focus();
 
     // Trap focus within the modal when it is open
     $(modalId).on('keydown', function (e) {

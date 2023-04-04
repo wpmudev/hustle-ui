@@ -2,12 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org/) for commit guidelines.
 
+## [2.1.1](https://github.com/wpmudev/hustle-ui/compare/v2.1.0...v2.1.1) (2023-04-04)
+
+#### ♿️ Accessibility
+- `opt-ins`, `slide-ins`
+  - **fix:** Remove focus from containers for better accessibility. [#84](https://github.com/wpmudev/hustle-ui/pull/84) ([HUS-306](https://incsub.atlassian.net/browse/HUS-306)) ([@creadordev](https://github.com/creadordev))
+
+#### Committers: 2
+- Leighton Sapir ([@iamleigh](https://github.com/iamleigh))
+- Pawan Kumar ([@creador-dev](https://github.com/creador-dev))
+
 ## [2.1.0](https://github.com/wpmudev/hustle-ui/compare/v2.0.20...v2.1.0) (2023-28-03)
 
 #### 🚀 Improvements
 - `global`
-  - **fix(global):** Migrate from Gulp v3 to v4. [#76](https://github.com/wpmudev/hustle-ui/pull/76) ([HUS-453](https://incsub.atlassian.net/browse/HUS-453)) ([@creadordev](https://github.com/creadordev))
-  - **fix(popup):** Added keyboard accessibility. [#77](https://github.com/wpmudev/hustle-ui/pull/77) ([HUS-306](https://incsub.atlassian.net/browse/HUS-306)) ([@creadordev](https://github.com/creadordev))
+  - **fix:** Migrate from Gulp v3 to v4. [#76](https://github.com/wpmudev/hustle-ui/pull/76) ([HUS-453](https://incsub.atlassian.net/browse/HUS-453)) ([@creadordev](https://github.com/creadordev))
+- `opt-ins`, `slide-ins`
+  - **fix:** Added keyboard accessibility. [#77](https://github.com/wpmudev/hustle-ui/pull/77) ([HUS-306](https://incsub.atlassian.net/browse/HUS-306)) ([@creadordev](https://github.com/creadordev))
 
 #### 🐛 Bug Fixes
 - `global`

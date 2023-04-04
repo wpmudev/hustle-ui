@@ -23,7 +23,7 @@
 
 		modalId = modals[modals.length - 1];
 
-		$( modalId ).find( '.hustle-layout' ).focus();
+		$( modalId ).find( 'a[href], button, textarea, input, select' ).filter( ':visible' )[0].focus();
 
 		// Trap focus within the modal when it is open
 		$( modalId ).on( 'keydown', function( e ) {

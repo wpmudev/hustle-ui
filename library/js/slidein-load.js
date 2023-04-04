@@ -89,8 +89,6 @@
 				show();
 			}, 800 );
 
-			slideinWrapper.attr( 'tabindex', '0' );
-
 			// Layout time.
 			setTimeout( function() {
 				animation();

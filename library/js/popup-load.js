@@ -88,8 +88,6 @@
 			// Module time.
 			popup.addClass( 'hustle-show' );
 
-			popupWrapper.attr( 'tabindex', '0' );
-
 			// Layout time.
 			setTimeout( function() {
 				animationIn();

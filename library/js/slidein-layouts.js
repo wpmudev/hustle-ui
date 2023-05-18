@@ -12,6 +12,7 @@
 		const slidein = $( el );
 		const wrapper = slidein.find( '.hustle-slidein-content' );
 		const content = slidein.find( '.hustle-slidein-content > div' );
+		const maincontent = slidein.find( '.hustle-main-wrapper' );
 
 		let header = slidein.find( '.hustle-layout-header' );
 		let footer = slidein.find( '.hustle-layout-footer' );
@@ -63,7 +64,7 @@
 					'padding-top': headerHeight() + 'px'
 				});
 
-				content.css({
+				maincontent.css({
 					'max-height': 'calc(100vh - ' + ( footerHeight() + headerHeight() ) + 'px)'
 				});
 
@@ -72,7 +73,7 @@
 				});
 			} else {
 
-				content.css({
+				maincontent.css({
 					'max-height': 'calc(100vh - ' + ( footerHeight() + closeHeight() ) + 'px)'
 				});
 			}

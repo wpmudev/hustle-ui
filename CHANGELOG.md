@@ -7,6 +7,10 @@ All notable changes to this project will be documented in this file. See [Conven
 - `slide in`
   - **fix(slide in):** Close button not working in safari mobile view. [#85](https://github.com/wpmudev/hustle-ui/pull/85) ([@creadordev](https://github.com/creadordev))
 
+#### Committers: 2
+- Pawan Kumar ([@creador-dev](https://github.com/creador-dev))
+- Govind ([@emgk](https://github.com/emgk))
+
 ## [2.1.1](https://github.com/wpmudev/hustle-ui/compare/v2.1.0...v2.1.1) (2023-04-04)
 
 #### ♿️ Accessibility

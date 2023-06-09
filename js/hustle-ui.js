@@ -5959,6 +5959,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" =
     var slidein = $(el);
     var wrapper = slidein.find('.hustle-slidein-content');
     var content = slidein.find('.hustle-slidein-content > div');
+    var maincontent = slidein.find('.hustle-main-wrapper');
     var header = slidein.find('.hustle-layout-header');
     var footer = slidein.find('.hustle-layout-footer');
     var close = slidein.find('.hustle-button-close');
@@ -6001,14 +6002,14 @@ function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" =
         slidein.css({
           'padding-top': headerHeight() + 'px'
         });
-        content.css({
+        maincontent.css({
           'max-height': 'calc(100vh - ' + (footerHeight() + headerHeight()) + 'px)'
         });
         header.css({
           'top': '-' + headerHeight() + 'px'
         });
       } else {
-        content.css({
+        maincontent.css({
           'max-height': 'calc(100vh - ' + (footerHeight() + closeHeight()) + 'px)'
         });
       }

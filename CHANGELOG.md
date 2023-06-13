@@ -4,7 +4,7 @@ All notable changes to this project will be documented in this file. See [Conven
 
 ## [2.1.3](https://github.com/wpmudev/hustle-ui/compare/v2.1.1...v2.1.2) (2023-13-06)
 #### 🐛 Bug Fixes
-- `slide in`
+- `dialog`
   - **fix(dialog):** Unnecessary scrollbar and outline appears in slide in and popup. [#87](https://github.com/wpmudev/hustle-ui/pull/87) ([@creadordev](https://github.com/creadordev))
 
 ## [2.1.2](https://github.com/wpmudev/hustle-ui/compare/v2.1.1...v2.1.2) (2023-09-06)

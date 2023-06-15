@@ -39,7 +39,7 @@
 				});
 			}
 			if ( 'undefined' === typeof errors || first ) {
-				message.append( '<p>' + HUI.escapeJS( 'default-error' ) + '</p>' );
+				message.append( '<p>' + HUI.escapeJS( message.data( 'default-error' ) ) + '</p>' );
 			}
 			message.show();
 		}

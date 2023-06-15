@@ -30,11 +30,12 @@
 					if ( 'undefined' === typeof element || ! element ) {
 						return true;
 					}
+					const item = HUI.escapeJS( element );
 					if ( first ) {
-						message.append( '<p>' + element + '</p>' );
+						message.append( '<p>' + item + '</p>' );
 						first = false;
 					} else {
-						$( '<div class="hustle-error-message"><p>' + element + '</p></div>' ).appendTo( $form );
+						$( '<div class="hustle-error-message"><p>' + item + '</p></div>' ).appendTo( $form );
 					}
 				});
 			}

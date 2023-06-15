@@ -36,7 +36,7 @@
 				label.removeClass( 'hustle-field-error' );
 			} else {
 				label.addClass( 'hustle-field-error' );
-				errors.push( input.data( 'required-error' ) );
+				errors.push( HUI.escapeJS( input.data( 'required-error' ) ) );
 			}
 		}
 
@@ -53,7 +53,7 @@
 
 					if ( '' === field.find( 'input' ).val() ) {
 						field.addClass( 'hustle-field-error' );
-						errors.push( field.find( '.hustle-input' ).data( 'required-error' ) );
+						errors.push( HUI.escapeJS( field.find( '.hustle-input' ).data( 'required-error' ) ) );
 					} else {
 						field.removeClass( 'hustle-field-error' );
 					}

@@ -171,6 +171,18 @@ function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" =
   if ('object' !== _typeof(window.HUI)) {
     window.HUI = {};
   }
+  HUI.escapeJS = function (string) {
+    // Return the escaped text
+    return string.replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, '');
+  };
+})(jQuery);
+(function ($) {
+  'use strict';
+
+  // Define global HUI object if it doesn't exist.
+  if ('object' !== _typeof(window.HUI)) {
+    window.HUI = {};
+  }
   HUI.inlineClose = function (el, autohideDelay) {
     var inline = $(el),
       content = inline.find('.hustle-inline-content');
@@ -427,15 +439,15 @@ function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" =
             return true;
           }
           if (first) {
-            message.append('<p>' + element + '</p>');
+            message.append('<p>' + HUI.escapeJS(element) + '</p>');
             first = false;
           } else {
-            $('<div class="hustle-error-message"><p>' + element + '</p></div>').appendTo($form);
+            $('<div class="hustle-error-message"><p>' + HUI.escapeJS(element) + '</p></div>').appendTo($form);
           }
         });
       }
       if ('undefined' === typeof errors || first) {
-        message.append('<p>' + message.data('default-error') + '</p>');
+        message.append('<p>' + HUI.escapeJS(message.data('default-error')) + '</p>');
       }
       message.show();
     }

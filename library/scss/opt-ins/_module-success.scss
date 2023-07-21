@@ -28,3 +28,20 @@
 }
 
 @include content(optin, success-content);
+
+@include hui-class(null, optin, null, false) {
+	.hustle-success-content {
+
+		ul:not([class*="forminator-"]) {
+
+			li {
+
+				&:before {
+					content: "•";
+					height: auto;
+					line-height: normal;
+				}
+			}
+		}
+	}
+}

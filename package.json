@@ -1,70 +1,75 @@
 {
-	"name": "hustle-ui",
-	"version": "2.1.4",
-	"private": true,
-	"author": "WPMU DEV",
-	"contributors": [
-		{
-			"name": "Leighton Sapir",
-			"email": "leigh@incsub.com",
-			"url": "https://iamleigh.com/"
-		}
-	],
-	"homepage": "https://wpmudev.github.io/hustle-ui/",
-	"repository": {
-		"type": "git",
-		"url": "git@github.com:wpmudev/hustle-ui.git"
-	},
-	"devDependencies": {
-		"@babel/core": "^7.4.3",
-		"@babel/preset-env": "^7.4.3",
-		"@wpmudev/shared-ui": "2.12.18",
-		"browser-sync": "^2.26.3",
-		"eslint-config-wordpress": "^2.0.0",
-		"fs": "0.0.1-security",
-		"gh-pages": "^2.0.1",
-		"gulp": "^4.0.2",
-		"gulp-autoprefixer": "^8.0.0",
-		"gulp-babel": "^8.0.0",
-		"gulp-clean-css": "^4.3.0",
-		"gulp-concat": "^2.6.1",
-		"gulp-eslint": "^6.0.0",
-		"gulp-header": "^2.0.9",
-		"gulp-plumber": "^1.2.1",
-		"gulp-rename": "^2.0.0",
-		"gulp-replace": "^1.1.4",
-		"gulp-sass": "^5.1.0",
-		"gulp-uglify": "^3.0.2",
-		"gulp-uglify-es": "^3.0.0",
-		"pump": "^3.0.0",
-		"sass": "^1.60.0"
-	},
-	"eslintConfig": {
-		"extends": "wordpress",
-		"parserOptions": {
-			"sourceType": "module",
-			"ecmaVersion": 2018
-		},
-		"env": {
-			"es6": true
-		}
-	},
-	"eslintIgnore": [
-		"library/js/select2.full.js",
-		"library/js/timepicker.full.js"
-	],
-	"scripts": {
-		"start": "gulp development",
-		"hustle": "gulp hustle:build",
-		"showcase": "gulp showcase:build",
-		"cleanup": "rm -rf node_modules/gh-pages/.cache",
-		"deploy:hustle": "npm run hustle && npm run cleanup && gh-pages -b master -d ./dist",
-		"deploy:demo": "npm run showcase && npm run cleanup && gh-pages -b gh-pages -d ./public",
-		"release:patch": "npm version patch --no-git-tag-version && npm run deploy:hustle && npm run deploy:demo",
-		"release:minor": "npm version minor --no-git-tag-version && npm run deploy:hustle && npm run deploy:demo",
-		"release:major": "npm version major --no-git-tag-version && npm run deploy:hustle && npm run deploy:demo"
-	},
-	"overrides": {
-		"graceful-fs": "^4.2.10"
-	}
+  "name": "hustle-ui",
+  "version": "2.1.4",
+  "private": true,
+  "author": "WPMU DEV",
+  "contributors": [
+    {
+      "name": "Leighton Sapir",
+      "email": "leigh@incsub.com",
+      "url": "https://iamleigh.com/"
+    },
+    {
+      "name": "Pawan Kumar",
+      "email": "40248406+creador-dev@users.noreply.github.com",
+      "url": "https://creador.dev/"
+    }
+  ],
+  "homepage": "https://wpmudev.github.io/hustle-ui/",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:wpmudev/hustle-ui.git"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.4.3",
+    "@babel/preset-env": "^7.4.3",
+    "@wpmudev/shared-ui": "2.12.18",
+    "browser-sync": "^2.26.3",
+    "eslint-config-wordpress": "^2.0.0",
+    "fs": "0.0.1-security",
+    "gh-pages": "^2.0.1",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^8.0.0",
+    "gulp-babel": "^8.0.0",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-eslint": "^6.0.0",
+    "gulp-header": "^2.0.9",
+    "gulp-plumber": "^1.2.1",
+    "gulp-rename": "^2.0.0",
+    "gulp-replace": "^1.1.4",
+    "gulp-sass": "^5.1.0",
+    "gulp-uglify": "^3.0.2",
+    "gulp-uglify-es": "^3.0.0",
+    "pump": "^3.0.0",
+    "sass": "^1.60.0"
+  },
+  "eslintConfig": {
+    "extends": "wordpress",
+    "parserOptions": {
+      "sourceType": "module",
+      "ecmaVersion": 2018
+    },
+    "env": {
+      "es6": true
+    }
+  },
+  "eslintIgnore": [
+    "library/js/select2.full.js",
+    "library/js/timepicker.full.js"
+  ],
+  "scripts": {
+    "start": "gulp development",
+    "hustle": "gulp hustle:build",
+    "showcase": "gulp showcase:build",
+    "cleanup": "rm -rf node_modules/gh-pages/.cache",
+    "deploy:hustle": "npm run hustle && npm run cleanup && gh-pages -b master -d ./dist",
+    "deploy:demo": "npm run showcase && npm run cleanup && gh-pages -b gh-pages -d ./public",
+    "release:patch": "npm version patch --no-git-tag-version && npm run deploy:hustle && npm run deploy:demo",
+    "release:minor": "npm version minor --no-git-tag-version && npm run deploy:hustle && npm run deploy:demo",
+    "release:major": "npm version major --no-git-tag-version && npm run deploy:hustle && npm run deploy:demo"
+  },
+  "overrides": {
+    "graceful-fs": "^4.2.10"
+  }
 }

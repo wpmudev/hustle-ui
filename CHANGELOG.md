@@ -7,6 +7,9 @@ All notable changes to this project will be documented in this file. See [Conven
 - `icon`
   - **new(icon):** icon updated. [#94](https://github.com/wpmudev/hustle-ui/pull/94) ([@creadordev](https://github.com/creadordev))
 
+#### Committers: 1
+- Pawan Kumar ([@creador-dev](https://github.com/creador-dev))
+
 ## [2.1.4](https://github.com/wpmudev/hustle-ui/compare/v2.1.3...v2.1.4) (2023-16-06)
 #### 🐛 Bug Fixes
 - `validation`

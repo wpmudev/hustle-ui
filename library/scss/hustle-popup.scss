@@ -462,14 +462,6 @@
 		overflow-y: auto;
 	}
 
-	&[data-overlay-close="1"] {
-
-		.hustle-popup-mask {
-			cursor: pointer;
-			pointer-events: all;
-		}
-	}
-
 	@include support(ie) {
 		align-items: baseline;
 	}

@@ -2,6 +2,11 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org/) for commit guidelines.
 
+## [2.1.6](https://github.com/wpmudev/hustle-ui/compare/v2.1.5...v2.1.6) (2024-16-01)
+#### 🐛 Bug Fixes
+- `popup`
+  - **fix(popup):** popup scroll not working outside of content. [#96](https://github.com/wpmudev/hustle-ui/pull/96) ([@creadordev](https://github.com/creadordev))
+
 ## [2.1.5](https://github.com/wpmudev/hustle-ui/compare/v2.1.4...v2.1.5) (2023-18-10)
 #### 🚀 Improvements
 - `icon`

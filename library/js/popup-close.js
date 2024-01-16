@@ -140,7 +140,7 @@
 
 			if ( 1 === popup.data( 'overlay-close' ) ) {
 
-				overlay.on( 'click', function( e ) {
+				popup.on( 'click', function( e ) {
 
 					popup.trigger( 'hustle:module:click_outside', this );
 					closePopup();
@@ -148,6 +148,10 @@
 					e.preventDefault();
 					e.stopPropagation();
 
+				});
+
+				content.on( 'click',  function( e ) {
+					e.stopPropagation();
 				});
 			}
 		}

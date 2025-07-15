@@ -151,6 +151,7 @@
 				});
 
 				content.on( 'click',  function( e ) {
+					popup.trigger( 'hustle:module:click_content', e.target );
 					e.stopPropagation();
 				});
 			}

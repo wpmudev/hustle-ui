@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org/) for commit guidelines.
 
+## [2.1.7](https://github.com/wpmudev/hustle-ui/compare/v2.1.6...v2.1.7) (2025-21-07)
+#### 🚀 Improvements
+- `popup`
+  - **new(popup):** conversion tracking not working on click of button inside. [#98](https://github.com/wpmudev/hustle-ui/pull/98) ([@creadordev](https://github.com/creadordev))
+
+#### Committers: 1
+- Pawan Kumar ([@creador-dev](https://github.com/creador-dev))
+
 ## [2.1.6](https://github.com/wpmudev/hustle-ui/compare/v2.1.5...v2.1.6) (2024-16-01)
 #### 🐛 Bug Fixes
 - `popup`

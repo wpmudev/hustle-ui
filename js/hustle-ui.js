@@ -688,6 +688,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" =
           e.stopPropagation();
         });
         content.on('click', function (e) {
+          popup.trigger('hustle:module:click_content', e.target);
           e.stopPropagation();
         });
       }

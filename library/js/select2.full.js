@@ -40,11 +40,8 @@
     // The inner file should be wrapped (by `banner.start.js`) in a function that
     // returns the AMD loader references.
     var S2 = (function() {
-        // Restore the Select2 AMD loader so it can be used
-        // Needed mostly in the language files, where the loader is not inserted
-        if (jQuery && jQuery.fn && jQuery.fn.select2 && jQuery.fn.select2.amd) {
-            var S2 = jQuery.fn.select2.amd;
-        }
+        // HUI-SELECT2: Removed check for existing jQuery.fn.select2.amd to isolate our AMD loader
+        // This prevents conflicts with other Select2 instances (e.g., Events Calendar)
         var S2;
         (function() {
             if (!S2 || !S2.requirejs) {
@@ -6557,5 +6554,9 @@
 
     // HUI-SELECT2
     var select2 = S2.require('hui.select2');
+    
+    // HUI-SELECT2: Expose AMD loader under namespaced property to isolate from other Select2 instances
+    jQuery.fn.HUIselect2.amd = S2;
+    
     return select2;
 }));

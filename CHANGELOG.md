@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org/) for commit guidelines.
 
+## [2.1.8](https://github.com/wpmudev/hustle-ui/compare/v2.1.7...v2.1.8) (2026-01-15)
+#### 🐛 Bugs
+- `select2`
+    - **fix(select2):** HUI select2 conflict fix. [#100](https://github.com/wpmudev/hustle-ui/pull/100) ([@creadordev](https://github.com/creadordev))
+
+#### Committers: 1
+- Pawan Kumar ([@creador-dev](https://github.com/creador-dev))
+
 ## [2.1.7](https://github.com/wpmudev/hustle-ui/compare/v2.1.6...v2.1.7) (2025-21-07)
 #### 🚀 Improvements
 - `popup`

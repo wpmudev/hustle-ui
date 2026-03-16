@@ -7015,6 +7015,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" =
     // detect all the modals.
     var modals = [];
     var modalId = '';
+    var focusableElements;
     $('.hustle-show[role="dialog"]').each(function () {
       modals.push('#' + this.id);
     });
@@ -7022,14 +7023,24 @@ function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" =
       return;
     }
     modalId = modals[modals.length - 1];
-    $(modalId).find('a[href], button, textarea, input, select').filter(':visible')[0].focus();
+    focusableElements = $(modalId).find('a[href], button, textarea, input, select').filter(':visible');
+    if (focusableElements.length) {
+      focusableElements[0].focus();
+    }
 
     // Trap focus within the modal when it is open
     $(modalId).on('keydown', function (e) {
-      var focusableElements = $(modalId).find('a[href], button, textarea, input, select').filter(':visible');
-      var firstFocusableElement = focusableElements[0];
-      var lastFocusableElement = focusableElements[focusableElements.length - 1];
-      var isTabPressed = 'Tab' === e.key || 9 === e.keyCode;
+      var focusableElements;
+      var firstFocusableElement;
+      var lastFocusableElement;
+      var isTabPressed;
+      focusableElements = $(modalId).find('a[href], button, textarea, input, select').filter(':visible');
+      if (!focusableElements.length) {
+        return;
+      }
+      firstFocusableElement = focusableElements[0];
+      lastFocusableElement = focusableElements[focusableElements.length - 1];
+      isTabPressed = 'Tab' === e.key || 9 === e.keyCode;
       if (!isTabPressed) {
         return;
       }

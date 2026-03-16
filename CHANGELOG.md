@@ -2,6 +2,11 @@
 
 All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org/) for commit guidelines.
 
+## [2.1.9](https://github.com/wpmudev/hustle-ui/compare/v2.1.8...v2.1.9) (2026-01-16)
+#### 🐛 Bugs
+- `popup`
+  - **fix(focus): fix focus trap issue with html elements. [#102](https://github.com/wpmudev/hustle-ui/pull/102) ([@creadordev](https://github.com/creadordev))
+
 ## [2.1.8](https://github.com/wpmudev/hustle-ui/compare/v2.1.7...v2.1.8) (2026-01-15)
 #### 🐛 Bugs
 - `select2`
